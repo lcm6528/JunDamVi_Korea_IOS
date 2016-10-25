@@ -14,6 +14,8 @@
 		375EB9171DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 375EB9151DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld */; };
 		375EB9191DBDE55900337236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375EB9181DBDE55900337236 /* Assets.xcassets */; };
 		375EB91C1DBDE55900337236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375EB91A1DBDE55900337236 /* LaunchScreen.storyboard */; };
+		379DB8981DBF3D1700882280 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8971DBF3D1700882280 /* RoundView.swift */; };
+		379DB89A1DBF3E3400882280 /* Radian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8991DBF3E3400882280 /* Radian.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		375EB9181DBDE55900337236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		375EB91B1DBDE55900337236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		375EB91D1DBDE55900337236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379DB8971DBF3D1700882280 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		379DB8991DBF3E3400882280 /* Radian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radian.swift; sourceTree = "<group>"; };
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +69,8 @@
 			children = (
 				375EB90E1DBDE55900337236 /* AppDelegate.swift */,
 				375EB9101DBDE55900337236 /* ViewController.swift */,
+				379DB8971DBF3D1700882280 /* RoundView.swift */,
+				379DB8991DBF3E3400882280 /* Radian.swift */,
 				375EB9121DBDE55900337236 /* Main.storyboard */,
 				375EB9181DBDE55900337236 /* Assets.xcassets */,
 				375EB91A1DBDE55900337236 /* LaunchScreen.storyboard */,
@@ -127,6 +133,7 @@
 					375EB90A1DBDE55900337236 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = ZH9C52WH4J;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -216,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				375EB9111DBDE55900337236 /* ViewController.swift in Sources */,
+				379DB8981DBF3D1700882280 /* RoundView.swift in Sources */,
+				379DB89A1DBF3E3400882280 /* Radian.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
 				375EB9171DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld in Sources */,
 			);

@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet var roundView: RoundView!
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    roundView.currentValue = 50
+    
   }
 
   override func didReceiveMemoryWarning() {
