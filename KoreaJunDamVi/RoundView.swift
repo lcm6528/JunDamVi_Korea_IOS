@@ -16,7 +16,20 @@ class RoundView: UIView {
   var range: CGFloat = 100
   var currentValue
     : CGFloat = 0 {
-    didSet { animateShapeLayer() } }
+    didSet(value) {
+      animateShapeLayer()
+      setupContent()
+    }
+  }
+  @IBInspectable var title:String = "title" {
+    didSet{
+      setupContent()
+    }
+  }
+  
+  let titleLabel = UILabel()
+  let separator = UIView()
+  let contentLabel = UILabel()
   
   let backgroundLayer = CAShapeLayer()
   let foregroundLayer = CAShapeLayer()
@@ -29,22 +42,68 @@ class RoundView: UIView {
   
   //once
   func setup() {
-    let lineWidth: CGFloat = 25.0
+    
+    let sizeOfSV = self.bounds.size
+    
+    let lineWidth: CGFloat = self.bounds.width * 0.1
     
     //background layer
     backgroundLayer.lineWidth = lineWidth
-    backgroundLayer.fillColor = nil
+    backgroundLayer.fillColor = UIColor(red: 204.0/255, green: 204.0/255, blue: 204.0/255, alpha: 1).cgColor
     backgroundLayer.strokeEnd = 1
     layer.addSublayer(backgroundLayer)
     
     //foreground layer
     foregroundLayer.lineWidth = lineWidth
     foregroundLayer.fillColor = nil
-    foregroundLayer.strokeEnd = 0.3
+    foregroundLayer.strokeEnd = 0.5
     layer.addSublayer(foregroundLayer)
+    
+    
+    separator.frame = CGRect(x: sizeOfSV.width * 0.175, y: sizeOfSV.height * 0.40 , width: sizeOfSV.width * 0.65, height: 2)
+    separator.backgroundColor = UIColor.gray
+    addSubview(separator)
+    
+    
+    
+    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: self.bounds.size.height*0.42, width: separator.frame.size.width, height: sizeOfSV.height*0.25)
+    contentLabel.text = " \(currentValue)%"
+    contentLabel.numberOfLines = 1
+    contentLabel.textAlignment = .center
+    contentLabel.font = UIFont(name: "NanumGothicExtraBold", size: 40)
+    contentLabel.adjustsFontSizeToFitWidth = true
+    contentLabel.minimumScaleFactor = 0.1
+    
+    addSubview(contentLabel)
+    
+    
+    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: sizeOfSV.height * 0.2)
+    titleLabel.center.x = separator.center.x
+    titleLabel.frame.origin.y = sizeOfSV.height * 0.20
+    titleLabel.textAlignment = .center
+    titleLabel.font = UIFont(name: "NanumGothicBold", size: 20)
+    titleLabel.adjustsFontSizeToFitWidth = true
+    titleLabel.minimumScaleFactor = 0.1
+    addSubview(titleLabel)
+    
+    
+    
+    
+    bringSubview(toFront: titleLabel)
+    bringSubview(toFront: separator)
+    bringSubview(toFront: contentLabel)
+    
+    
   }
   
   //when value changes in interface builder
+  
+  
+  func setupContent(){
+    
+    titleLabel.text = title
+    contentLabel.text = "\(currentValue)"
+  }
   func configureUI() {
     backgroundLayer.strokeColor = backgroundLayerColor.cgColor
     foregroundLayer.strokeColor = foregroundLayerColor.cgColor
@@ -56,10 +115,10 @@ class RoundView: UIView {
     let startAngle = degreesToRadians(value: -90.0)
     let endAngle = degreesToRadians(value: 270.0)
     let center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
-    let radius = self.bounds.width * 0.4
+    let radius = self.bounds.width * 0.45
     let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
     shapeLayer.path = path.cgPath
-  
+    
   }
   
   // MARK: - ui
@@ -89,7 +148,6 @@ class RoundView: UIView {
       fromValue = presentationLayer.strokeEnd
     }
     let duration = 0.5
-    
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     animation.fromValue = fromValue
     animation.toValue = toValue
