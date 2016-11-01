@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XsK-jn-FQH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumGothicBold.ttf">
+            <string>NanumGothicBold</string>
+        </array>
+        <array key="NanumGothicExtraBold.ttf">
+            <string>NanumGothicExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--home-->
+        <!--Home View Controller-->
         <scene sceneID="98d-GV-Cz4">
             <objects>
                 <viewController id="XsK-jn-FQH" customClass="HomeViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,29 +28,134 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-PE-YOM" customClass="RoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <frame key="frameInset" minX="16" minY="370" width="155" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="foregroundLayerColor">
-                                        <color key="value" red="0.89019607840000003" green="0.2784313725" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="학습 진행률"/>
-                                </userDefinedRuntimeAttributes>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-dO-w0F">
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDB-xL-YDW">
+                                        <frame key="frameInset" minX="99" minY="46" width="165" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D-120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yw-och">
+                                        <frame key="frameInset" minX="117" minY="51" width="130" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NanumGothicExtraBold" family="NanumGothic" pointSize="43"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;지금부터 꾸준히 하시면 1등급은 껌!!&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-zR-BmP">
+                                        <frame key="frameInset" minX="38" minY="118" width="287" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-CH-noj">
+                                        <frame key="frameInset" minX="254" minY="88" width="35" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="변경">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 시험일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-Uo-Dhs">
+                                        <frame key="frameInset" minX="99" minY="14" width="165" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-na-GFk">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-PE-YOM" customClass="RoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="nrx-PE-YOM" secondAttribute="height" multiplier="1:1" id="a2g-4W-zGq"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundLayerColor">
+                                                <color key="value" red="0.89019607840000003" green="0.2784313725" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="학습 진행률"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 학습 현황" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj5-ht-cdr">
+                                        <color key="backgroundColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="FcS-zj-rAl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumGothicExtraBold" family="NanumGothic" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEP-0O-U1b" customClass="RoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vEP-0O-U1b" secondAttribute="height" multiplier="1:1" id="Vjt-6i-xcU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundLayerColor">
+                                                <color key="value" red="0.2470588235" green="0.62352941179999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="평균 정답률"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" id="1yJ-88-0RA"/>
+                                    <constraint firstItem="Oj5-ht-cdr" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="IcK-uN-rBt"/>
+                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="width" secondItem="vEP-0O-U1b" secondAttribute="width" id="Loc-GB-b6A"/>
+                                    <constraint firstItem="vEP-0O-U1b" firstAttribute="leading" secondItem="nrx-PE-YOM" secondAttribute="trailing" constant="16" id="Uxo-um-ClG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oj5-ht-cdr" secondAttribute="trailing" id="VX8-gK-Jnh"/>
+                                    <constraint firstItem="vEP-0O-U1b" firstAttribute="top" secondItem="Oj5-ht-cdr" secondAttribute="bottom" constant="8" id="eeb-O3-QVi"/>
+                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="top" secondItem="Oj5-ht-cdr" secondAttribute="bottom" constant="8" id="r5j-Ii-hEB"/>
+                                    <constraint firstAttribute="trailing" secondItem="vEP-0O-U1b" secondAttribute="trailing" constant="4" id="uQF-KA-byg"/>
+                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="4" id="zFJ-qm-0uw"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6dw-dO-w0F" firstAttribute="top" secondItem="CVG-gj-TzW" secondAttribute="bottom" constant="8" id="2MW-zP-SiG"/>
+                            <constraint firstAttribute="trailing" secondItem="6dw-dO-w0F" secondAttribute="trailing" constant="6" id="ACC-Od-tZb"/>
+                            <constraint firstAttribute="trailing" secondItem="9x7-na-GFk" secondAttribute="trailing" constant="6" id="TzS-il-gdr"/>
+                            <constraint firstItem="9x7-na-GFk" firstAttribute="top" secondItem="6dw-dO-w0F" secondAttribute="bottom" constant="8" id="YXR-2h-pm9"/>
+                            <constraint firstItem="9x7-na-GFk" firstAttribute="height" secondItem="6dw-dO-w0F" secondAttribute="height" multiplier="2.5" constant="1" id="cj3-eX-VWJ"/>
+                            <constraint firstItem="9x7-na-GFk" firstAttribute="leading" secondItem="pl8-Dz-vQx" secondAttribute="leading" constant="6" id="d12-BR-csv"/>
+                            <constraint firstItem="dhQ-hP-6gN" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="bottom" constant="7" id="gJZ-pI-V0R"/>
+                            <constraint firstItem="6dw-dO-w0F" firstAttribute="leading" secondItem="pl8-Dz-vQx" secondAttribute="leading" constant="6" id="yxU-ro-g1D"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" id="c0c-Gk-q7s"/>
+                    <navigationItem key="navigationItem" id="qJ9-yx-bb4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="roundView" destination="nrx-PE-YOM" id="hzH-Cz-Rb9"/>
+                        <outlet property="roundView1" destination="nrx-PE-YOM" id="52P-6O-7NE"/>
+                        <outlet property="roundView2" destination="vEP-0O-U1b" id="nKK-Vi-AMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uq-cW-Mf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.2" y="178.56071964017991"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PxB-Qk-j30">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M1Q-yt-LHV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="c0c-Gk-q7s"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e4J-kp-NGe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XsK-jn-FQH" kind="relationship" relationship="rootViewController" id="qqp-tK-xLu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwR-ry-laG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="178.56071964017991"/>
         </scene>

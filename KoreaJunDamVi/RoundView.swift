@@ -17,8 +17,9 @@ class RoundView: UIView {
   var currentValue
     : CGFloat = 0 {
     didSet(value) {
-      animateShapeLayer()
+      
       setupContent()
+      animateShapeLayer()
     }
   }
   @IBInspectable var title:String = "title" {
@@ -33,7 +34,7 @@ class RoundView: UIView {
   
   let backgroundLayer = CAShapeLayer()
   let foregroundLayer = CAShapeLayer()
-  @IBInspectable var backgroundLayerColor: UIColor = UIColor.black {
+  @IBInspectable var backgroundLayerColor: UIColor = UIColor.clear {
     didSet { configureUI() } }
   @IBInspectable var foregroundLayerColor: UIColor = UIColor.gray {
     didSet { configureUI() } }
@@ -43,9 +44,10 @@ class RoundView: UIView {
   //once
   func setup() {
     
-    let sizeOfSV = self.bounds.size
     
-    let lineWidth: CGFloat = self.bounds.width * 0.1
+    let width = (SCREEN_WIDTH - 36)/2
+    let lineWidth: CGFloat = width * 0.1
+    
     
     //background layer
     backgroundLayer.lineWidth = lineWidth
@@ -56,17 +58,17 @@ class RoundView: UIView {
     //foreground layer
     foregroundLayer.lineWidth = lineWidth
     foregroundLayer.fillColor = nil
-    foregroundLayer.strokeEnd = 0.5
+    foregroundLayer.strokeEnd = 0.0
     layer.addSublayer(foregroundLayer)
     
     
-    separator.frame = CGRect(x: sizeOfSV.width * 0.175, y: sizeOfSV.height * 0.40 , width: sizeOfSV.width * 0.65, height: 2)
+    separator.frame = CGRect(x: width * 0.175, y: width * 0.40 , width: width * 0.65, height: 2)
     separator.backgroundColor = UIColor.gray
     addSubview(separator)
     
     
     
-    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: self.bounds.size.height*0.42, width: separator.frame.size.width, height: sizeOfSV.height*0.25)
+    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.42, width: separator.frame.size.width, height: width*0.25)
     contentLabel.text = " \(currentValue)%"
     contentLabel.numberOfLines = 1
     contentLabel.textAlignment = .center
@@ -77,9 +79,9 @@ class RoundView: UIView {
     addSubview(contentLabel)
     
     
-    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: sizeOfSV.height * 0.2)
+    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: width * 0.2)
     titleLabel.center.x = separator.center.x
-    titleLabel.frame.origin.y = sizeOfSV.height * 0.20
+    titleLabel.frame.origin.y = width * 0.20
     titleLabel.textAlignment = .center
     titleLabel.font = UIFont(name: "NanumGothicBold", size: 20)
     titleLabel.adjustsFontSizeToFitWidth = true
@@ -102,7 +104,7 @@ class RoundView: UIView {
   func setupContent(){
     
     titleLabel.text = title
-    contentLabel.text = "\(currentValue)"
+    contentLabel.text = "\(currentValue)%"
   }
   func configureUI() {
     backgroundLayer.strokeColor = backgroundLayerColor.cgColor
@@ -127,6 +129,7 @@ class RoundView: UIView {
     super.layoutSubviews()
     configureShapeLayer(shapeLayer: backgroundLayer)
     configureShapeLayer(shapeLayer: foregroundLayer)
+    
   }
   
   override func prepareForInterfaceBuilder() {
@@ -136,19 +139,22 @@ class RoundView: UIView {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    
     setup()
     configureUI()
+    
   }
   
   func animateShapeLayer() {
-    
+    print("animate")
     var fromValue = foregroundLayer.strokeEnd
     let toValue = currentValue / range
     if let presentationLayer = foregroundLayer.presentation() {
       fromValue = presentationLayer.strokeEnd
     }
-    let duration = 0.5
+    let duration = 0.8
     let animation = CABasicAnimation(keyPath: "strokeEnd")
+    
     animation.fromValue = fromValue
     animation.toValue = toValue
     

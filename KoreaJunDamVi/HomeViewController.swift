@@ -10,15 +10,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-  @IBOutlet var roundView: RoundView!
+  @IBOutlet var roundView1: RoundView!
+  @IBOutlet var roundView2: RoundView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
+    self.title = "한국사 전담비"
     
   }
   override func viewWillAppear(_ animated: Bool) {
-    roundView.currentValue = 50
+    roundView1.currentValue = 70
+    roundView2.currentValue = 40
   }
 
   override func didReceiveMemoryWarning() {
