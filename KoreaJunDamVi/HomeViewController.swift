@@ -16,12 +16,13 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.title = "한국사 전담비"
+//    self.title = "한국사 전담비"
     
   }
   override func viewWillAppear(_ animated: Bool) {
     roundView1.currentValue = 70
     roundView2.currentValue = 40
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -29,6 +30,22 @@ class HomeViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  @IBAction func settingButtonPressed(_ sender: AnyObject) {
+    
+    performSegue(withIdentifier: "settings", sender: self)
+    
+  }
 
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.identifier! {
+    case "settings":
+      let vc = segue.destination as! SettingsViewController
+      vc.hidesBottomBarWhenPushed = true
+    default :
+      return
+    }
+    
+  }
 }
 

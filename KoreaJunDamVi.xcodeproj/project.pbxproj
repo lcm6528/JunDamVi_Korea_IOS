@@ -22,6 +22,11 @@
 		377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BB0E51DC87BE600C9D08D /* MNFunction.swift */; };
 		379DB8981DBF3D1700882280 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8971DBF3D1700882280 /* RoundView.swift */; };
 		379DB89A1DBF3E3400882280 /* Radian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8991DBF3E3400882280 /* Radian.swift */; };
+		37E033671DE5521000A5C4AC /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E033661DE5521000A5C4AC /* Note.storyboard */; };
+		37E033691DE5524100A5C4AC /* Solution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E033681DE5524100A5C4AC /* Solution.storyboard */; };
+		37E0336B1DE5532000A5C4AC /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E0336A1DE5532000A5C4AC /* Analytics.storyboard */; };
+		37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */; };
+		37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		37DA176C1DC330C70008C697 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		37DA176D1DC330C70008C697 /* NanumGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.ttf; sourceTree = "<group>"; };
 		37DA176E1DC330C70008C697 /* NanumGothicExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.ttf; sourceTree = "<group>"; };
+		37E033661DE5521000A5C4AC /* Note.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
+		37E033681DE5524100A5C4AC /* Solution.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Solution.storyboard; sourceTree = "<group>"; };
+		37E0336A1DE5532000A5C4AC /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
+		37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,12 +91,14 @@
 			children = (
 				377BB0E51DC87BE600C9D08D /* MNFunction.swift */,
 				375EB90E1DBDE55900337236 /* AppDelegate.swift */,
-				375EB9101DBDE55900337236 /* HomeViewController.swift */,
-				379DB8971DBF3D1700882280 /* RoundView.swift */,
-				379DB8991DBF3E3400882280 /* Radian.swift */,
+				37E0336F1DE5581B00A5C4AC /* Home */,
+				37E0336C1DE557FF00A5C4AC /* JDVKit */,
 				375EB9121DBDE55900337236 /* Main.storyboard */,
 				3747EEA21DC1CAFC0029DC27 /* Home.storyboard */,
 				3747EEA41DC1CBA60029DC27 /* Prob.storyboard */,
+				37E033661DE5521000A5C4AC /* Note.storyboard */,
+				37E033681DE5524100A5C4AC /* Solution.storyboard */,
+				37E0336A1DE5532000A5C4AC /* Analytics.storyboard */,
 				375EB9181DBDE55900337236 /* Assets.xcassets */,
 				375EB91A1DBDE55900337236 /* LaunchScreen.storyboard */,
 				375EB91D1DBDE55900337236 /* Info.plist */,
@@ -96,6 +108,25 @@
 				37DA176E1DC330C70008C697 /* NanumGothicExtraBold.ttf */,
 			);
 			path = KoreaJunDamVi;
+			sourceTree = "<group>";
+		};
+		37E0336C1DE557FF00A5C4AC /* JDVKit */ = {
+			isa = PBXGroup;
+			children = (
+				379DB8971DBF3D1700882280 /* RoundView.swift */,
+				379DB8991DBF3E3400882280 /* Radian.swift */,
+			);
+			name = JDVKit;
+			sourceTree = "<group>";
+		};
+		37E0336F1DE5581B00A5C4AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				375EB9101DBDE55900337236 /* HomeViewController.swift */,
+				37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */,
+				37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		CB2C162B636037CD0823CE91 /* Frameworks */ = {
@@ -181,10 +212,13 @@
 			files = (
 				377BB0E21DC86F2100C9D08D /* NanumGothic.ttf in Resources */,
 				377BB0E31DC86F2100C9D08D /* NanumGothicBold.ttf in Resources */,
+				37E033671DE5521000A5C4AC /* Note.storyboard in Resources */,
 				377BB0E41DC86F2100C9D08D /* NanumGothicExtraBold.ttf in Resources */,
 				375EB91C1DBDE55900337236 /* LaunchScreen.storyboard in Resources */,
+				37E033691DE5524100A5C4AC /* Solution.storyboard in Resources */,
 				375EB9191DBDE55900337236 /* Assets.xcassets in Resources */,
 				375EB9141DBDE55900337236 /* Main.storyboard in Resources */,
+				37E0336B1DE5532000A5C4AC /* Analytics.storyboard in Resources */,
 				3747EEA31DC1CAFC0029DC27 /* Home.storyboard in Resources */,
 				3747EEA51DC1CBA60029DC27 /* Prob.storyboard in Resources */,
 			);
@@ -247,6 +281,8 @@
 			files = (
 				375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */,
 				379DB8981DBF3D1700882280 /* RoundView.swift in Sources */,
+				37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */,
+				37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */,
 				377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */,
 				379DB89A1DBF3E3400882280 /* Radian.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
