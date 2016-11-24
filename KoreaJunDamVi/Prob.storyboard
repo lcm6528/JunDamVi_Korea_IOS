@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="1025" y="-212"/>
         </scene>
-        <!--Prob Menu View Controller-->
+        <!--기출 문제 풀기-->
         <scene sceneID="6OK-OB-GKc">
             <objects>
                 <viewController id="xTc-8c-Vlx" customClass="ProbMenuViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,10 +38,126 @@
                     <view key="view" contentMode="scaleToFill" id="ATu-OS-SdU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-u2-t56">
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-L7-2KQ">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <state key="normal" title="시대별">
+                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="iTa-vq-DKi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Qh-DsV">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <state key="normal" title="유형별">
+                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="IDA-DP-yQ8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-8w-w1X">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <state key="normal" title="테마별">
+                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="IDo-Vl-bJQ"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Af-0W-erO">
+                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="8dl-8Z-H2X"/>
+                                            <constraint firstAttribute="width" constant="1" id="BcU-NW-qhw"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4W-KJ-hlz">
+                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="psS-RA-EUh"/>
+                                            <constraint firstAttribute="height" constant="23" id="wlM-vr-DrQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spC-iE-wJD">
+                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="5ds-DI-zlf"/>
+                                            <constraint firstAttribute="height" constant="23" id="PPN-OY-PMG"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ2-sn-Bnn">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <state key="normal" title="회차별">
+                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="fvp-0k-UEf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="EEY-L7-2KQ" firstAttribute="leading" secondItem="7Af-0W-erO" secondAttribute="trailing" id="27a-RK-5bD"/>
+                                    <constraint firstAttribute="bottom" secondItem="y6V-8w-w1X" secondAttribute="bottom" id="3Ln-Ek-NnB"/>
+                                    <constraint firstItem="y6V-8w-w1X" firstAttribute="width" secondItem="TJ2-sn-Bnn" secondAttribute="width" id="8dn-CC-owd"/>
+                                    <constraint firstItem="y6V-8w-w1X" firstAttribute="leading" secondItem="spC-iE-wJD" secondAttribute="trailing" id="DML-2z-PBR"/>
+                                    <constraint firstItem="TJ2-sn-Bnn" firstAttribute="leading" secondItem="uV4-u2-t56" secondAttribute="leading" id="G88-0I-fJl"/>
+                                    <constraint firstItem="y6V-8w-w1X" firstAttribute="top" secondItem="uV4-u2-t56" secondAttribute="top" id="Gtw-nl-yjO"/>
+                                    <constraint firstItem="7Af-0W-erO" firstAttribute="leading" secondItem="TJ2-sn-Bnn" secondAttribute="trailing" id="HLf-SV-tHM"/>
+                                    <constraint firstItem="I4W-KJ-hlz" firstAttribute="leading" secondItem="EEY-L7-2KQ" secondAttribute="trailing" id="HgW-Ut-yoe"/>
+                                    <constraint firstItem="7Af-0W-erO" firstAttribute="centerY" secondItem="TJ2-sn-Bnn" secondAttribute="centerY" id="NC1-J9-OXs"/>
+                                    <constraint firstItem="spC-iE-wJD" firstAttribute="centerY" secondItem="TJ2-sn-Bnn" secondAttribute="centerY" id="QTf-dX-DZJ"/>
+                                    <constraint firstItem="EEY-L7-2KQ" firstAttribute="width" secondItem="TJ2-sn-Bnn" secondAttribute="width" id="UTG-Cv-uqk"/>
+                                    <constraint firstItem="A6c-Qh-DsV" firstAttribute="top" secondItem="uV4-u2-t56" secondAttribute="top" id="Uue-vL-MCq"/>
+                                    <constraint firstAttribute="bottom" secondItem="A6c-Qh-DsV" secondAttribute="bottom" id="Vc0-SQ-fbT"/>
+                                    <constraint firstItem="I4W-KJ-hlz" firstAttribute="centerY" secondItem="TJ2-sn-Bnn" secondAttribute="centerY" id="WWY-kI-bUZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="cdN-KR-dN7"/>
+                                    <constraint firstAttribute="bottom" secondItem="EEY-L7-2KQ" secondAttribute="bottom" id="fLm-Hs-RCS"/>
+                                    <constraint firstAttribute="bottom" secondItem="TJ2-sn-Bnn" secondAttribute="bottom" id="g2f-zc-Tyy"/>
+                                    <constraint firstAttribute="trailing" secondItem="y6V-8w-w1X" secondAttribute="trailing" id="kwn-lg-BN7"/>
+                                    <constraint firstItem="A6c-Qh-DsV" firstAttribute="width" secondItem="TJ2-sn-Bnn" secondAttribute="width" id="mCd-V6-XCE"/>
+                                    <constraint firstItem="spC-iE-wJD" firstAttribute="leading" secondItem="A6c-Qh-DsV" secondAttribute="trailing" id="oEr-Jr-7eF"/>
+                                    <constraint firstItem="TJ2-sn-Bnn" firstAttribute="top" secondItem="uV4-u2-t56" secondAttribute="top" id="rdF-hs-bhE"/>
+                                    <constraint firstItem="EEY-L7-2KQ" firstAttribute="top" secondItem="uV4-u2-t56" secondAttribute="top" id="vQq-Iy-o5V"/>
+                                    <constraint firstItem="A6c-Qh-DsV" firstAttribute="leading" secondItem="I4W-KJ-hlz" secondAttribute="trailing" id="zLn-cz-IzO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uV4-u2-t56" secondAttribute="trailing" id="Tsh-7G-QFx"/>
+                            <constraint firstItem="uV4-u2-t56" firstAttribute="top" secondItem="yTq-7r-0Bo" secondAttribute="bottom" id="UVM-nj-RjZ"/>
+                            <constraint firstItem="uV4-u2-t56" firstAttribute="leading" secondItem="ATu-OS-SdU" secondAttribute="leading" id="tyc-0n-bxf"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sIz-wM-M6R"/>
+                    <navigationItem key="navigationItem" title="기출 문제 풀기" id="sIz-wM-M6R"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="ToolbarButtons" destination="TJ2-sn-Bnn" collectionClass="NSMutableArray" id="nSM-Xu-wyZ"/>
+                        <outletCollection property="ToolbarButtons" destination="EEY-L7-2KQ" collectionClass="NSMutableArray" id="fFu-Dh-oUp"/>
+                        <outletCollection property="ToolbarButtons" destination="A6c-Qh-DsV" collectionClass="NSMutableArray" id="frO-sp-UKZ"/>
+                        <outletCollection property="ToolbarButtons" destination="y6V-8w-w1X" collectionClass="NSMutableArray" id="u4X-ID-OgZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUi-bL-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,15 +298,17 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="881.10944527736137"/>
         </scene>
-        <!--prob-->
+        <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="prob" id="dsb-hP-emW"/>
+                    <tabBarItem key="tabBarItem" title="문제풀기" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

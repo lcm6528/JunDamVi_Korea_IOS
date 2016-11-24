@@ -11,7 +11,11 @@ import UIKit
 class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   
   let number_of_pages = 4
+  var currentMenu:Int = 0
   var pageViewController:UIPageViewController!
+  
+  @IBOutlet var ToolbarButtons: [UIButton]!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,23 +32,48 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     
     self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     
-    self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
+    self.pageViewController.view.frame = CGRect(x: 0, y: 104, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
     
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)
     self.pageViewController.didMove(toParentViewController: self)
     
+    
+    
+    
+    
     // Do any additional setup after loading the view.
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
+  
+  
+  @IBAction func ToolbarButtonSelected(_ sender: UIButton) {
+    selectButtonInCollection(atIndex: sender.tag)
+    gotoPageAtIndex(getCurrnetIndexOfPage(), goto: sender.tag)
+    
+  }
+  
+  func selectButtonInCollection(atIndex index:Int){
+    
+    for (idx,button) in ToolbarButtons.enumerated(){
+      {()->Bool in return idx == index}() ? (button.isSelected = true) : (button.isSelected = false)
+    }
+    
   }
   
   
   
+  
+  
+  //MARK: UIPageViewDelegate,Datasource
+  
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    
+    if completed == true{
+      selectButtonInCollection(atIndex: getCurrnetIndexOfPage())
+      
+    }
     
     
   }
@@ -53,22 +82,14 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbCollectionViewController") as! ProbCollectionViewController
     pageContentViewController.pageIndex = index
     return pageContentViewController
-    
   }
-  
-  
-  
-  
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
   {
     let viewController = viewController as! ProbCollectionViewController
     var index = viewController.pageIndex as Int
     
-    if(index == 0 || index == NSNotFound)
-    {
-      return nil
-    }
+    if(index == 0 || index == NSNotFound){return nil}
     
     index -= 1
     
@@ -80,16 +101,11 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     let viewController = viewController as! ProbCollectionViewController
     var index = viewController.pageIndex as Int
     if((index == NSNotFound))
-    {
-      return nil
-    }
+    {return nil}
     
     index += 1
     
-    if(index == number_of_pages)
-    {
-      return nil
-    }
+    if(index == number_of_pages){return nil}
     
     return self.pageViewAtIndex(index)
   }
@@ -111,6 +127,12 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     }
   }
   
+  func getCurrnetIndexOfPage()-> Int{
+    
+    let vc  = pageViewController.viewControllers?.first as! ProbCollectionViewController
+    return vc.pageIndex
+    
+  }
 
   
   
