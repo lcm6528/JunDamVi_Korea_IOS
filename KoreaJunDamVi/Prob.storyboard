@@ -19,7 +19,7 @@
         <!--Page View Controller-->
         <scene sceneID="O2s-Fr-xGs">
             <objects>
-                <pageViewController storyboardIdentifier="MyPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ELG-8s-Eyr" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="ProbMenuPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ELG-8s-Eyr" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="200"/>
                 </pageViewController>
@@ -157,6 +157,7 @@
                         <outletCollection property="ToolbarButtons" destination="EEY-L7-2KQ" collectionClass="NSMutableArray" id="fFu-Dh-oUp"/>
                         <outletCollection property="ToolbarButtons" destination="A6c-Qh-DsV" collectionClass="NSMutableArray" id="frO-sp-UKZ"/>
                         <outletCollection property="ToolbarButtons" destination="y6V-8w-w1X" collectionClass="NSMutableArray" id="u4X-ID-OgZ"/>
+                        <segue destination="eJ4-GU-UW1" kind="show" identifier="push" id="1us-z2-awh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUi-bL-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,6 +299,33 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="881.10944527736137"/>
         </scene>
+        <!--Prob Test Inner View Controller-->
+        <scene sceneID="bfK-jg-A6I">
+            <objects>
+                <viewController storyboardIdentifier="ProbTestInnerViewController" id="JdO-16-gfo" customClass="ProbTestInnerViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cNp-8S-pzB"/>
+                        <viewControllerLayoutGuide type="bottom" id="fQN-TJ-51h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jaJ-h3-Yqq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWR-fu-apC">
+                                <frame key="frameInset" minX="166" minY="198" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYM-yW-AJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="881"/>
+        </scene>
         <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
             <objects>
@@ -318,6 +346,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nav-lo-TPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="228.93553223388307"/>
+        </scene>
+        <!--Prob Test Frame View Controller-->
+        <scene sceneID="Zir-BU-cp8">
+            <objects>
+                <viewController id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ck9-yI-fia"/>
+                        <viewControllerLayoutGuide type="bottom" id="QAp-Sq-06Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pS0-rT-F5h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pu-Lp-qv1">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-FV-21v">
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="TO3-Ce-lbB"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-rq-kXJ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="0GW-SU-PDl"/>
+                                            <constraint firstAttribute="height" constant="21" id="dAz-xM-aCz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xim-Qq-pxT">
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <state key="normal" title="1번">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6e-AK-EyP">
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <state key="normal" title="3번">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acQ-fN-qWK">
+                                        <color key="backgroundColor" red="0.79215686269999996" green="0.76470588240000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.29999999999999999" id="csq-eV-eFV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="acQ-fN-qWK" secondAttribute="bottom" id="72J-M7-TUL"/>
+                                    <constraint firstItem="XzH-FV-21v" firstAttribute="centerX" secondItem="4Pu-Lp-qv1" secondAttribute="centerX" id="G3k-eW-g0F"/>
+                                    <constraint firstItem="xim-Qq-pxT" firstAttribute="top" secondItem="4Pu-Lp-qv1" secondAttribute="top" id="Ite-fZ-Zki"/>
+                                    <constraint firstItem="L6e-AK-EyP" firstAttribute="top" secondItem="4Pu-Lp-qv1" secondAttribute="top" id="QIj-7w-Bjf"/>
+                                    <constraint firstAttribute="height" constant="44" id="QOC-Ny-DPi"/>
+                                    <constraint firstAttribute="trailing" secondItem="L6e-AK-EyP" secondAttribute="trailing" id="UI0-SW-DMd"/>
+                                    <constraint firstItem="Qrd-rq-kXJ" firstAttribute="centerY" secondItem="4Pu-Lp-qv1" secondAttribute="centerY" id="ZJD-uV-cak"/>
+                                    <constraint firstAttribute="bottom" secondItem="L6e-AK-EyP" secondAttribute="bottom" id="bNN-qx-ed3"/>
+                                    <constraint firstItem="XzH-FV-21v" firstAttribute="width" secondItem="4Pu-Lp-qv1" secondAttribute="width" multiplier="0.24" id="eTk-oG-Vt9"/>
+                                    <constraint firstItem="Qrd-rq-kXJ" firstAttribute="centerX" secondItem="4Pu-Lp-qv1" secondAttribute="centerX" id="it9-vE-4VW"/>
+                                    <constraint firstAttribute="bottom" secondItem="XzH-FV-21v" secondAttribute="bottom" id="je5-8u-6FK"/>
+                                    <constraint firstAttribute="trailing" secondItem="acQ-fN-qWK" secondAttribute="trailing" id="kt9-Yb-6NF"/>
+                                    <constraint firstItem="xim-Qq-pxT" firstAttribute="leading" secondItem="4Pu-Lp-qv1" secondAttribute="leading" id="l22-Uy-Dhu"/>
+                                    <constraint firstAttribute="bottom" secondItem="xim-Qq-pxT" secondAttribute="bottom" id="nYw-ak-kpY"/>
+                                    <constraint firstItem="L6e-AK-EyP" firstAttribute="width" secondItem="4Pu-Lp-qv1" secondAttribute="width" multiplier="0.24" id="nce-rf-Lnn"/>
+                                    <constraint firstItem="xim-Qq-pxT" firstAttribute="width" secondItem="4Pu-Lp-qv1" secondAttribute="width" multiplier="0.24" id="rnT-pk-6PQ"/>
+                                    <constraint firstItem="acQ-fN-qWK" firstAttribute="leading" secondItem="4Pu-Lp-qv1" secondAttribute="leading" id="xMg-zY-b7b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4Pu-Lp-qv1" secondAttribute="trailing" id="Egk-KR-9jv"/>
+                            <constraint firstItem="4Pu-Lp-qv1" firstAttribute="leading" secondItem="pS0-rT-F5h" secondAttribute="leading" id="Mdk-Co-gPg"/>
+                            <constraint firstItem="4Pu-Lp-qv1" firstAttribute="top" secondItem="Ck9-yI-fia" secondAttribute="bottom" id="weH-Er-snv"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Bwg-Lz-ab9"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="toolBarCenterLabel" destination="Qrd-rq-kXJ" id="CSW-K1-ymx"/>
+                        <outlet property="toolBarLeftButton" destination="xim-Qq-pxT" id="EPx-Qm-fri"/>
+                        <outlet property="toolBarRightButton" destination="L6e-AK-EyP" id="wHf-pC-8wf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSU-8P-3wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="223.53823088455775"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="QBw-w7-wEi">
+            <objects>
+                <pageViewController storyboardIdentifier="ProbTestPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cFH-aq-aQn" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="200"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NtR-K1-RtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="-212"/>
         </scene>
     </scenes>
 </document>

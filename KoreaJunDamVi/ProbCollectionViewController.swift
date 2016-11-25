@@ -8,8 +8,14 @@
 
 import UIKit
 
+
+protocol ProbCollectionViewDelegate{
+  func ProbCollectionViewSelectedRow(atIndex index:Int)
+}
 class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 
+  
+  var delegate:ProbCollectionViewDelegate?
   
   var parentVC:ProbMenuViewController!
   var pageIndex:Int!
@@ -26,8 +32,10 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
     }
   
   
+  
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return pageIndex + 4
+    return pageIndex + 14
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,6 +54,9 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
     }
     
    
+  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.delegate?.ProbCollectionViewSelectedRow(atIndex: indexPath.row)
   }
 
   

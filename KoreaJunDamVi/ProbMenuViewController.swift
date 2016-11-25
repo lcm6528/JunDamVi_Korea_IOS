@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIPageViewControllerDataSource {
+class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIPageViewControllerDataSource ,ProbCollectionViewDelegate{
   
   let number_of_pages = 4
   var currentMenu:Int = 0
@@ -20,7 +20,7 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyPageViewController") as! UIPageViewController
+    pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbMenuPageViewController") as! UIPageViewController
     
     pageViewController.delegate = self
     pageViewController.dataSource = self
@@ -32,7 +32,7 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     
     self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     
-    self.pageViewController.view.frame = CGRect(x: 0, y: 104, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
+    self.pageViewController.view.frame = CGRect(x: 0, y: 104, width: self.view.frame.size.width, height: self.view.frame.size.height-104)
     
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)
@@ -44,6 +44,12 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     
     // Do any additional setup after loading the view.
   }
+  
+  func ProbCollectionViewSelectedRow(atIndex index: Int) {
+    performSegue(withIdentifier: "push", sender: self)
+  }
+  
+  
   
   override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
   
@@ -66,7 +72,13 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   
   
   
+  
+  
+  
   //MARK: UIPageViewDelegate,Datasource
+  
+  
+  
   
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     
@@ -80,6 +92,7 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   
   func pageViewAtIndex(_ index: Int) ->JDVViewController{
     let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbCollectionViewController") as! ProbCollectionViewController
+    pageContentViewController.delegate = self
     pageContentViewController.pageIndex = index
     return pageContentViewController
   }
