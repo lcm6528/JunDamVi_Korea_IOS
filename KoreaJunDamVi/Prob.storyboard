@@ -14,6 +14,12 @@
         <array key="NanumGothicBold.ttf">
             <string>NanumGothicBold</string>
         </array>
+        <array key="NanumMyeongjo.ttf">
+            <string>NanumMyeongjo</string>
+        </array>
+        <array key="NanumMyeongjoBold.ttf">
+            <string>NanumMyeongjoBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Page View Controller-->
@@ -311,20 +317,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWR-fu-apC">
-                                <frame key="frameInset" minX="166" minY="198" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-P3-qpI">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPG-tI-UJB">
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-1p-evp">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NanumMyeongjoBold" family="NanumMyeongjo" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" lookupSuggestion="YES"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[2점]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-yX-Ne7">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="ciC-Nw-iqy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumMyeongjoBold" family="NanumMyeongjo" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KKX-z1-oUU">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <string key="text">왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. 이에 생각건대, 선왕 때 명하신 책이 과인이 계승한 뒤에 완성을 보게 되었으니, 내가 비감한 마음을 금치 못하겠다. 허준에게 말 한 필을 직접 주어 그 공에 보답하고 속히 간행하도록 하라.”라고 하였다.</string>
+                                                <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRJ-F4-ChK">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="KKX-z1-oUU" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" id="6an-67-hTI"/>
+                                            <constraint firstItem="KRJ-F4-ChK" firstAttribute="top" secondItem="KKX-z1-oUU" secondAttribute="bottom" constant="17" id="8zz-t5-Vpy"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KRJ-F4-ChK" secondAttribute="bottom" constant="8" id="BEI-s0-fwn"/>
+                                            <constraint firstAttribute="trailing" secondItem="KKX-z1-oUU" secondAttribute="trailing" id="KZq-7S-JmJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="KRJ-F4-ChK" secondAttribute="trailing" constant="8" id="MTo-g1-rX3"/>
+                                            <constraint firstItem="FEZ-1p-evp" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="8" id="QMI-Y3-VwQ"/>
+                                            <constraint firstItem="KRJ-F4-ChK" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="8" id="XAb-eW-tpU"/>
+                                            <constraint firstItem="JCS-yX-Ne7" firstAttribute="centerY" secondItem="FEZ-1p-evp" secondAttribute="centerY" id="ZPS-rG-XiS"/>
+                                            <constraint firstItem="KKX-z1-oUU" firstAttribute="top" secondItem="FEZ-1p-evp" secondAttribute="bottom" constant="12" id="iZc-EF-PLw"/>
+                                            <constraint firstItem="JCS-yX-Ne7" firstAttribute="leading" secondItem="FEZ-1p-evp" secondAttribute="trailing" constant="6" id="n6Z-xs-V12"/>
+                                            <constraint firstAttribute="trailing" secondItem="JCS-yX-Ne7" secondAttribute="trailing" id="r83-1y-UGI"/>
+                                            <constraint firstItem="FEZ-1p-evp" firstAttribute="top" secondItem="bPG-tI-UJB" secondAttribute="top" constant="8" id="rMv-kC-vwE"/>
+                                            <constraint firstItem="JCS-yX-Ne7" firstAttribute="height" secondItem="FEZ-1p-evp" secondAttribute="height" id="xb9-lb-2fb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bPG-tI-UJB" firstAttribute="top" secondItem="ZMd-P3-qpI" secondAttribute="top" id="OkD-PR-3kA"/>
+                                    <constraint firstAttribute="trailing" secondItem="bPG-tI-UJB" secondAttribute="trailing" id="R9O-Gf-q7y"/>
+                                    <constraint firstAttribute="bottom" secondItem="bPG-tI-UJB" secondAttribute="bottom" id="cnJ-VX-GMQ"/>
+                                    <constraint firstItem="bPG-tI-UJB" firstAttribute="leading" secondItem="ZMd-P3-qpI" secondAttribute="leading" id="ykW-Es-s94"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bPG-tI-UJB" firstAttribute="width" secondItem="jaJ-h3-Yqq" secondAttribute="width" id="0tP-qE-oBJ"/>
+                            <constraint firstItem="fQN-TJ-51h" firstAttribute="top" secondItem="ZMd-P3-qpI" secondAttribute="bottom" id="BgF-hL-q5r"/>
+                            <constraint firstItem="bPG-tI-UJB" firstAttribute="height" secondItem="jaJ-h3-Yqq" secondAttribute="height" priority="250" id="gTg-JO-FKF"/>
+                            <constraint firstItem="ZMd-P3-qpI" firstAttribute="top" secondItem="cNp-8S-pzB" secondAttribute="bottom" id="mvd-2n-Bex"/>
+                            <constraint firstItem="ZMd-P3-qpI" firstAttribute="leading" secondItem="jaJ-h3-Yqq" secondAttribute="leading" id="zlw-xg-43i"/>
+                            <constraint firstAttribute="trailing" secondItem="ZMd-P3-qpI" secondAttribute="trailing" id="ztp-RX-52m"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="testChoice1TextView" destination="KRJ-F4-ChK" id="NWl-ID-u5q"/>
+                        <outlet property="testContentTextView" destination="KKX-z1-oUU" id="yTl-dq-5bO"/>
+                        <outlet property="testTitleTextView" destination="FEZ-1p-evp" id="PfR-P2-vbX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYM-yW-AJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="881"/>
+            <point key="canvasLocation" x="1748" y="880.20989505247383"/>
         </scene>
         <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
@@ -381,12 +449,18 @@
                                         <state key="normal" title="1번">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="leftBarButtonPressed:" destination="eJ4-GU-UW1" eventType="touchUpInside" id="t4p-II-fxo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6e-AK-EyP">
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                         <state key="normal" title="3번">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rightBarButtonPressed:" destination="eJ4-GU-UW1" eventType="touchUpInside" id="r9j-dd-efU"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acQ-fN-qWK">
                                         <color key="backgroundColor" red="0.79215686269999996" green="0.76470588240000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>

@@ -57,6 +57,59 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     // Dispose of any resources that can be recreated.
   }
   
+  
+  @IBAction func leftBarButtonPressed(_ sender: AnyObject) {
+    gotoPrevPage()
+  }
+  
+  
+  @IBAction func rightBarButtonPressed(_ sender: AnyObject) {
+    
+    gotoNextPage()
+  }
+  
+  
+  func gotoNextPage(){
+    
+    
+    let nextIndex = getCurrnetIndexOfPage()+1
+    if nextIndex == number_of_pages {
+      self.performSegue(withIdentifier: "Ending", sender: self)
+      
+    }else if nextIndex < number_of_pages{
+      let vc = pageViewAtIndex(nextIndex)
+      
+//      setActiveTools(false)
+      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
+//        self.setActiveTools(true)
+        self.setToolbarTitle(self.getCurrnetIndexOfPage())
+      })
+      
+      
+    }
+    
+    
+    
+  }
+  
+  func gotoPrevPage(){
+    
+    let nextIndex = getCurrnetIndexOfPage()-1
+    
+    guard nextIndex >= 0 else {return}
+    
+    let vc = pageViewAtIndex(nextIndex)
+//    setActiveTools(false)
+    pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
+//      self.setActiveTools(true)
+      self.setToolbarTitle(self.getCurrnetIndexOfPage())
+    })
+    
+    
+  }
+  
+  
+  
   func setToolbarTitle(_ index:Int){
     
     let numberOfTest:Int = index+1
