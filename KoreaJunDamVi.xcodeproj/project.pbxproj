@@ -26,6 +26,7 @@
 		377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BB0E51DC87BE600C9D08D /* MNFunction.swift */; };
 		379DB8981DBF3D1700882280 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8971DBF3D1700882280 /* RoundView.swift */; };
 		379DB89A1DBF3E3400882280 /* Radian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8991DBF3E3400882280 /* Radian.swift */; };
+		37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */; };
 		37D99B0E1DE87AC30017F7CF /* ProbTestFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99B0D1DE87AC30017F7CF /* ProbTestFrameViewController.swift */; };
 		37D99B101DE87B1D0017F7CF /* ProbTestInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99B0F1DE87B1D0017F7CF /* ProbTestInnerViewController.swift */; };
 		37E033671DE5521000A5C4AC /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E033661DE5521000A5C4AC /* Note.storyboard */; };
@@ -74,6 +75,7 @@
 		377BB0E51DC87BE600C9D08D /* MNFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFunction.swift; sourceTree = "<group>"; };
 		379DB8971DBF3D1700882280 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		379DB8991DBF3E3400882280 /* Radian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radian.swift; sourceTree = "<group>"; };
+		37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVTextView.swift; sourceTree = "<group>"; };
 		37D99B0D1DE87AC30017F7CF /* ProbTestFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbTestFrameViewController.swift; sourceTree = "<group>"; };
 		37D99B0F1DE87B1D0017F7CF /* ProbTestInnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbTestInnerViewController.swift; sourceTree = "<group>"; };
 		37DA176C1DC330C70008C697 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */,
 				37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */,
 				37F7CD231DE6B0FD0085A2E4 /* JDVLabel.swift */,
+				37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */,
 			);
 			name = JDVKit;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				379DB89A1DBF3E3400882280 /* Radian.swift in Sources */,
 				37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
+				37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */,
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,
 				37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */,
 				37D99B101DE87B1D0017F7CF /* ProbTestInnerViewController.swift in Sources */,

@@ -17,8 +17,8 @@
         <array key="NanumMyeongjo.ttf">
             <string>NanumMyeongjo</string>
         </array>
-        <array key="NanumMyeongjoBold.ttf">
-            <string>NanumMyeongjoBold</string>
+        <array key="NanumMyeongjoExtraBold.ttf">
+            <string>NanumMyeongjoExtraBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -323,7 +323,7 @@
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-1p-evp">
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NanumMyeongjoBold" family="NanumMyeongjo" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" lookupSuggestion="YES"/>
                                             </textView>
@@ -331,36 +331,147 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="ciC-Nw-iqy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NanumMyeongjoBold" family="NanumMyeongjo" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="NanumMyeongjoExtraBold" family="NanumMyeongjo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KKX-z1-oUU">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBc-xS-Vaa">
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Miv-1b-UUE">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. 이에 생각건대, 선왕 때 명하신 책이 과인이 계승한 뒤에 완성을 보게 되었으니, 내가 비감한 마음을 금치 못하겠다. 허준에게 말 한 필을 직접 주어 그 공에 보답하고 속히 간행하도록 하라.”라고 하였다.</string>
-                                                <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRJ-F4-ChK">
+                                                <constraints>
+                                                    <constraint firstItem="Miv-1b-UUE" firstAttribute="top" secondItem="fBc-xS-Vaa" secondAttribute="top" constant="8" id="1Av-V6-lJU"/>
+                                                    <constraint firstItem="Miv-1b-UUE" firstAttribute="centerY" secondItem="fBc-xS-Vaa" secondAttribute="centerY" id="EDl-eQ-9Gd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Miv-1b-UUE" secondAttribute="bottom" constant="8" id="K4H-o0-Kgi"/>
+                                                    <constraint firstItem="Miv-1b-UUE" firstAttribute="centerX" secondItem="fBc-xS-Vaa" secondAttribute="centerX" id="MTR-8B-DCy"/>
+                                                    <constraint firstItem="Miv-1b-UUE" firstAttribute="leading" secondItem="fBc-xS-Vaa" secondAttribute="leading" constant="8" id="bSD-83-nE7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Miv-1b-UUE" secondAttribute="trailing" constant="8" id="qDD-Ah-N9V"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41M-4w-Uiq">
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tua-0E-ssk">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                                <constraints>
+                                                    <constraint firstItem="Tua-0E-ssk" firstAttribute="top" secondItem="41M-4w-Uiq" secondAttribute="top" constant="8" id="TUR-Hx-MD7"/>
+                                                    <constraint firstItem="Tua-0E-ssk" firstAttribute="centerX" secondItem="41M-4w-Uiq" secondAttribute="centerX" id="UoV-b6-bvN"/>
+                                                    <constraint firstItem="Tua-0E-ssk" firstAttribute="centerX" secondItem="41M-4w-Uiq" secondAttribute="centerX" id="XqJ-fI-8gM"/>
+                                                    <constraint firstItem="Tua-0E-ssk" firstAttribute="centerY" secondItem="41M-4w-Uiq" secondAttribute="centerY" id="mZa-J8-SWa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Tua-0E-ssk" secondAttribute="bottom" constant="8" id="xZY-QQ-oNU"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNC-Z2-70p">
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCB-re-YDQ">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="VCB-re-YDQ" secondAttribute="bottom" constant="8" id="A3X-0C-GvB"/>
+                                                    <constraint firstItem="VCB-re-YDQ" firstAttribute="top" secondItem="RNC-Z2-70p" secondAttribute="top" constant="8" id="UlD-rW-O7Y"/>
+                                                    <constraint firstItem="VCB-re-YDQ" firstAttribute="centerY" secondItem="RNC-Z2-70p" secondAttribute="centerY" id="odH-5a-u3Z"/>
+                                                    <constraint firstItem="VCB-re-YDQ" firstAttribute="centerX" secondItem="RNC-Z2-70p" secondAttribute="centerX" id="ut2-hO-yOh"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-hf-ofh">
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLg-p3-UXs">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="qLg-p3-UXs" firstAttribute="centerY" secondItem="DHf-hf-ofh" secondAttribute="centerY" id="4cg-uL-klo"/>
+                                                    <constraint firstItem="qLg-p3-UXs" firstAttribute="centerX" secondItem="DHf-hf-ofh" secondAttribute="centerX" id="5AA-kF-r9h"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qLg-p3-UXs" secondAttribute="bottom" constant="8" id="QoI-S1-sxY"/>
+                                                    <constraint firstItem="qLg-p3-UXs" firstAttribute="top" secondItem="DHf-hf-ofh" secondAttribute="top" constant="8" id="XV1-F5-Rmu"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-SH-eP5">
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvV-7y-328">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <string key="text" base64-UTF8="YES">
+NS4g7KeR7ZiE7KCE7J2EIOyEpOy5mO2VmOyXrCDsnbjsnqzrpbwg7Jyh7ISx7ZWY6rOgIO2OuOywrCDs
+gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
+</string>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="JvV-7y-328" firstAttribute="centerY" secondItem="aOh-SH-eP5" secondAttribute="centerY" id="6xJ-Nn-qBC"/>
+                                                    <constraint firstItem="JvV-7y-328" firstAttribute="top" secondItem="aOh-SH-eP5" secondAttribute="top" constant="8" id="e4L-pn-NRt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JvV-7y-328" secondAttribute="bottom" constant="8" id="icf-SK-xlK"/>
+                                                    <constraint firstItem="JvV-7y-328" firstAttribute="centerX" secondItem="aOh-SH-eP5" secondAttribute="centerX" id="l1F-rK-PeW"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Q9-gX-Ptx">
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KKX-z1-oUU">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <string key="text">왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. 이에 생각건대, 선왕 때 명하신 책이 과인이 계승한 뒤에 완성을 보게 되었으니, 내가 비감한 마음을 금치 못하겠다. 허준에게 말 한 필을 직접 주어 그 공에 보답하고 속히 간행하도록 하라.”라고 하였다.</string>
+                                                        <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="KKX-z1-oUU" firstAttribute="top" secondItem="6Q9-gX-Ptx" secondAttribute="top" constant="8" id="G8F-V7-1re"/>
+                                                    <constraint firstItem="KKX-z1-oUU" firstAttribute="leading" secondItem="6Q9-gX-Ptx" secondAttribute="leading" constant="8" id="KFE-5X-4kS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KKX-z1-oUU" secondAttribute="trailing" constant="8" id="Wbd-sh-hux"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KKX-z1-oUU" secondAttribute="bottom" constant="8.5" id="k8F-f5-rZt"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="KKX-z1-oUU" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" id="6an-67-hTI"/>
-                                            <constraint firstItem="KRJ-F4-ChK" firstAttribute="top" secondItem="KKX-z1-oUU" secondAttribute="bottom" constant="17" id="8zz-t5-Vpy"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KRJ-F4-ChK" secondAttribute="bottom" constant="8" id="BEI-s0-fwn"/>
-                                            <constraint firstAttribute="trailing" secondItem="KKX-z1-oUU" secondAttribute="trailing" id="KZq-7S-JmJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="KRJ-F4-ChK" secondAttribute="trailing" constant="8" id="MTo-g1-rX3"/>
+                                            <constraint firstItem="fBc-xS-Vaa" firstAttribute="top" secondItem="6Q9-gX-Ptx" secondAttribute="bottom" constant="20" id="7rq-Cu-Vko"/>
+                                            <constraint firstAttribute="trailing" secondItem="DHf-hf-ofh" secondAttribute="trailing" constant="12" id="Czb-9i-lMc"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aOh-SH-eP5" secondAttribute="bottom" constant="8" id="EaG-9y-sMd"/>
+                                            <constraint firstAttribute="trailing" secondItem="DHf-hf-ofh" secondAttribute="trailing" constant="12" id="Ec5-MG-ghI"/>
+                                            <constraint firstAttribute="trailing" secondItem="RNC-Z2-70p" secondAttribute="trailing" constant="12" id="GVS-JY-XM5"/>
+                                            <constraint firstItem="RNC-Z2-70p" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="Gg4-za-lJX"/>
+                                            <constraint firstItem="VCB-re-YDQ" firstAttribute="width" secondItem="Miv-1b-UUE" secondAttribute="width" id="IyP-KV-YhV"/>
+                                            <constraint firstAttribute="trailing" secondItem="fBc-xS-Vaa" secondAttribute="trailing" constant="12" id="Llk-NG-4Oh"/>
+                                            <constraint firstItem="Tua-0E-ssk" firstAttribute="width" secondItem="Miv-1b-UUE" secondAttribute="width" id="P1F-5g-9Zb"/>
                                             <constraint firstItem="FEZ-1p-evp" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="8" id="QMI-Y3-VwQ"/>
-                                            <constraint firstItem="KRJ-F4-ChK" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="8" id="XAb-eW-tpU"/>
+                                            <constraint firstItem="aOh-SH-eP5" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="ThY-SE-MOJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="41M-4w-Uiq" secondAttribute="trailing" constant="12" id="Z3u-xX-qVD"/>
                                             <constraint firstItem="JCS-yX-Ne7" firstAttribute="centerY" secondItem="FEZ-1p-evp" secondAttribute="centerY" id="ZPS-rG-XiS"/>
-                                            <constraint firstItem="KKX-z1-oUU" firstAttribute="top" secondItem="FEZ-1p-evp" secondAttribute="bottom" constant="12" id="iZc-EF-PLw"/>
+                                            <constraint firstItem="aOh-SH-eP5" firstAttribute="top" secondItem="DHf-hf-ofh" secondAttribute="bottom" constant="8" id="aGU-cX-bqn"/>
+                                            <constraint firstItem="41M-4w-Uiq" firstAttribute="top" secondItem="fBc-xS-Vaa" secondAttribute="bottom" constant="8" id="bNC-TR-Sk8"/>
+                                            <constraint firstAttribute="trailing" secondItem="aOh-SH-eP5" secondAttribute="trailing" constant="12" id="bPD-Ed-J2o"/>
+                                            <constraint firstItem="DHf-hf-ofh" firstAttribute="top" secondItem="RNC-Z2-70p" secondAttribute="bottom" constant="8" id="h8N-qh-pbZ"/>
+                                            <constraint firstItem="DHf-hf-ofh" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="jqo-j4-ELW"/>
+                                            <constraint firstItem="JvV-7y-328" firstAttribute="width" secondItem="Miv-1b-UUE" secondAttribute="width" id="l96-Cd-oeo"/>
+                                            <constraint firstItem="DHf-hf-ofh" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="lbE-EB-fUM"/>
+                                            <constraint firstItem="6Q9-gX-Ptx" firstAttribute="top" secondItem="FEZ-1p-evp" secondAttribute="bottom" constant="8" id="lul-bS-9SO"/>
+                                            <constraint firstItem="RNC-Z2-70p" firstAttribute="top" secondItem="41M-4w-Uiq" secondAttribute="bottom" constant="8" id="mCH-Xp-Yhp"/>
+                                            <constraint firstItem="41M-4w-Uiq" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="mRD-Ej-6ii"/>
                                             <constraint firstItem="JCS-yX-Ne7" firstAttribute="leading" secondItem="FEZ-1p-evp" secondAttribute="trailing" constant="6" id="n6Z-xs-V12"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Q9-gX-Ptx" secondAttribute="trailing" id="qve-SL-CVu"/>
                                             <constraint firstAttribute="trailing" secondItem="JCS-yX-Ne7" secondAttribute="trailing" id="r83-1y-UGI"/>
+                                            <constraint firstItem="fBc-xS-Vaa" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="r83-LF-bzz"/>
                                             <constraint firstItem="FEZ-1p-evp" firstAttribute="top" secondItem="bPG-tI-UJB" secondAttribute="top" constant="8" id="rMv-kC-vwE"/>
+                                            <constraint firstItem="6Q9-gX-Ptx" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" id="wff-kd-uQx"/>
+                                            <constraint firstItem="qLg-p3-UXs" firstAttribute="width" secondItem="Miv-1b-UUE" secondAttribute="width" id="x2c-SD-oQl"/>
                                             <constraint firstItem="JCS-yX-Ne7" firstAttribute="height" secondItem="FEZ-1p-evp" secondAttribute="height" id="xb9-lb-2fb"/>
                                         </constraints>
                                     </view>
@@ -385,9 +496,13 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="testChoice1TextView" destination="KRJ-F4-ChK" id="NWl-ID-u5q"/>
                         <outlet property="testContentTextView" destination="KKX-z1-oUU" id="yTl-dq-5bO"/>
                         <outlet property="testTitleTextView" destination="FEZ-1p-evp" id="PfR-P2-vbX"/>
+                        <outletCollection property="testChoiceTextViews" destination="Miv-1b-UUE" collectionClass="NSMutableArray" id="JcG-Le-U5E"/>
+                        <outletCollection property="testChoiceTextViews" destination="Tua-0E-ssk" collectionClass="NSMutableArray" id="CxB-wo-sWq"/>
+                        <outletCollection property="testChoiceTextViews" destination="VCB-re-YDQ" collectionClass="NSMutableArray" id="8FI-BV-bPB"/>
+                        <outletCollection property="testChoiceTextViews" destination="qLg-p3-UXs" collectionClass="NSMutableArray" id="MnU-Xk-hyM"/>
+                        <outletCollection property="testChoiceTextViews" destination="JvV-7y-328" collectionClass="NSMutableArray" id="rvN-kw-thd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYM-yW-AJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -418,7 +533,7 @@
         <!--Prob Test Frame View Controller-->
         <scene sceneID="Zir-BU-cp8">
             <objects>
-                <viewController id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ck9-yI-fia"/>
                         <viewControllerLayoutGuide type="bottom" id="QAp-Sq-06Z"/>
@@ -432,7 +547,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-FV-21v">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="TO3-Ce-lbB"/>
+                                            <constraint firstAttribute="height" constant="4" id="TO3-Ce-lbB"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-rq-kXJ">

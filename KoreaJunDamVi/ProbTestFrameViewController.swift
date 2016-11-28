@@ -46,8 +46,6 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     self.pageViewController.didMove(toParentViewController: self)
     
     
-    
-    
     setToolbarTitle(getCurrnetIndexOfPage())
     
   }

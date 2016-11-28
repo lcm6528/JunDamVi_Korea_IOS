@@ -40,8 +40,9 @@ class HomeViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier! {
     case "settings":
-      let vc = segue.destination as! SettingsViewController
-      vc.hidesBottomBarWhenPushed = true
+//      let vc = segue.destination as! SettingsViewController
+//      vc.hidesBottomBarWhenPushed = true
+      self.tabBarController?.tabBar.isHidden = true
     default :
       return
     }

@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
       
         // Do any additional setup after loading the view.
     }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -24,7 +25,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-   return 5
+   return 10
   }
   
   

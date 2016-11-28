@@ -10,12 +10,18 @@ import UIKit
 
 class JDVTextView: UITextView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+//  override var text: String!{
+//    get{
+//      return super.text
+//    }
+//    set(value){
+//      super.text = "\n\(value!)\n"
+//    }
+//  }
+//  
+//  override func draw(_ rect: CGRect) {
+//    super.textContainerInset = UIEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
+//    super.contentInset = UIEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
+//  }
 
 }
