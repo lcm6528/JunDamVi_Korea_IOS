@@ -45,13 +45,14 @@ class RoundView: UIView {
   func setup() {
     
     
-    let width = (SCREEN_WIDTH - 36)/2
+//    let width = (SCREEN_WIDTH - 36)/2
+    let width = (SCREEN_HEIGHT - 64-140-140-44-16)*0.6
     let lineWidth: CGFloat = width * 0.1
     
     
     //background layer
     backgroundLayer.lineWidth = lineWidth
-    backgroundLayer.fillColor = UIColor(red: 204.0/255, green: 204.0/255, blue: 204.0/255, alpha: 1).cgColor
+    backgroundLayer.fillColor = UIColor.clear.cgColor//UIColor(red: 204.0/255, green: 204.0/255, blue: 204.0/255, alpha: 1).cgColor
     backgroundLayer.strokeEnd = 1
     layer.addSublayer(backgroundLayer)
     
@@ -64,28 +65,29 @@ class RoundView: UIView {
     
     separator.frame = CGRect(x: width * 0.175, y: width * 0.40 , width: width * 0.65, height: 2)
     separator.backgroundColor = UIColor.gray
-    addSubview(separator)
+//    addSubview(separator)
     
     
     
-    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.42, width: separator.frame.size.width, height: width*0.25)
+    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.43, width: separator.frame.size.width, height: width*0.25)
     contentLabel.text = " \(currentValue)%"
     contentLabel.numberOfLines = 1
     contentLabel.textAlignment = .center
-    contentLabel.font = UIFont(name: "NanumGothicExtraBold", size: 40)
+    contentLabel.font = UIFont(name: "NanumBarunGothicLight", size: 36)
     contentLabel.adjustsFontSizeToFitWidth = true
     contentLabel.minimumScaleFactor = 0.1
     
     addSubview(contentLabel)
     
     
-    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: width * 0.2)
+    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: width * 0.15)
     titleLabel.center.x = separator.center.x
-    titleLabel.frame.origin.y = width * 0.20
+    titleLabel.frame.origin.y = width * 0.25
     titleLabel.textAlignment = .center
-    titleLabel.font = UIFont(name: "NanumGothicBold", size: 20)
+    titleLabel.font = UIFont(name: "NanumBarunGothicLight", size: 15)
     titleLabel.adjustsFontSizeToFitWidth = true
     titleLabel.minimumScaleFactor = 0.1
+
     addSubview(titleLabel)
     
     

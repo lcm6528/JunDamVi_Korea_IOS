@@ -42,7 +42,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ju8-1N-e0o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ATu-OS-SdU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-u2-t56">
@@ -515,7 +515,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -539,7 +539,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         <viewControllerLayoutGuide type="bottom" id="QAp-Sq-06Z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pS0-rT-F5h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pu-Lp-qv1">

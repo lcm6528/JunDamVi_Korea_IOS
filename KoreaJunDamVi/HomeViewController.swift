@@ -11,17 +11,17 @@ import UIKit
 class HomeViewController: UIViewController {
 
   @IBOutlet var roundView1: RoundView!
-  @IBOutlet var roundView2: RoundView!
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-//    self.title = "한국사 전담비"
+    //    self.title = "한국사 전담비"
     
   }
   override func viewWillAppear(_ animated: Bool) {
     roundView1.currentValue = 70
-    roundView2.currentValue = 40
+    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    UINavigationBar.appearance().shadowImage = UIImage()
     
   }
 
