@@ -515,7 +515,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

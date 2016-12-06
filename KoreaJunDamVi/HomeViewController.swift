@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
 class HomeViewController: UIViewController {
 
   @IBOutlet var roundView1: RoundView!
 
+  @IBOutlet var centerContainerView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,9 +20,6 @@ class HomeViewController: UIViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     roundView1.currentValue = 70
-    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-    UINavigationBar.appearance().shadowImage = UIImage()
-    
   }
 
   override func didReceiveMemoryWarning() {

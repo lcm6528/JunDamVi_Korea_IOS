@@ -14,7 +14,9 @@ class JDVNavigationController: UINavigationController{
     super.viewDidLoad()
     self.navigationBar.tintColor = UIColor.white
 
-
+    self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationBar.shadowImage = UIImage()
+    
     
     // Do any additional setup after loading the view.
   }//59 128 126

@@ -71,7 +71,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="학습 진행률"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
-                                                <color key="value" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.18823529411764706" green="0.20784313725490194" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -103,20 +103,30 @@
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fql-xJ-y3s">
+                                        <color key="backgroundColor" red="0.56862745098039214" green="0.5607843137254902" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="oq5-zG-bhU"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.15" id="1lL-xN-i1o"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" constant="16" id="4mV-7P-0N8"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="5tT-D2-xtM"/>
-                                    <constraint firstAttribute="bottom" secondItem="J63-bx-UYO" secondAttribute="bottom" id="A8K-SL-XeF"/>
+                                    <constraint firstItem="Fql-xJ-y3s" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="8Na-vP-f1d"/>
+                                    <constraint firstAttribute="bottom" secondItem="J63-bx-UYO" secondAttribute="bottom" constant="1" id="A8K-SL-XeF"/>
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="top" secondItem="TKG-M2-Kvc" secondAttribute="bottom" constant="5" id="C4w-XE-Jcv"/>
                                     <constraint firstItem="nrx-PE-YOM" firstAttribute="centerX" secondItem="9x7-na-GFk" secondAttribute="centerX" id="Cdd-bm-W3X"/>
                                     <constraint firstAttribute="trailing" secondItem="TKG-M2-Kvc" secondAttribute="trailing" constant="14" id="HVS-zf-U13"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fql-xJ-y3s" secondAttribute="bottom" id="TKL-YA-I3X"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="centerY" secondItem="Oj5-ht-cdr" secondAttribute="centerY" id="ZYq-TI-xbL"/>
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="acK-sb-pps"/>
                                     <constraint firstAttribute="trailing" secondItem="J63-bx-UYO" secondAttribute="trailing" id="cgQ-8s-GT7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fql-xJ-y3s" secondAttribute="trailing" id="iRo-eJ-hXV"/>
                                     <constraint firstItem="nrx-PE-YOM" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.6" id="pN0-OY-Qeh"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="vMW-BE-UC3"/>
                                     <constraint firstAttribute="trailing" secondItem="6v2-Pz-Qvg" secondAttribute="trailing" constant="14" id="wHQ-JS-kao"/>
@@ -153,19 +163,19 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" #조선왕조 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxc-2F-ipD">
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text=" #광개토대왕 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-f1-UNC">
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #병자호란" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6w-lW-o1k">
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -175,19 +185,19 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" #신석기신석기 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulw-5N-t4X">
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text=" #광개토대왕 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxk-Aq-wly">
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" #신석기 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWz-EZ-7vE">
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -222,9 +232,9 @@
                             <constraint firstItem="57I-bu-DOT" firstAttribute="leading" secondItem="pl8-Dz-vQx" secondAttribute="leading" constant="16" id="871-zf-PeZ"/>
                             <constraint firstAttribute="trailing" secondItem="6dw-dO-w0F" secondAttribute="trailing" id="ACC-Od-tZb"/>
                             <constraint firstItem="57I-bu-DOT" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="bottom" constant="8" id="QkP-wx-gLE"/>
-                            <constraint firstAttribute="trailing" secondItem="9x7-na-GFk" secondAttribute="trailing" constant="6" id="TzS-il-gdr"/>
+                            <constraint firstAttribute="trailing" secondItem="9x7-na-GFk" secondAttribute="trailing" constant="10" id="TzS-il-gdr"/>
                             <constraint firstItem="9x7-na-GFk" firstAttribute="top" secondItem="6dw-dO-w0F" secondAttribute="bottom" constant="8" id="YXR-2h-pm9"/>
-                            <constraint firstItem="9x7-na-GFk" firstAttribute="leading" secondItem="pl8-Dz-vQx" secondAttribute="leading" constant="6" id="d12-BR-csv"/>
+                            <constraint firstItem="9x7-na-GFk" firstAttribute="leading" secondItem="pl8-Dz-vQx" secondAttribute="leading" constant="10" id="d12-BR-csv"/>
                             <constraint firstAttribute="trailing" secondItem="57I-bu-DOT" secondAttribute="trailing" constant="16" id="e1z-O5-LAY"/>
                             <constraint firstItem="6dw-dO-w0F" firstAttribute="leading" secondItem="pl8-Dz-vQx" secondAttribute="leading" id="yxU-ro-g1D"/>
                         </constraints>
@@ -240,6 +250,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="centerContainerView" destination="9x7-na-GFk" id="WAC-qz-sz9"/>
                         <outlet property="roundView1" destination="nrx-PE-YOM" id="52P-6O-7NE"/>
                         <segue destination="51A-xg-v2c" kind="show" identifier="settings" id="Qpl-yE-vO3"/>
                     </connections>
@@ -332,11 +343,11 @@
         <!--홈-->
         <scene sceneID="PxB-Qk-j30">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M1Q-yt-LHV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M1Q-yt-LHV" customClass="JDVNavigationController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" id="c0c-Gk-q7s"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="e4J-kp-NGe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="e4J-kp-NGe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

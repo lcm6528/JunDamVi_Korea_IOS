@@ -45,14 +45,14 @@ class RoundView: UIView {
   func setup() {
     
     
-//    let width = (SCREEN_WIDTH - 36)/2
+    //    let width = (SCREEN_WIDTH - 36)/2
     let width = (SCREEN_HEIGHT - 64-140-140-44-16)*0.6
-    let lineWidth: CGFloat = width * 0.1
+    let lineWidth: CGFloat = width * 0.07
     
     
     //background layer
     backgroundLayer.lineWidth = lineWidth
-    backgroundLayer.fillColor = UIColor.clear.cgColor//UIColor(red: 204.0/255, green: 204.0/255, blue: 204.0/255, alpha: 1).cgColor
+    backgroundLayer.fillColor = UIColor.clear.cgColor
     backgroundLayer.strokeEnd = 1
     layer.addSublayer(backgroundLayer)
     
@@ -60,25 +60,32 @@ class RoundView: UIView {
     foregroundLayer.lineWidth = lineWidth
     foregroundLayer.fillColor = nil
     foregroundLayer.strokeEnd = 0.0
+    foregroundLayer.lineCap = kCALineCapRound
+    foregroundLayer.cornerRadius = 4.0
+    foregroundLayer.shadowRadius = 4.0
+    foregroundLayer.shadowColor = UIColor.white.cgColor
+    foregroundLayer.shadowOpacity = 1
+    foregroundLayer.shadowOffset = CGSize(width:-2.0, height: -2.0)
+    
+    
     layer.addSublayer(foregroundLayer)
+    
+    
     
     
     separator.frame = CGRect(x: width * 0.175, y: width * 0.40 , width: width * 0.65, height: 2)
     separator.backgroundColor = UIColor.gray
-//    addSubview(separator)
-    
-    
+    //    addSubview(separator)
     
     contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.43, width: separator.frame.size.width, height: width*0.25)
-    contentLabel.text = " \(currentValue)%"
+    contentLabel.attributedText = setAttForContent(value: currentValue)
+    
     contentLabel.numberOfLines = 1
     contentLabel.textAlignment = .center
-    contentLabel.font = UIFont(name: "NanumBarunGothicLight", size: 36)
     contentLabel.adjustsFontSizeToFitWidth = true
     contentLabel.minimumScaleFactor = 0.1
     
     addSubview(contentLabel)
-    
     
     titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: width * 0.15)
     titleLabel.center.x = separator.center.x
@@ -87,11 +94,8 @@ class RoundView: UIView {
     titleLabel.font = UIFont(name: "NanumBarunGothicLight", size: 15)
     titleLabel.adjustsFontSizeToFitWidth = true
     titleLabel.minimumScaleFactor = 0.1
-
+    
     addSubview(titleLabel)
-    
-    
-    
     
     bringSubview(toFront: titleLabel)
     bringSubview(toFront: separator)
@@ -106,7 +110,9 @@ class RoundView: UIView {
   func setupContent(){
     
     titleLabel.text = title
-    contentLabel.text = "\(currentValue)%"
+    contentLabel.attributedText = setAttForContent(value: currentValue)
+    
+    
   }
   func configureUI() {
     backgroundLayer.strokeColor = backgroundLayerColor.cgColor
@@ -169,5 +175,17 @@ class RoundView: UIView {
     CATransaction.setDisableActions(true)
     foregroundLayer.strokeEnd = toValue
     CATransaction.commit()
+  }
+  
+  
+  func setAttForContent(value:CGFloat)->NSMutableAttributedString{
+    
+    let attStr = NSMutableAttributedString(string: "\(value)%")
+    attStr.addAttributes([NSFontAttributeName: UIFont(name: "NanumBarunGothicLight", size: 36)!], range: NSRange(location: 0, length: attStr.length-1) )
+    attStr.addAttributes([NSFontAttributeName: UIFont(name: "NanumBarunGothicLight", size: 22)!], range: NSRange(location: attStr.length-1, length: 1) )
+//
+    return attStr
+    
+    
   }
 }
