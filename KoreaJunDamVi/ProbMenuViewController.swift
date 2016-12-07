@@ -32,7 +32,7 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     
     self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     
-    self.pageViewController.view.frame = CGRect(x: 0, y: 104, width: self.view.frame.size.width, height: self.view.frame.size.height-104)
+    self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-104)
     
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)

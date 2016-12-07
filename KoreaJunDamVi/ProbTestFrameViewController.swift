@@ -72,7 +72,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     let nextIndex = getCurrnetIndexOfPage()+1
     if nextIndex == number_of_pages {
-      self.performSegue(withIdentifier: "Ending", sender: self)
+      self.performSegue(withIdentifier: "push", sender: self)
       
     }else if nextIndex < number_of_pages{
       let vc = pageViewAtIndex(nextIndex)
