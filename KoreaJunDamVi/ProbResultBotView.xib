@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProbResultBotView" customModule="KoreaJunDamVi" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="2xr-pp-z4f" id="1Dx-mh-2A5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkE-OA-9k8">
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2xr-pp-z4f">
+                            <frame key="frameInset" minX="8" minY="138" width="359" height="399"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkJ-gX-C3A">
+                            <color key="backgroundColor" red="0.1058823529" green="0.23921568630000001" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="yts-Uq-YRm"/>
+                            </constraints>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="changeView:" destination="-1" eventType="touchUpInside" id="0jU-n1-jm9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92549020049999997" green="0.5411764979" blue="0.22352941330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UkJ-gX-C3A" secondAttribute="trailing" id="2GI-64-qpC"/>
+                        <constraint firstItem="UkJ-gX-C3A" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="EC3-n7-ONn"/>
+                        <constraint firstItem="UkJ-gX-C3A" firstAttribute="top" secondItem="zkE-OA-9k8" secondAttribute="top" id="l2F-EC-Jo1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zkE-OA-9k8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Mtl-yD-gb1"/>
+                <constraint firstAttribute="bottom" secondItem="zkE-OA-9k8" secondAttribute="bottom" id="jDv-ch-JHE"/>
+                <constraint firstItem="zkE-OA-9k8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tV6-hv-Tyt"/>
+                <constraint firstAttribute="trailing" secondItem="zkE-OA-9k8" secondAttribute="trailing" id="ykj-Xa-J38"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

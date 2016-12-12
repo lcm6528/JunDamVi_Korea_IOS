@@ -533,7 +533,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         <!--Prob Test Frame View Controller-->
         <scene sceneID="Zir-BU-cp8">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ck9-yI-fia"/>
                         <viewControllerLayoutGuide type="bottom" id="QAp-Sq-06Z"/>
@@ -628,10 +628,10 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
             </objects>
             <point key="canvasLocation" x="1748" y="223.53823088455775"/>
         </scene>
-        <!--View Controller-->
+        <!--Prob Result View Controller-->
         <scene sceneID="u89-OR-9Pc">
             <objects>
-                <viewController id="zm0-gX-xPW" sceneMemberID="viewController">
+                <viewController id="zm0-gX-xPW" customClass="ProbResultViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IG7-yY-o0i"/>
                         <viewControllerLayoutGuide type="bottom" id="qN1-Ch-iub"/>
@@ -640,20 +640,40 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="끝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAG-ls-VQN">
-                                <frame key="frameInset" minX="166" minY="291" width="15" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSP-rg-9St">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmZ-mx-OQ5">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FmZ-mx-OQ5" secondAttribute="bottom" id="91H-es-fwy"/>
+                                    <constraint firstItem="FmZ-mx-OQ5" firstAttribute="width" secondItem="aSP-rg-9St" secondAttribute="width" id="DxG-gm-PPk"/>
+                                    <constraint firstItem="FmZ-mx-OQ5" firstAttribute="leading" secondItem="aSP-rg-9St" secondAttribute="leading" id="XpN-6M-wNM"/>
+                                    <constraint firstAttribute="trailing" secondItem="FmZ-mx-OQ5" secondAttribute="trailing" id="orE-QR-2RC"/>
+                                    <constraint firstItem="FmZ-mx-OQ5" firstAttribute="top" secondItem="aSP-rg-9St" secondAttribute="top" id="qw7-jh-wnU"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qN1-Ch-iub" firstAttribute="top" secondItem="aSP-rg-9St" secondAttribute="bottom" id="5Cr-pM-3Ad"/>
+                            <constraint firstItem="aSP-rg-9St" firstAttribute="top" secondItem="IG7-yY-o0i" secondAttribute="bottom" id="9lw-3Y-TIl"/>
+                            <constraint firstItem="FmZ-mx-OQ5" firstAttribute="height" secondItem="SWs-me-BEm" secondAttribute="height" multiplier="2" priority="750" id="Q6U-yD-91r"/>
+                            <constraint firstAttribute="trailing" secondItem="aSP-rg-9St" secondAttribute="trailing" id="Uw1-h8-R6i"/>
+                            <constraint firstItem="aSP-rg-9St" firstAttribute="leading" secondItem="SWs-me-BEm" secondAttribute="leading" id="VEa-DT-tz5"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="contentView" destination="FmZ-mx-OQ5" id="apM-VW-vJf"/>
+                        <outlet property="scrollView" destination="aSP-rg-9St" id="hle-LK-CL7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64p-fZ-8eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="229"/>
+            <point key="canvasLocation" x="2484" y="228.93553223388307"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QBw-w7-wEi">
