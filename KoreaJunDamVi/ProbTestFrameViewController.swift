@@ -13,7 +13,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   
   
   //For test
-  let number_of_pages = 10
+  let number_of_pages = 2
   ///////////
   
   
@@ -39,7 +39,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     self.pageViewController.setViewControllers(viewControllers as! [ProbTestInnerViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     
-    self.pageViewController.view.frame = CGRect(x: 0, y: 108, width: self.view.frame.size.width, height: self.view.frame.size.height-108)
+    self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
     
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)
