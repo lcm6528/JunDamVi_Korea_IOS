@@ -8,6 +8,10 @@
 
 import UIKit
 
+class ProbResultBotCell: UITableViewCell{
+  @IBOutlet var llabel: UILabel!
+  
+}
 
 
 class ProbResultBotView: UIView {
@@ -39,6 +43,8 @@ class ProbResultBotView: UIView {
     view = loadViewFromNib()
     view.frame = bounds
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+    tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
+    
     addSubview(view)
     
   }

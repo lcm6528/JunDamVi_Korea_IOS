@@ -68,16 +68,19 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   }
   
   
+
   
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-    if let cell = tableView.dequeueReusableCell(withIdentifier: "cell"){
-      cell.textLabel?.text = "test"
-      return cell
-    }else{
-      let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-      cell.textLabel?.text = "test"
-      return cell
-    }
+    
+  
+    let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
+    
+    //custom for cell
+  
+    return cell
+
+   
   }
   
   
