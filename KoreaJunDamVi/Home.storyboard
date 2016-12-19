@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -91,7 +90,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*’풀이 완료’를 한 경우에만 학습한 것으로 간주합니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-M2-Kvc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*’풀이 완료’를 한 경우에만 학습한 것으로 간주합니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-M2-Kvc">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="1PV-JE-P28"/>
                                         </constraints>
@@ -107,6 +106,9 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 11개의 기출 문제 중 5개 풀이 진행" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J63-bx-UYO">
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="RKY-i9-ebk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -121,16 +123,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="top" secondItem="6v2-Pz-Qvg" secondAttribute="bottom" constant="13.5" id="1d3-YR-dvs"/>
-                                    <constraint firstItem="J63-bx-UYO" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.15" id="1lL-xN-i1o"/>
-                                    <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" constant="16" id="4mV-7P-0N8"/>
+                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="top" secondItem="6v2-Pz-Qvg" secondAttribute="bottom" constant="8" id="0zB-pE-2VH"/>
+                                    <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" constant="12" id="4mV-7P-0N8"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="5tT-D2-xtM"/>
                                     <constraint firstItem="Fql-xJ-y3s" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="8Na-vP-f1d"/>
                                     <constraint firstAttribute="bottom" secondItem="J63-bx-UYO" secondAttribute="bottom" constant="1" id="A8K-SL-XeF"/>
-                                    <constraint firstItem="6v2-Pz-Qvg" firstAttribute="top" secondItem="TKG-M2-Kvc" secondAttribute="bottom" constant="5" id="C4w-XE-Jcv"/>
+                                    <constraint firstItem="6v2-Pz-Qvg" firstAttribute="top" secondItem="TKG-M2-Kvc" secondAttribute="bottom" constant="6" id="C4w-XE-Jcv"/>
                                     <constraint firstItem="nrx-PE-YOM" firstAttribute="centerX" secondItem="9x7-na-GFk" secondAttribute="centerX" id="Cdd-bm-W3X"/>
                                     <constraint firstAttribute="trailing" secondItem="TKG-M2-Kvc" secondAttribute="trailing" constant="14" id="HVS-zf-U13"/>
-                                    <constraint firstItem="J63-bx-UYO" firstAttribute="top" secondItem="nrx-PE-YOM" secondAttribute="bottom" constant="12" id="HjA-3h-JWQ"/>
+                                    <constraint firstItem="J63-bx-UYO" firstAttribute="top" secondItem="nrx-PE-YOM" secondAttribute="bottom" constant="7" id="IFF-J3-GEI"/>
                                     <constraint firstAttribute="bottom" secondItem="Fql-xJ-y3s" secondAttribute="bottom" id="TKL-YA-I3X"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="centerY" secondItem="Oj5-ht-cdr" secondAttribute="centerY" id="ZYq-TI-xbL"/>
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="acK-sb-pps"/>
@@ -139,7 +140,6 @@
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="vMW-BE-UC3"/>
                                     <constraint firstAttribute="trailing" secondItem="6v2-Pz-Qvg" secondAttribute="trailing" constant="14" id="wHQ-JS-kao"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="leading" secondItem="Oj5-ht-cdr" secondAttribute="trailing" constant="8" id="y3g-Ne-RHo"/>
-                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="centerY" secondItem="9x7-na-GFk" secondAttribute="centerY" id="zHo-Qv-0hB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57I-bu-DOT">
@@ -159,7 +159,7 @@
                                             <constraint firstAttribute="height" constant="1" id="Az7-Xa-sFE"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*추천 키워드는 출제 비중이 높은 항목들 위주로 추천됩니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0T-Nm-FTZ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*추천 키워드는 출제 비중이 높은 항목들 위주로 추천됩니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0T-Nm-FTZ">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="vQq-s5-YcP"/>
                                         </constraints>

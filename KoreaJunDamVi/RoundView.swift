@@ -46,7 +46,9 @@ class RoundView: UIView {
     
     
     //    let width = (SCREEN_WIDTH - 36)/2
-    let width = (SCREEN_HEIGHT - 64-140-140-44-16)*0.6
+    let width = (SCREEN_HEIGHT - 64-140-140-49-16) - 25 - 35 - 16
+    
+    print(SCREEN_HEIGHT - 64-140-140-44-16)
     let lineWidth: CGFloat = width * 0.07
     
     
@@ -74,10 +76,9 @@ class RoundView: UIView {
     
     
     separator.frame = CGRect(x: width * 0.175, y: width * 0.40 , width: width * 0.65, height: 2)
-    separator.backgroundColor = UIColor.gray
     //    addSubview(separator)
     
-    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.43, width: separator.frame.size.width, height: width*0.25)
+    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.43, width: separator.frame.size.width, height: width*0.27)
     contentLabel.attributedText = setAttForContent(value: currentValue)
     
     contentLabel.numberOfLines = 1
