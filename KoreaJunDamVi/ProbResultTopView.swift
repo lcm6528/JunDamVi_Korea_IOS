@@ -15,6 +15,13 @@ class ProbResultTopView: UIView {
   let NibName:String = "ProbResultTopView"
   
   var delegate:ProbResultSubViewDelegate?
+  @IBOutlet var gageView: GageView!
+  
+  
+  
+  
+  @IBOutlet var label_Trial: UILabel!
+  @IBOutlet var label_Score: UILabel!
   
   
   override init(frame: CGRect) {
@@ -37,6 +44,11 @@ class ProbResultTopView: UIView {
     view.frame = bounds
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
     addSubview(view)
+    
+    gageView.currentValue = 80
+    
+    label_Trial.layer.cornerRadius = 6
+    label_Score.layer.cornerRadius = 6
     
   }
   

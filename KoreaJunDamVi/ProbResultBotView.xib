@@ -10,6 +10,9 @@
         <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
         </array>
+        <array key="NanumBarunGothicUltraLight.ttf">
+            <string>NanumBarunGothicUltraLight</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProbResultBotView" customModule="KoreaJunDamVi" customModuleProvider="target">
@@ -28,12 +31,12 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkJ-gX-C3A">
-                            <color key="backgroundColor" red="0.1058823529" green="0.23921568630000001" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="yts-Uq-YRm"/>
                             </constraints>
-                            <state key="normal" title="Button">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="18"/>
+                            <state key="normal" title="요약 결과 보기">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="changeView:" destination="-1" eventType="touchUpInside" id="0jU-n1-jm9"/>
@@ -147,8 +150,17 @@
                                 <constraint firstItem="orc-dT-adb" firstAttribute="width" secondItem="AQN-xA-a5R" secondAttribute="width" multiplier="0.15" id="zto-ne-4Tq"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM7-t4-2xD">
+                            <frame key="frameInset" minX="131" minY="568" width="112" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="17"/>
+                            <state key="normal" title="오답 노트">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.92549020049999997" green="0.5411764979" blue="0.22352941330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="UkJ-gX-C3A" secondAttribute="trailing" id="2GI-64-qpC"/>
                         <constraint firstItem="UkJ-gX-C3A" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="EC3-n7-ONn"/>

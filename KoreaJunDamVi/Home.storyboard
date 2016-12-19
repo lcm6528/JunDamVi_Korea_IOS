@@ -34,21 +34,21 @@
                         <viewControllerLayoutGuide type="bottom" id="dhQ-hP-6gN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pl8-Dz-vQx">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-dO-w0F">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32회 한국사능력검정시험" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-Uo-Dhs">
-                                        <frame key="frameInset" minX="105" minY="12" width="165" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32회 한국사능력검정시험" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-Uo-Dhs">
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D-32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yw-och">
-                                        <frame key="frameInset" minX="85" minY="54" width="204" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yw-och">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="LCX-Xc-Dza"/>
+                                            <constraint firstAttribute="width" constant="204" id="q96-HK-bz5"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="55"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -57,6 +57,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="2Zj-uQ-jbA"/>
+                                    <constraint firstItem="1Ex-Yw-och" firstAttribute="top" secondItem="K5j-Uo-Dhs" secondAttribute="bottom" constant="10" id="Djl-V0-S9j"/>
+                                    <constraint firstItem="K5j-Uo-Dhs" firstAttribute="leading" secondItem="6dw-dO-w0F" secondAttribute="leading" constant="78" id="GyL-b3-CDj"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Ex-Yw-och" secondAttribute="bottom" constant="22" id="PU7-Iy-dgH"/>
+                                    <constraint firstItem="K5j-Uo-Dhs" firstAttribute="centerX" secondItem="6dw-dO-w0F" secondAttribute="centerX" id="ZfK-J9-cP4"/>
+                                    <constraint firstItem="K5j-Uo-Dhs" firstAttribute="top" secondItem="6dw-dO-w0F" secondAttribute="top" constant="12" id="arl-Z3-rjK"/>
+                                    <constraint firstItem="1Ex-Yw-och" firstAttribute="centerX" secondItem="6dw-dO-w0F" secondAttribute="centerX" id="jz3-FC-mrt"/>
+                                    <constraint firstAttribute="trailing" secondItem="K5j-Uo-Dhs" secondAttribute="trailing" constant="77" id="uo5-a8-DUi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-na-GFk">
@@ -114,6 +121,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="top" secondItem="6v2-Pz-Qvg" secondAttribute="bottom" constant="13.5" id="1d3-YR-dvs"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.15" id="1lL-xN-i1o"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" constant="16" id="4mV-7P-0N8"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="5tT-D2-xtM"/>
@@ -122,12 +130,12 @@
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="top" secondItem="TKG-M2-Kvc" secondAttribute="bottom" constant="5" id="C4w-XE-Jcv"/>
                                     <constraint firstItem="nrx-PE-YOM" firstAttribute="centerX" secondItem="9x7-na-GFk" secondAttribute="centerX" id="Cdd-bm-W3X"/>
                                     <constraint firstAttribute="trailing" secondItem="TKG-M2-Kvc" secondAttribute="trailing" constant="14" id="HVS-zf-U13"/>
+                                    <constraint firstItem="J63-bx-UYO" firstAttribute="top" secondItem="nrx-PE-YOM" secondAttribute="bottom" constant="12" id="HjA-3h-JWQ"/>
                                     <constraint firstAttribute="bottom" secondItem="Fql-xJ-y3s" secondAttribute="bottom" id="TKL-YA-I3X"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="centerY" secondItem="Oj5-ht-cdr" secondAttribute="centerY" id="ZYq-TI-xbL"/>
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="acK-sb-pps"/>
                                     <constraint firstAttribute="trailing" secondItem="J63-bx-UYO" secondAttribute="trailing" id="cgQ-8s-GT7"/>
                                     <constraint firstAttribute="trailing" secondItem="Fql-xJ-y3s" secondAttribute="trailing" id="iRo-eJ-hXV"/>
-                                    <constraint firstItem="nrx-PE-YOM" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.6" id="pN0-OY-Qeh"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="vMW-BE-UC3"/>
                                     <constraint firstAttribute="trailing" secondItem="6v2-Pz-Qvg" secondAttribute="trailing" constant="14" id="wHQ-JS-kao"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="leading" secondItem="Oj5-ht-cdr" secondAttribute="trailing" constant="8" id="y3g-Ne-RHo"/>
@@ -248,7 +256,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="centerContainerView" destination="9x7-na-GFk" id="WAC-qz-sz9"/>
                         <outlet property="roundView1" destination="nrx-PE-YOM" id="52P-6O-7NE"/>
@@ -268,17 +276,17 @@
                         <viewControllerLayoutGuide type="bottom" id="CpU-2h-ykV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DQW-pv-gf5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tSt-Ai-5Xf">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="wbL-EJ-eTP" customClass="SettingsTableViewCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wbL-EJ-eTP" id="6Gq-h2-aQB">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-WS-35l">
@@ -347,7 +355,7 @@
                     <tabBarItem key="tabBarItem" title="홈" id="c0c-Gk-q7s"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="e4J-kp-NGe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="e4J-kp-NGe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
