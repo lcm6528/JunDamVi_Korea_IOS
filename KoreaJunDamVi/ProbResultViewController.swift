@@ -63,24 +63,28 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     // Dispose of any resources that can be recreated.
   }
   
+  
+  
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
     return 20
   }
   
   
-
-  
-
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
     
   
-    let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
-    
+    let cell:ProbResultBotCell? = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProbResultBotCell
+//    cell?.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
     //custom for cell
   
-    return cell
+    return cell!
 
    
+  }
+  func buttonPressed(_ sender:UIButton){
+    sender.isSelected = true
+    
   }
   
   

@@ -13,9 +13,12 @@ class HomeViewController: UIViewController {
 
   @IBOutlet var centerContainerView: UIView!
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     //    self.title = "한국사 전담비"
+    
+    
     
   }
   override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +30,9 @@ class HomeViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+  }
   @IBAction func settingButtonPressed(_ sender: AnyObject) {
     
     performSegue(withIdentifier: "settings", sender: self)

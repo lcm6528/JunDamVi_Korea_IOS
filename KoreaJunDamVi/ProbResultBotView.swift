@@ -8,10 +8,6 @@
 
 import UIKit
 
-class ProbResultBotCell: UITableViewCell{
-  @IBOutlet var llabel: UILabel!
-  
-}
 
 
 class ProbResultBotView: UIView {

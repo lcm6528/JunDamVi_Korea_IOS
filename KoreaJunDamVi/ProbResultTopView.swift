@@ -18,6 +18,8 @@ class ProbResultTopView: UIView {
   @IBOutlet var gageView: GageView!
   
   
+  @IBOutlet var roundView1: RoundView!
+  @IBOutlet var roundView2: RoundView!
   
   
   @IBOutlet var label_Trial: UILabel!
@@ -46,7 +48,8 @@ class ProbResultTopView: UIView {
     addSubview(view)
     
     gageView.currentValue = 80
-    
+    roundView1.currentValue = 70
+    roundView2.currentValue = 80
     label_Trial.layer.cornerRadius = 6
     label_Score.layer.cornerRadius = 6
     

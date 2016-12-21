@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05E0113D8C6B0C6415A1EA4D /* Pods_KoreaJunDamVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */; };
 		3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */; };
+		373DE7CC1E0A9B9000FACD62 /* ProbResultBotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */; };
 		3747EEA31DC1CAFC0029DC27 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA21DC1CAFC0029DC27 /* Home.storyboard */; };
 		3747EEA51DC1CBA60029DC27 /* Prob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA41DC1CBA60029DC27 /* Prob.storyboard */; };
 		375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375EB90E1DBDE55900337236 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoreaJunDamVi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewCell.swift; sourceTree = "<group>"; };
+		373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultBotCell.swift; sourceTree = "<group>"; };
 		3747EEA21DC1CAFC0029DC27 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3747EEA41DC1CBA60029DC27 /* Prob.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Prob.storyboard; sourceTree = "<group>"; };
 		375A22C81DF54381006B4ED2 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				376265F81DFE888E0048317F /* ProbResultViewController.swift */,
 				376265FC1DFE8B140048317F /* ProbResultTopView.swift */,
 				376265FE1DFE9F480048317F /* ProbResultBotView.swift */,
+				373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */,
 				37BE73211E02849A00D00259 /* ProbResultBotCell.xib */,
 			);
 			name = Prob;
@@ -451,6 +454,7 @@
 				37F7CD2C1DE6B0FE0085A2E4 /* JDVBanner.swift in Sources */,
 				375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */,
 				379DB8981DBF3D1700882280 /* RoundView.swift in Sources */,
+				373DE7CC1E0A9B9000FACD62 /* ProbResultBotCell.swift in Sources */,
 				37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */,
 				376265F91DFE888E0048317F /* ProbResultViewController.swift in Sources */,
 				37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */,
