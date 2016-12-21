@@ -45,21 +45,15 @@ class RoundView: UIView {
   func setup() {
     
     
-    //    let width = (SCREEN_WIDTH - 36)/2
-    let width = (SCREEN_HEIGHT - 64-140-140-49-16) - 25 - 35 - 16
-    
-    print(SCREEN_HEIGHT - 64-140-140-44-16)
-    let lineWidth: CGFloat = width * 0.07
-    
     
     //background layer
-    backgroundLayer.lineWidth = lineWidth
+    
     backgroundLayer.fillColor = UIColor.clear.cgColor
     backgroundLayer.strokeEnd = 1
     layer.addSublayer(backgroundLayer)
     
     //foreground layer
-    foregroundLayer.lineWidth = lineWidth
+    
     foregroundLayer.fillColor = nil
     foregroundLayer.strokeEnd = 0.0
     foregroundLayer.lineCap = kCALineCapRound
@@ -73,12 +67,8 @@ class RoundView: UIView {
     layer.addSublayer(foregroundLayer)
     
     
+    addSubview(separator)
     
-    
-    separator.frame = CGRect(x: width * 0.175, y: width * 0.40 , width: width * 0.65, height: 2)
-    //    addSubview(separator)
-    
-    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.43, width: separator.frame.size.width, height: width*0.27)
     contentLabel.attributedText = setAttForContent(value: currentValue)
     
     contentLabel.numberOfLines = 1
@@ -86,11 +76,10 @@ class RoundView: UIView {
     contentLabel.adjustsFontSizeToFitWidth = true
     contentLabel.minimumScaleFactor = 0.1
     
+    
     addSubview(contentLabel)
     
-    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: width * 0.15)
-    titleLabel.center.x = separator.center.x
-    titleLabel.frame.origin.y = width * 0.25
+    
     titleLabel.textAlignment = .center
     titleLabel.font = UIFont(name: "NanumBarunGothicLight", size: 15)
     titleLabel.adjustsFontSizeToFitWidth = true
@@ -136,8 +125,25 @@ class RoundView: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews()
+    
+    let width = self.frame.width
+    let lineWidth: CGFloat = width * 0.07
+    
+    backgroundLayer.lineWidth = lineWidth
+    foregroundLayer.lineWidth = lineWidth
+    
+    separator.frame = CGRect(x: width * 0.175, y: width * 0.40 , width: width * 0.65, height: 2)
+    contentLabel.frame = CGRect(x: separator.frame.origin.x, y: width*0.43, width: separator.frame.size.width, height: width*0.27)
+    
+    titleLabel.frame.size = CGSize(width: separator.frame.size.width * 0.8, height: width * 0.15)
+    titleLabel.center.x = separator.center.x
+    titleLabel.frame.origin.y = width * 0.25
+    
+    
+    
     configureShapeLayer(shapeLayer: backgroundLayer)
     configureShapeLayer(shapeLayer: foregroundLayer)
+    
     
   }
   
@@ -155,7 +161,6 @@ class RoundView: UIView {
   }
   
   func animateShapeLayer() {
-    print("animate")
     var fromValue = foregroundLayer.strokeEnd
     let toValue = currentValue / range
     if let presentationLayer = foregroundLayer.presentation() {
@@ -166,7 +171,6 @@ class RoundView: UIView {
     
     animation.fromValue = fromValue
     animation.toValue = toValue
-    
     animation.duration = duration
     
     foregroundLayer.removeAnimation(forKey: "stroke")
@@ -184,7 +188,6 @@ class RoundView: UIView {
     let attStr = NSMutableAttributedString(string: "\(value)%")
     attStr.addAttributes([NSFontAttributeName: UIFont(name: "NanumBarunGothicLight", size: 36)!], range: NSRange(location: 0, length: attStr.length-1) )
     attStr.addAttributes([NSFontAttributeName: UIFont(name: "NanumBarunGothicLight", size: 22)!], range: NSRange(location: attStr.length-1, length: 1) )
-//
     return attStr
     
     
