@@ -14,6 +14,7 @@ class ProbResultBotCell: UITableViewCell {
 
   
   
+  @IBOutlet var noteButton: UIButton!
   
   override func awakeFromNib() {
     super.awakeFromNib()

@@ -74,11 +74,11 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
     
   
-    let cell:ProbResultBotCell? = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProbResultBotCell
-//    cell?.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
+    let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
+    cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
     //custom for cell
   
-    return cell!
+    return cell
 
    
   }
