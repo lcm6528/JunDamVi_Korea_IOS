@@ -33,8 +33,8 @@
                         <viewControllerLayoutGuide type="top" id="CVG-gj-TzW"/>
                         <viewControllerLayoutGuide type="bottom" id="dhQ-hP-6gN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pl8-Dz-vQx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="pl8-Dz-vQx">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-dO-w0F">
@@ -103,13 +103,16 @@
                                             <constraint firstAttribute="height" constant="1" id="Ff8-kB-aES"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 11개의 기출 문제 중 5개 풀이 진행" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J63-bx-UYO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J63-bx-UYO">
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="RKY-i9-ebk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="총 11개의 기출 문제 중 5개 풀이 진행">
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="NanumBarunGothic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
@@ -136,6 +139,7 @@
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="acK-sb-pps"/>
                                     <constraint firstAttribute="trailing" secondItem="J63-bx-UYO" secondAttribute="trailing" id="cgQ-8s-GT7"/>
                                     <constraint firstAttribute="trailing" secondItem="Fql-xJ-y3s" secondAttribute="trailing" id="iRo-eJ-hXV"/>
+                                    <constraint firstItem="J63-bx-UYO" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.13" id="vLx-ss-LtC"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="vMW-BE-UC3"/>
                                     <constraint firstAttribute="trailing" secondItem="6v2-Pz-Qvg" secondAttribute="trailing" constant="14" id="wHQ-JS-kao"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="leading" secondItem="Oj5-ht-cdr" secondAttribute="trailing" constant="8" id="y3g-Ne-RHo"/>
@@ -256,9 +260,10 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="centerContainerView" destination="9x7-na-GFk" id="WAC-qz-sz9"/>
+                        <outlet property="label_MidView" destination="J63-bx-UYO" id="7HD-2d-lLL"/>
                         <outlet property="roundView1" destination="nrx-PE-YOM" id="52P-6O-7NE"/>
                         <segue destination="51A-xg-v2c" kind="show" identifier="settings" id="Qpl-yE-vO3"/>
                     </connections>
@@ -276,17 +281,17 @@
                         <viewControllerLayoutGuide type="bottom" id="CpU-2h-ykV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DQW-pv-gf5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tSt-Ai-5Xf">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="wbL-EJ-eTP" customClass="SettingsTableViewCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wbL-EJ-eTP" id="6Gq-h2-aQB">
-                                            <frame key="frameInset" width="320" height="90"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-WS-35l">

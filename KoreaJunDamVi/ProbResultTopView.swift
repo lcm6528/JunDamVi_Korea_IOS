@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UICountingLabel
 
 
 class ProbResultTopView: UIView {
@@ -22,6 +22,8 @@ class ProbResultTopView: UIView {
   @IBOutlet var roundView2: RoundView!
   
   
+  @IBOutlet var label_correct: UICountingLabel!
+  @IBOutlet var label_wrong: UILabel!
   @IBOutlet var label_Trial: UILabel!
   @IBOutlet var label_Score: UILabel!
   
@@ -48,10 +50,21 @@ class ProbResultTopView: UIView {
     addSubview(view)
     
     gageView.currentValue = 80
-    roundView1.currentValue = 70
-    roundView2.currentValue = 80
+    
     label_Trial.layer.cornerRadius = 6
     label_Score.layer.cornerRadius = 6
+    
+    
+    
+    label_correct.format = "%d"
+    label_correct.method = .easeIn
+    label_correct.animationDuration = 0.8
+    label_correct.countFromZero(to: 50)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+      self.roundView1.currentValue = 40
+      self.roundView2.currentValue = 80
+    }
     
   }
   

@@ -6,7 +6,7 @@
 //  Copyright © 2016년 JunDamVi. All rights reserved.
 //
 import UIKit
-
+import UICountingLabel
 @IBDesignable
 
 class RoundView: UIView {
@@ -30,7 +30,7 @@ class RoundView: UIView {
   
   let titleLabel = UILabel()
   let separator = UIView()
-  let contentLabel = UILabel()
+  let contentLabel = UICountingLabel()
   
   let backgroundLayer = CAShapeLayer()
   let foregroundLayer = CAShapeLayer()
@@ -61,7 +61,7 @@ class RoundView: UIView {
     foregroundLayer.shadowRadius = 4.0
     foregroundLayer.shadowColor = UIColor.white.cgColor
     foregroundLayer.shadowOpacity = 1
-    foregroundLayer.shadowOffset = CGSize(width:-2.0, height: -2.0)
+    foregroundLayer.shadowOffset = CGSize(width:-1.0, height: -1.0)
     
     
     layer.addSublayer(foregroundLayer)
@@ -69,14 +69,22 @@ class RoundView: UIView {
     
     addSubview(separator)
     
-    contentLabel.attributedText = setAttForContent(value: currentValue)
+//    contentLabel.attributedText = setAttForContent(value: currentValue)
     
     contentLabel.numberOfLines = 1
     contentLabel.textAlignment = .center
     contentLabel.adjustsFontSizeToFitWidth = true
     contentLabel.minimumScaleFactor = 0.1
     
+    contentLabel.font = UIFont(name: "NanumBarunGothicLight", size: 36)!
     
+    contentLabel.animationDuration = 0.7
+//    contentLabel.format = "%0.1f"
+    contentLabel.method = .linear
+    contentLabel.formatBlock = {(value)->String? in
+      let str = String(format: "%0.1f", value)
+      return str + "%"
+    }
     addSubview(contentLabel)
     
     
@@ -100,7 +108,8 @@ class RoundView: UIView {
   func setupContent(){
     
     titleLabel.text = title
-    contentLabel.attributedText = setAttForContent(value: currentValue)
+//    contentLabel.attributedText = setAttForContent(value: currentValue)
+    contentLabel.countFromZero(to: currentValue)
     
     
   }
@@ -127,7 +136,7 @@ class RoundView: UIView {
     super.layoutSubviews()
     
     let width = self.frame.width
-    let lineWidth: CGFloat = width * 0.07
+    let lineWidth: CGFloat = width * 0.06
     
     backgroundLayer.lineWidth = lineWidth
     foregroundLayer.lineWidth = lineWidth
@@ -166,13 +175,12 @@ class RoundView: UIView {
     if let presentationLayer = foregroundLayer.presentation() {
       fromValue = presentationLayer.strokeEnd
     }
-    let duration = 0.8
+    let duration = 0.7
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     
     animation.fromValue = fromValue
     animation.toValue = toValue
     animation.duration = duration
-    
     foregroundLayer.removeAnimation(forKey: "stroke")
     foregroundLayer.add(animation, forKey: "stroke")
     

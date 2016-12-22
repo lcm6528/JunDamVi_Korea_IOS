@@ -27,6 +27,8 @@
                 <outlet property="gageView" destination="uo7-oY-yDQ" id="hfA-NQ-4v8"/>
                 <outlet property="label_Score" destination="oqZ-jY-Joy" id="IR2-y6-GiK"/>
                 <outlet property="label_Trial" destination="Flj-RY-Oqe" id="HBG-M3-4NQ"/>
+                <outlet property="label_correct" destination="Blg-RJ-1x4" id="h5M-Hk-ahR"/>
+                <outlet property="label_wrong" destination="11k-A4-fSP" id="QTG-ju-uQ9"/>
                 <outlet property="roundView1" destination="CkO-vd-AKy" id="kaJ-sY-9I0"/>
                 <outlet property="roundView2" destination="QfX-nH-ECp" id="CHz-r9-s4g"/>
             </connections>
@@ -148,7 +150,7 @@
                                         <constraint firstAttribute="width" constant="30" id="ClO-lL-sc9"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blg-RJ-1x4">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blg-RJ-1x4" customClass="UICountingLabel">
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Blg-RJ-1x4" secondAttribute="height" multiplier="1:1" id="A1I-HI-THW"/>
                                     </constraints>
@@ -156,7 +158,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11k-A4-fSP">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11k-A4-fSP">
                                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
