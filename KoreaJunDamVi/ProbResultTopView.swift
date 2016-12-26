@@ -62,8 +62,8 @@ class ProbResultTopView: UIView {
     label_correct.countFromZero(to: 50)
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-      self.roundView1.currentValue = 40
-      self.roundView2.currentValue = 80
+      self.roundView1.setValue(value: 40, animate: true)
+      self.roundView2.setValue(value: 80, animate: true)
     }
     
   }

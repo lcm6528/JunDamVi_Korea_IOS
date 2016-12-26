@@ -19,14 +19,13 @@ class HomeViewController: UIViewController {
     super.viewDidLoad()
     
     label_MidView.attributedText = getAttrStr(totalValue: 11, withValue: 5)
-//    label_MidView.text = "text"
     print("log")
   }
   
   
   
   override func viewWillAppear(_ animated: Bool) {
-    roundView1.currentValue = 70
+    roundView1.setValue(value: 70, animate: false)
   }
   
   override func didReceiveMemoryWarning() {
