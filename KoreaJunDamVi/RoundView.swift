@@ -12,15 +12,13 @@ import UICountingLabel
 class RoundView: UIView {
   
   // MARK: - properties
+  private var animate:Bool = false
+  private var range: CGFloat = 100
+  private var currentValue:CGFloat = 0
   
-  var range: CGFloat = 100
-  var currentValue
-    : CGFloat = 0 {
-    didSet(value) {
-      
-      setupContent()
-      animateShapeLayer()
-    }
+  
+  var value:CGFloat{
+    return currentValue
   }
   @IBInspectable var title:String = "title" {
     didSet{
@@ -79,7 +77,6 @@ class RoundView: UIView {
     contentLabel.font = UIFont(name: "NanumBarunGothicLight", size: 36)!
     
     contentLabel.animationDuration = 0.7
-//    contentLabel.format = "%0.1f"
     contentLabel.method = .linear
     contentLabel.formatBlock = {(value)->String? in
       let str = String(format: "%0.1f", value)
@@ -104,12 +101,26 @@ class RoundView: UIView {
   
   //when value changes in interface builder
   
+  func setValue(value x:CGFloat,animate y:Bool){
+    
+    currentValue = x
+    animate = y
+    
+    setupContent()
+    animateShapeLayer()
+
+  }
+  
   
   func setupContent(){
     
     titleLabel.text = title
-//    contentLabel.attributedText = setAttForContent(value: currentValue)
+    if animate{
     contentLabel.countFromZero(to: currentValue)
+    }else{
+      contentLabel.text = String(format: "%0.1f%%", currentValue)
+    }
+    
     
     
   }
