@@ -3,11 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumBarunGothicUltraLight.ttf">
+            <string>NanumBarunGothicUltraLight</string>
+        </array>
         <array key="NanumGothic.ttf">
             <string>NanumGothic</string>
         </array>
@@ -164,6 +168,7 @@
                         <outletCollection property="ToolbarButtons" destination="A6c-Qh-DsV" collectionClass="NSMutableArray" id="frO-sp-UKZ"/>
                         <outletCollection property="ToolbarButtons" destination="y6V-8w-w1X" collectionClass="NSMutableArray" id="u4X-ID-OgZ"/>
                         <segue destination="eJ4-GU-UW1" kind="show" identifier="push" id="1us-z2-awh"/>
+                        <segue destination="wYf-gj-JhQ" kind="show" identifier="quick" id="QaH-Nd-S1R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUi-bL-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -507,7 +512,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYM-yW-AJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="880.20989505247383"/>
+            <point key="canvasLocation" x="1932" y="881"/>
         </scene>
         <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
@@ -515,7 +520,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -626,7 +631,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSU-8P-3wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="223.53823088455775"/>
+            <point key="canvasLocation" x="1932" y="224"/>
         </scene>
         <!--Prob Result View Controller-->
         <scene sceneID="u89-OR-9Pc">
@@ -673,7 +678,152 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64p-fZ-8eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="228.93553223388307"/>
+            <point key="canvasLocation" x="2842" y="229"/>
+        </scene>
+        <!--Prob Quick Test View Controller-->
+        <scene sceneID="d7Y-MO-tRy">
+            <objects>
+                <viewController id="wYf-gj-JhQ" customClass="ProbQuickTestViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sSL-Va-UJ0"/>
+                        <viewControllerLayoutGuide type="bottom" id="SND-Ku-RH5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lyk-dk-5jh">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-M3-BcF">
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="CfD-N0-GRe">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CfD-N0-GRe" id="GeR-AQ-DL0">
+                                            <frame key="frameInset" width="375" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="uOx-Y1-oz1" secondAttribute="height" multiplier="1:1" id="hc5-SS-YI2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
+                                                    <state key="normal" title="5번">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="lQt-Zy-lAP" secondAttribute="height" multiplier="1:1" id="B5n-O6-BMP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
+                                                    <state key="normal" title="4번">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="0VD-aU-oGS" secondAttribute="height" multiplier="1:1" id="cRg-q4-FGS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
+                                                    <state key="normal" title="3번">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="GgK-Bz-ClN" secondAttribute="height" multiplier="1:1" id="X0K-Wc-vwn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
+                                                    <state key="normal" title="2번">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="RQI-hg-IYg" secondAttribute="height" multiplier="1:1" id="Xjs-WS-qc6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
+                                                    <state key="normal" title="1번">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3S5-2x-mDe">
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="RQI-hg-IYg" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="0Qy-b1-LIa"/>
+                                                <constraint firstAttribute="trailing" secondItem="uOx-Y1-oz1" secondAttribute="trailing" constant="4" id="5Cn-N9-5PW"/>
+                                                <constraint firstItem="RQI-hg-IYg" firstAttribute="width" secondItem="uOx-Y1-oz1" secondAttribute="width" id="8pd-S7-jhz"/>
+                                                <constraint firstItem="uOx-Y1-oz1" firstAttribute="leading" secondItem="lQt-Zy-lAP" secondAttribute="trailing" constant="4" id="94h-WG-ILx"/>
+                                                <constraint firstItem="RQI-hg-IYg" firstAttribute="leading" secondItem="3S5-2x-mDe" secondAttribute="trailing" constant="5" id="MmE-Jz-8dV"/>
+                                                <constraint firstItem="0VD-aU-oGS" firstAttribute="leading" secondItem="GgK-Bz-ClN" secondAttribute="trailing" constant="4" id="O0Z-Ov-J1L"/>
+                                                <constraint firstItem="uOx-Y1-oz1" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="QF0-Be-m0Q"/>
+                                                <constraint firstItem="GgK-Bz-ClN" firstAttribute="leading" secondItem="RQI-hg-IYg" secondAttribute="trailing" constant="4" id="Tvm-ur-d3x"/>
+                                                <constraint firstItem="lQt-Zy-lAP" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="V1U-jx-Pcy"/>
+                                                <constraint firstItem="GgK-Bz-ClN" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="aSY-mf-Uk4"/>
+                                                <constraint firstItem="uOx-Y1-oz1" firstAttribute="top" secondItem="GeR-AQ-DL0" secondAttribute="top" constant="2" id="cTf-So-V92"/>
+                                                <constraint firstItem="3S5-2x-mDe" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="fN8-FU-DDN"/>
+                                                <constraint firstItem="0VD-aU-oGS" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="hTg-JI-elY"/>
+                                                <constraint firstAttribute="bottom" secondItem="uOx-Y1-oz1" secondAttribute="bottom" constant="2" id="l6t-Bm-kSl"/>
+                                                <constraint firstItem="3S5-2x-mDe" firstAttribute="top" secondItem="GeR-AQ-DL0" secondAttribute="top" constant="2" id="ohj-6m-dEu"/>
+                                                <constraint firstItem="3S5-2x-mDe" firstAttribute="leading" secondItem="GeR-AQ-DL0" secondAttribute="leading" constant="2" id="tH9-nb-J9A"/>
+                                                <constraint firstItem="lQt-Zy-lAP" firstAttribute="width" secondItem="uOx-Y1-oz1" secondAttribute="width" id="tht-cX-gxr"/>
+                                                <constraint firstItem="lQt-Zy-lAP" firstAttribute="leading" secondItem="0VD-aU-oGS" secondAttribute="trailing" constant="4" id="tkv-K9-NFL"/>
+                                                <constraint firstItem="0VD-aU-oGS" firstAttribute="width" secondItem="uOx-Y1-oz1" secondAttribute="width" id="ypy-Lh-zrT"/>
+                                                <constraint firstItem="GgK-Bz-ClN" firstAttribute="width" secondItem="uOx-Y1-oz1" secondAttribute="width" id="zBh-tb-81Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="3S5-2x-mDe" secondAttribute="bottom" constant="2" id="zoS-LM-2gq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wYf-gj-JhQ" id="0Qf-Q2-u24"/>
+                                    <outlet property="delegate" destination="wYf-gj-JhQ" id="Cyb-Hu-PoA"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fKp-l4-qUL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="18"/>
+                                <state key="normal" title="상세 결과 보기">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resultButtonPressed:" destination="wYf-gj-JhQ" eventType="touchUpInside" id="rIP-Pz-wyk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZWI-M3-BcF" secondAttribute="trailing" id="6P5-Gz-uiu"/>
+                            <constraint firstItem="iSd-K8-ooj" firstAttribute="leading" secondItem="lyk-dk-5jh" secondAttribute="leading" id="Hdi-J0-W2v"/>
+                            <constraint firstAttribute="trailing" secondItem="iSd-K8-ooj" secondAttribute="trailing" id="f8O-iK-plu"/>
+                            <constraint firstItem="iSd-K8-ooj" firstAttribute="top" secondItem="ZWI-M3-BcF" secondAttribute="bottom" id="hZ7-wf-gvD"/>
+                            <constraint firstItem="ZWI-M3-BcF" firstAttribute="top" secondItem="sSL-Va-UJ0" secondAttribute="bottom" id="shk-fq-v0S"/>
+                            <constraint firstItem="ZWI-M3-BcF" firstAttribute="leading" secondItem="lyk-dk-5jh" secondAttribute="leading" id="vKN-Qa-Zc2"/>
+                            <constraint firstAttribute="bottom" secondItem="iSd-K8-ooj" secondAttribute="bottom" id="vZA-mC-pme"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <segue destination="zm0-gX-xPW" kind="show" identifier="push" id="28R-Nv-1NB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5K-kA-AxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1930" y="-657"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QBw-w7-wEi">
@@ -684,7 +834,10 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtR-K1-RtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="-212"/>
+            <point key="canvasLocation" x="1932" y="-211"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="28R-Nv-1NB"/>
+    </inferredMetricsTieBreakers>
 </document>

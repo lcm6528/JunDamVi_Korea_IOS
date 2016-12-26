@@ -46,7 +46,11 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   }
   
   func ProbCollectionViewSelectedRow(atIndex index: Int) {
+    if index == 2 {
+      performSegue(withIdentifier: "quick", sender: self)
+    }else{
     performSegue(withIdentifier: "push", sender: self)
+    }
   }
   
   
@@ -72,8 +76,8 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier! {
     case "push":
-//      let vc = segue.destination as! ProbTestFrameViewController
-//      vc.hidesBottomBarWhenPushed = true
+      self.tabBarController?.tabBar.isHidden = true
+    case "quick":
       self.tabBarController?.tabBar.isHidden = true
     default :
       return
