@@ -61,7 +61,6 @@ class HomeViewController: UIViewController {
     str.append(str2)
     str.append(str3)
     str.append(str4)
-    print(str)
     return str
     
   }

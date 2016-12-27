@@ -6,12 +6,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--문제해설-->
         <scene sceneID="4l7-kg-lti">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P7u-1b-1Z6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="문제해설" id="d3d-V4-OhP"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sgW-Ez-B1j">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sgW-Ez-B1j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="157.59999999999999" y="149.77511244377811"/>
         </scene>
-        <!--View Controller-->
+        <!--Solution Menu View Controller-->
         <scene sceneID="dRs-7u-GsK">
             <objects>
-                <viewController id="TWi-uZ-Ttx" sceneMemberID="viewController">
+                <viewController id="TWi-uZ-Ttx" customClass="JDVSolutionMenuViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vn6-hk-rL5"/>
                         <viewControllerLayoutGuide type="bottom" id="Ijg-td-aMg"/>
@@ -35,13 +37,23 @@
                     <view key="view" contentMode="scaleToFill" id="phS-rN-nVN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbX-y5-BUc" customClass="JDVGraph" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                <frame key="frameInset" minY="115" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="b1O-wF-KpV"/>
+                    <connections>
+                        <outlet property="graph" destination="lbX-y5-BUc" id="7YL-kU-qQV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWN-CE-342" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="150"/>
+            <point key="canvasLocation" x="901.60000000000002" y="149.77511244377811"/>
         </scene>
     </scenes>
 </document>

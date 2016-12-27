@@ -16,6 +16,10 @@
 		375373A61E0BADA100205C13 /* ProbQuickTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373A51E0BADA100205C13 /* ProbQuickTestViewController.swift */; };
 		375373A81E11532900205C13 /* JDVNoteMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */; };
 		375373AB1E1153B200205C13 /* JDVNoteMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */; };
+		375373AE1E122A5C00205C13 /* JDVSolutionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373AD1E122A5C00205C13 /* JDVSolutionMenuViewController.swift */; };
+		375373B11E122A8100205C13 /* JDVGraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375373B01E122A8100205C13 /* JDVGraphCell.xib */; };
+		375373B31E122B1300205C13 /* JDVGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373B21E122B1300205C13 /* JDVGraphCell.swift */; };
+		375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373B41E1244CE00205C13 /* JDVGraph.swift */; };
 		375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375EB90E1DBDE55900337236 /* AppDelegate.swift */; };
 		375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375EB9101DBDE55900337236 /* HomeViewController.swift */; };
 		375EB9141DBDE55900337236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375EB9121DBDE55900337236 /* Main.storyboard */; };
@@ -82,6 +86,10 @@
 		375373A51E0BADA100205C13 /* ProbQuickTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickTestViewController.swift; sourceTree = "<group>"; };
 		375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNoteMenuViewController.swift; sourceTree = "<group>"; };
 		375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNoteMenuCell.swift; sourceTree = "<group>"; };
+		375373AD1E122A5C00205C13 /* JDVSolutionMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVSolutionMenuViewController.swift; sourceTree = "<group>"; };
+		375373B01E122A8100205C13 /* JDVGraphCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDVGraphCell.xib; sourceTree = "<group>"; };
+		375373B21E122B1300205C13 /* JDVGraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraphCell.swift; sourceTree = "<group>"; };
+		375373B41E1244CE00205C13 /* JDVGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraph.swift; sourceTree = "<group>"; };
 		375A22C81DF54381006B4ED2 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		375A22C91DF54381006B4ED2 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		375A22CA1DF54381006B4ED2 /* NanumBarunGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.ttf; sourceTree = "<group>"; };
@@ -183,6 +191,26 @@
 			name = Note;
 			sourceTree = "<group>";
 		};
+		375373AC1E1226CE00205C13 /* Prob Result */ = {
+			isa = PBXGroup;
+			children = (
+				376265F61DFE88650048317F /* ProbResultTopView.xib */,
+				376265FA1DFE88F10048317F /* ProbResultBotView.xib */,
+			);
+			name = "Prob Result";
+			sourceTree = "<group>";
+		};
+		375373AF1E122A5F00205C13 /* Solution */ = {
+			isa = PBXGroup;
+			children = (
+				375373AD1E122A5C00205C13 /* JDVSolutionMenuViewController.swift */,
+				375373B01E122A8100205C13 /* JDVGraphCell.xib */,
+				375373B21E122B1300205C13 /* JDVGraphCell.swift */,
+				375373B41E1244CE00205C13 /* JDVGraph.swift */,
+			);
+			name = Solution;
+			sourceTree = "<group>";
+		};
 		375EB9021DBDE55900337236 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +238,7 @@
 				37E0336F1DE5581B00A5C4AC /* Home */,
 				37F7CD121DE6AFDB0085A2E4 /* Prob */,
 				375373A91E11532D00205C13 /* Note */,
+				375373AF1E122A5F00205C13 /* Solution */,
 				37F7CD3B1DE6B3700085A2E4 /* StoryBoards */,
 				37F7CD3A1DE6B3570085A2E4 /* Supportings */,
 				37F7CD371DE6B1F30085A2E4 /* CoreData */,
@@ -305,8 +334,7 @@
 				375EB9121DBDE55900337236 /* Main.storyboard */,
 				3747EEA21DC1CAFC0029DC27 /* Home.storyboard */,
 				3747EEA41DC1CBA60029DC27 /* Prob.storyboard */,
-				376265F61DFE88650048317F /* ProbResultTopView.xib */,
-				376265FA1DFE88F10048317F /* ProbResultBotView.xib */,
+				375373AC1E1226CE00205C13 /* Prob Result */,
 				37E033661DE5521000A5C4AC /* Note.storyboard */,
 				37E033681DE5524100A5C4AC /* Solution.storyboard */,
 				37E0336A1DE5532000A5C4AC /* Analytics.storyboard */,
@@ -397,6 +425,7 @@
 			files = (
 				37D28DC71DF54A6800B40129 /* NanumBarunGothic.ttf in Resources */,
 				37D28DC81DF54A6800B40129 /* NanumBarunGothicBold.ttf in Resources */,
+				375373B11E122A8100205C13 /* JDVGraphCell.xib in Resources */,
 				37D28DC91DF54A6800B40129 /* NanumBarunGothicLight.ttf in Resources */,
 				37D28DCA1DF54A6800B40129 /* NanumBarunGothicUltraLight.ttf in Resources */,
 				376265F71DFE88650048317F /* ProbResultTopView.xib in Resources */,
@@ -480,6 +509,7 @@
 				37F7CD2A1DE6B0FE0085A2E4 /* JDVTestResultLabelView.swift in Sources */,
 				37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */,
 				37F7CD321DE6B0FE0085A2E4 /* JDVProbManager.swift in Sources */,
+				375373B31E122B1300205C13 /* JDVGraphCell.swift in Sources */,
 				37F7CD271DE6B0FD0085A2E4 /* JDVViewController.swift in Sources */,
 				376265FF1DFE9F480048317F /* ProbResultBotView.swift in Sources */,
 				375373A61E0BADA100205C13 /* ProbQuickTestViewController.swift in Sources */,
@@ -496,6 +526,7 @@
 				376265F91DFE888E0048317F /* ProbResultViewController.swift in Sources */,
 				375373A81E11532900205C13 /* JDVNoteMenuViewController.swift in Sources */,
 				37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */,
+				375373AE1E122A5C00205C13 /* JDVSolutionMenuViewController.swift in Sources */,
 				37D99B0E1DE87AC30017F7CF /* ProbTestFrameViewController.swift in Sources */,
 				37F7CD281DE6B0FE0085A2E4 /* JDVTabbarView.swift in Sources */,
 				375373AB1E1153B200205C13 /* JDVNoteMenuCell.swift in Sources */,
@@ -511,6 +542,7 @@
 				37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
 				37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */,
+				375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */,
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,
 				37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */,
 				37D99B101DE87B1D0017F7CF /* ProbTestInnerViewController.swift in Sources */,

@@ -253,11 +253,13 @@
             </objects>
             <point key="canvasLocation" x="1096.8" y="149.77511244377811"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--오답노트-->
         <scene sceneID="Wnx-5Q-v4m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E90-OQ-O5t" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="오답노트" id="bh5-d6-bv1"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="N1b-yS-dLD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
