@@ -9,12 +9,12 @@
 import UIKit
 
 
-@IBDesignable class JDVGraphCell: UIView {
+@IBDesignable class JDVGraphBaseCell: UIView {
   
   var view:UIView!
   
   
-  let NibName:String = "JDVGraphCell"
+  let NibName:String = "JDVGraphBaseCell"
   
   
   

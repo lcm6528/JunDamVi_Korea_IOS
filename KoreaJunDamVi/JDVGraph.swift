@@ -15,8 +15,15 @@ class JDVGraph: UIView {
   private var animate:Bool = false
   private var range: CGFloat = 100
   private var currentValue:CGFloat = 0
-  private var numberOfRows:Int = 16
-  private var dataArray:[JDVGraphCell] = []
+  private var numberOfRows:Int = 7
+  private var gageArray:[UIView] = []
+  private var topLabelArray:[UILabel] = []
+  private var baseArray:[JDVGraphBaseCell] = []
+  
+  // MARK: UI values
+  let offset:CGFloat = 5
+  
+  
   
   var value:CGFloat{
     return currentValue
@@ -27,10 +34,19 @@ class JDVGraph: UIView {
   func setup() {
     
     for _ in 0..<numberOfRows{
-      let cell = JDVGraphCell()
-      dataArray.append(cell)
+      let gage = UIView()
+      gage.backgroundColor = UIColor.lightGray
+      gageArray.append(gage)
+      
+      let label = UILabel()
+      label.text = "12"
+      label.textAlignment = .center
+      label.backgroundColor = UIColor.red
+      topLabelArray.append(label)
+      
+      let base = JDVGraphBaseCell()
+      baseArray.append(base)
     }
-    print("numberOfRows : \(dataArray.count)")
   }
   
   //when value changes in interface builder
@@ -49,23 +65,47 @@ class JDVGraph: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    let offset:CGFloat = 15
-    let sumOfWidthOfSpace = CGFloat(15 * (numberOfRows-1))
     let totalWidth = self.size.width
-    let cellWidth = (CGFloat(15*(2*numberOfRows-1)) > totalWidth) ? (totalWidth - sumOfWidthOfSpace)/CGFloat(numberOfRows) : CGFloat(15)
+    let totalHeight = self.size.height
+    let sumOfWidthOfSpace = CGFloat((numberOfRows-1)) * offset
+    let baseSize = CGSize(width: 30, height: 30)
+    let gageWidth:CGFloat = 20
     
-    let startx = (totalWidth - sumOfWidthOfSpace - cellWidth * CGFloat(numberOfRows))/2
+    let startx = (totalWidth - sumOfWidthOfSpace - baseSize.width * CGFloat(numberOfRows))/2
     
-    for (index,cell) in dataArray.enumerated(){
-      cell.frame = CGRect(x: startx + (offset + cellWidth) * CGFloat(index), y: 0, width: cellWidth, height: 50)
-      self.addSubview(cell)
+    //Set base Frame
+    for (index,base) in baseArray.enumerated(){
+      base.frame = CGRect(x: startx + (offset + baseSize.width) * CGFloat(index), y: totalHeight - baseSize.height, width: baseSize.width, height: baseSize.height)
+      self.addSubview(base)
+      
     }
+    
+    //Set gage Frame
+    for (index,gage) in gageArray.enumerated(){
+      let base = baseArray[index]
+      
+      gage.frame = CGRect(x: base.centerX - gageWidth/2, y: totalHeight - baseSize.height, width: gageWidth, height: -100)
+      self.addSubview(gage)
+    }
+    
+    //Set label Frame
+    for (index,label) in topLabelArray.enumerated(){
+      
+      let gage = gageArray[index]
+      
+      label.frame = CGRect(x: gage.centerX-15, y: gage.y - 32, width: 30, height: 30)
+      self.addSubview(label)
+    }
+    
+    
+    animateShapeLayer()
     
   }
   
   override func prepareForInterfaceBuilder() {
     setup()
     configureUI()
+    layoutSubviews()
   }
   
   override func awakeFromNib() {
@@ -77,6 +117,16 @@ class JDVGraph: UIView {
   }
   
   func animateShapeLayer() {
+    let gage = self.gageArray[0]
+    let label = self.topLabelArray[0]
+    UIView.animate(withDuration: 3) { ]
+      
+      gage.frame = CGRect(x: gage.x, y: self.size.height - 30, width: gage.width, height: -200)
+      label.frame = CGRect(x: label.x, y: gage.y - 32, width: 30, height: 30)
+    }
+    
+    
+    
   }
   
   
