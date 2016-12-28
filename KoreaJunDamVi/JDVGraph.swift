@@ -33,19 +33,13 @@ class JDVGraph: UIView {
   //once
   func setup() {
     
-    for _ in 0..<numberOfRows{
-      let gage = UIView()
-      gage.backgroundColor = UIColor.lightGray
-      gageArray.append(gage)
-      
-      let label = UILabel()
-      label.text = "12"
-      label.textAlignment = .center
-      label.backgroundColor = UIColor.red
-      topLabelArray.append(label)
-      
-      let base = JDVGraphBaseCell()
+    for i in 0..<numberOfRows{
+      let base = JDVGraphBaseCell(title: "row\(i)", value: 20)
       baseArray.append(base)
+      
+      if i % 2 == 0 {
+        base.highlight = true
+      }
     }
   }
   
@@ -53,10 +47,6 @@ class JDVGraph: UIView {
   func configureUI() {
     print("configure")
   }
-  
-  
-  
-  
   
   
   //draw when view changes
@@ -67,38 +57,18 @@ class JDVGraph: UIView {
     super.layoutSubviews()
     let totalWidth = self.size.width
     let totalHeight = self.size.height
-    let sumOfWidthOfSpace = CGFloat((numberOfRows-1)) * offset
-    let baseSize = CGSize(width: 30, height: 30)
-    let gageWidth:CGFloat = 20
+    let baseSize = CGSize(width: 40, height: totalHeight)
     
-    let startx = (totalWidth - sumOfWidthOfSpace - baseSize.width * CGFloat(numberOfRows))/2
+    let startx = (totalWidth - baseSize.width * CGFloat(numberOfRows))/2
     
     //Set base Frame
     for (index,base) in baseArray.enumerated(){
-      base.frame = CGRect(x: startx + (offset + baseSize.width) * CGFloat(index), y: totalHeight - baseSize.height, width: baseSize.width, height: baseSize.height)
+      base.frame = CGRect(x: startx + baseSize.width * CGFloat(index), y: 0 , width: baseSize.width, height: baseSize.height)
       self.addSubview(base)
       
     }
     
-    //Set gage Frame
-    for (index,gage) in gageArray.enumerated(){
-      let base = baseArray[index]
-      
-      gage.frame = CGRect(x: base.centerX - gageWidth/2, y: totalHeight - baseSize.height, width: gageWidth, height: -100)
-      self.addSubview(gage)
-    }
     
-    //Set label Frame
-    for (index,label) in topLabelArray.enumerated(){
-      
-      let gage = gageArray[index]
-      
-      label.frame = CGRect(x: gage.centerX-15, y: gage.y - 32, width: 30, height: 30)
-      self.addSubview(label)
-    }
-    
-    
-    animateShapeLayer()
     
   }
   
@@ -117,15 +87,6 @@ class JDVGraph: UIView {
   }
   
   func animateShapeLayer() {
-    let gage = self.gageArray[0]
-    let label = self.topLabelArray[0]
-    UIView.animate(withDuration: 3) { ]
-      
-      gage.frame = CGRect(x: gage.x, y: self.size.height - 30, width: gage.width, height: -200)
-      label.frame = CGRect(x: label.x, y: gage.y - 32, width: 30, height: 30)
-    }
-    
-    
     
   }
   

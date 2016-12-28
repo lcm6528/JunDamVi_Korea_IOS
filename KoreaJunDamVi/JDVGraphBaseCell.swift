@@ -17,7 +17,29 @@ import UIKit
   let NibName:String = "JDVGraphBaseCell"
   
   
+  @IBOutlet var gageHeightConst: NSLayoutConstraint!
+  @IBOutlet var titleLabel: UILabel!
+  @IBOutlet var valueLabel: UILabel!
+  @IBOutlet var gageView: UIView!
+  @IBOutlet var separatorView: UIView!
   
+  
+  var highlight:Bool = false{
+    didSet{
+      setHighlight(bool: highlight)
+    }
+  }
+  
+  var currentValue:Int = 0 {
+    didSet{
+      valueLabel.text = "\(currentValue)%"
+    }
+  }
+  var title:String  = ""{
+    didSet{
+      titleLabel.text = title
+    }
+  }
   
   override init(frame: CGRect) {
     
@@ -33,6 +55,19 @@ import UIKit
     setup()
   }
   
+  
+  convenience init(title text: String, value val: Int) {
+    self.init()
+
+    title = text
+    titleLabel.text = text
+    currentValue = val
+    valueLabel.text = "\(val)%"
+    
+  }
+  
+  
+  
   func setup() {
     view = loadViewFromNib()
     view.frame = bounds
@@ -42,8 +77,6 @@ import UIKit
     
     
   }
-  
-  
   func loadViewFromNib() -> UIView {
     let bundle = Bundle(for:type(of: self))
     let nib = UINib(nibName:NibName, bundle: bundle)
@@ -51,4 +84,17 @@ import UIKit
     
     return view
   }
+  
+  func setHighlight(bool val:Bool){
+    if val{
+      gageView.backgroundColor = UIColor.red
+      separatorView.backgroundColor = UIColor.red
+    }else{
+      gageView.backgroundColor = UIColor.lightGray
+      separatorView.backgroundColor = UIColor.lightGray
+    }
+  }
+  
+  
+  
 }
