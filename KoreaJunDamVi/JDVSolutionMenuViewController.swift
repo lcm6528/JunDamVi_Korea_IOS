@@ -15,7 +15,17 @@ class JDVSolutionMenuViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     
+    
+    let model = JDVGraphModel(arrayLiteral: [("row1",3),("row2",13),("row3",12),("row4",14),("row5",19),("row6",16),("row7",13),("row8",11)])
+    graph.setData(model: model)
+    graph.setHighlight(toStanding: 3)
+    
    
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    graph.animate(withDuration: 1)
   }
   
   
