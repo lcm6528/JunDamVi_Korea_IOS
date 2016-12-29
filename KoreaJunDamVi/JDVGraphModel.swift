@@ -10,13 +10,14 @@ import UIKit
 
 class JDVGraphDataItem {
   var title:String
-  var value:Int
+  var value:Float
   var standings:Int
-  
+
   var description:String{
     return "\(title) : \(value) / \(standings)"
   }
-  init(title text:String = "" , value val:Int = 0) {
+  
+  init(title text:String = "" , value val:Float = 0) {
     title = text
     value = val
     standings = 1
@@ -25,11 +26,18 @@ class JDVGraphDataItem {
   
   
 }
+
+
+
 class JDVGraphModel: NSObject {
   
   var Items:[JDVGraphDataItem] = []
   
-  init(arrayLiteral:[(String,Int)]) {
+  var minValue:Float = 0
+  var maxValue:Float = 0
+  
+  
+  init(arrayLiteral:[(String,Float)]) {
     
     
     for element in arrayLiteral{
@@ -38,6 +46,8 @@ class JDVGraphModel: NSObject {
       Items.append(item)
     }
     
+    maxValue = Items.max { $0.value < $1.value }!.value
+    minValue = Items.min { $0.value < $1.value }!.value
     
     for item in Items{
       for item2 in Items{

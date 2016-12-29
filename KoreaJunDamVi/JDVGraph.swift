@@ -12,7 +12,7 @@ import UIKit
 class JDVGraph: UIView {
   
   // MARK: - properties
-  private var animate:Bool = false
+//  private var animate:Bool = false
   private var range: CGFloat = 100
   
   
@@ -78,13 +78,6 @@ class JDVGraph: UIView {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
   }
   
   
@@ -107,8 +100,6 @@ class JDVGraph: UIView {
       
     }
     
-    
-    
   }
   
   override func prepareForInterfaceBuilder() {
@@ -120,7 +111,26 @@ class JDVGraph: UIView {
     super.awakeFromNib()
   }
   
-  func animateShapeLayer() {
+  func animate(withDuration duration:Double){
+    
+    
+    for cell in baseArray{
+      cell.duration = duration
+      cell.setGageHeight(getHeightConst(withCell: cell), animate: true)
+    }
+    
+  }
+  
+  func getHeightConst(withCell cell:JDVGraphBaseCell)->CGFloat{
+    
+    guard dataModel != nil else{return 0.0}
+    
+    let max = dataModel!.maxValue
+    let ratio:Float = cell.currentValue / max
+    let const = CGFloat(ratio) * (self.size.height - 55)
+
+    
+    return const
     
   }
   

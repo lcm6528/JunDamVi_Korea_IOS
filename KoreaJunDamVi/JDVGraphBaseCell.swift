@@ -16,6 +16,7 @@ import UIKit
   
   let NibName:String = "JDVGraphBaseCell"
   
+  var duration:Double = 1
   
   @IBOutlet var gageHeightConst: NSLayoutConstraint!
   
@@ -31,7 +32,7 @@ import UIKit
     }
   }
   
-  var currentValue:Int = 0 {
+  var currentValue:Float = 0 {
     didSet{
       valueLabel.text = "\(currentValue)%"
     }
@@ -57,7 +58,7 @@ import UIKit
   }
   
   
-  convenience init(title text: String, value val: Int) {
+  convenience init(title text: String, value val: Float) {
     self.init()
 
     title = text
@@ -97,5 +98,17 @@ import UIKit
   }
   
   
-  
+  func setGageHeight(_ const:CGFloat, animate isAnimate:Bool){
+    gageHeightConst.constant = 0
+      self.layoutIfNeeded()
+    if isAnimate{
+      self.gageHeightConst.constant = const
+      UIView.animate(withDuration: duration, animations: {
+      
+        self.layoutIfNeeded()
+      })
+    }else{
+      gageHeightConst.constant = const
+    }
+  }
 }
