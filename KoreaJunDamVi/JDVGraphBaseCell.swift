@@ -18,6 +18,7 @@ import UIKit
   
   
   @IBOutlet var gageHeightConst: NSLayoutConstraint!
+  
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var valueLabel: UILabel!
   @IBOutlet var gageView: UIView!
@@ -26,7 +27,7 @@ import UIKit
   
   var highlight:Bool = false{
     didSet{
-      setHighlight(bool: highlight)
+      setHighlight(Bool: highlight)
     }
   }
   
@@ -85,7 +86,7 @@ import UIKit
     return view
   }
   
-  func setHighlight(bool val:Bool){
+  func setHighlight(Bool val:Bool){
     if val{
       gageView.backgroundColor = UIColor.red
       separatorView.backgroundColor = UIColor.red

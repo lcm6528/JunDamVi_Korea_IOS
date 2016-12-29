@@ -14,38 +14,77 @@ class JDVGraph: UIView {
   // MARK: - properties
   private var animate:Bool = false
   private var range: CGFloat = 100
-  private var currentValue:CGFloat = 0
-  private var numberOfRows:Int = 7
-  private var gageArray:[UIView] = []
-  private var topLabelArray:[UILabel] = []
+  
+  
   private var baseArray:[JDVGraphBaseCell] = []
+  private var dataModel:JDVGraphModel?
+  
+  
+  private var numberOfCells:Int = 0
+  
   
   // MARK: UI values
-  let offset:CGFloat = 5
   
   
-  
-  var value:CGFloat{
-    return currentValue
+  var highlightRange:Int = 0{//setter method를 따로 해야하나?
+    didSet{
+      configureUI()
+    }
   }
+  
+  let offset:CGFloat = 5
  
+  
+  func setData(model val:JDVGraphModel){
+    
+    dataModel = val
+    setup()
+    configureUI()
+  }
+  
+  
+  
+  func setHighlight(toStanding val:Int){
+    highlightRange = val
+  }
+  
   
   //once
   func setup() {
     
-    for i in 0..<numberOfRows{
-      let base = JDVGraphBaseCell(title: "row\(i)", value: 20)
+    guard dataModel != nil else{return}
+    
+    for item in dataModel!.Items{
+      let base = JDVGraphBaseCell(title: item.title, value: item.value)
+      print(item.description)
       baseArray.append(base)
-      
-      if i % 2 == 0 {
-        base.highlight = true
-      }
     }
+    
+    numberOfCells = baseArray.count
   }
+  
   
   //when value changes in interface builder
   func configureUI() {
-    print("configure")
+    
+    guard dataModel != nil else{return}
+    
+    //set UI for Highlight
+    for (index,item) in dataModel!.Items.enumerated(){
+      
+      if item.standings <= highlightRange{
+        baseArray[index].setHighlight(Bool:true)
+      }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
   }
   
   
@@ -59,7 +98,7 @@ class JDVGraph: UIView {
     let totalHeight = self.size.height
     let baseSize = CGSize(width: 40, height: totalHeight)
     
-    let startx = (totalWidth - baseSize.width * CGFloat(numberOfRows))/2
+    let startx = (totalWidth - baseSize.width * CGFloat(numberOfCells))/2
     
     //Set base Frame
     for (index,base) in baseArray.enumerated(){
@@ -74,16 +113,11 @@ class JDVGraph: UIView {
   
   override func prepareForInterfaceBuilder() {
     setup()
-    configureUI()
     layoutSubviews()
   }
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    
-    setup()
-    configureUI()
-    
   }
   
   func animateShapeLayer() {
