@@ -12,20 +12,27 @@ import UIKit
 class JDVGraph: UIView {
   
   // MARK: - properties
-//  private var animate:Bool = false
   private var range: CGFloat = 100
-  
   
   private var baseArray:[JDVGraphBaseCell] = []
   private var dataModel:JDVGraphModel?
-  
   
   private var numberOfCells:Int = 0
   
   
   // MARK: UI values
   
+  @IBInspectable var normalGageColor: UIColor = UIColor.lightGray {
+    didSet { configureUI() } }
+  @IBInspectable var highlightGagecolor: UIColor = UIColor.red {
+    didSet { configureUI() } }
   
+  @IBInspectable var viewBackgroundColor: UIColor = UIColor.clear
+    {didSet
+    {
+      self.backgroundColor = viewBackgroundColor
+    }
+  }
   var highlightRange:Int = 0{//setter method를 따로 해야하나?
     didSet{
       configureUI()
@@ -33,7 +40,7 @@ class JDVGraph: UIView {
   }
   
   let offset:CGFloat = 5
- 
+  
   
   func setData(model val:JDVGraphModel){
     
@@ -56,7 +63,10 @@ class JDVGraph: UIView {
     
     for item in dataModel!.Items{
       let base = JDVGraphBaseCell(title: item.title, value: item.value)
-      print(item.description)
+      base.highlightGagecolor = highlightGagecolor
+      base.normalGageColor = normalGageColor
+      
+      
       baseArray.append(base)
     }
     
@@ -76,8 +86,6 @@ class JDVGraph: UIView {
         baseArray[index].setHighlight(Bool:true)
       }
     }
-    
-    
   }
   
   
@@ -89,7 +97,7 @@ class JDVGraph: UIView {
     super.layoutSubviews()
     let totalWidth = self.size.width
     let totalHeight = self.size.height
-    let baseSize = CGSize(width: 40, height: totalHeight)
+    let baseSize = CGSize(width: 30, height: totalHeight)
     
     let startx = (totalWidth - baseSize.width * CGFloat(numberOfCells))/2
     
@@ -128,7 +136,6 @@ class JDVGraph: UIView {
     let max = dataModel!.maxValue
     let ratio:Float = cell.currentValue / max
     let const = CGFloat(ratio) * (self.size.height - 55)
-
     
     return const
     

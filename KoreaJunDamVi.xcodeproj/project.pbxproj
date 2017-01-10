@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05E0113D8C6B0C6415A1EA4D /* Pods_KoreaJunDamVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */; };
 		3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */; };
+		3737473E1E1B8385008A37E7 /* JDVAnalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737473D1E1B8385008A37E7 /* JDVAnalContentViewController.swift */; };
 		373DE7CC1E0A9B9000FACD62 /* ProbResultBotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */; };
 		3747EEA31DC1CAFC0029DC27 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA21DC1CAFC0029DC27 /* Home.storyboard */; };
 		3747EEA51DC1CBA60029DC27 /* Prob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA41DC1CBA60029DC27 /* Prob.storyboard */; };
@@ -17,8 +18,8 @@
 		375373A81E11532900205C13 /* JDVNoteMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */; };
 		375373AB1E1153B200205C13 /* JDVNoteMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */; };
 		375373AE1E122A5C00205C13 /* JDVSolutionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373AD1E122A5C00205C13 /* JDVSolutionMenuViewController.swift */; };
-		375373B11E122A8100205C13 /* JDVGraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375373B01E122A8100205C13 /* JDVGraphCell.xib */; };
-		375373B31E122B1300205C13 /* JDVGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373B21E122B1300205C13 /* JDVGraphCell.swift */; };
+		375373B11E122A8100205C13 /* JDVGraphBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375373B01E122A8100205C13 /* JDVGraphBaseCell.xib */; };
+		375373B31E122B1300205C13 /* JDVGraphBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373B21E122B1300205C13 /* JDVGraphBaseCell.swift */; };
 		375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375373B41E1244CE00205C13 /* JDVGraph.swift */; };
 		375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375EB90E1DBDE55900337236 /* AppDelegate.swift */; };
 		375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375EB9101DBDE55900337236 /* HomeViewController.swift */; };
@@ -38,8 +39,10 @@
 		377BB0E31DC86F2100C9D08D /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37DA176D1DC330C70008C697 /* NanumGothicBold.ttf */; };
 		377BB0E41DC86F2100C9D08D /* NanumGothicExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37DA176E1DC330C70008C697 /* NanumGothicExtraBold.ttf */; };
 		377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BB0E51DC87BE600C9D08D /* MNFunction.swift */; };
+		378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */; };
 		379DB8981DBF3D1700882280 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8971DBF3D1700882280 /* RoundView.swift */; };
 		379DB89A1DBF3E3400882280 /* Radian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8991DBF3E3400882280 /* Radian.swift */; };
+		37A2E1411E16422400F42C40 /* JDVPagerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2E1401E16422400F42C40 /* JDVPagerTestViewController.swift */; };
 		37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */; };
 		37BE73221E02849A00D00259 /* ProbResultBotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BE73211E02849A00D00259 /* ProbResultBotCell.xib */; };
 		37D28DC71DF54A6800B40129 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375A22C81DF54381006B4ED2 /* NanumBarunGothic.ttf */; };
@@ -79,6 +82,7 @@
 /* Begin PBXFileReference section */
 		2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoreaJunDamVi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewCell.swift; sourceTree = "<group>"; };
+		3737473D1E1B8385008A37E7 /* JDVAnalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVAnalContentViewController.swift; sourceTree = "<group>"; };
 		373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultBotCell.swift; sourceTree = "<group>"; };
 		3747EEA21DC1CAFC0029DC27 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3747EEA41DC1CBA60029DC27 /* Prob.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Prob.storyboard; sourceTree = "<group>"; };
@@ -87,8 +91,8 @@
 		375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNoteMenuViewController.swift; sourceTree = "<group>"; };
 		375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNoteMenuCell.swift; sourceTree = "<group>"; };
 		375373AD1E122A5C00205C13 /* JDVSolutionMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVSolutionMenuViewController.swift; sourceTree = "<group>"; };
-		375373B01E122A8100205C13 /* JDVGraphCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDVGraphCell.xib; sourceTree = "<group>"; };
-		375373B21E122B1300205C13 /* JDVGraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraphCell.swift; sourceTree = "<group>"; };
+		375373B01E122A8100205C13 /* JDVGraphBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDVGraphBaseCell.xib; sourceTree = "<group>"; };
+		375373B21E122B1300205C13 /* JDVGraphBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraphBaseCell.swift; sourceTree = "<group>"; };
 		375373B41E1244CE00205C13 /* JDVGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraph.swift; sourceTree = "<group>"; };
 		375A22C81DF54381006B4ED2 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		375A22C91DF54381006B4ED2 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
@@ -111,8 +115,10 @@
 		376265FC1DFE8B140048317F /* ProbResultTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultTopView.swift; sourceTree = "<group>"; };
 		376265FE1DFE9F480048317F /* ProbResultBotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultBotView.swift; sourceTree = "<group>"; };
 		377BB0E51DC87BE600C9D08D /* MNFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFunction.swift; sourceTree = "<group>"; };
+		378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraphModel.swift; sourceTree = "<group>"; };
 		379DB8971DBF3D1700882280 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		379DB8991DBF3E3400882280 /* Radian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radian.swift; sourceTree = "<group>"; };
+		37A2E1401E16422400F42C40 /* JDVPagerTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVPagerTestViewController.swift; sourceTree = "<group>"; };
 		37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVTextView.swift; sourceTree = "<group>"; };
 		37BE73211E02849A00D00259 /* ProbResultBotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProbResultBotCell.xib; sourceTree = "<group>"; };
 		37D99B0D1DE87AC30017F7CF /* ProbTestFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbTestFrameViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		374292391E24C30500DBE230 /* JDVGraph */ = {
+			isa = PBXGroup;
+			children = (
+				375373B01E122A8100205C13 /* JDVGraphBaseCell.xib */,
+				378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */,
+				375373B21E122B1300205C13 /* JDVGraphBaseCell.swift */,
+				375373B41E1244CE00205C13 /* JDVGraph.swift */,
+			);
+			name = JDVGraph;
+			sourceTree = "<group>";
+		};
 		375373A31E0BAD8100205C13 /* ProbMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,9 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				375373AD1E122A5C00205C13 /* JDVSolutionMenuViewController.swift */,
-				375373B01E122A8100205C13 /* JDVGraphCell.xib */,
-				375373B21E122B1300205C13 /* JDVGraphCell.swift */,
-				375373B41E1244CE00205C13 /* JDVGraph.swift */,
+				37A2E1401E16422400F42C40 /* JDVPagerTestViewController.swift */,
+				3737473D1E1B8385008A37E7 /* JDVAnalContentViewController.swift */,
 			);
 			name = Solution;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 		37E0336C1DE557FF00A5C4AC /* JDVKit */ = {
 			isa = PBXGroup;
 			children = (
+				374292391E24C30500DBE230 /* JDVGraph */,
 				379DB8971DBF3D1700882280 /* RoundView.swift */,
 				375373A11E0BA49100205C13 /* JDVColors.swift */,
 				37F000961E07C27B00DA1350 /* GageView.swift */,
@@ -425,7 +442,7 @@
 			files = (
 				37D28DC71DF54A6800B40129 /* NanumBarunGothic.ttf in Resources */,
 				37D28DC81DF54A6800B40129 /* NanumBarunGothicBold.ttf in Resources */,
-				375373B11E122A8100205C13 /* JDVGraphCell.xib in Resources */,
+				375373B11E122A8100205C13 /* JDVGraphBaseCell.xib in Resources */,
 				37D28DC91DF54A6800B40129 /* NanumBarunGothicLight.ttf in Resources */,
 				37D28DCA1DF54A6800B40129 /* NanumBarunGothicUltraLight.ttf in Resources */,
 				376265F71DFE88650048317F /* ProbResultTopView.xib in Resources */,
@@ -507,9 +524,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F7CD2A1DE6B0FE0085A2E4 /* JDVTestResultLabelView.swift in Sources */,
+				37A2E1411E16422400F42C40 /* JDVPagerTestViewController.swift in Sources */,
 				37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */,
+				3737473E1E1B8385008A37E7 /* JDVAnalContentViewController.swift in Sources */,
 				37F7CD321DE6B0FE0085A2E4 /* JDVProbManager.swift in Sources */,
-				375373B31E122B1300205C13 /* JDVGraphCell.swift in Sources */,
+				378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */,
+				375373B31E122B1300205C13 /* JDVGraphBaseCell.swift in Sources */,
 				37F7CD271DE6B0FD0085A2E4 /* JDVViewController.swift in Sources */,
 				376265FF1DFE9F480048317F /* ProbResultBotView.swift in Sources */,
 				375373A61E0BADA100205C13 /* ProbQuickTestViewController.swift in Sources */,

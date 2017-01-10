@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JDVGraphBaseCell" customModule="KoreaJunDamVi" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConst" destination="ZW4-qe-pMl" id="iUN-zr-YvZ"/>
                 <outlet property="gageHeightConst" destination="4Ok-25-VlC" id="NQI-Gy-gpk"/>
                 <outlet property="gageView" destination="DUb-XF-qnS" id="CZ9-ZV-RmF"/>
+                <outlet property="highlightBalloon" destination="hSY-7r-FOK" id="wYU-ga-fv6"/>
                 <outlet property="separatorView" destination="I9r-s6-FYL" id="gWJ-2u-A4J"/>
                 <outlet property="titleLabel" destination="dKf-Hb-TIy" id="gt4-d6-CcO"/>
                 <outlet property="valueLabel" destination="lu1-qZ-aRh" id="8yc-uj-gh8"/>
@@ -17,14 +24,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="Hf1-Hh-MiO">
-            <rect key="frame" x="0.0" y="0.0" width="40" height="217"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="217"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKf-Hb-TIy">
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="WBX-MT-UjZ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -38,27 +45,33 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="4" id="4Ok-25-VlC"/>
-                        <constraint firstAttribute="width" constant="20" id="xbe-9J-W0w"/>
+                        <constraint firstAttribute="width" constant="18" id="xbe-9J-W0w"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lu1-qZ-aRh">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphBalloon" translatesAutoresizingMaskIntoConstraints="NO" id="hSY-7r-FOK">
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="jok-Qf-biH"/>
+                        <constraint firstAttribute="width" constant="26" id="Hok-tx-QCa"/>
+                        <constraint firstAttribute="height" constant="26" id="j6d-eV-PFV"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lu1-qZ-aRh">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="jok-Qf-biH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="10"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="I9r-s6-FYL" firstAttribute="centerX" secondItem="Hf1-Hh-MiO" secondAttribute="centerX" id="491-YI-kEu"/>
                 <constraint firstItem="I9r-s6-FYL" firstAttribute="width" secondItem="DUb-XF-qnS" secondAttribute="width" id="49I-B1-CwZ"/>
                 <constraint firstItem="lu1-qZ-aRh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hf1-Hh-MiO" secondAttribute="top" priority="750" id="63x-n8-Kpq"/>
+                <constraint firstItem="hSY-7r-FOK" firstAttribute="centerX" secondItem="lu1-qZ-aRh" secondAttribute="centerX" id="7t7-of-SBQ"/>
                 <constraint firstItem="I9r-s6-FYL" firstAttribute="top" secondItem="DUb-XF-qnS" secondAttribute="bottom" constant="4" id="A9k-6W-GGR"/>
                 <constraint firstItem="dKf-Hb-TIy" firstAttribute="leading" secondItem="Hf1-Hh-MiO" secondAttribute="leading" id="MuG-ni-TxR"/>
+                <constraint firstItem="hSY-7r-FOK" firstAttribute="centerY" secondItem="lu1-qZ-aRh" secondAttribute="centerY" constant="2" id="TJ7-Ge-uAx"/>
                 <constraint firstItem="dKf-Hb-TIy" firstAttribute="top" secondItem="I9r-s6-FYL" secondAttribute="bottom" constant="4" id="Wza-bo-hu2"/>
-                <constraint firstItem="DUb-XF-qnS" firstAttribute="top" secondItem="lu1-qZ-aRh" secondAttribute="bottom" constant="5" id="ZW4-qe-pMl"/>
+                <constraint firstItem="DUb-XF-qnS" firstAttribute="top" secondItem="lu1-qZ-aRh" secondAttribute="bottom" id="ZW4-qe-pMl"/>
                 <constraint firstAttribute="trailing" secondItem="lu1-qZ-aRh" secondAttribute="trailing" id="bVP-wZ-oHU"/>
                 <constraint firstAttribute="trailing" secondItem="dKf-Hb-TIy" secondAttribute="trailing" id="gBx-BG-6e2"/>
                 <constraint firstAttribute="bottom" secondItem="dKf-Hb-TIy" secondAttribute="bottom" id="hoa-rR-Jh5"/>
@@ -70,4 +83,7 @@
             <point key="canvasLocation" x="47" y="131.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="graphBalloon" width="30" height="30"/>
+    </resources>
 </document>

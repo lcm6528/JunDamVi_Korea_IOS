@@ -24,6 +24,13 @@ import UIKit
   @IBOutlet var valueLabel: UILabel!
   @IBOutlet var gageView: UIView!
   @IBOutlet var separatorView: UIView!
+  @IBOutlet var highlightBalloon: UIImageView!
+  
+  @IBOutlet var bottomConst: NSLayoutConstraint!
+  
+  var normalGageColor:UIColor!
+  var highlightGagecolor:UIColor!
+  
   
   
   var highlight:Bool = false{
@@ -34,7 +41,7 @@ import UIKit
   
   var currentValue:Float = 0 {
     didSet{
-      valueLabel.text = "\(currentValue)%"
+      valueLabel.text = "\(Int(currentValue))%"
     }
   }
   var title:String  = ""{
@@ -64,8 +71,8 @@ import UIKit
     title = text
     titleLabel.text = text
     currentValue = val
-    valueLabel.text = "\(val)%"
-    
+    valueLabel.text = "\(Int(val))%"
+
   }
   
   
@@ -88,13 +95,22 @@ import UIKit
   }
   
   func setHighlight(Bool val:Bool){
-    if val{
-      gageView.backgroundColor = UIColor.red
-      separatorView.backgroundColor = UIColor.red
-    }else{
-      gageView.backgroundColor = UIColor.lightGray
-      separatorView.backgroundColor = UIColor.lightGray
-    }
+    
+    gageView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
+    separatorView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
+    
+    bottomConst.constant = (val) ? 8 : 0
+    valueLabel.textColor = (val) ? UIColor.white : UIColor.black
+    highlightBalloon.isHidden = (val) ? false : true
+    valueLabel.font = (val) ? UIFont(name: "NanumBarunGothicBold", size: 10) : UIFont(name: "NanumBarunGothic", size: 11)
+    
+  }
+  
+  func setGageBackgroundColor(with color:UIColor){
+    
+    gageView.backgroundColor = color
+    separatorView.backgroundColor = color
+    
   }
   
   
