@@ -13,7 +13,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   
   
   //For test
-  let number_of_pages = 1
+  let number_of_pages = 3
   ///////////
   
   
