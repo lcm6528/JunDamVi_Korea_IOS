@@ -514,6 +514,56 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
             </objects>
             <point key="canvasLocation" x="1932" y="881"/>
         </scene>
+        <!--Prob Popup View-->
+        <scene sceneID="611-H5-h9A">
+            <objects>
+                <viewController storyboardIdentifier="ProbPopupView" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="sGK-wl-eSa" customClass="ProbPopupView" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yG6-hv-5JK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cti-kh-Mxv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hKW-qn-Uob">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="12g-sw-6Fs">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SSz-gN-nlg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="TZi-39-ICC">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="sGK-wl-eSa" id="hqF-3u-KxZ"/>
+                                    <outlet property="delegate" destination="sGK-wl-eSa" id="1pC-mZ-2Nz"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="12g-sw-6Fs" secondAttribute="trailing" id="HpX-TQ-qtf"/>
+                            <constraint firstItem="12g-sw-6Fs" firstAttribute="leading" secondItem="hKW-qn-Uob" secondAttribute="leading" id="Rgw-TE-Uih"/>
+                            <constraint firstItem="12g-sw-6Fs" firstAttribute="top" secondItem="hKW-qn-Uob" secondAttribute="top" constant="64" id="cg2-F0-Lhk"/>
+                            <constraint firstItem="Cti-kh-Mxv" firstAttribute="top" secondItem="12g-sw-6Fs" secondAttribute="bottom" id="yrD-96-Efk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcf-9G-fbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="1646"/>
+        </scene>
         <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
             <objects>
@@ -619,7 +669,13 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Bwg-Lz-ab9"/>
+                    <navigationItem key="navigationItem" id="Bwg-Lz-ab9">
+                        <barButtonItem key="rightBarButtonItem" title="pop" id="4d4-Ig-bK7">
+                            <connections>
+                                <action selector="popUpList:" destination="eJ4-GU-UW1" id="fXQ-k7-KTZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -627,6 +683,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         <outlet property="toolBarLeftButton" destination="xim-Qq-pxT" id="EPx-Qm-fri"/>
                         <outlet property="toolBarRightButton" destination="L6e-AK-EyP" id="wHf-pC-8wf"/>
                         <segue destination="zm0-gX-xPW" kind="show" identifier="push" id="Zua-Fs-LAj"/>
+                        <segue destination="sGK-wl-eSa" kind="presentation" identifier="popup" id="p3d-za-OyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSU-8P-3wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -678,7 +735,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64p-fZ-8eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="229"/>
+            <point key="canvasLocation" x="2695" y="239"/>
         </scene>
         <!--Prob Quick Test View Controller-->
         <scene sceneID="d7Y-MO-tRy">
@@ -823,7 +880,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5K-kA-AxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930" y="-657"/>
+            <point key="canvasLocation" x="1921" y="-1037"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QBw-w7-wEi">
@@ -838,6 +895,6 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="28R-Nv-1NB"/>
+        <segue reference="Zua-Fs-LAj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,15 +8,12 @@
 
 import UIKit
 
-class ProbTestFrameViewController: UIViewController ,
-UIPageViewControllerDelegate,UIPageViewControllerDataSource {
+class ProbTestFrameViewController: UIViewController {
   
   
   //For test
   let number_of_pages = 3
   ///////////
-  
-  
   
   @IBOutlet var toolBarCenterLabel: UILabel!
   @IBOutlet var toolBarRightButton: UIButton!
@@ -56,6 +53,25 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   }
   
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "popup"{
+      let vc = segue.destination as! ProbPopupView
+      vc.dataArray = ["test":"test"]
+      vc.didSelectHandler = { index in
+        print("index from handler\(index)")
+        self.gotoNextPage()
+        
+      }
+    }
+    
+  }
+  
+  
+  @IBAction func popUpList(_ sender: AnyObject) {
+    performSegue(withIdentifier: "popup", sender: self)
+  }
+  
+  
   @IBAction func leftBarButtonPressed(_ sender: AnyObject) {
     gotoPrevPage()
   }
@@ -65,6 +81,10 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     gotoNextPage()
   }
+  
+  
+  
+  
   
   
   func gotoNextPage(){
@@ -128,11 +148,40 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   }
   
   
+  func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
+    
+    let nextIndex = index
+    
+    guard nextIndex >= 0 && nextIndex < number_of_pages else {return}
+    
+    let vc = pageViewAtIndex(nextIndex)
+    
+    if currentIndex > nextIndex{
+      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
+    }else{
+      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+    }
+  }
+  
+  func getCurrnetIndexOfPage()-> Int{
+    
+    let vc  = pageViewController.viewControllers?.first as! ProbTestInnerViewController
+    return vc.pageIndex
+    
+  }
+  
+  
+  
+  
+}
+
+//MARK : PageView Delegate,Datasource
+extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource{
   
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     
     if completed == true{
-
+      
       setToolbarTitle(getCurrnetIndexOfPage())
     }
     
@@ -170,32 +219,6 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     return self.pageViewAtIndex(index)
   }
-  
-  
-  
-  func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
-    
-    let nextIndex = index
-    
-    guard nextIndex >= 0 && nextIndex < number_of_pages else {return}
-    
-    let vc = pageViewAtIndex(nextIndex)
-    
-    if currentIndex > nextIndex{
-      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
-    }else{
-      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
-    }
-  }
-  
-  func getCurrnetIndexOfPage()-> Int{
-    
-    let vc  = pageViewController.viewControllers?.first as! ProbTestInnerViewController
-    return vc.pageIndex
-    
-  }
-  
-  
   
   
 }
