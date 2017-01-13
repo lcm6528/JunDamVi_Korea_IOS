@@ -10,5 +10,6 @@ target 'KoreaJunDamVi' do
   pod 'Toaster', '~> 2.0'
   pod 'Google/Analytics'
   pod 'XLPagerTabStrip'
-  
+  pod 'WSProgressHUD'
+  pod 'PageMenu', :git => 'https://github.com/orazz/PageMenu.git'
 end

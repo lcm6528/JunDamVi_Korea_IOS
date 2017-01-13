@@ -8,12 +8,11 @@
 
 import UIKit
 
-class JDVNavigationController: UINavigationController{
+class JDVNavigationController: UINavigationController,UINavigationControllerDelegate{
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationBar.tintColor = UIColor.white
-
     self.navigationBar.setBackgroundImage(UIImage(), for: .default)
     self.navigationBar.shadowImage = UIImage()
     
@@ -25,6 +24,9 @@ class JDVNavigationController: UINavigationController{
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  
+  
   
   
   
