@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ProbTestFrameViewController: UIViewController {
+import WSProgressHUD
+class ProbTestFrameViewController: JDVViewController {
   
   
   //For test
@@ -42,7 +42,7 @@ class ProbTestFrameViewController: UIViewController {
     self.view.addSubview(self.pageViewController.view)
     self.pageViewController.didMove(toParentViewController: self)
     
-    
+    self.navigationController?.delegate = self
     setToolbarTitle(getCurrnetIndexOfPage())
     
   }
@@ -56,7 +56,7 @@ class ProbTestFrameViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "popup"{
       let vc = segue.destination as! ProbPopupView
-      vc.dataArray = ["test":"test"]
+      vc.dataArray = ["test":"test","test1":"test","test2":"test","test3":"test","test4":"test"]
       vc.didSelectHandler = { index in
         print("index from handler\(index)")
         self.gotoNextPage()
@@ -219,6 +219,16 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     
     return self.pageViewAtIndex(index)
   }
+}
+
+
+extension ProbTestFrameViewController:UINavigationControllerDelegate{
+  
+  func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
+    WSProgressHUD.dismiss()
+  }
+  
+
   
   
 }

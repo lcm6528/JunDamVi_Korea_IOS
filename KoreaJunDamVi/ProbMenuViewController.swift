@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WSProgressHUD
 
 class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIPageViewControllerDataSource ,ProbCollectionViewDelegate{
   
@@ -46,11 +47,17 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   }
   
   func ProbCollectionViewSelectedRow(atIndex index: Int) {
-    if index == 2 {
-      performSegue(withIdentifier: "quick", sender: self)
-    }else{
-    performSegue(withIdentifier: "push", sender: self)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      
+      if index == 2 {
+        self.performSegue(withIdentifier: "quick", sender: self)
+      }else{
+        self.performSegue(withIdentifier: "push", sender: self)
+      }
+     
     }
+    
   }
   
   

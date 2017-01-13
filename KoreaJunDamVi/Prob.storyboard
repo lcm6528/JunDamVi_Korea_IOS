@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
         <array key="NanumBarunGothicUltraLight.ttf">
             <string>NanumBarunGothicUltraLight</string>
         </array>
@@ -517,7 +520,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         <!--Prob Popup View-->
         <scene sceneID="611-H5-h9A">
             <objects>
-                <viewController storyboardIdentifier="ProbPopupView" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="sGK-wl-eSa" customClass="ProbPopupView" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProbPopupView" modalPresentationStyle="overCurrentContext" id="sGK-wl-eSa" customClass="ProbPopupView" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yG6-hv-5JK"/>
                         <viewControllerLayoutGuide type="bottom" id="Cti-kh-Mxv"/>
@@ -528,7 +531,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="12g-sw-6Fs">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SSz-gN-nlg">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="SSz-gN-nlg">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -550,19 +553,37 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                     <outlet property="delegate" destination="sGK-wl-eSa" id="1pC-mZ-2Nz"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kse-Rp-5hh">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="21"/>
+                                <state key="normal" title="닫기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonAction:" destination="sGK-wl-eSa" eventType="touchUpInside" id="Wyc-qa-9v4"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kse-Rp-5hh" firstAttribute="top" secondItem="hKW-qn-Uob" secondAttribute="top" constant="20" id="2jb-UB-uvF"/>
                             <constraint firstAttribute="trailing" secondItem="12g-sw-6Fs" secondAttribute="trailing" id="HpX-TQ-qtf"/>
                             <constraint firstItem="12g-sw-6Fs" firstAttribute="leading" secondItem="hKW-qn-Uob" secondAttribute="leading" id="Rgw-TE-Uih"/>
-                            <constraint firstItem="12g-sw-6Fs" firstAttribute="top" secondItem="hKW-qn-Uob" secondAttribute="top" constant="64" id="cg2-F0-Lhk"/>
+                            <constraint firstItem="12g-sw-6Fs" firstAttribute="top" secondItem="kse-Rp-5hh" secondAttribute="bottom" id="S14-mh-PlQ"/>
+                            <constraint firstAttribute="trailing" secondItem="kse-Rp-5hh" secondAttribute="trailing" id="YfV-SE-hHO"/>
+                            <constraint firstItem="12g-sw-6Fs" firstAttribute="top" secondItem="hKW-qn-Uob" secondAttribute="top" constant="84" id="cg2-F0-Lhk"/>
+                            <constraint firstItem="kse-Rp-5hh" firstAttribute="leading" secondItem="hKW-qn-Uob" secondAttribute="leading" id="jHD-BD-fVf"/>
                             <constraint firstItem="Cti-kh-Mxv" firstAttribute="top" secondItem="12g-sw-6Fs" secondAttribute="bottom" id="yrD-96-Efk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="12g-sw-6Fs" id="605-dz-Ho2"/>
+                        <outlet property="dismissButton" destination="kse-Rp-5hh" id="5It-97-DJD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcf-9G-fbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="1646"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="1645.7271364317842"/>
         </scene>
         <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
@@ -756,7 +777,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CfD-N0-GRe" id="GeR-AQ-DL0">
-                                            <frame key="frameInset" width="375" height="54"/>
+                                            <frame key="frameInset" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
