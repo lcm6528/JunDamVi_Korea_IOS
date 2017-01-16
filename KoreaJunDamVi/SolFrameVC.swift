@@ -6,7 +6,7 @@
 //  Copyright © 2017년 JunDamVi. All rights reserved.
 //
 import UIKit
-
+import WSProgressHUD
 class JDVSolutionFrameViewController: UIViewController ,
 UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   
@@ -44,6 +44,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     self.view.addSubview(self.pageViewController.view)
     self.pageViewController.didMove(toParentViewController: self)
     
+    self.navigationController?.delegate = self
     
     setToolbarTitle(getCurrnetIndexOfPage())
     
@@ -71,7 +72,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     let nextIndex = getCurrnetIndexOfPage()+1
     if nextIndex == number_of_pages {
-      self.performSegue(withIdentifier: "push", sender: self)
+      //      self.performSegue(withIdentifier: "push", sender: self)
       
     }else if nextIndex < number_of_pages{
       let vc = pageViewAtIndex(nextIndex)
@@ -198,3 +199,11 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
   
   
 }
+
+extension JDVSolutionFrameViewController:UINavigationControllerDelegate{
+  
+  func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
+    WSProgressHUD.dismiss()
+  }
+}
+

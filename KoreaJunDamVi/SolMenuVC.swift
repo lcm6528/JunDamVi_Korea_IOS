@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import WSProgressHUD
 class JDVSolutionMenuViewController: UIViewController {
   
   
@@ -77,6 +77,14 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
     
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    WSProgressHUD.show(withStatus: "해설 불러오는 중..")
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    self.performSegue(withIdentifier: "push", sender: self)  
+      
+    }
+
+    
   }
   
 }
