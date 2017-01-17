@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import WSProgressHUD
 
 protocol ProbCollectionViewDelegate{
   func ProbCollectionViewSelectedRow(atIndex index:Int)
@@ -56,8 +56,23 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
    
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    WSProgressHUD.show(withStatus: "문제 불러오는 중..")
     self.delegate?.ProbCollectionViewSelectedRow(atIndex: indexPath.row)
   }
 
+  
+  
+  //CollectionView cell Highlight Indicate
+  func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    let cell = collectionView.cellForItem(at: indexPath)
+    cell?.backgroundColor = UIColor.lightGray
+    
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    let cell = collectionView.cellForItem(at: indexPath)
+    cell?.backgroundColor = UIColor.white
+    
+  }
   
 }
