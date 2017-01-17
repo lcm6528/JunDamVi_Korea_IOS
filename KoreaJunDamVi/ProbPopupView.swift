@@ -13,11 +13,24 @@ class ProbPopupView: UIViewController {
   
   var dataArray = [String:String]()
   var didSelectHandler: ((Int) -> Void)?
+  @IBOutlet var collectionView: UICollectionView!
   
+  @IBOutlet var dismissButton: UIButton!
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+      
+      if let flowLayout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+        flowLayout.itemSize = CGSize(width: (SCREEN_WIDTH)/5, height: (SCREEN_WIDTH)/5)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 1
+        
+        
+      }
+      
+      
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +39,15 @@ class ProbPopupView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+  }
+  
+  @IBAction func dismissButtonAction(_ sender: AnyObject) {
+    
+    dismiss(animated: true, completion: nil)
+  }
 }
 
 
@@ -37,6 +59,20 @@ extension ProbPopupView:UICollectionViewDelegate{
     dismiss(animated: true, completion: nil)
   }
   
+  
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    
+//    let size =  CGSize(width: (SCREEN_WIDTH)/5, height: (SCREEN_WIDTH)/5)
+//    return size
+//    
+//  }
+//  
+//  
+//  func collectionView(collectionView: UICollectionView,
+//                      layout collectionViewLayout: UICollectionViewLayout,
+//                      minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+//    return 0.0
+//  }
 }
 
 extension ProbPopupView:UICollectionViewDataSource{
