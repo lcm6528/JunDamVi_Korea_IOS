@@ -56,6 +56,9 @@
 		37D28DC81DF54A6800B40129 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375A22C91DF54381006B4ED2 /* NanumBarunGothicBold.ttf */; };
 		37D28DC91DF54A6800B40129 /* NanumBarunGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375A22CA1DF54381006B4ED2 /* NanumBarunGothicLight.ttf */; };
 		37D28DCA1DF54A6800B40129 /* NanumBarunGothicUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375A22CB1DF54381006B4ED2 /* NanumBarunGothicUltraLight.ttf */; };
+		37D7887F1E3099CF0039F999 /* AnalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */; };
+		37D788811E3099D90039F999 /* AnalBarChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D788801E3099D90039F999 /* AnalBarChartView.xib */; };
+		37D788831E30A2EE0039F999 /* AnalContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D788821E30A2EE0039F999 /* AnalContentCell.swift */; };
 		37D99B0E1DE87AC30017F7CF /* ProbTestFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99B0D1DE87AC30017F7CF /* ProbTestFrameViewController.swift */; };
 		37D99B101DE87B1D0017F7CF /* ProbTestInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99B0F1DE87B1D0017F7CF /* ProbTestInnerViewController.swift */; };
 		37E033671DE5521000A5C4AC /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E033661DE5521000A5C4AC /* Note.storyboard */; };
@@ -135,6 +138,9 @@
 		37D0517A1E260D3100D92E89 /* SolFrameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolFrameVC.swift; sourceTree = "<group>"; };
 		37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolInnerVC.swift; sourceTree = "<group>"; };
 		37D051A01E275D3700D92E89 /* ProbPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbPopupView.swift; sourceTree = "<group>"; };
+		37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartView.swift; sourceTree = "<group>"; };
+		37D788801E3099D90039F999 /* AnalBarChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalBarChartView.xib; sourceTree = "<group>"; };
+		37D788821E30A2EE0039F999 /* AnalContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalContentCell.swift; sourceTree = "<group>"; };
 		37D99B0D1DE87AC30017F7CF /* ProbTestFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbTestFrameViewController.swift; sourceTree = "<group>"; };
 		37D99B0F1DE87B1D0017F7CF /* ProbTestInnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbTestInnerViewController.swift; sourceTree = "<group>"; };
 		37DA176C1DC330C70008C697 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
@@ -283,8 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				376CB4281E2DE91700AC8F49 /* AnalyticsMainViewController.swift */,
-				376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */,
-				376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */,
+				37D788821E30A2EE0039F999 /* AnalContentCell.swift */,
+				37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */,
+				37D788801E3099D90039F999 /* AnalBarChartView.xib */,
+				37D7887D1E3099BE0039F999 /* AnalRoundView */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
@@ -297,6 +305,15 @@
 				3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */,
 			);
 			name = ProbAnal;
+			sourceTree = "<group>";
+		};
+		37D7887D1E3099BE0039F999 /* AnalRoundView */ = {
+			isa = PBXGroup;
+			children = (
+				376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */,
+				376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */,
+			);
+			name = AnalRoundView;
 			sourceTree = "<group>";
 		};
 		37E0336C1DE557FF00A5C4AC /* JDVKit */ = {
@@ -489,6 +506,7 @@
 				376CB42E1E2F2DB600AC8F49 /* AnalRoundView.xib in Resources */,
 				377BB0E21DC86F2100C9D08D /* NanumGothic.ttf in Resources */,
 				377BB0E31DC86F2100C9D08D /* NanumGothicBold.ttf in Resources */,
+				37D788811E3099D90039F999 /* AnalBarChartView.xib in Resources */,
 				37E033671DE5521000A5C4AC /* Note.storyboard in Resources */,
 				37F7CD2B1DE6B0FE0085A2E4 /* JDVTestResultLabelView.xib in Resources */,
 				377BB0E41DC86F2100C9D08D /* NanumGothicExtraBold.ttf in Resources */,
@@ -588,6 +606,7 @@
 				375373AE1E122A5C00205C13 /* SolMenuVC.swift in Sources */,
 				37D99B0E1DE87AC30017F7CF /* ProbTestFrameViewController.swift in Sources */,
 				37F7CD281DE6B0FE0085A2E4 /* JDVTabbarView.swift in Sources */,
+				37D788831E30A2EE0039F999 /* AnalContentCell.swift in Sources */,
 				375373AB1E1153B200205C13 /* JDVNoteMenuCell.swift in Sources */,
 				376265FD1DFE8B140048317F /* ProbResultTopView.swift in Sources */,
 				376CB42C1E2F2D7300AC8F49 /* AnalRoundView.swift in Sources */,
@@ -604,6 +623,7 @@
 				376CB4291E2DE91700AC8F49 /* AnalyticsMainViewController.swift in Sources */,
 				37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
+				37D7887F1E3099CF0039F999 /* AnalBarChartView.swift in Sources */,
 				37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */,
 				375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */,
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,

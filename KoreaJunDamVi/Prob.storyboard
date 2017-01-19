@@ -172,6 +172,7 @@
                         <outletCollection property="ToolbarButtons" destination="y6V-8w-w1X" collectionClass="NSMutableArray" id="u4X-ID-OgZ"/>
                         <segue destination="eJ4-GU-UW1" kind="show" identifier="push" id="1us-z2-awh"/>
                         <segue destination="wYf-gj-JhQ" kind="show" identifier="quick" id="QaH-Nd-S1R"/>
+                        <segue destination="Lq9-21-mw2" kind="show" identifier="anal" id="0lt-XI-cKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUi-bL-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -583,7 +584,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcf-9G-fbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.5999999999999" y="1645.7271364317842"/>
+            <point key="canvasLocation" x="1932" y="1532"/>
         </scene>
         <!--문제풀기-->
         <scene sceneID="fDT-cI-Jxa">
@@ -777,7 +778,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CfD-N0-GRe" id="GeR-AQ-DL0">
-                                            <frame key="frameInset" width="375" height="54.5"/>
+                                            <frame key="frameInset" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
@@ -901,7 +902,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5K-kA-AxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921" y="-1037"/>
+            <point key="canvasLocation" x="1932" y="-654"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QBw-w7-wEi">
@@ -914,8 +915,124 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
             </objects>
             <point key="canvasLocation" x="1932" y="-211"/>
         </scene>
+        <!--Prob Anal Frame View Controller-->
+        <scene sceneID="2i4-Ab-eTm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jiM-FB-Dyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Lq9-21-mw2" customClass="JDVProbAnalFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BTf-ah-BCV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ovz-WF-Sna"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HmU-cf-qpc">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9On-ae-TJm"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-1349"/>
+        </scene>
+        <!--Anal Content View Controller-->
+        <scene sceneID="3qW-tN-hbr">
+            <objects>
+                <viewController storyboardIdentifier="JDVAnalContentViewController" automaticallyAdjustsScrollViewInsets="NO" id="8rK-iK-cwM" customClass="JDVAnalContentViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kLh-6N-Y7R"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHn-WB-UuI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Kj-cj-E0F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7i-Wr-pxe" customClass="JDVGraph" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="TAC-dD-aap"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalGageColor">
+                                        <color key="value" red="0.51764705879999995" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightGagecolor">
+                                        <color key="value" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="테마별 출제 비중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4C-5E-ysQ">
+                                <frame key="frameInset" minX="135" minY="20" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWg-Yb-Mbg">
+                                <frame key="frameInset" minX="135" minY="18" width="104" height="0.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7r-ri-wcL">
+                                <frame key="frameInset" minX="136" minY="42" width="104" height="0.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPa-wc-KHI">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text" base64-UTF8="YES">
+67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd
+7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISdA+yekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOuj
+jCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCAD64K0
+7JqpIOyYgeyXrSDrtoTshJ3snpDro4wg64K07JqpIOyYgeyXrSDrtoTshJ3snpDro4wg64K07JqpIOyY
+geyXrSDrtoTshJ3snpDro4wg64K07JqpIAPsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g
+67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60D67aE7ISd
+7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OM
+IOuCtOyaqSDsmIHsl60g67aE7ISdA+yekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCDrgrTs
+mqkg7JiB7JetIOu2hOyEneyekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCAD64K07JqpIOyY
+geyXrSDrtoTshJ3snpDro4wg64K07JqpIOyYgeyXrSDrtoTshJ3snpDro4wg64K07JqpIOyYgeyXrSDr
+toTshJ3snpDro4wg64K07JqpIAPsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd
+7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60D67aE7ISd7J6Q66OM
+IOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOya
+qSDsmIHsl60g67aE7ISdA+yekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCDrgrTsmqkg7JiB
+7JetIOu2hOyEneyekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCAD64K07JqpIOyYgeyXrSDr
+toTshJ3snpDro4wg64K07JqpIOyYgeyXrSDrtoTshJ3snpDro4wg64K07JqpIOyYgeyXrSDrtoTshJ3s
+npDro4wg64K07JqpIAPsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OM
+IOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60D67aE7ISd7J6Q66OMIOuCtOya
+qSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHs
+l60g67aE7ISdA+yekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCDrgrTsmqkg7JiB7JetIOu2
+hOyEneyekOujjCDrgrTsmqkg7JiB7JetIOu2hOyEneyekOujjCAD64K07JqpIOyYgeyXrSDrtoTshJ3s
+npDro4wg64K07JqpIOyYgeyXrSDrtoTshJ3snpDro4wg64K07JqpIOyYgeyXrSDrtoTshJ3snpDro4wg
+64K07JqpIAPsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOya
+qSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60D67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHs
+l60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE
+7ISdA
+</string>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FHn-WB-UuI" firstAttribute="top" secondItem="jPa-wc-KHI" secondAttribute="bottom" id="CDK-Mg-hji"/>
+                            <constraint firstAttribute="trailing" secondItem="jPa-wc-KHI" secondAttribute="trailing" constant="16" id="FP3-K3-3KY"/>
+                            <constraint firstAttribute="trailing" secondItem="t7i-Wr-pxe" secondAttribute="trailing" constant="16" id="LId-hk-HaF"/>
+                            <constraint firstItem="jPa-wc-KHI" firstAttribute="leading" secondItem="5Kj-cj-E0F" secondAttribute="leading" constant="16" id="Syp-Zl-MEZ"/>
+                            <constraint firstItem="t7i-Wr-pxe" firstAttribute="top" secondItem="kLh-6N-Y7R" secondAttribute="bottom" constant="60" id="cKq-dI-eqG"/>
+                            <constraint firstItem="t7i-Wr-pxe" firstAttribute="leading" secondItem="5Kj-cj-E0F" secondAttribute="leading" constant="16" id="qps-M5-tc7"/>
+                            <constraint firstItem="jPa-wc-KHI" firstAttribute="top" secondItem="t7i-Wr-pxe" secondAttribute="bottom" constant="8" id="s4F-0U-wP5"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="jPa-wc-KHI" id="Jq6-Dd-j45"/>
+                        <outlet property="graph" destination="t7i-Wr-pxe" id="rjs-3o-AJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceT-jW-zGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="-1350"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zua-Fs-LAj"/>
+        <segue reference="28R-Nv-1NB"/>
     </inferredMetricsTieBreakers>
 </document>

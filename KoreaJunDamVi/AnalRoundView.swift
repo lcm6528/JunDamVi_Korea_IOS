@@ -66,7 +66,6 @@ import UIKit
   override func layoutSubviews() {
     
     layerView.layer.cornerRadius = self.width/2
-    print(self.width)
     let path = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.width/2)
     
     layerView.layer.shadowRadius = 0.5

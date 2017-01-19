@@ -38,9 +38,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-qB-3BX">
-                                <frame key="frameInset" width="375" height="327"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-qB-3BX">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="D94-CX-xUX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -51,22 +49,64 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-vo-2zQ">
+                                            <frame key="frameInset" minX="8" minY="171" width="359" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="*그래프를 ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="NanumBarunGothicUltraLight"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="터치">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="NanumBarunGothic"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="하여 해당 문제풀기로 바로 이동 가능합니다. ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="NanumBarunGothicUltraLight"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AyV-bW-6fp">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xQc-un-gKK" customClass="AnalContentCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AyV-bW-6fp" id="BLe-up-5Ou">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQc-un-gKK" id="IPe-cN-UT9">
+                                            <frame key="frameInset" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBX-UO-Fix" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                    <frame key="frameInset" minX="157" minY="29" width="60" height="240"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bar" destination="xBX-UO-Fix" id="hSl-sv-DF9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0pi-a1-GEF" id="IZq-Hs-EnW"/>
+                                    <outlet property="delegate" destination="0pi-a1-GEF" id="kln-Rf-ltw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gqh-qB-3BX" firstAttribute="leading" secondItem="Trs-6z-hSE" secondAttribute="leading" id="8vX-PH-tyB"/>
+                            <constraint firstItem="EoF-oO-AeF" firstAttribute="top" secondItem="gqh-qB-3BX" secondAttribute="bottom" constant="8" id="aXO-ax-d3k"/>
+                            <constraint firstAttribute="trailing" secondItem="gqh-qB-3BX" secondAttribute="trailing" id="baP-e7-2KN"/>
+                            <constraint firstItem="gqh-qB-3BX" firstAttribute="top" secondItem="rlL-uk-mZe" secondAttribute="bottom" id="tHF-b3-K1g"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I92-IQ-gTd"/>
                 </viewController>

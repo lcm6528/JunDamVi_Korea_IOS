@@ -56,7 +56,11 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
    
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    
+    if indexPath.row != 1, indexPath.row != 2{//test code
     WSProgressHUD.show(withStatus: "문제 불러오는 중..")
+    }
     self.delegate?.ProbCollectionViewSelectedRow(atIndex: indexPath.row)
   }
 

@@ -52,6 +52,8 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
       
       if index == 2 {
         self.performSegue(withIdentifier: "quick", sender: self)
+      }else if index == 1{
+        self.performSegue(withIdentifier: "anal", sender: self)
       }else{
         self.performSegue(withIdentifier: "push", sender: self)
       }
