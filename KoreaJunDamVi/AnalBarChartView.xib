@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothicBold.ttf">
+            <string>NanumBarunGothicBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+            <connections>
+                <outlet property="heightOfBar1" destination="riu-Wf-hDx" id="U7U-kv-XDy"/>
+                <outlet property="heightOfBar2" destination="VzZ-AE-Kpr" id="X6C-My-YAz"/>
+                <outlet property="heightOfBar3" destination="UR0-Wn-fkj" id="ZtQ-p9-EkM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="240"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWU-8H-89u" userLabel="contentView">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1등급" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M8-iv-S86">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="mLu-ie-iXL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30회" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYB-gp-Hqg">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Ct3-QO-v6J"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWS-RV-wUs">
+                            <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="k03-sp-qaY"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojP-Pj-W5e">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcD-Jw-Zzs">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="13" id="WNI-01-Zia"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="jcD-Jw-Zzs" secondAttribute="trailing" constant="3" id="nAG-pb-3vJ"/>
+                                <constraint firstAttribute="bottom" secondItem="jcD-Jw-Zzs" secondAttribute="bottom" constant="1" id="oZO-53-lqQ"/>
+                                <constraint firstAttribute="height" constant="20" id="riu-Wf-hDx"/>
+                                <constraint firstItem="jcD-Jw-Zzs" firstAttribute="leading" secondItem="ojP-Pj-W5e" secondAttribute="leading" constant="3" id="y1J-2N-XJ3"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-cG-qii">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD7-9z-g0r">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="13" id="3WF-H5-Per"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="aD7-9z-g0r" firstAttribute="leading" secondItem="rm7-cG-qii" secondAttribute="leading" constant="3" id="EZi-Av-Zrn"/>
+                                <constraint firstAttribute="bottom" secondItem="aD7-9z-g0r" secondAttribute="bottom" constant="1" id="IvF-2O-Uev"/>
+                                <constraint firstAttribute="trailing" secondItem="aD7-9z-g0r" secondAttribute="trailing" constant="3" id="M8d-mO-Rlq"/>
+                                <constraint firstAttribute="height" constant="20" id="VzZ-AE-Kpr"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-yh-T6E">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClI-li-ayK">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="13" id="7mp-Gf-wIK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.51764705882352935" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ClI-li-ayK" secondAttribute="bottom" constant="1" id="PiQ-Ko-Xd7"/>
+                                <constraint firstAttribute="height" constant="20" id="UR0-Wn-fkj"/>
+                                <constraint firstAttribute="trailing" secondItem="ClI-li-ayK" secondAttribute="trailing" constant="3" id="YdL-m7-Voi"/>
+                                <constraint firstItem="ClI-li-ayK" firstAttribute="leading" secondItem="igZ-yh-T6E" secondAttribute="leading" constant="3" id="mxA-SJ-mNN"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="3M8-iv-S86" secondAttribute="trailing" id="3sc-A0-Neb"/>
+                        <constraint firstItem="FYB-gp-Hqg" firstAttribute="top" secondItem="QWS-RV-wUs" secondAttribute="bottom" constant="4" id="AL1-VQ-LhV"/>
+                        <constraint firstAttribute="trailing" secondItem="QWS-RV-wUs" secondAttribute="trailing" id="DW3-tO-BRh"/>
+                        <constraint firstItem="ojP-Pj-W5e" firstAttribute="top" secondItem="rm7-cG-qii" secondAttribute="bottom" id="HmI-vp-Nqy"/>
+                        <constraint firstAttribute="trailing" secondItem="rm7-cG-qii" secondAttribute="trailing" id="MhI-lh-xi7"/>
+                        <constraint firstItem="igZ-yh-T6E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3M8-iv-S86" secondAttribute="bottom" constant="5" id="NvB-09-Sup"/>
+                        <constraint firstItem="QWS-RV-wUs" firstAttribute="leading" secondItem="qWU-8H-89u" secondAttribute="leading" id="Ph1-sx-vBk"/>
+                        <constraint firstItem="rm7-cG-qii" firstAttribute="top" secondItem="igZ-yh-T6E" secondAttribute="bottom" id="R7o-c8-74q"/>
+                        <constraint firstItem="rm7-cG-qii" firstAttribute="leading" secondItem="qWU-8H-89u" secondAttribute="leading" id="T0x-FN-Fu6"/>
+                        <constraint firstItem="QWS-RV-wUs" firstAttribute="top" secondItem="ojP-Pj-W5e" secondAttribute="bottom" constant="2" id="ZkE-2O-Jab"/>
+                        <constraint firstAttribute="trailing" secondItem="igZ-yh-T6E" secondAttribute="trailing" id="eG6-Fq-uAI"/>
+                        <constraint firstAttribute="trailing" secondItem="ojP-Pj-W5e" secondAttribute="trailing" id="gGE-wA-eyL"/>
+                        <constraint firstItem="igZ-yh-T6E" firstAttribute="leading" secondItem="qWU-8H-89u" secondAttribute="leading" id="lxB-aV-FbT"/>
+                        <constraint firstAttribute="trailing" secondItem="FYB-gp-Hqg" secondAttribute="trailing" id="oVO-3U-Obu"/>
+                        <constraint firstItem="ojP-Pj-W5e" firstAttribute="leading" secondItem="qWU-8H-89u" secondAttribute="leading" id="p8x-e6-FwP"/>
+                        <constraint firstItem="3M8-iv-S86" firstAttribute="leading" secondItem="qWU-8H-89u" secondAttribute="leading" id="pTc-YW-5Wq"/>
+                        <constraint firstItem="3M8-iv-S86" firstAttribute="top" secondItem="qWU-8H-89u" secondAttribute="top" constant="4" id="rlo-64-Nte"/>
+                        <constraint firstAttribute="bottom" secondItem="FYB-gp-Hqg" secondAttribute="bottom" constant="6" id="tY2-qp-ENY"/>
+                        <constraint firstItem="FYB-gp-Hqg" firstAttribute="leading" secondItem="qWU-8H-89u" secondAttribute="leading" id="yaP-V1-tui"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qWU-8H-89u" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dYI-fO-gm2"/>
+                <constraint firstItem="qWU-8H-89u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="glJ-Nk-e1J"/>
+                <constraint firstAttribute="bottom" secondItem="qWU-8H-89u" secondAttribute="bottom" id="rFb-tH-9SQ"/>
+                <constraint firstAttribute="trailing" secondItem="qWU-8H-89u" secondAttribute="trailing" id="xPV-g5-Nfd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="35" y="75"/>
+        </view>
+    </objects>
+</document>
