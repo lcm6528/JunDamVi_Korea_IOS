@@ -13,9 +13,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
             <connections>
+                <outlet property="blackBarTitleLabel" destination="aD7-9z-g0r" id="a06-lO-6oI"/>
+                <outlet property="grayBarTitleLabel" destination="ClI-li-ayK" id="32N-NH-h4a"/>
                 <outlet property="heightOfBar1" destination="riu-Wf-hDx" id="U7U-kv-XDy"/>
                 <outlet property="heightOfBar2" destination="VzZ-AE-Kpr" id="X6C-My-YAz"/>
                 <outlet property="heightOfBar3" destination="UR0-Wn-fkj" id="ZtQ-p9-EkM"/>
+                <outlet property="redBarTitleLabel" destination="jcD-Jw-Zzs" id="pFH-Bd-xw9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
