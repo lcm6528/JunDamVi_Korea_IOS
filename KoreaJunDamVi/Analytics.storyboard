@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,20 +39,34 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-qB-3BX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-qB-3BX">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="D94-CX-xUX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-qU-wxS" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                            <frame key="frameInset" minX="8" minY="50" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-qU-wxS" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="height" multiplier="1:1" id="HVu-dT-ClF"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="최근 점수"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-vo-2zQ">
-                                            <frame key="frameInset" minX="8" minY="171" width="359" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUE-vA-y1y" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="OUE-vA-y1y" secondAttribute="height" multiplier="1:1" id="wvK-NH-SdH"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="최고 점수"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-vo-2zQ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="4rs-06-IE2"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="*그래프를 ">
                                                     <attributes>
@@ -71,26 +86,79 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJn-5d-SDD" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="pJn-5d-SDD" secondAttribute="height" multiplier="1:1" id="prI-8A-npB"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="최저 점수"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="OUE-vA-y1y" firstAttribute="leading" secondItem="6Nc-qU-wxS" secondAttribute="trailing" constant="20" id="2Va-Ad-3KL"/>
+                                        <constraint firstItem="pJn-5d-SDD" firstAttribute="leading" secondItem="OUE-vA-y1y" secondAttribute="trailing" constant="20" id="7TC-kb-pFM"/>
+                                        <constraint firstAttribute="bottom" secondItem="DB2-vo-2zQ" secondAttribute="bottom" constant="8" id="E87-Xc-jVV"/>
+                                        <constraint firstAttribute="trailing" secondItem="DB2-vo-2zQ" secondAttribute="trailing" constant="8" id="KQP-fY-Kpu"/>
+                                        <constraint firstItem="OUE-vA-y1y" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="Lfa-Ke-FN1"/>
+                                        <constraint firstItem="OUE-vA-y1y" firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="width" id="PPG-Zd-3UP"/>
+                                        <constraint firstItem="6Nc-qU-wxS" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="eSh-eI-PSe"/>
+                                        <constraint firstAttribute="trailing" secondItem="pJn-5d-SDD" secondAttribute="trailing" constant="16" id="ecI-3G-Nbk"/>
+                                        <constraint firstItem="pJn-5d-SDD" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="s8l-I8-Sla"/>
+                                        <constraint firstItem="6Nc-qU-wxS" firstAttribute="leading" secondItem="D94-CX-xUX" secondAttribute="leading" constant="16" id="xVq-mB-SEA"/>
+                                        <constraint firstItem="DB2-vo-2zQ" firstAttribute="leading" secondItem="D94-CX-xUX" secondAttribute="leading" constant="8" id="yM6-3b-mVs"/>
+                                        <constraint firstItem="pJn-5d-SDD" firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="width" id="zl3-L6-8GX"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xQc-un-gKK" customClass="AnalContentCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="161" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQc-un-gKK" id="IPe-cN-UT9">
                                             <frame key="frameInset" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBX-UO-Fix" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <frame key="frameInset" minX="157" minY="29" width="60" height="240"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-FE-b8g" customClass="JDVShadowView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fc-4R-1IG" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                            <frame key="frameInset" minX="20" minY="36" width="50" height="210"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBo-o6-y9k" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                            <frame key="frameInset" minX="110" minY="37" width="50" height="210"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-Fr-Vme" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                            <frame key="frameInset" minX="200" minY="37" width="50" height="210"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBX-UO-Fix" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                            <frame key="frameInset" minX="289" minY="37" width="50" height="210"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="GtY-FE-b8g" firstAttribute="top" secondItem="IPe-cN-UT9" secondAttribute="top" constant="8" id="3oD-C2-hnd"/>
+                                                <constraint firstAttribute="bottom" secondItem="GtY-FE-b8g" secondAttribute="bottom" constant="8.5" id="rIk-Lz-IMU"/>
+                                                <constraint firstItem="GtY-FE-b8g" firstAttribute="leading" secondItem="IPe-cN-UT9" secondAttribute="leading" constant="8" id="uLh-zG-rBx"/>
+                                                <constraint firstAttribute="trailing" secondItem="GtY-FE-b8g" secondAttribute="trailing" constant="8" id="wGF-NA-CIC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bar" destination="xBX-UO-Fix" id="hSl-sv-DF9"/>
+                                            <outlet property="bar1" destination="xBX-UO-Fix" id="oxK-Ei-95w"/>
+                                            <outlet property="bar2" destination="1fc-4R-1IG" id="ZHK-0I-GJU"/>
+                                            <outlet property="bar3" destination="VBo-o6-y9k" id="0zt-Fx-cLH"/>
+                                            <outlet property="bar4" destination="0Or-Fr-Vme" id="2cc-d1-ysK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,6 +177,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I92-IQ-gTd"/>
+                    <connections>
+                        <outlet property="tableView" destination="gqh-qB-3BX" id="rmE-et-UJR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdP-Qd-331" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

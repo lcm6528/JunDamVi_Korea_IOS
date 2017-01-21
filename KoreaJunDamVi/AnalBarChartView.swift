@@ -16,6 +16,13 @@ import UIKit
   @IBOutlet var heightOfBar2: NSLayoutConstraint!
   @IBOutlet var heightOfBar3: NSLayoutConstraint!
   
+  @IBOutlet var grayBarTitleLabel: UILabel!
+  @IBOutlet var blackBarTitleLabel: UILabel!
+  @IBOutlet var redBarTitleLabel: UILabel!
+  
+  
+  
+  
   //30 , 35
   
   var maxRange:CGFloat!
@@ -26,6 +33,14 @@ import UIKit
       }
     }
   }
+  
+  
+  var valueForRedBar:Int! = 0
+  var valueForBlackBar:Int! = 0
+  var valueForGrayBar:Int! = 0
+  
+  
+  
   
   override init(frame: CGRect) {
     
@@ -49,6 +64,9 @@ import UIKit
     
     
     
+    setMaxRange()
+    
+    
     
     
   }
@@ -62,22 +80,63 @@ import UIKit
   
   
   override func layoutSubviews() {
-    maxRange = self.height - 65
+    super.layoutSubviews()
+  }
+  func setMaxRange(){
+    maxRange = self.height - 65 - 60
+  }
+  
+  func setValue(forRedBar val1:Int,BlackBar val2:Int, GrayBar val3:Int){
     
-    
+    valueForRedBar = val1
+    valueForBlackBar = val2
+    valueForGrayBar = val3
     
   }
   
-  func testAnimate(){
-    heightOfBar1.constant = maxRange/3
-    heightOfBar2.constant = maxRange/3
-    heightOfBar3.constant = maxRange/3
+  
+  func setBarUI(withAnimate animated:Bool){
     
-    UIView.animate(withDuration: 3) {
-      self.layoutIfNeeded()
+    
+    redBarTitleLabel.text = "\(valueForRedBar!)"
+    blackBarTitleLabel.text = "\(valueForBlackBar!)"
+    grayBarTitleLabel.text = "\(valueForGrayBar!)"
+    
+    
+    let sumOfVal = (valueForBlackBar + valueForGrayBar) as Int! + valueForRedBar
+    heightOfBar1.constant = maxRange * CGFloat(Float(valueForRedBar)/Float(sumOfVal)) + 20
+    heightOfBar2.constant = maxRange * CGFloat(Float(valueForBlackBar)/Float(sumOfVal)) + 20
+    heightOfBar3.constant = maxRange * CGFloat(Float(valueForGrayBar)/Float(sumOfVal)) + 20
+    
+    if animated{
+     animate()
+
+    }else{
+    self.layoutIfNeeded()  
     }
+    
+    
   }
   
+  func animate(){
+    
+    
+    let originHeight = [heightOfBar1.constant,heightOfBar2.constant,heightOfBar3.constant]
+    heightOfBar1.constant = 20
+    heightOfBar2.constant = 20
+    heightOfBar3.constant = 20
+    self.layoutIfNeeded()
+    
+    heightOfBar1.constant = originHeight[0]
+    heightOfBar2.constant = originHeight[1]
+    heightOfBar3.constant = originHeight[2]
+    
+    UIView.animate(withDuration: 1, animations: {
+      self.layoutIfNeeded()
+    })
+    
+    
+  }
   
   
 }

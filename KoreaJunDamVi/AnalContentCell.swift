@@ -10,8 +10,12 @@ import UIKit
 
 class AnalContentCell: UITableViewCell {
 
-  @IBOutlet var bar: AnalBarChartView!
-    override func awakeFromNib() {
+  @IBOutlet var bar1: AnalBarChartView!
+  @IBOutlet var bar2: AnalBarChartView!
+  @IBOutlet var bar3: AnalBarChartView!
+  @IBOutlet var bar4: AnalBarChartView!
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -21,5 +25,14 @@ class AnalContentCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+  
+  func setBarUI(withAnimate animate:Bool){
+    
+    bar1.setBarUI(withAnimate: animate)
+    bar2.setBarUI(withAnimate: animate)
+    bar3.setBarUI(withAnimate: animate)
+    bar4.setBarUI(withAnimate: animate)
+    
+  }
+  
 }

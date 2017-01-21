@@ -9,9 +9,12 @@
 import UIKit
 
 @IBDesignable class AnalRoundView: UIView {
-
   
   
+  
+  @IBOutlet var titleLabel: UILabel!
+  @IBOutlet var subTitleLabel: UILabel!
+  @IBOutlet var valueLabel: UILabel!
   
   var view:UIView!
   let NibName:String = "AnalRoundView"
@@ -21,11 +24,28 @@ import UIKit
   
   override var backgroundColor: UIColor?{
     didSet(value){
-//      self.view.backgroundColor = UIColor.clear
+      //      self.view.backgroundColor = UIColor.clear
       guard value != nil else {
         return
       }
       self.layerView.backgroundColor = value ?? UIColor.white
+    }
+  }
+  
+  
+  @IBInspectable var title:String = ""{
+    didSet{
+      self.titleLabel.text = title
+    }
+  }
+  var value:String = ""{
+    didSet{
+      self.valueLabel.text = value
+    }
+  }
+  var subTitle:String = ""{
+    didSet{
+      self.subTitleLabel.text = subTitle
     }
   }
   
@@ -76,5 +96,10 @@ import UIKit
   }
   
   
+  override func prepareForInterfaceBuilder() {
+    titleLabel.text = title
+    valueLabel.text = "90"
+    subTitleLabel.text = "30회"
+  }
   
 }

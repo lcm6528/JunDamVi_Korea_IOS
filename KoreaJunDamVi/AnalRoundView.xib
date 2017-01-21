@@ -9,6 +9,9 @@
         <array key="NanumBarunGothicBold.ttf">
             <string>NanumBarunGothicBold</string>
         </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
         <array key="NanumBarunGothicUltraLight.ttf">
             <string>NanumBarunGothicUltraLight</string>
         </array>
@@ -17,6 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
             <connections>
                 <outlet property="layerView" destination="rKR-28-B0C" id="7PE-ED-W7D"/>
+                <outlet property="subTitleLabel" destination="zfj-0x-5bt" id="7R0-VU-Avv"/>
+                <outlet property="titleLabel" destination="JdG-9T-ZEt" id="il4-fq-NhD"/>
+                <outlet property="valueLabel" destination="fM6-W2-SKy" id="FWQ-6R-Mod"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -55,7 +61,7 @@
                                 <constraint firstAttribute="width" constant="45" id="4ea-MM-nGt"/>
                                 <constraint firstAttribute="height" constant="15" id="MuR-bz-DE1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="11"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
