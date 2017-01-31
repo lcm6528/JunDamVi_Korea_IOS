@@ -85,7 +85,7 @@
 		37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */; };
 		37F7CD321DE6B0FE0085A2E4 /* JDVProbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */; };
 		37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */; };
-		37F7CD341DE6B0FE0085A2E4 /* JDVLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD231DE6B0FD0085A2E4 /* JDVLabel.swift */; };
+		37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */; };
 		37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */; };
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
 /* End PBXBuildFile section */
@@ -171,7 +171,7 @@
 		37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVScoreManager.swift; sourceTree = "<group>"; };
 		37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVProbManager.swift; sourceTree = "<group>"; };
 		37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVSolutionManager.swift; sourceTree = "<group>"; };
-		37F7CD231DE6B0FD0085A2E4 /* JDVLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVLabel.swift; sourceTree = "<group>"; };
+		37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVLabels.swift; sourceTree = "<group>"; };
 		37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewController.swift; sourceTree = "<group>"; };
 		37F7CD381DE6B1FD0085A2E4 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 				37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */,
 				37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */,
 				37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */,
-				37F7CD231DE6B0FD0085A2E4 /* JDVLabel.swift */,
+				37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */,
 				37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */,
 				37D788841E31EAE00039F999 /* JDVShadowView.swift */,
 			);
@@ -597,7 +597,7 @@
 				37F7CD261DE6B0FD0085A2E4 /* JDVBarButtonItem.swift in Sources */,
 				37F7CD2E1DE6B0FE0085A2E4 /* JDVRadioButtonManager.swift in Sources */,
 				37F000971E07C27B00DA1350 /* GageView.swift in Sources */,
-				37F7CD341DE6B0FE0085A2E4 /* JDVLabel.swift in Sources */,
+				37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */,
 				3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */,
 				37F7CD2C1DE6B0FE0085A2E4 /* JDVBanner.swift in Sources */,
 				375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */,
