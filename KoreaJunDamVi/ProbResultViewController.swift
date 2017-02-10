@@ -18,6 +18,8 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   @IBOutlet var scrollView: UIScrollView!
   @IBOutlet var contentView: UIView!
   
+  
+  
   var heightOfSubView:CGFloat!
   
   override func viewDidLoad() {
@@ -31,6 +33,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     botView.delegate = self
     botView.tableView.delegate = self
     botView.tableView.dataSource = self
+    
     
     contentView.addSubview(topView)
     contentView.addSubview(botView)
@@ -82,6 +85,22 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
 
    
   }
+  
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 28))
+    header.backgroundColor = UIColor.red
+    return header
+    //testfunc
+    
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 40
+    //testfunc
+  }
+  
   func buttonPressed(_ sender:UIButton){
     sender.isSelected = true
     

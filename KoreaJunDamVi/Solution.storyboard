@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="157.59999999999999" y="149.77511244377811"/>
         </scene>
-        <!--기출 문제 풀기-->
+        <!--문제 해설-->
         <scene sceneID="QMP-0y-5ea">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="asR-5O-ksI" customClass="JDVSolutionMenuViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                             <constraint firstItem="0dE-Rm-0Pr" firstAttribute="top" secondItem="3qJ-gZ-0zz" secondAttribute="bottom" id="cJ0-nS-Djc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="기출 문제 풀기" id="Pfv-lK-utk"/>
+                    <navigationItem key="navigationItem" title="문제 해설" id="Pfv-lK-utk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="3qJ-gZ-0zz" id="bap-ey-44R"/>
@@ -182,7 +182,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-he-1bJ">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-he-1bJ" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-hW-6J3">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,7 +200,7 @@
                                                     <constraint firstItem="CBn-hW-6J3" firstAttribute="top" secondItem="k5m-he-1bJ" secondAttribute="top" id="up0-cq-C7e"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-Xu-1cB">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-Xu-1cB" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXz-3x-i68">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,7 +217,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="pXz-3x-i68" secondAttribute="bottom" id="nvB-23-i2J"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krn-q9-RyG">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krn-q9-RyG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSp-cN-lZz">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -233,7 +233,7 @@
                                                     <constraint firstItem="BSp-cN-lZz" firstAttribute="top" secondItem="krn-q9-RyG" secondAttribute="top" id="vpj-h9-bBg"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-dI-vHG">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-dI-vHG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-Xv-fMi">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,7 +249,7 @@
                                                     <constraint firstItem="KLI-Xv-fMi" firstAttribute="centerX" secondItem="B5G-dI-vHG" secondAttribute="centerX" id="scN-hh-OrX"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-g3-aRK">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-g3-aRK" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-lX-oSM">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,7 +269,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     <constraint firstItem="LiK-lX-oSM" firstAttribute="top" secondItem="vm0-g3-aRK" secondAttribute="top" id="kXt-P3-p5K"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-jj-fqp">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-jj-fqp" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hrT-V8-LIz">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,29 +303,20 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-oC-oww">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-oC-oww" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P8s-xc-fSs">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3J-OU-4vT">
-                                                        <color key="backgroundColor" red="0.60392156860000001" green="0.59999999999999998" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="WRr-cC-TlS"/>
-                                                        </constraints>
-                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="J3J-OU-4vT" firstAttribute="leading" secondItem="ocj-oC-oww" secondAttribute="leading" id="0Kt-DK-Twe"/>
                                                     <constraint firstItem="P8s-xc-fSs" firstAttribute="top" secondItem="ocj-oC-oww" secondAttribute="top" constant="8" id="0Pw-ug-uU8"/>
-                                                    <constraint firstItem="J3J-OU-4vT" firstAttribute="top" secondItem="P8s-xc-fSs" secondAttribute="bottom" constant="8" id="MAD-vn-peb"/>
                                                     <constraint firstItem="P8s-xc-fSs" firstAttribute="leading" secondItem="ocj-oC-oww" secondAttribute="leading" constant="8" id="Sot-vu-vYm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="J3J-OU-4vT" secondAttribute="trailing" id="Ys2-de-12q"/>
                                                     <constraint firstAttribute="trailing" secondItem="P8s-xc-fSs" secondAttribute="trailing" constant="8" id="cLj-cC-bcP"/>
-                                                    <constraint firstAttribute="bottom" secondItem="J3J-OU-4vT" secondAttribute="bottom" id="oIz-s3-txS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="P8s-xc-fSs" secondAttribute="bottom" constant="8" id="nhh-wn-7eE"/>
                                                 </constraints>
                                             </view>
                                             <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPp-W1-9K0">

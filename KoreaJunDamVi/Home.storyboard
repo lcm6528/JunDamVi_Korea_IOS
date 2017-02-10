@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="trailing" secondItem="1Ex-Yw-och" secondAttribute="trailing" id="plu-sX-7ud"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-na-GFk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-na-GFk" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-PE-YOM" customClass="RoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
                                         <constraints>
@@ -76,7 +76,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="학습 진행률"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
-                                                <color key="value" red="0.18823529411764706" green="0.20784313725490194" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -116,29 +116,20 @@
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fql-xJ-y3s">
-                                        <color key="backgroundColor" red="0.56862745098039214" green="0.5607843137254902" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="oq5-zG-bhU"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="nrx-PE-YOM" firstAttribute="top" secondItem="6v2-Pz-Qvg" secondAttribute="bottom" constant="16" id="0zB-pE-2VH"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" constant="12" id="4mV-7P-0N8"/>
                                     <constraint firstItem="Oj5-ht-cdr" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="5tT-D2-xtM"/>
-                                    <constraint firstItem="Fql-xJ-y3s" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="8Na-vP-f1d"/>
                                     <constraint firstAttribute="bottom" secondItem="J63-bx-UYO" secondAttribute="bottom" constant="1" id="A8K-SL-XeF"/>
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="top" secondItem="TKG-M2-Kvc" secondAttribute="bottom" constant="6" id="C4w-XE-Jcv"/>
                                     <constraint firstItem="nrx-PE-YOM" firstAttribute="centerX" secondItem="9x7-na-GFk" secondAttribute="centerX" id="Cdd-bm-W3X"/>
                                     <constraint firstAttribute="trailing" secondItem="TKG-M2-Kvc" secondAttribute="trailing" constant="14" id="HVS-zf-U13"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="top" secondItem="nrx-PE-YOM" secondAttribute="bottom" constant="16" id="IFF-J3-GEI"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fql-xJ-y3s" secondAttribute="bottom" id="TKL-YA-I3X"/>
                                     <constraint firstItem="TKG-M2-Kvc" firstAttribute="centerY" secondItem="Oj5-ht-cdr" secondAttribute="centerY" id="ZYq-TI-xbL"/>
                                     <constraint firstItem="6v2-Pz-Qvg" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" constant="14" id="acK-sb-pps"/>
                                     <constraint firstAttribute="trailing" secondItem="J63-bx-UYO" secondAttribute="trailing" id="cgQ-8s-GT7"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fql-xJ-y3s" secondAttribute="trailing" id="iRo-eJ-hXV"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="height" secondItem="9x7-na-GFk" secondAttribute="height" multiplier="0.13" id="vLx-ss-LtC"/>
                                     <constraint firstItem="J63-bx-UYO" firstAttribute="leading" secondItem="9x7-na-GFk" secondAttribute="leading" id="vMW-BE-UC3"/>
                                     <constraint firstAttribute="trailing" secondItem="6v2-Pz-Qvg" secondAttribute="trailing" constant="14" id="wHQ-JS-kao"/>
@@ -339,7 +330,7 @@
                         <constraints>
                             <constraint firstItem="CpU-2h-ykV" firstAttribute="top" secondItem="tSt-Ai-5Xf" secondAttribute="bottom" id="NZB-wT-0OF"/>
                             <constraint firstAttribute="trailing" secondItem="tSt-Ai-5Xf" secondAttribute="trailing" id="TX9-SV-LlV"/>
-                            <constraint firstItem="tSt-Ai-5Xf" firstAttribute="top" secondItem="gOx-ta-F2X" secondAttribute="bottom" constant="35" id="d1x-LM-eMX"/>
+                            <constraint firstItem="tSt-Ai-5Xf" firstAttribute="top" secondItem="gOx-ta-F2X" secondAttribute="bottom" id="d1x-LM-eMX"/>
                             <constraint firstItem="tSt-Ai-5Xf" firstAttribute="leading" secondItem="DQW-pv-gf5" secondAttribute="leading" id="fA2-Bs-uKr"/>
                         </constraints>
                     </view>

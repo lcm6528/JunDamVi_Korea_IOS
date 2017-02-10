@@ -14,7 +14,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="h7u-hE-abc"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="m31-bt-gXz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="m31-bt-gXz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -117,7 +117,7 @@
                                         <rect key="frame" x="0.0" y="161" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQc-un-gKK" id="IPe-cN-UT9">
-                                            <frame key="frameInset" width="375" height="300"/>
+                                            <frame key="frameInset" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-FE-b8g" customClass="JDVShadowView" customModule="KoreaJunDamVi" customModuleProvider="target">

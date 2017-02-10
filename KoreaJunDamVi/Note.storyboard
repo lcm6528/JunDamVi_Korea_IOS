@@ -31,7 +31,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qA-Dv-QZu">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
-                                        <state key="normal" title="시대별">
+                                        <state key="normal" title="오답노트">
                                             <color key="titleColor" red="0.6588235294" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected">
@@ -41,7 +41,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3v-Av-ntk">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
-                                        <state key="normal" title="유형별">
+                                        <state key="normal" title="즐겨찾기">
                                             <color key="titleColor" red="0.6588235294" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected">
@@ -65,7 +65,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-Iv-J3e">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
-                                        <state key="normal" title="회차별">
+                                        <state key="normal" title="전체보기">
                                             <color key="titleColor" red="0.6588235294" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected">
@@ -210,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TiG-bq-qkg" id="FBo-uV-IJB">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRw-fF-9VD">
