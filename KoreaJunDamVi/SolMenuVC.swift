@@ -14,10 +14,12 @@ class JDVSolutionMenuViewController: UIViewController {
   @IBOutlet var collectionView: UICollectionView!
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
     
-//    let model = JDVGraphModel(arrayLiteral: [("국가",3),("왕",21),("사건",4),("제도",5),("경제",8),("사회",25),("문화",5),("인물",2),("단체",6),("유물",4),("복합",11),("기타",6)])
-
+    let blockView =  BlockView(frame: self.view.frame)
+    blockView.actionHandler = {
+      blockView.removeFromSuperview()
+    }
+    self.view.addSubview(blockView)
     
    
   }
@@ -26,27 +28,13 @@ class JDVSolutionMenuViewController: UIViewController {
     super.viewDidAppear(animated)
     
   }
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-//    graph.animate(withDuration: 1)
-  }
-  
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+
 }
 
 

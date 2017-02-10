@@ -13,6 +13,8 @@ import UIKit
 class ProbResultBotView: UIView {
   
   var view:UIView!
+  
+  
   let NibName:String = "ProbResultBotView"
   
   var delegate:ProbResultSubViewDelegate?
@@ -41,7 +43,12 @@ class ProbResultBotView: UIView {
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
     tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
     
+    //testcode
+    tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
+    
     addSubview(view)
+    
+    
     
   }
   
@@ -51,6 +58,7 @@ class ProbResultBotView: UIView {
     let nib = UINib(nibName:NibName, bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil)[0
       ] as! UIView
+    
     
     return view
   }
