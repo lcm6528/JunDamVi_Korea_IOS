@@ -12,7 +12,7 @@ class ProbTestFrameViewController: JDVViewController {
   
   
   //For test
-  let number_of_pages = 3
+  let number_of_pages = 2
   ///////////
   
   @IBOutlet var toolBarCenterLabel: UILabel!
@@ -81,10 +81,6 @@ class ProbTestFrameViewController: JDVViewController {
     
     gotoNextPage()
   }
-  
-  
-  
-  
   
   
   func gotoNextPage(){
@@ -171,8 +167,6 @@ class ProbTestFrameViewController: JDVViewController {
   }
   
   
-  
-  
 }
 
 //MARK : PageView Delegate,Datasource
@@ -191,6 +185,9 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
   func pageViewAtIndex(_ index: Int) ->JDVViewController{
     let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
     pageContentViewController.pageIndex = index
+    pageContentViewController.selectHandler = {
+      self.gotoNextPage()
+    }
     return pageContentViewController
   }
   
