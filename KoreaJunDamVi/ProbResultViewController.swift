@@ -42,6 +42,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     
+    
   }
   
   
@@ -89,8 +90,10 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-    let header = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 28))
-    header.backgroundColor = UIColor.red
+    let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ResultBotHeaderView")
+    
+    let header = cell as! ResultBotHeaderView
+    
     return header
     //testfunc
     
