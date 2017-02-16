@@ -14,9 +14,11 @@ class JDVSolutionInnerViewController: JDVViewController {
   var parentVC:ProbMenuViewController!
   var pageIndex:Int!
   
+  
+  
+  
   @IBOutlet var testTitleTextView: UITextView!
   @IBOutlet var testContentTextView: UITextView!
-  
   
   @IBOutlet var testChoiceTextViews: [UITextView]!
   
