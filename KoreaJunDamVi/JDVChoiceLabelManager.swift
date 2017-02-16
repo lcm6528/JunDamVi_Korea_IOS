@@ -7,12 +7,12 @@
 //
 
 import UIKit
-protocol JDVChoiceLabelManagerDelegate{
+protocol JDVChoiceViewManagerDelegate{
   
-  func JDVChoiceLabelManagerDelegate(_ manager:JDVChoiceLabelManager ,didSelectedLabelAtIndex index:Int)
+  func JDVChoiceViewManagerDelegate(_ manager:JDVChoiceViewManager ,didSelectedLabelAtIndex index:Int)
   
 }
-class JDVChoiceLabelManager: NSObject {
+class JDVChoiceViewManager: NSObject {
   
   enum StateOfChoice{
     case selected
@@ -29,31 +29,30 @@ class JDVChoiceLabelManager: NSObject {
     set(isActive){
       
       if isActive == true{
-        for label in arrayOfLabels{
-          label.isUserInteractionEnabled = true
+        for view in arrayOfViews{
+          view.isUserInteractionEnabled = true
         }
       }else{
-        for label in arrayOfLabels{
-          label.isUserInteractionEnabled = false
+        for view in arrayOfViews{
+          view.isUserInteractionEnabled = false
         }
       }
       
     }
   }
   
-  var arrayOfLabels:[UILabel]!
+  var arrayOfViews:[UIView]!
   var indexOfPage:Int!
   
-  var delegate:JDVChoiceLabelManagerDelegate?
+  var delegate:JDVChoiceViewManagerDelegate?
   
-  init(WithLabels label:UILabel ...){
+  init(WithViews views:UIView ...){
     super.init()
-    arrayOfLabels = label
+    arrayOfViews = views
     
-    for label in arrayOfLabels!{
-      let gesture = UITapGestureRecognizer(target: self, action:#selector(JDVChoiceLabelManager.touchOnLabel(_:)))
+    for label in arrayOfViews!{
+      let gesture = UITapGestureRecognizer(target: self, action:#selector(JDVChoiceViewManager.touchOnLabel(_:)))
       label.addGestureRecognizer(gesture)
-      label.adjustsFontSizeToFitWidth = true
 
       
     }
@@ -62,27 +61,27 @@ class JDVChoiceLabelManager: NSObject {
   
   func touchOnLabel(_ sender:UITapGestureRecognizer){
   
-    let index:Int = arrayOfLabels.index(of: sender.view as! UILabel)!
+    let index:Int = arrayOfViews.index(of: sender.view!)!
     selectLabelAtIndex(index)
     
     
     
-    self.delegate?.JDVChoiceLabelManagerDelegate(self, didSelectedLabelAtIndex: index)
+    self.delegate?.JDVChoiceViewManagerDelegate(self, didSelectedLabelAtIndex: index)
   }
   
   
   func setColorForStateAtIndex(_ index:Int, state:StateOfChoice){
     switch state{
     case .selected:
-      arrayOfLabels[index].backgroundColor = UIColor.lightGray
+      arrayOfViews[index].backgroundColor = UIColor.lightGray
       
       
     case .auth:
-      arrayOfLabels[index].backgroundColor = ThemeColor
+      arrayOfViews[index].backgroundColor = ThemeColor
       
       
     case .normal:
-      arrayOfLabels[index].backgroundColor = UIColor.lightGray
+      arrayOfViews[index].backgroundColor = UIColor.lightGray
       
     }
     
@@ -90,13 +89,13 @@ class JDVChoiceLabelManager: NSObject {
   
   func selectLabelAtIndex(_ index:Int){
     
-    for label in arrayOfLabels{
+    for view in arrayOfViews{
       
-      if label === arrayOfLabels[index]{
-        label.backgroundColor = UIColor.lightGray
+      if view === arrayOfViews[index]{
+        view.backgroundColor = UIColor.lightGray
         continue
       }
-      label.backgroundColor = UIColor.clear
+      view.backgroundColor = UIColor.white
       
       
     }

@@ -347,7 +347,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBc-xS-Vaa" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Miv-1b-UUE">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -362,10 +361,9 @@
                                                     <constraint firstAttribute="trailing" secondItem="Miv-1b-UUE" secondAttribute="trailing" constant="8" id="qDD-Ah-N9V"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41M-4w-Uiq" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41M-4w-Uiq" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tua-0E-ssk">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -379,10 +377,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="Tua-0E-ssk" secondAttribute="bottom" constant="8" id="xZY-QQ-oNU"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNC-Z2-70p" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNC-Z2-70p" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCB-re-YDQ">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -395,10 +392,9 @@
                                                     <constraint firstItem="VCB-re-YDQ" firstAttribute="centerX" secondItem="RNC-Z2-70p" secondAttribute="centerX" id="ut2-hO-yOh"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-hf-ofh" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-hf-ofh" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLg-p3-UXs">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -411,10 +407,9 @@
                                                     <constraint firstItem="qLg-p3-UXs" firstAttribute="top" secondItem="DHf-hf-ofh" secondAttribute="top" constant="8" id="XV1-F5-Rmu"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-SH-eP5" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-SH-eP5" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvV-7y-328">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text" base64-UTF8="YES">
 NS4g7KeR7ZiE7KCE7J2EIOyEpOy5mO2VmOyXrCDsnbjsnqzrpbwg7Jyh7ISx7ZWY6rOgIO2OuOywrCDs
 gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
@@ -512,6 +507,11 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         <outletCollection property="testChoiceTextViews" destination="VCB-re-YDQ" collectionClass="NSMutableArray" id="8FI-BV-bPB"/>
                         <outletCollection property="testChoiceTextViews" destination="qLg-p3-UXs" collectionClass="NSMutableArray" id="MnU-Xk-hyM"/>
                         <outletCollection property="testChoiceTextViews" destination="JvV-7y-328" collectionClass="NSMutableArray" id="rvN-kw-thd"/>
+                        <outletCollection property="testChoiceViews" destination="fBc-xS-Vaa" collectionClass="NSMutableArray" id="DBQ-R1-kfS"/>
+                        <outletCollection property="testChoiceViews" destination="41M-4w-Uiq" collectionClass="NSMutableArray" id="CqL-9P-2J2"/>
+                        <outletCollection property="testChoiceViews" destination="RNC-Z2-70p" collectionClass="NSMutableArray" id="Ea6-Nq-1Dn"/>
+                        <outletCollection property="testChoiceViews" destination="DHf-hf-ofh" collectionClass="NSMutableArray" id="Xoj-P3-nLw"/>
+                        <outletCollection property="testChoiceViews" destination="aOh-SH-eP5" collectionClass="NSMutableArray" id="WDQ-HA-amt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYM-yW-AJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -769,7 +769,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CfD-N0-GRe" id="GeR-AQ-DL0">
-                                            <frame key="frameInset" width="375" height="59.5"/>
+                                            <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
