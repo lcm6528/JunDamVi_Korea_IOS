@@ -17,8 +17,11 @@ extension UIColor {
   class var untPaleRed: UIColor {
     return UIColor(red: 225.0 / 255.0, green: 64.0 / 255.0, blue: 64.0 / 255.0, alpha: 1.0)
   }
-  
+  class var defaultIvory: UIColor {
+    return UIColor(red: 234.0 / 255.0, green: 230.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
+  }
   class var untBlack757575: UIColor {
     return UIColor(white: 75.0 / 255.0, alpha: 1.0)
   }
+  
 }
