@@ -14,9 +14,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z1-fw-LIS" customClass="ResultBotHeaderView" customModule="KoreaJunDamVi" customModuleProvider="target">
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z1-fw-LIS" customClass="botheader" customModule="KoreaJunDamVi" customModuleProvider="target">
             <subviews>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFd-iW-iwR">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFd-iW-iwR">
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오답노트 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogH-vi-Cof">
                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
@@ -124,6 +124,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="YFd-iW-iwR" secondAttribute="trailing" id="8IN-36-jo0"/>
                 <constraint firstItem="YFd-iW-iwR" firstAttribute="leading" secondItem="6Z1-fw-LIS" secondAttribute="leading" id="JQa-Zm-TKt"/>

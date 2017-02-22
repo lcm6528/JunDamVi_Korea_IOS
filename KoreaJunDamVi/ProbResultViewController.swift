@@ -34,11 +34,10 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     botView.tableView.delegate = self
     botView.tableView.dataSource = self
     
-    
     contentView.addSubview(topView)
     contentView.addSubview(botView)
     
-    
+//    botView.tableView.reloadData()
     
     
     
@@ -82,23 +81,18 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
     cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
     //custom for cell
-  
     return cell
 
-   
   }
-  
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-    let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ResultBotHeaderView")
-    
-    let header = view as! ResultBotHeaderView
+    let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "testheader")
+    let header = view as! testheader
     return header
     
-    
   }
-  
+   
   
   func buttonPressed(_ sender:UIButton){
     sender.isSelected = true
