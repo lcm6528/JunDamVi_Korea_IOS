@@ -45,6 +45,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
   }
   
+
   
 
   
@@ -90,19 +91,14 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-    let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ResultBotHeaderView")
-    
-    let header = cell as! ResultBotHeaderView
+    let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ResultBotHeaderView")
     
+    let header = view as! ResultBotHeaderView
     return header
-    //testfunc
+    
     
   }
   
-  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 40
-    //testfunc
-  }
   
   func buttonPressed(_ sender:UIButton){
     sender.isSelected = true
