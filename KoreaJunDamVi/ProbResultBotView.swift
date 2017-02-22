@@ -41,10 +41,12 @@ class ProbResultBotView: UIView {
     view = loadViewFromNib()
     view.frame = bounds
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-    tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
-    let nib = UINib(nibName: "ResultBotHeaderView", bundle: nil)
-    tableView.register(nib, forCellReuseIdentifier: "ResultBotHeaderView")
     
+    
+    tableView.register(UINib(nibName: "ResultBotHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "ResultBotHeaderView")
+    
+    
+    tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
     
     //testcode
     tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
