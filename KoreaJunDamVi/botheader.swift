@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultBotHeaderView: UITableViewHeaderFooterView{
+class botheader: UITableViewHeaderFooterView{
 
   
 }

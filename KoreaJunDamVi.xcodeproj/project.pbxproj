@@ -44,6 +44,8 @@
 		377BB0E31DC86F2100C9D08D /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37DA176D1DC330C70008C697 /* NanumGothicBold.ttf */; };
 		377BB0E41DC86F2100C9D08D /* NanumGothicExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37DA176E1DC330C70008C697 /* NanumGothicExtraBold.ttf */; };
 		377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BB0E51DC87BE600C9D08D /* MNFunction.swift */; };
+		377E38D21E5D623100D386A0 /* testheader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 377E38D11E5D623100D386A0 /* testheader.xib */; };
+		377E38D41E5D623B00D386A0 /* testheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E38D31E5D623B00D386A0 /* testheader.swift */; };
 		378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */; };
 		379DB8981DBF3D1700882280 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8971DBF3D1700882280 /* RoundView.swift */; };
 		379DB89A1DBF3E3400882280 /* Radian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8991DBF3E3400882280 /* Radian.swift */; };
@@ -70,8 +72,8 @@
 		37E0336B1DE5532000A5C4AC /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E0336A1DE5532000A5C4AC /* Analytics.storyboard */; };
 		37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */; };
 		37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */; };
-		37EA2E641E55873D00EE5F8B /* ResultBotHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EA2E631E55873D00EE5F8B /* ResultBotHeaderView.xib */; };
-		37EA2E661E558A4700EE5F8B /* ResultBotHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA2E651E558A4700EE5F8B /* ResultBotHeaderView.swift */; };
+		37EA2E641E55873D00EE5F8B /* botheader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EA2E631E55873D00EE5F8B /* botheader.xib */; };
+		37EA2E661E558A4700EE5F8B /* botheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA2E651E558A4700EE5F8B /* botheader.swift */; };
 		37F000971E07C27B00DA1350 /* GageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F000961E07C27B00DA1350 /* GageView.swift */; };
 		37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD101DE6AFD60085A2E4 /* ProbMenuViewController.swift */; };
 		37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD131DE6B0FD0085A2E4 /* JDVNavigationController.swift */; };
@@ -136,6 +138,8 @@
 		376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalRoundView.swift; sourceTree = "<group>"; };
 		376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalRoundView.xib; sourceTree = "<group>"; };
 		377BB0E51DC87BE600C9D08D /* MNFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFunction.swift; sourceTree = "<group>"; };
+		377E38D11E5D623100D386A0 /* testheader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testheader.xib; sourceTree = "<group>"; };
+		377E38D31E5D623B00D386A0 /* testheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testheader.swift; sourceTree = "<group>"; };
 		378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraphModel.swift; sourceTree = "<group>"; };
 		379DB8971DBF3D1700882280 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		379DB8991DBF3E3400882280 /* Radian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radian.swift; sourceTree = "<group>"; };
@@ -161,8 +165,8 @@
 		37E0336A1DE5532000A5C4AC /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		37EA2E631E55873D00EE5F8B /* ResultBotHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultBotHeaderView.xib; sourceTree = "<group>"; };
-		37EA2E651E558A4700EE5F8B /* ResultBotHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBotHeaderView.swift; sourceTree = "<group>"; };
+		37EA2E631E55873D00EE5F8B /* botheader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = botheader.xib; sourceTree = "<group>"; };
+		37EA2E651E558A4700EE5F8B /* botheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = botheader.swift; sourceTree = "<group>"; };
 		37F000961E07C27B00DA1350 /* GageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GageView.swift; sourceTree = "<group>"; };
 		37F7CD101DE6AFD60085A2E4 /* ProbMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbMenuViewController.swift; sourceTree = "<group>"; };
 		37F7CD131DE6B0FD0085A2E4 /* JDVNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNavigationController.swift; sourceTree = "<group>"; };
@@ -246,8 +250,10 @@
 			children = (
 				376265F61DFE88650048317F /* ProbResultTopView.xib */,
 				376265FA1DFE88F10048317F /* ProbResultBotView.xib */,
-				37EA2E651E558A4700EE5F8B /* ResultBotHeaderView.swift */,
-				37EA2E631E55873D00EE5F8B /* ResultBotHeaderView.xib */,
+				37EA2E651E558A4700EE5F8B /* botheader.swift */,
+				37EA2E631E55873D00EE5F8B /* botheader.xib */,
+				377E38D11E5D623100D386A0 /* testheader.xib */,
+				377E38D31E5D623B00D386A0 /* testheader.swift */,
 			);
 			name = "Prob Result";
 			sourceTree = "<group>";
@@ -552,8 +558,9 @@
 				37D788811E3099D90039F999 /* AnalBarChartView.xib in Resources */,
 				37E033671DE5521000A5C4AC /* Note.storyboard in Resources */,
 				37F7CD2B1DE6B0FE0085A2E4 /* JDVTestResultLabelView.xib in Resources */,
-				37EA2E641E55873D00EE5F8B /* ResultBotHeaderView.xib in Resources */,
+				37EA2E641E55873D00EE5F8B /* botheader.xib in Resources */,
 				377BB0E41DC86F2100C9D08D /* NanumGothicExtraBold.ttf in Resources */,
+				377E38D21E5D623100D386A0 /* testheader.xib in Resources */,
 				37BE73221E02849A00D00259 /* ProbResultBotCell.xib in Resources */,
 				375EB91C1DBDE55900337236 /* LaunchScreen.storyboard in Resources */,
 				37F7CD291DE6B0FE0085A2E4 /* JDVTabbarView.xib in Resources */,
@@ -671,11 +678,12 @@
 				37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
 				37D7887F1E3099CF0039F999 /* AnalBarChartView.swift in Sources */,
+				377E38D41E5D623B00D386A0 /* testheader.swift in Sources */,
 				37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */,
 				375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */,
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,
 				37D0517B1E260D3100D92E89 /* SolFrameVC.swift in Sources */,
-				37EA2E661E558A4700EE5F8B /* ResultBotHeaderView.swift in Sources */,
+				37EA2E661E558A4700EE5F8B /* botheader.swift in Sources */,
 				37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */,
 				37D99B101DE87B1D0017F7CF /* ProbInnerVC.swift in Sources */,
 				375EB9171DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld in Sources */,

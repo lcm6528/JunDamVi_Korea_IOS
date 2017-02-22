@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="testheader" customModule="KoreaJunDamVi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArA-rS-d0h">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문항" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEa-el-kcP">
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbr-9W-aTV">
+                            <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="0.5" id="OD5-8O-xof"/>
+                                <constraint firstAttribute="height" constant="22" id="vGw-HX-12m"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-sm-WjY">
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHj-8H-EG6">
+                            <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="0.5" id="59M-Bk-ygd"/>
+                                <constraint firstAttribute="height" constant="22" id="ZxJ-4u-mur"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정답" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-eX-670">
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0V-Xq-RGy">
+                            <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="KQR-6m-bDm"/>
+                                <constraint firstAttribute="width" constant="0.5" id="xWQ-Ss-Tcf"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내답" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-gV-7A0">
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-1i-gKa">
+                            <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="dbe-Y2-jub"/>
+                                <constraint firstAttribute="width" constant="0.5" id="ypq-WO-sBB"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결과" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j3-9n-itA">
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aji-42-HJ3">
+                            <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="Iy8-Lh-r5X"/>
+                                <constraint firstAttribute="width" constant="0.5" id="Scl-k4-3Xw"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오답노트 추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJJ-i3-Asl">
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.32156862749999998" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="6fm-gV-7A0" secondAttribute="bottom" id="2IG-P4-xdF"/>
+                        <constraint firstItem="eg6-sm-WjY" firstAttribute="leading" secondItem="Gbr-9W-aTV" secondAttribute="trailing" id="3ES-GM-YLA"/>
+                        <constraint firstItem="Aji-42-HJ3" firstAttribute="leading" secondItem="5j3-9n-itA" secondAttribute="trailing" id="4dL-Vt-tK3"/>
+                        <constraint firstItem="IuC-eX-670" firstAttribute="width" secondItem="ArA-rS-d0h" secondAttribute="width" multiplier="0.15" id="4gL-0Q-2aU"/>
+                        <constraint firstAttribute="bottom" secondItem="lEa-el-kcP" secondAttribute="bottom" id="4pS-xa-P9Y"/>
+                        <constraint firstItem="AHj-8H-EG6" firstAttribute="leading" secondItem="eg6-sm-WjY" secondAttribute="trailing" id="6fg-ui-hMh"/>
+                        <constraint firstAttribute="bottom" secondItem="dJJ-i3-Asl" secondAttribute="bottom" id="6ka-Jx-LTZ"/>
+                        <constraint firstItem="NlH-1i-gKa" firstAttribute="leading" secondItem="6fm-gV-7A0" secondAttribute="trailing" id="8bE-sR-9pd"/>
+                        <constraint firstItem="IuC-eX-670" firstAttribute="top" secondItem="ArA-rS-d0h" secondAttribute="top" id="978-CB-WDL"/>
+                        <constraint firstAttribute="bottom" secondItem="eg6-sm-WjY" secondAttribute="bottom" id="9Q8-Bg-snA"/>
+                        <constraint firstItem="5j3-9n-itA" firstAttribute="width" secondItem="ArA-rS-d0h" secondAttribute="width" multiplier="0.15" id="Ae2-7X-yOM"/>
+                        <constraint firstItem="lEa-el-kcP" firstAttribute="top" secondItem="ArA-rS-d0h" secondAttribute="top" id="D5R-nZ-GU7"/>
+                        <constraint firstItem="5j3-9n-itA" firstAttribute="top" secondItem="ArA-rS-d0h" secondAttribute="top" id="FZ8-qK-BAe"/>
+                        <constraint firstItem="eg6-sm-WjY" firstAttribute="width" secondItem="ArA-rS-d0h" secondAttribute="width" multiplier="0.15" id="GBR-DA-ETg"/>
+                        <constraint firstItem="AHj-8H-EG6" firstAttribute="centerY" secondItem="eg6-sm-WjY" secondAttribute="centerY" id="Ifk-Da-cUq"/>
+                        <constraint firstItem="Aji-42-HJ3" firstAttribute="centerY" secondItem="5j3-9n-itA" secondAttribute="centerY" id="JZX-F3-s4v"/>
+                        <constraint firstItem="g0V-Xq-RGy" firstAttribute="leading" secondItem="IuC-eX-670" secondAttribute="trailing" id="L5w-dS-I1k"/>
+                        <constraint firstAttribute="trailing" secondItem="dJJ-i3-Asl" secondAttribute="trailing" id="MaI-kM-7Ox"/>
+                        <constraint firstItem="lEa-el-kcP" firstAttribute="width" secondItem="ArA-rS-d0h" secondAttribute="width" multiplier="0.15" id="PZp-ZI-NhD"/>
+                        <constraint firstItem="Gbr-9W-aTV" firstAttribute="centerY" secondItem="lEa-el-kcP" secondAttribute="centerY" id="PyW-zm-aLi"/>
+                        <constraint firstItem="dJJ-i3-Asl" firstAttribute="top" secondItem="ArA-rS-d0h" secondAttribute="top" id="QS9-Ef-4sy"/>
+                        <constraint firstItem="dJJ-i3-Asl" firstAttribute="leading" secondItem="Aji-42-HJ3" secondAttribute="trailing" id="aol-nj-2CG"/>
+                        <constraint firstItem="5j3-9n-itA" firstAttribute="leading" secondItem="NlH-1i-gKa" secondAttribute="trailing" id="d6k-uq-YJ1"/>
+                        <constraint firstItem="6fm-gV-7A0" firstAttribute="width" secondItem="ArA-rS-d0h" secondAttribute="width" multiplier="0.15" id="et6-cO-qVE"/>
+                        <constraint firstAttribute="bottom" secondItem="IuC-eX-670" secondAttribute="bottom" id="heI-CW-fbz"/>
+                        <constraint firstItem="Gbr-9W-aTV" firstAttribute="leading" secondItem="lEa-el-kcP" secondAttribute="trailing" id="iNG-cP-Ize"/>
+                        <constraint firstItem="IuC-eX-670" firstAttribute="leading" secondItem="AHj-8H-EG6" secondAttribute="trailing" id="maB-Wh-7qz"/>
+                        <constraint firstItem="NlH-1i-gKa" firstAttribute="centerY" secondItem="6fm-gV-7A0" secondAttribute="centerY" id="nFQ-u4-Z9R"/>
+                        <constraint firstAttribute="height" constant="40" id="npq-Fd-U6g"/>
+                        <constraint firstItem="lEa-el-kcP" firstAttribute="leading" secondItem="ArA-rS-d0h" secondAttribute="leading" id="pcs-E7-IXY"/>
+                        <constraint firstItem="NlH-1i-gKa" firstAttribute="leading" secondItem="6fm-gV-7A0" secondAttribute="trailing" id="qJ6-sj-OfC"/>
+                        <constraint firstItem="6fm-gV-7A0" firstAttribute="top" secondItem="ArA-rS-d0h" secondAttribute="top" id="qrq-55-7Mr"/>
+                        <constraint firstItem="6fm-gV-7A0" firstAttribute="leading" secondItem="g0V-Xq-RGy" secondAttribute="trailing" id="t12-s1-Vt4"/>
+                        <constraint firstItem="eg6-sm-WjY" firstAttribute="top" secondItem="ArA-rS-d0h" secondAttribute="top" id="yn5-w2-m23"/>
+                        <constraint firstItem="g0V-Xq-RGy" firstAttribute="centerY" secondItem="IuC-eX-670" secondAttribute="centerY" id="zYL-ea-Grh"/>
+                        <constraint firstAttribute="bottom" secondItem="5j3-9n-itA" secondAttribute="bottom" id="zm4-vG-N5a"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ArA-rS-d0h" secondAttribute="bottom" id="3Dp-Yc-ejc"/>
+                <constraint firstItem="ArA-rS-d0h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R3D-oW-hMD"/>
+                <constraint firstItem="ArA-rS-d0h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YlF-bT-wT4"/>
+                <constraint firstAttribute="trailing" secondItem="ArA-rS-d0h" secondAttribute="trailing" id="oKG-mH-gk4"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

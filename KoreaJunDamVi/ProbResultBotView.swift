@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ProbResultBotView: UIView {
+class ProbResultBotView: UIView ,UITableViewDelegate{
   
   var view:UIView!
   
@@ -43,16 +43,11 @@ class ProbResultBotView: UIView {
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
     
     
-    tableView.register(UINib(nibName: "ResultBotHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "ResultBotHeaderView")
-    
-    
+    tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
     tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
     
-    //testcode
-    tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
     
     addSubview(view)
-    
     
     
   }
@@ -72,4 +67,7 @@ class ProbResultBotView: UIView {
   }
   
   
+  
+  
+
 }
