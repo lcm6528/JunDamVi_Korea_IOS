@@ -72,3 +72,12 @@ func showAlertWithString(_ title:String , message:String, sender:UIViewControlle
   alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
   sender.present(alert, animated: true, completion: nil)
 }
+
+
+func IsblockUserInteraction(bool:Bool){
+  if bool == true{
+    UIApplication.shared.beginIgnoringInteractionEvents()
+  }else{
+    UIApplication.shared.endIgnoringInteractionEvents()
+  }
+}
