@@ -72,6 +72,7 @@
 		37E0336B1DE5532000A5C4AC /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E0336A1DE5532000A5C4AC /* Analytics.storyboard */; };
 		37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */; };
 		37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */; };
+		37E542651E5E9B6D0017884E /* Prob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E542641E5E9B6D0017884E /* Prob.swift */; };
 		37EA2E641E55873D00EE5F8B /* botheader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EA2E631E55873D00EE5F8B /* botheader.xib */; };
 		37EA2E661E558A4700EE5F8B /* botheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA2E651E558A4700EE5F8B /* botheader.swift */; };
 		37F000971E07C27B00DA1350 /* GageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F000961E07C27B00DA1350 /* GageView.swift */; };
@@ -165,6 +166,7 @@
 		37E0336A1DE5532000A5C4AC /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		37E542641E5E9B6D0017884E /* Prob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prob.swift; sourceTree = "<group>"; };
 		37EA2E631E55873D00EE5F8B /* botheader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = botheader.xib; sourceTree = "<group>"; };
 		37EA2E651E558A4700EE5F8B /* botheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = botheader.swift; sourceTree = "<group>"; };
 		37F000961E07C27B00DA1350 /* GageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GageView.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				375373A91E11532D00205C13 /* Note */,
 				375373AF1E122A5F00205C13 /* Solution */,
 				376CB42A1E2DE92600AC8F49 /* Analytics */,
+				37E542661E5EB16B0017884E /* Models */,
 				37F7CD3B1DE6B3700085A2E4 /* StoryBoards */,
 				37F7CD3A1DE6B3570085A2E4 /* Supportings */,
 				37F7CD371DE6B1F30085A2E4 /* CoreData */,
@@ -402,6 +405,14 @@
 				37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		37E542661E5EB16B0017884E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37E542641E5E9B6D0017884E /* Prob.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		37F7CD121DE6AFDB0085A2E4 /* Prob */ = {
@@ -646,6 +657,7 @@
 				37F7CD2E1DE6B0FE0085A2E4 /* JDVRadioButtonManager.swift in Sources */,
 				37F000971E07C27B00DA1350 /* GageView.swift in Sources */,
 				375EDAB81E41FDC200D521C9 /* JDVViews.swift in Sources */,
+				37E542651E5E9B6D0017884E /* Prob.swift in Sources */,
 				37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */,
 				37A985981E41BDE300853D71 /* BlockView.swift in Sources */,
 				3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */,

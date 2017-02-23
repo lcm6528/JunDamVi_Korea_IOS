@@ -28,7 +28,6 @@ class ProbTestFrameViewController: JDVViewController {
     
     pageViewController.delegate = self
     pageViewController.dataSource = self
-    
     let initialContenViewController = self.pageViewAtIndex(0) as! ProbTestInnerViewController
     
     let viewControllers = NSArray(object: initialContenViewController)
@@ -223,6 +222,7 @@ extension ProbTestFrameViewController:UINavigationControllerDelegate{
   
   func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
     WSProgressHUD.dismiss()
+    IsblockUserInteraction(bool: false)
   }
   
 
