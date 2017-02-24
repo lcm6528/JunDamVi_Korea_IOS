@@ -10,8 +10,10 @@ import UIKit
 
 class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegate {
   
+  var Prob:Prob!
   
-  var parentVC:ProbMenuViewController!
+  weak var parentVC:ProbMenuViewController!
+  
   var pageIndex:Int!
   
   
@@ -21,6 +23,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
   @IBOutlet var testTitleTextView: UITextView!
   @IBOutlet var testContentTextView: UITextView!
   
+  @IBOutlet var ScoreLabel: UILabel!
   
   
   @IBOutlet var testChoiceViews: [UIView]!
@@ -44,7 +47,8 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     
     setChoices()
-    // Do any additional setup after loading the view.
+    configure()
+
   }
   
   override func didReceiveMemoryWarning() {
@@ -58,6 +62,21 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
       textView.text = arr[index]
     }
   }
+  
+  func configure(){
+    
+    
+    self.testTitleTextView.attributedText = Prob.title_attString
+    self.testContentTextView.attributedText = Prob.article_attString
+    self.ScoreLabel.text = "[\(Prob.Score)점]"
+    for (index,textView) in testChoiceTextViews.enumerated(){
+      textView.attributedText = Prob.choices_attString[index]
+    }
+    
+    
+    
+  }
+  
   
   
   func JDVChoiceViewManagerDelegate(_ manager: JDVChoiceViewManager, didSelectedLabelAtIndex index: Int) {

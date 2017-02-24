@@ -23,14 +23,15 @@ func getHeightOfStatusNNaviBar(_ vc:UIViewController)->CGFloat{
 }
 
 
-func stringToAttrStringInHTML(_ str:String) -> (NSMutableAttributedString){
-  var attrString:NSMutableAttributedString!
+func stringToAttrStringInHTML(_ str:String) -> NSAttributedString{
+  var attrString = NSMutableAttributedString()
   
   do{
     attrString = try NSMutableAttributedString(data: str.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
   }catch{}
   
-  return attrString
+  let result = attrString.copy() as! NSAttributedString
+  return result
 }
 
 
