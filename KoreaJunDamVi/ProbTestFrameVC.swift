@@ -12,7 +12,7 @@ class ProbTestFrameViewController: JDVViewController {
   
   
   //For test
-  let number_of_pages = 2
+  var number_of_pages = 0
   ///////////
   
   @IBOutlet var toolBarCenterLabel: UILabel!
@@ -21,8 +21,14 @@ class ProbTestFrameViewController: JDVViewController {
   var pageViewController:UIPageViewController!
   var currentIndex:Int = 0
   
+  var Probs:[Prob] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    if !Probs.isEmpty{
+      number_of_pages = Probs.count
+    }
     
     pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestPageViewController") as! UIPageViewController
     
@@ -182,12 +188,13 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
   }
   
   func pageViewAtIndex(_ index: Int) ->JDVViewController{
-    let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
-    pageContentViewController.pageIndex = index
-    pageContentViewController.selectHandler = {
+    let innerView = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
+    innerView.Prob = Probs[index]
+    innerView.pageIndex = index
+    innerView.selectHandler = {
       self.gotoNextPage()
     }
-    return pageContentViewController
+    return innerView
   }
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?

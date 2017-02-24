@@ -8,12 +8,15 @@
 
 import UIKit
 import WSProgressHUD
+import FMDB
 
-class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIPageViewControllerDataSource ,ProbCollectionViewDelegate{
+class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
   
   let number_of_pages = 4
   var currentMenu:Int = 0
   var pageViewController:UIPageViewController!
+  
+  var Probs:[Prob] = []
   
   @IBOutlet var ToolbarButtons: [UIButton]!
   
@@ -30,9 +33,7 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     
     let viewControllers = NSArray(object: initialContenViewController)
     
-    
     self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
-    
     self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-104)
     
     self.addChildViewController(self.pageViewController)
@@ -55,6 +56,14 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
       }else if index == 1{
         self.performSegue(withIdentifier: "anal", sender: self)
       }else{
+        
+        
+        
+        
+        self.fetchProbs(withProbnum: 34)
+        
+        
+        print("push")
         self.performSegue(withIdentifier: "push", sender: self)
       }
      
@@ -85,6 +94,8 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier! {
     case "push":
+      let vc = segue.destination as!ProbTestFrameViewController
+      vc.Probs = self.Probs
       self.tabBarController?.tabBar.isHidden = true
     case "quick":
       self.tabBarController?.tabBar.isHidden = true
@@ -96,13 +107,41 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
   
   
   
+  func fetchProbs(withProbnum num:Int){
+    
+    
+    let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
+    let fmdb = FMDatabase(path: dbPath?.path)
+    
+    if (fmdb?.open())! {
+      
+      let sql1 = "SELECT * FROM Probs WHERE testnum = \(num)"
+      let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+      while result?.next() == true {
+        let dict:NSDictionary = result!.resultDictionary() as NSDictionary
+        let prob = Prob(withDict: dict)
+        
+        Probs.append(prob)
+        
+      }
+      
+      
+    }
+    fmdb?.close()
+    print("fetch complete")
+    
+    
+    
+  }
   
   
   
+  
+  
+}
+
+extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource{
   //MARK: UIPageViewDelegate,Datasource
-  
-  
-  
   
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     
@@ -110,7 +149,6 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
       selectButtonInCollection(atIndex: getCurrnetIndexOfPage())
       
     }
-    
     
   }
   
@@ -170,18 +208,5 @@ class ProbMenuViewController: JDVViewController,UIPageViewControllerDelegate,UIP
     return vc.pageIndex
     
   }
-
-  
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
   
 }

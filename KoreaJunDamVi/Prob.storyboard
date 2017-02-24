@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -330,15 +330,22 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPG-tI-UJB">
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-1p-evp">
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-1p-evp">
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="NanumMyeongjo"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" lookupSuggestion="YES"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[2점]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-yX-Ne7">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="ciC-Nw-iqy"/>
+                                                    <constraint firstAttribute="height" constant="35" id="tBS-EA-G9M"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumMyeongjoExtraBold" family="NanumMyeongjo" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -457,8 +464,8 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                             <constraint firstItem="Tua-0E-ssk" firstAttribute="width" secondItem="Miv-1b-UUE" secondAttribute="width" id="P1F-5g-9Zb"/>
                                             <constraint firstItem="FEZ-1p-evp" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="8" id="QMI-Y3-VwQ"/>
                                             <constraint firstItem="aOh-SH-eP5" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" constant="12" id="ThY-SE-MOJ"/>
+                                            <constraint firstItem="JCS-yX-Ne7" firstAttribute="top" secondItem="FEZ-1p-evp" secondAttribute="top" id="TlX-ns-ha3"/>
                                             <constraint firstAttribute="trailing" secondItem="41M-4w-Uiq" secondAttribute="trailing" constant="12" id="Z3u-xX-qVD"/>
-                                            <constraint firstItem="JCS-yX-Ne7" firstAttribute="centerY" secondItem="FEZ-1p-evp" secondAttribute="centerY" id="ZPS-rG-XiS"/>
                                             <constraint firstItem="aOh-SH-eP5" firstAttribute="top" secondItem="DHf-hf-ofh" secondAttribute="bottom" constant="8" id="aGU-cX-bqn"/>
                                             <constraint firstItem="41M-4w-Uiq" firstAttribute="top" secondItem="fBc-xS-Vaa" secondAttribute="bottom" constant="8" id="bNC-TR-Sk8"/>
                                             <constraint firstAttribute="trailing" secondItem="aOh-SH-eP5" secondAttribute="trailing" constant="12" id="bPD-Ed-J2o"/>
@@ -476,7 +483,6 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                             <constraint firstItem="FEZ-1p-evp" firstAttribute="top" secondItem="bPG-tI-UJB" secondAttribute="top" constant="8" id="rMv-kC-vwE"/>
                                             <constraint firstItem="6Q9-gX-Ptx" firstAttribute="leading" secondItem="bPG-tI-UJB" secondAttribute="leading" id="wff-kd-uQx"/>
                                             <constraint firstItem="qLg-p3-UXs" firstAttribute="width" secondItem="Miv-1b-UUE" secondAttribute="width" id="x2c-SD-oQl"/>
-                                            <constraint firstItem="JCS-yX-Ne7" firstAttribute="height" secondItem="FEZ-1p-evp" secondAttribute="height" id="xb9-lb-2fb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -500,6 +506,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="ScoreLabel" destination="JCS-yX-Ne7" id="v5l-gt-EgR"/>
                         <outlet property="testContentTextView" destination="KKX-z1-oUU" id="yTl-dq-5bO"/>
                         <outlet property="testTitleTextView" destination="FEZ-1p-evp" id="PfR-P2-vbX"/>
                         <outletCollection property="testChoiceTextViews" destination="Miv-1b-UUE" collectionClass="NSMutableArray" id="JcG-Le-U5E"/>
@@ -592,7 +599,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

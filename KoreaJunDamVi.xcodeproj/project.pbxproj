@@ -11,6 +11,8 @@
 		3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */; };
 		3737473E1E1B8385008A37E7 /* AnalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */; };
 		373DE7CC1E0A9B9000FACD62 /* ProbResultBotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */; };
+		3741FA851E60098A004EEA73 /* Database.db in Resources */ = {isa = PBXBuildFile; fileRef = 3741FA841E600851004EEA73 /* Database.db */; };
+		3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741FA861E60170B004EEA73 /* JDVFonts.swift */; };
 		3742923B1E24C65200DBE230 /* ProbAnalFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */; };
 		3747EEA31DC1CAFC0029DC27 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA21DC1CAFC0029DC27 /* Home.storyboard */; };
 		3747EEA51DC1CBA60029DC27 /* Prob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA41DC1CBA60029DC27 /* Prob.storyboard */; };
@@ -103,6 +105,8 @@
 		3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewCell.swift; sourceTree = "<group>"; };
 		3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalContentViewController.swift; sourceTree = "<group>"; };
 		373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultBotCell.swift; sourceTree = "<group>"; };
+		3741FA841E600851004EEA73 /* Database.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.db; sourceTree = "<group>"; };
+		3741FA861E60170B004EEA73 /* JDVFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVFonts.swift; sourceTree = "<group>"; };
 		3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbAnalFrameViewController.swift; sourceTree = "<group>"; };
 		3747EEA21DC1CAFC0029DC27 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3747EEA41DC1CBA60029DC27 /* Prob.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Prob.storyboard; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 				379DB8991DBF3E3400882280 /* Radian.swift */,
 				37F7CD141DE6B0FD0085A2E4 /* JDVFunctions.swift */,
 				375373A11E0BA49100205C13 /* JDVColors.swift */,
+				3741FA861E60170B004EEA73 /* JDVFonts.swift */,
 				37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */,
 				37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */,
 				37D788841E31EAE00039F999 /* JDVShadowView.swift */,
@@ -411,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				37E542641E5E9B6D0017884E /* Prob.swift */,
+				3741FA841E600851004EEA73 /* Database.db */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3741FA851E60098A004EEA73 /* Database.db in Resources */,
 				37D28DC71DF54A6800B40129 /* NanumBarunGothic.ttf in Resources */,
 				37D28DC81DF54A6800B40129 /* NanumBarunGothicBold.ttf in Resources */,
 				375373B11E122A8100205C13 /* JDVGraphBaseCell.xib in Resources */,
@@ -678,6 +685,7 @@
 				376CB42C1E2F2D7300AC8F49 /* AnalRoundView.swift in Sources */,
 				37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */,
 				37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */,
+				3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */,
 				37F7CD251DE6B0FD0085A2E4 /* JDVFunctions.swift in Sources */,
 				37D051A11E275D3700D92E89 /* ProbPopupV.swift in Sources */,
 				37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */,
