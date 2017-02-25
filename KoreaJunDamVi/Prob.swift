@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import EZSwiftExtensions
+
 enum Prob_time: String{
   
   case chosun = "조선"
@@ -47,9 +49,6 @@ struct Prob {
   var choices_String:[String] = []
   var choices_attString:[NSAttributedString] = []
   
-  
-  
-  
   var time:Prob_time?
   var type:Prob_type?
   var theme:Prob_theme?
@@ -84,10 +83,14 @@ struct Prob {
   
   mutating func setArticleAtt(){
     //parse image here
-    let result =  NSMutableAttributedString(attributedString: stringToAttrStringInHTML(article_String))
+    
+    
+    
+    let result =  replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
     result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
-
+    
     self.article_attString = result
+    
     
   }
   
@@ -95,8 +98,10 @@ struct Prob {
   mutating func setChoices(withArray arr:[String]){
     choices_String = arr
     
-    for choice in choices_String{
-      let result = NSMutableAttributedString(string: choice)
+    for (index,choice) in choices_String.enumerated(){
+      let name = String(format: "%d_%02d", ProbID,index+1)
+      let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/3)
+  
       result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
       choices_attString.append(result)
       
@@ -116,9 +121,35 @@ struct Prob {
     self.tags = arr
   }
   
-  mutating func setArticleAttString(str:String){
+  
+  func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH - 20)->NSMutableAttributedString{
+    
+    let arr = str.components(separatedBy: "/img/")
+    
+    //No image in str
+    if arr.count == 1 {
+      return NSMutableAttributedString(attributedString: stringToAttrStringInHTML(str))
+    }
     
     
+    let result = NSMutableAttributedString()
+    
+    result.append(stringToAttrStringInHTML(arr[0]))
+    
+    //Append Image
+    let attachIcon:NSTextAttachment = NSTextAttachment()
+    let bundlePath = Bundle.main.path(forResource: name, ofType: "png")
+    attachIcon.image = UIImage(contentsOfFile: bundlePath!)
+    let scaleFactor = attachIcon.image!.size.width / (width)
+    attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
+    
+    let imageString = NSAttributedString(attachment: attachIcon)
+    result.append(imageString)
+    ///////////////
+    
+    result.append(stringToAttrStringInHTML(arr[1]))
+    
+    return result
     
   }
   
