@@ -11,7 +11,7 @@ import UIKit
 class ProbPopupView: UIViewController {
 
   
-  var dataArray = [String:String]()
+  var dataArray:[Prob] = []
   var didSelectHandler: ((Int) -> Void)?
   @IBOutlet var collectionView: UICollectionView!
   
@@ -23,7 +23,9 @@ class ProbPopupView: UIViewController {
       
       
       if let flowLayout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-        flowLayout.itemSize = CGSize(width: (SCREEN_WIDTH)/5, height: (SCREEN_WIDTH)/5)
+        
+        let offset = SCREEN_WIDTH/5 - 1
+        flowLayout.itemSize = CGSize(width: offset, height: offset*1.5)
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 1
         

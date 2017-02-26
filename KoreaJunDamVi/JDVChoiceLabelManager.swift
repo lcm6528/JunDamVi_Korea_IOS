@@ -92,7 +92,7 @@ class JDVChoiceViewManager: NSObject {
     for view in arrayOfViews{
       
       if view === arrayOfViews[index]{
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.selectedRed
         continue
       }
       view.backgroundColor = UIColor.white

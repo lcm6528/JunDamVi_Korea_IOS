@@ -19,7 +19,7 @@ class ProbTestFrameViewController: JDVViewController {
   @IBOutlet var toolBarRightButton: UIButton!
   @IBOutlet var toolBarLeftButton: UIButton!
   var pageViewController:UIPageViewController!
-  var currentIndex:Int = 0
+//  var currentIndex:Int = 0
   
   var Probs:[Prob] = []
   
@@ -61,10 +61,12 @@ class ProbTestFrameViewController: JDVViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "popup"{
       let vc = segue.destination as! ProbPopupView
-      vc.dataArray = ["test":"test","test1":"test","test2":"test","test3":"test","test4":"test"]
+      vc.dataArray = Probs
       vc.didSelectHandler = { index in
-        print("index from handler\(index)")
-        self.gotoNextPage()
+        
+        let currentIdx = self.getCurrnetIndexOfPage()
+        self.gotoPageAtIndex(currentIdx, goto: index)
+        self.setToolbarTitle(currentIdx)
         
       }
     }
@@ -74,6 +76,7 @@ class ProbTestFrameViewController: JDVViewController {
   
   @IBAction func popUpList(_ sender: AnyObject) {
     performSegue(withIdentifier: "popup", sender: self)
+    
   }
   
   
@@ -157,11 +160,17 @@ class ProbTestFrameViewController: JDVViewController {
     
     let vc = pageViewAtIndex(nextIndex)
     
-    if currentIndex > nextIndex{
-      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
-    }else{
-      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+    let completion:(Bool)->() = { success in
+      self.setToolbarTitle(nextIndex)
     }
+    
+    if currentIndex > nextIndex{
+      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
+    }else{
+      pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
+    }
+    
+    
   }
   
   func getCurrnetIndexOfPage()-> Int{
