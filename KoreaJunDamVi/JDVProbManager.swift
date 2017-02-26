@@ -133,6 +133,7 @@ class JDVProbManager: NSObject {
                                range: NSRange(location: 0, length: articleString.length)
     )
     return articleString
+    
   }
   
   
@@ -158,9 +159,7 @@ class JDVProbManager: NSObject {
       attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
       
       let imageString = NSAttributedString(attachment: attachIcon)
-      
       problemString.append(imageString)
-      
       
     }
     
