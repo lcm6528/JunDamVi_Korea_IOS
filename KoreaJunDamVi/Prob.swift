@@ -69,7 +69,9 @@ struct Prob {
     setChoices(withArray: [dict["choice1"] as! String,dict["choice2"] as! String,dict["choice3"] as! String,dict["choice4"] as! String,dict["choice5"] as! String])
     setTestAtt()
     setArticleAtt()
+    
   }
+  
   
   mutating func setTestAtt(){
     
@@ -77,7 +79,6 @@ struct Prob {
     title.append(stringToAttrStringInHTML(title_String))
     title.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
     self.title_attString = title
-    
     
   }
   
@@ -101,7 +102,7 @@ struct Prob {
     for (index,choice) in choices_String.enumerated(){
       let name = String(format: "%d_%02d", ProbID,index+1)
       let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/3)
-  
+      
       result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
       choices_attString.append(result)
       
@@ -135,7 +136,7 @@ struct Prob {
     let result = NSMutableAttributedString()
     
     result.append(stringToAttrStringInHTML(arr[0]))
-    
+    result.append(NSAttributedString(string: "\n"))
     //Append Image
     let attachIcon:NSTextAttachment = NSTextAttachment()
     let bundlePath = Bundle.main.path(forResource: name, ofType: "png")
@@ -146,7 +147,7 @@ struct Prob {
     let imageString = NSAttributedString(attachment: attachIcon)
     result.append(imageString)
     ///////////////
-    
+    result.append(NSAttributedString(string: "\n"))
     result.append(stringToAttrStringInHTML(arr[1]))
     
     return result
@@ -157,3 +158,9 @@ struct Prob {
   
   
 }
+/*
+ 
+ 
+ 
+ 
+ */
