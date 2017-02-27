@@ -17,7 +17,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
   var pageIndex:Int!
   
   
-  var selectHandler:(()->Void)?
+  var selectHandler:((Int,Int)->Void)?
   
   
   @IBOutlet var testTitleTextView: UITextView!
@@ -81,7 +81,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
   
   
   func JDVChoiceViewManagerDelegate(_ manager: JDVChoiceViewManager, didSelectedLabelAtIndex index: Int) {
-    self.selectHandler?()
+    self.selectHandler?(Prob.ProbNum,index)
     
   }
   

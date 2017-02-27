@@ -11,18 +11,17 @@ import WSProgressHUD
 class ProbTestFrameViewController: JDVViewController {
   
   
-  //For test
-  var number_of_pages = 0
-  ///////////
   
+  var number_of_pages = 0
   @IBOutlet var toolBarCenterLabel: UILabel!
   @IBOutlet var toolBarRightButton: UIButton!
   @IBOutlet var toolBarLeftButton: UIButton!
   var pageViewController:UIPageViewController!
-//  var currentIndex:Int = 0
+  
   
   var Probs:[Prob] = []
-  
+  var result:TestResult!
+  var selections:[Int] = []
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -30,6 +29,9 @@ class ProbTestFrameViewController: JDVViewController {
       number_of_pages = Probs.count
     }
     
+    selections = [Int](repeatElement(0, count: Probs.count))
+    
+    //////PageVC Settings///////
     pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestPageViewController") as! UIPageViewController
     
     pageViewController.delegate = self
@@ -46,6 +48,9 @@ class ProbTestFrameViewController: JDVViewController {
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)
     self.pageViewController.didMove(toParentViewController: self)
+    //////////////////////
+    
+    
     
     self.navigationController?.delegate = self
     setToolbarTitle(getCurrnetIndexOfPage())
@@ -69,14 +74,19 @@ class ProbTestFrameViewController: JDVViewController {
         self.setToolbarTitle(currentIdx)
         
       }
+    }else if segue.identifier == "push"{
+      let vc = segue.destination as! ProbResultViewController
+//      result = TestResult(withProbs: Probs, selections: selections)
+//      vc.result = self.result
+      
     }
+    
     
   }
   
   
   @IBAction func popUpList(_ sender: AnyObject) {
     performSegue(withIdentifier: "popup", sender: self)
-    
   }
   
   
@@ -101,9 +111,9 @@ class ProbTestFrameViewController: JDVViewController {
     }else if nextIndex < number_of_pages{
       let vc = pageViewAtIndex(nextIndex)
       
-//      setActiveTools(false)
+      //      setActiveTools(false)
       pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
-//        self.setActiveTools(true)
+        //        self.setActiveTools(true)
         self.setToolbarTitle(self.getCurrnetIndexOfPage())
       })
       
@@ -121,9 +131,9 @@ class ProbTestFrameViewController: JDVViewController {
     guard nextIndex >= 0 else {return}
     
     let vc = pageViewAtIndex(nextIndex)
-//    setActiveTools(false)
+    //    setActiveTools(false)
     pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
-//      self.setActiveTools(true)
+      //      self.setActiveTools(true)
       self.setToolbarTitle(self.getCurrnetIndexOfPage())
     })
     
@@ -143,7 +153,7 @@ class ProbTestFrameViewController: JDVViewController {
     else if index == number_of_pages - 1
     {
       toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
-       toolBarRightButton.setTitle( "", for: .normal)
+      toolBarRightButton.setTitle( "", for: .normal)
     }else{
       toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
       toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
@@ -200,7 +210,8 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     let innerView = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
     innerView.Prob = Probs[index]
     innerView.pageIndex = index
-    innerView.selectHandler = {
+    innerView.selectHandler = { (num,selection) -> Void in
+      self.selections[num] = selection
       self.gotoNextPage()
     }
     return innerView
@@ -241,7 +252,7 @@ extension ProbTestFrameViewController:UINavigationControllerDelegate{
     IsblockUserInteraction(bool: false)
   }
   
-
+  
   
   
 }

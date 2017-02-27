@@ -147,7 +147,7 @@ class RoundView: UIView {
     super.layoutSubviews()
     
     let width = self.frame.width
-    let lineWidth: CGFloat = width * 0.06
+    let lineWidth: CGFloat = width * 0.08
     
     backgroundLayer.lineWidth = lineWidth
     foregroundLayer.lineWidth = lineWidth
