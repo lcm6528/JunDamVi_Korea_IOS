@@ -19,7 +19,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   @IBOutlet var contentView: UIView!
   
   
-  
+  var result:TestResult!
   var heightOfSubView:CGFloat!
   
   override func viewDidLoad() {
@@ -36,10 +36,6 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     contentView.addSubview(topView)
     contentView.addSubview(botView)
-    
-//    botView.tableView.reloadData()
-    
-    
     
     
   }

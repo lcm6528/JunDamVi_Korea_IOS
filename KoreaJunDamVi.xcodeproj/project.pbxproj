@@ -14,6 +14,7 @@
 		3741FA851E60098A004EEA73 /* Database.db in Resources */ = {isa = PBXBuildFile; fileRef = 3741FA841E600851004EEA73 /* Database.db */; };
 		3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741FA861E60170B004EEA73 /* JDVFonts.swift */; };
 		3742923B1E24C65200DBE230 /* ProbAnalFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */; };
+		3745DD291E63EE3C005CC446 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745DD281E63EE3C005CC446 /* TestResult.swift */; };
 		3747EEA31DC1CAFC0029DC27 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA21DC1CAFC0029DC27 /* Home.storyboard */; };
 		3747EEA51DC1CBA60029DC27 /* Prob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3747EEA41DC1CBA60029DC27 /* Prob.storyboard */; };
 		3752C6CF1E61B01F0013AF37 /* 3401.png in Resources */ = {isa = PBXBuildFile; fileRef = 3752C6AE1E61B01F0013AF37 /* 3401.png */; };
@@ -151,6 +152,7 @@
 		3741FA841E600851004EEA73 /* Database.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.db; sourceTree = "<group>"; };
 		3741FA861E60170B004EEA73 /* JDVFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVFonts.swift; sourceTree = "<group>"; };
 		3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbAnalFrameViewController.swift; sourceTree = "<group>"; };
+		3745DD281E63EE3C005CC446 /* TestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		3747EEA21DC1CAFC0029DC27 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3747EEA41DC1CBA60029DC27 /* Prob.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Prob.storyboard; sourceTree = "<group>"; };
 		3752C6AE1E61B01F0013AF37 /* 3401.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3401.png; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				37E542641E5E9B6D0017884E /* Prob.swift */,
+				3745DD281E63EE3C005CC446 /* TestResult.swift */,
 				3741FA841E600851004EEA73 /* Database.db */,
 			);
 			name = Models;
@@ -882,6 +885,7 @@
 				37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */,
 				375373AE1E122A5C00205C13 /* SolMenuVC.swift in Sources */,
 				37D99B0E1DE87AC30017F7CF /* ProbTestFrameVC.swift in Sources */,
+				3745DD291E63EE3C005CC446 /* TestResult.swift in Sources */,
 				37F7CD281DE6B0FE0085A2E4 /* JDVTabbarView.swift in Sources */,
 				37D788831E30A2EE0039F999 /* AnalContentCell.swift in Sources */,
 				375373AB1E1153B200205C13 /* JDVNoteMenuCell.swift in Sources */,
