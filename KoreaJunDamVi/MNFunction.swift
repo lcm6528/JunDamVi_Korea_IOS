@@ -75,10 +75,10 @@ func showAlertWithString(_ title:String , message:String, sender:UIViewControlle
 }
 
 
-func IsblockUserInteraction(bool:Bool){
-  if bool == true{
-    UIApplication.shared.beginIgnoringInteractionEvents()
-  }else{
-    UIApplication.shared.endIgnoringInteractionEvents()
-  }
+var isBlockUserInteract:Bool = false{
+    didSet{
+        if isBlockUserInteract != oldValue{
+            isBlockUserInteract ? UIApplication.shared.beginIgnoringInteractionEvents() : UIApplication.shared.endIgnoringInteractionEvents()
+        }
+    }
 }

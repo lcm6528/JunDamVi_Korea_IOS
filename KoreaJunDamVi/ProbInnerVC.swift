@@ -81,7 +81,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
   
   
   func JDVChoiceViewManagerDelegate(_ manager: JDVChoiceViewManager, didSelectedLabelAtIndex index: Int) {
-    self.selectHandler?(Prob.ProbNum,index)
+    self.selectHandler?(Prob.ProbNum-1,index+1)
     
   }
   

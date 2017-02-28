@@ -25,9 +25,10 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    heightOfSubView = self.view.frame.size.height-getHeightOfStatusNNaviBar(self)
+    heightOfSubView = self.view.frame.size.height-64
     let topView = ProbResultTopView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: heightOfSubView))
     topView.delegate = self
+    topView.configure(result: result)
     
     let botView = ProbResultBotView(frame: CGRect(x: 0, y: heightOfSubView, width: SCREEN_WIDTH, height: heightOfSubView))
     botView.delegate = self
@@ -41,7 +42,11 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   }
   
 
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.dismissVC(completion: nil)
+    }
   
+    
 
   
   func changeView(){
@@ -67,7 +72,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
   
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-    return 20
+    return result.Tries.count
   }
   
   
@@ -75,6 +80,8 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
   
     let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
+    
+    cell.configure(item: result.Tries[indexPath.row])
     cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
     //custom for cell
     return cell
