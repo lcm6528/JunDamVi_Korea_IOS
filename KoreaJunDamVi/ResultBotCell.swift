@@ -12,7 +12,13 @@ import UIKit
 class ProbResultBotCell: UITableViewCell {
   
 
-  
+    
+    @IBOutlet var ProbNumLabel: UILabel!
+    @IBOutlet var ScoreLabel: UILabel!
+    @IBOutlet var AnswerLabel: UILabel!
+    @IBOutlet var SelectionLabel: UILabel!
+    @IBOutlet var StateLabel: UILabel!
+    
   
   @IBOutlet var noteButton: UIButton!
   
@@ -26,5 +32,16 @@ class ProbResultBotCell: UITableViewCell {
     
     // Configure the view for the selected state
   }
+    
+    func configure(item:Try){
+        
+        
+        ProbNumLabel.text = "\(item.ProbNum)번"
+        ScoreLabel.text = "\(item.Score)점"
+        AnswerLabel.text = "\(item.Answer)"
+        SelectionLabel.text = "\(item.Selection)"
+        StateLabel.text = item.State.rawValue
+        
+    }
   
 }

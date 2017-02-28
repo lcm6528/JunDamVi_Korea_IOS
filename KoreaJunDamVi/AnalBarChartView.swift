@@ -124,7 +124,7 @@ import UIKit
     let originHeight = [heightOfBar1.constant,heightOfBar2.constant,heightOfBar3.constant]
     heightOfBar1.constant = 20
     heightOfBar2.constant = 20
-    heightOfBar3.constant = 20
+    heightOfBar3.constant = maxRange+20//20
     self.layoutIfNeeded()
     
     heightOfBar1.constant = originHeight[0]

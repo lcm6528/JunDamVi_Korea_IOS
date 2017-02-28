@@ -46,6 +46,10 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     // Do any additional setup after loading the view.
   }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
   
   func ProbCollectionViewSelectedRow(atIndex index: Int) {
     
@@ -96,6 +100,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     case "push":
       let vc = segue.destination as!ProbTestFrameViewController
       vc.Probs = self.Probs
+      self.Probs = []
       self.tabBarController?.tabBar.isHidden = true
     case "quick":
       self.tabBarController?.tabBar.isHidden = true

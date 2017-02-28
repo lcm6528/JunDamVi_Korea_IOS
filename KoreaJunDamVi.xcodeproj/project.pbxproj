@@ -10,7 +10,7 @@
 		05E0113D8C6B0C6415A1EA4D /* Pods_KoreaJunDamVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */; };
 		3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */; };
 		3737473E1E1B8385008A37E7 /* AnalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */; };
-		373DE7CC1E0A9B9000FACD62 /* ProbResultBotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */; };
+		373DE7CC1E0A9B9000FACD62 /* ResultBotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */; };
 		3741FA851E60098A004EEA73 /* Database.db in Resources */ = {isa = PBXBuildFile; fileRef = 3741FA841E600851004EEA73 /* Database.db */; };
 		3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741FA861E60170B004EEA73 /* JDVFonts.swift */; };
 		3742923B1E24C65200DBE230 /* ProbAnalFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */; };
@@ -79,10 +79,10 @@
 		3761846C1DE9D0E6005B503C /* NanumMyeongjoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376184691DE9C9C1005B503C /* NanumMyeongjoBold.ttf */; };
 		3761846D1DE9D0E6005B503C /* NanumMyeongjoExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3761846A1DE9C9C1005B503C /* NanumMyeongjoExtraBold.ttf */; };
 		376265F71DFE88650048317F /* ProbResultTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376265F61DFE88650048317F /* ProbResultTopView.xib */; };
-		376265F91DFE888E0048317F /* ProbResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376265F81DFE888E0048317F /* ProbResultViewController.swift */; };
+		376265F91DFE888E0048317F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376265F81DFE888E0048317F /* ResultViewController.swift */; };
 		376265FB1DFE88F10048317F /* ProbResultBotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376265FA1DFE88F10048317F /* ProbResultBotView.xib */; };
-		376265FD1DFE8B140048317F /* ProbResultTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376265FC1DFE8B140048317F /* ProbResultTopView.swift */; };
-		376265FF1DFE9F480048317F /* ProbResultBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376265FE1DFE9F480048317F /* ProbResultBotView.swift */; };
+		376265FD1DFE8B140048317F /* ResultTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376265FC1DFE8B140048317F /* ResultTopView.swift */; };
+		376265FF1DFE9F480048317F /* ResultBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376265FE1DFE9F480048317F /* ResultBotView.swift */; };
 		376CB4291E2DE91700AC8F49 /* AnalyticsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CB4281E2DE91700AC8F49 /* AnalyticsMainViewController.swift */; };
 		376CB42C1E2F2D7300AC8F49 /* AnalRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */; };
 		376CB42E1E2F2DB600AC8F49 /* AnalRoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */; };
@@ -142,13 +142,14 @@
 		37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */; };
 		37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */; };
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
+		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoreaJunDamVi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewCell.swift; sourceTree = "<group>"; };
 		3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalContentViewController.swift; sourceTree = "<group>"; };
-		373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultBotCell.swift; sourceTree = "<group>"; };
+		373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBotCell.swift; sourceTree = "<group>"; };
 		3741FA841E600851004EEA73 /* Database.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.db; sourceTree = "<group>"; };
 		3741FA861E60170B004EEA73 /* JDVFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVFonts.swift; sourceTree = "<group>"; };
 		3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbAnalFrameViewController.swift; sourceTree = "<group>"; };
@@ -223,10 +224,10 @@
 		376184691DE9C9C1005B503C /* NanumMyeongjoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.ttf; sourceTree = "<group>"; };
 		3761846A1DE9C9C1005B503C /* NanumMyeongjoExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoExtraBold.ttf; sourceTree = "<group>"; };
 		376265F61DFE88650048317F /* ProbResultTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProbResultTopView.xib; sourceTree = "<group>"; };
-		376265F81DFE888E0048317F /* ProbResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultViewController.swift; sourceTree = "<group>"; };
+		376265F81DFE888E0048317F /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		376265FA1DFE88F10048317F /* ProbResultBotView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProbResultBotView.xib; sourceTree = "<group>"; };
-		376265FC1DFE8B140048317F /* ProbResultTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultTopView.swift; sourceTree = "<group>"; };
-		376265FE1DFE9F480048317F /* ProbResultBotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbResultBotView.swift; sourceTree = "<group>"; };
+		376265FC1DFE8B140048317F /* ResultTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
+		376265FE1DFE9F480048317F /* ResultBotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBotView.swift; sourceTree = "<group>"; };
 		376CB4281E2DE91700AC8F49 /* AnalyticsMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsMainViewController.swift; sourceTree = "<group>"; };
 		376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalRoundView.swift; sourceTree = "<group>"; };
 		376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalRoundView.xib; sourceTree = "<group>"; };
@@ -284,6 +285,7 @@
 		37F7CD381DE6B1FD0085A2E4 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
+		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +411,7 @@
 				37D99B0F1DE87B1D0017F7CF /* ProbInnerVC.swift */,
 				37D051A01E275D3700D92E89 /* ProbPopupV.swift */,
 				375373A51E0BADA100205C13 /* ProbQuickVC.swift */,
+				ED6A32C31E655228002277FD /* ProbQuickCell.swift */,
 			);
 			name = ProbTest;
 			sourceTree = "<group>";
@@ -598,10 +601,10 @@
 			children = (
 				375373A31E0BAD8100205C13 /* ProbMenu */,
 				375373A41E0BAD8A00205C13 /* ProbTest */,
-				376265F81DFE888E0048317F /* ProbResultViewController.swift */,
-				376265FC1DFE8B140048317F /* ProbResultTopView.swift */,
-				376265FE1DFE9F480048317F /* ProbResultBotView.swift */,
-				373DE7CB1E0A9B9000FACD62 /* ProbResultBotCell.swift */,
+				376265F81DFE888E0048317F /* ResultViewController.swift */,
+				376265FC1DFE8B140048317F /* ResultTopView.swift */,
+				376265FE1DFE9F480048317F /* ResultBotView.swift */,
+				373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */,
 				37BE73211E02849A00D00259 /* ProbResultBotCell.xib */,
 			);
 			name = Prob;
@@ -694,7 +697,7 @@
 				TargetAttributes = {
 					375EB90A1DBDE55900337236 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZH9C52WH4J;
+						DevelopmentTeam = 47RZ4GF77T;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -865,7 +868,7 @@
 				375373B31E122B1300205C13 /* JDVGraphBaseCell.swift in Sources */,
 				37D788851E31EAE00039F999 /* JDVShadowView.swift in Sources */,
 				37F7CD271DE6B0FD0085A2E4 /* JDVViewController.swift in Sources */,
-				376265FF1DFE9F480048317F /* ProbResultBotView.swift in Sources */,
+				376265FF1DFE9F480048317F /* ResultBotView.swift in Sources */,
 				375373A61E0BADA100205C13 /* ProbQuickVC.swift in Sources */,
 				37F7CD261DE6B0FD0085A2E4 /* JDVBarButtonItem.swift in Sources */,
 				37F7CD2E1DE6B0FE0085A2E4 /* JDVRadioButtonManager.swift in Sources */,
@@ -878,9 +881,9 @@
 				37F7CD2C1DE6B0FE0085A2E4 /* JDVBanner.swift in Sources */,
 				375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */,
 				379DB8981DBF3D1700882280 /* RoundView.swift in Sources */,
-				373DE7CC1E0A9B9000FACD62 /* ProbResultBotCell.swift in Sources */,
+				373DE7CC1E0A9B9000FACD62 /* ResultBotCell.swift in Sources */,
 				37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */,
-				376265F91DFE888E0048317F /* ProbResultViewController.swift in Sources */,
+				376265F91DFE888E0048317F /* ResultViewController.swift in Sources */,
 				375373A81E11532900205C13 /* JDVNoteMenuViewController.swift in Sources */,
 				37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */,
 				375373AE1E122A5C00205C13 /* SolMenuVC.swift in Sources */,
@@ -889,7 +892,8 @@
 				37F7CD281DE6B0FE0085A2E4 /* JDVTabbarView.swift in Sources */,
 				37D788831E30A2EE0039F999 /* AnalContentCell.swift in Sources */,
 				375373AB1E1153B200205C13 /* JDVNoteMenuCell.swift in Sources */,
-				376265FD1DFE8B140048317F /* ProbResultTopView.swift in Sources */,
+				ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */,
+				376265FD1DFE8B140048317F /* ResultTopView.swift in Sources */,
 				376CB42C1E2F2D7300AC8F49 /* AnalRoundView.swift in Sources */,
 				37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */,
 				37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */,
@@ -1039,7 +1043,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZH9C52WH4J;
+				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				INFOPLIST_FILE = KoreaJunDamVi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1056,7 +1060,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZH9C52WH4J;
+				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				INFOPLIST_FILE = KoreaJunDamVi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
