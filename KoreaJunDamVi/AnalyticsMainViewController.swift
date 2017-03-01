@@ -8,13 +8,13 @@
 
 import UIKit
 
-class AnalyticsMainViewController: UIViewController {
+class AnalyticsMainViewController: JDVViewController {
 
   @IBOutlet var tableView: UITableView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+      self.setTitleWithStyle("실력 분석")
       
     }
 
@@ -38,10 +38,13 @@ extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegat
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AnalContentCell
     cell.bar1.setValue(forRedBar: 10, BlackBar: 20, GrayBar: 30)
+    cell.bar1.bottomLabel.text = "27회"
     cell.bar2.setValue(forRedBar: 40, BlackBar: 20, GrayBar: 30)
+    cell.bar2.bottomLabel.text = "30회"
     cell.bar3.setValue(forRedBar: 20, BlackBar: 20, GrayBar: 60)
+    cell.bar3.bottomLabel.text = "29회"
     cell.bar4.setValue(forRedBar: 60, BlackBar: 90, GrayBar: 30)
-    
+    cell.bar4.bottomLabel.text = "28회"
     return cell
   }
   

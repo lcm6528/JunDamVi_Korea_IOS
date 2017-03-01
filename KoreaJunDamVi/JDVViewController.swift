@@ -65,13 +65,8 @@ class JDVViewController: UIViewController {
     
     
     label.attributedText = rawString
-    label.textAlignment = NSTextAlignment.center
-//    label.backgroundColor = UIColor.grayColor()
+    label.textAlignment = .center
     self.navigationItem.titleView = label
-    
-    
-    
-    
     
   }
   

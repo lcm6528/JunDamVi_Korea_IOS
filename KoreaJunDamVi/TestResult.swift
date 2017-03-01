@@ -46,7 +46,7 @@ struct Try {
 
 struct TestResult{
     
-    var TestNum:Int?
+    var TryNum:Int?
     var TotalScore:Int = 0
     
     

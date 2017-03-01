@@ -8,12 +8,26 @@
 
 import UIKit
 
-class ProbQuickCell: UITableViewCell {
+class ProbQuickCell: UITableViewCell ,JDVRadioButtonManagerDelegate{
 
     
+    @IBOutlet var btn1: UIButton!
+    @IBOutlet var btn2: UIButton!
+    @IBOutlet var btn3: UIButton!
+    @IBOutlet var btn4: UIButton!
+    @IBOutlet var btn5: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    var probNum:Int!
+    
+    
+    var manager:JDVRadioButtonManager?
+    
+    var SelectionHandelr:((Int,Int)->Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        manager = JDVRadioButtonManager(WithButtons: btn1,btn2,btn3,btn4,btn5)
+        manager?.delegate = self
         // Initialization code
     }
 
@@ -21,6 +35,13 @@ class ProbQuickCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func JDVRadioButtonManagerDelegate(_ manager: JDVRadioButtonManager, didSelectedButtonAtIndex index: Int) {
+        
+        
+        self.SelectionHandelr?(probNum,index+1)
+        
     }
 
 }

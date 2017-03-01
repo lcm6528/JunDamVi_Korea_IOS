@@ -39,13 +39,9 @@ class JDVRadioButtonManager: NSObject {
       self.delegate?.JDVRadioButtonManagerDelegate(self, didSelectedButtonAtIndex: -1)
       return
     }
-    
-    
-    
-    
     let index:Int = arrayOfButtons.index(of: sender)!
     sender.isSelected = true
-    
+    sender.backgroundColor = UIColor.selectedRed
     for button in arrayOfButtons!{
       
       if button === sender{
@@ -53,7 +49,7 @@ class JDVRadioButtonManager: NSObject {
         continue
       }
       button.isSelected = false
-      
+      button.backgroundColor = UIColor.white
     }
     
     
@@ -65,7 +61,7 @@ class JDVRadioButtonManager: NSObject {
     for button in arrayOfButtons{
       
       button.isSelected = false
-      
+      button.backgroundColor = UIColor.white
     }
   }
   
@@ -79,9 +75,10 @@ class JDVRadioButtonManager: NSObject {
     for button in arrayOfButtons{
       
       button.isSelected = false
-      
+      button.backgroundColor = UIColor.white
       if button === arrayOfButtons[index]{
         button.isSelected = true
+        button.backgroundColor = UIColor.selectedRed
       }
       
     }
