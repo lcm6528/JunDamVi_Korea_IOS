@@ -15,6 +15,7 @@ protocol ProbCollectionViewDelegate{
 class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 
   
+    var dataArray:[String] = []
   var delegate:ProbCollectionViewDelegate?
   
   var parentVC:ProbMenuViewController!
@@ -35,11 +36,22 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
   
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return pageIndex + 14
-  }
+    return dataArray.count
+    }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProbCollectionViewCell
+    if pageIndex == 0 {
+        
+        let title = NSMutableAttributedString(string: "\(dataArray[indexPath.row])회")
+        title.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
+        title.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 18)! ], range: NSRange(location: 2,length: 1))
+
+        cell.contentLabel.attributedText = title
+    }else{
+    cell.contentLabel.text = dataArray[indexPath.row]
+    }
+    
     return cell
   }
   

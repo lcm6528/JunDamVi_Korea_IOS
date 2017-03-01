@@ -143,6 +143,7 @@
 		37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */; };
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
 		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
+		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -286,6 +287,7 @@
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
+		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,6 +594,7 @@
 				37E542641E5E9B6D0017884E /* Prob.swift */,
 				3745DD281E63EE3C005CC446 /* TestResult.swift */,
 				3741FA841E600851004EEA73 /* Database.db */,
+				EDE000971E669F5600C240A1 /* ProbList.json */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				3752C6E11E61B01F0013AF37 /* 3427.png in Resources */,
 				3752C6E21E61B01F0013AF37 /* 3428.png in Resources */,
 				377BB0E21DC86F2100C9D08D /* NanumGothic.ttf in Resources */,
+				EDE000981E669F5600C240A1 /* ProbList.json in Resources */,
 				377BB0E31DC86F2100C9D08D /* NanumGothicBold.ttf in Resources */,
 				37A9859A1E41BDEE00853D71 /* BlockView.xib in Resources */,
 				37D788811E3099D90039F999 /* AnalBarChartView.xib in Resources */,

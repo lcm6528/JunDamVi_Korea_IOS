@@ -29,6 +29,9 @@ class ProbTestFrameViewController: JDVViewController {
             number_of_pages = Probs.count
         }
         
+        
+        
+        setTitleWithStyle("\(Probs[0].TestNum)회 문제풀기        ")
         selections = [Int](repeatElement(0, count: Probs.count))
         
         //////PageVC Settings///////

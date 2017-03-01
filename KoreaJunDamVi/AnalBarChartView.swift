@@ -20,6 +20,8 @@ import UIKit
   @IBOutlet var blackBarTitleLabel: UILabel!
   @IBOutlet var redBarTitleLabel: UILabel!
   
+    @IBOutlet var topLabel: UILabel!
+    @IBOutlet var bottomLabel: UILabel!
   
   
   
