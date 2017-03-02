@@ -9,95 +9,66 @@
 import UIKit
 
 class JDVScoreManager: NSObject {
-
-  
-  
-  
-  static func getScoreOfLang(_ year:Int, score:Int)->(Double){
     
-    let path = Bundle.main.path(forResource: "document", ofType: "json")
-    let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
-    var dict = NSDictionary()
-    do {
-      let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-      dict = object as! NSDictionary
-      
-    } catch {
-      // Handle Error
-    }
-
-    let selectedDict = dict["\(year)"] as! NSDictionary
-    let test1Array = selectedDict["test1"] as! NSArray
-    
-    if 0..<test1Array.count ~= score{
-      
-      return Double(test1Array[score] as! String)!
-      
-    }else{
-      return -1
-    }
-  }
-  
-  static func getScoreOfReas(_ year:Int, score:Int)->(Double){
-    
-    let path = Bundle.main.path(forResource: "document", ofType: "json")
-    let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
-    var dict = NSDictionary()
-    do {
-      let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-      dict = object as! NSDictionary
-      
-    } catch {
-      // Handle Error
+    struct SimpleResult {
+        var Score:Int
+        var TestNum:Int
+        init(withKey key:String){
+            Score = getUserDefaultIntValue("\(key)score")
+            TestNum = getUserDefaultIntValue("\(key)testnum")
+        }
     }
     
-    let selectedDict = dict["\(year)"] as! NSDictionary
-    let test1Array = selectedDict["test2"] as! NSArray
-    
-    if 0..<test1Array.count ~= score{
-      
-      return Double(test1Array[score] as! String)!
-      
-    }else{
-      return -1
+    struct AnalModel {
+        var high:SimpleResult
+        var row:SimpleResult
+        var recent:SimpleResult
+        init() {
+            high = SimpleResult(withKey: "high")
+            row = SimpleResult(withKey: "row")
+            recent = SimpleResult(withKey: "recent")
+        }
     }
     
-  }
-  
-  
-  static func getCountOfTest(_ year:Int)->(Int){
-    
-    let path = Bundle.main.path(forResource: "document", ofType: "json")
-    let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
-    var dict = NSDictionary()
-    do {
-      let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-      dict = object as! NSDictionary
-      
-    } catch {
-      // Handle Error
+    static func configureAnalData(by result:TestResult){
+        
+        let setScoreAndTestNum:(String)->() = { key in
+            setUserDefaultWithInt(result.TotalScore, forKey: "\(key)score")
+            setUserDefaultWithInt(result.TestNum, forKey: "\(key)testnum")
+            
+        }
+        
+        //Set recent score
+        setScoreAndTestNum("recent")
+        
+        //Set high score
+        
+        let high = getUserDefaultIntValue("highscore")
+        if high <= result.TotalScore{
+            setScoreAndTestNum("high")
+        }
+        
+        //Set row score
+        let row = getUserDefaultIntValue("rowscore")
+        if row == 0 || row >= result.TotalScore{
+            setScoreAndTestNum("row")
+        }
+        
     }
     
-    let selectedDict = dict["\(year)"] as! NSDictionary
-    let test1Array = selectedDict["test2"] as! NSArray
     
-    return test1Array.count
-    
-  }
-  
-  
-  static func getTime(_ year:Int, type:String)-> Int{
-    let keyString = "\(year)\(type)"
-    var time  = getUserDefaultIntValue(keyString)
-    
-    if time == 0{
-      
-      time = 1
+    static func getTime(_ year:Int, type:String)-> Int{
+        let keyString = "\(year)\(type)"
+        var time  = getUserDefaultIntValue(keyString)
+        
+        if time == 0{
+            
+            time = 1
+        }
+        
+        return time
+        
     }
     
-    return time
     
-  }
-  
-
 }

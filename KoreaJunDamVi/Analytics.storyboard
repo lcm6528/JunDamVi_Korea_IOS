@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,35 +122,62 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-FE-b8g" customClass="JDVShadowView" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="359" height="283"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fc-4R-1IG" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fc-4R-1IG" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                             <rect key="frame" x="20" y="36" width="50" height="210"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="Qc1-XJ-UBK"/>
+                                                                <constraint firstAttribute="height" constant="210" id="lZ8-fO-9q5"/>
+                                                            </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBo-o6-y9k" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                            <rect key="frame" x="110" y="37" width="50" height="210"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBo-o6-y9k" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                            <rect key="frame" x="109.5" y="37" width="50" height="210"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="210" id="Gob-Ln-ZOo"/>
+                                                                <constraint firstAttribute="width" constant="50" id="nIa-lO-pgz"/>
+                                                            </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-Fr-Vme" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                            <rect key="frame" x="200" y="37" width="50" height="210"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-Fr-Vme" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                            <rect key="frame" x="199.5" y="37" width="50" height="210"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="210" id="MYP-ej-QQ1"/>
+                                                                <constraint firstAttribute="width" constant="50" id="gcL-vv-gD8"/>
+                                                            </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBX-UO-Fix" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBX-UO-Fix" customClass="AnalBarChartView" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                             <rect key="frame" x="289" y="37" width="50" height="210"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="Wfx-oi-Bfk"/>
+                                                                <constraint firstAttribute="height" constant="210" id="t5b-cV-Q7j"/>
+                                                            </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회차별 점수" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-E6-OHh" customClass="JDVLabelWithTBLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회차별 점수" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-E6-OHh" customClass="JDVLabelWithTBLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                             <rect key="frame" x="137" y="8" width="85" height="27"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="1cy-9z-hAG"/>
+                                                                <constraint firstAttribute="width" constant="85" id="AMZ-9s-GFd"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="xBX-UO-Fix" firstAttribute="centerX" secondItem="GtY-FE-b8g" secondAttribute="centerX" multiplier="1.75" id="0gI-eA-2RR"/>
+                                                        <constraint firstItem="VBo-o6-y9k" firstAttribute="centerY" secondItem="GtY-FE-b8g" secondAttribute="centerY" id="3DA-C2-aKa"/>
+                                                        <constraint firstItem="jLG-E6-OHh" firstAttribute="centerX" secondItem="GtY-FE-b8g" secondAttribute="centerX" id="8LE-wG-KoS"/>
+                                                        <constraint firstItem="VBo-o6-y9k" firstAttribute="centerX" secondItem="GtY-FE-b8g" secondAttribute="centerX" multiplier="0.75" id="C1V-iy-yuw"/>
+                                                        <constraint firstItem="xBX-UO-Fix" firstAttribute="centerY" secondItem="GtY-FE-b8g" secondAttribute="centerY" id="Jn0-iO-Nsc"/>
+                                                        <constraint firstItem="1fc-4R-1IG" firstAttribute="centerX" secondItem="GtY-FE-b8g" secondAttribute="centerX" multiplier="0.25" id="NIs-5t-jRh"/>
+                                                        <constraint firstItem="0Or-Fr-Vme" firstAttribute="centerY" secondItem="GtY-FE-b8g" secondAttribute="centerY" id="UPV-MF-4ke"/>
+                                                        <constraint firstItem="0Or-Fr-Vme" firstAttribute="centerX" secondItem="GtY-FE-b8g" secondAttribute="centerX" multiplier="1.25" id="a4F-sP-7JU"/>
+                                                        <constraint firstItem="jLG-E6-OHh" firstAttribute="top" secondItem="GtY-FE-b8g" secondAttribute="top" constant="8" id="p3i-Qw-9pw"/>
+                                                        <constraint firstItem="1fc-4R-1IG" firstAttribute="centerY" secondItem="GtY-FE-b8g" secondAttribute="centerY" id="sQa-Qk-TMO"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,6 +212,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="I92-IQ-gTd"/>
                     <connections>
+                        <outlet property="highView" destination="OUE-vA-y1y" id="u1Z-6V-TJx"/>
+                        <outlet property="recentView" destination="6Nc-qU-wxS" id="B81-9k-IjT"/>
+                        <outlet property="rowView" destination="pJn-5d-SDD" id="h9n-hi-pbU"/>
                         <outlet property="tableView" destination="gqh-qB-3BX" id="rmE-et-UJR"/>
                     </connections>
                 </viewController>

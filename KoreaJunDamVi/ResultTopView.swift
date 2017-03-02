@@ -96,9 +96,6 @@ class ProbResultTopView: UIView {
             self.roundView2.setValue(value: CGFloat(tryRate*100), animate: true)
         }
         
-        
-     
-        
     }
     
 }

@@ -34,6 +34,7 @@ class ProbQuickTestViewController: JDVViewController {
     
     @IBAction func resultButtonPressed(_ sender: AnyObject) {
         performSegue(withIdentifier: "push", sender: self)
+        self.popVC()
     }
     
     
@@ -48,6 +49,7 @@ class ProbQuickTestViewController: JDVViewController {
         result = TestResult(withTries: tries)
         vc.result = self.result
 
+        JDVScoreManager.configureAnalData(by: result)
     }
     
     
