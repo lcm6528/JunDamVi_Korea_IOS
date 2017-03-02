@@ -56,7 +56,7 @@ class RoundView: UIView {
     foregroundLayer.strokeEnd = 0.0
     foregroundLayer.lineCap = kCALineCapRound
     foregroundLayer.cornerRadius = 4.0
-    foregroundLayer.shadowRadius = 4.0
+    foregroundLayer.shadowRadius = 10.0
     foregroundLayer.shadowColor = UIColor.white.cgColor
     foregroundLayer.shadowOpacity = 1
     foregroundLayer.shadowOffset = CGSize(width:-1.0, height: -1.0)
@@ -147,7 +147,7 @@ class RoundView: UIView {
     super.layoutSubviews()
     
     let width = self.frame.width
-    let lineWidth: CGFloat = width * 0.08
+    let lineWidth: CGFloat = width * 0.07
     
     backgroundLayer.lineWidth = lineWidth
     foregroundLayer.lineWidth = lineWidth

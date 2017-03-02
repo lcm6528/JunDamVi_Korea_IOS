@@ -877,7 +877,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
-                                                    <rect key="frame" x="317" y="3" width="54" height="54"/>
+                                                    <rect key="frame" x="318" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uOx-Y1-oz1" secondAttribute="height" multiplier="1:1" id="hc5-SS-YI2"/>
@@ -888,7 +888,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP">
-                                                    <rect key="frame" x="259" y="2.5" width="54" height="54"/>
+                                                    <rect key="frame" x="261" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="lQt-Zy-lAP" secondAttribute="height" multiplier="1:1" id="B5n-O6-BMP"/>
@@ -899,7 +899,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS">
-                                                    <rect key="frame" x="201" y="2.5" width="54" height="54"/>
+                                                    <rect key="frame" x="204" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0VD-aU-oGS" secondAttribute="height" multiplier="1:1" id="cRg-q4-FGS"/>
@@ -910,7 +910,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN">
-                                                    <rect key="frame" x="143" y="2.5" width="54" height="54"/>
+                                                    <rect key="frame" x="147" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="GgK-Bz-ClN" secondAttribute="height" multiplier="1:1" id="X0K-Wc-vwn"/>
@@ -921,7 +921,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg">
-                                                    <rect key="frame" x="85" y="2.5" width="54" height="54"/>
+                                                    <rect key="frame" x="90" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="RQI-hg-IYg" secondAttribute="height" multiplier="1:1" id="Xjs-WS-qc6"/>
@@ -932,7 +932,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3S5-2x-mDe">
-                                                    <rect key="frame" x="2" y="2" width="78" height="55"/>
+                                                    <rect key="frame" x="2" y="2" width="83" height="55"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

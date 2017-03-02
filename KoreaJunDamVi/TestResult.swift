@@ -48,7 +48,7 @@ struct TestResult{
     
     var TryNum:Int?
     var TotalScore:Int = 0
-    
+    var TestNum:Int
     
     var Tries:[Try] = []
     
@@ -57,7 +57,7 @@ struct TestResult{
     var numberOfPass:Int = 0
     
     init(withTries tries:[Try]){
-        
+        self.TestNum = tries[0].TestNum
         self.Tries = tries
         calculateScore()
         
