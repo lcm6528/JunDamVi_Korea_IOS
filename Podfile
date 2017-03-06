@@ -13,6 +13,7 @@ target 'KoreaJunDamVi' do
   pod 'WSProgressHUD'
   pod 'PageMenu', :git => 'https://github.com/orazz/PageMenu.git'
   pod 'EZSwiftExtensions', :git => 'https://github.com/goktugyil/EZSwiftExtensions.git'
-
+  
+  pod 'RealmSwift'
   
 end
