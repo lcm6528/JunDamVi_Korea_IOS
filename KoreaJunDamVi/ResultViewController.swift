@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 protocol ProbResultSubViewDelegate {
     func changeView()
 }
@@ -86,6 +86,8 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
         cell.configure(item: result.Tries[indexPath.row])
         cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
+        cell.noteButton.tag = indexPath.row
+        
         //custom for cell
         return cell
         
@@ -100,8 +102,31 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     
+    
     func buttonPressed(_ sender:UIButton){
-        sender.isSelected = true
+        
+        if sender.isSelected == false{
+            
+            let note = Note()
+            note.ProbID = 123
+            note.Selection = 1
+            
+            
+            let realm = try! Realm()
+            
+            try! realm.write {
+                realm.add(note)
+            }
+            
+            
+            
+        }
+        
+        
+        sender.isSelected = !sender.isSelected
+        
+        
+        
         
     }
     

@@ -144,6 +144,7 @@
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
 		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
+		EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE84D621E6D286C0062B1A8 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -288,6 +289,7 @@
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
+		EDE84D621E6D286C0062B1A8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */,
-				376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */,
 			);
 			name = AnalRoundView;
 			sourceTree = "<group>";
@@ -591,10 +592,11 @@
 		37E542661E5EB16B0017884E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */,
 				37E542641E5E9B6D0017884E /* Prob.swift */,
+				EDE84D621E6D286C0062B1A8 /* Note.swift */,
 				3745DD281E63EE3C005CC446 /* TestResult.swift */,
 				3741FA841E600851004EEA73 /* Database.db */,
-				EDE000971E669F5600C240A1 /* ProbList.json */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -607,6 +609,7 @@
 				376265F81DFE888E0048317F /* ResultViewController.swift */,
 				376265FC1DFE8B140048317F /* ResultTopView.swift */,
 				376265FE1DFE9F480048317F /* ResultBotView.swift */,
+				EDE000971E669F5600C240A1 /* ProbList.json */,
 				373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */,
 				37BE73211E02849A00D00259 /* ProbResultBotCell.xib */,
 			);
@@ -909,6 +912,7 @@
 				377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */,
 				37D0517D1E260DCA00D92E89 /* SolInnerVC.swift in Sources */,
 				375373A21E0BA49100205C13 /* JDVColors.swift in Sources */,
+				EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */,
 				379DB89A1DBF3E3400882280 /* Radian.swift in Sources */,
 				376CB4291E2DE91700AC8F49 /* AnalyticsMainViewController.swift in Sources */,
 				37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */,

@@ -7,13 +7,34 @@
 //
 
 import UIKit
-
+import RealmSwift
 class JDVNoteMenuViewController: UIViewController{
 
+    @IBOutlet var tableView: UITableView!
+    var Notes:[Note] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchNotes()
+    }
+    
+    func fetchNotes(){
+       
+        let realm = try! Realm()
+        
+        let result = realm.objects(Note.self)
+        Notes = Array(result)
+        
+        self.tableView.reloadData()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +52,7 @@ extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource{
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 20
+    return Notes.count
   }
   
   
