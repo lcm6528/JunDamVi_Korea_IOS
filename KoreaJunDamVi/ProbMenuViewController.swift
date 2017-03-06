@@ -60,13 +60,13 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             
             if index == 2 {
-                self.fetchProbs(withProbnum: 34)
+                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
                 self.performSegue(withIdentifier: "quick", sender: self)
             }else if index == 1{
                 self.performSegue(withIdentifier: "anal", sender: self)
             }else{
                 
-                self.fetchProbs(withProbnum: 34)
+                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
                 self.performSegue(withIdentifier: "push", sender: self)
             }
 
@@ -125,28 +125,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             return
         }
         
-    }
-    
-    
-    
-    func fetchProbs(withProbnum num:Int){
-        
-        
-        let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
-        let fmdb = FMDatabase(path: dbPath?.path)
-        
-        if (fmdb?.open())! {
-            
-            let sql1 = "SELECT * FROM Probs WHERE testnum = \(num)"
-            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
-            while result?.next() == true {
-                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let prob = Prob(withDict: dict)
-                
-                Probs.append(prob)
-            }
-        }
-        fmdb?.close()
     }
     
 }

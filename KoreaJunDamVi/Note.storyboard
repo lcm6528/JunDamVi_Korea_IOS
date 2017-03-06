@@ -228,10 +228,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="TiG-bq-qkg" customClass="JDVNoteMenuCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TiG-bq-qkg" id="FBo-uV-IJB">
-                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRw-fF-9VD">
@@ -269,6 +269,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="오답 노트" id="p9f-lr-Czr"/>
+                    <connections>
+                        <outlet property="tableView" destination="clV-iN-wbg" id="niR-Kw-QS4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc6-2C-VPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
