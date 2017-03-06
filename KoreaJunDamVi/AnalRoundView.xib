@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,20 +32,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKR-28-B0C">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-W2-SKy">
-                            <rect key="frame" x="15" y="35" width="70" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-W2-SKy">
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="EKW-Wj-PdT"/>
-                                <constraint firstAttribute="height" constant="30" id="Qpa-6l-eRf"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="30"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="29"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfj-0x-5bt">
-                            <rect key="frame" x="27" y="69" width="46" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="46" id="1LL-26-ti2"/>
                                 <constraint firstAttribute="height" constant="15" id="4QH-Zy-cw9"/>
@@ -57,31 +51,30 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFp-rB-XfO">
-                            <rect key="frame" x="27.5" y="26" width="45" height="0.5"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="0.5" id="ada-h3-doY"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 점수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdG-9T-ZEt">
-                            <rect key="frame" x="27.5" y="10" width="45" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="4ea-MM-nGt"/>
                                 <constraint firstAttribute="height" constant="15" id="MuR-bz-DE1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="11"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="10"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="mFp-rB-XfO" firstAttribute="top" secondItem="JdG-9T-ZEt" secondAttribute="bottom" constant="1" id="I4K-Y5-5XH"/>
+                        <constraint firstItem="mFp-rB-XfO" firstAttribute="top" secondItem="JdG-9T-ZEt" secondAttribute="bottom" id="I4K-Y5-5XH"/>
                         <constraint firstItem="zfj-0x-5bt" firstAttribute="top" secondItem="fM6-W2-SKy" secondAttribute="bottom" constant="4" id="IxT-sS-Ppc"/>
-                        <constraint firstItem="fM6-W2-SKy" firstAttribute="centerY" secondItem="rKR-28-B0C" secondAttribute="centerY" id="JBA-N5-3S3"/>
-                        <constraint firstItem="fM6-W2-SKy" firstAttribute="top" secondItem="JdG-9T-ZEt" secondAttribute="bottom" constant="10" id="Ji5-QJ-6ju"/>
+                        <constraint firstItem="fM6-W2-SKy" firstAttribute="centerY" secondItem="rKR-28-B0C" secondAttribute="centerY" multiplier="1.1" id="JBA-N5-3S3"/>
+                        <constraint firstItem="fM6-W2-SKy" firstAttribute="top" secondItem="JdG-9T-ZEt" secondAttribute="bottom" constant="8" id="Ji5-QJ-6ju"/>
                         <constraint firstItem="JdG-9T-ZEt" firstAttribute="centerX" secondItem="rKR-28-B0C" secondAttribute="centerX" id="OMS-Au-lSq"/>
                         <constraint firstItem="zfj-0x-5bt" firstAttribute="centerX" secondItem="rKR-28-B0C" secondAttribute="centerX" id="VGN-HH-h1Q"/>
+                        <constraint firstItem="fM6-W2-SKy" firstAttribute="height" secondItem="rKR-28-B0C" secondAttribute="height" multiplier="0.35" id="e2g-u0-DD3"/>
                         <constraint firstItem="mFp-rB-XfO" firstAttribute="centerX" secondItem="rKR-28-B0C" secondAttribute="centerX" id="eco-lR-6Vh"/>
                         <constraint firstItem="fM6-W2-SKy" firstAttribute="centerX" secondItem="rKR-28-B0C" secondAttribute="centerX" id="oq1-mu-Xm2"/>
                         <constraint firstItem="mFp-rB-XfO" firstAttribute="width" secondItem="JdG-9T-ZEt" secondAttribute="width" id="pkm-aW-aAY"/>
