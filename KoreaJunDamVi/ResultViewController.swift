@@ -26,6 +26,12 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let realm = try! Realm()
+        try! realm.write {
+                realm.deleteAll()
+        }
+        
+        
         self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"
         
         heightOfSubView = self.view.frame.size.height-64
@@ -105,11 +111,16 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     func buttonPressed(_ sender:UIButton){
         
+        
+        
+        
+        
         if sender.isSelected == false{
             
+            let tryObj = result.Tries[sender.tag]
             let note = Note()
-            note.ProbID = 123
-            note.Selection = 1
+            note.ProbID = tryObj.ProbID
+            note.Selection = tryObj.Selection
             
             
             let realm = try! Realm()
