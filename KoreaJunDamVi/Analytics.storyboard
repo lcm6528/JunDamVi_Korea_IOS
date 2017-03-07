@@ -18,7 +18,7 @@
                     <tabBarItem key="tabBarItem" title="실력분석" image="anal" id="h7u-hE-abc"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="m31-bt-gXz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="m31-bt-gXz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -34,7 +34,7 @@
         <!--Analytics Main View Controller-->
         <scene sceneID="uYP-IX-9YJ">
             <objects>
-                <viewController id="0pi-a1-GEF" customClass="AnalyticsMainViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0pi-a1-GEF" customClass="AnalyticsMainViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rlL-uk-mZe"/>
                         <viewControllerLayoutGuide type="bottom" id="EoF-oO-AeF"/>
@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-qB-3BX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="D94-CX-xUX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
@@ -205,7 +205,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gqh-qB-3BX" firstAttribute="leading" secondItem="Trs-6z-hSE" secondAttribute="leading" id="8vX-PH-tyB"/>
-                            <constraint firstItem="EoF-oO-AeF" firstAttribute="top" secondItem="gqh-qB-3BX" secondAttribute="bottom" constant="8" id="aXO-ax-d3k"/>
+                            <constraint firstItem="EoF-oO-AeF" firstAttribute="top" secondItem="gqh-qB-3BX" secondAttribute="bottom" id="aXO-ax-d3k"/>
                             <constraint firstAttribute="trailing" secondItem="gqh-qB-3BX" secondAttribute="trailing" id="baP-e7-2KN"/>
                             <constraint firstItem="gqh-qB-3BX" firstAttribute="top" secondItem="rlL-uk-mZe" secondAttribute="bottom" id="tHF-b3-K1g"/>
                         </constraints>
