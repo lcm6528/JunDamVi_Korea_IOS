@@ -564,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				376CB42B1E2F2D7300AC8F49 /* AnalRoundView.swift */,
+				376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */,
 			);
 			name = AnalRoundView;
 			sourceTree = "<group>";
@@ -592,7 +593,6 @@
 		37E542661E5EB16B0017884E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				376CB42D1E2F2DB600AC8F49 /* AnalRoundView.xib */,
 				37E542641E5E9B6D0017884E /* Prob.swift */,
 				EDE84D621E6D286C0062B1A8 /* Note.swift */,
 				3745DD281E63EE3C005CC446 /* TestResult.swift */,
