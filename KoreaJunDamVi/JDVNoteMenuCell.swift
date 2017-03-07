@@ -10,15 +10,32 @@ import UIKit
 
 class JDVNoteMenuCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet var label_probnum: UILabel!
+    @IBOutlet var label_score: UILabel!
+    @IBOutlet var label_time: UILabel!
+    @IBOutlet var label_type: UILabel!
+    @IBOutlet var label_tags: UILabel!
+    
+    func configure(by prob:Prob){
+        
+        label_probnum.text = "\(prob.ProbNum)"
+        label_score.text = "\(prob.Score)"
+        label_time.text = "\(prob.time?.rawValue ?? "-" )"
+        label_type.text = "\(prob.type?.rawValue ?? "-")"
+        label_tags.text = "\(prob.tags?[0] ?? "-")"
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func prepareForReuse() {
+        
+        super.prepareForReuse()
+        
+        label_probnum.text = "-"
+        label_score.text = "-"
+        label_time.text = "-"
+        label_type.text = "-"
+        label_tags.text = "-"
+        
     }
 
 }

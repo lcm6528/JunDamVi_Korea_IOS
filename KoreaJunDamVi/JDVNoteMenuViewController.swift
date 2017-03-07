@@ -13,6 +13,7 @@ class JDVNoteMenuViewController: UIViewController{
     @IBOutlet var tableView: UITableView!
     var Notes:[Note] = []
     
+    var probs:[Prob] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,13 @@ class JDVNoteMenuViewController: UIViewController{
         let result = realm.objects(Note.self)
         Notes = Array(result)
         
+        probs = []
+        for note in Notes{
+            if let prob = JDVProbManager.fetchProb(withProbID: note.ProbID){
+                probs.append(prob)
+            }
+        }
+        
         self.tableView.reloadData()
         
         
@@ -48,11 +56,13 @@ class JDVNoteMenuViewController: UIViewController{
 extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource{
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
+    
+    cell.configure(by: probs[indexPath.row])
     return cell
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return Notes.count
+    return probs.count
   }
   
   
