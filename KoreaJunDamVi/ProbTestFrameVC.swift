@@ -28,10 +28,10 @@ class ProbTestFrameViewController: JDVViewController {
     if !Probs.isEmpty{
       number_of_pages = Probs.count
     }
+    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     
     
-    
-    setTitleWithStyle("\(Probs[0].TestNum)회 문제풀기        ")
+    setTitleWithStyle("\(Probs[0].TestNum)회")
     selections = [Int](repeatElement(0, count: Probs.count))
     
     //////PageVC Settings///////

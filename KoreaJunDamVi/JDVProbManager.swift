@@ -10,8 +10,8 @@ import UIKit
 import FMDB
 
 class JDVProbManager: NSObject {
-  
-  
+    
+    
     static func fetchProbs(withTestnum num:Int)->[Prob]{
         
         var Probs:[Prob] = []
@@ -32,7 +32,7 @@ class JDVProbManager: NSObject {
         fmdb?.close()
         return Probs
     }
-  
+    
     static func fetchProb(withProbID id:Int)->Prob?{
         
         var prob:Prob?
@@ -57,4 +57,34 @@ class JDVProbManager: NSObject {
         
         
     }
+    static func fetchProbs(withProbID ids:[Int])->[Prob]{
+        
+        var probs:[Prob] = []
+        
+        let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
+        let fmdb = FMDatabase(path: dbPath?.path)
+        
+        if (fmdb?.open())! {
+            
+            for id in ids{
+                let sql1 = "SELECT * FROM Probs WHERE probid = \(id)"
+                let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+                while result?.next() == true {
+                    let dict:NSDictionary = result!.resultDictionary() as NSDictionary
+                    let item = Prob(withDict: dict)
+                    probs.append(item)
+                    
+                }
+            }
+            
+            
+            
+        }
+        fmdb?.close()
+        
+        return probs
+        
+        
+    }
+    
 }

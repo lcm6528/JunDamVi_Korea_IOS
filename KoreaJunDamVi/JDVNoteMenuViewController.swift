@@ -15,6 +15,8 @@ class JDVNoteMenuViewController: UIViewController{
     
     var probs:[Prob] = []
     
+    var currentIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +35,8 @@ class JDVNoteMenuViewController: UIViewController{
         let result = realm.objects(Note.self)
         Notes = Array(result)
         
-        probs = []
-        for note in Notes{
-            if let prob = JDVProbManager.fetchProb(withProbID: note.ProbID){
-                probs.append(prob)
-            }
-        }
         
+        probs = JDVProbManager.fetchProbs(withProbID: Notes.map{$0.ProbID})
         self.tableView.reloadData()
         
         
@@ -48,6 +45,13 @@ class JDVNoteMenuViewController: UIViewController{
     override func didReceiveMemoryWarning() {
        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! NoteInnerViewController
+        vc.Prob = probs[currentIndex]
+        vc.selection = Notes[currentIndex].Selection
+        self.tabBarController?.tabBar.isHidden = true
     }
 
 }
@@ -65,6 +69,10 @@ extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource{
     return probs.count
   }
   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentIndex = indexPath.row
+        performSegue(withIdentifier: "push", sender: self)
+    }
   
   
 }
