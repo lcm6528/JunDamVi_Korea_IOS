@@ -101,7 +101,7 @@ struct Prob {
     
     for (index,choice) in choices_String.enumerated(){
       let name = String(format: "%d_%02d", ProbID,index+1)
-      let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/3)
+      let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
       
       result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
       choices_attString.append(result)
