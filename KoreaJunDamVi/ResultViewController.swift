@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import WSProgressHUD
 protocol ProbResultSubViewDelegate {
     func changeView()
 }
@@ -47,7 +48,11 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         contentView.addSubview(topView)
         contentView.addSubview(botView)
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        WSProgressHUD.dismiss()
     }
     
     
@@ -143,3 +148,4 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     
 }
+
