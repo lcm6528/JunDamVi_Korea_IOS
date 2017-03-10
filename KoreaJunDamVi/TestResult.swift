@@ -7,7 +7,31 @@
 //
 
 import Foundation
+import RealmSwift
 // TODO: make class try
+
+
+class TestResultRecord:Object{
+    dynamic var TestNum:Int = 0
+    dynamic var numberOfRight:Int = 0
+    dynamic var numberOfPass:Int = 0
+    dynamic var numberOfWrong:Int = 0
+    dynamic var Score:Int = 0
+    
+    convenience init(by result:TestResult){
+        self.init()
+        
+        self.TestNum = result.TestNum
+        self.numberOfRight = result.numberOfRight
+        self.numberOfPass = result.numberOfPass
+        self.numberOfWrong = result.numberOfWrong
+        self.Score = result.TotalScore
+
+    }
+    
+}
+
+
 enum state:String {
     
     case Right = "O"
