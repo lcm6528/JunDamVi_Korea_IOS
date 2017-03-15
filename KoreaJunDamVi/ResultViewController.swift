@@ -27,10 +27,6 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let realm = try! Realm()
-        try! realm.write {
-                realm.deleteAll()
-        }
         
         
         self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"

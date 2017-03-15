@@ -75,6 +75,7 @@ class ProbTestFrameViewController: JDVViewController {
                 
             }
         }else if segue.identifier == "push"{
+            
             let vc = segue.destination as! ProbResultViewController
             var tries:[Try] = []
             for (index, prob) in Probs.enumerated(){
@@ -84,6 +85,7 @@ class ProbTestFrameViewController: JDVViewController {
             }
             result = TestResult(withTries: tries)
             vc.result = self.result
+            JDVScoreManager.configureAnalData(by: result)
             
             let record = TestResultRecord(by: result)
             

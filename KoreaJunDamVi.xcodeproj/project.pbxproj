@@ -143,6 +143,7 @@
 		37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */; };
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
 		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
+		ED8F76951E79128B00B22C4F /* AnalBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */; };
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
 		EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE84D621E6D286C0062B1A8 /* Note.swift */; };
@@ -289,6 +290,7 @@
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
+		ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartCell.swift; sourceTree = "<group>"; };
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
 		EDE84D621E6D286C0062B1A8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -498,8 +500,8 @@
 			children = (
 				376CB4281E2DE91700AC8F49 /* AnalyticsMainViewController.swift */,
 				37D788821E30A2EE0039F999 /* AnalContentCell.swift */,
-				37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */,
-				37D788801E3099D90039F999 /* AnalBarChartView.xib */,
+				ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */,
+				ED8F76931E79122D00B22C4F /* AnalBarChart */,
 				37D7887D1E3099BE0039F999 /* AnalRoundView */,
 			);
 			name = Analytics;
@@ -669,6 +671,15 @@
 				8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED8F76931E79122D00B22C4F /* AnalBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */,
+				37D788801E3099D90039F999 /* AnalBarChartView.xib */,
+			);
+			name = AnalBarChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -920,6 +931,7 @@
 				379DB89A1DBF3E3400882280 /* Radian.swift in Sources */,
 				376CB4291E2DE91700AC8F49 /* AnalyticsMainViewController.swift in Sources */,
 				37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */,
+				ED8F76951E79128B00B22C4F /* AnalBarChartCell.swift in Sources */,
 				375EB90F1DBDE55900337236 /* AppDelegate.swift in Sources */,
 				37D7887F1E3099CF0039F999 /* AnalBarChartView.swift in Sources */,
 				377E38D41E5D623B00D386A0 /* testheader.swift in Sources */,

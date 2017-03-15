@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class AnalyticsMainViewController: JDVViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -16,6 +16,7 @@ class AnalyticsMainViewController: JDVViewController {
     @IBOutlet var highView: AnalRoundView!
     @IBOutlet var rowView: AnalRoundView!
     
+    var records:[TestResultRecord] = []
     
     
     
@@ -41,51 +42,72 @@ class AnalyticsMainViewController: JDVViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.reloadData()
+//        tableView.reloadData()
         
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchRecords()
         configureRoundViews()
     }
+    
+    
+    
+    func fetchRecords(){
+        
+        let realm = try! Realm()
+        let result = realm.objects(TestResultRecord.self)
+        records = Array(result)
+        tableView.reloadData()
+        let cell = tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! AnalContentCell
+        cell.collectionView.reloadData()
+    }
+    
+    
 }
+extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let record = records[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AnalBarChartCell
+        cell.configure(by: record)
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return records.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let chartcell = cell as! AnalBarChartCell
+        chartcell.barChart.setBarUI(withAnimate: true)
+        
+    }
+}
+
+
 
 extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AnalContentCell
-        cell.bar1.setValue(forRedBar: 10, BlackBar: 20, GrayBar: 30)
-        cell.bar1.bottomLabel.text = "27회"
-        cell.bar2.setValue(forRedBar: 40, BlackBar: 20, GrayBar: 30)
-        cell.bar2.bottomLabel.text = "30회"
-        cell.bar3.setValue(forRedBar: 20, BlackBar: 20, GrayBar: 60)
-        cell.bar3.bottomLabel.text = "29회"
-        cell.bar4.setValue(forRedBar: 60, BlackBar: 90, GrayBar: 30)
-        cell.bar4.bottomLabel.text = "28회"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! AnalContentCell
-        cell.setBarUI(withAnimate: true)
+//        let cell = tableView.cellForRow(at: indexPath) as! AnalContentCell
         
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let celll = cell as! AnalContentCell
-        celll.setBarUI(withAnimate: true)
-    }
     
 }
