@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ProbQuickTestViewController: JDVViewController {
     
@@ -24,19 +25,13 @@ class ProbQuickTestViewController: JDVViewController {
         
         self.setTitleWithStyle("\(Probs[0].TestNum)회 빠른채점")
         selections = [Int](repeatElement(0, count: Probs.count))
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func resultButtonPressed(_ sender: AnyObject) {
         performSegue(withIdentifier: "push", sender: self)
         self.popVC()
     }
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +45,15 @@ class ProbQuickTestViewController: JDVViewController {
         vc.result = self.result
 
         JDVScoreManager.configureAnalData(by: result)
+        
+        let record = TestResultRecord(by: result)
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(record)
+        }
+
     }
     
     
@@ -70,7 +74,7 @@ extension ProbQuickTestViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return Probs.count
     }
     
     
