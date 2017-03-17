@@ -7,46 +7,21 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
+import Toaster
 class JDVNoteManager: NSObject {
   
-  
-  static func saveNoteWithUserInfo(_ userInfo:NSDictionary)->NSManagedObjectID?{
-    
-    let context = DataController().managedObjectContext
-    let entity = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context)
-    
-    entity.setValue(userInfo["year"], forKey: "year")
-    entity.setValue(userInfo["num"], forKey: "num")
-    entity.setValue(userInfo["trial"], forKey: "trial")
-    entity.setValue(userInfo["auth"], forKey: "auth")
-    entity.setValue(userInfo["date"], forKey: "date")
-    entity.setValue(userInfo["type"], forKey: "type")
-    
-    
-    
-    
-    do{
-      try context.save()
-      return entity.objectID
-    }catch{
-      return nil
+    static func saveNote(by note:Note){
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(note)
+            Toast(text: "오답노트 저장완료").show()
+        }
+        
     }
+  
     
-  }
-  
-  
-  static func deleteNoteWithObjectID(_ id:NSManagedObjectID)->Bool{
-        let context = DataController().managedObjectContext
-    do{
-      let obj = context.object(with: id)
-      context.delete(obj)
-      try context.save()
-      return true
-    }catch{
-      return false
-    }
-    
-  }
-  
+    //TODO : CURD
 }
