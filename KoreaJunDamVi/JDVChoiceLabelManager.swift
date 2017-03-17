@@ -73,7 +73,7 @@ class JDVChoiceViewManager: NSObject {
   func setColorForStateAtIndex(_ index:Int, state:StateOfChoice){
     switch state{
     case .selected:
-      arrayOfViews[index].backgroundColor = UIColor.lightGray
+      arrayOfViews[index].backgroundColor = UIColor.selectedRed
       
       
     case .auth:
