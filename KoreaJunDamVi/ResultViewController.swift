@@ -68,19 +68,6 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
     }
     
-    
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return result.Tries.count
     }
@@ -108,13 +95,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
     }
     
-    
-    
     func buttonPressed(_ sender:UIButton){
-        
-        
-        
-        
         
         if sender.isSelected == false{
             
@@ -123,22 +104,11 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
             note.ProbID = tryObj.ProbID
             note.Selection = tryObj.Selection
             
-            
-            let realm = try! Realm()
-            
-            try! realm.write {
-                realm.add(note)
-            }
-            
-            
+            JDVNoteManager.saveNote(by: note)
             
         }
         
-        
         sender.isSelected = !sender.isSelected
-        
-        
-        
         
     }
     

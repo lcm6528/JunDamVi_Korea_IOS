@@ -39,7 +39,7 @@ class NoteInnerViewController: JDVViewController {
         setStackView()
         choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
         
-        if selection != 0 { choiceManager?.setColorForStateAtIndex(selection, state: .selected) }
+        if selection != 0 { choiceManager?.setColorForStateAtIndex(selection-1, state: .selected) }
         
         choiceManager?.setColorForStateAtIndex(Prob.Answer-1, state: .auth)
         choiceManager?.isActive = false

@@ -18,7 +18,7 @@ class JDVNoteMenuCell: UITableViewCell {
     
     func configure(by prob:Prob){
         
-        label_probnum.text = "\(prob.ProbNum)"
+        label_probnum.text = "\(prob.TestNum)회\(prob.ProbNum)번"
         label_score.text = "\(prob.Score)"
         label_time.text = "\(prob.time?.rawValue ?? "-" )"
         label_type.text = "\(prob.type?.rawValue ?? "-")"
