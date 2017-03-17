@@ -87,7 +87,7 @@ struct Prob {
     
     
     
-    let result =  replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
+    let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
     result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
     
     self.article_attString = result

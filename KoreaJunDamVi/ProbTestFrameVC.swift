@@ -139,7 +139,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     func gotoNextPage(){
         
-        
+        isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()+1
         if nextIndex == number_of_pages {
             pushResultVC()
@@ -147,9 +147,10 @@ class ProbTestFrameViewController: JDVViewController {
         }else if nextIndex < number_of_pages{
             let vc = pageViewAtIndex(nextIndex)
             
-            //      setActiveTools(false)
+            
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
-                //        self.setActiveTools(true)
+                
+                isBlockUserInteract = false
                 self.setToolbarTitle(self.getCurrnetIndexOfPage())
             })
             
@@ -161,15 +162,15 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     func gotoPrevPage(){
-        
+        isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()-1
         
         guard nextIndex >= 0 else {return}
         
         let vc = pageViewAtIndex(nextIndex)
-        //    setActiveTools(false)
+        
         pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
-            //      self.setActiveTools(true)
+            isBlockUserInteract = false
             self.setToolbarTitle(self.getCurrnetIndexOfPage())
         })
         
@@ -189,7 +190,7 @@ class ProbTestFrameViewController: JDVViewController {
         else if index == number_of_pages - 1
         {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
-            toolBarRightButton.setTitle( "", for: .normal)
+            toolBarRightButton.setTitle( "풀이완료", for: .normal)
         }else{
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
@@ -232,13 +233,12 @@ class ProbTestFrameViewController: JDVViewController {
 //MARK : PageView Delegate,Datasource
 extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource{
     
+    
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
+        print("end")
         if completed == true{
-            
             setToolbarTitle(getCurrnetIndexOfPage())
         }
-        
         
     }
     
@@ -249,6 +249,9 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         innerView.selectHandler = { (num,selection) -> Void in
             self.selections[num] = selection
             self.gotoNextPage()
+        }
+        if selections[index] != 0 {
+            innerView.selection = selections[index]
         }
         return innerView
     }
@@ -288,8 +291,5 @@ extension ProbTestFrameViewController:UINavigationControllerDelegate{
         isBlockUserInteract = false
         
     }
-    
-    
-    
     
 }
