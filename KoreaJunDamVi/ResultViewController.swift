@@ -24,6 +24,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     var result:TestResult!
     var heightOfSubView:CGFloat!
     
+    var addedNote = Set<Note>()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,21 +98,24 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     func buttonPressed(_ sender:UIButton){
         
+        
+        let tryObj = result.Tries[sender.tag]
+        let note = Note()
+        note.ProbID = tryObj.ProbID
+        note.Selection = tryObj.Selection
+        
+        
         if sender.isSelected == false{
-            
-            let tryObj = result.Tries[sender.tag]
-            let note = Note()
-            note.ProbID = tryObj.ProbID
-            note.Selection = tryObj.Selection
             
             JDVNoteManager.saveNote(by: note)
             
+        }else{
+            JDVNoteManager.deleteNote(by: note)
         }
         
         sender.isSelected = !sender.isSelected
         
     }
-    
     
 }
 
