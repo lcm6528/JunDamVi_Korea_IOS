@@ -41,6 +41,7 @@ class ProbResultBotCell: UITableViewCell {
         AnswerLabel.text = "\(item.Answer)"
         SelectionLabel.text = "\(item.Selection)"
         StateLabel.text = item.State.rawValue
+        noteButton.isSelected = JDVNoteManager.isAdded(by: item.ProbID)
         
     }
   

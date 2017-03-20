@@ -22,6 +22,30 @@ class JDVNoteManager: NSObject {
         
     }
   
+    static func deleteNote(by note:Note){
+        
+        let realm = try! Realm()
+        let object = realm.object(ofType: Note.self, forPrimaryKey: note.ProbID)
+        
+        try! realm.write {
+            if object != nil {
+                realm.delete(object!)
+            }
+            Toast(text: "오답노트 삭제완료").show()
+        }
+        
+    }
+    
+    static func isAdded(by probid:Int)->Bool{
+        
+        let realm = try! Realm()
+        if let _ = realm.object(ofType: Note.self, forPrimaryKey: probid){
+            return true
+        }else{
+            return false
+        }
+        
+    }
     
     //TODO : CURD
 }

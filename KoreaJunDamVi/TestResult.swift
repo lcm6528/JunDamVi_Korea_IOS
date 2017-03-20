@@ -8,8 +8,6 @@
 
 import Foundation
 import RealmSwift
-// TODO: make class try
-
 
 class TestResultRecord:Object{
     dynamic var TestNum:Int = 0
