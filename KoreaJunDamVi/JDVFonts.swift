@@ -10,13 +10,16 @@ import Foundation
 import UIKit
 
 extension UIFont {
-  class var titleFont: UIFont {
-    return UIFont(name: "NanumMyeongjo", size: 18)!
-  }
-  class var articleFont: UIFont {
-    return UIFont(name: "NanumMyeongjo", size: 17)!
-  }
-  class var choiceFont: UIFont {
-    return UIFont(name: "NanumMyeongjo", size: 16)!
-  }
+    class var titleFont: UIFont {
+        return UIFont(name: "NanumMyeongjo", size: 18)!
+    }
+    class var articleFont: UIFont {
+        return UIFont(name: "NanumMyeongjo", size: 17)!
+    }
+    class var choiceFont: UIFont {
+        return UIFont(name: "NanumMyeongjo", size: 16)!
+    }
+    class var solutionFont: UIFont {
+        return UIFont(name: "NanumMyeongjo", size: 17)!
+    }
 }
