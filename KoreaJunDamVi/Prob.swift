@@ -85,8 +85,6 @@ struct Prob {
   mutating func setArticleAtt(){
     //parse image here
     
-    
-    
     let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
     result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
     
@@ -124,7 +122,7 @@ struct Prob {
   
   
   func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH - 20)->NSMutableAttributedString{
-    
+    /*
     let arr = str.components(separatedBy: "/img/")
     
     //No image in str
@@ -132,12 +130,13 @@ struct Prob {
       return NSMutableAttributedString(attributedString: stringToAttrStringInHTML(str))
     }
     
-    
     let result = NSMutableAttributedString()
     
     result.append(stringToAttrStringInHTML(arr[0]))
     result.append(NSAttributedString(string: "\n"))
+    
     //Append Image
+    
     let attachIcon:NSTextAttachment = NSTextAttachment()
     let bundlePath = Bundle.main.path(forResource: name, ofType: "png")
     attachIcon.image = UIImage(contentsOfFile: bundlePath!)
@@ -151,10 +150,26 @@ struct Prob {
     result.append(stringToAttrStringInHTML(arr[1]))
     
     return result
+    */
+    
+    
+    let result = NSMutableAttributedString()
+    
+    if let bundlePath = Bundle.main.path(forResource: name, ofType: "png"){
+        
+        let attachIcon:NSTextAttachment = NSTextAttachment()
+        attachIcon.image = UIImage(contentsOfFile: bundlePath)
+        let scaleFactor = attachIcon.image!.size.width / (width)
+        attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
+        let imageString = NSAttributedString(attachment: attachIcon)
+        result.append(imageString)
+        result.append(NSAttributedString(string: "\n"))
+        
+    }
+    
+    result.append(stringToAttrStringInHTML(str))
+    return result
     
   }
-  
-  
-  
   
 }
