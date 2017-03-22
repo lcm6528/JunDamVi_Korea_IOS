@@ -57,7 +57,9 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         WSProgressHUD.dismiss()
-        JDVProbManager.deleteCachedData(with: "\(result.TestNum)")
+        //JDVProbManager.deleteCachedData(with: "\(result.TestNum)")
+        JDVProbManager.saveCachedData(with: "\(result.TestNum)", tries: [])
+        
     }
     
     

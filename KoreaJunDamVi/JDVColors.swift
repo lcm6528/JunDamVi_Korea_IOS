@@ -33,4 +33,16 @@ extension UIColor {
     }
     
     
+    class var themeColor: UIColor {
+        return UIColor(red: 146.0 / 255.0, green: 26.0 / 255.0, blue: 26.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var probCellIvory: UIColor {
+        return UIColor(red: 202.0 / 255.0, green: 195.0 / 255.0, blue: 189.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var probCellRed: UIColor {
+        return UIColor(red: 237.0 / 255.0, green: 81.0 / 255.0, blue: 81.0 / 255.0, alpha: 1.0)
+    }
+    
 }
