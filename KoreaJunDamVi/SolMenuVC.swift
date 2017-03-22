@@ -8,12 +8,15 @@
 
 import UIKit
 import WSProgressHUD
-class JDVSolutionMenuViewController: UIViewController {
+class JDVSolutionMenuViewController: JDVViewController {
   
   
   @IBOutlet var collectionView: UICollectionView!
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.setTitleWithStyle("문제 해설")
+    
     
     let blockView =  BlockView(frame: self.view.frame)
     blockView.actionHandler = {

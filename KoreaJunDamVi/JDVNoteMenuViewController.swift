@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-class JDVNoteMenuViewController: UIViewController{
+class JDVNoteMenuViewController: JDVViewController{
 
     @IBOutlet var tableView: UITableView!
     var Notes:[Note] = []
@@ -19,7 +19,7 @@ class JDVNoteMenuViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setTitleWithStyle("오답노트")
         // Do any additional setup after loading the view.
     }
     

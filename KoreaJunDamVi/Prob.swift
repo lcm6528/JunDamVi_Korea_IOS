@@ -78,23 +78,23 @@ struct Prob {
     let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
     title.append(stringToAttrStringInHTML(title_String))
     title.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
+    
     self.title_attString = title
     
   }
   
   mutating func setArticleAtt(){
-    //parse image here
     
     let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
     result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
     
     self.article_attString = result
     
-    
   }
   
   
   mutating func setChoices(withArray arr:[String]){
+    
     choices_String = arr
     
     for (index,choice) in choices_String.enumerated(){
@@ -106,14 +106,12 @@ struct Prob {
       
     }
     
-    
   }
   
   mutating func setTTT(time timeval:Prob_time, type typeval:Prob_type, theme themeval:Prob_theme){
     self.time = timeval
     self.type = typeval
     self.theme = themeval
-    
   }
   
   mutating func setTags(withArr arr:[String]){

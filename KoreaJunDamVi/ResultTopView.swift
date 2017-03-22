@@ -21,6 +21,8 @@ class ProbResultTopView: UIView {
     @IBOutlet var roundView1: RoundView!
     @IBOutlet var roundView2: RoundView!
     
+    @IBOutlet var label_comment: UILabel!
+    @IBOutlet var label_grade: UILabel!
     
     @IBOutlet var label_correct: UICountingLabel!
     @IBOutlet var label_wrong: UILabel!
@@ -74,6 +76,17 @@ class ProbResultTopView: UIView {
     
     func configure(result:TestResult){
         
+        switch result.TotalScore {
+        case 70...100:
+            label_grade.text = "1급"
+            label_comment.text = "당신은 한국사 마스터!"
+        case 60...69:
+            label_grade.text = "2급"
+            label_comment.text = "포기하지 마세요!"
+        default:
+            label_grade.text = "불합격"
+            label_comment.text = "다음 시험을 준비하세요!"
+        }
         
         label_correct.format = "%d"
         label_correct.method = .easeIn

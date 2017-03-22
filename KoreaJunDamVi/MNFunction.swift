@@ -41,9 +41,14 @@ func setUserDefault(_ value:AnyObject, forKey key:String){
 func setUserDefaultWithInt(_ value:Int, forKey key:String){
   UserDefaults.standard.set(value, forKey: key)
  
-  
 }
-
+func setUserDefaultWithString(_ value:String, forKey key:String){
+    UserDefaults.standard.set(value, forKey: key)
+    
+}
+func setUserDefault<T>(value val:T, forKey key:String){
+    UserDefaults.standard.set(val, forKey: key)
+}
 
 func setUserDefaultWithBool(_ value:Bool, forKey key:String){
    UserDefaults.standard.set(value, forKey: key)
@@ -55,7 +60,9 @@ func getUserDefaultBoolValue(_ key:String) -> Bool{
 }
 
 
-
+func deleteUserDefalut(_ key:String){
+    UserDefaults.standard.removeObject(forKey: key)
+}
 func getUserDefault(_ key:String) -> AnyObject{
   if let value = UserDefaults.standard.object(forKey: key){
     return value as AnyObject
