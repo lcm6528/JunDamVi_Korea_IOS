@@ -53,22 +53,29 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        
+        
     }
     
     func ProbCollectionViewSelectedRow(atIndex index: Int) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             
-            if index == 2 {
-                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
-                self.performSegue(withIdentifier: "quick", sender: self)
-            }else if index == 1{
-                self.performSegue(withIdentifier: "anal", sender: self)
-            }else{
-                
-                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
-                self.performSegue(withIdentifier: "push", sender: self)
-            }
+            let arr = self.dataArray[self.currentMenu]
+            
+            self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+            self.performSegue(withIdentifier: "push", sender: self)
+            
+//            if index == 2 {
+//                self.Probs = JDVProbManager.fetchProbs(withTestnum:arr[)
+//                self.performSegue(withIdentifier: "quick", sender: self)
+//            }else if index == 1{
+//                self.performSegue(withIdentifier: "anal", sender: self)
+//            }else{
+//                
+//                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
+//                self.performSegue(withIdentifier: "push", sender: self)
+//            }
 
         }
         

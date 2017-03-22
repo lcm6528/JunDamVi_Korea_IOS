@@ -25,9 +25,6 @@
         <array key="NanumGothic.ttf">
             <string>NanumGothic</string>
         </array>
-        <array key="NanumGothicBold.ttf">
-            <string>NanumGothicBold</string>
-        </array>
         <array key="NanumMyeongjo.ttf">
             <string>NanumMyeongjo</string>
         </array>
@@ -252,43 +249,19 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-g8-GAg" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="96" width="120" height="24"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-p8-LMz">
-                                                            <rect key="frame" x="54" y="1" width="12" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="12" id="CA6-Om-EX4"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-p8-LMz">
+                                                            <rect key="frame" x="8" y="1" width="104" height="21"/>
                                                             <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
                                                             <color key="textColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-8U-ssM">
-                                                            <rect key="frame" x="67" y="1" width="44" height="21"/>
-                                                            <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
-                                                            <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1u-jm-fJx">
-                                                            <rect key="frame" x="9" y="1" width="44" height="21"/>
-                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
-                                                            <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.792156862745098" green="0.76470588235294112" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="e1u-jm-fJx" firstAttribute="centerY" secondItem="7kF-p8-LMz" secondAttribute="centerY" id="1qi-Oq-uIE"/>
-                                                        <constraint firstItem="e1u-jm-fJx" firstAttribute="top" secondItem="dq8-g8-GAg" secondAttribute="top" constant="1" id="5ri-yJ-wG8"/>
                                                         <constraint firstItem="7kF-p8-LMz" firstAttribute="top" secondItem="dq8-g8-GAg" secondAttribute="top" constant="1" id="DMC-zD-RIe"/>
-                                                        <constraint firstAttribute="trailing" secondItem="qEO-8U-ssM" secondAttribute="trailing" constant="9" id="Qfy-Ke-AUy"/>
-                                                        <constraint firstItem="qEO-8U-ssM" firstAttribute="leading" secondItem="7kF-p8-LMz" secondAttribute="trailing" constant="1" id="TOL-EJ-ccB"/>
                                                         <constraint firstAttribute="bottom" secondItem="7kF-p8-LMz" secondAttribute="bottom" constant="2" id="YdB-od-KH5"/>
-                                                        <constraint firstItem="7kF-p8-LMz" firstAttribute="centerX" secondItem="dq8-g8-GAg" secondAttribute="centerX" id="Z8Y-uf-ZX4"/>
-                                                        <constraint firstAttribute="bottom" secondItem="qEO-8U-ssM" secondAttribute="bottom" constant="2" id="bcR-SY-MJu"/>
-                                                        <constraint firstItem="qEO-8U-ssM" firstAttribute="centerY" secondItem="7kF-p8-LMz" secondAttribute="centerY" id="dGd-A6-vZG"/>
-                                                        <constraint firstItem="e1u-jm-fJx" firstAttribute="leading" secondItem="dq8-g8-GAg" secondAttribute="leading" constant="9" id="gAI-Hq-0fu"/>
-                                                        <constraint firstItem="7kF-p8-LMz" firstAttribute="leading" secondItem="e1u-jm-fJx" secondAttribute="trailing" constant="1" id="m8u-3I-YwJ"/>
-                                                        <constraint firstItem="qEO-8U-ssM" firstAttribute="top" secondItem="dq8-g8-GAg" secondAttribute="top" constant="1" id="mCc-4K-EG2"/>
-                                                        <constraint firstAttribute="bottom" secondItem="e1u-jm-fJx" secondAttribute="bottom" constant="2" id="qOz-i1-kxy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7kF-p8-LMz" secondAttribute="trailing" constant="8" id="ZpO-p6-zRT"/>
+                                                        <constraint firstItem="7kF-p8-LMz" firstAttribute="leading" secondItem="dq8-g8-GAg" secondAttribute="leading" constant="8" id="lsr-TF-v7H"/>
                                                         <constraint firstItem="7kF-p8-LMz" firstAttribute="centerY" secondItem="dq8-g8-GAg" secondAttribute="centerY" id="xh7-Na-fWd"/>
                                                     </constraints>
                                                 </view>
@@ -311,9 +284,9 @@
                                             <constraint firstAttribute="bottom" secondItem="dq8-g8-GAg" secondAttribute="bottom" id="vkw-Fv-n5s"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="bottomLabel" destination="7kF-p8-LMz" id="UPj-pm-gm1"/>
+                                            <outlet property="bottomView" destination="dq8-g8-GAg" id="sdJ-kc-2GW"/>
                                             <outlet property="contentLabel" destination="GhI-Q6-t8J" id="YNf-KF-DzD"/>
-                                            <outlet property="range_end_label" destination="qEO-8U-ssM" id="gCG-Xg-2Mb"/>
-                                            <outlet property="range_start_label" destination="e1u-jm-fJx" id="qSh-xc-gcj"/>
                                             <outlet property="stateLabel" destination="MJI-9c-jcD" id="PoW-tQ-cVL"/>
                                         </connections>
                                     </collectionViewCell>
@@ -333,6 +306,9 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ljR-cr-tdM" id="OdN-0T-dSd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWb-gb-SZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -641,7 +617,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" image="prob" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

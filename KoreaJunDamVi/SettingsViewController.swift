@@ -13,9 +13,9 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tabBarController?.tabBar.isHidden = true
+    
         
-        // Do any additional setup after loading the view.
+        
     }
     
     
@@ -43,6 +43,10 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         try! realm.write {
             realm.deleteAll()
         }
+        
+        let appDomain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        
         
     }
 }

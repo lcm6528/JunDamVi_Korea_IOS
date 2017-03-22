@@ -91,29 +91,18 @@ class JDVProbManager: NSObject {
     
     static func saveCachedData(with key:String, tries:[Int]){
         
-        var data = ""
-        for item in tries{
-            data += "\(item)/"
-        }
-        data = data.substring(to: data.index(data.startIndex, offsetBy: data.length-1))
-        setUserDefault(value: data, forKey: key)
+        setUserDefault(value: tries, forKey: key)
     }
     
     
     static func getCachedData(with key:String)->[Int]?{
         
-        let data = getUserDefault(key) as? String
-        let selections = data?.components(separatedBy: "/").map{ item in
-            return item.toInt()!
-        }
-        return selections
+        return getUserDefault(key) as? [Int]
         
     }
     
     static func deleteCachedData(with key:String){
-        
         deleteUserDefalut(key)
-        
     }
     
 }

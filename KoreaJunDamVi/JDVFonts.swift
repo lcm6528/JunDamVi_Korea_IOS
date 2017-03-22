@@ -11,15 +11,15 @@ import UIKit
 
 extension UIFont {
     class var titleFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 18)!
+        return UIFont(name: "NanumMyeongjoBold", size: 15)!
     }
     class var articleFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 17)!
-    }
-    class var choiceFont: UIFont {
         return UIFont(name: "NanumMyeongjo", size: 16)!
     }
+    class var choiceFont: UIFont {
+        return UIFont(name: "NanumMyeongjo", size: 15)!
+    }
     class var solutionFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 17)!
+        return UIFont(name: "NanumMyeongjo", size: 16)!
     }
 }

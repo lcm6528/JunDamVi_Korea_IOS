@@ -33,7 +33,7 @@ class ProbTestFrameViewController: JDVViewController {
         
         
         setTitleWithStyle("\(Probs[0].TestNum)회")
-        if selections == nil{
+        if selections == nil || selections?.isEmpty == true{
             selections = [Int](repeatElement(0, count: Probs.count))
         }
         
