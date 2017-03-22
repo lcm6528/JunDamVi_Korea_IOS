@@ -61,7 +61,7 @@ class AnalyticsMainViewController: JDVViewController {
         
         let realm = try! Realm()
         let result = realm.objects(TestResultRecord.self)
-        records = Array(result)
+        records = Array(result).reversed()
         tableView.reloadData()
         let cell = tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! AnalContentCell
         cell.collectionView.reloadData()
@@ -88,6 +88,10 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
         let chartcell = cell as! AnalBarChartCell
         chartcell.barChart.setBarUI(withAnimate: true)
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.tabBarController?.selectedIndex = 1
     }
 }
 

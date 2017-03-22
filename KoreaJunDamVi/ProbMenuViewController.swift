@@ -114,6 +114,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         case "push":
             let vc = segue.destination as!ProbTestFrameViewController
             vc.Probs = self.Probs
+            vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
             self.Probs = []
             self.tabBarController?.tabBar.isHidden = true
         case "quick":

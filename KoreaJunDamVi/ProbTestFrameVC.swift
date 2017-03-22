@@ -22,7 +22,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     var Probs:[Prob] = []
     var result:TestResult!
-    var selections:[Int] = []
+    var selections:[Int]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,9 @@ class ProbTestFrameViewController: JDVViewController {
         
         
         setTitleWithStyle("\(Probs[0].TestNum)회")
-        selections = [Int](repeatElement(0, count: Probs.count))
+        if selections == nil{
+            selections = [Int](repeatElement(0, count: Probs.count))
+        }
         
         //////PageVC Settings///////
         pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestPageViewController") as! UIPageViewController
@@ -61,9 +63,28 @@ class ProbTestFrameViewController: JDVViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onStop), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+        JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+        
+    }
+    
+    func onStop() {
+        JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+    }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "popup"{
             let vc = segue.destination as! ProbPopupView
             vc.dataArray = Probs
@@ -79,7 +100,7 @@ class ProbTestFrameViewController: JDVViewController {
             let vc = segue.destination as! ProbResultViewController
             var tries:[Try] = []
             for (index, prob) in Probs.enumerated(){
-                let item = Try(withProb: prob, selection: selections[index])
+                let item = Try(withProb: prob, selection: selections![index])
                 
                 tries.append(item)
             }
@@ -247,11 +268,11 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         innerView.Prob = Probs[index]
         innerView.pageIndex = index
         innerView.selectHandler = { (num,selection) -> Void in
-            self.selections[num] = selection
+            self.selections![num] = selection
             self.gotoNextPage()
         }
-        if selections[index] != 0 {
-            innerView.selection = selections[index]
+        if selections![index] != 0 {
+            innerView.selection = selections![index]
         }
         return innerView
     }

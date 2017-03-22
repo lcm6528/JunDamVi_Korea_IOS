@@ -147,6 +147,7 @@
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
 		EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE84D621E6D286C0062B1A8 /* Note.swift */; };
+		EDF21AD71E81050B00F78466 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF21AD61E81050B00F78466 /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +295,7 @@
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
 		EDE84D621E6D286C0062B1A8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		EDF21AD61E81050B00F78466 /* Solution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -599,6 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				37E542641E5E9B6D0017884E /* Prob.swift */,
+				EDF21AD61E81050B00F78466 /* Solution.swift */,
 				EDE84D621E6D286C0062B1A8 /* Note.swift */,
 				3745DD281E63EE3C005CC446 /* TestResult.swift */,
 				3741FA841E600851004EEA73 /* Database.db */,
@@ -924,6 +927,7 @@
 				37D051A11E275D3700D92E89 /* ProbPopupV.swift in Sources */,
 				37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */,
 				37F7CD2F1DE6B0FE0085A2E4 /* JDVChoiceLabelManager.swift in Sources */,
+				EDF21AD71E81050B00F78466 /* Solution.swift in Sources */,
 				377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */,
 				37D0517D1E260DCA00D92E89 /* SolInnerVC.swift in Sources */,
 				375373A21E0BA49100205C13 /* JDVColors.swift in Sources */,

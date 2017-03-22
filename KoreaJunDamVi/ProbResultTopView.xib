@@ -30,7 +30,9 @@
                 <outlet property="gageView" destination="uo7-oY-yDQ" id="hfA-NQ-4v8"/>
                 <outlet property="label_Score" destination="oqZ-jY-Joy" id="IR2-y6-GiK"/>
                 <outlet property="label_Trial" destination="Flj-RY-Oqe" id="HBG-M3-4NQ"/>
+                <outlet property="label_comment" destination="heC-ZV-6aw" id="8wA-qJ-fgX"/>
                 <outlet property="label_correct" destination="Blg-RJ-1x4" id="h5M-Hk-ahR"/>
+                <outlet property="label_grade" destination="0kg-kF-Lrj" id="DAK-W9-ySY"/>
                 <outlet property="label_wrong" destination="11k-A4-fSP" id="QTG-ju-uQ9"/>
                 <outlet property="roundView1" destination="CkO-vd-AKy" id="kaJ-sY-9I0"/>
                 <outlet property="roundView2" destination="QfX-nH-ECp" id="CHz-r9-s4g"/>

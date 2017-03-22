@@ -41,6 +41,13 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         botView.delegate = self
         botView.tableView.delegate = self
         botView.tableView.dataSource = self
+        botView.dismissHandler = {
+                self.tabBarController?.selectedIndex = 3            
+            self.dismissVC(completion: { 
+
+            })
+        }
+        
         
         contentView.addSubview(topView)
         contentView.addSubview(botView)
@@ -50,6 +57,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         WSProgressHUD.dismiss()
+        JDVProbManager.deleteCachedData(with: "\(result.TestNum)")
     }
     
     
@@ -60,14 +68,16 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     
+    
     func changeView(){
         
         let offsetY:CGFloat = scrollView.contentOffset.y == 0.0 ? heightOfSubView : 0.0
         
         scrollView.setContentOffset(CGPoint(x: 0, y: offsetY) , animated: true)
         
-        
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return result.Tries.count
@@ -104,7 +114,6 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         note.ProbID = tryObj.ProbID
         note.Selection = tryObj.Selection
         
-        
         if sender.isSelected == false{
             
             JDVNoteManager.saveNote(by: note)
@@ -116,6 +125,8 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         sender.isSelected = !sender.isSelected
         
     }
+    
+    
     
 }
 

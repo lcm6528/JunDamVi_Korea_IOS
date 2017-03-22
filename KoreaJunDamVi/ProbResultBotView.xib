@@ -39,6 +39,9 @@
                             <state key="normal" title="오답 노트">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="noteButtonPressed:" destination="-1" eventType="touchUpInside" id="99j-Gs-QOn"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>

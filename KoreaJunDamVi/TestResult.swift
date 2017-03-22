@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+
 class TestResultRecord:Object{
     dynamic var TestNum:Int = 0
     dynamic var numberOfRight:Int = 0
