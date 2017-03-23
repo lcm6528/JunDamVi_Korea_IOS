@@ -21,6 +21,7 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
     
     var dismissHandler:(()->Void)?
     
+    @IBOutlet var noteButton: UIButton!
     @IBOutlet var tableView: UITableView!
     
     override init(frame: CGRect) {
@@ -42,6 +43,10 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        
+        noteButton.layer.cornerRadius = 4
+        noteButton.layer.borderWidth = 0.5
+        noteButton.layer.borderColor = UIColor.gray.cgColor
         
         
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
@@ -82,7 +87,8 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         self.delegate?.changeView()
     }
     
-    @IBAction func noteButtonPressed(_ sender: Any) {
+    
+    @IBAction func goNote(_ sender: Any) {
         dismissHandler?()
     }
     

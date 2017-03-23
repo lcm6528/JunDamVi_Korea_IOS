@@ -184,9 +184,10 @@
                         <outletCollection property="ToolbarButtons" destination="EEY-L7-2KQ" collectionClass="NSMutableArray" id="fFu-Dh-oUp"/>
                         <outletCollection property="ToolbarButtons" destination="A6c-Qh-DsV" collectionClass="NSMutableArray" id="frO-sp-UKZ"/>
                         <outletCollection property="ToolbarButtons" destination="y6V-8w-w1X" collectionClass="NSMutableArray" id="u4X-ID-OgZ"/>
-                        <segue destination="eJ4-GU-UW1" kind="show" identifier="push" id="1us-z2-awh"/>
+                        <segue destination="eJ4-GU-UW1" kind="show" identifier="pushinit" id="1us-z2-awh"/>
                         <segue destination="wYf-gj-JhQ" kind="show" identifier="quick" id="QaH-Nd-S1R"/>
                         <segue destination="Lq9-21-mw2" kind="show" identifier="anal" id="0lt-XI-cKy"/>
+                        <segue destination="eJ4-GU-UW1" kind="show" identifier="pushcont" id="Ugj-tl-7ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUi-bL-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -842,7 +843,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-M3-BcF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="CfD-N0-GRe" customClass="ProbQuickCell" customModule="KoreaJunDamVi" customModuleProvider="target">
@@ -954,41 +955,65 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                     <outlet property="delegate" destination="wYf-gj-JhQ" id="Cyb-Hu-PoA"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj">
-                                <rect key="frame" x="0.0" y="553" width="375" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wC-5e-fdd">
+                                <rect key="frame" x="0.0" y="533" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj">
+                                        <rect key="frame" x="97" y="15" width="180" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Na2-es-ddv"/>
+                                            <constraint firstAttribute="width" constant="180" id="cmn-Oj-Wyq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="17"/>
+                                        <state key="normal" title=" 풀이 결과 확인" image="button_gotoNote">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resultButtonPressed:" destination="wYf-gj-JhQ" eventType="touchUpInside" id="rIP-Pz-wyk"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-ie-3Dn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                        <color key="backgroundColor" red="0.49019607843137253" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="kCF-lM-J46"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.88235294117647056" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fKp-l4-qUL"/>
+                                    <constraint firstItem="iSd-K8-ooj" firstAttribute="centerX" secondItem="8wC-5e-fdd" secondAttribute="centerX" id="0qK-9h-RMN"/>
+                                    <constraint firstAttribute="height" constant="70" id="JI2-Fi-tq3"/>
+                                    <constraint firstItem="vhc-ie-3Dn" firstAttribute="top" secondItem="8wC-5e-fdd" secondAttribute="top" id="dum-JY-UNw"/>
+                                    <constraint firstItem="iSd-K8-ooj" firstAttribute="centerY" secondItem="8wC-5e-fdd" secondAttribute="centerY" id="iSF-fN-NR1"/>
+                                    <constraint firstAttribute="trailing" secondItem="vhc-ie-3Dn" secondAttribute="trailing" id="jsm-pu-SXQ"/>
+                                    <constraint firstItem="vhc-ie-3Dn" firstAttribute="leading" secondItem="8wC-5e-fdd" secondAttribute="leading" id="pOZ-IM-DfX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="18"/>
-                                <state key="normal" title="상세 결과 보기">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="resultButtonPressed:" destination="wYf-gj-JhQ" eventType="touchUpInside" id="rIP-Pz-wyk"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZWI-M3-BcF" secondAttribute="trailing" id="6P5-Gz-uiu"/>
-                            <constraint firstItem="iSd-K8-ooj" firstAttribute="leading" secondItem="lyk-dk-5jh" secondAttribute="leading" id="Hdi-J0-W2v"/>
-                            <constraint firstAttribute="trailing" secondItem="iSd-K8-ooj" secondAttribute="trailing" id="f8O-iK-plu"/>
-                            <constraint firstItem="iSd-K8-ooj" firstAttribute="top" secondItem="ZWI-M3-BcF" secondAttribute="bottom" id="hZ7-wf-gvD"/>
+                            <constraint firstItem="8wC-5e-fdd" firstAttribute="leading" secondItem="lyk-dk-5jh" secondAttribute="leading" id="6Y3-B0-eyf"/>
+                            <constraint firstAttribute="trailing" secondItem="8wC-5e-fdd" secondAttribute="trailing" id="7X3-ho-40U"/>
+                            <constraint firstItem="8wC-5e-fdd" firstAttribute="top" secondItem="ZWI-M3-BcF" secondAttribute="bottom" id="d0Z-8M-Gi1"/>
                             <constraint firstItem="ZWI-M3-BcF" firstAttribute="top" secondItem="sSL-Va-UJ0" secondAttribute="bottom" id="shk-fq-v0S"/>
                             <constraint firstItem="ZWI-M3-BcF" firstAttribute="leading" secondItem="lyk-dk-5jh" secondAttribute="leading" id="vKN-Qa-Zc2"/>
-                            <constraint firstAttribute="bottom" secondItem="iSd-K8-ooj" secondAttribute="bottom" id="vZA-mC-pme"/>
+                            <constraint firstItem="SND-Ku-RH5" firstAttribute="top" secondItem="8wC-5e-fdd" secondAttribute="bottom" id="yTk-bD-N6n"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="pushButton" destination="iSd-K8-ooj" id="aSr-4P-vZB"/>
                         <segue destination="zm0-gX-xPW" kind="presentation" identifier="push" id="28R-Nv-1NB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5K-kA-AxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-654"/>
+            <point key="canvasLocation" x="1932" y="-654.42278860569718"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QBw-w7-wEi">
@@ -1111,6 +1136,7 @@ l60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE
         </scene>
     </scenes>
     <resources>
+        <image name="button_gotoNote" width="30" height="30"/>
         <image name="cancel" width="16" height="16"/>
         <image name="end" width="16" height="16"/>
         <image name="popup" width="16" height="16"/>
@@ -1118,6 +1144,7 @@ l60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE
         <image name="star" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zua-Fs-LAj"/>
+        <segue reference="1us-z2-awh"/>
+        <segue reference="28R-Nv-1NB"/>
     </inferredMetricsTieBreakers>
 </document>
