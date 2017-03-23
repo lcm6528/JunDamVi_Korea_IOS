@@ -8,23 +8,28 @@
 
 import UIKit
 import RealmSwift
-
+import WSProgressHUD
 class ProbQuickTestViewController: JDVViewController {
     
+    
+    @IBOutlet var pushButton: UIButton!
     
     var TestNum:Int!
     var selections:[Int] = []
     var Probs:[Prob] = []
     var result:TestResult!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for prob in Probs{
-            print("\(prob.Answer)")
-        }
-        
         self.setTitleWithStyle("\(Probs[0].TestNum)회 빠른채점")
         selections = [Int](repeatElement(0, count: Probs.count))
+        
+        pushButton.layer.cornerRadius = 4
+        pushButton.layer.borderWidth = 0.5
+        pushButton.layer.borderColor = UIColor.gray.cgColor
+        
+        self.navigationController?.delegate = self
         
     }
     
@@ -76,7 +81,17 @@ extension ProbQuickTestViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Probs.count
     }
+}
+
+
+extension ProbQuickTestViewController:UINavigationControllerDelegate{
     
-    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
+        WSProgressHUD.dismiss()
+        isBlockUserInteract = false
+        
+    }
     
 }
+
+

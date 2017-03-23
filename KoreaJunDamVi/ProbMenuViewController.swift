@@ -56,28 +56,68 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         
         
     }
-    
+    func showIndicator(){
+        WSProgressHUD.show(withStatus: "문제 불러오는 중..")
+        isBlockUserInteract = true
+    }
     func ProbCollectionViewSelectedRow(atIndex index: Int) {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            
-            let arr = self.dataArray[self.currentMenu]
-            
-            self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
-            self.performSegue(withIdentifier: "push", sender: self)
-            
-//            if index == 2 {
-//                self.Probs = JDVProbManager.fetchProbs(withTestnum:arr[)
-//                self.performSegue(withIdentifier: "quick", sender: self)
-//            }else if index == 1{
-//                self.performSegue(withIdentifier: "anal", sender: self)
-//            }else{
-//                
-//                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
-//                self.performSegue(withIdentifier: "push", sender: self)
-//            }
-
+        let arr = self.dataArray[self.currentMenu]
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "처음부터 풀기", style: UIAlertActionStyle.default, handler:
+            { action in
+                
+                self.showIndicator()
+                let arr = self.dataArray[self.currentMenu]
+                
+                self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                self.performSegue(withIdentifier: "pushinit", sender: self)
+                
+        }))
+        alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
+            { action in
+                self.showIndicator()
+                let arr = self.dataArray[self.currentMenu]
+                
+                self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                self.performSegue(withIdentifier: "pushcont", sender: self)
+                
         }
+        ))
+        alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
+            { action in
+                self.showIndicator()
+                self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                self.performSegue(withIdentifier: "quick", sender: self)
+                
+        }
+        ))
+        alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
+            { action in
+                
+        }
+        ))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+        
+        //            if index == 2 {
+        //                self.Probs = JDVProbManager.fetchProbs(withTestnum:arr[)
+        //                self.performSegue(withIdentifier: "quick", sender: self)
+        //            }else if index == 1{
+        //                self.performSegue(withIdentifier: "anal", sender: self)
+        //            }else{
+        //
+        //                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
+        //                self.performSegue(withIdentifier: "push", sender: self)
+        //            }
+        
+        
         
     }
     
@@ -118,17 +158,26 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
-        case "push":
+        case "pushinit":
+            let vc = segue.destination as!ProbTestFrameViewController
+            vc.Probs = self.Probs
+            //vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
+            self.Probs = []
+            self.tabBarController?.tabBar.isHidden = true
+            
+        case "pushcont":
             let vc = segue.destination as!ProbTestFrameViewController
             vc.Probs = self.Probs
             vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
             self.Probs = []
             self.tabBarController?.tabBar.isHidden = true
+
         case "quick":
             let vc = segue.destination as! ProbQuickTestViewController
             vc.Probs = self.Probs
             self.Probs = []
             self.tabBarController?.tabBar.isHidden = true
+            
         default :
             return
         }

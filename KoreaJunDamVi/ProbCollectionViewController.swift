@@ -82,8 +82,7 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
         
         
         if indexPath.row != 1, indexPath.row != 2{//test code
-            WSProgressHUD.show(withStatus: "문제 불러오는 중..")
-            isBlockUserInteract = true
+            
         }
         self.delegate?.ProbCollectionViewSelectedRow(atIndex: indexPath.row)
     }

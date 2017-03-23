@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProbResultBotView" customModule="KoreaJunDamVi" customModuleProvider="target">
             <connections>
+                <outlet property="noteButton" destination="lgJ-3S-Q29" id="aBA-iK-xfX"/>
                 <outlet property="tableView" destination="2xr-pp-z4f" id="1Dx-mh-2A5"/>
             </connections>
         </placeholder>
@@ -28,28 +29,56 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="2xr-pp-z4f">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
                             <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                         </tableView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM7-t4-2xD">
-                            <rect key="frame" x="131" y="568" width="112" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="17"/>
-                            <state key="normal" title="오답 노트">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="noteButtonPressed:" destination="-1" eventType="touchUpInside" id="99j-Gs-QOn"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-gA-xwB">
+                            <rect key="frame" x="0.0" y="533" width="375" height="70"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-3S-Q29">
+                                    <rect key="frame" x="97" y="15" width="180" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="180" id="Tvo-7B-SqD"/>
+                                        <constraint firstAttribute="height" constant="40" id="y0n-so-bg7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="17"/>
+                                    <state key="normal" title=" 오답 노트" image="button_goResult">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goNote:" destination="-1" eventType="touchUpInside" id="2fR-W1-gpw"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-Tc-NC6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                    <color key="backgroundColor" red="0.49019607840000001" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="s0X-OF-LQg"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.8980392157" green="0.88235294119999996" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="uwr-Tc-NC6" firstAttribute="leading" secondItem="bFH-gA-xwB" secondAttribute="leading" id="0ua-Qr-yGa"/>
+                                <constraint firstItem="lgJ-3S-Q29" firstAttribute="centerX" secondItem="bFH-gA-xwB" secondAttribute="centerX" id="GD5-lM-Zam"/>
+                                <constraint firstAttribute="height" constant="70" id="GaL-4y-zC5"/>
+                                <constraint firstAttribute="trailing" secondItem="uwr-Tc-NC6" secondAttribute="trailing" id="V3m-KY-PGe"/>
+                                <constraint firstItem="lgJ-3S-Q29" firstAttribute="centerY" secondItem="bFH-gA-xwB" secondAttribute="centerY" id="mLg-jx-5c3"/>
+                                <constraint firstItem="uwr-Tc-NC6" firstAttribute="top" secondItem="bFH-gA-xwB" secondAttribute="top" id="qHO-2K-h9w"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="usa-Hd-tqj"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="2xr-pp-z4f" secondAttribute="bottom" constant="43" id="IZq-FR-GJv"/>
                         <constraint firstItem="2xr-pp-z4f" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="Yd6-Fd-qGI"/>
+                        <constraint firstItem="bFH-gA-xwB" firstAttribute="top" secondItem="2xr-pp-z4f" secondAttribute="bottom" id="bEY-6C-wee"/>
+                        <constraint firstAttribute="bottom" secondItem="bFH-gA-xwB" secondAttribute="bottom" id="bnx-a9-9mK"/>
+                        <constraint firstAttribute="trailing" secondItem="bFH-gA-xwB" secondAttribute="trailing" id="c2x-6x-OmT"/>
                         <constraint firstItem="2xr-pp-z4f" firstAttribute="top" secondItem="zkE-OA-9k8" secondAttribute="top" id="cvQ-n0-dIO"/>
                         <constraint firstAttribute="trailing" secondItem="2xr-pp-z4f" secondAttribute="trailing" id="hNy-T3-9ya"/>
+                        <constraint firstItem="bFH-gA-xwB" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="qPr-hz-1aV"/>
                     </constraints>
                 </view>
             </subviews>
@@ -65,4 +94,7 @@
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="button_goResult" width="40" height="27"/>
+    </resources>
 </document>
