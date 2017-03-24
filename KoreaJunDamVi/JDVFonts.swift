@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension UIFont {
+    
+    class var NaviBarTitleFont: UIFont {
+        return UIFont(name: "NanumBarunGothicLight", size: 18)!
+    }
+    
     class var titleFont: UIFont {
         return UIFont(name: "NanumMyeongjoBold", size: 15)!
     }

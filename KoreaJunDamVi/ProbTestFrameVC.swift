@@ -23,6 +23,9 @@ class ProbTestFrameViewController: JDVViewController {
     var Probs:[Prob] = []
     var result:TestResult!
     var selections:[Int]?
+    
+    @IBOutlet var barButton_Star: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,6 +124,11 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
+    @IBAction func noteButtonPressed(_ sender: UIBarButtonItem) {
+        
+        sender.image  = UIImage(named: "star_selected")
+        
+    }
     
     @IBAction func popUpList(_ sender: AnyObject) {
         //        performSegue(withIdentifier: "popup", sender: self)
@@ -216,6 +224,9 @@ class ProbTestFrameViewController: JDVViewController {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
         }
+        
+        
+        
         
     }
     
