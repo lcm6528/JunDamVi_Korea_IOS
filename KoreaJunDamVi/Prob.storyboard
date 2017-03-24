@@ -722,7 +722,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                             </barButtonItem>
                             <barButtonItem image="star" style="plain" id="4d4-Ig-bK7">
                                 <connections>
-                                    <action selector="popUpList:" destination="eJ4-GU-UW1" id="fXQ-k7-KTZ"/>
+                                    <action selector="noteButtonPressed:" destination="eJ4-GU-UW1" id="vse-hn-Wao"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="end" style="plain" id="OHA-eV-H5J"/>
@@ -731,6 +731,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="barButton_Star" destination="4d4-Ig-bK7" id="U4c-zM-qb8"/>
                         <outlet property="toolBarCenterLabel" destination="Qrd-rq-kXJ" id="CSW-K1-ymx"/>
                         <outlet property="toolBarLeftButton" destination="xim-Qq-pxT" id="EPx-Qm-fri"/>
                         <outlet property="toolBarRightButton" destination="L6e-AK-EyP" id="wHf-pC-8wf"/>
@@ -974,7 +975,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-ie-3Dn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                         <color key="backgroundColor" red="0.49019607843137253" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="kCF-lM-J46"/>
@@ -1144,7 +1145,7 @@ l60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE
         <image name="star" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Zua-Fs-LAj"/>
         <segue reference="1us-z2-awh"/>
-        <segue reference="28R-Nv-1NB"/>
     </inferredMetricsTieBreakers>
 </document>

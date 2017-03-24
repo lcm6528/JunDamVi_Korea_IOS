@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class HomeViewController: UIViewController {
+class HomeViewController: JDVViewController {
     
     @IBOutlet var roundView1: RoundView!
     
@@ -19,8 +19,7 @@ class HomeViewController: UIViewController {
     var completeCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("log")
+        self.setTitleWithStyle("한국사 전담비")
     }
     
     
@@ -40,8 +39,11 @@ class HomeViewController: UIViewController {
         completeCount = 0
         
         for test in Tests{
-            if JDVProbManager.getCachedData(with: test) != nil {
-                completeCount += 1
+            if let arr = JDVProbManager.getCachedData(with: test){
+                if arr.isEmpty == true{
+                    completeCount += 1
+                }
+                
             }
         }
         

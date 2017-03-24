@@ -267,7 +267,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="한국사전담비" id="qJ9-yx-bb4">
-                        <barButtonItem key="rightBarButtonItem" title="setting" id="OCZ-U6-2kp">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="OCZ-U6-2kp">
                             <connections>
                                 <action selector="settingButtonPressed:" destination="XsK-jn-FQH" id="ETb-Xt-ndO"/>
                             </connections>
@@ -376,7 +376,7 @@
                     <tabBarItem key="tabBarItem" title="홈" image="home" id="c0c-Gk-q7s"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="e4J-kp-NGe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="e4J-kp-NGe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -394,5 +394,6 @@
     </scenes>
     <resources>
         <image name="home" width="16" height="16"/>
+        <image name="settings" width="16" height="16"/>
     </resources>
 </document>

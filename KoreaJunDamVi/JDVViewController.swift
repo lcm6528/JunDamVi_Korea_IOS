@@ -30,7 +30,7 @@ class JDVViewController: UIViewController {
     
     let label:UILabel = UILabel(frame:    CGRect(x: 0, y: 0, width: 180, height: 40))
     
-    let rawString:NSMutableAttributedString = NSMutableAttributedString(string: textt, attributes: [NSFontAttributeName:UIFont(name: "NanumGothicBold", size: 18)!,
+    let rawString:NSMutableAttributedString = NSMutableAttributedString(string: textt, attributes: [NSFontAttributeName:UIFont(name: "NanumBarunGothicLight", size: 18)!,
       NSForegroundColorAttributeName:UIColor.white])
     
     let attachIcon:NSTextAttachment = NSTextAttachment()
@@ -60,7 +60,7 @@ class JDVViewController: UIViewController {
     
     let label:UILabel = UILabel(frame:    CGRect(x: 0, y: 0, width: 120, height: 40))
     
-    let rawString:NSMutableAttributedString = NSMutableAttributedString(string: text, attributes: [NSFontAttributeName:UIFont(name: "NanumGothicBold", size: 18)!,
+    let rawString:NSMutableAttributedString = NSMutableAttributedString(string: text, attributes: [NSFontAttributeName:UIFont.NaviBarTitleFont,
       NSForegroundColorAttributeName:UIColor.white])
     
     
