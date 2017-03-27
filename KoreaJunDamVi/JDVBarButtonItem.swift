@@ -26,3 +26,14 @@ class JDVBarButtonItem : UIBarButtonItem {
   }
   
 }
+
+
+class JDVNoteBarButtonItem: UIBarButtonItem{
+    
+    var isSelected:Bool = false{
+        didSet{
+            self.image = isSelected ? UIImage(named: "star_selected") : UIImage(named: "star")
+        }
+    }
+    
+}

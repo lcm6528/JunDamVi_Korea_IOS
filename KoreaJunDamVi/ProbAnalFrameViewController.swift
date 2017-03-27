@@ -11,9 +11,12 @@ import PageMenu
 class JDVProbAnalFrameViewController: JDVViewController {
     
     var pageMenu : CAPSPageMenu?
-    let data = [("국가",3),("왕",21),("사건",4),("제도",5),("경제",8),("사회",25),("문화",5),("인물",2),("단체",6),("유물",4),("복합",11),("기타",6)]
+    let data:[(String,Float)] = [("국가",3),("왕",21),("사건",4),("제도",5),("경제",8),("사회",25),("문화",5),("인물",2),("단체",6),("유물",4),("복합",11),("기타",6)]
     
     var dataObject:String!
+    
+    @IBOutlet var graph: JDVGraph!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,11 @@ class JDVProbAnalFrameViewController: JDVViewController {
         
         
         self.setTitleWithStyle(dataObject)
+        
+        
+        
+        graph.setData(model: JDVGraphModel(arrayLiteral: data))
+        graph.setHighlight(toStanding: 3)
         
         
         
@@ -52,20 +60,13 @@ class JDVProbAnalFrameViewController: JDVViewController {
         self.view.addSubview(pageMenu!.view)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        graph.animate(withDuration: 0.8)
+    }
 }
