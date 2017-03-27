@@ -66,10 +66,7 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         v.addSubview(button)
         tableView.tableHeaderView = v
         
-        
-        
         addSubview(view)
-        
         
     }
     
@@ -91,8 +88,5 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
     @IBAction func goNote(_ sender: Any) {
         dismissHandler?()
     }
-    
-    
-    
     
 }

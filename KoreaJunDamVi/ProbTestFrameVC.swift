@@ -11,20 +11,16 @@ import WSProgressHUD
 import RealmSwift
 class ProbTestFrameViewController: JDVViewController {
     
-    
-    
-    var number_of_pages = 0
     @IBOutlet var toolBarCenterLabel: UILabel!
     @IBOutlet var toolBarRightButton: UIButton!
     @IBOutlet var toolBarLeftButton: UIButton!
-    var pageViewController:UIPageViewController!
+    @IBOutlet var barButton_Star: JDVNoteBarButtonItem!
     
-    
+    var number_of_pages = 0
     var Probs:[Prob] = []
     var result:TestResult!
     var selections:[Int]?
-    
-    @IBOutlet var barButton_Star: UIBarButtonItem!
+    var pageViewController:UIPageViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +55,6 @@ class ProbTestFrameViewController: JDVViewController {
         self.pageViewController.didMove(toParentViewController: self)
         //////////////////////
         
-        
-        
         self.navigationController?.delegate = self
         setToolbarTitle(getCurrnetIndexOfPage())
         
@@ -70,7 +64,7 @@ class ProbTestFrameViewController: JDVViewController {
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onStop), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -124,9 +118,20 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
-    @IBAction func noteButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func noteButtonPressed(_ sender: JDVNoteBarButtonItem) {
+        let index = getCurrnetIndexOfPage()
         
-        sender.image  = UIImage(named: "star_selected")
+        let note = Note()
+        note.ProbID = Probs[index].ProbID
+        note.Selection = selections![index]
+        
+        if sender.isSelected == false{
+            JDVNoteManager.saveNote(by: note)
+        }else{
+            JDVNoteManager.deleteNote(by: note)
+        }
+        
+        sender.isSelected = !sender.isSelected
         
     }
     
@@ -143,15 +148,13 @@ class ProbTestFrameViewController: JDVViewController {
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
             WSProgressHUD.show(withStatus: "체점 중 ..")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { 
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.performSegue(withIdentifier: "push", sender: self)
                 self.popVC()
             })
             
         }))
         self.present(alert, animated: true, completion: nil)
-        
-        
         
     }
     
@@ -183,10 +186,7 @@ class ProbTestFrameViewController: JDVViewController {
                 self.setToolbarTitle(self.getCurrnetIndexOfPage())
             })
             
-            
         }
-        
-        
         
     }
     
@@ -203,7 +203,6 @@ class ProbTestFrameViewController: JDVViewController {
             self.setToolbarTitle(self.getCurrnetIndexOfPage())
         })
         
-        
     }
     
     
@@ -212,6 +211,9 @@ class ProbTestFrameViewController: JDVViewController {
         
         let numberOfTest:Int = index+1
         toolBarCenterLabel.text = "\(numberOfTest)번"
+        
+        barButton_Star.isSelected = JDVNoteManager.isAdded(by: Probs[index].ProbID)
+        
         if index == 0{
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
             toolBarLeftButton.setTitle( "", for: .normal)
@@ -224,8 +226,6 @@ class ProbTestFrameViewController: JDVViewController {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
         }
-        
-        
         
         
     }
@@ -248,7 +248,6 @@ class ProbTestFrameViewController: JDVViewController {
         }else{
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
         }
-        
         
     }
     

@@ -54,10 +54,6 @@ class ProbResultTopView: UIView {
         label_Trial.layer.cornerRadius = 6
         label_Score.layer.cornerRadius = 6
         
-        
-        
-        
-        
     }
     
     
