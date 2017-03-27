@@ -16,6 +16,8 @@ class BlockView: UIView {
   
   let NibName:String = "BlockView"
   
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var purchaseButton: UIButton!
   
   var actionHandler: (() -> Void)?
   
@@ -37,6 +39,9 @@ class BlockView: UIView {
     view = loadViewFromNib()
     view.frame = bounds
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+    
+    titleLabel.layer.cornerRadius = 15
+    purchaseButton.layer.cornerRadius = 5
     addSubview(view)
   }
   

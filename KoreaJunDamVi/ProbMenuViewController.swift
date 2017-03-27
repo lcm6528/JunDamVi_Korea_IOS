@@ -212,7 +212,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
-            
+            pageContentViewController.subtitle = keys[index]
             pageContentViewController.pushHandler = { index in
                 self.currentMenu = index
                 self.performSegue(withIdentifier: "pushanal", sender: self)

@@ -115,7 +115,7 @@ import UIKit
   
   
   func setGageHeight(_ const:CGFloat, animate isAnimate:Bool){
-    gageHeightConst.constant = 0
+    gageHeightConst.constant = 4
       self.layoutIfNeeded()
     if isAnimate{
       self.gageHeightConst.constant = const

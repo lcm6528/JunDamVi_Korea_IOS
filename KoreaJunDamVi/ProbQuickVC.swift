@@ -18,6 +18,7 @@ class ProbQuickTestViewController: JDVViewController {
     @IBOutlet var pushButton: UIButton!
     
     var TestNum:Int!
+    
     var selections:[Int] = []
     var Probs:[Prob] = []
     var result:TestResult!

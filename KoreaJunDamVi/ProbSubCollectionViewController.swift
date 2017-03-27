@@ -11,9 +11,15 @@ import UIKit
 class ProbSubCollectionViewController: ProbCollectionViewController {
 
     
-    var data:String!
+    var subtitle:String!
     var pushHandler:((Int)->Void)?
     
+    @IBOutlet var label_Ranking1: UILabel!
+    @IBOutlet var label_Ranking2: UILabel!
+    @IBOutlet var label_Ranking3: UILabel!
+    
+    
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var analButton: UIButton!
     
     @IBAction func analButtonPressed(_ sender: Any) {
@@ -25,5 +31,9 @@ class ProbSubCollectionViewController: ProbCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //configure data
+        
+        self.titleLabel.text = "\(subtitle!) 출제 비중 TOP 3"
+        self.analButton.setTitle("\(subtitle!) 분석자료 >>", for: .normal)
+        
     }
 }

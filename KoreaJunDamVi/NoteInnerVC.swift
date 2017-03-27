@@ -24,7 +24,7 @@ class NoteInnerViewController: JDVViewController {
     
     @IBOutlet var ScoreLabel: UILabel!
     
-    @IBOutlet var testChoiceViews: [UIView]!
+    @IBOutlet var testChoiceViews: [JDVViewWithBotLine]!
     @IBOutlet var testChoiceTextViews: [UITextView]!
     
     var choiceManager:JDVChoiceViewManager?
@@ -36,15 +36,20 @@ class NoteInnerViewController: JDVViewController {
         
         setTitleWithStyle("\(Prob.TestNum)회 \(Prob.ProbNum)번")
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        setStackView()
+        
         choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
         
         if selection != 0 { choiceManager?.setColorForStateAtIndex(selection-1, state: .selected) }
         
         choiceManager?.setColorForStateAtIndex(Prob.Answer-1, state: .auth)
+        testChoiceViews[Prob.Answer-1].mark()
         choiceManager?.isActive = false
         
+        
         configure()
+        
+        
+        isHideSolution(bool: true)
         
     }
     
@@ -61,12 +66,22 @@ class NoteInnerViewController: JDVViewController {
     }
     
     
-    func setStackView(){
-//        
-//        label_header.removeFromSuperview()
-//        textView_sol.removeFromSuperview()
-        button_Purchase.removeFromSuperview()
-        textView_sol.text = "test123\ntest123\ntest123\ntest123\ntest123\ntest123\n"
+    @IBAction func purchaseButtonPressed(_ sender: Any) {
+        
+        isHideSolution(bool: false)
         
     }
+
+    
+    func isHideSolution(bool:Bool){
+        
+        button_Purchase.isHidden = !bool
+        label_header.isHidden = bool
+        textView_sol.isHidden = bool
+        
+    }
+    
+    
+    
+    
 }

@@ -9,86 +9,78 @@
 import UIKit
 
 class ProbPopupView: UIViewController {
-
-  
-  var dataArray:[Prob] = []
-  var didSelectHandler: ((Int) -> Void)?
-  @IBOutlet var collectionView: UICollectionView!
-  
-  @IBOutlet var dismissButton: UIButton!
-  
+    
+    
+    var dataArray:[Prob] = []
+    var selections:[Int] = []
+    var isNoted:[Bool] = []
+    
+    var didSelectHandler: ((Int) -> Void)?
+    @IBOutlet var collectionView: UICollectionView!
+    
+    @IBOutlet var dismissButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
-      
-      if let flowLayout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-        
-        let offset = SCREEN_WIDTH/5 - 1
-        flowLayout.itemSize = CGSize(width: offset, height: offset*1.5)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 1
         
         
-      }
-      
-      
+        
+        if let flowLayout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            let offset = SCREEN_WIDTH/5 - 1
+            flowLayout.itemSize = CGSize(width: offset, height: offset*1.5)
+            flowLayout.minimumInteritemSpacing = 0
+            flowLayout.minimumLineSpacing = 1
+            
+            
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     
-  }
-  
-  @IBAction func dismissButtonAction(_ sender: AnyObject) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
     
-    dismiss(animated: true, completion: nil)
-  }
+    @IBAction func dismissButtonAction(_ sender: AnyObject) {
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 
 extension ProbPopupView:UICollectionViewDelegate{
-  
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-    self.didSelectHandler?(indexPath.row)
-    dismiss(animated: true, completion: nil)
-  }
-  
-  
-//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    
-//    let size =  CGSize(width: (SCREEN_WIDTH)/5, height: (SCREEN_WIDTH)/5)
-//    return size
-//    
-//  }
-//  
-//  
-//  func collectionView(collectionView: UICollectionView,
-//                      layout collectionViewLayout: UICollectionViewLayout,
-//                      minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-//    return 0.0
-//  }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.didSelectHandler?(indexPath.row)
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension ProbPopupView:UICollectionViewDataSource{
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-    return dataArray.count
-  }
-  
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
     
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-    return cell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return dataArray.count
+    }
     
-  }
-  
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProbPopupCell
+        
+        cell.configure(WithProb: dataArray[indexPath.row], selections: selections[indexPath.row], isNoted: isNoted[indexPath.row])
+        
+        return cell
+        
+    }
+    
 }

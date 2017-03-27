@@ -85,6 +85,12 @@ class ProbTestFrameViewController: JDVViewController {
         if segue.identifier == "popup"{
             let vc = segue.destination as! ProbPopupView
             vc.dataArray = Probs
+            vc.selections = selections!
+            
+            vc.isNoted = Probs.map{ prob in
+                return JDVNoteManager.isAdded(by: prob.ProbID)
+            }
+            
             vc.didSelectHandler = { index in
                 
                 let currentIdx = self.getCurrnetIndexOfPage()
@@ -136,11 +142,16 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     @IBAction func popUpList(_ sender: AnyObject) {
-        //        performSegue(withIdentifier: "popup", sender: self)
+                performSegue(withIdentifier: "popup", sender: self)
         
-        pushResultVC()
+//        pushResultVC()
         
     }
+    
+    @IBAction func completeButtonPressed(_ sender: Any) {
+        pushResultVC()
+    }
+    
     
     func pushResultVC(){
         

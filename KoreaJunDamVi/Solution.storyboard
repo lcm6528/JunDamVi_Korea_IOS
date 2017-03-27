@@ -198,7 +198,7 @@
                                                 <rect key="frame" x="12" y="253.5" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-hW-6J3">
-                                                        <rect key="frame" x="8" y="0.0" width="335" height="34.5"/>
+                                                        <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -206,10 +206,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="CBn-hW-6J3" firstAttribute="centerX" secondItem="k5m-he-1bJ" secondAttribute="centerX" id="R3h-L3-a6B"/>
                                                     <constraint firstItem="CBn-hW-6J3" firstAttribute="centerY" secondItem="k5m-he-1bJ" secondAttribute="centerY" id="UQw-z3-xiH"/>
                                                     <constraint firstItem="CBn-hW-6J3" firstAttribute="leading" secondItem="k5m-he-1bJ" secondAttribute="leading" constant="8" id="cnh-9X-07q"/>
-                                                    <constraint firstAttribute="trailing" secondItem="CBn-hW-6J3" secondAttribute="trailing" constant="8" id="lJ6-HJ-f2K"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CBn-hW-6J3" secondAttribute="trailing" constant="38" id="lJ6-HJ-f2K"/>
                                                     <constraint firstAttribute="bottom" secondItem="CBn-hW-6J3" secondAttribute="bottom" id="tVd-R2-B62"/>
                                                     <constraint firstItem="CBn-hW-6J3" firstAttribute="top" secondItem="k5m-he-1bJ" secondAttribute="top" id="up0-cq-C7e"/>
                                                 </constraints>
@@ -218,7 +217,7 @@
                                                 <rect key="frame" x="12" y="290" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXz-3x-i68">
-                                                        <rect key="frame" x="8" y="0.0" width="335" height="34.5"/>
+                                                        <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -228,16 +227,15 @@
                                                 <constraints>
                                                     <constraint firstItem="pXz-3x-i68" firstAttribute="top" secondItem="AhK-Xu-1cB" secondAttribute="top" id="705-5e-BDi"/>
                                                     <constraint firstItem="pXz-3x-i68" firstAttribute="centerY" secondItem="AhK-Xu-1cB" secondAttribute="centerY" id="SCX-Ez-jDZ"/>
-                                                    <constraint firstItem="pXz-3x-i68" firstAttribute="centerX" secondItem="AhK-Xu-1cB" secondAttribute="centerX" id="cCP-Ij-1yb"/>
-                                                    <constraint firstItem="pXz-3x-i68" firstAttribute="centerX" secondItem="AhK-Xu-1cB" secondAttribute="centerX" id="hhH-Nw-h7E"/>
                                                     <constraint firstAttribute="bottom" secondItem="pXz-3x-i68" secondAttribute="bottom" id="nvB-23-i2J"/>
+                                                    <constraint firstItem="pXz-3x-i68" firstAttribute="leading" secondItem="AhK-Xu-1cB" secondAttribute="leading" constant="8" id="r02-We-UBG"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krn-q9-RyG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="326.5" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSp-cN-lZz">
-                                                        <rect key="frame" x="8" y="0.0" width="335" height="34.5"/>
+                                                        <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -245,7 +243,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="BSp-cN-lZz" firstAttribute="centerX" secondItem="krn-q9-RyG" secondAttribute="centerX" id="4fg-GR-15R"/>
+                                                    <constraint firstItem="BSp-cN-lZz" firstAttribute="leading" secondItem="krn-q9-RyG" secondAttribute="leading" constant="8" id="6sg-4G-k5B"/>
                                                     <constraint firstAttribute="bottom" secondItem="BSp-cN-lZz" secondAttribute="bottom" id="D5h-5Y-545"/>
                                                     <constraint firstItem="BSp-cN-lZz" firstAttribute="centerY" secondItem="krn-q9-RyG" secondAttribute="centerY" id="W8x-Uo-nqB"/>
                                                     <constraint firstItem="BSp-cN-lZz" firstAttribute="top" secondItem="krn-q9-RyG" secondAttribute="top" id="vpj-h9-bBg"/>
@@ -255,7 +253,7 @@
                                                 <rect key="frame" x="12" y="363" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-Xv-fMi">
-                                                        <rect key="frame" x="8" y="0.0" width="335" height="34.5"/>
+                                                        <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -264,16 +262,16 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="KLI-Xv-fMi" secondAttribute="bottom" id="7cz-VV-VT6"/>
+                                                    <constraint firstItem="KLI-Xv-fMi" firstAttribute="leading" secondItem="B5G-dI-vHG" secondAttribute="leading" constant="8" id="G7x-CB-lYB"/>
                                                     <constraint firstItem="KLI-Xv-fMi" firstAttribute="top" secondItem="B5G-dI-vHG" secondAttribute="top" id="Rt1-x8-eHF"/>
                                                     <constraint firstItem="KLI-Xv-fMi" firstAttribute="centerY" secondItem="B5G-dI-vHG" secondAttribute="centerY" id="T3l-vv-hMR"/>
-                                                    <constraint firstItem="KLI-Xv-fMi" firstAttribute="centerX" secondItem="B5G-dI-vHG" secondAttribute="centerX" id="scN-hh-OrX"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-g3-aRK" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="399.5" width="351" height="53"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-lX-oSM">
-                                                        <rect key="frame" x="8" y="0.0" width="335" height="53"/>
+                                                        <rect key="frame" x="8" y="0.0" width="305" height="53"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text" base64-UTF8="YES">
 NS4g7KeR7ZiE7KCE7J2EIOyEpOy5mO2VmOyXrCDsnbjsnqzrpbwg7Jyh7ISx7ZWY6rOgIO2OuOywrCDs
@@ -285,10 +283,10 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="LiK-lX-oSM" firstAttribute="centerX" secondItem="vm0-g3-aRK" secondAttribute="centerX" id="LpO-5c-Kaa"/>
                                                     <constraint firstItem="LiK-lX-oSM" firstAttribute="centerY" secondItem="vm0-g3-aRK" secondAttribute="centerY" id="VVW-mA-VgL"/>
                                                     <constraint firstAttribute="bottom" secondItem="LiK-lX-oSM" secondAttribute="bottom" id="VjN-Km-X13"/>
                                                     <constraint firstItem="LiK-lX-oSM" firstAttribute="top" secondItem="vm0-g3-aRK" secondAttribute="top" id="kXt-P3-p5K"/>
+                                                    <constraint firstItem="LiK-lX-oSM" firstAttribute="leading" secondItem="vm0-g3-aRK" secondAttribute="leading" constant="8" id="tsk-8v-i76"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-jj-fqp" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">

@@ -20,6 +20,10 @@ extension UIColor {
     class var defaultIvory: UIColor {
         return UIColor(red: 234.0 / 255.0, green: 230.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
     }
+    class var popupCellIvory: UIColor {
+        return UIColor(red: 234.0 / 255.0, green: 233.0 / 255.0, blue: 228.0 / 255.0, alpha: 1.0)
+    }
+    
     class var untBlack757575: UIColor {
         return UIColor(white: 75.0 / 255.0, alpha: 1.0)
     }
@@ -45,17 +49,26 @@ extension UIColor {
         return UIColor(red: 237.0 / 255.0, green: 81.0 / 255.0, blue: 81.0 / 255.0, alpha: 1.0)
     }
     
-}
-
-
-class JDVNoteBarButtonItem: UIBarButtonItem{
+    class var noteMarkBlud: UIColor {
+        return UIColor(red: 35.0 / 255.0, green: 130.0 / 255.0, blue: 254.0 / 255.0, alpha: 1.0)
+    }
+    class var authborderSkyBlue: UIColor {
+        return UIColor(red: 85.0 / 255.0, green: 177.0 / 255.0, blue: 255.0 / 255.0, alpha: 0.65)
+    }
+    class var authBackgorundSkyBlue: UIColor {
+        return UIColor(red: 210.0 / 255.0, green: 228.0 / 255.0, blue: 255.0 / 255.0, alpha: 1)
+    }
     
-    var isSelected:Bool = false{
-        didSet{
-            self.image = isSelected ? UIImage(named: "star_selected") : UIImage(named: "star")
-        }
+    class var selectedBorderRed: UIColor {
+        return UIColor(red: 248.0 / 255.0, green: 156.0 / 255.0, blue: 138.0 / 255.0, alpha: 0.65)
+    }
+    class var selectedBackgroundRed: UIColor {
+        return UIColor(red: 236.0 / 255.0, green: 202.0 / 255.0, blue: 191.0 / 255.0, alpha: 1)
     }
     
     
     
 }
+
+
+
