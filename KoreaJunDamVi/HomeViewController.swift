@@ -34,7 +34,7 @@ class HomeViewController: JDVViewController {
             dict = object as! NSDictionary
         } catch {}
         
-        Tests = dict.value(forKey: "TestNum") as!  [String]
+        Tests = dict.value(forKey: "회차별") as!  [String]
         
         completeCount = 0
         

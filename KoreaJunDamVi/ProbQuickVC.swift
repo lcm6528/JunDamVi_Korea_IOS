@@ -6,6 +6,9 @@
 //  Copyright © 2016년 JunDamVi. All rights reserved.
 //
 
+
+//NOTE : Probs를 background에서 불러와서 저장하자. 뷰 넘어갈때 호출하니 빠른채점의 느낌이 나지 않음.
+
 import UIKit
 import RealmSwift
 import WSProgressHUD
@@ -34,8 +37,14 @@ class ProbQuickTestViewController: JDVViewController {
     }
     
     @IBAction func resultButtonPressed(_ sender: AnyObject) {
-        performSegue(withIdentifier: "push", sender: self)
-        self.popVC()
+        WSProgressHUD.show(withStatus: "체점 중 ..")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.performSegue(withIdentifier: "push", sender: self)
+            self.popVC()
+        })
+//        
+//        performSegue(withIdentifier: "push", sender: self)
+//        self.popVC()
     }
     
     
@@ -48,7 +57,7 @@ class ProbQuickTestViewController: JDVViewController {
         }
         result = TestResult(withTries: tries)
         vc.result = self.result
-
+        
         JDVScoreManager.configureAnalData(by: result)
         
         let record = TestResultRecord(by: result)
@@ -58,7 +67,7 @@ class ProbQuickTestViewController: JDVViewController {
         try! realm.write {
             realm.add(record)
         }
-
+        
     }
     
     

@@ -16,6 +16,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     var currentMenu:Int = 0
     var pageViewController:UIPageViewController!
     
+    let keys = ["회차별","시대별","유형별","테마별"]
+    
     var dataArray:[[String]] = []
     
     var Probs:[Prob] = []
@@ -60,8 +62,9 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         WSProgressHUD.show(withStatus: "문제 불러오는 중..")
         isBlockUserInteract = true
     }
-    func ProbCollectionViewSelectedRow(atIndex index: Int) {
+    func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index: Int) {
         
+        currentMenu = pIdx
         let arr = self.dataArray[self.currentMenu]
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
@@ -131,10 +134,10 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             dict = object as! NSDictionary
         } catch {}
         
-        dataArray.append(dict.value(forKey: "TestNum") as!  [String])
-        dataArray.append(dict.value(forKey: "Time") as!  [String])
-        dataArray.append(dict.value(forKey: "Type") as!  [String])
-        dataArray.append(dict.value(forKey: "Theme") as!  [String])
+        
+        for key in keys{
+            dataArray.append(dict.value(forKey: key) as!  [String])
+        }
         
     }
     
@@ -161,7 +164,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         case "pushinit":
             let vc = segue.destination as!ProbTestFrameViewController
             vc.Probs = self.Probs
-            //vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
             self.Probs = []
             self.tabBarController?.tabBar.isHidden = true
             
@@ -171,12 +173,16 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
             self.Probs = []
             self.tabBarController?.tabBar.isHidden = true
-
+            
         case "quick":
             let vc = segue.destination as! ProbQuickTestViewController
             vc.Probs = self.Probs
             self.Probs = []
             self.tabBarController?.tabBar.isHidden = true
+            
+        case "pushanal":
+            let vc = segue.destination as! JDVProbAnalFrameViewController
+            vc.dataObject = keys[currentMenu]
             
         default :
             return
@@ -199,11 +205,32 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
     }
     
     func pageViewAtIndex(_ index: Int) ->JDVViewController{
-        let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbCollectionViewController") as! ProbCollectionViewController
-        pageContentViewController.delegate = self
-        pageContentViewController.pageIndex = index
-        pageContentViewController.dataArray = self.dataArray[index]
-        return pageContentViewController
+        
+        
+        if index != 0 {
+            let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
+            pageContentViewController.delegate = self
+            pageContentViewController.pageIndex = index
+            pageContentViewController.dataArray = self.dataArray[index]
+            
+            pageContentViewController.pushHandler = { index in
+                self.currentMenu = index
+                self.performSegue(withIdentifier: "pushanal", sender: self)
+            }
+            return pageContentViewController
+            
+            
+            
+        }else{
+            
+            let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbCollectionViewController") as! ProbCollectionViewController
+            pageContentViewController.delegate = self
+            pageContentViewController.pageIndex = index
+            pageContentViewController.dataArray = self.dataArray[index]
+            return pageContentViewController
+            
+            
+        }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
