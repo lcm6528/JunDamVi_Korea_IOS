@@ -18,6 +18,7 @@ class BlockView: UIView {
   
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var purchaseButton: UIButton!
+    @IBOutlet var sampleButton: UIButton!
   
   var actionHandler: (() -> Void)?
   
@@ -41,7 +42,8 @@ class BlockView: UIView {
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
     
     titleLabel.layer.cornerRadius = 15
-    purchaseButton.layer.cornerRadius = 5
+    purchaseButton.layer.cornerRadius = 3
+    sampleButton.layer.cornerRadius = 3
     addSubview(view)
   }
   
