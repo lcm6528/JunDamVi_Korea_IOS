@@ -11,7 +11,7 @@ import WSProgressHUD
 import EZSwiftExtensions
 
 protocol ProbCollectionViewDelegate{
-    func ProbCollectionViewSelectedRow(atIndex index:Int)
+    func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index:Int)
 }
 class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
@@ -80,11 +80,7 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
-        if indexPath.row != 1, indexPath.row != 2{//test code
-            
-        }
-        self.delegate?.ProbCollectionViewSelectedRow(atIndex: indexPath.row)
+        self.delegate?.ProbCollectionViewSelectedRow(pageindex: pageIndex, atIndex: indexPath.row)
     }
     
     

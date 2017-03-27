@@ -62,7 +62,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-L7-2KQ">
                                         <rect key="frame" x="94" y="0.0" width="93" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="시대별">
                                             <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -76,7 +76,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Qh-DsV">
                                         <rect key="frame" x="188" y="0.0" width="93" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="유형별">
                                             <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -90,7 +90,7 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-8w-w1X">
                                         <rect key="frame" x="282" y="0.0" width="93" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="테마별">
                                             <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -128,7 +128,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ2-sn-Bnn">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="회차별">
                                             <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -186,7 +186,7 @@
                         <outletCollection property="ToolbarButtons" destination="y6V-8w-w1X" collectionClass="NSMutableArray" id="u4X-ID-OgZ"/>
                         <segue destination="eJ4-GU-UW1" kind="show" identifier="pushinit" id="1us-z2-awh"/>
                         <segue destination="wYf-gj-JhQ" kind="show" identifier="quick" id="QaH-Nd-S1R"/>
-                        <segue destination="Lq9-21-mw2" kind="show" identifier="anal" id="0lt-XI-cKy"/>
+                        <segue destination="Lq9-21-mw2" kind="show" identifier="pushanal" id="0lt-XI-cKy"/>
                         <segue destination="eJ4-GU-UW1" kind="show" identifier="pushcont" id="Ugj-tl-7ra"/>
                     </connections>
                 </viewController>
@@ -618,7 +618,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" image="prob" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -851,7 +851,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CfD-N0-GRe" id="GeR-AQ-DL0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
@@ -1134,6 +1134,206 @@ l60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE7ISd7J6Q66OMIOuCtOyaqSDsmIHsl60g67aE
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceT-jW-zGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1932" y="-1350"/>
+        </scene>
+        <!--Prob Sub Collection View Controller-->
+        <scene sceneID="Wyd-VX-fMH">
+            <objects>
+                <viewController storyboardIdentifier="ProbSubCollectionViewController" automaticallyAdjustsScrollViewInsets="NO" id="JUk-Qr-IFS" customClass="ProbSubCollectionViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kRs-yJ-9Mk"/>
+                        <viewControllerLayoutGuide type="bottom" id="3u7-t7-FFn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WLf-tk-L9p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g1j-Ts-sSb">
+                                <rect key="frame" x="0.0" y="126" width="375" height="541"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="Phq-gV-Psn">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="PU8-gy-eIJ" customClass="ProbCollectionViewCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="15" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학습 미완료" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaA-6S-rNh">
+                                                    <rect key="frame" x="8" y="4" width="104" height="18"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OG0-q9-5b5">
+                                                    <rect key="frame" x="8" y="31" width="104" height="51"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="30">
+                                                            <attributes>
+                                                                <font key="NSFont" size="33" name="NanumGothic"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="회">
+                                                            <attributes>
+                                                                <font key="NSFont" size="19" name="NanumGothic"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-D0-Miz" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="96" width="120" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-Ny-nhE">
+                                                            <rect key="frame" x="8" y="1" width="104" height="21"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
+                                                            <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.79215686269999996" green="0.76470588240000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Cx0-Ny-nhE" secondAttribute="trailing" constant="8" id="7BY-uj-rTX"/>
+                                                        <constraint firstItem="Cx0-Ny-nhE" firstAttribute="leading" secondItem="6gj-D0-Miz" secondAttribute="leading" constant="8" id="AZK-Pc-4Ra"/>
+                                                        <constraint firstItem="Cx0-Ny-nhE" firstAttribute="top" secondItem="6gj-D0-Miz" secondAttribute="top" constant="1" id="KuZ-Us-9CK"/>
+                                                        <constraint firstItem="Cx0-Ny-nhE" firstAttribute="centerY" secondItem="6gj-D0-Miz" secondAttribute="centerY" id="dWg-QB-zdf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Cx0-Ny-nhE" secondAttribute="bottom" constant="2" id="vIf-75-0u7"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="OG0-q9-5b5" firstAttribute="centerX" secondItem="PU8-gy-eIJ" secondAttribute="centerX" id="1dh-cd-fg7"/>
+                                            <constraint firstItem="iaA-6S-rNh" firstAttribute="top" secondItem="PU8-gy-eIJ" secondAttribute="top" constant="4" id="Dzg-Ek-UKq"/>
+                                            <constraint firstAttribute="trailing" secondItem="6gj-D0-Miz" secondAttribute="trailing" id="G2K-vs-iR4"/>
+                                            <constraint firstAttribute="trailing" secondItem="OG0-q9-5b5" secondAttribute="trailing" constant="8" id="HBm-Ag-ezz"/>
+                                            <constraint firstItem="6gj-D0-Miz" firstAttribute="leading" secondItem="PU8-gy-eIJ" secondAttribute="leading" id="Jgl-Sb-4lT"/>
+                                            <constraint firstItem="iaA-6S-rNh" firstAttribute="leading" secondItem="PU8-gy-eIJ" secondAttribute="leadingMargin" id="KzJ-cI-Csg"/>
+                                            <constraint firstItem="6gj-D0-Miz" firstAttribute="height" secondItem="PU8-gy-eIJ" secondAttribute="height" multiplier="0.2" id="SoV-ZW-iUb"/>
+                                            <constraint firstItem="OG0-q9-5b5" firstAttribute="top" secondItem="iaA-6S-rNh" secondAttribute="bottom" constant="9" id="Uzb-n5-3He"/>
+                                            <constraint firstItem="OG0-q9-5b5" firstAttribute="leading" secondItem="PU8-gy-eIJ" secondAttribute="leading" constant="8" id="VWq-AU-A56"/>
+                                            <constraint firstItem="iaA-6S-rNh" firstAttribute="trailing" secondItem="PU8-gy-eIJ" secondAttribute="trailingMargin" id="e5l-mk-xcz"/>
+                                            <constraint firstItem="6gj-D0-Miz" firstAttribute="top" secondItem="OG0-q9-5b5" secondAttribute="bottom" constant="14" id="ji0-yH-ZFg"/>
+                                            <constraint firstAttribute="bottom" secondItem="6gj-D0-Miz" secondAttribute="bottom" id="ku3-l6-xfr"/>
+                                            <constraint firstItem="iaA-6S-rNh" firstAttribute="height" secondItem="PU8-gy-eIJ" secondAttribute="height" multiplier="1/7" id="zOg-Wl-epj"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="bottomLabel" destination="Cx0-Ny-nhE" id="G6b-rd-2uA"/>
+                                            <outlet property="bottomView" destination="6gj-D0-Miz" id="cKI-eT-HEQ"/>
+                                            <outlet property="contentLabel" destination="OG0-q9-5b5" id="iTB-GF-BND"/>
+                                            <outlet property="stateLabel" destination="iaA-6S-rNh" id="SGL-Pq-rrS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="JUk-Qr-IFS" id="rMw-lo-65d"/>
+                                    <outlet property="delegate" destination="JUk-Qr-IFS" id="d3c-w9-uYd"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시대별 출제 비중 TOP 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaQ-XX-vcg">
+                                <rect key="frame" x="0.0" y="8" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FMc-Zj-i61"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1위 조선시대(24%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-Ik-iWt">
+                                <rect key="frame" x="8" y="37" width="114.5" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RWP-me-jrO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2위 조선시대(24%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MN0-9a-ye9">
+                                <rect key="frame" x="130.5" y="37" width="114" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hag-mK-agV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3위 조선시대(24%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9PX-HD-pRE">
+                                <rect key="frame" x="252.5" y="37" width="114.5" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="soM-zM-bAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-WD-Ib6">
+                                <rect key="frame" x="8" y="77" width="359" height="1"/>
+                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="oEF-Wf-3aw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMq-8d-tDC">
+                                <rect key="frame" x="8" y="86" width="359" height="40"/>
+                                <color key="backgroundColor" red="0.50445526839999999" green="0.1228601336" blue="0.078523069619999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="r2x-Ed-ZWZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                <state key="normal" title="시대별 분석자료 &gt;&gt;">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="analButtonPressed:" destination="JUk-Qr-IFS" eventType="touchUpInside" id="kar-BY-uVC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9PX-HD-pRE" firstAttribute="leading" secondItem="MN0-9a-ye9" secondAttribute="trailing" constant="8" id="1Fx-Jj-wyu"/>
+                            <constraint firstItem="9PX-HD-pRE" firstAttribute="centerY" secondItem="MN0-9a-ye9" secondAttribute="centerY" id="3Ac-Ly-QGW"/>
+                            <constraint firstItem="g1j-Ts-sSb" firstAttribute="leading" secondItem="WLf-tk-L9p" secondAttribute="leading" id="8hY-qC-lmg"/>
+                            <constraint firstItem="EMq-8d-tDC" firstAttribute="top" secondItem="Oom-WD-Ib6" secondAttribute="bottom" constant="8" id="8iy-wT-Hw0"/>
+                            <constraint firstItem="EaQ-XX-vcg" firstAttribute="top" secondItem="kRs-yJ-9Mk" secondAttribute="bottom" constant="8" id="A4C-EC-99M"/>
+                            <constraint firstAttribute="trailing" secondItem="g1j-Ts-sSb" secondAttribute="trailing" id="Aab-c1-EnX"/>
+                            <constraint firstItem="EaQ-XX-vcg" firstAttribute="leading" secondItem="WLf-tk-L9p" secondAttribute="leading" id="MCZ-gu-f4P"/>
+                            <constraint firstItem="Oom-WD-Ib6" firstAttribute="leading" secondItem="WLf-tk-L9p" secondAttribute="leading" constant="8" id="MmQ-x6-0Js"/>
+                            <constraint firstItem="g1j-Ts-sSb" firstAttribute="top" secondItem="EMq-8d-tDC" secondAttribute="bottom" id="NaG-LE-b6Q"/>
+                            <constraint firstItem="v4I-Ik-iWt" firstAttribute="leading" secondItem="WLf-tk-L9p" secondAttribute="leading" constant="8" id="Nav-an-i1l"/>
+                            <constraint firstItem="Oom-WD-Ib6" firstAttribute="top" secondItem="9PX-HD-pRE" secondAttribute="bottom" constant="10" id="RlT-Rb-cuH"/>
+                            <constraint firstItem="MN0-9a-ye9" firstAttribute="leading" secondItem="v4I-Ik-iWt" secondAttribute="trailing" constant="8" id="Z8q-L0-0Vs"/>
+                            <constraint firstItem="MN0-9a-ye9" firstAttribute="width" secondItem="v4I-Ik-iWt" secondAttribute="width" id="ZRg-pf-1ry"/>
+                            <constraint firstAttribute="trailing" secondItem="EaQ-XX-vcg" secondAttribute="trailing" id="cRO-k0-Gao"/>
+                            <constraint firstAttribute="trailing" secondItem="Oom-WD-Ib6" secondAttribute="trailing" constant="8" id="iRs-Mx-bRs"/>
+                            <constraint firstItem="EMq-8d-tDC" firstAttribute="leading" secondItem="WLf-tk-L9p" secondAttribute="leading" constant="8" id="oxs-T0-yOI"/>
+                            <constraint firstItem="v4I-Ik-iWt" firstAttribute="centerY" secondItem="MN0-9a-ye9" secondAttribute="centerY" id="qLb-X9-8Vj"/>
+                            <constraint firstAttribute="trailing" secondItem="9PX-HD-pRE" secondAttribute="trailing" constant="8" id="qsN-iZ-0Yv"/>
+                            <constraint firstItem="9PX-HD-pRE" firstAttribute="width" secondItem="v4I-Ik-iWt" secondAttribute="width" id="rgV-b5-f6T"/>
+                            <constraint firstItem="MN0-9a-ye9" firstAttribute="top" secondItem="EaQ-XX-vcg" secondAttribute="bottom" constant="8" id="ueO-Hb-3JT"/>
+                            <constraint firstAttribute="trailing" secondItem="EMq-8d-tDC" secondAttribute="trailing" constant="8" id="xJ5-T4-eyq"/>
+                            <constraint firstItem="3u7-t7-FFn" firstAttribute="top" secondItem="g1j-Ts-sSb" secondAttribute="bottom" id="xd4-7A-8h1"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="analButton" destination="EMq-8d-tDC" id="LWZ-xb-ElA"/>
+                        <outlet property="collectionView" destination="g1j-Ts-sSb" id="VeT-gb-eUB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGZ-0r-Xt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="1531.4842578710645"/>
         </scene>
     </scenes>
     <resources>

@@ -143,6 +143,7 @@
 		37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */; };
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
 		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
+		ED8A3BD31E8904D1005BDAC1 /* ProbSubCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */; };
 		ED8F76951E79128B00B22C4F /* AnalBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */; };
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
@@ -291,6 +292,7 @@
 		60E27E9F43519B1A5220A6C8 /* Pods-KoreaJunDamVi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB84FB40FADE9842686D310 /* Pods-KoreaJunDamVi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoreaJunDamVi.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
+		ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbSubCollectionViewController.swift; sourceTree = "<group>"; };
 		ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartCell.swift; sourceTree = "<group>"; };
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			children = (
 				37F7CD101DE6AFD60085A2E4 /* ProbMenuViewController.swift */,
 				37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */,
+				ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */,
 				3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */,
 			);
 			name = ProbMenu;
@@ -455,7 +458,6 @@
 				375373AD1E122A5C00205C13 /* SolMenuVC.swift */,
 				37D0517A1E260D3100D92E89 /* SolFrameVC.swift */,
 				37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */,
-				37D051791E260CDD00D92E89 /* ProbAnal */,
 			);
 			name = Solution;
 			sourceTree = "<group>";
@@ -620,6 +622,7 @@
 				EDE000971E669F5600C240A1 /* ProbList.json */,
 				373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */,
 				37BE73211E02849A00D00259 /* ProbResultBotCell.xib */,
+				37D051791E260CDD00D92E89 /* ProbAnal */,
 			);
 			name = Prob;
 			sourceTree = "<group>";
@@ -940,6 +943,7 @@
 				37D7887F1E3099CF0039F999 /* AnalBarChartView.swift in Sources */,
 				377E38D41E5D623B00D386A0 /* testheader.swift in Sources */,
 				37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */,
+				ED8A3BD31E8904D1005BDAC1 /* ProbSubCollectionViewController.swift in Sources */,
 				375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */,
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,
 				37D0517B1E260D3100D92E89 /* SolFrameVC.swift in Sources */,

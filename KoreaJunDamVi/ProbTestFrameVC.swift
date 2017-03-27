@@ -148,7 +148,7 @@ class ProbTestFrameViewController: JDVViewController {
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
             WSProgressHUD.show(withStatus: "체점 중 ..")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.performSegue(withIdentifier: "push", sender: self)
                 self.popVC()
             })

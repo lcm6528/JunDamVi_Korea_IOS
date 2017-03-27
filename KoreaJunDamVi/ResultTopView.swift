@@ -95,7 +95,6 @@ class ProbResultTopView: UIView {
         
         gageView.currentValue = CGFloat((Float(result.numberOfRight)/Float(result.Tries.count)) * 100)
         
-        
         let totalRate = Float(result.numberOfRight)/Float(result.Tries.count)
         var tryRate = Float(result.numberOfRight)/Float(result.Tries.count - result.numberOfPass)
         if tryRate.isNaN{tryRate = Float(0)}
