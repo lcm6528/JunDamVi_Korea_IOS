@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 class JDVNoteMenuViewController: JDVViewController{
-
+    
     @IBOutlet var tableView: UITableView!
     var Notes:[Note] = []
     
@@ -29,7 +29,7 @@ class JDVNoteMenuViewController: JDVViewController{
     }
     
     func fetchNotes(){
-       
+        
         let realm = try! Realm()
         
         let result = realm.objects(Note.self)
@@ -41,9 +41,9 @@ class JDVNoteMenuViewController: JDVViewController{
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
-       super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
@@ -53,26 +53,39 @@ class JDVNoteMenuViewController: JDVViewController{
         vc.selection = Notes[currentIndex].Selection
         self.tabBarController?.tabBar.isHidden = true
     }
-
+    
 }
 
 
 extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource{
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
+        
+        cell.configure(by: probs[indexPath.row])
+        return cell
+    }
     
-    cell.configure(by: probs[indexPath.row])
-    return cell
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return probs.count
-  }
-  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return probs.count
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentIndex = indexPath.row
         performSegue(withIdentifier: "push", sender: self)
     }
-  
-  
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            JDVNoteManager.deleteNote(by: Notes[indexPath.row])
+            fetchNotes()
+            
+        }
+    }
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "삭제"
+    }
 }

@@ -11,12 +11,11 @@ import UIKit
 class NoteInnerViewController: JDVViewController {
     
     
-    @IBOutlet var textView_sol: UITextView!
-    @IBOutlet var label_header: UILabel!
     @IBOutlet var button_Purchase: UIButton!
     @IBOutlet var stackView: UIStackView!
     
     var Prob:Prob!
+    var Sol:Solution!
     var selection:Int!
     
     @IBOutlet var testTitleTextView: UITextView!
@@ -26,6 +25,14 @@ class NoteInnerViewController: JDVViewController {
     
     @IBOutlet var testChoiceViews: [JDVViewWithBotLine]!
     @IBOutlet var testChoiceTextViews: [UITextView]!
+    
+    
+
+    @IBOutlet var Sol_Labels: [UILabel]!
+    @IBOutlet var Sol_TextViews: [UITextView]!
+    
+    
+    
     
     var choiceManager:JDVChoiceViewManager?
     
@@ -76,8 +83,14 @@ class NoteInnerViewController: JDVViewController {
     func isHideSolution(bool:Bool){
         
         button_Purchase.isHidden = !bool
-        label_header.isHidden = bool
-        textView_sol.isHidden = bool
+        
+        for label in Sol_Labels{
+            label.isHidden = bool
+        }
+        
+        for textView in Sol_TextViews{
+            textView.isHidden = bool
+        }
         
     }
     
