@@ -659,7 +659,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f1i-8k-ox6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="문제풀기" image="prob" id="dsb-hP-emW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Apx-kp-2qS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -863,7 +863,8 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                             <constraint firstItem="aSP-rg-9St" firstAttribute="top" secondItem="8RK-hP-dQ3" secondAttribute="bottom" id="yP0-Sn-Cga"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -896,7 +897,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CfD-N0-GRe" id="GeR-AQ-DL0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">

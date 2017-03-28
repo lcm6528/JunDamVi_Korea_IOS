@@ -17,6 +17,7 @@ class JDVNoteManager: NSObject {
         
         try! realm.write {
             realm.add(note)
+            ToastCenter.default.cancelAll()
             Toast(text: "오답노트 저장완료").show()
         }
         
@@ -31,6 +32,7 @@ class JDVNoteManager: NSObject {
             if object != nil {
                 realm.delete(object!)
             }
+            ToastCenter.default.cancelAll()
             Toast(text: "오답노트 삭제완료").show()
         }
         
