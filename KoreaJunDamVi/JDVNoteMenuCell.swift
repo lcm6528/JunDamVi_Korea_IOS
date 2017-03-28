@@ -20,9 +20,9 @@ class JDVNoteMenuCell: UITableViewCell {
         
         label_probnum.text = "\(prob.TestNum)회\(prob.ProbNum)번"
         label_score.text = "\(prob.Score)"
-        label_time.text = "\(prob.time?.rawValue ?? "-" )"
-        label_type.text = "\(prob.type?.rawValue ?? "-")"
-        label_tags.text = "\(prob.tags?[0] ?? "-")"
+        label_time.text = "\(prob.time)"
+        label_type.text = "\(prob.type)"
+        label_tags.text = "\(prob.theme)"
         
     }
     

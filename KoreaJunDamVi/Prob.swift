@@ -11,163 +11,137 @@ import UIKit
 import EZSwiftExtensions
 
 enum Prob_time: String{
-  
-  case chosun = "조선"
-  case korea = "고려"
-  
+    
+    case chosun = "조선"
+    case korea = "고려"
+    
 }
 
 enum Prob_type: String{
-  case hesuk = "해석형"
-  case theme = "테마형"
-  
+    case hesuk = "해석형"
+    case theme = "테마형"
+    
 }
 
 enum Prob_theme: String{
-  
-  case wang = "왕"
-  case zedo = "제도"
-  
+    
+    case wang = "왕"
+    case zedo = "제도"
+    
 }
 
 
 struct Prob {
-  var ProbID:Int
-  var TestNum:Int
-  var ProbNum:Int
-  
-  var Score:Int
-  var Score_String:String?
-  
-  var Answer:Int
-  var title_String:String
-  var title_attString: NSAttributedString?
-  
-  var article_String:String
-  var article_attString:NSAttributedString?
-  
-  var choices_String:[String] = []
-  var choices_attString:[NSAttributedString] = []
-  
-  var time:Prob_time?
-  var type:Prob_type?
-  var theme:Prob_theme?
-  
-  var tags:[String]?
-  
-  init(withDict dict:NSDictionary){
+    var ProbID:Int
+    var TestNum:Int
+    var ProbNum:Int
     
-    self.ProbID = dict["probId"] as! Int
-    self.TestNum = dict["testnum"] as! Int
-    self.ProbNum = dict["probnum"] as! Int
-    self.Answer = dict["answer"] as! Int
-    self.Score = dict["score"] as! Int
-    self.title_String = dict["title"] as! String
-    self.article_String = dict["article"] as! String
+    var Score:Int
+    var Score_String:String?
     
+    var Answer:Int
+    var title_String:String
+    var title_attString: NSAttributedString?
+    var title_attString_noNum: NSAttributedString?
     
-    setChoices(withArray: [dict["choice1"] as! String,dict["choice2"] as! String,dict["choice3"] as! String,dict["choice4"] as! String,dict["choice5"] as! String])
-    setTestAtt()
-    setArticleAtt()
+    var article_String:String
+    var article_attString:NSAttributedString?
     
-  }
-  
-  
-  mutating func setTestAtt(){
+    var choices_String:[String] = []
+    var choices_attString:[NSAttributedString] = []
     
-    let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
-    title.append(stringToAttrStringInHTML(title_String))
-    title.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
+    var time:String
+    var type:String
+    var theme:String
+    var tags:String
     
-    self.title_attString = title
-    
-  }
-  
-  mutating func setArticleAtt(){
-    
-    let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
-    result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
-    
-    self.article_attString = result
-    
-  }
-  
-  
-  mutating func setChoices(withArray arr:[String]){
-    
-    choices_String = arr
-    
-    for (index,choice) in choices_String.enumerated(){
-      let name = String(format: "%d_%02d", ProbID,index+1)
-      let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
-      
-      result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
-      choices_attString.append(result)
-      
-    }
-    
-  }
-  
-  mutating func setTTT(time timeval:Prob_time, type typeval:Prob_type, theme themeval:Prob_theme){
-    self.time = timeval
-    self.type = typeval
-    self.theme = themeval
-  }
-  
-  mutating func setTags(withArr arr:[String]){
-    self.tags = arr
-  }
-  
-  
-  func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH - 20)->NSMutableAttributedString{
-    /*
-    let arr = str.components(separatedBy: "/img/")
-    
-    //No image in str
-    if arr.count == 1 {
-      return NSMutableAttributedString(attributedString: stringToAttrStringInHTML(str))
-    }
-    
-    let result = NSMutableAttributedString()
-    
-    result.append(stringToAttrStringInHTML(arr[0]))
-    result.append(NSAttributedString(string: "\n"))
-    
-    //Append Image
-    
-    let attachIcon:NSTextAttachment = NSTextAttachment()
-    let bundlePath = Bundle.main.path(forResource: name, ofType: "png")
-    attachIcon.image = UIImage(contentsOfFile: bundlePath!)
-    let scaleFactor = attachIcon.image!.size.width / (width)
-    attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
-    
-    let imageString = NSAttributedString(attachment: attachIcon)
-    result.append(imageString)
-    ///////////////
-    result.append(NSAttributedString(string: "\n"))
-    result.append(stringToAttrStringInHTML(arr[1]))
-    
-    return result
-    */
-    
-    
-    let result = NSMutableAttributedString()
-    
-    if let bundlePath = Bundle.main.path(forResource: name, ofType: "png"){
+    init(withDict dict:NSDictionary){
         
-        let attachIcon:NSTextAttachment = NSTextAttachment()
-        attachIcon.image = UIImage(contentsOfFile: bundlePath)
-        let scaleFactor = attachIcon.image!.size.width / (width)
-        attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
-        let imageString = NSAttributedString(attachment: attachIcon)
-        result.append(imageString)
-        result.append(NSAttributedString(string: "\n\n"))
+        self.ProbID = dict["probId"] as! Int
+        self.TestNum = dict["testnum"] as! Int
+        self.ProbNum = dict["probnum"] as! Int
+        self.Answer = dict["answer"] as! Int
+        self.Score = dict["score"] as! Int
+        self.title_String = dict["title"] as! String
+        self.article_String = dict["article"] as? String ?? ""
+        
+        self.time = dict["time"] as? String ?? ""
+        self.type = dict["type"] as? String ?? ""
+        self.theme = dict["theme"] as? String ?? ""
+        self.tags = dict["tags"] as? String ?? ""
+        
+        
+        
+        
+        setChoices(withArray: [dict["choice1"] as! String,dict["choice2"] as! String,dict["choice3"] as! String,dict["choice4"] as! String,dict["choice5"] as! String])
+        setTestAtt()
+        setArticleAtt()
         
     }
     
-    result.append(stringToAttrStringInHTML(str))
-    return result
     
-  }
-  
+    mutating func setTestAtt(){
+        
+        let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
+        let str = stringToAttrStringInHTML(title_String)
+        title.append(str)
+        title.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
+        
+        
+        let titleNoNum = NSMutableAttributedString(attributedString: str)
+        titleNoNum.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
+        
+        
+        self.title_attString_noNum = titleNoNum
+        self.title_attString = title
+        
+    }
+    
+    mutating func setArticleAtt(){
+        
+        let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
+        result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
+        
+        self.article_attString = result
+        
+    }
+    
+    
+    mutating func setChoices(withArray arr:[String]){
+        
+        choices_String = arr
+        
+        for (index,choice) in choices_String.enumerated(){
+            let name = String(format: "%d_%02d", ProbID,index+1)
+            let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
+            
+            result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
+            choices_attString.append(result)
+            
+        }
+        
+    }
+    
+    func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.7)->NSMutableAttributedString{
+        
+        
+        let result = NSMutableAttributedString()
+        
+        if let bundlePath = Bundle.main.path(forResource: name, ofType: "png"){
+            
+            let attachIcon:NSTextAttachment = NSTextAttachment()
+            attachIcon.image = UIImage(contentsOfFile: bundlePath)
+            let scaleFactor = attachIcon.image!.size.width / (width)
+            attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
+            let imageString = NSAttributedString(attachment: attachIcon)
+            result.append(imageString)
+            result.append(NSAttributedString(string: "\n\n"))
+            
+        }
+        
+        result.append(stringToAttrStringInHTML(str))
+        return result
+        
+    }
+    
 }

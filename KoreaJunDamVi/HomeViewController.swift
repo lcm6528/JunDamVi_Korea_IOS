@@ -34,7 +34,7 @@ class HomeViewController: JDVViewController {
             dict = object as! NSDictionary
         } catch {}
         
-        Tests = dict.value(forKey: "회차별") as!  [String]
+        Tests = dict.value(forKey:JDVProbManager.SortedOption.test.rawValue) as!  [String]
         
         completeCount = 0
         
@@ -58,7 +58,7 @@ class HomeViewController: JDVViewController {
         fetchList()
         label_MidView.attributedText = getAttrStr(totalValue: Tests.count , withValue: completeCount)
         
-        roundView1.setValue(value: CGFloat(completeCount/Tests.count)*100, animate: false)
+        roundView1.setValue(value: CGFloat(completeCount)/CGFloat(Tests.count)*100, animate: false)
         
     }
     

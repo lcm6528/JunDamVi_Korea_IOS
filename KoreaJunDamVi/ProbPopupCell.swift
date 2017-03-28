@@ -17,7 +17,7 @@ class ProbPopupCell: UICollectionViewCell {
     
     func configure(WithProb prob:Prob, selections select:Int, isNoted isnoted:Bool){
         
-        label_ProbNum.text = "\(prob.ProbNum)번"
+//        label_ProbNum.text = "\(prob.ProbNum)번"
         imgView_Star.image =  isnoted ? UIImage(named: "small_star_selected") : UIImage(named: "small_star_unselected")
         imgView_Check.image = select == 0 ? UIImage(named: "uncheck") :  UIImage(named: "check")
         self.backgroundColor = select == 0 ? UIColor.white : UIColor.popupCellIvory
