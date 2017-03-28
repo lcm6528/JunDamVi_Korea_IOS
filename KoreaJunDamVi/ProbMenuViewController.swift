@@ -14,9 +14,10 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     let number_of_pages = 4
     var currentMenu:Int = 0
+    var currentOption = JDVProbManager.ProbOption()
     var pageViewController:UIPageViewController!
     
-    let keys = ["회차별","시대별","유형별","테마별"]
+    let options:[JDVProbManager.SortedOption] = [.test,.time,.type,.theme]
     
     var dataArray:[[String]] = []
     
@@ -64,8 +65,10 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     }
     func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index: Int) {
         
+        let arr = self.dataArray[pIdx]
         currentMenu = pIdx
-        let arr = self.dataArray[self.currentMenu]
+        currentOption.sortedOption = options[pIdx]
+        currentOption.cacheKey = arr[index]
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -73,52 +76,32 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             { action in
                 
                 self.showIndicator()
-                let arr = self.dataArray[self.currentMenu]
-                
-                self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
                 self.performSegue(withIdentifier: "pushinit", sender: self)
                 
         }))
         alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
             { action in
                 self.showIndicator()
-                let arr = self.dataArray[self.currentMenu]
-                
-                self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
                 self.performSegue(withIdentifier: "pushcont", sender: self)
                 
         }
         ))
-        alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
-            { action in
-                self.showIndicator()
-                self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
-                self.performSegue(withIdentifier: "quick", sender: self)
-                
+        if currentOption.sortedOption == .test{
+            alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
+                { action in
+                    self.showIndicator()
+                    self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                    self.performSegue(withIdentifier: "quick", sender: self)
+                    
+            }
+            ))
         }
-        ))
         alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
-            { action in
-                
-        }
-        ))
+            { action in}))
         
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
-        
-        
-        //            if index == 2 {
-        //                self.Probs = JDVProbManager.fetchProbs(withTestnum:arr[)
-        //                self.performSegue(withIdentifier: "quick", sender: self)
-        //            }else if index == 1{
-        //                self.performSegue(withIdentifier: "anal", sender: self)
-        //            }else{
-        //
-        //                self.Probs = JDVProbManager.fetchProbs(withTestnum: 34)
-        //                self.performSegue(withIdentifier: "push", sender: self)
-        //            }
         
         
         
@@ -135,8 +118,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         } catch {}
         
         
-        for key in keys{
-            dataArray.append(dict.value(forKey: key) as!  [String])
+        for option in options{
+            dataArray.append(dict.value(forKey: option.rawValue) as!  [String])
         }
         
     }
@@ -164,29 +147,39 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         case "pushinit":
             let vc = segue.destination as!ProbTestFrameViewController
             vc.Probs = self.Probs
-            self.Probs = []
+            vc.option = currentOption
             self.tabBarController?.tabBar.isHidden = true
             
         case "pushcont":
             let vc = segue.destination as!ProbTestFrameViewController
             vc.Probs = self.Probs
-            vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
-            self.Probs = []
+            vc.option = currentOption
+            
+            if options[currentMenu] != .test{
+                vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
+            }else{
+                vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
+            }
+            
+            
             self.tabBarController?.tabBar.isHidden = true
             
         case "quick":
             let vc = segue.destination as! ProbQuickTestViewController
             vc.Probs = self.Probs
-            self.Probs = []
+            
             self.tabBarController?.tabBar.isHidden = true
             
         case "pushanal":
             let vc = segue.destination as! JDVProbAnalFrameViewController
-            vc.dataObject = keys[currentMenu]
+            vc.dataObject = options[currentMenu].description
             
         default :
             return
         }
+        
+        self.Probs = []
+        
         
     }
     
@@ -199,7 +192,6 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         if completed == true{
             selectButtonInCollection(atIndex: getCurrnetIndexOfPage())
-            
         }
         
     }
@@ -212,7 +204,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
-            pageContentViewController.subtitle = keys[index]
+            pageContentViewController.subtitle = options[index].description
             pageContentViewController.pushHandler = { index in
                 self.currentMenu = index
                 self.performSegue(withIdentifier: "pushanal", sender: self)

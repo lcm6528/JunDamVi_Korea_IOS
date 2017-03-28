@@ -11,6 +11,59 @@ import FMDB
 
 class JDVProbManager: NSObject {
     
+    struct ProbOption{
+        
+        var sortedOption:SortedOption = .test
+        var cacheKey:String = ""
+        
+    }
+    
+    enum SortedOption:String{
+        case test = "testnum"
+        case time = "time"
+        case theme = "theme"
+        case type = "type"
+        
+        var description: String {
+            switch self {
+            case .test:
+                return "회차별"
+            case .time:
+                return "시대별"
+            case .theme:
+                return "테마별"
+            case.type:
+                return "유형별"
+            }
+        }
+    }
+    
+    static func fetchProbs(withSortedOption option:SortedOption,by value:String)->[Prob]{
+        
+        var Probs:[Prob] = []
+        let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
+        let fmdb = FMDatabase(path: dbPath?.path)
+        
+        let val = (option != .test) ?  ("\"" + value + "\"") : (value)
+        
+        if (fmdb?.open())! {
+            
+            let sql1 = "SELECT * FROM Probs WHERE \(option.rawValue) = \(val)"
+            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+            while result?.next() == true {
+                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
+                let prob = Prob(withDict: dict)
+                
+                Probs.append(prob)
+            }
+        }
+        fmdb?.close()
+        return Probs
+        
+        
+    }
+    
+    
     
     static func fetchProbs(withTestnum num:Int)->[Prob]{
         

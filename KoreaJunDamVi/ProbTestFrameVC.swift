@@ -15,6 +15,7 @@ class ProbTestFrameViewController: JDVViewController {
     @IBOutlet var toolBarRightButton: UIButton!
     @IBOutlet var toolBarLeftButton: UIButton!
     @IBOutlet var barButton_Star: JDVNoteBarButtonItem!
+    @IBOutlet var barButton_title: UIBarButtonItem!
     
     var number_of_pages = 0
     var Probs:[Prob] = []
@@ -22,6 +23,14 @@ class ProbTestFrameViewController: JDVViewController {
     var selections:[Int]?
     var pageViewController:UIPageViewController!
     
+    var option:JDVProbManager.ProbOption!
+    
+    override func setTitleWithStyle(_ text: String) {
+        
+        self.barButton_title.title = text
+        self.barButton_title.setTitleTextAttributes([NSFontAttributeName:UIFont.ProbNaviBarTitleFont,
+                                                     NSForegroundColorAttributeName:UIColor.white], for: .normal)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +39,12 @@ class ProbTestFrameViewController: JDVViewController {
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
+        if option.sortedOption != .test{
+            setTitleWithStyle(option.cacheKey + option.sortedOption.description[0...1] + " 문제풀기")
+        }else{
+            setTitleWithStyle("\(Probs[0].TestNum)회차 문제풀기")
+        }
         
-        setTitleWithStyle("\(Probs[0].TestNum)회")
         if selections == nil || selections?.isEmpty == true{
             selections = [Int](repeatElement(0, count: Probs.count))
         }
@@ -70,12 +83,27 @@ class ProbTestFrameViewController: JDVViewController {
         
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-        JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+        
+        if option.sortedOption == .test{
+            JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+        }else{
+            JDVProbManager.saveCachedData(with: option.cacheKey, tries: selections!)
+        }
+        
         
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     func onStop() {
-        JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+        if option.sortedOption == .test{
+            JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+        }else{
+            JDVProbManager.saveCachedData(with: option.sortedOption.rawValue, tries: selections!)
+        }
     }
     
     
@@ -109,14 +137,17 @@ class ProbTestFrameViewController: JDVViewController {
             }
             result = TestResult(withTries: tries)
             vc.result = self.result
-            JDVScoreManager.configureAnalData(by: result)
             
-            let record = TestResultRecord(by: result)
-            
-            let realm = try! Realm()
-            
-            try! realm.write {
-                realm.add(record)
+            if option.sortedOption == .test{
+                
+                JDVScoreManager.configureAnalData(by: result)
+                let record = TestResultRecord(by: result)
+                
+                let realm = try! Realm()
+                
+                try! realm.write {
+                    realm.add(record)
+                }
             }
             
         }
@@ -142,9 +173,8 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     @IBAction func popUpList(_ sender: AnyObject) {
-                performSegue(withIdentifier: "popup", sender: self)
+        performSegue(withIdentifier: "popup", sender: self)
         
-//        pushResultVC()
         
     }
     
@@ -185,6 +215,7 @@ class ProbTestFrameViewController: JDVViewController {
         isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()+1
         if nextIndex == number_of_pages {
+            isBlockUserInteract = false
             pushResultVC()
             
         }else if nextIndex < number_of_pages{
@@ -288,6 +319,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         let innerView = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
         innerView.Prob = Probs[index]
         innerView.pageIndex = index
+        innerView.option = option.sortedOption
         innerView.selectHandler = { (num,selection) -> Void in
             self.selections![num] = selection
             self.gotoNextPage()

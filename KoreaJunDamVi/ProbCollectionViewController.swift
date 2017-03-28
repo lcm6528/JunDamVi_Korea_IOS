@@ -60,7 +60,10 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
             
             
         }else{
+            let cachedData = JDVProbManager.getCachedData(with: dataArray[indexPath.row])
+            
             cell.contentLabel.text = dataArray[indexPath.row]
+            cell.configure(by: cachedData)
         }
         
         return cell

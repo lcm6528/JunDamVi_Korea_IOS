@@ -17,6 +17,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     var pageIndex:Int!
     var selection = 0
     var selectHandler:((Int,Int)->Void)?
+    var option:JDVProbManager.SortedOption!
     
     @IBOutlet var testTitleTextView: UITextView!
     @IBOutlet var testContentTextView: UITextView!
@@ -47,8 +48,12 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     }
     
     func configure(){
+        if option != .test{
+            self.testTitleTextView.attributedText = Prob.title_attString_noNum
+        }else{
+            self.testTitleTextView.attributedText = Prob.title_attString
+        }
         
-        self.testTitleTextView.attributedText = Prob.title_attString
         self.testContentTextView.attributedText = Prob.article_attString
         self.ScoreLabel.text = "[\(Prob.Score)점]"
         for (index,textView) in testChoiceTextViews.enumerated(){
@@ -59,8 +64,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     
     func JDVChoiceViewManagerDelegate(_ manager: JDVChoiceViewManager, didSelectedLabelAtIndex index: Int) {
-        
-        self.selectHandler?(Prob.ProbNum-1,index+1)
+        self.selectHandler?(pageIndex,index+1)
     }
     
 }
