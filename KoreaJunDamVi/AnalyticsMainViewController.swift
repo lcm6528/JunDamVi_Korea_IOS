@@ -16,20 +16,31 @@ class AnalyticsMainViewController: JDVViewController {
     @IBOutlet var highView: AnalRoundView!
     @IBOutlet var rowView: AnalRoundView!
     
-    var records:[TestResultRecord] = []
+    var records:[[TestResultRecord]] = []
     
-    
+    var keys:[JDVProbManager.SortedOption] = [.test,.time,.type,.theme]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitleWithStyle("실력 분석")
+        fetchRecords()
         
     }
     
     func configureRoundViews(){
         let data = JDVScoreManager.AnalModel()
         
-        guard data.recent.TestNum != 0 else{return}
+        guard data.recent.TestNum != 0 else{
+            recentView.subTitle = ""
+            recentView.value = "-"
+            
+            highView.subTitle = ""
+            highView.value = "-"
+            
+            rowView.subTitle = ""
+            rowView.value = "-"
+            return
+        }
         
         recentView.subTitle = "\(data.recent.TestNum)회"
         recentView.value = "\(data.recent.Score)"
@@ -45,7 +56,6 @@ class AnalyticsMainViewController: JDVViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        tableView.reloadData()
         
         
     }
@@ -61,10 +71,18 @@ class AnalyticsMainViewController: JDVViewController {
         
         let realm = try! Realm()
         let result = realm.objects(TestResultRecord.self)
-        records = Array(result).reversed()
+        records = []
+        for option in keys{
+            records.append(Array(result).filter{return ($0.TestType == option.rawValue)}.reversed())
+        }
+        
+        
+        
         tableView.reloadData()
-        let cell = tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! AnalContentCell
-        cell.collectionView.reloadData()
+        let cells = tableView.visibleCells as! [AnalContentCell]
+        for cell in cells{
+            cell.collectionView.reloadData()
+        }
     }
     
     
@@ -72,7 +90,7 @@ class AnalyticsMainViewController: JDVViewController {
 extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let record = records[indexPath.row]
+        let record = records[collectionView.tag][indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AnalBarChartCell
         cell.configure(by: record)
         return cell
@@ -80,7 +98,9 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return records.count
+        print(records[collectionView.tag].count)
+        return records[collectionView.tag].count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -100,11 +120,16 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
 extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AnalContentCell
+        
+        cell.label_title.text = keys[indexPath.row].description + " 점수"
+        cell.collectionView.tag = indexPath.row
+        cell.collectionView.reloadData()
+        
         return cell
     }
     

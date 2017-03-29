@@ -14,23 +14,36 @@ class AnalBarChartCell: UICollectionViewCell {
     func configure(by record:TestResultRecord){
         
         
-        switch record.Score {
-        case 70...100:
-            barChart.topLabel.text = "1급"
-            
-        case 60...69:
-            barChart.topLabel.text = "2급"
-            
-        default:
-            barChart.topLabel.text = "불합격"
-            
-        }
-
-        
         barChart.setValue(forRedBar: record.numberOfRight,
                           BlackBar: record.numberOfWrong,
                           GrayBar: record.numberOfPass)
-        barChart.bottomLabel.text = "\(record.TestNum)회"
+        
+        if record.TestType == "testnum"{
+            
+            switch record.Score {
+            case 70...100:
+                barChart.topLabel.text = "1급"
+                
+            case 60...69:
+                barChart.topLabel.text = "2급"
+                
+            default:
+                barChart.topLabel.text = "불합격"
+                
+            }
+            barChart.bottomLabel.text = "\(record.TestKey)회"
+            
+        }else{
+            
+            barChart.bottomLabel.text = record.TestKey
+        }
+        
+        
+        
+        
+        
+        
+        
     }
     
 }
