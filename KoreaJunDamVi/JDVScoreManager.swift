@@ -34,7 +34,7 @@ class JDVScoreManager: NSObject {
         
         let setScoreAndTestNum:(String)->() = { key in
             setUserDefaultWithInt(result.TotalScore, forKey: "\(key)score")
-            setUserDefaultWithInt(result.TestNum, forKey: "\(key)testnum")
+            setUserDefaultWithInt(Int(result.TestKey) ?? 0, forKey: "\(key)testnum")
             
         }
         

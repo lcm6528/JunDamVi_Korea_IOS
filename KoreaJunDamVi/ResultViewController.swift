@@ -20,6 +20,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     
+    var option:JDVProbManager.ProbOption!
     
     var result:TestResult!
     var heightOfSubView:CGFloat!
@@ -58,7 +59,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewWillAppear(animated)
         WSProgressHUD.dismiss()
         //JDVProbManager.deleteCachedData(with: "\(result.TestNum)")
-        JDVProbManager.saveCachedData(with: "\(result.TestNum)", tries: [])
+        JDVProbManager.saveCachedData(with: option.cacheKey, tries: [])
         
     }
     

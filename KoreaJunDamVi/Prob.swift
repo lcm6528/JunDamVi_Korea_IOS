@@ -10,26 +10,6 @@ import Foundation
 import UIKit
 import EZSwiftExtensions
 
-enum Prob_time: String{
-    
-    case chosun = "조선"
-    case korea = "고려"
-    
-}
-
-enum Prob_type: String{
-    case hesuk = "해석형"
-    case theme = "테마형"
-    
-}
-
-enum Prob_theme: String{
-    
-    case wang = "왕"
-    case zedo = "제도"
-    
-}
-
 
 struct Prob {
     var ProbID:Int

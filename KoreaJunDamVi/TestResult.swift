@@ -11,7 +11,9 @@ import RealmSwift
 
 
 class TestResultRecord:Object{
-    dynamic var TestNum:Int = 0
+    
+    dynamic var TestType:String = ""
+    dynamic var TestKey:String = ""
     dynamic var numberOfRight:Int = 0
     dynamic var numberOfPass:Int = 0
     dynamic var numberOfWrong:Int = 0
@@ -20,7 +22,8 @@ class TestResultRecord:Object{
     convenience init(by result:TestResult){
         self.init()
         
-        self.TestNum = result.TestNum
+        self.TestType = result.TestType
+        self.TestKey = result.TestKey
         self.numberOfRight = result.numberOfRight
         self.numberOfPass = result.numberOfPass
         self.numberOfWrong = result.numberOfWrong
@@ -39,8 +42,6 @@ enum state:String {
     
 }
 struct Try {
-    
-    
     
     var Score:Int
     var ProbID:Int
@@ -71,7 +72,8 @@ struct TestResult{
     
     var TryNum:Int?
     var TotalScore:Int = 0
-    var TestNum:Int
+    var TestType:String
+    var TestKey:String
     
     var Tries:[Try] = []
     
@@ -79,8 +81,9 @@ struct TestResult{
     var numberOfWrong:Int = 0
     var numberOfPass:Int = 0
     
-    init(withTries tries:[Try]){
-        self.TestNum = tries[0].TestNum
+    init(withTestType type:String,forKey key:String, withTries tries:[Try]){
+        self.TestType = type
+        self.TestKey = key
         self.Tries = tries
         calculateScore()
         
