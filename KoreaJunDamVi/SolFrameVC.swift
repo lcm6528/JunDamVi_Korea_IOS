@@ -38,7 +38,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     self.pageViewController.setViewControllers(viewControllers as! [JDVSolutionInnerViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     
-    self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
+     self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
     
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)
