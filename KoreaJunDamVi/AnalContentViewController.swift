@@ -9,36 +9,34 @@
 import UIKit
 import XLPagerTabStrip
 class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
-  
-  var itemInfo: IndicatorInfo = "View"
-  
-  
-  @IBOutlet var contentTextView: UITextView!
-  
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    
+    var itemInfo: IndicatorInfo = "View"
     
     
-    contentTextView.text = "분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역분석자료 내용 영역"
+    @IBOutlet var contentTextView: UITextView!
+    var content:String!
     
-    // Do any additional setup after loading the view.
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        contentTextView.text = content
         
-  }
-  
-  func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-    return itemInfo
-  }
-  
-  
-  
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return itemInfo
+    }
+    
+    
+    
 }

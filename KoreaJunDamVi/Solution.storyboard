@@ -6,10 +6,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
         <array key="NanumBarunGothicUltraLight.ttf">
             <string>NanumBarunGothicUltraLight</string>
         </array>
@@ -34,6 +42,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="sgW-Ez-B1j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -66,7 +75,7 @@
                                     <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="kGd-4z-aEF" customClass="ProbCollectionViewCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="kGd-4z-aEF" customClass="SolMenuCell" customModule="KoreaJunDamVi" customModuleProvider="target">
                                         <rect key="frame" x="10" y="15" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -92,10 +101,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egs-yH-Ddn">
-                                                    <rect key="frame" x="0.0" y="96" width="120" height="24"/>
+                                                    <rect key="frame" x="0.0" y="90" width="120" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해설 보기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ka-jd-Ki4">
-                                                            <rect key="frame" x="4" y="1" width="112" height="22"/>
+                                                            <rect key="frame" x="4" y="1" width="112" height="28"/>
                                                             <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
                                                             <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -118,13 +127,13 @@
                                             <constraint firstAttribute="bottom" secondItem="Egs-yH-Ddn" secondAttribute="bottom" id="4Xj-Kn-WIT"/>
                                             <constraint firstItem="Egs-yH-Ddn" firstAttribute="leading" secondItem="kGd-4z-aEF" secondAttribute="leading" id="6T3-lR-4z7"/>
                                             <constraint firstItem="9Ma-Ml-pT3" firstAttribute="leading" secondItem="kGd-4z-aEF" secondAttribute="leading" constant="8" id="Po7-HP-uL0"/>
-                                            <constraint firstItem="Egs-yH-Ddn" firstAttribute="height" secondItem="kGd-4z-aEF" secondAttribute="height" multiplier="0.2" id="Pvj-AB-V9n"/>
+                                            <constraint firstItem="Egs-yH-Ddn" firstAttribute="height" secondItem="kGd-4z-aEF" secondAttribute="height" multiplier="0.25" id="Pvj-AB-V9n"/>
                                             <constraint firstItem="9Ma-Ml-pT3" firstAttribute="centerY" secondItem="kGd-4z-aEF" secondAttribute="centerY" multiplier="0.8" id="RtT-OR-uPP"/>
                                             <constraint firstAttribute="trailing" secondItem="Egs-yH-Ddn" secondAttribute="trailing" id="YPQ-QC-iW1"/>
                                             <constraint firstAttribute="trailing" secondItem="9Ma-Ml-pT3" secondAttribute="trailing" constant="8" id="Z3J-UZ-QeY"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="contentLabel" destination="9Ma-Ml-pT3" id="Jg9-KS-4zS"/>
+                                            <outlet property="titleLabel" destination="9Ma-Ml-pT3" id="Xh5-Dw-t8u"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -142,7 +151,9 @@
                             <constraint firstItem="0dE-Rm-0Pr" firstAttribute="top" secondItem="3qJ-gZ-0zz" secondAttribute="bottom" id="cJ0-nS-Djc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="문제 해설" id="Pfv-lK-utk"/>
+                    <navigationItem key="navigationItem" title="문제 해설" id="Pfv-lK-utk">
+                        <barButtonItem key="backBarButtonItem" title=" " id="VQl-Ck-TRW"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="3qJ-gZ-0zz" id="bap-ey-44R"/>
@@ -169,7 +180,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-nm-4XJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="875"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="727"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wQl-4t-8bd">
                                                 <rect key="frame" x="8" y="8" width="311" height="34.5"/>
@@ -188,12 +199,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-he-1bJ" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-he-1bJ" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="253.5" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-hW-6J3">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -207,12 +217,11 @@
                                                     <constraint firstItem="CBn-hW-6J3" firstAttribute="top" secondItem="k5m-he-1bJ" secondAttribute="top" id="up0-cq-C7e"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-Xu-1cB" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-Xu-1cB" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="290" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXz-3x-i68">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -225,12 +234,11 @@
                                                     <constraint firstItem="pXz-3x-i68" firstAttribute="leading" secondItem="AhK-Xu-1cB" secondAttribute="leading" constant="8" id="r02-We-UBG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krn-q9-RyG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krn-q9-RyG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="326.5" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSp-cN-lZz">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -243,12 +251,11 @@
                                                     <constraint firstItem="BSp-cN-lZz" firstAttribute="top" secondItem="krn-q9-RyG" secondAttribute="top" id="vpj-h9-bBg"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-dI-vHG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-dI-vHG" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="363" width="351" height="34.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-Xv-fMi">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -261,12 +268,11 @@
                                                     <constraint firstItem="KLI-Xv-fMi" firstAttribute="centerY" secondItem="B5G-dI-vHG" secondAttribute="centerY" id="T3l-vv-hMR"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-g3-aRK" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-g3-aRK" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="399.5" width="351" height="53"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-lX-oSM">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="53"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text" base64-UTF8="YES">
 NS4g7KeR7ZiE7KCE7J2EIOyEpOy5mO2VmOyXrCDsnbjsnqzrpbwg7Jyh7ISx7ZWY6rOgIO2OuOywrCDs
 gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
@@ -354,54 +360,71 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-aw-dpE">
-                                                <rect key="frame" x="12" y="516.5" width="351" height="350.5"/>
+                                                <rect key="frame" x="12" y="516.5" width="351" height="202.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccm-GF-z5U">
-                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccm-GF-z5U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="kQg-9h-bTI"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-EW-kO4">
-                                                        <rect key="frame" x="0.0" y="28.5" width="351" height="83"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-EW-kO4">
+                                                        <rect key="frame" x="0.0" y="29" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVn-Vu-14F">
-                                                        <rect key="frame" x="0.0" y="119.5" width="351" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVn-Vu-14F">
+                                                        <rect key="frame" x="0.0" y="70.5" width="351" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="7iQ-q7-DWP"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="최선">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothic"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="의 풀이">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothicUltraLight"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TWB-Qr-PZR">
-                                                        <rect key="frame" x="0.0" y="148" width="351" height="83"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWB-Qr-PZR">
+                                                        <rect key="frame" x="0.0" y="99" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48W-Un-nch">
-                                                        <rect key="frame" x="0.0" y="239" width="351" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48W-Un-nch">
+                                                        <rect key="frame" x="0.0" y="140.5" width="351" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="P7F-ak-8jz"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="차선">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothic"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="의 풀이">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothicUltraLight"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jc9-9M-DEn">
-                                                        <rect key="frame" x="0.0" y="267.5" width="351" height="83"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc9-9M-DEn">
+                                                        <rect key="frame" x="0.0" y="169" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -483,13 +506,24 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="solContentTextView1" destination="TWB-Qr-PZR" id="NGS-nu-ehr"/>
+                        <outlet property="solContentTextView2" destination="jc9-9M-DEn" id="9od-eP-MPH"/>
+                        <outlet property="solKeywordTextView" destination="Dyk-EW-kO4" id="9Re-RO-1pc"/>
+                        <outlet property="solSubtitleLabel" destination="48W-Un-nch" id="jRP-Ie-eRc"/>
+                        <outlet property="solTitleLabel" destination="hVn-Vu-14F" id="J9l-22-DY6"/>
                         <outlet property="testContentTextView" destination="hrT-V8-LIz" id="td3-mm-tTh"/>
+                        <outlet property="testScoreLabel" destination="11a-a2-7KJ" id="flq-rn-ARB"/>
                         <outlet property="testTitleTextView" destination="wQl-4t-8bd" id="wVb-HZ-Rfm"/>
                         <outletCollection property="testChoiceTextViews" destination="CBn-hW-6J3" collectionClass="NSMutableArray" id="Vdx-rW-SDi"/>
                         <outletCollection property="testChoiceTextViews" destination="pXz-3x-i68" collectionClass="NSMutableArray" id="mcY-dB-y1P"/>
                         <outletCollection property="testChoiceTextViews" destination="BSp-cN-lZz" collectionClass="NSMutableArray" id="0IS-WX-xEO"/>
                         <outletCollection property="testChoiceTextViews" destination="KLI-Xv-fMi" collectionClass="NSMutableArray" id="GKS-ey-6UH"/>
                         <outletCollection property="testChoiceTextViews" destination="LiK-lX-oSM" collectionClass="NSMutableArray" id="Y2a-J8-Wfg"/>
+                        <outletCollection property="testChoiceViews" destination="k5m-he-1bJ" collectionClass="NSMutableArray" id="Dh3-8b-i16"/>
+                        <outletCollection property="testChoiceViews" destination="AhK-Xu-1cB" collectionClass="NSMutableArray" id="HcO-cS-Z6g"/>
+                        <outletCollection property="testChoiceViews" destination="krn-q9-RyG" collectionClass="NSMutableArray" id="HFO-u0-kH6"/>
+                        <outletCollection property="testChoiceViews" destination="B5G-dI-vHG" collectionClass="NSMutableArray" id="eht-tU-hnd"/>
+                        <outletCollection property="testChoiceViews" destination="vm0-g3-aRK" collectionClass="NSMutableArray" id="tvq-zL-vpc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZX3-Ug-QF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -586,13 +620,28 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="QXl-hB-qGj"/>
+                    <navigationItem key="navigationItem" id="QXl-hB-qGj">
+                        <rightBarButtonItems>
+                            <barButtonItem image="popup" style="plain" id="K6v-qe-UJ3">
+                                <connections>
+                                    <action selector="popUpList:" destination="6xr-L6-x2o" id="1OT-pD-eoV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="star" style="plain" id="yzr-zy-rw4" customClass="JDVNoteBarButtonItem" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                <connections>
+                                    <action selector="noteButtonPressed:" destination="6xr-L6-x2o" id="yud-FF-9bi"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="barButton_Star" destination="yzr-zy-rw4" id="YSl-8O-UIx"/>
                         <outlet property="toolBarCenterLabel" destination="09K-B6-0Ky" id="wTV-Jz-zmX"/>
                         <outlet property="toolBarLeftButton" destination="4Te-TS-vIx" id="TY4-vm-QwC"/>
                         <outlet property="toolBarRightButton" destination="n2D-ZB-ukG" id="qHQ-TS-rKM"/>
+                        <segue destination="Ff0-iT-MJz" kind="presentation" identifier="popup" id="cgq-ed-UfO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6te-XY-w7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -610,8 +659,123 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
             </objects>
             <point key="canvasLocation" x="1532" y="-284"/>
         </scene>
+        <!--Prob Popup View-->
+        <scene sceneID="c9b-8E-ZbI">
+            <objects>
+                <viewController storyboardIdentifier="ProbPopupView" modalPresentationStyle="overCurrentContext" id="Ff0-iT-MJz" customClass="ProbPopupView" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GSs-IB-4ZS"/>
+                        <viewControllerLayoutGuide type="bottom" id="56S-tx-b1b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M8O-Vb-ess">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UDm-C8-gor">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <color key="backgroundColor" red="0.64313725489999995" green="0.63921568630000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.5" id="RgX-8u-Z90">
+                                    <size key="itemSize" width="75" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ObK-VD-fwF" customClass="ProbPopupCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33번" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-nc-37o">
+                                                    <rect key="frame" x="4" y="8" width="40" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="2VD-RJ-KXj"/>
+                                                        <constraint firstAttribute="width" constant="40" id="3oC-11-frO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small_star_selected" translatesAutoresizingMaskIntoConstraints="NO" id="lTC-j3-WAP">
+                                                    <rect key="frame" x="47" y="8" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="OCq-Pz-BWj"/>
+                                                        <constraint firstAttribute="height" constant="20" id="n4D-Xh-Wds"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="bMm-zF-gmL">
+                                                    <rect key="frame" x="22" y="60" width="30" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="bMm-zF-gmL" secondAttribute="height" multiplier="5:4" id="Bf4-dp-92a"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.91372549020000005" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="bMm-zF-gmL" firstAttribute="centerX" secondItem="ObK-VD-fwF" secondAttribute="centerX" id="1ao-Rt-53n"/>
+                                            <constraint firstItem="lTC-j3-WAP" firstAttribute="centerY" secondItem="rq2-nc-37o" secondAttribute="centerY" id="2qA-Mf-mlQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="lTC-j3-WAP" secondAttribute="trailing" constant="8" id="9nv-sm-BeN"/>
+                                            <constraint firstItem="rq2-nc-37o" firstAttribute="top" secondItem="ObK-VD-fwF" secondAttribute="top" constant="8" id="LHJ-Ae-Nji"/>
+                                            <constraint firstItem="rq2-nc-37o" firstAttribute="leading" secondItem="ObK-VD-fwF" secondAttribute="leading" constant="4" id="gBZ-7N-XRQ"/>
+                                            <constraint firstItem="bMm-zF-gmL" firstAttribute="width" secondItem="ObK-VD-fwF" secondAttribute="width" multiplier="0.4" id="mWE-Uu-GHb"/>
+                                            <constraint firstItem="bMm-zF-gmL" firstAttribute="centerY" secondItem="ObK-VD-fwF" secondAttribute="centerY" multiplier="1.2" id="vNF-KI-xW0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imgView_Check" destination="bMm-zF-gmL" id="md1-zx-ZYp"/>
+                                            <outlet property="imgView_Star" destination="lTC-j3-WAP" id="vVP-U2-NLu"/>
+                                            <outlet property="label_ProbNum" destination="rq2-nc-37o" id="yvj-JN-4td"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ff0-iT-MJz" id="bhK-sG-C9m"/>
+                                    <outlet property="delegate" destination="Ff0-iT-MJz" id="QGU-Fa-1T8"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf0-pY-ECo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="21"/>
+                                <state key="normal" title="닫기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonAction:" destination="Ff0-iT-MJz" eventType="touchUpInside" id="YAo-OQ-cHH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UDm-C8-gor" firstAttribute="top" secondItem="kf0-pY-ECo" secondAttribute="bottom" id="648-dR-Cad"/>
+                            <constraint firstItem="56S-tx-b1b" firstAttribute="top" secondItem="UDm-C8-gor" secondAttribute="bottom" id="LXL-as-cAt"/>
+                            <constraint firstAttribute="trailing" secondItem="UDm-C8-gor" secondAttribute="trailing" id="LhG-EY-Cpy"/>
+                            <constraint firstItem="kf0-pY-ECo" firstAttribute="top" secondItem="M8O-Vb-ess" secondAttribute="top" constant="20" id="MxZ-wy-Zis"/>
+                            <constraint firstItem="UDm-C8-gor" firstAttribute="top" secondItem="M8O-Vb-ess" secondAttribute="top" constant="84" id="W8X-2F-iW0"/>
+                            <constraint firstItem="kf0-pY-ECo" firstAttribute="leading" secondItem="M8O-Vb-ess" secondAttribute="leading" id="YZf-kE-Wza"/>
+                            <constraint firstItem="UDm-C8-gor" firstAttribute="leading" secondItem="M8O-Vb-ess" secondAttribute="leading" id="arN-Le-fAo"/>
+                            <constraint firstAttribute="trailing" secondItem="kf0-pY-ECo" secondAttribute="trailing" id="jha-jU-gHV"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="UDm-C8-gor" id="xaT-c6-Gce"/>
+                        <outlet property="dismissButton" destination="kf0-pY-ECo" id="EBg-zJ-ZPq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QzL-7X-HfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="150"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="check" width="16" height="16"/>
+        <image name="popup" width="16" height="16"/>
+        <image name="small_star_selected" width="20" height="20"/>
         <image name="sol" width="16" height="16"/>
+        <image name="star" width="16" height="16"/>
     </resources>
 </document>

@@ -38,9 +38,9 @@ struct Solution {
         self.ProbNum = dict["probnum"] as! Int
     
         
-        self.keyword_String = dict["keyword"] as! String
-        self.content1_String = dict["content1"] as! String
-        self.content2_String = dict["content2"] as! String
+        self.keyword_String = dict["keyword"] as? String ?? ""
+        self.content1_String = dict["content1"] as? String ?? ""
+        self.content2_String = dict["content2"] as? String ?? ""
         
         
     }

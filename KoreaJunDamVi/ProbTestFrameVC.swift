@@ -151,6 +151,27 @@ class ProbTestFrameViewController: JDVViewController {
                 realm.add(record)
             }
             
+        }else if segue.identifier == "pushsimple"{
+            let vc = segue.destination as! SimpleResultViewController
+            var tries:[Try] = []
+            for (index, prob) in Probs.enumerated(){
+                let item = Try(withProb: prob, selection: selections![index])
+                
+                tries.append(item)
+            }
+            result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
+            vc.result = self.result
+            vc.option = option
+            
+            
+            let record = TestResultRecord(by: result)
+            
+            let realm = try! Realm()
+            
+            try! realm.write {
+                realm.add(record)
+            }
+
         }
         
     }
@@ -180,18 +201,18 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     @IBAction func completeButtonPressed(_ sender: Any) {
-        pushResultVC()
+        option.sortedOption == .test ? pushResultVC(withSegue: "push") : pushResultVC(withSegue: "pushsimple")
     }
     
     
-    func pushResultVC(){
+    func pushResultVC(withSegue id:String){
         
         let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
             WSProgressHUD.show(withStatus: "체점 중 ..")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.performSegue(withIdentifier: "push", sender: self)
+                self.performSegue(withIdentifier: id, sender: self)
                 self.popVC()
             })
             
@@ -217,7 +238,8 @@ class ProbTestFrameViewController: JDVViewController {
         let nextIndex = getCurrnetIndexOfPage()+1
         if nextIndex == number_of_pages {
             isBlockUserInteract = false
-            pushResultVC()
+            option.sortedOption == .test ? pushResultVC(withSegue: "push") : pushResultVC(withSegue: "pushsimple")
+            
             
         }else if nextIndex < number_of_pages{
             let vc = pageViewAtIndex(nextIndex)

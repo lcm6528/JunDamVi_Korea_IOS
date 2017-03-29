@@ -45,5 +45,17 @@ class ProbResultBotCell: UITableViewCell {
         noteButton.isSelected = JDVNoteManager.isAdded(by: item.ProbID)
         
     }
+    func configureForSimpleResult(item:Try){
+        
+        ProbNumLabel.text = "\(item.TestNum)회 \(item.ProbNum)번"
+        ScoreLabel.text = "\(item.Score)점"
+        AnswerLabel.text = "\(item.Answer)"
+        SelectionLabel.text = "\(item.Selection)"
+        StateLabel.text = item.State.rawValue
+        StateLabel.textColor = (item.State == .Wrong) ? UIColor.red : UIColor.black
+        noteButton.isSelected = JDVNoteManager.isAdded(by: item.ProbID)
+        
+        
+    }
   
 }

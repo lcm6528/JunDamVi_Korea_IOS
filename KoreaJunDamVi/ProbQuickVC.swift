@@ -61,7 +61,7 @@ class ProbQuickTestViewController: JDVViewController {
         
         result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
         vc.result = self.result
-        
+        vc.option = option
         JDVScoreManager.configureAnalData(by: result)
         
         let record = TestResultRecord(by: result)

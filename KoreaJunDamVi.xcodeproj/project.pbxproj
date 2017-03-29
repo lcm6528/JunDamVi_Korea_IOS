@@ -76,8 +76,6 @@
 		37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */; };
 		37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */; };
 		37E542651E5E9B6D0017884E /* Prob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E542641E5E9B6D0017884E /* Prob.swift */; };
-		37EA2E641E55873D00EE5F8B /* botheader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EA2E631E55873D00EE5F8B /* botheader.xib */; };
-		37EA2E661E558A4700EE5F8B /* botheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EA2E651E558A4700EE5F8B /* botheader.swift */; };
 		37F000971E07C27B00DA1350 /* GageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F000961E07C27B00DA1350 /* GageView.swift */; };
 		37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD101DE6AFD60085A2E4 /* ProbMenuViewController.swift */; };
 		37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD131DE6B0FD0085A2E4 /* JDVNavigationController.swift */; };
@@ -685,9 +683,14 @@
 		ED7268451E8AC61300ACAE28 /* 3446.png in Resources */ = {isa = PBXBuildFile; fileRef = ED7265FC1E8AC61100ACAE28 /* 3446.png */; };
 		ED7268461E8AC61300ACAE28 /* 3448.png in Resources */ = {isa = PBXBuildFile; fileRef = ED7265FD1E8AC61100ACAE28 /* 3448.png */; };
 		ED7268471E8AC61300ACAE28 /* 3450.png in Resources */ = {isa = PBXBuildFile; fileRef = ED7265FE1E8AC61100ACAE28 /* 3450.png */; };
+		ED7268491E8BD46F00ACAE28 /* SolList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED7268481E8BD46F00ACAE28 /* SolList.json */; };
+		ED72684B1E8BD56000ACAE28 /* SolMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */; };
 		ED8A3BD31E8904D1005BDAC1 /* ProbSubCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */; };
 		ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */; };
 		ED8F76951E79128B00B22C4F /* AnalBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */; };
+		ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */; };
+		EDA6C1151E8C038F00FB6398 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = EDA6C1141E8C038F00FB6398 /* test.json */; };
+		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
 		EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE84D621E6D286C0062B1A8 /* Note.swift */; };
@@ -766,8 +769,6 @@
 		37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		37E542641E5E9B6D0017884E /* Prob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prob.swift; sourceTree = "<group>"; };
-		37EA2E631E55873D00EE5F8B /* botheader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = botheader.xib; sourceTree = "<group>"; };
-		37EA2E651E558A4700EE5F8B /* botheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = botheader.swift; sourceTree = "<group>"; };
 		37F000961E07C27B00DA1350 /* GageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GageView.swift; sourceTree = "<group>"; };
 		37F7CD101DE6AFD60085A2E4 /* ProbMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbMenuViewController.swift; sourceTree = "<group>"; };
 		37F7CD131DE6B0FD0085A2E4 /* JDVNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNavigationController.swift; sourceTree = "<group>"; };
@@ -1377,9 +1378,14 @@
 		ED7265FC1E8AC61100ACAE28 /* 3446.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3446.png; sourceTree = "<group>"; };
 		ED7265FD1E8AC61100ACAE28 /* 3448.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3448.png; sourceTree = "<group>"; };
 		ED7265FE1E8AC61100ACAE28 /* 3450.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3450.png; sourceTree = "<group>"; };
+		ED7268481E8BD46F00ACAE28 /* SolList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SolList.json; sourceTree = "<group>"; };
+		ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolMenuCell.swift; sourceTree = "<group>"; };
 		ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbSubCollectionViewController.swift; sourceTree = "<group>"; };
 		ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbPopupCell.swift; sourceTree = "<group>"; };
 		ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartCell.swift; sourceTree = "<group>"; };
+		ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnalList.json; sourceTree = "<group>"; };
+		EDA6C1141E8C038F00FB6398 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
 		EDE84D621E6D286C0062B1A8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -1446,6 +1452,7 @@
 				ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */,
 				375373A51E0BADA100205C13 /* ProbQuickVC.swift */,
 				ED6A32C31E655228002277FD /* ProbQuickCell.swift */,
+				EDE000971E669F5600C240A1 /* ProbList.json */,
 			);
 			name = ProbTest;
 			sourceTree = "<group>";
@@ -1465,8 +1472,6 @@
 			children = (
 				376265F61DFE88650048317F /* ProbResultTopView.xib */,
 				376265FA1DFE88F10048317F /* ProbResultBotView.xib */,
-				37EA2E651E558A4700EE5F8B /* botheader.swift */,
-				37EA2E631E55873D00EE5F8B /* botheader.xib */,
 				377E38D11E5D623100D386A0 /* testheader.xib */,
 				377E38D31E5D623B00D386A0 /* testheader.swift */,
 			);
@@ -1477,8 +1482,10 @@
 			isa = PBXGroup;
 			children = (
 				375373AD1E122A5C00205C13 /* SolMenuVC.swift */,
+				ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */,
 				37D0517A1E260D3100D92E89 /* SolFrameVC.swift */,
 				37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */,
+				ED7268481E8BD46F00ACAE28 /* SolList.json */,
 			);
 			name = Solution;
 			sourceTree = "<group>";
@@ -1583,6 +1590,8 @@
 		37D051791E260CDD00D92E89 /* ProbAnal */ = {
 			isa = PBXGroup;
 			children = (
+				ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */,
+				EDA6C1141E8C038F00FB6398 /* test.json */,
 				37A2E1401E16422400F42C40 /* PagerTestViewController.swift */,
 				3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */,
 				3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */,
@@ -1637,12 +1646,7 @@
 			children = (
 				375373A31E0BAD8100205C13 /* ProbMenu */,
 				375373A41E0BAD8A00205C13 /* ProbTest */,
-				376265F81DFE888E0048317F /* ResultViewController.swift */,
-				376265FC1DFE8B140048317F /* ResultTopView.swift */,
-				376265FE1DFE9F480048317F /* ResultBotView.swift */,
-				EDE000971E669F5600C240A1 /* ProbList.json */,
-				373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */,
-				37BE73211E02849A00D00259 /* ProbResultBotCell.xib */,
+				ED9ECBB01E8BF12100075DC3 /* Result */,
 				37D051791E260CDD00D92E89 /* ProbAnal */,
 			);
 			name = Prob;
@@ -2301,6 +2305,19 @@
 			name = AnalBarChart;
 			sourceTree = "<group>";
 		};
+		ED9ECBB01E8BF12100075DC3 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				376265F81DFE888E0048317F /* ResultViewController.swift */,
+				376265FC1DFE8B140048317F /* ResultTopView.swift */,
+				376265FE1DFE9F480048317F /* ResultBotView.swift */,
+				373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */,
+				37BE73211E02849A00D00259 /* ProbResultBotCell.xib */,
+				EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */,
+			);
+			name = Result;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2427,6 +2444,7 @@
 				ED7266871E8AC61200ACAE28 /* 2408_01.png in Resources */,
 				ED7266071E8AC61100ACAE28 /* 2008.png in Resources */,
 				ED72661E1E8AC61100ACAE28 /* 2030_05.png in Resources */,
+				ED7268491E8BD46F00ACAE28 /* SolList.json in Resources */,
 				ED7266471E8AC61100ACAE28 /* 2216.png in Resources */,
 				ED7266A61E8AC61200ACAE28 /* 2449.png in Resources */,
 				ED72676D1E8AC61200ACAE28 /* 3001.png in Resources */,
@@ -2696,7 +2714,6 @@
 				ED7266FC1E8AC61200ACAE28 /* 2706_02.png in Resources */,
 				ED7267A81E8AC61200ACAE28 /* 3108_04.png in Resources */,
 				37F7CD2B1DE6B0FE0085A2E4 /* JDVTestResultLabelView.xib in Resources */,
-				37EA2E641E55873D00EE5F8B /* botheader.xib in Resources */,
 				ED7266451E8AC61100ACAE28 /* 2208.png in Resources */,
 				ED7266AD1E8AC61200ACAE28 /* 2506_03.png in Resources */,
 				ED7266041E8AC61100ACAE28 /* 2008_03.png in Resources */,
@@ -2801,6 +2818,7 @@
 				ED7266A31E8AC61200ACAE28 /* 2444.png in Resources */,
 				ED72682C1E8AC61200ACAE28 /* 3416.png in Resources */,
 				ED7266FA1E8AC61200ACAE28 /* 2705.png in Resources */,
+				ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */,
 				ED7268151E8AC61200ACAE28 /* 3339.png in Resources */,
 				ED72678F1E8AC61200ACAE28 /* 3032.png in Resources */,
 				ED7267441E8AC61200ACAE28 /* 2834.png in Resources */,
@@ -2900,6 +2918,7 @@
 				ED7267CD1E8AC61200ACAE28 /* 3142.png in Resources */,
 				ED7267251E8AC61200ACAE28 /* 2801.png in Resources */,
 				ED7267791E8AC61200ACAE28 /* 3013.png in Resources */,
+				EDA6C1151E8C038F00FB6398 /* test.json in Resources */,
 				ED7267171E8AC61200ACAE28 /* 2729_04.png in Resources */,
 				ED7266DC1E8AC61200ACAE28 /* 2611.png in Resources */,
 				ED7266EF1E8AC61200ACAE28 /* 2639.png in Resources */,
@@ -3054,7 +3073,9 @@
 				375373A61E0BADA100205C13 /* ProbQuickVC.swift in Sources */,
 				37F7CD261DE6B0FD0085A2E4 /* JDVBarButtonItem.swift in Sources */,
 				37F7CD2E1DE6B0FE0085A2E4 /* JDVRadioButtonManager.swift in Sources */,
+				EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */,
 				37F000971E07C27B00DA1350 /* GageView.swift in Sources */,
+				ED72684B1E8BD56000ACAE28 /* SolMenuCell.swift in Sources */,
 				ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */,
 				375EDAB81E41FDC200D521C9 /* JDVViews.swift in Sources */,
 				37E542651E5E9B6D0017884E /* Prob.swift in Sources */,
@@ -3103,7 +3124,6 @@
 				375373B51E1244CE00205C13 /* JDVGraph.swift in Sources */,
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,
 				37D0517B1E260D3100D92E89 /* SolFrameVC.swift in Sources */,
-				37EA2E661E558A4700EE5F8B /* botheader.swift in Sources */,
 				37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */,
 				37D99B101DE87B1D0017F7CF /* ProbInnerVC.swift in Sources */,
 				375EB9171DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld in Sources */,

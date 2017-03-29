@@ -11,20 +11,29 @@ import PageMenu
 class JDVProbAnalFrameViewController: JDVViewController {
     
     var pageMenu : CAPSPageMenu?
-    let data:[(String,Float)] = [("국가",3),("왕",21),("사건",4),("제도",5),("경제",8),("사회",25),("문화",5),("인물",2),("단체",6),("유물",4),("복합",11),("기타",6)]
-    
-    var dataObject:String!
-    
+    var data:[(String,Float)] = []
+    var contentData:[String] = []
+    var dataObject:[String:String]!
+    var contentObject:[String:String]!
+    var option:JDVProbManager.SortedOption!
     @IBOutlet var graph: JDVGraph!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        data = dataObject.map{
+            return ($0.key,$0.value.toFloat()!)
+        }
+        
+        for item in data{
+            contentData.append(contentObject[item.0] ?? "분석자료가 없습니다.")
+        }
         
         
+        self.setTitleWithStyle(option.description + " 분석자료")
         
-        self.setTitleWithStyle(dataObject)
+    
         
         
         
@@ -35,9 +44,10 @@ class JDVProbAnalFrameViewController: JDVViewController {
         
         var controllerArray : [UIViewController] = []
         
-        for (_,element) in data.enumerated(){
+        for (index,element) in data.enumerated(){
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "JDVAnalContentViewController") as! JDVAnalContentViewController
             controller.title = element.0
+            controller.content = contentData[index]
             controllerArray.append(controller)
         }
         

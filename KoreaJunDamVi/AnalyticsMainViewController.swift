@@ -98,7 +98,7 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(records[collectionView.tag].count)
+        
         return records[collectionView.tag].count
         
     }

@@ -86,7 +86,7 @@ class RoundView: UIView {
     
     
     titleLabel.textAlignment = .center
-    titleLabel.font = UIFont(name: "NanumBarunGothicLight", size: 15)
+    titleLabel.font = UIFont(name: "NanumBarunGothicLight", size: 18)!
     titleLabel.adjustsFontSizeToFitWidth = true
     titleLabel.minimumScaleFactor = 0.1
     

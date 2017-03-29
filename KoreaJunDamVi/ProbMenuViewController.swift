@@ -9,8 +9,14 @@
 import UIKit
 import WSProgressHUD
 import FMDB
-
+import SwiftyJSON
 class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
+    
+    ////static data
+    let rankingArr = [["조선(24%)","일제강점기(14%)","근대 조선(13%)"],["해석(31%)","암기(20%)","테마(19%)"],["사건(22%)","문화(15%)","제도(12%)"]]
+    ////
+    
+    
     
     let number_of_pages = 4
     var currentMenu:Int = 0
@@ -20,8 +26,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     let options:[JDVProbManager.SortedOption] = [.test,.time,.type,.theme]
     
     var dataArray:[[String]] = []
-    
     var Probs:[Prob] = []
+    var AnalData:JSON!
     
     @IBOutlet var ToolbarButtons: [UIButton]!
     
@@ -70,7 +76,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         currentOption.sortedOption = options[pIdx]
         currentOption.cacheKey = arr[index]
         
-        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "문제풀기", message: currentOption.sortedOption.description + " 문제풀기 - " + currentOption.cacheKey, preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "처음부터 풀기", style: UIAlertActionStyle.default, handler:
             { action in
@@ -122,6 +128,11 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             dataArray.append(dict.value(forKey: option.rawValue) as!  [String])
         }
         
+        let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "AnalList", ofType: "json")!))
+        AnalData = JSON(data:jsondata)
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
@@ -154,12 +165,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             let vc = segue.destination as!ProbTestFrameViewController
             vc.Probs = self.Probs
             vc.option = currentOption
+            vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
             
-            if options[currentMenu] != .test{
-                vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
-            }else{
-                vc.selections = JDVProbManager.getCachedData(with: "\(self.Probs[0].TestNum)")
-            }
             
             
             self.tabBarController?.tabBar.isHidden = true
@@ -167,13 +174,15 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         case "quick":
             let vc = segue.destination as! ProbQuickTestViewController
             vc.Probs = self.Probs
-            
+            vc.option = currentOption
             self.tabBarController?.tabBar.isHidden = true
             
         case "pushanal":
             let vc = segue.destination as! JDVProbAnalFrameViewController
-            vc.dataObject = options[currentMenu].description
-            
+            let key = options[currentMenu].rawValue
+            vc.dataObject = AnalData["data"][key].dictionaryObject as! [String : String]
+            vc.contentObject = AnalData["content"][key].dictionaryObject as! [String : String]
+            vc.option = options[currentMenu]
         default :
             return
         }
@@ -201,6 +210,8 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         if index != 0 {
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
+            
+            pageContentViewController.rankingStr = rankingArr[index-1]
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
@@ -209,6 +220,8 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
                 self.currentMenu = index
                 self.performSegue(withIdentifier: "pushanal", sender: self)
             }
+            
+            
             return pageContentViewController
             
             

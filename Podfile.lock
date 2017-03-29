@@ -27,6 +27,7 @@ PODS:
   - RealmSwift (1.1.0):
     - Realm (= 1.1.0)
   - Shimmer (1.0.2)
+  - SwiftyJSON (3.0.0)
   - Toaster (2.0.0)
   - UICountingLabel (1.4.0)
   - WSProgressHUD (1.1.1):
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - Google/Analytics
   - PageMenu (from `https://github.com/orazz/PageMenu.git`)
   - RealmSwift
+  - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
   - Toaster (~> 2.0)
   - UICountingLabel
   - WSProgressHUD
@@ -49,6 +51,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/goktugyil/EZSwiftExtensions.git
   PageMenu:
     :git: https://github.com/orazz/PageMenu.git
+  SwiftyJSON:
+    :branch: swift3
+    :git: https://github.com/appsailor/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
   EZSwiftExtensions:
@@ -57,6 +62,9 @@ CHECKOUT OPTIONS:
   PageMenu:
     :commit: ace3d8d095c9c165113d3ac797f317fe7faecbae
     :git: https://github.com/orazz/PageMenu.git
+  SwiftyJSON:
+    :commit: de73429b38b8994f614fb27c5ec094bb8a4833f2
+    :git: https://github.com/appsailor/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   EZSwiftExtensions: e3006d349fd10dac7a6bcf0a93f65ac564cd40ba
@@ -72,11 +80,12 @@ SPEC CHECKSUMS:
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   Toaster: 25101e968655aa991fa72ad888029e8d515c6237
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 23ebc74d69a3d633eae5aeb3e9fa1be0f44be8cb
+PODFILE CHECKSUM: 15a9f06e82d6eb83bca87cdc794b6c4a1b846873
 
 COCOAPODS: 1.2.0
