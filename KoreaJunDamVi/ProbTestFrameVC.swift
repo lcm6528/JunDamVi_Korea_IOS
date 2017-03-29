@@ -135,19 +135,20 @@ class ProbTestFrameViewController: JDVViewController {
                 
                 tries.append(item)
             }
-            result = TestResult(withTries: tries)
+            result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
             vc.result = self.result
+            vc.option = option
             
             if option.sortedOption == .test{
-                
                 JDVScoreManager.configureAnalData(by: result)
-                let record = TestResultRecord(by: result)
-                
-                let realm = try! Realm()
-                
-                try! realm.write {
-                    realm.add(record)
-                }
+            }
+            
+            let record = TestResultRecord(by: result)
+            
+            let realm = try! Realm()
+            
+            try! realm.write {
+                realm.add(record)
             }
             
         }

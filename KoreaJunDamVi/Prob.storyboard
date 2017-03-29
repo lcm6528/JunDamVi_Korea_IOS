@@ -783,7 +783,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="barButton_Star" destination="4d4-Ig-bK7" id="U4c-zM-qb8"/>
