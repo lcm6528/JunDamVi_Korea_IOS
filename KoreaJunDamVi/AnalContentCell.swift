@@ -11,6 +11,7 @@ import UIKit
 class AnalContentCell: UITableViewCell {
     
     
+    @IBOutlet var label_title: JDVLabelWithTBLine!
     @IBOutlet var collectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
