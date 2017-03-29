@@ -28,8 +28,8 @@ protocol Markable{
 extension Markable where Self:UIView{
     
     func mark(){
-        let superFrame = self.frame
-        let label = UILabel(x: superFrame.w - 29, y: 7, w: 24, h: 20, fontSize: 10)
+        
+        let label = UILabel(x: SCREEN_WIDTH - 53, y: 7, w: 24, h: 20, fontSize: 10)
 
         label.clipsToBounds = true
         label.textAlignment = .center

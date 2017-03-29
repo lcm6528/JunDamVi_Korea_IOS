@@ -12,7 +12,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     var Prob:Prob!
     
-    weak var parentVC:ProbMenuViewController!
+    
     
     var pageIndex:Int!
     var selection = 0

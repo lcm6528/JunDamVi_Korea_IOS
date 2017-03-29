@@ -89,3 +89,12 @@ var isBlockUserInteract:Bool = false{
         }
     }
 }
+
+extension UIStoryboard {
+    class func viewController(storyBoard sbID:String,withID identifier: String) -> UIViewController {
+        return UIStoryboard(name: sbID, bundle: nil).instantiateViewController(withIdentifier: identifier)
+    }
+}
+
+
+

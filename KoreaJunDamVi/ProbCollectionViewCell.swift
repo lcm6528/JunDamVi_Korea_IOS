@@ -24,8 +24,8 @@ class ProbCollectionViewCell: UICollectionViewCell {
                 
                 
             }else{
-                stateLabel.text = "학습 중"
-                stateLabel.textColor = UIColor.black
+                stateLabel.text = "학습 진행중"
+                stateLabel.textColor = UIColor.untPaleRed
                 if data != nil{
                     bottomLabel.text = "\(data!.count -  data!.indexes(of: 0).count) / \(data!.count)"
                 }else{

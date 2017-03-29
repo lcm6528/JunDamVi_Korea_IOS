@@ -7,9 +7,9 @@
 //
 
 import UIKit
-protocol JDVChoiceViewManagerDelegate{
+@objc protocol JDVChoiceViewManagerDelegate{
     
-    func JDVChoiceViewManagerDelegate(_ manager:JDVChoiceViewManager ,didSelectedLabelAtIndex index:Int)
+    @objc optional func JDVChoiceViewManagerDelegate(_ manager:JDVChoiceViewManager ,didSelectedLabelAtIndex index:Int)
     
 }
 class JDVChoiceViewManager: NSObject {
@@ -65,7 +65,7 @@ class JDVChoiceViewManager: NSObject {
         
         
         
-        self.delegate?.JDVChoiceViewManagerDelegate(self, didSelectedLabelAtIndex: index)
+        self.delegate?.JDVChoiceViewManagerDelegate?(self, didSelectedLabelAtIndex: index)
     }
     
     

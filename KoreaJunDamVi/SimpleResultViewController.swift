@@ -1,24 +1,25 @@
 //
-//  ProbResultViewController.swift
+//  SimpleResultViewController.swift
 //  KoreaJunDamVi
 //
-//  Created by 이창민 on 2016. 12. 12..
-//  Copyright © 2016년 JunDamVi. All rights reserved.
+//  Created by changmin lee on 2017. 3. 30..
+//  Copyright © 2017년 JunDamVi. All rights reserved.
 //
 
 import UIKit
-import RealmSwift
+import UICountingLabel
 import WSProgressHUD
-protocol ProbResultSubViewDelegate {
-    func changeView()
-}
-
-class ProbResultViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,ProbResultSubViewDelegate {
+class SimpleResultViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
+
+    @IBOutlet var gageView: GageView!
+    @IBOutlet var circleView: RoundView!
+    @IBOutlet var label_right: UICountingLabel!
+    @IBOutlet var label_wrong: UILabel!
     
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var contentView: UIView!
+    @IBOutlet var tableView: UITableView!
+    
     
     var option:JDVProbManager.ProbOption!
     
@@ -26,34 +27,23 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     var heightOfSubView:CGFloat!
     
     var addedNote = Set<Note>()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"
-        
-        heightOfSubView = self.view.frame.size.height-64
-        let topView = ProbResultTopView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: heightOfSubView))
-        topView.delegate = self
-        topView.configure(result: result)
-        
-        let botView = ProbResultBotView(frame: CGRect(x: 0, y: heightOfSubView, width: SCREEN_WIDTH, height: heightOfSubView))
-        botView.delegate = self
-        botView.tableView.delegate = self
-        botView.tableView.dataSource = self
-        botView.dismissHandler = {
-                self.tabBarController?.selectedIndex = 3            
-            self.dismissVC(completion: { 
 
-            })
-        }
+        tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
+        tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         
-        contentView.addSubview(topView)
-        contentView.addSubview(botView)
-        
+        // Do any additional setup after loading the view.
     }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.dismissVC(completion: nil)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,23 +52,35 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
     }
     
-    
-    @IBAction func backButtonAction(_ sender: Any) {
-        self.dismissVC(completion: nil)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        label_right.format = "%d"
+        label_right.method = .easeIn
+        label_right.animationDuration = 0.8
+        label_right.countFromZero(to: CGFloat(result.numberOfRight))
+        label_wrong.text = "\(result.numberOfWrong+result.numberOfPass)"
+        
+        gageView.currentValue = CGFloat((Float(result.numberOfRight)/Float(result.Tries.count)) * 100)
+        
+        let totalRate = Float(result.numberOfRight)/Float(result.Tries.count)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.circleView.setValue(value: CGFloat(totalRate*100), animate: true)
+            
+        }
+
+        
+        
+        
     }
     
     
-    
-    
-    
-    func changeView(){
-        
-        let offsetY:CGFloat = scrollView.contentOffset.y == 0.0 ? heightOfSubView : 0.0
-        
-        scrollView.setContentOffset(CGPoint(x: 0, y: offsetY) , animated: true)
-        
-    }
-    
+
+}
+
+
+
+extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -91,11 +93,10 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
         let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
         
-        cell.configure(item: result.Tries[indexPath.row])
+        cell.configureForSimpleResult(item: result.Tries[indexPath.row])
         cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
         cell.noteButton.tag = indexPath.row
         cell.selectionStyle = .none
-        
         //custom for cell
         return cell
         
@@ -128,8 +129,10 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         sender.isSelected = !sender.isSelected
         
     }
+
     
+    
+
     
     
 }
-

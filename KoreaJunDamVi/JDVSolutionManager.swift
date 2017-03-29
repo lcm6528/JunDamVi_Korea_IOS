@@ -19,7 +19,7 @@ class JDVSolutionManager: NSObject {
         
         if (fmdb?.open())! {
             
-            let sql1 = "SELECT * FROM Sols WHERE testnum = \(num)"
+            let sql1 = "SELECT * FROM Solvs WHERE testnum = \(num)"
             let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
             while result?.next() == true {
                 let dict:NSDictionary = result!.resultDictionary() as NSDictionary
@@ -41,7 +41,7 @@ class JDVSolutionManager: NSObject {
         
         if (fmdb?.open())! {
             
-            let sql1 = "SELECT * FROM Sols WHERE probid = \(id)"
+            let sql1 = "SELECT * FROM Solvs WHERE probid = \(id)"
             let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
             while result?.next() == true {
                 let dict:NSDictionary = result!.resultDictionary() as NSDictionary
