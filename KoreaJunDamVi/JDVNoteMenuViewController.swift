@@ -50,7 +50,9 @@ class JDVNoteMenuViewController: JDVViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! NoteInnerViewController
         vc.Prob = probs[currentIndex]
+        vc.Solv = JDVSolutionManager.fetchSol(withProbID: probs[currentIndex].ProbID)
         vc.selection = Notes[currentIndex].Selection
+        
         self.tabBarController?.tabBar.isHidden = true
     }
     

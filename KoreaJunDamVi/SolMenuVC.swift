@@ -8,6 +8,7 @@
 
 import UIKit
 import WSProgressHUD
+import SwiftyStoreKit
 class JDVSolutionMenuViewController: JDVViewController {
     
     
@@ -25,7 +26,22 @@ class JDVSolutionMenuViewController: JDVViewController {
         
         let blockView =  BlockView(frame: self.view.frame)
         blockView.actionHandler = {
-            blockView.removeFromSuperview()
+//            blockView.removeFromSuperview()
+            
+            SwiftyStoreKit.retrieveProductsInfo(["koreasolutions"]) { result in
+                if let product = result.retrievedProducts.first {
+                    let priceString = product.localizedPrice!
+                    print("Product: \(product.localizedDescription), price: \(priceString)")
+                }
+                else if let invalidProductId = result.invalidProductIDs.first {
+                    
+                    showAlertWithString("Could not retrieve product info", message: "Invalid product identifier: \(invalidProductId)", sender: self)
+                    return
+                }
+                else {
+                    print("Error: \(result.error)")
+                }
+            }
         }
         self.view.addSubview(blockView)
         

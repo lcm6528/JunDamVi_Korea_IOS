@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import SwiftyJSON
 class HomeViewController: JDVViewController {
     
     @IBOutlet var roundView1: RoundView!
-    
     @IBOutlet var centerContainerView: UIView!
     
     @IBOutlet var label_MidView: UILabel!
+    
+    @IBOutlet var ddayTitleLabel: UILabel!
+    @IBOutlet var ddayCotentLabel: UILabel!
+    
     
     var Tests:[String] = []
     var completeCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setTitleWithStyle("한국사 전담비")
+        self.setTitleWithStyle("한국사 비법노트")
     }
     
     
@@ -50,21 +54,47 @@ class HomeViewController: JDVViewController {
         
         
     }
+    func setDday(){
+        
+        let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "testday", ofType: "json")!))
+        let json = JSON(data:jsondata)["data"]
+        let arr = json.arrayObject as! [[String:String]]
+        
+        
+        
+        
+        for item in arr{
+            let test = item.first!
+            let dday = daysFrom(Date(dateString: item.first!.value)) - 1
+            if dday <= 0 {
+                ddayTitleLabel.text = "\(test.key)회 한국사능력검정시험"
+                ddayCotentLabel.text = "D-\(abs(dday))"
+                
+                break
+            }
+            
+            
+        }
+        
+        
+        
+        
+        
+    }
     
+    func daysFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.day, from: date, to: Date(), options: []).day!
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         
         fetchList()
+        setDday()
         label_MidView.attributedText = getAttrStr(totalValue: Tests.count , withValue: completeCount)
         
         roundView1.setValue(value: CGFloat(completeCount)/CGFloat(Tests.count)*100, animate: false)
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidLayoutSubviews() {

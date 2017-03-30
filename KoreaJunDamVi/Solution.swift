@@ -30,7 +30,18 @@ struct Solution {
         return setToAttr(from: content2_String)
     }
     
-    
+    init(){
+        
+        self.ProbID = 0
+        self.TestNum = 0
+        self.ProbNum = 0
+        
+        self.keyword_String = "해당 회차 해설은 준비중입니다. 빠른 시일 내에 업데이트 될 예정입니다."
+        self.content1_String = ""
+        self.content2_String = ""
+        
+        
+    }
     init(withDict dict:NSDictionary){
         
         self.ProbID = dict["probId"] as! Int

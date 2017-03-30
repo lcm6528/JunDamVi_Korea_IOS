@@ -8,14 +8,17 @@
 
 import UIKit
 import RealmSwift
-class SettingsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+import MessageUI
+import Toaster
+
+class SettingsViewController: JDVViewController,UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
         
+        self.setTitleWithStyle("설정")
     }
     
     
@@ -25,7 +28,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 10
+        return 3
     }
     
     
@@ -35,18 +38,113 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsTableViewCell
+        
+        if indexPath.row == 0{
+         
+            cell.contentImageView.image = UIImage(named: "reset")
+            cell.contentTitleLabel.text = "학습내역 초기화"
+            cell.contentSubtitleLabel.text = "학습내역을 초기화하면 앱 내 모든 정보가 초기화됩니다."
+            
+            
+        }else if indexPath.row == 1{
+            cell.contentImageView.image = UIImage(named: "restore")
+            cell.contentTitleLabel.text = "구매내역 복원"
+            cell.contentSubtitleLabel.text = "해설 구매내역을 복원합니다."
+            
+            
+            
+        }else if indexPath.row == 2{
+            cell.contentImageView.image = UIImage(named: "mail")
+            cell.contentTitleLabel.text = "문의 및 제안"
+            cell.contentSubtitleLabel.text = "jundamvi@gmail.com 으로 의견을 보내주세요!"
+            
+            
+            
+        }
         return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
+        if indexPath.row == 0 {
+            
+            ShowResetAlert()
+            
+        }else if indexPath.row == 1{
+         
+            //restore
+        }else if indexPath.row == 2{
+            
+            ShowMail()
         }
         
-        let appDomain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: appDomain)
+    }
+    
+    
+    func ShowMail(){
+        
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            
+        }
+        
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        var mailFooter = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n -------------------\n\n"
+        mailFooter += "Korea History JUNDAMVI \n\nFeedBack Information\n\n"
+        mailFooter += UIDevice.current.modelName + "\n\n"
+        mailFooter += "IOS " + UIDevice.current.systemVersion + "\n\n"
+        mailFooter += "AppVersion " + appVersion
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["jundamvi@gmail.com"])
+        mailComposerVC.setSubject("[IOS] FeedBack for App")
+        mailComposerVC.setMessageBody(mailFooter, isHTML: false)
+        
+        
+        return mailComposerVC
+    }
+
+    
+    
+    func ShowResetAlert(){
+        let alert = UIAlertController(title: "학습내역 초기화", message: "앱 내 모든 정보가 초기화됩니다.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler:
+            { action in
+                
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.deleteAll()
+                }
+                
+                let appDomain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+                
+                Toast(text: "학습내역 초기화 완료").show()
+                
+                
+        }))
+        
+        
+        alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
+            { action in}))
+        
+        self.present(alert, animated: true, completion: nil)
         
         
     }
+    
+    
+    // MARK: MFMailComposeViewControllerDelegate Method
+    @objc(mailComposeController:didFinishWithResult:error:)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult,error: NSError?) {
+        controller.dismiss(animated: true)
+    }
+    
 }

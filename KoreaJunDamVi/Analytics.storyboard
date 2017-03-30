@@ -22,7 +22,7 @@
                     <tabBarItem key="tabBarItem" title="실력분석" image="anal" id="h7u-hE-abc"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="m31-bt-gXz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="m31-bt-gXz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -75,7 +75,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-vo-2zQ">
-                                            <rect key="frame" x="8" y="131" width="359" height="21"/>
+                                            <rect key="frame" x="8" y="137" width="359" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="4rs-06-IE2"/>
                                             </constraints>
@@ -103,7 +103,7 @@
                                     <constraints>
                                         <constraint firstItem="OUE-vA-y1y" firstAttribute="leading" secondItem="6Nc-qU-wxS" secondAttribute="trailing" constant="20" id="2Va-Ad-3KL"/>
                                         <constraint firstItem="pJn-5d-SDD" firstAttribute="leading" secondItem="OUE-vA-y1y" secondAttribute="trailing" constant="20" id="7TC-kb-pFM"/>
-                                        <constraint firstAttribute="bottom" secondItem="DB2-vo-2zQ" secondAttribute="bottom" constant="8" id="E87-Xc-jVV"/>
+                                        <constraint firstAttribute="bottom" secondItem="DB2-vo-2zQ" secondAttribute="bottom" constant="2" id="E87-Xc-jVV"/>
                                         <constraint firstAttribute="trailing" secondItem="DB2-vo-2zQ" secondAttribute="trailing" constant="8" id="KQP-fY-Kpu"/>
                                         <constraint firstItem="OUE-vA-y1y" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="Lfa-Ke-FN1"/>
                                         <constraint firstItem="OUE-vA-y1y" firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="width" id="PPG-Zd-3UP"/>

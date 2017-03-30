@@ -15,5 +15,6 @@ target 'KoreaJunDamVi' do
   pod 'EZSwiftExtensions', :git => 'https://github.com/goktugyil/EZSwiftExtensions.git'
   pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
   pod 'RealmSwift'
+  pod 'SwiftyStoreKit'
   
 end
