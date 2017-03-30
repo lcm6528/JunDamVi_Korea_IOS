@@ -15,7 +15,7 @@ class NoteInnerViewController: JDVViewController {
     @IBOutlet var stackView: UIStackView!
     
     var Prob:Prob!
-    var Sol:Solution!
+    var Solv:Solution?
     var selection:Int!
     
     @IBOutlet var testTitleTextView: UITextView!
@@ -27,11 +27,13 @@ class NoteInnerViewController: JDVViewController {
     @IBOutlet var testChoiceTextViews: [UITextView]!
     
     
-
-    @IBOutlet var Sol_Labels: [UILabel]!
-    @IBOutlet var Sol_TextViews: [UITextView]!
+    @IBOutlet var solKeywordLabel: UILabel!
+    @IBOutlet var solTitleLabel: UILabel!
+    @IBOutlet var solSubtitleLabel: UILabel!
     
-    
+    @IBOutlet var solKeywordTextView: UITextView!
+    @IBOutlet var solContentTextView1: UITextView!
+    @IBOutlet var solContentTextView2: UITextView!
     
     
     var choiceManager:JDVChoiceViewManager?
@@ -52,6 +54,9 @@ class NoteInnerViewController: JDVViewController {
         testChoiceViews[Prob.Answer-1].mark()
         choiceManager?.isActive = false
         
+        if Solv == nil{
+            Solv = Solution()
+        }
         
         configure()
         
@@ -61,7 +66,20 @@ class NoteInnerViewController: JDVViewController {
     }
     
     
+    
     func configure(){
+        
+        let title = NSMutableAttributedString(string: "최선의 풀이")
+        title.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
+        title.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothicUltraLight", size: 17)! ], range: NSRange(location: 2,length: 4))
+        solTitleLabel.attributedText = title
+        
+        
+        let subtitle = NSMutableAttributedString(string: "차선의 풀이")
+        subtitle.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
+        subtitle.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothicUltraLight", size: 17)! ], range: NSRange(location: 2,length: 4))
+        solSubtitleLabel.attributedText = subtitle
+        
         
         self.testTitleTextView.attributedText = Prob.title_attString
         self.testContentTextView.attributedText = Prob.article_attString
@@ -69,6 +87,12 @@ class NoteInnerViewController: JDVViewController {
         for (index,textView) in testChoiceTextViews.enumerated(){
             textView.attributedText = Prob.choices_attString[index]
         }
+        
+        
+        
+        self.solKeywordTextView.attributedText = Solv?.keyword_attString
+        self.solContentTextView1.attributedText = Solv?.content1_attString
+        self.solContentTextView2.attributedText = Solv?.content2_attString
         
     }
     
@@ -84,13 +108,13 @@ class NoteInnerViewController: JDVViewController {
         
         button_Purchase.isHidden = !bool
         
-        for label in Sol_Labels{
-            label.isHidden = bool
-        }
+        solKeywordLabel.isHidden = bool
+        solTitleLabel.isHidden = bool
+        solSubtitleLabel.isHidden = bool
         
-        for textView in Sol_TextViews{
-            textView.isHidden = bool
-        }
+        solKeywordTextView.isHidden = bool
+        solContentTextView1.isHidden = bool
+        solContentTextView2.isHidden = bool
         
     }
     

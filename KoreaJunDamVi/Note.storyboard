@@ -12,6 +12,9 @@
         <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
         </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
         <array key="NanumBarunGothicUltraLight.ttf">
             <string>NanumBarunGothicUltraLight</string>
         </array>
@@ -348,7 +351,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-G7-wzv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="914.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="766.5"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zN1-QF-X14">
                                                 <rect key="frame" x="8" y="8" width="311" height="34.5"/>
@@ -524,7 +527,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tE7-s8-Ir8">
-                                                <rect key="frame" x="12" y="498" width="351" height="408.5"/>
+                                                <rect key="frame" x="12" y="498" width="351" height="260.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVH-yh-KiJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="351" height="50"/>
@@ -539,68 +542,79 @@
                                                             <action selector="purchaseButtonPressed:" destination="02g-g4-zz8" eventType="touchUpInside" id="427-op-Oe2"/>
                                                         </connections>
                                                     </button>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iA-tr-52D">
-                                                        <rect key="frame" x="0.0" y="58" width="351" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-0b-mNw">
+                                                        <rect key="frame" x="0.0" y="58" width="351" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20.5" id="skT-u7-n6Q"/>
+                                                            <constraint firstAttribute="height" constant="20.5" id="mds-uM-9Gf"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-c2-zAg">
-                                                        <rect key="frame" x="0.0" y="86.5" width="351" height="83"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-WB-cyS">
+                                                        <rect key="frame" x="0.0" y="87" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-e6-yvv">
-                                                        <rect key="frame" x="0.0" y="177.5" width="351" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKE-yv-3FH">
+                                                        <rect key="frame" x="0.0" y="128.5" width="351" height="20.5"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20.5" id="3xn-hD-saY"/>
+                                                            <constraint firstAttribute="height" constant="20.5" id="fjZ-gX-gfb"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="최선">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothic"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="의 풀이">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothicUltraLight"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V0c-2T-1af">
-                                                        <rect key="frame" x="0.0" y="206" width="351" height="83"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C70-GO-fbC">
+                                                        <rect key="frame" x="0.0" y="157" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-yH-0el">
-                                                        <rect key="frame" x="0.0" y="297" width="351" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZu-8j-hIV">
+                                                        <rect key="frame" x="0.0" y="198.5" width="351" height="20.5"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20.5" id="iIZ-UE-M5y"/>
+                                                            <constraint firstAttribute="height" constant="20.5" id="ULs-aa-Uof"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="차선">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothic"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="의 풀이">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name="NanumBarunGothicUltraLight"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="obr-o2-Ou6">
-                                                        <rect key="frame" x="0.0" y="325.5" width="351" height="83"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-tP-neZ">
+                                                        <rect key="frame" x="0.0" y="227" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Ghg-c2-zAg" firstAttribute="leading" secondItem="tE7-s8-Ir8" secondAttribute="leading" id="8cL-dk-cea"/>
-                                                    <constraint firstItem="obr-o2-Ou6" firstAttribute="top" secondItem="Pnh-yH-0el" secondAttribute="bottom" constant="8" id="AMf-zl-lC8"/>
-                                                    <constraint firstItem="Ghg-c2-zAg" firstAttribute="top" secondItem="8iA-tr-52D" secondAttribute="bottom" constant="8" id="FgW-K6-Gtc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="V0c-2T-1af" secondAttribute="trailing" id="G80-pg-xH2"/>
-                                                    <constraint firstItem="obr-o2-Ou6" firstAttribute="leading" secondItem="tE7-s8-Ir8" secondAttribute="leading" id="RxP-Wk-rcE"/>
-                                                    <constraint firstItem="eYG-e6-yvv" firstAttribute="top" secondItem="Ghg-c2-zAg" secondAttribute="bottom" constant="8" id="WEf-xB-mdq"/>
-                                                    <constraint firstItem="Pnh-yH-0el" firstAttribute="top" secondItem="V0c-2T-1af" secondAttribute="bottom" constant="8" id="X6h-N7-bcW"/>
-                                                    <constraint firstItem="V0c-2T-1af" firstAttribute="leading" secondItem="tE7-s8-Ir8" secondAttribute="leading" id="XBK-tA-q2d"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ghg-c2-zAg" secondAttribute="trailing" id="i7d-Oz-x2d"/>
-                                                    <constraint firstAttribute="trailing" secondItem="obr-o2-Ou6" secondAttribute="trailing" id="nvy-ff-yfC"/>
-                                                    <constraint firstAttribute="bottom" secondItem="obr-o2-Ou6" secondAttribute="bottom" id="pWa-VC-C1f"/>
-                                                    <constraint firstItem="V0c-2T-1af" firstAttribute="top" secondItem="eYG-e6-yvv" secondAttribute="bottom" constant="8" id="scv-8f-Wq8"/>
+                                                    <constraint firstItem="Gy2-tP-neZ" firstAttribute="top" secondItem="CZu-8j-hIV" secondAttribute="bottom" constant="8" id="Bo9-DS-hgp"/>
+                                                    <constraint firstItem="VvE-WB-cyS" firstAttribute="top" secondItem="fjL-0b-mNw" secondAttribute="bottom" constant="8" id="O1g-Wm-bpM"/>
+                                                    <constraint firstItem="C70-GO-fbC" firstAttribute="top" secondItem="GKE-yv-3FH" secondAttribute="bottom" constant="8" id="RM7-rJ-0tc"/>
+                                                    <constraint firstItem="CZu-8j-hIV" firstAttribute="top" secondItem="C70-GO-fbC" secondAttribute="bottom" constant="8" id="jhn-Xd-lgA"/>
+                                                    <constraint firstItem="GKE-yv-3FH" firstAttribute="top" secondItem="VvE-WB-cyS" secondAttribute="bottom" constant="8" id="o3w-Kj-bp8"/>
+                                                    <constraint firstItem="fjL-0b-mNw" firstAttribute="top" secondItem="cVH-yh-KiJ" secondAttribute="bottom" constant="8" id="y7G-tm-tqX"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -667,6 +681,12 @@
                     <connections>
                         <outlet property="ScoreLabel" destination="oF4-5Z-plR" id="njT-EG-DBU"/>
                         <outlet property="button_Purchase" destination="cVH-yh-KiJ" id="aED-y8-osQ"/>
+                        <outlet property="solContentTextView1" destination="C70-GO-fbC" id="0hT-Yo-jrg"/>
+                        <outlet property="solContentTextView2" destination="Gy2-tP-neZ" id="Zua-SE-SXW"/>
+                        <outlet property="solKeywordLabel" destination="fjL-0b-mNw" id="IgC-ld-sf1"/>
+                        <outlet property="solKeywordTextView" destination="VvE-WB-cyS" id="TSb-P1-IRD"/>
+                        <outlet property="solSubtitleLabel" destination="CZu-8j-hIV" id="CMM-SH-98e"/>
+                        <outlet property="solTitleLabel" destination="GKE-yv-3FH" id="whU-l3-aJo"/>
                         <outlet property="stackView" destination="tE7-s8-Ir8" id="1n6-kt-9uY"/>
                         <outlet property="testContentTextView" destination="deq-6a-d4a" id="8Me-Z5-TcK"/>
                         <outlet property="testTitleTextView" destination="zN1-QF-X14" id="Tku-fj-l0g"/>
@@ -680,12 +700,6 @@
                         <outletCollection property="testChoiceTextViews" destination="eNG-qd-ewZ" collectionClass="NSMutableArray" id="1AK-6F-1DE"/>
                         <outletCollection property="testChoiceTextViews" destination="ASL-YE-sU5" collectionClass="NSMutableArray" id="DPW-ej-Wew"/>
                         <outletCollection property="testChoiceTextViews" destination="a5n-MM-WcK" collectionClass="NSMutableArray" id="SgK-Mj-3KO"/>
-                        <outletCollection property="Sol_Labels" destination="8iA-tr-52D" collectionClass="NSMutableArray" id="Mqn-3o-prC"/>
-                        <outletCollection property="Sol_Labels" destination="eYG-e6-yvv" collectionClass="NSMutableArray" id="xef-eH-vVw"/>
-                        <outletCollection property="Sol_Labels" destination="Pnh-yH-0el" collectionClass="NSMutableArray" id="4oE-qa-mzf"/>
-                        <outletCollection property="Sol_TextViews" destination="Ghg-c2-zAg" collectionClass="NSMutableArray" id="hRo-mf-gj6"/>
-                        <outletCollection property="Sol_TextViews" destination="V0c-2T-1af" collectionClass="NSMutableArray" id="MKt-p6-ZLJ"/>
-                        <outletCollection property="Sol_TextViews" destination="obr-o2-Ou6" collectionClass="NSMutableArray" id="HEV-O2-7pb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBD-ei-zVY" userLabel="First Responder" sceneMemberID="firstResponder"/>

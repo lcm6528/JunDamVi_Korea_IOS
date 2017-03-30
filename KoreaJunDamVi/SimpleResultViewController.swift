@@ -90,14 +90,13 @@ extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        
         let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
         
         cell.configureForSimpleResult(item: result.Tries[indexPath.row])
         cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
         cell.noteButton.tag = indexPath.row
         cell.selectionStyle = .none
-        //custom for cell
+        
         return cell
         
     }

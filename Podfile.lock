@@ -28,6 +28,7 @@ PODS:
     - Realm (= 1.1.0)
   - Shimmer (1.0.2)
   - SwiftyJSON (3.0.0)
+  - SwiftyStoreKit (0.8.2)
   - Toaster (2.0.0)
   - UICountingLabel (1.4.0)
   - WSProgressHUD (1.1.1):
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - PageMenu (from `https://github.com/orazz/PageMenu.git`)
   - RealmSwift
   - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
+  - SwiftyStoreKit
   - Toaster (~> 2.0)
   - UICountingLabel
   - WSProgressHUD
@@ -81,11 +83,12 @@ SPEC CHECKSUMS:
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
+  SwiftyStoreKit: 901059a0058e808a2a3b36c3a6de886e4c6f8f6e
   Toaster: 25101e968655aa991fa72ad888029e8d515c6237
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 15a9f06e82d6eb83bca87cdc794b6c4a1b846873
+PODFILE CHECKSUM: 45e9447c55e1943deafe0e3a816b4e439df45b4a
 
 COCOAPODS: 1.2.0

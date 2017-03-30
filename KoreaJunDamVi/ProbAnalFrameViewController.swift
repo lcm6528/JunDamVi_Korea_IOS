@@ -25,7 +25,7 @@ class JDVProbAnalFrameViewController: JDVViewController {
         data = dataObject.map{
             return ($0.key,$0.value.toFloat()!)
         }
-        
+        data.shuffle()
         for item in data{
             contentData.append(contentObject[item.0] ?? "분석자료가 없습니다.")
         }

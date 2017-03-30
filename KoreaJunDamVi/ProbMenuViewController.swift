@@ -86,14 +86,21 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
                 self.performSegue(withIdentifier: "pushinit", sender: self)
                 
         }))
-        alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
-            { action in
-                self.showIndicator()
-                self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
-                self.performSegue(withIdentifier: "pushcont", sender: self)
-                
+        
+        /// if cache data exist
+        if let cachedArr = JDVProbManager.getCachedData(with: currentOption.cacheKey){
+            if cachedArr.isEmpty != true{
+                alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
+                    { action in
+                        self.showIndicator()
+                        self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
+                        self.performSegue(withIdentifier: "pushcont", sender: self)
+                        
+                }
+                ))
+            }
         }
-        ))
+        
         if currentOption.sortedOption == .test{
             alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
                 { action in

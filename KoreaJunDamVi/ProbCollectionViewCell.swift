@@ -35,7 +35,7 @@ class ProbCollectionViewCell: UICollectionViewCell {
             }
         }else{
             stateLabel.text = "학습 미완료"
-            stateLabel.textColor = UIColor.black
+            stateLabel.textColor = UIColor.lightGray
             bottomLabel.text = "- / -"
             
         }
