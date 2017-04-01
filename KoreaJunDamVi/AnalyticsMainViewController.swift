@@ -128,6 +128,7 @@ extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegat
         
         cell.label_title.text = keys[indexPath.row].description + " 점수"
         cell.collectionView.tag = indexPath.row
+        cell.shadowView.layer.cornerRadius = 5
         cell.collectionView.reloadData()
         
         return cell

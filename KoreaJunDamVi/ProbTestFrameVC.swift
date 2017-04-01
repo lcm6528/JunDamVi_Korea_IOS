@@ -331,7 +331,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        print("end")
+        
         if completed == true{
             setToolbarTitle(getCurrnetIndexOfPage())
         }

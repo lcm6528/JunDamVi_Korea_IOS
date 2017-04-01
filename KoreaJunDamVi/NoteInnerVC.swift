@@ -103,10 +103,17 @@ class NoteInnerViewController: JDVViewController {
     
     @IBAction func purchaseButtonPressed(_ sender: Any) {
         
-        purchase()
+        if Prob.TestNum >= 33 {
+            
+            showAlertWithString("해설", message: "\(Prob.TestNum)회차 해설은 준비중입니다.\n빠른 시일 내에 업데이트 될 예정입니다.", sender: self)
+        }else{
+            purchase()
+        }
+        
+        
         
     }
-
+    
     
     
     
@@ -137,7 +144,7 @@ class NoteInnerViewController: JDVViewController {
                 
             case .error:
                 Toast(text: "결제 중 오류가 발생했습니다.").show()
-              
+                
             }
         }
     }

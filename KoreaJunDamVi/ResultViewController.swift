@@ -33,7 +33,15 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
         self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"
         
+        
+        
         heightOfSubView = self.view.frame.size.height-64
+    
+        let realm = try! Realm()
+        let trial = realm.objects(TestResultRecord.self).filter{return $0.TestKey == self.option.cacheKey}.count
+        
+        result.TryNum = trial
+        
         let topView = ProbResultTopView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: heightOfSubView))
         topView.delegate = self
         topView.configure(result: result)

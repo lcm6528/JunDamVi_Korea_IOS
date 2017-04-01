@@ -47,7 +47,9 @@ class ProbResultBotCell: UITableViewCell {
     }
     func configureForSimpleResult(item:Try){
         
-        ProbNumLabel.text = "\(item.TestNum)회 \(item.ProbNum)번"
+        ProbNumLabel.textAlignment = .left
+        
+        ProbNumLabel.text = "  \(item.TestNum)회 \(item.ProbNum)번  "
         ScoreLabel.text = "\(item.Score)점"
         AnswerLabel.text = "\(item.Answer)"
         SelectionLabel.text = "\(item.Selection)"

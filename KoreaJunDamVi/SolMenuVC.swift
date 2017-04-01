@@ -19,7 +19,11 @@ class JDVSolutionMenuViewController: JDVViewController {
     var Solvs:[Solution] = []
     let blockView =  BlockView()
     
-    var isPurchased:Bool = false
+    var isPurchased:Bool = false{
+        didSet{
+            self.blockView.isHidden = self.isPurchased
+        }
+    }
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +43,11 @@ class JDVSolutionMenuViewController: JDVViewController {
             }
             
         }
+        
+        
+        self.view.addSubview(blockView)
         self.isPurchased = JDVProductManager.isPurchased()
         
-        if !isPurchased {
-            self.view.addSubview(blockView)
-        }
         fetchList()
     }
     
@@ -54,8 +58,6 @@ class JDVSolutionMenuViewController: JDVViewController {
                 Toast(text: "구매 성공!").show()
                 setUserDefaultWithBool(true, forKey: ProductID)
                 self.isPurchased = true
-                self.blockView.removeFromSuperview()
-                
                 
             case .error(let error):
                 Toast(text: "결제 중 오류가 발생했습니다.").show()
@@ -89,9 +91,6 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.performSegue(withIdentifier: "push", sender: self)
         
         
-        
-        
-        
     }
     func retrive(){
         
@@ -107,6 +106,8 @@ class JDVSolutionMenuViewController: JDVViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        self.isPurchased = JDVProductManager.isPurchased()
+        
     }
     
     

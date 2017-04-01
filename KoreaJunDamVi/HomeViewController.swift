@@ -129,14 +129,6 @@ class HomeViewController: JDVViewController {
         
     }
     
-    //  let attStr = NSMutableAttributedString(string: "\(value)%")
-    //  attStr.addAttributes([NSFontAttributeName: UIFont(name: "NanumBarunGothicLight", size: 36)!], range: NSRange(location: 0, length: attStr.length-1) )
-    //  attStr.addAttributes([NSFontAttributeName: UIFont(name: "NanumBarunGothicLight", size: 22)!], range: NSRange(location: attStr.length-1, length: 1) )
-    //  return attStr
-    //
-    
-    
-    
     
     @IBAction func settingButtonPressed(_ sender: AnyObject) {
         

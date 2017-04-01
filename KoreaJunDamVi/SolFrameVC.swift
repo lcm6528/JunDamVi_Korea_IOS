@@ -37,7 +37,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         if !Probs.isEmpty{
             number_of_pages = Probs.count
         }
-        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "SolutionPageViewController") as! UIPageViewController
         

@@ -42,7 +42,7 @@ class JDVGraphModel: NSObject {
     
     for element in arrayLiteral{
       let item = JDVGraphDataItem(title: element.0, value: element.1)
-      print(element.0)
+      
       Items.append(item)
     }
     
