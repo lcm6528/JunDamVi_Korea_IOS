@@ -690,6 +690,8 @@
 		ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */; };
 		ED8F76951E79128B00B22C4F /* AnalBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */; };
 		ED9084C21E8D66680033647A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9084C11E8D66680033647A /* Test.swift */; };
+		ED9820721E8E2BF90006F711 /* JDVProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9820711E8E2BF90006F711 /* JDVProductManager.swift */; };
+		ED9820741E8E852A0006F711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9820731E8E852A0006F711 /* StoreKit.framework */; };
 		ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */; };
 		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
@@ -1386,6 +1388,8 @@
 		ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbPopupCell.swift; sourceTree = "<group>"; };
 		ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartCell.swift; sourceTree = "<group>"; };
 		ED9084C11E8D66680033647A /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		ED9820711E8E2BF90006F711 /* JDVProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVProductManager.swift; sourceTree = "<group>"; };
+		ED9820731E8E852A0006F711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnalList.json; sourceTree = "<group>"; };
 		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
@@ -1400,6 +1404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E0113D8C6B0C6415A1EA4D /* Pods_KoreaJunDamVi.framework in Frameworks */,
+				ED9820741E8E852A0006F711 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1454,7 +1459,6 @@
 				ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */,
 				375373A51E0BADA100205C13 /* ProbQuickVC.swift */,
 				ED6A32C31E655228002277FD /* ProbQuickCell.swift */,
-				EDE000971E669F5600C240A1 /* ProbList.json */,
 			);
 			name = ProbTest;
 			sourceTree = "<group>";
@@ -1487,7 +1491,6 @@
 				ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */,
 				37D0517A1E260D3100D92E89 /* SolFrameVC.swift */,
 				37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */,
-				ED7268481E8BD46F00ACAE28 /* SolList.json */,
 			);
 			name = Solution;
 			sourceTree = "<group>";
@@ -1585,6 +1588,7 @@
 				37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */,
 				37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */,
 				37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */,
+				ED9820711E8E2BF90006F711 /* JDVProductManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1592,7 +1596,6 @@
 		37D051791E260CDD00D92E89 /* ProbAnal */ = {
 			isa = PBXGroup;
 			children = (
-				ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */,
 				37A2E1401E16422400F42C40 /* PagerTestViewController.swift */,
 				3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */,
 				3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */,
@@ -1624,7 +1627,6 @@
 			isa = PBXGroup;
 			children = (
 				375EB9101DBDE55900337236 /* HomeViewController.swift */,
-				ED30104F1E8D5F8D00D42874 /* testday.json */,
 				37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */,
 				37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */,
 			);
@@ -1634,6 +1636,10 @@
 		37E542661E5EB16B0017884E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED30104F1E8D5F8D00D42874 /* testday.json */,
+				EDE000971E669F5600C240A1 /* ProbList.json */,
+				ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */,
+				ED7268481E8BD46F00ACAE28 /* SolList.json */,
 				37E542641E5E9B6D0017884E /* Prob.swift */,
 				ED9084C11E8D66680033647A /* Test.swift */,
 				EDF21AD61E81050B00F78466 /* Solution.swift */,
@@ -1693,6 +1699,7 @@
 		CB2C162B636037CD0823CE91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED9820731E8E852A0006F711 /* StoreKit.framework */,
 				2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */,
 			);
 			name = Frameworks;
@@ -2359,6 +2366,11 @@
 						DevelopmentTeam = ZH9C52WH4J;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -3080,6 +3092,7 @@
 				37F000971E07C27B00DA1350 /* GageView.swift in Sources */,
 				ED72684B1E8BD56000ACAE28 /* SolMenuCell.swift in Sources */,
 				ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */,
+				ED9820721E8E2BF90006F711 /* JDVProductManager.swift in Sources */,
 				375EDAB81E41FDC200D521C9 /* JDVViews.swift in Sources */,
 				37E542651E5E9B6D0017884E /* Prob.swift in Sources */,
 				37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */,

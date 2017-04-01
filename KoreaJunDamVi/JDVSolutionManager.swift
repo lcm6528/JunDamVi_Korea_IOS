@@ -9,6 +9,8 @@
 import UIKit
 import FMDB
 
+
+
 class JDVSolutionManager: NSObject {
     
     static func fetchSols(withTestnum num:Int)->[Solution]{
@@ -54,8 +56,10 @@ class JDVSolutionManager: NSObject {
         
         return sol
         
-        
     }
     
+    
+    
+        
     
 }

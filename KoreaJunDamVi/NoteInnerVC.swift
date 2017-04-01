@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import SwiftyStoreKit
+import Toaster
 class NoteInnerViewController: JDVViewController {
     
     
@@ -38,6 +39,8 @@ class NoteInnerViewController: JDVViewController {
     
     var choiceManager:JDVChoiceViewManager?
     
+    var isPurchased:Bool = false
+    
     
     override func viewDidLoad() {
         
@@ -60,8 +63,9 @@ class NoteInnerViewController: JDVViewController {
         
         configure()
         
+        isPurchased = JDVProductManager.isPurchased()
         
-        isHideSolution(bool: true)
+        isHideSolution(bool: !isPurchased)
         
     }
     
@@ -99,10 +103,12 @@ class NoteInnerViewController: JDVViewController {
     
     @IBAction func purchaseButtonPressed(_ sender: Any) {
         
-        isHideSolution(bool: false)
+        purchase()
         
     }
 
+    
+    
     
     func isHideSolution(bool:Bool){
         
@@ -118,6 +124,23 @@ class NoteInnerViewController: JDVViewController {
         
     }
     
+    
+    func purchase(){
+        SwiftyStoreKit.purchaseProduct(ProductID, atomically: true) { result in
+            switch result {
+            case .success:
+                Toast(text: "구매 성공!").show()
+                setUserDefaultWithBool(true, forKey: ProductID)
+                self.isPurchased = true
+                self.isHideSolution(bool: !self.isPurchased)
+                
+                
+            case .error:
+                Toast(text: "결제 중 오류가 발생했습니다.").show()
+              
+            }
+        }
+    }
     
     
     
