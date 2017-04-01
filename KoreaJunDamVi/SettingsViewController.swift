@@ -126,6 +126,9 @@ class SettingsViewController: JDVViewController,UITableViewDataSource,UITableVie
                 let appDomain = Bundle.main.bundleIdentifier!
                 UserDefaults.standard.removePersistentDomain(forName: appDomain)
                 
+//                let isPurchased = JDVProductManager.isPurchased()
+//                setUserDefaultWithBool(isPurchased, forKey: ProductID)
+                
                 Toast(text: "학습내역 초기화 완료").show()
                 
                 

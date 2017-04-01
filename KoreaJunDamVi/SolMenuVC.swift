@@ -9,6 +9,7 @@
 import UIKit
 import WSProgressHUD
 import SwiftyStoreKit
+import Toaster
 class JDVSolutionMenuViewController: JDVViewController {
     
     
@@ -16,38 +17,98 @@ class JDVSolutionMenuViewController: JDVViewController {
     
     var Probs:[Prob] = []
     var Solvs:[Solution] = []
+    let blockView =  BlockView()
     
+    var isPurchased:Bool = false
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        retrive()
+        
         self.setTitleWithStyle("문제 해설")
-        
-        
-        let blockView =  BlockView(frame: self.view.frame)
-        blockView.actionHandler = {
-//            blockView.removeFromSuperview()
+        blockView.frame = self.view.frame
+        blockView.actionHandler = { index in
+            switch index {
+            case 0:
+                self.purchase()
+            case 1:
+                self.preview()
+            default:
+                print("error in blockView Handler")
+            }
             
-            SwiftyStoreKit.retrieveProductsInfo(["koreasolutions"]) { result in
-                if let product = result.retrievedProducts.first {
-                    let priceString = product.localizedPrice!
-                    print("Product: \(product.localizedDescription), price: \(priceString)")
-                }
-                else if let invalidProductId = result.invalidProductIDs.first {
-                    
-                    showAlertWithString("Could not retrieve product info", message: "Invalid product identifier: \(invalidProductId)", sender: self)
-                    return
-                }
-                else {
-                    print("Error: \(result.error)")
+        }
+        self.isPurchased = JDVProductManager.isPurchased()
+        
+        if !isPurchased {
+            self.view.addSubview(blockView)
+        }
+        fetchList()
+    }
+    
+    func purchase(){
+        SwiftyStoreKit.purchaseProduct(ProductID, atomically: true) { result in
+            switch result {
+            case .success:
+                Toast(text: "구매 성공!").show()
+                setUserDefaultWithBool(true, forKey: ProductID)
+                self.isPurchased = true
+                self.blockView.removeFromSuperview()
+                
+                
+            case .error(let error):
+                Toast(text: "결제 중 오류가 발생했습니다.").show()
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                default:
+                    print("supererror")
                 }
             }
         }
-        self.view.addSubview(blockView)
-        
-        
-        fetchList()
     }
+    
+    
+    
+    func preview(){
+        
+        isBlockUserInteract = true
+        WSProgressHUD.show(withStatus: "해설 불러오는 중..")
+        
+        
+        self.Probs = JDVProbManager.fetchProbs(withTestnum: dataArray[0].toInt()!)
+        self.Solvs = JDVSolutionManager.fetchSols(withTestnum: dataArray[0].toInt()!)
+        
+        self.performSegue(withIdentifier: "push", sender: self)
+        
+        
+        
+        
+        
+    }
+    func retrive(){
+        
+        SwiftyStoreKit.retrieveProductsInfo([ProductID]) { result in
+            if let product = result.retrievedProducts.first {
+                let priceString = product.localizedPrice!
+                print("Product: \(product.localizedDescription), price: \(priceString)")
+            }else {
+                print("Error: \(result.error.debugDescription)")
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     
     func fetchList(){
         
@@ -66,9 +127,6 @@ class JDVSolutionMenuViewController: JDVViewController {
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.tabBarController?.tabBar.isHidden = true
@@ -117,13 +175,14 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard isPurchased == true else{ return }
         isBlockUserInteract = true
         WSProgressHUD.show(withStatus: "해설 불러오는 중..")
         
         self.Probs = JDVProbManager.fetchProbs(withTestnum: dataArray[indexPath.row].toInt()!)
         self.Solvs = JDVSolutionManager.fetchSols(withTestnum: dataArray[indexPath.row].toInt()!)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.performSegue(withIdentifier: "push", sender: self)  
+            self.performSegue(withIdentifier: "push", sender: self)
             
         }
         

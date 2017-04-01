@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 import Toaster
+
+
 class JDVNoteManager: NSObject {
   
     static func saveNote(by note:Note){
