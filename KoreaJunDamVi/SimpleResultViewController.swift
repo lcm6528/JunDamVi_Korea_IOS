@@ -12,7 +12,7 @@ import WSProgressHUD
 class SimpleResultViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
-
+    
     @IBOutlet var gageView: GageView!
     @IBOutlet var circleView: RoundView!
     @IBOutlet var label_right: UICountingLabel!
@@ -32,7 +32,11 @@ class SimpleResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        titleLabel.text = option.sortedOption.description + "-" + option.cacheKey + " 문제 풀이 결과"
+        
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
         tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
         
@@ -68,14 +72,14 @@ class SimpleResultViewController: UIViewController {
             self.circleView.setValue(value: CGFloat(totalRate*100), animate: true)
             
         }
-
+        
         
         
         
     }
     
     
-
+    
 }
 
 
@@ -128,10 +132,10 @@ extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
         sender.isSelected = !sender.isSelected
         
     }
-
     
     
-
+    
+    
     
     
 }

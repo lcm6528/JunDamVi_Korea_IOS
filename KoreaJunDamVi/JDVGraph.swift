@@ -95,11 +95,11 @@ class JDVGraph: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         let totalWidth = self.size.width
-        print(totalWidth)
+        
         let totalHeight = self.size.height
         
         let baseSize = CGSize(width: totalWidth/CGFloat(numberOfCells), height: totalHeight)
-        print(baseSize)
+        
         let startx = (totalWidth - baseSize.width * CGFloat(numberOfCells))/2
         
         //Set base Frame

@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import MessageUI
 import Toaster
-
+import SwiftyStoreKit
 class SettingsViewController: JDVViewController,UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
@@ -70,7 +70,7 @@ class SettingsViewController: JDVViewController,UITableViewDataSource,UITableVie
             ShowResetAlert()
             
         }else if indexPath.row == 1{
-         
+            RestoreProduct()
             //restore
         }else if indexPath.row == 2{
             
@@ -126,8 +126,8 @@ class SettingsViewController: JDVViewController,UITableViewDataSource,UITableVie
                 let appDomain = Bundle.main.bundleIdentifier!
                 UserDefaults.standard.removePersistentDomain(forName: appDomain)
                 
-//                let isPurchased = JDVProductManager.isPurchased()
-//                setUserDefaultWithBool(isPurchased, forKey: ProductID)
+                let isPurchased = JDVProductManager.isPurchased()
+                setUserDefaultWithBool(isPurchased, forKey: ProductID)
                 
                 Toast(text: "학습내역 초기화 완료").show()
                 
@@ -142,6 +142,24 @@ class SettingsViewController: JDVViewController,UITableViewDataSource,UITableVie
         
         
     }
+    
+    func RestoreProduct(){
+        
+        SwiftyStoreKit.restorePurchases(atomically: true) { results in
+            if results.restoreFailedProducts.count > 0 {
+                print("Restore Failed: \(results.restoreFailedProducts)")
+                showAlertWithString("복원 실패", message: "구매내역 복원에 실패하였습니다.", sender: self)
+            }
+            else if results.restoredProducts.count > 0 {
+                showAlertWithString("복원 완료", message: "구매내역을 복원하였습니다.", sender: self)
+                setUserDefaultWithBool(true, forKey: ProductID)
+            }
+            else {
+                showAlertWithString("복원 완료", message: "구매내역을 복원하였습니다.", sender: self)
+            }
+        }
+    }
+    
     
     
     // MARK: MFMailComposeViewControllerDelegate Method

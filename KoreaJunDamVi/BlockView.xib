@@ -30,11 +30,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국사 전담비 전체 회차 해설" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHF-uo-ymo">
-                    <rect key="frame" x="77.5" y="222.5" width="220" height="30"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국사 비법노트 전체 회차 해설" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHF-uo-ymo">
+                    <rect key="frame" x="67.5" y="213.5" width="240" height="30"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.84903017241379308" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="220" id="Dck-BE-Ib6"/>
+                        <constraint firstAttribute="width" constant="240" id="Dck-BE-Ib6"/>
                         <constraint firstAttribute="height" constant="30" id="Mze-R6-tpb"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="17"/>
@@ -42,7 +42,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRu-xT-1vU">
-                    <rect key="frame" x="109" y="308.5" width="157.5" height="50"/>
+                    <rect key="frame" x="109" y="296.5" width="157.5" height="50"/>
                     <color key="backgroundColor" red="0.99215686270000003" green="0.61960784310000006" blue="0.039215686270000001" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="cXI-TL-EDy"/>
@@ -56,31 +56,31 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="62r-UG-Tx8">
-                    <rect key="frame" x="157.5" y="154.5" width="60" height="60"/>
+                    <rect key="frame" x="157.5" y="145.5" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="f68-sr-Ihv"/>
                         <constraint firstAttribute="width" constant="60" id="wc1-CA-f9M"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매 후 이용 가능" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55G-Ht-2wc">
-                    <rect key="frame" x="127.5" y="256.5" width="120" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매 후 이용 가능 $4.39" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55G-Ht-2wc">
+                    <rect key="frame" x="127.5" y="249.5" width="120" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Rnn-dk-gMb"/>
+                        <constraint firstAttribute="height" constant="35" id="Rnn-dk-gMb"/>
                         <constraint firstAttribute="width" constant="120" id="rkf-UA-q6s"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-Js-qcH">
-                    <rect key="frame" x="109" y="366.5" width="157.5" height="30"/>
+                    <rect key="frame" x="109" y="354.5" width="157.5" height="30"/>
                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Q7I-hz-bs3"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="11"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
                     <state key="normal" title="  미리보기 &gt;&gt;">
-                        <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="preViewButtonAction:" destination="-1" eventType="touchUpInside" id="6F8-Qx-bv1"/>
@@ -92,13 +92,13 @@
                 <constraint firstItem="62r-UG-Tx8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Q1-XJ-XAi"/>
                 <constraint firstItem="FRu-xT-1vU" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.42" id="A0I-pD-iwA"/>
                 <constraint firstItem="xHF-uo-ymo" firstAttribute="top" secondItem="62r-UG-Tx8" secondAttribute="bottom" constant="8" id="Bp5-6X-sZM"/>
+                <constraint firstItem="FRu-xT-1vU" firstAttribute="top" secondItem="55G-Ht-2wc" secondAttribute="bottom" constant="12" id="FKv-vK-BxM"/>
                 <constraint firstItem="FRu-xT-1vU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fj0-MB-ySu"/>
                 <constraint firstItem="xHF-uo-ymo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q3Y-GE-ejV"/>
-                <constraint firstItem="55G-Ht-2wc" firstAttribute="top" secondItem="xHF-uo-ymo" secondAttribute="bottom" constant="4" id="aGL-uf-yqf"/>
+                <constraint firstItem="55G-Ht-2wc" firstAttribute="top" secondItem="xHF-uo-ymo" secondAttribute="bottom" constant="6" id="aGL-uf-yqf"/>
                 <constraint firstItem="6pe-Js-qcH" firstAttribute="width" secondItem="FRu-xT-1vU" secondAttribute="width" id="abS-Bx-tXu"/>
                 <constraint firstItem="6pe-Js-qcH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gJA-eN-RUB"/>
                 <constraint firstItem="6pe-Js-qcH" firstAttribute="top" secondItem="FRu-xT-1vU" secondAttribute="bottom" constant="8" id="s03-qf-kvo"/>
-                <constraint firstItem="FRu-xT-1vU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tKi-1x-gpI"/>
                 <constraint firstItem="55G-Ht-2wc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="u02-gr-Lhg"/>
                 <constraint firstItem="55G-Ht-2wc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.8" id="vbt-y4-bcq"/>
             </constraints>
