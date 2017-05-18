@@ -79,8 +79,14 @@ struct Prob {
     
     mutating func setArticleAtt(){
         
+        
+        
         let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
         result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = ProbLineSpace
+        result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
         
         self.article_attString = result
         
@@ -96,6 +102,11 @@ struct Prob {
             let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
             
             result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
+            
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = ProbLineSpace
+            result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
+            
             choices_attString.append(result)
             
         }

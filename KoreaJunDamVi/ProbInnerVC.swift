@@ -54,7 +54,9 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
             self.testTitleTextView.attributedText = Prob.title_attString
         }
         
+        
         self.testContentTextView.attributedText = Prob.article_attString
+        
         self.ScoreLabel.text = "[\(Prob.Score)점]"
         for (index,textView) in testChoiceTextViews.enumerated(){
             textView.attributedText = Prob.choices_attString[index]
