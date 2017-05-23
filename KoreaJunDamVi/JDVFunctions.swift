@@ -42,7 +42,8 @@ let font_guide_reas:UIFont = UIFont(name: "NanumMyeongjo", size: fontsizeOfprobl
 let ThemeColor = UIColor(red: 56/255.0, green: 144/255.0, blue: 227/255.0, alpha:0.7)
 let RedColor = UIColor(red: 235/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.7)
 
-let ProbLineSpace:CGFloat = 9
+let ProbLineSpace:CGFloat = 8
+let SolLineSpace:CGFloat = 6
 
 extension Date
 {
