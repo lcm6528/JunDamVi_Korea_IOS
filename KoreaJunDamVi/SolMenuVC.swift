@@ -49,6 +49,7 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.isPurchased = JDVProductManager.isPurchased()
         
         fetchList()
+        
     }
     
     func purchase(){
