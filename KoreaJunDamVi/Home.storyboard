@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -389,19 +389,32 @@
                                     <outlet property="delegate" destination="51A-xg-v2c" id="I4b-pe-xZs"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver 0.0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-nV-3Ng">
+                                <rect key="frame" x="257" y="574" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3rG-cO-tGq"/>
+                                    <constraint firstAttribute="height" constant="21" id="fTX-BJ-5fW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CpU-2h-ykV" firstAttribute="top" secondItem="cYs-nV-3Ng" secondAttribute="bottom" constant="8" id="6YV-as-yOS"/>
                             <constraint firstItem="CpU-2h-ykV" firstAttribute="top" secondItem="tSt-Ai-5Xf" secondAttribute="bottom" id="NZB-wT-0OF"/>
                             <constraint firstAttribute="trailing" secondItem="tSt-Ai-5Xf" secondAttribute="trailing" id="TX9-SV-LlV"/>
                             <constraint firstItem="tSt-Ai-5Xf" firstAttribute="top" secondItem="gOx-ta-F2X" secondAttribute="bottom" id="d1x-LM-eMX"/>
                             <constraint firstItem="tSt-Ai-5Xf" firstAttribute="leading" secondItem="DQW-pv-gf5" secondAttribute="leading" id="fA2-Bs-uKr"/>
+                            <constraint firstAttribute="trailing" secondItem="cYs-nV-3Ng" secondAttribute="trailing" constant="18" id="zwc-jo-jhb"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="tSt-Ai-5Xf" id="vt6-Ta-ffI"/>
+                        <outlet property="versionLabel" destination="cYs-nV-3Ng" id="uvC-Ds-fWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCn-Sj-iKg" userLabel="First Responder" sceneMemberID="firstResponder"/>

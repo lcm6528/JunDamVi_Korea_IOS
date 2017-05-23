@@ -13,11 +13,17 @@ import Toaster
 import SwiftyStoreKit
 class SettingsViewController: JDVViewController,UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate {
     
+    @IBOutlet var versionLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            versionLabel.text = "Ver \(version)"
+        }
+
         self.setTitleWithStyle("설정")
     }
     

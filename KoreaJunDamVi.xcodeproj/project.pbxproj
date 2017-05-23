@@ -694,6 +694,7 @@
 		ED9820741E8E852A0006F711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9820731E8E852A0006F711 /* StoreKit.framework */; };
 		ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */; };
 		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
+		EDB5F78C1ED45FAC0093ABC6 /* MNVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */; };
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
 		EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE84D621E6D286C0062B1A8 /* Note.swift */; };
@@ -1392,6 +1393,7 @@
 		ED9820731E8E852A0006F711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnalList.json; sourceTree = "<group>"; };
 		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
+		EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNVersion.swift; sourceTree = "<group>"; };
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
 		EDE84D621E6D286C0062B1A8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -1517,6 +1519,7 @@
 			isa = PBXGroup;
 			children = (
 				377BB0E51DC87BE600C9D08D /* MNFunction.swift */,
+				EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */,
 				375EB90E1DBDE55900337236 /* AppDelegate.swift */,
 				37E0336C1DE557FF00A5C4AC /* JDVKit */,
 				37E0336F1DE5581B00A5C4AC /* Home */,
@@ -3128,6 +3131,7 @@
 				377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */,
 				37D0517D1E260DCA00D92E89 /* SolInnerVC.swift in Sources */,
 				375373A21E0BA49100205C13 /* JDVColors.swift in Sources */,
+				EDB5F78C1ED45FAC0093ABC6 /* MNVersion.swift in Sources */,
 				EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */,
 				379DB89A1DBF3E3400882280 /* Radian.swift in Sources */,
 				376CB4291E2DE91700AC8F49 /* AnalyticsMainViewController.swift in Sources */,
