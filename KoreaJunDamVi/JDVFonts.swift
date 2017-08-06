@@ -17,6 +17,9 @@ extension UIFont {
     class var ProbNaviBarTitleFont: UIFont {
         return UIFont(name: "NanumBarunGothicLight", size: 16)!
     }
+    class var EmptySetTitle: UIFont {
+        return UIFont(name: "NanumBarunGothicLight", size: 13)!
+    }
     class var titleFont: UIFont {
         return UIFont(name: "NanumMyeongjoBold", size: 15)!
     }

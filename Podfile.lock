@@ -1,4 +1,5 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - EZSwiftExtensions (1.8)
   - FirebaseAnalytics (3.4.2):
     - FirebaseInstanceID (~> 1.0)
@@ -36,6 +37,7 @@ PODS:
   - XLPagerTabStrip (6.0.0)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - EZSwiftExtensions (from `https://github.com/goktugyil/EZSwiftExtensions.git`)
   - FMDB
   - Google/Analytics
@@ -69,11 +71,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/appsailor/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EZSwiftExtensions: e3006d349fd10dac7a6bcf0a93f65ac564cd40ba
   FirebaseAnalytics: 3f5358d9104adf159cc8d99b7b501e50099a39ad
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  Google: cd92fab98f800f509da88c1e0c570275713bc9d5
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
@@ -89,6 +92,6 @@ SPEC CHECKSUMS:
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
   XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
 
-PODFILE CHECKSUM: 45e9447c55e1943deafe0e3a816b4e439df45b4a
+PODFILE CHECKSUM: f2458b111e11b464f50431f591392df88661de0f
 
 COCOAPODS: 1.2.0

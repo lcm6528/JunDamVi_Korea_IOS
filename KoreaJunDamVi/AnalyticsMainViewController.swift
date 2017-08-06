@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import DZNEmptyDataSet
 class AnalyticsMainViewController: JDVViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -87,7 +88,7 @@ class AnalyticsMainViewController: JDVViewController {
     
     
 }
-extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionViewDelegate{
+extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionViewDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let record = records[collectionView.tag][indexPath.row]
@@ -113,6 +114,10 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.tabBarController?.selectedIndex = 1
     }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "분석 데이터가 존재하지 않습니다.", attributes: [NSFontAttributeName:UIFont.EmptySetTitle])
+    }
 }
 
 
@@ -129,7 +134,12 @@ extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegat
         cell.label_title.text = keys[indexPath.row].description + " 점수"
         cell.collectionView.tag = indexPath.row
         cell.shadowView.layer.cornerRadius = 5
+        
+        cell.collectionView.emptyDataSetSource = self
+        cell.collectionView.emptyDataSetDelegate = self
+        
         cell.collectionView.reloadData()
+        
         
         return cell
     }
