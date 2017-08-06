@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import DZNEmptyDataSet
+
 class JDVNoteMenuViewController: JDVViewController{
     
     @IBOutlet var tableView: UITableView!
@@ -20,6 +22,9 @@ class JDVNoteMenuViewController: JDVViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitleWithStyle("오답노트")
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
+        tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
     
@@ -59,7 +64,7 @@ class JDVNoteMenuViewController: JDVViewController{
 }
 
 
-extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource{
+extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
         
@@ -89,5 +94,9 @@ extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "삭제"
+    }
+
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "저장된 오답노트가 없습니다!", attributes: [NSFontAttributeName:UIFont.EmptySetTitle])
     }
 }

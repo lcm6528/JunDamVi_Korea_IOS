@@ -16,5 +16,5 @@ target 'KoreaJunDamVi' do
   pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
   pod 'RealmSwift'
   pod 'SwiftyStoreKit'
-  
+  pod 'DZNEmptyDataSet'
 end

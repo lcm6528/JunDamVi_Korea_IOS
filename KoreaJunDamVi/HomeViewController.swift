@@ -61,8 +61,6 @@ class HomeViewController: JDVViewController {
         let arr = json.arrayObject as! [[String:String]]
         
         
-        
-        
         for item in arr{
             let test = item.first!
             let dday = daysFrom(Date(dateString: item.first!.value)) - 1
