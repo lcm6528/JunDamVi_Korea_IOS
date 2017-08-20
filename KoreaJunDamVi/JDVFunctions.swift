@@ -51,7 +51,7 @@ extension Date
   init(dateString:String) {
     let dateStringFormatter = DateFormatter()
     dateStringFormatter.dateFormat = "yyyyMMdd"
-    dateStringFormatter.timeZone = TimeZone(abbreviation: "UTC")
+    //dateStringFormatter.timeZone = TimeZone(abbreviation: "UTC")
     let d = dateStringFormatter.date(from: dateString)!
     self.init(timeInterval:0, since:d)
   }
