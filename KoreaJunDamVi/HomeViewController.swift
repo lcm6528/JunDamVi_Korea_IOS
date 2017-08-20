@@ -63,25 +63,23 @@ class HomeViewController: JDVViewController {
         
         for item in arr{
             let test = item.first!
-            let dday = daysFrom(Date(dateString: item.first!.value))
-            if dday <= 0 {
+            let date = Date(dateString: item.first!.value)
+            if date.isPast{continue}
+            else if date.isFuture{
+                let dday = daysFrom(date)
                 ddayTitleLabel.text = "\(test.key)회 한국사능력검정시험"
-                ddayCotentLabel.text = "D-\(abs(dday))"
-                
+                ddayCotentLabel.text = "D\(dday)"
                 break
             }
-            
-            
         }
+        
     }
     
     func daysFrom(_ date:Date) -> Int{
-    
-        let day = (Calendar.current as NSCalendar).components(.day, from: date, to: Date(), options: []).day!
-        let hour = (Calendar.current as NSCalendar).components(.hour, from: date, to: Date(), options: []).hour!
-        print(date)
-        print(day,hour)
-        return day
+        
+        let components = (Calendar.current as NSCalendar).components([.day], from: date, to: Date(), options: [])
+        let dday = min(components.day!-1,-1)
+        return dday
         
     }
     
