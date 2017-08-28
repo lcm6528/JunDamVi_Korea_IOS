@@ -113,7 +113,7 @@ struct Prob {
         
     }
     
-    func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.7)->NSMutableAttributedString{
+    func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
         
         
         let result = NSMutableAttributedString()
