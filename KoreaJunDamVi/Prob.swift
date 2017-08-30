@@ -126,7 +126,7 @@ struct Prob {
             attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
             let imageString = NSAttributedString(attachment: attachIcon)
             result.append(imageString)
-            result.append(NSAttributedString(string: "\n\n"))
+            result.append(NSAttributedString(string: "\n"))
             
         }
         
