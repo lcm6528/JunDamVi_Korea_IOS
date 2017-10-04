@@ -24,9 +24,23 @@ class HomeViewController: JDVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitleWithStyle("한국사 비법노트")
+        
+        self.centerContainerView.layer.cornerRadius = 5.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        fetchList()
+        setDday()
+        label_MidView.attributedText = getAttrStr(totalValue: Tests.count , withValue: completeCount)
+        
+        roundView1.setValue(value: CGFloat(completeCount)/CGFloat(Tests.count)*100, animate: false)
+        
+    }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
     
     func fetchList(){
         
@@ -66,7 +80,7 @@ class HomeViewController: JDVViewController {
             let date = Date(dateString: item.first!.value)
             if date.isPast{continue}
             else if date.isFuture{
-                let dday = daysFrom(date)
+                let dday = date.daysFromNow()
                 ddayTitleLabel.text = "\(test.key)회 한국사능력검정시험"
                 ddayCotentLabel.text = "D\(dday)"
                 break
@@ -74,30 +88,6 @@ class HomeViewController: JDVViewController {
         }
         
     }
-    
-    func daysFrom(_ date:Date) -> Int{
-        
-        let components = (Calendar.current as NSCalendar).components([.day], from: date, to: Date(), options: [])
-        let dday = min(components.day!-1,-1)
-        return dday
-        
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        fetchList()
-        setDday()
-        label_MidView.attributedText = getAttrStr(totalValue: Tests.count , withValue: completeCount)
-        
-        roundView1.setValue(value: CGFloat(completeCount)/CGFloat(Tests.count)*100, animate: false)
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
     
     func getAttrStr(totalValue total:Int,withValue value:Int)->NSMutableAttributedString{
         
@@ -126,15 +116,10 @@ class HomeViewController: JDVViewController {
         
     }
     
-    
     @IBAction func settingButtonPressed(_ sender: AnyObject) {
-        
         performSegue(withIdentifier: "settings", sender: self)
         
     }
-    
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
