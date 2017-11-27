@@ -38,7 +38,9 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         heightOfSubView = self.view.frame.size.height-64
     
         let realm = try! Realm()
-        let trial = realm.objects(TestResultRecord.self).filter{return $0.TestKey == self.option.cacheKey}.count
+//        let trial = realm.objects(TestResultRecord.self).filter{return $0.TestKey == self.option.cacheKey}.count
+        let trial = Array(realm.objects(TestResultRecord.self)).filter {return $0.TestKey == self.option.cacheKey}.count
+        
         
         result.TryNum = trial
         
