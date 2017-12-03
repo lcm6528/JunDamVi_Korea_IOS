@@ -756,8 +756,8 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bwg-Lz-ab9">
                         <leftBarButtonItems>
-                            <barButtonItem image="backBtn" id="zHe-jw-kN3">
-                                <inset key="imageInsets" minX="-8" minY="8" maxX="12" maxY="2"/>
+                            <barButtonItem title="Item" image="backBtn" style="plain" id="zHe-jw-kN3">
+                                <inset key="imageInsets" minX="-8" minY="3" maxX="12" maxY="0.0"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="eJ4-GU-UW1" id="P7u-Fy-Huj"/>
@@ -1447,7 +1447,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정답률" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-gb-LKf">
-                                                    <rect key="frame" x="161.5" y="31" width="35" height="14"/>
+                                                    <rect key="frame" x="162" y="31" width="34" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="DcB-V4-Eb8"/>
                                                     </constraints>
@@ -1648,7 +1648,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         </scene>
     </scenes>
     <resources>
-        <image name="backBtn" width="19" height="35"/>
+        <image name="backBtn" width="14" height="25"/>
         <image name="balloon_black" width="50" height="58"/>
         <image name="button_gotoNote" width="30" height="30"/>
         <image name="cancel" width="21" height="21"/>

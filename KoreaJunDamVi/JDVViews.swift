@@ -29,7 +29,7 @@ extension Markable where Self:UIView{
     
     func mark(){
         
-        let label = UILabel(x: SCREEN_WIDTH - 53, y: 7, w: 24, h: 20, fontSize: 10)
+        let label = UILabel(frame: CGRect(x: SCREEN_WIDTH - 53, y: 7, width: 24, height: 20 ))
 
         label.clipsToBounds = true
         label.textAlignment = .center
