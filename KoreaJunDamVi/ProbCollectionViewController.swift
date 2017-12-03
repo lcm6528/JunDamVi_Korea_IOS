@@ -13,7 +13,7 @@ import EZSwiftExtensions
 protocol ProbCollectionViewDelegate{
     func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index:Int)
 }
-class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+class ProbCollectionViewController: JDVViewController{
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -23,23 +23,13 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
     var parentVC:ProbMenuViewController!
     var pageIndex:Int!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
     }
-    
-    
+}
+
+extension ProbCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataArray.count
@@ -87,7 +77,6 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
     }
     
     
-    
     //CollectionView cell Highlight Indicate
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
@@ -100,5 +89,4 @@ class ProbCollectionViewController: JDVViewController ,UICollectionViewDataSourc
         cell?.backgroundColor = UIColor.white
         
     }
-    
 }

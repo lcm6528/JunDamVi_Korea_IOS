@@ -9,6 +9,12 @@
 import UIKit
 
 class SolMenuCell: UICollectionViewCell {
+    
     @IBOutlet var titleLabel: UILabel!
+    
+    override func awakeFromNib(){
+        //UI Set
+        self.layer.cornerRadius = 5
+    }
     
 }

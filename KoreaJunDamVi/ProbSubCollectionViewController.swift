@@ -38,6 +38,5 @@ class ProbSubCollectionViewController: ProbCollectionViewController {
         label_Ranking2.text = " 2위 " + rankingStr[1] + " "
         label_Ranking3.text = " 3위 " + rankingStr[2] + " "
         
-        
     }
 }
