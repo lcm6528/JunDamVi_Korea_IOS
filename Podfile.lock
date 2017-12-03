@@ -1,6 +1,5 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
-  - EZSwiftExtensions (1.8)
   - FirebaseAnalytics (3.4.2):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -30,29 +29,28 @@ PODS:
   - Shimmer (1.0.2)
   - SwiftyJSON (3.0.0)
   - SwiftyStoreKit (0.8.2)
-  - Toaster (2.0.0)
+  - Toaster (2.1.1)
+  - TransitionableTab (0.1.1)
   - UICountingLabel (1.4.0)
   - WSProgressHUD (1.1.1):
     - Shimmer
-  - XLPagerTabStrip (6.0.0)
+  - XLPagerTabStrip (8.0.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
-  - EZSwiftExtensions (from `https://github.com/goktugyil/EZSwiftExtensions.git`)
   - FMDB
   - Google/Analytics
   - PageMenu (from `https://github.com/orazz/PageMenu.git`)
   - RealmSwift
   - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
   - SwiftyStoreKit
-  - Toaster (~> 2.0)
+  - Toaster (~> 2.1.0)
+  - TransitionableTab
   - UICountingLabel
   - WSProgressHUD
   - XLPagerTabStrip
 
 EXTERNAL SOURCES:
-  EZSwiftExtensions:
-    :git: https://github.com/goktugyil/EZSwiftExtensions.git
   PageMenu:
     :git: https://github.com/orazz/PageMenu.git
   SwiftyJSON:
@@ -60,9 +58,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/appsailor/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
-  EZSwiftExtensions:
-    :commit: dec0a9771b1e9043b6a352a3112d5cad96455acc
-    :git: https://github.com/goktugyil/EZSwiftExtensions.git
   PageMenu:
     :commit: ace3d8d095c9c165113d3ac797f317fe7faecbae
     :git: https://github.com/orazz/PageMenu.git
@@ -72,7 +67,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  EZSwiftExtensions: e3006d349fd10dac7a6bcf0a93f65ac564cd40ba
   FirebaseAnalytics: 3f5358d9104adf159cc8d99b7b501e50099a39ad
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
@@ -87,11 +81,12 @@ SPEC CHECKSUMS:
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   SwiftyStoreKit: 901059a0058e808a2a3b36c3a6de886e4c6f8f6e
-  Toaster: 25101e968655aa991fa72ad888029e8d515c6237
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
+  TransitionableTab: 0aa1dee3db142d356dad0b51cd9e8dcdf5bf29a5
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
-  XLPagerTabStrip: c46e802a8dcac29edbcea573de8fe920e052455b
+  XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: f2458b111e11b464f50431f591392df88661de0f
+PODFILE CHECKSUM: 37cd55395ef001edecae94b41d735617aa88211d
 
 COCOAPODS: 1.3.1

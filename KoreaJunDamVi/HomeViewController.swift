@@ -17,6 +17,7 @@ class HomeViewController: JDVViewController {
     
     @IBOutlet var ddayTitleLabel: UILabel!
     @IBOutlet var ddayCotentLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     
     
     var Tests:[String] = []
@@ -74,15 +75,20 @@ class HomeViewController: JDVViewController {
         let json = JSON(data:jsondata)["data"]
         let arr = json.arrayObject as! [[String:String]]
         
-        
         for item in arr{
             let test = item.first!
             let date = Date(dateString: item.first!.value)
-            if date.isPast{continue}
-            else if date.isFuture{
+            let now = Date()
+            if date < now{continue}
+            else if date > now{
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy. MM. dd"
+                
                 let dday = date.daysFromNow()
                 ddayTitleLabel.text = "\(test.key)회 한국사능력검정시험"
                 ddayCotentLabel.text = "D\(dday)"
+                dateLabel.text = formatter.string(from: date)
+                
                 break
             }
         }

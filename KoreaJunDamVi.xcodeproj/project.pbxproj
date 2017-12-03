@@ -866,6 +866,7 @@
 		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
 		ED7268491E8BD46F00ACAE28 /* SolList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED7268481E8BD46F00ACAE28 /* SolList.json */; };
 		ED72684B1E8BD56000ACAE28 /* SolMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */; };
+		ED840A631FD4694F00527FD8 /* HomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED840A621FD4694F00527FD8 /* HomeTabbarController.swift */; };
 		ED8A3BD31E8904D1005BDAC1 /* ProbSubCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */; };
 		ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */; };
 		ED8F76951E79128B00B22C4F /* AnalBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */; };
@@ -1745,6 +1746,7 @@
 		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
 		ED7268481E8BD46F00ACAE28 /* SolList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SolList.json; sourceTree = "<group>"; };
 		ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolMenuCell.swift; sourceTree = "<group>"; };
+		ED840A621FD4694F00527FD8 /* HomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarController.swift; sourceTree = "<group>"; };
 		ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbSubCollectionViewController.swift; sourceTree = "<group>"; };
 		ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbPopupCell.swift; sourceTree = "<group>"; };
 		ED8F76941E79128B00B22C4F /* AnalBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartCell.swift; sourceTree = "<group>"; };
@@ -1992,6 +1994,7 @@
 				375EB9101DBDE55900337236 /* HomeViewController.swift */,
 				37E0336D1DE5581700A5C4AC /* SettingsViewController.swift */,
 				37E033701DE5582C00A5C4AC /* SettingsTableViewCell.swift */,
+				ED840A621FD4694F00527FD8 /* HomeTabbarController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -3779,7 +3782,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KoreaJunDamVi/Pods-KoreaJunDamVi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -3788,6 +3790,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionableTab/TransitionableTab.framework",
 				"${BUILT_PRODUCTS_DIR}/UICountingLabel/UICountingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/WSProgressHUD/WSProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
@@ -3795,7 +3798,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -3804,6 +3806,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionableTab.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICountingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WSProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
@@ -3860,6 +3863,7 @@
 				37A985981E41BDE300853D71 /* BlockView.swift in Sources */,
 				3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */,
 				EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */,
+				ED840A631FD4694F00527FD8 /* HomeTabbarController.swift in Sources */,
 				37F7CD2C1DE6B0FE0085A2E4 /* JDVBanner.swift in Sources */,
 				375EB9111DBDE55900337236 /* HomeViewController.swift in Sources */,
 				379DB8981DBF3D1700882280 /* RoundView.swift in Sources */,
