@@ -54,7 +54,7 @@ protocol JDVBannerDelegate{
     
   }
   
-  func touchBanner(){
+    @objc func touchBanner(){
     
     
     self.delegate?.JDVBannerTouched(self)

@@ -26,7 +26,9 @@ func stringToAttrStringInHTML(_ str:String) -> NSAttributedString{
   var attrString = NSMutableAttributedString()
   
   do{
-    attrString = try NSMutableAttributedString(data: str.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+    attrString = try NSMutableAttributedString(data: str.data(using: String.Encoding.unicode)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType:NSAttributedString.DocumentType.html
+        ], documentAttributes: nil)
+
   }catch{}
   
   let result = attrString.copy() as! NSAttributedString

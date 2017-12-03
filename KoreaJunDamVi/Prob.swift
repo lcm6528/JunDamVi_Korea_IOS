@@ -65,11 +65,11 @@ struct Prob {
         let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
         let str = stringToAttrStringInHTML(title_String)
         title.append(str)
-        title.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
+        title.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
         
         
         let titleNoNum = NSMutableAttributedString(attributedString: str)
-        titleNoNum.addAttribute(NSFontAttributeName, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
+        titleNoNum.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
         
         
         self.title_attString_noNum = titleNoNum
@@ -82,11 +82,11 @@ struct Prob {
         
         
         let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
-        result.addAttribute(NSFontAttributeName, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedStringKey.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = ProbLineSpace
-        result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         self.article_attString = result
         
@@ -101,11 +101,11 @@ struct Prob {
             let name = String(format: "%d_%02d", ProbID,index+1)
             let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
             
-            result.addAttribute(NSFontAttributeName, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
+            result.addAttribute(NSAttributedStringKey.font, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
             
             let style = NSMutableParagraphStyle()
             style.lineSpacing = ProbLineSpace
-            result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
+            result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
             
             choices_attString.append(result)
             

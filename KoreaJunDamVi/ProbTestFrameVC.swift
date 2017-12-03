@@ -28,8 +28,8 @@ class ProbTestFrameViewController: JDVViewController {
     override func setTitleWithStyle(_ text: String) {
         
         self.barButton_title.title = text
-        self.barButton_title.setTitleTextAttributes([NSFontAttributeName:UIFont.ProbNaviBarTitleFont,
-                                                     NSForegroundColorAttributeName:UIColor.white], for: .normal)
+        self.barButton_title.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.ProbNaviBarTitleFont,
+                                                     NSAttributedStringKey.foregroundColor:UIColor.white], for: .normal)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +98,7 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
-    func onStop() {
+    @objc func onStop() {
         if option.sortedOption == .test{
             JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
         }else{

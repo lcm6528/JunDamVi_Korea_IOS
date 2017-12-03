@@ -100,10 +100,10 @@ class HomeViewController: JDVViewController {
         let str3 = NSMutableAttributedString(string: "\(value)개 ")
         let str4 = NSMutableAttributedString(string: "풀이 진행")
         
-        str1.addAttributes([NSFontAttributeName: font1, NSForegroundColorAttributeName: UIColor.untBlack757575], range: NSRange(location: 0, length: str1.length) )
-        str2.addAttributes([NSFontAttributeName: font2, NSForegroundColorAttributeName: UIColor.untBlack505050], range: NSRange(location: 0, length: str2.length) )
-        str3.addAttributes([NSFontAttributeName: font1, NSForegroundColorAttributeName: UIColor.untPaleRed], range: NSRange(location: 0, length: str3.length) )
-        str4.addAttributes([NSFontAttributeName: font2, NSForegroundColorAttributeName: UIColor.untBlack505050], range: NSRange(location: 0, length: str4.length) )
+        str1.addAttributes([NSAttributedStringKey.font: font1, NSAttributedStringKey.foregroundColor: UIColor.untBlack757575], range: NSRange(location: 0, length: str1.length) )
+        str2.addAttributes([NSAttributedStringKey.font: font2, NSAttributedStringKey.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str2.length) )
+        str3.addAttributes([NSAttributedStringKey.font: font1, NSAttributedStringKey.foregroundColor: UIColor.untPaleRed], range: NSRange(location: 0, length: str3.length) )
+        str4.addAttributes([NSAttributedStringKey.font: font2, NSAttributedStringKey.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str4.length) )
         
         
         

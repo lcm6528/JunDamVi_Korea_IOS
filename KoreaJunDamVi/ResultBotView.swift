@@ -80,7 +80,7 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         
         return view
     }
-    func changeView(_ sender: AnyObject) {
+    @objc func changeView(_ sender: AnyObject) {
         self.delegate?.changeView()
     }
     

@@ -156,8 +156,8 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
         
         
         let title = NSMutableAttributedString(string: "\(dataArray[indexPath.row])회")
-        title.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
-        title.addAttributes([NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 18)! ], range: NSRange(location: 2,length: 1))
+        title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
+        title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 18)! ], range: NSRange(location: 2,length: 1))
         
         cell.titleLabel.attributedText = title
         

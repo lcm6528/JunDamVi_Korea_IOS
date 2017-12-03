@@ -32,7 +32,7 @@ class JDVRadioButtonManager: NSObject {
   }
   
   
-  func buttonPressed(_ sender:UIButton){
+    @objc func buttonPressed(_ sender:UIButton){
     
     if sender.isSelected == true{
       deselectAll()

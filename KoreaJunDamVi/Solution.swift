@@ -60,11 +60,11 @@ struct Solution {
         
         let result = NSMutableAttributedString()
         result.append(stringToAttrStringInHTML(str))
-        result.addAttribute(NSFontAttributeName, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedStringKey.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = SolLineSpace
-        result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         return result
         
@@ -73,11 +73,11 @@ struct Solution {
     func setToAttrWithImage(from str:String)->NSAttributedString{
         
         let result = replaceTagToImage(withString: str, imgName: "sol_\(ProbID)")
-        result.addAttribute(NSFontAttributeName, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedStringKey.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = SolLineSpace
-        result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         
         return result

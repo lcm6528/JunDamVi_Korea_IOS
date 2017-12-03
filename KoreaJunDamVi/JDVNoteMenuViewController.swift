@@ -97,6 +97,6 @@ extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource,D
     }
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "저장된 오답노트가 없습니다!", attributes: [NSFontAttributeName:UIFont.EmptySetTitle])
+        return NSAttributedString(string: "저장된 오답노트가 없습니다!", attributes: [NSAttributedStringKey.font:UIFont.EmptySetTitle])
     }
 }

@@ -58,7 +58,7 @@ class JDVChoiceViewManager: NSObject {
         
     }
     
-    func touchOnLabel(_ sender:UITapGestureRecognizer){
+    @objc func touchOnLabel(_ sender:UITapGestureRecognizer){
         
         let index:Int = arrayOfViews.index(of: sender.view!)!
         selectLabelAtIndex(index)

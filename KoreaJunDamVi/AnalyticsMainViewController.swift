@@ -116,7 +116,7 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
     }
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "분석 데이터가 존재하지 않습니다.", attributes: [NSFontAttributeName:UIFont.EmptySetTitle])
+        return NSAttributedString(string: "분석 데이터가 존재하지 않습니다.", attributes: [NSAttributedStringKey.font:UIFont.EmptySetTitle])
     }
 }
 

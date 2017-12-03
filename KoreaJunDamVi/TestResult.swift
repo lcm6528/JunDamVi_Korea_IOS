@@ -12,12 +12,12 @@ import RealmSwift
 
 class TestResultRecord:Object{
     
-    dynamic var TestType:String = ""
-    dynamic var TestKey:String = ""
-    dynamic var numberOfRight:Int = 0
-    dynamic var numberOfPass:Int = 0
-    dynamic var numberOfWrong:Int = 0
-    dynamic var Score:Int = 0
+    @objc dynamic var TestType:String = ""
+    @objc dynamic var TestKey:String = ""
+    @objc dynamic var numberOfRight:Int = 0
+    @objc dynamic var numberOfPass:Int = 0
+    @objc dynamic var numberOfWrong:Int = 0
+    @objc dynamic var Score:Int = 0
     
     convenience init(by result:TestResult){
         self.init()

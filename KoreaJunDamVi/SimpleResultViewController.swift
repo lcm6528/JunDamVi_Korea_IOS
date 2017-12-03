@@ -113,7 +113,7 @@ extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
         
     }
     
-    func buttonPressed(_ sender:UIButton){
+    @objc func buttonPressed(_ sender:UIButton){
         
         
         let tryObj = result.Tries[sender.tag]

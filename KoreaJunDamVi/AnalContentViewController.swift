@@ -22,8 +22,8 @@ class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
         let result = NSMutableAttributedString(string: content)
         let style = NSMutableParagraphStyle()
         style.lineSpacing = ProbLineSpace
-        result.addAttributes([NSParagraphStyleAttributeName : style], range: NSRange(location: 0, length: result.length))
-        result.addAttribute(NSFontAttributeName, value: UIFont.ProbNaviBarTitleFont, range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedStringKey.font, value: UIFont.ProbNaviBarTitleFont, range: NSRange(location: 0, length: result.length))
         
         
         contentTextView.attributedText = result

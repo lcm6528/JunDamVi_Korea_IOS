@@ -119,7 +119,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
     }
     
-    func buttonPressed(_ sender:UIButton){
+    @objc func buttonPressed(_ sender:UIButton){
         
         
         let tryObj = result.Tries[sender.tag]
