@@ -45,7 +45,7 @@ class SimpleResultViewController: UIViewController {
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
-        self.dismissVC(completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

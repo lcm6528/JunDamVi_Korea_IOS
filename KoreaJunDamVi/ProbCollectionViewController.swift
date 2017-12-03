@@ -8,7 +8,6 @@
 
 import UIKit
 import WSProgressHUD
-import EZSwiftExtensions
 
 protocol ProbCollectionViewDelegate{
     func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index:Int)

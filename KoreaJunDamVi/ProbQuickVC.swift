@@ -43,7 +43,7 @@ class ProbQuickTestViewController: JDVViewController {
         WSProgressHUD.show(withStatus: "체점 중 ..")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.performSegue(withIdentifier: "push", sender: self)
-            self.popVC()
+            self.navigationController?.popViewController(animated: true)
         })
 //        
 //        performSegue(withIdentifier: "push", sender: self)

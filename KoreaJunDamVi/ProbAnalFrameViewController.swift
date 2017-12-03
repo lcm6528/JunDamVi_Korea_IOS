@@ -8,6 +8,7 @@
 
 import UIKit
 import PageMenu
+
 class JDVProbAnalFrameViewController: JDVViewController {
     
     var pageMenu : CAPSPageMenu?

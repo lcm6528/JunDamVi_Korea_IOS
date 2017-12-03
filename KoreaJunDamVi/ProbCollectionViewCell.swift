@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import EZSwiftExtensions
+
 class ProbCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var stateLabel: UILabel!
@@ -32,6 +32,6 @@ class ProbCollectionViewCell: UICollectionViewCell {
         
         stateLabel.text = (data.isEmpty) ? "학습 완료" : "학습 진행중"
         stateLabel.textColor = (data.isEmpty) ? UIColor.probCellRed : UIColor.untPaleRed
-        bottomLabel.text = (data.isEmpty) ? "" : "\(data.count -  data.indexes(of: 0).count) / \(data.count)"
+        bottomLabel.text = (data.isEmpty) ? "" : "\(data.count -  data.filter{$0==0}.count) / \(data.count)"
     }
 }

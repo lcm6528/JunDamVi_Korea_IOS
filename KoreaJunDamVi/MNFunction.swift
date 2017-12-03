@@ -98,4 +98,14 @@ extension UIStoryboard {
 }
 
 
+extension String{
+    func toInt()->Int?{
+        return Int(self)
+    }
+    func toFloat()->Float?{
+        return Float(self)
+    }
+    
+}
+
 

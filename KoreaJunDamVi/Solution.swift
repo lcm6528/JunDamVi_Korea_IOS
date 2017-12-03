@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import EZSwiftExtensions
 
 struct Solution {
     var ProbID:Int

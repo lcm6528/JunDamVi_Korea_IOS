@@ -40,7 +40,9 @@ class ProbTestFrameViewController: JDVViewController {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         if option.sortedOption != .test{
-            setTitleWithStyle(option.cacheKey + option.sortedOption.description[0...1] + " 문제풀기")
+            let desc = option.sortedOption.description
+            let str = desc[..<desc.index(desc.startIndex, offsetBy: 2)]
+            setTitleWithStyle(option.cacheKey + str + " 문제풀기")
         }else{
             setTitleWithStyle("\(Probs[0].TestNum)회차 문제풀기")
         }
@@ -213,7 +215,7 @@ class ProbTestFrameViewController: JDVViewController {
             WSProgressHUD.show(withStatus: "체점 중 ..")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.performSegue(withIdentifier: id, sender: self)
-                self.popVC()
+                self.navigationController?.popViewController(animated: false)
             })
             
         }))

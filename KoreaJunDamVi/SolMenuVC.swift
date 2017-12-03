@@ -188,7 +188,6 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
             
         }
         
-        
     }
     
 }

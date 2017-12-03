@@ -36,9 +36,9 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
         
         heightOfSubView = self.view.frame.size.height-64
-    
+        
         let realm = try! Realm()
-//        let trial = realm.objects(TestResultRecord.self).filter{return $0.TestKey == self.option.cacheKey}.count
+        //        let trial = realm.objects(TestResultRecord.self).filter{return $0.TestKey == self.option.cacheKey}.count
         let trial = Array(realm.objects(TestResultRecord.self)).filter {return $0.TestKey == self.option.cacheKey}.count
         
         
@@ -53,10 +53,8 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         botView.tableView.delegate = self
         botView.tableView.dataSource = self
         botView.dismissHandler = {
-                self.tabBarController?.selectedIndex = 3            
-            self.dismissVC(completion: { 
-
-            })
+            self.tabBarController?.selectedIndex = 3
+            self.dismiss(animated: true, completion: nil)
         }
         
         
@@ -74,7 +72,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     @IBAction func backButtonAction(_ sender: Any) {
-        self.dismissVC(completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
