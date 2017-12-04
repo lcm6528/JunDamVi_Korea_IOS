@@ -11,7 +11,6 @@ target 'KoreaJunDamVi' do
   pod 'XLPagerTabStrip'
   pod 'WSProgressHUD'
   pod 'PageMenu', :git => 'https://github.com/orazz/PageMenu.git'
-  #pod 'EZSwiftExtensions', :git => 'https://github.com/goktugyil/EZSwiftExtensions.git'
   pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
   pod 'RealmSwift'
   pod 'SwiftyStoreKit'
