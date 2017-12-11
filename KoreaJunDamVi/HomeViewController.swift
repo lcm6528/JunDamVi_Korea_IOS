@@ -111,8 +111,6 @@ class HomeViewController: JDVViewController {
         str3.addAttributes([NSAttributedStringKey.font: font1, NSAttributedStringKey.foregroundColor: UIColor.untPaleRed], range: NSRange(location: 0, length: str3.length) )
         str4.addAttributes([NSAttributedStringKey.font: font2, NSAttributedStringKey.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str4.length) )
         
-        
-        
         let str = NSMutableAttributedString()
         str.append(str1)
         str.append(str2)
@@ -124,7 +122,6 @@ class HomeViewController: JDVViewController {
     
     @IBAction func settingButtonPressed(_ sender: AnyObject) {
         performSegue(withIdentifier: "settings", sender: self)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
