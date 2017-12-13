@@ -23,8 +23,6 @@ class ProbPopupView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         if let flowLayout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             
             let offset = SCREEN_WIDTH/5 - 1
@@ -32,23 +30,9 @@ class ProbPopupView: UIViewController {
             flowLayout.minimumInteritemSpacing = 0
             flowLayout.minimumLineSpacing = 1
             
-            
         }
-        
-        
-        // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
+ 
     @IBAction func dismissButtonAction(_ sender: AnyObject) {
         
         dismiss(animated: true, completion: nil)
@@ -72,11 +56,9 @@ extension ProbPopupView:UICollectionViewDataSource{
         return dataArray.count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProbPopupCell
-        
         
         cell.configure(WithProb: dataArray[indexPath.row], selections: selections[indexPath.row], isNoted: isNoted[indexPath.row])
         cell.label_ProbNum.text = "\(indexPath.row+1)번"

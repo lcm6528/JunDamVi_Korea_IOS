@@ -18,6 +18,7 @@ class ProbTestFrameViewController: JDVViewController {
     @IBOutlet var barButton_title: UIBarButtonItem!
     
     var number_of_pages = 0
+    
     var Probs:[Prob] = []
     var result:TestResult!
     var selections:[Int]?
@@ -234,44 +235,6 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
-    func gotoNextPage(){
-        
-        isBlockUserInteract = true
-        let nextIndex = getCurrnetIndexOfPage()+1
-        if nextIndex == number_of_pages {
-            isBlockUserInteract = false
-            option.sortedOption == .test ? pushResultVC(withSegue: "push") : pushResultVC(withSegue: "pushsimple")
-            
-            
-        }else if nextIndex < number_of_pages{
-            let vc = pageViewAtIndex(nextIndex)
-            
-            
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
-                
-                isBlockUserInteract = false
-                self.setToolbarTitle(self.getCurrnetIndexOfPage())
-            })
-            
-        }
-        
-    }
-    
-    func gotoPrevPage(){
-        isBlockUserInteract = true
-        let nextIndex = getCurrnetIndexOfPage()-1
-        
-        guard nextIndex >= 0 else {return}
-        
-        let vc = pageViewAtIndex(nextIndex)
-        
-        pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
-            isBlockUserInteract = false
-            self.setToolbarTitle(self.getCurrnetIndexOfPage())
-        })
-        
-    }
-    
     
     
     func setToolbarTitle(_ index:Int){
@@ -298,32 +261,7 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
-        
-        let nextIndex = index
-        
-        guard nextIndex >= 0 && nextIndex < number_of_pages else {return}
-        
-        let vc = pageViewAtIndex(nextIndex)
-        
-        let completion:(Bool)->() = { success in
-            self.setToolbarTitle(nextIndex)
-        }
-        
-        if currentIndex > nextIndex{
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
-        }else{
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
-        }
-        
-    }
     
-    func getCurrnetIndexOfPage()-> Int{
-        
-        let vc  = pageViewController.viewControllers?.first as! ProbTestInnerViewController
-        return vc.pageIndex
-        
-    }
     
     
 }
@@ -380,6 +318,76 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
         return self.pageViewAtIndex(index)
     }
+    
+    
+    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
+        
+        let nextIndex = index
+        
+        guard nextIndex >= 0 && nextIndex < number_of_pages else {return}
+        
+        let vc = pageViewAtIndex(nextIndex)
+        
+        let completion:(Bool)->() = { success in
+            self.setToolbarTitle(nextIndex)
+        }
+        
+        if currentIndex > nextIndex{
+            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
+        }else{
+            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
+        }
+        
+    }
+    
+    
+    func gotoNextPage(){
+        
+        isBlockUserInteract = true
+        let nextIndex = getCurrnetIndexOfPage()+1
+        if nextIndex == number_of_pages {
+            isBlockUserInteract = false
+            option.sortedOption == .test ? pushResultVC(withSegue: "push") : pushResultVC(withSegue: "pushsimple")
+            
+            
+        }else if nextIndex < number_of_pages{
+            let vc = pageViewAtIndex(nextIndex)
+            
+            
+            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
+                
+                isBlockUserInteract = false
+                self.setToolbarTitle(self.getCurrnetIndexOfPage())
+            })
+            
+        }
+        
+    }
+    
+    func gotoPrevPage(){
+        isBlockUserInteract = true
+        let nextIndex = getCurrnetIndexOfPage()-1
+        
+        guard nextIndex >= 0 else {return}
+        
+        let vc = pageViewAtIndex(nextIndex)
+        
+        pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
+            isBlockUserInteract = false
+            self.setToolbarTitle(self.getCurrnetIndexOfPage())
+        })
+        
+    }
+    
+    
+    
+    func getCurrnetIndexOfPage()-> Int{
+        
+        let vc  = pageViewController.viewControllers?.first as! ProbTestInnerViewController
+        return vc.pageIndex
+        
+    }
+    
 }
 
 

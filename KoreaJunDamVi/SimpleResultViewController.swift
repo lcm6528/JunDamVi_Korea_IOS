@@ -9,7 +9,7 @@
 import UIKit
 import UICountingLabel
 import WSProgressHUD
-class SimpleResultViewController: UIViewController {
+class SimpleResultViewController : UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     
@@ -28,26 +28,19 @@ class SimpleResultViewController: UIViewController {
     
     var addedNote = Set<Note>()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         titleLabel.text = option.sortedOption.description + "-" + option.cacheKey + " 문제 풀이 결과"
         
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
         tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
         
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -72,25 +65,17 @@ class SimpleResultViewController: UIViewController {
             self.circleView.setValue(value: CGFloat(totalRate*100), animate: true)
             
         }
-        
-        
-        
-        
     }
-    
-    
-    
 }
 
 
 
-extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
+extension SimpleResultViewController : UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return result.Tries.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
@@ -102,7 +87,6 @@ extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
         cell.selectionStyle = .none
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -110,7 +94,6 @@ extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "testheader")
         let header = view as! testheader
         return header
-        
     }
     
     @objc func buttonPressed(_ sender:UIButton){
@@ -130,12 +113,5 @@ extension SimpleResultViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
         sender.isSelected = !sender.isSelected
-        
     }
-    
-    
-    
-    
-    
-    
 }

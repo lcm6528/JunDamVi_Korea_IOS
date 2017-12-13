@@ -27,7 +27,6 @@ class ProbSubCollectionViewController: ProbCollectionViewController {
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //configure data

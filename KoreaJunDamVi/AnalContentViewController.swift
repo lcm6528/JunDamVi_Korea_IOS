@@ -12,11 +12,11 @@ class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
     
     var itemInfo: IndicatorInfo = "View"
     
-    
     @IBOutlet var contentTextView: UITextView!
     var content:String!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         //TODO : Modeling
         let result = NSMutableAttributedString(string: content)
@@ -25,28 +25,11 @@ class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
         result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         result.addAttribute(NSAttributedStringKey.font, value: UIFont.ProbNaviBarTitleFont, range: NSRange(location: 0, length: result.length))
         
-        
         contentTextView.attributedText = result
-        
-        
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
-    
-    
     
 }

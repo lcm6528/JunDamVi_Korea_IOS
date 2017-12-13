@@ -38,11 +38,7 @@ class HomeViewController: JDVViewController {
         roundView1.setValue(value: CGFloat(completeCount)/CGFloat(Tests.count)*100, animate: false)
         
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
+  
     func fetchList(){
         
         var dict:NSDictionary!
@@ -65,10 +61,8 @@ class HomeViewController: JDVViewController {
                 
             }
         }
-        
-        
-        
     }
+    
     func setDday(){
         
         let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "testday", ofType: "json")!))

@@ -18,7 +18,6 @@ class ProbCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         //UI Set
         self.layer.cornerRadius = 5
-        
     }
     
     func configure(by data:[Int]?){

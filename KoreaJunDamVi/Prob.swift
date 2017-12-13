@@ -50,9 +50,6 @@ struct Prob {
         self.theme = dict["theme"] as? String ?? ""
         self.tags = dict["tags"] as? String ?? ""
         
-        
-        
-        
         setChoices(withArray: [dict["choice1"] as! String,dict["choice2"] as! String,dict["choice3"] as! String,dict["choice4"] as! String,dict["choice5"] as! String])
         setTestAtt()
         setArticleAtt()
@@ -67,10 +64,8 @@ struct Prob {
         title.append(str)
         title.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
         
-        
         let titleNoNum = NSMutableAttributedString(attributedString: str)
         titleNoNum.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
-        
         
         self.title_attString_noNum = titleNoNum
         self.title_attString = title
@@ -78,8 +73,6 @@ struct Prob {
     }
     
     mutating func setArticleAtt(){
-        
-        
         
         let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
         result.addAttribute(NSAttributedStringKey.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
@@ -114,7 +107,6 @@ struct Prob {
     }
     
     func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
-        
         
         let result = NSMutableAttributedString()
         

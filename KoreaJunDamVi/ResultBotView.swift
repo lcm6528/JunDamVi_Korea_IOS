@@ -10,16 +10,15 @@ import UIKit
 
 
 
-class ProbResultBotView: UIView ,UITableViewDelegate{
+class ProbResultBotView: UIView{
     
-    var view:UIView!
+    var view: UIView!
     
+    let NibName: String = "ProbResultBotView"
     
-    let NibName:String = "ProbResultBotView"
+    var delegate: ProbResultSubViewDelegate?
     
-    var delegate:ProbResultSubViewDelegate?
-    
-    var dismissHandler:(()->Void)?
+    var dismissHandler: (()->Void)?
     
     @IBOutlet var noteButton: UIButton!
     @IBOutlet var tableView: UITableView!
@@ -28,7 +27,6 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         
         super.init(frame: frame)
         setup()
-        
     }
     
     
@@ -48,7 +46,6 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         noteButton.layer.borderWidth = 0.5
         noteButton.layer.borderColor = UIColor.gray.cgColor
         
-        
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
         tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
         
@@ -60,23 +57,21 @@ class ProbResultBotView: UIView ,UITableViewDelegate{
         button.addTarget(self, action: #selector(changeView(_:)), for: .touchUpInside)
         button.backgroundColor = UIColor.clear
         
-        
         let v = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
         v.backgroundColor = UIColor.clear
         v.addSubview(button)
         tableView.tableHeaderView = v
         
         addSubview(view)
-        
     }
     
     
     func loadViewFromNib() -> UIView {
+        
         let bundle = Bundle(for:type(of: self))
         let nib = UINib(nibName:NibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0
             ] as! UIView
-        
         
         return view
     }

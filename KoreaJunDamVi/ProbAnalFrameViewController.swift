@@ -19,7 +19,6 @@ class JDVProbAnalFrameViewController: JDVViewController {
     var option:JDVProbManager.SortedOption!
     @IBOutlet var graph: JDVGraph!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,17 +30,10 @@ class JDVProbAnalFrameViewController: JDVViewController {
             contentData.append(contentObject[item.0] ?? "분석자료가 없습니다.")
         }
         
-        
         self.setTitleWithStyle(option.description + " 분석자료")
-        
-    
-        
-        
         
         graph.setData(model: JDVGraphModel(arrayLiteral: data))
         graph.setHighlight(toStanding: 3)
-        
-        
         
         var controllerArray : [UIViewController] = []
         
@@ -67,13 +59,7 @@ class JDVProbAnalFrameViewController: JDVViewController {
         
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x:0.0, y:0.0, width:self.view.frame.width, height:self.view.frame.height), pageMenuOptions: parameters)
         
-        
         self.view.addSubview(pageMenu!.view)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

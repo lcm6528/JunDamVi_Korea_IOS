@@ -23,7 +23,6 @@ extension HomeTabbarController: TransitionableTab{
         return 0.25
     }
     
-    
     func fromTransitionAnimation(layer: CALayer, direction: Direction) -> CAAnimation {
 //        return DefineAnimation.move(.from, direction: direction)
         return DefineAnimation.fade(.from)

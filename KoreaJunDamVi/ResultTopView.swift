@@ -10,13 +10,12 @@ import UIKit
 import UICountingLabel
 
 
-class ProbResultTopView: UIView {
-    var view:UIView!
-    let NibName:String = "ProbResultTopView"
+class ProbResultTopView : UIView {
+    var view: UIView!
+    let NibName: String = "ProbResultTopView"
     
-    var delegate:ProbResultSubViewDelegate?
+    var delegate: ProbResultSubViewDelegate?
     @IBOutlet var gageView: GageView!
-    
     
     @IBOutlet var roundView1: RoundView!
     @IBOutlet var roundView2: RoundView!
@@ -29,12 +28,10 @@ class ProbResultTopView: UIView {
     @IBOutlet var label_Trial: UILabel!
     @IBOutlet var label_Score: UILabel!
     
-    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         setup()
-        
     }
     
     
@@ -53,7 +50,6 @@ class ProbResultTopView: UIView {
         
         label_Trial.layer.cornerRadius = 6
         label_Score.layer.cornerRadius = 6
-        
     }
     
     
@@ -71,9 +67,6 @@ class ProbResultTopView: UIView {
     
     
     func configure(result:TestResult){
-        
-        
-        
         
         switch result.TotalScore {
         case 70...100:
@@ -93,7 +86,6 @@ class ProbResultTopView: UIView {
         label_correct.animationDuration = 0.8
         label_correct.countFromZero(to: CGFloat(result.numberOfRight))
         
-        
         label_Score.text = "\(result.TotalScore)"
         label_wrong.text = "\(result.numberOfWrong+result.numberOfPass)"
         
@@ -107,7 +99,5 @@ class ProbResultTopView: UIView {
             self.roundView1.setValue(value: CGFloat(totalRate*100), animate: true)
             self.roundView2.setValue(value: CGFloat(tryRate*100), animate: true)
         }
-        
     }
-    
 }

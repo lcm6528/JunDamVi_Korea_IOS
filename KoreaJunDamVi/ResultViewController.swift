@@ -43,11 +43,12 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
         
         result.TryNum = trial
-        
+        //topView setup
         let topView = ProbResultTopView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: heightOfSubView))
         topView.delegate = self
         topView.configure(result: result)
         
+        //botView setup
         let botView = ProbResultBotView(frame: CGRect(x: 0, y: heightOfSubView, width: SCREEN_WIDTH, height: heightOfSubView))
         botView.delegate = self
         botView.tableView.delegate = self
@@ -57,10 +58,8 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
             self.dismiss(animated: true, completion: nil)
         }
         
-        
         contentView.addSubview(topView)
         contentView.addSubview(botView)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,27 +74,18 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
-    
     func changeView(){
         
         let offsetY:CGFloat = scrollView.contentOffset.y == 0.0 ? heightOfSubView : 0.0
-        
         scrollView.setContentOffset(CGPoint(x: 0, y: offsetY) , animated: true)
-        
     }
-    
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
         return result.Tries.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
         
         let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
         
@@ -104,9 +94,7 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         cell.noteButton.tag = indexPath.row
         cell.selectionStyle = .none
         
-        //custom for cell
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -114,11 +102,9 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "testheader")
         let header = view as! testheader
         return header
-        
     }
     
     @objc func buttonPressed(_ sender:UIButton){
-        
         
         let tryObj = result.Tries[sender.tag]
         let note = Note()
@@ -126,18 +112,11 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         note.Selection = tryObj.Selection
         
         if sender.isSelected == false{
-            
             JDVNoteManager.saveNote(by: note)
-            
         }else{
             JDVNoteManager.deleteNote(by: note)
         }
         
         sender.isSelected = !sender.isSelected
-        
     }
-    
-    
-    
 }
-

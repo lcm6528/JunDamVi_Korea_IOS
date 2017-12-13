@@ -35,6 +35,7 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProbCollectionViewCell
         if pageIndex == 0 {
             
@@ -67,11 +68,9 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
             let length = SCREEN_WIDTH/3 - 20
             return CGSize(width: length, height: length)
         }
-        
-        
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         self.delegate?.ProbCollectionViewSelectedRow(pageindex: pageIndex, atIndex: indexPath.row)
     }
     

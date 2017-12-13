@@ -12,20 +12,19 @@
 import UIKit
 import RealmSwift
 import WSProgressHUD
-class ProbQuickTestViewController: JDVViewController {
+class ProbQuickTestViewController : JDVViewController {
     
     
     @IBOutlet var pushButton: UIButton!
     
+    var option: JDVProbManager.ProbOption!
     
-    
-    var option:JDVProbManager.ProbOption!
-    
-    var selections:[Int] = []
-    var Probs:[Prob] = []
-    var result:TestResult!
+    var selections: [Int] = []
+    var Probs: [Prob] = []
+    var result: TestResult!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.setTitleWithStyle("\(Probs[0].TestNum)회 빠른채점")
@@ -36,7 +35,6 @@ class ProbQuickTestViewController: JDVViewController {
         pushButton.layer.borderColor = UIColor.gray.cgColor
         
         self.navigationController?.delegate = self
-        
     }
     
     @IBAction func resultButtonPressed(_ sender: AnyObject) {
@@ -45,13 +43,11 @@ class ProbQuickTestViewController: JDVViewController {
             self.performSegue(withIdentifier: "push", sender: self)
             self.navigationController?.popViewController(animated: true)
         })
-//        
-//        performSegue(withIdentifier: "push", sender: self)
-//        self.popVC()
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let vc = segue.destination as! ProbResultViewController
         var tries:[Try] = []
         for (index, prob) in Probs.enumerated(){
@@ -73,12 +69,10 @@ class ProbQuickTestViewController: JDVViewController {
         }
         
     }
-    
-    
 }
 
 
-extension ProbQuickTestViewController:UITableViewDataSource{
+extension ProbQuickTestViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbQuickCell
@@ -97,7 +91,7 @@ extension ProbQuickTestViewController:UITableViewDataSource{
 }
 
 
-extension ProbQuickTestViewController:UINavigationControllerDelegate{
+extension ProbQuickTestViewController : UINavigationControllerDelegate{
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
         WSProgressHUD.dismiss()

@@ -13,13 +13,12 @@ import SwiftyJSON
 class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     ////static data
-    let rankingArr = [["조선(24%)","일제강점기(14%)","근대 조선(13%)"],["해석(31%)","암기(20%)","테마(19%)"],["사건(22%)","문화(15%)","제도(12%)"]]
+    let kRankingArr = [["조선(24%)","일제강점기(14%)","근대 조선(13%)"],["해석(31%)","암기(20%)","테마(19%)"],["사건(22%)","문화(15%)","제도(12%)"]]
     ////
     
+    let kNumber_of_pages = 4
     
-    
-    let number_of_pages = 4
-    var currentMenu:Int = 0
+    var currentMenu:Int = 0 
     var currentOption = JDVProbManager.ProbOption()
     var pageViewController:UIPageViewController!
     
@@ -27,10 +26,10 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     var dataArray:[[String]] = []
     var Probs:[Prob] = []
+    
     var AnalData:JSON!
     
     @IBOutlet var ToolbarButtons: [UIButton]!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,21 +53,18 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         self.pageViewController.didMove(toParentViewController: self)
         
         
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        
-        
     }
+    
     func showIndicator(){
+        
         WSProgressHUD.show(withStatus: "문제 불러오는 중..")
         isBlockUserInteract = true
     }
+    
     func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index: Int) {
         
         let arr = self.dataArray[pIdx]
@@ -116,8 +112,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         
         self.present(alert, animated: true, completion: nil)
         
-        
-        
     }
     
     func fetchList(){
@@ -130,7 +124,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             dict = object as! NSDictionary
         } catch {}
         
-        
         for option in options{
             dataArray.append(dict.value(forKey: option.rawValue) as!  [String])
         }
@@ -138,12 +131,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "AnalList", ofType: "json")!))
         AnalData = JSON(data:jsondata)
         
-        
-        
     }
-    
-    override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
-    
     
     @IBAction func ToolbarButtonSelected(_ sender: UIButton) {
         selectButtonInCollection(atIndex: sender.tag)
@@ -214,11 +202,10 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
     
     func pageViewAtIndex(_ index: Int) ->JDVViewController{
         
-        
         if index != 0 {
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
             
-            pageContentViewController.rankingStr = rankingArr[index-1]
+            pageContentViewController.rankingStr = kRankingArr[index-1]
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
@@ -228,10 +215,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
                 self.performSegue(withIdentifier: "pushanal", sender: self)
             }
             
-            
             return pageContentViewController
-            
-            
             
         }else{
             
@@ -240,7 +224,6 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
             return pageContentViewController
-            
             
         }
     }
@@ -266,7 +249,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         index += 1
         
-        if(index == number_of_pages){return nil}
+        if(index == kNumber_of_pages){return nil}
         
         return self.pageViewAtIndex(index)
     }
@@ -277,7 +260,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         let nextIndex = index
         
-        guard nextIndex >= 0 && nextIndex < number_of_pages else {return}
+        guard nextIndex >= 0 && nextIndex < kNumber_of_pages else {return}
         
         let vc = pageViewAtIndex(nextIndex)
         

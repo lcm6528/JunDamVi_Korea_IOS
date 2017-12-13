@@ -12,8 +12,6 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     var Prob:Prob!
     
-    
-    
     var pageIndex:Int!
     var selection = 0
     var selectHandler:((Int,Int)->Void)?
@@ -48,12 +46,12 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     }
     
     func configure(){
+        
         if option != .test{
             self.testTitleTextView.attributedText = Prob.title_attString_noNum
         }else{
             self.testTitleTextView.attributedText = Prob.title_attString
         }
-        
         
         self.testContentTextView.attributedText = Prob.article_attString
         

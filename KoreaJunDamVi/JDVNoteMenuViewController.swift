@@ -20,12 +20,12 @@ class JDVNoteMenuViewController: JDVViewController{
     var currentIndex = 0
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.setTitleWithStyle("오답노트")
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
         tableView.tableFooterView = UIView()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,16 +40,8 @@ class JDVNoteMenuViewController: JDVViewController{
         let result = realm.objects(Note.self)
         Notes = Array(result)
         
-        
         probs = JDVProbManager.fetchProbs(withProbID: Notes.map{$0.ProbID})
         self.tableView.reloadData()
-        
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,8 +58,8 @@ class JDVNoteMenuViewController: JDVViewController{
 
 extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
         cell.configure(by: probs[indexPath.row])
         return cell
     }
@@ -88,8 +80,7 @@ extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource,D
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             JDVNoteManager.deleteNote(by: Notes[indexPath.row])
-            fetchNotes()
-            
+            fetchNotes()   
         }
     }
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {

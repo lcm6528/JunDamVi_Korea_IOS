@@ -98,7 +98,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate{
         let alert = UIAlertController(title: "구매내역 복원", message: "앱스토어 구매내역을 복원합니다.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler:
             { action in
-                   
+                
                 SwiftyStoreKit.restorePurchases(atomically: true) { results in
                     if results.restoreFailedProducts.count > 0 {
                         print("Restore Failed: \(results.restoreFailedProducts)")

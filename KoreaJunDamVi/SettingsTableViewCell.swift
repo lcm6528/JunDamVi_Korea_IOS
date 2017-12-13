@@ -23,16 +23,12 @@ class SettingsTableViewCell: UITableViewCell {
     }
 }
 
-enum SettingsOption:Int{
+enum SettingsOption{
     
-    case reset = 0
+    case reset
     case restore
     case mail
     case none
-    
-    init(option:Int){
-        self = SettingsOption(rawValue:option) ?? .none
-    }
     
 }
 struct SettingsViewCellModel{
