@@ -122,7 +122,7 @@ class ProbTestFrameViewController: JDVViewController {
                 return JDVNoteManager.isAdded(by: prob.ProbID)
             }
             
-            vc.didSelectHandler = { index in
+            vc.didSelectHandler = { [unowned self] index in
                 
                 let currentIdx = self.getCurrnetIndexOfPage()
                 self.gotoPageAtIndex(currentIdx, goto: index)
