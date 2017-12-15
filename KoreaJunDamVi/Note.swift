@@ -14,7 +14,6 @@ class Note:Object{
     @objc dynamic var ProbID:Int = 0
     @objc dynamic var Selection:Int = 0
     
-    
     override static func primaryKey() -> String? {
         return "ProbID"
     }

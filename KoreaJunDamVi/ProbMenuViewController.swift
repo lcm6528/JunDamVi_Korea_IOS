@@ -26,6 +26,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     var dataArray:[[String]] = []
     var Probs:[Prob] = []
+    var QuickProbs:[QuickProb] = []
     
     var AnalData:JSON!
     
@@ -101,7 +102,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
                 { action in
                     self.showIndicator()
-                    self.Probs = JDVProbManager.fetchProbs(withTestnum: arr[index].toInt()!)
+                    self.QuickProbs = JDVProbManager.fetchQuickProbs(withTestnum: arr[index].toInt()!)
                     self.performSegue(withIdentifier: "quick", sender: self)
                     
             }
@@ -168,7 +169,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             
         case "quick":
             let vc = segue.destination as! ProbQuickTestViewController
-            vc.Probs = self.Probs
+            vc.Probs = self.QuickProbs
             vc.option = currentOption
             self.tabBarController?.tabBar.isHidden = true
             
@@ -183,7 +184,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         }
         
         self.Probs = []
-        
+        self.QuickProbs = []
         
     }
     
