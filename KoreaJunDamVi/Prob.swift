@@ -128,3 +128,23 @@ struct Prob {
     }
     
 }
+
+
+
+struct QuickProb {
+    
+    var ProbID:Int
+    var TestNum:Int
+    var ProbNum:Int
+    var Score:Int
+    var Answer:Int
+    
+    init(withDict dict:NSDictionary){
+        
+        self.ProbID = dict["probId"] as! Int
+        self.TestNum = dict["testnum"] as! Int
+        self.ProbNum = dict["probnum"] as! Int
+        self.Answer = dict["answer"] as! Int
+        self.Score = dict["score"] as! Int
+    }
+}

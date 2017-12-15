@@ -65,6 +65,21 @@ struct Try {
             self.State = (Selection == 0) ? (.Pass) : (.Wrong)
         }
     }
+    init(withQuickProb prob:QuickProb,selection select:Int){
+        self.ProbNum = prob.ProbNum
+        self.TestNum = prob.TestNum
+        self.ProbID = prob.ProbID
+        self.Score = prob.Score
+        self.Answer = prob.Answer
+        self.Selection = select
+        
+        if Answer == Selection{
+            self.State = .Right
+        }else{
+            self.State = (Selection == 0) ? (.Pass) : (.Wrong)
+        }
+    }
+    
     
 }
 

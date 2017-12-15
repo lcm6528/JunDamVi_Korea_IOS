@@ -158,4 +158,27 @@ class JDVProbManager: NSObject {
         deleteUserDefalut(key)
     }
     
+    //QuickProbs
+    static func fetchQuickProbs(withTestnum num:Int)->[QuickProb]{
+        
+        var Probs:[QuickProb] = []
+        let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
+        let fmdb = FMDatabase(path: dbPath?.path)
+        
+        if (fmdb?.open())! {
+            
+            let sql1 = "SELECT probId, testnum, probnum, answer, answer, score  FROM Probs WHERE testnum = \(num)"
+            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+            while result?.next() == true {
+                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
+                let prob = QuickProb(withDict: dict)
+                
+                Probs.append(prob)
+            }
+        }
+        fmdb?.close()
+        return Probs
+    }
+    
+    
 }

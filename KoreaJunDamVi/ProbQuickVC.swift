@@ -20,7 +20,7 @@ class ProbQuickTestViewController : JDVViewController {
     var option: JDVProbManager.ProbOption!
     
     var selections: [Int] = []
-    var Probs: [Prob] = []
+    var Probs: [QuickProb] = []
     var result: TestResult!
     
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class ProbQuickTestViewController : JDVViewController {
         let vc = segue.destination as! ProbResultViewController
         var tries:[Try] = []
         for (index, prob) in Probs.enumerated(){
-            let item = Try(withProb: prob, selection: selections[index])
+            let item = Try(withQuickProb: prob, selection: selections[index])
             tries.append(item)
         }
         
