@@ -875,6 +875,7 @@
 		ED9820741E8E852A0006F711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9820731E8E852A0006F711 /* StoreKit.framework */; };
 		ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */; };
 		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
+		EDAF8D621FE40B1E002A9417 /* JDVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8D611FE40B1E002A9417 /* JDVButton.swift */; };
 		EDB5F78C1ED45FAC0093ABC6 /* MNVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */; };
 		EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */; };
 		EDE000981E669F5600C240A1 /* ProbList.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE000971E669F5600C240A1 /* ProbList.json */; };
@@ -1755,6 +1756,7 @@
 		ED9820731E8E852A0006F711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnalList.json; sourceTree = "<group>"; };
 		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
+		EDAF8D611FE40B1E002A9417 /* JDVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDVButton.swift; sourceTree = "<group>"; };
 		EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNVersion.swift; sourceTree = "<group>"; };
 		EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteInnerVC.swift; sourceTree = "<group>"; };
 		EDE000971E669F5600C240A1 /* ProbList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProbList.json; sourceTree = "<group>"; };
@@ -1913,6 +1915,7 @@
 			isa = PBXGroup;
 			children = (
 				37F7CD151DE6B0FD0085A2E4 /* JDVBarButtonItem.swift */,
+				EDAF8D611FE40B1E002A9417 /* JDVButton.swift */,
 				37F7CD161DE6B0FD0085A2E4 /* JDVViewController.swift */,
 				37F7CD131DE6B0FD0085A2E4 /* JDVNavigationController.swift */,
 				379DB8991DBF3E3400882280 /* Radian.swift */,
@@ -3909,6 +3912,7 @@
 				37D0517B1E260D3100D92E89 /* SolFrameVC.swift in Sources */,
 				37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */,
 				37D99B101DE87B1D0017F7CF /* ProbInnerVC.swift in Sources */,
+				EDAF8D621FE40B1E002A9417 /* JDVButton.swift in Sources */,
 				375EB9171DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

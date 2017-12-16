@@ -912,7 +912,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="318" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -922,8 +922,11 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     <state key="normal" title="5번">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="261" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -933,8 +936,11 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     <state key="normal" title="4번">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="204" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -944,8 +950,11 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     <state key="normal" title="3번">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="147" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -955,8 +964,11 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     <state key="normal" title="2번">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="90" y="3" width="53" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -966,6 +978,9 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     <state key="normal" title="1번">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3S5-2x-mDe">
                                                     <rect key="frame" x="2" y="2" width="83" height="55"/>
@@ -1000,11 +1015,11 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="btn1" destination="RQI-hg-IYg" id="yoV-N6-OMG"/>
-                                            <outlet property="btn2" destination="GgK-Bz-ClN" id="OYj-yk-7d4"/>
-                                            <outlet property="btn3" destination="0VD-aU-oGS" id="LNn-xp-UJA"/>
-                                            <outlet property="btn4" destination="lQt-Zy-lAP" id="hzs-Dd-dDk"/>
-                                            <outlet property="btn5" destination="uOx-Y1-oz1" id="OSY-qS-53d"/>
+                                            <outlet property="btn1" destination="RQI-hg-IYg" id="aTL-7H-hAb"/>
+                                            <outlet property="btn2" destination="GgK-Bz-ClN" id="IPA-dd-jZO"/>
+                                            <outlet property="btn3" destination="0VD-aU-oGS" id="FaY-wK-VjH"/>
+                                            <outlet property="btn4" destination="lQt-Zy-lAP" id="lAP-Sb-Rey"/>
+                                            <outlet property="btn5" destination="uOx-Y1-oz1" id="GOB-kd-EXe"/>
                                             <outlet property="titleLabel" destination="3S5-2x-mDe" id="Eym-SY-fDK"/>
                                         </connections>
                                     </tableViewCell>
@@ -1017,7 +1032,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wC-5e-fdd">
                                 <rect key="frame" x="0.0" y="533" width="375" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                         <rect key="frame" x="97" y="15" width="180" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1028,6 +1043,9 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         <state key="normal" title=" 풀이 결과 확인" image="button_gotoNote">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="resultButtonPressed:" destination="wYf-gj-JhQ" eventType="touchUpInside" id="rIP-Pz-wyk"/>
                                         </connections>
@@ -1066,7 +1084,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="pushButton" destination="iSd-K8-ooj" id="aSr-4P-vZB"/>
+                        <outlet property="pushButton" destination="iSd-K8-ooj" id="L1J-RK-GqZ"/>
                         <segue destination="zm0-gX-xPW" kind="presentation" identifier="push" id="28R-Nv-1NB"/>
                     </connections>
                 </viewController>
@@ -1314,7 +1332,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                     <constraint firstAttribute="height" constant="0.5" id="oEF-Wf-3aw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMq-8d-tDC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMq-8d-tDC" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                 <rect key="frame" x="8" y="106" width="304" height="40"/>
                                 <color key="backgroundColor" red="0.50445526839999999" green="0.1228601336" blue="0.078523069619999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1324,6 +1342,9 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                 <state key="normal" title="시대별 분석자료 &gt;&gt;">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="analButtonPressed:" destination="JUk-Qr-IFS" eventType="touchUpInside" id="kar-BY-uVC"/>
                                 </connections>
@@ -1359,7 +1380,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="667"/>
                     <connections>
-                        <outlet property="analButton" destination="EMq-8d-tDC" id="LWZ-xb-ElA"/>
+                        <outlet property="analButton" destination="EMq-8d-tDC" id="eKa-x7-Tyz"/>
                         <outlet property="collectionView" destination="g1j-Ts-sSb" id="VeT-gb-eUB"/>
                         <outlet property="label_Ranking1" destination="v4I-Ik-iWt" id="hmH-yv-riJ"/>
                         <outlet property="label_Ranking2" destination="MN0-9a-ye9" id="YSX-Cl-f8j"/>
@@ -1447,7 +1468,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정답률" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-gb-LKf">
-                                                    <rect key="frame" x="162" y="31" width="34" height="14"/>
+                                                    <rect key="frame" x="161.5" y="31" width="35" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="DcB-V4-Eb8"/>
                                                     </constraints>
@@ -1661,7 +1682,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         <image name="star" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zua-Fs-LAj"/>
+        <segue reference="28R-Nv-1NB"/>
         <segue reference="1us-z2-awh"/>
     </inferredMetricsTieBreakers>
 </document>

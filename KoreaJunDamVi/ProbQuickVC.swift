@@ -15,7 +15,7 @@ import WSProgressHUD
 class ProbQuickTestViewController : JDVViewController {
     
     
-    @IBOutlet var pushButton: UIButton!
+    @IBOutlet var pushButton: JDVButton!
     
     var option: JDVProbManager.ProbOption!
     

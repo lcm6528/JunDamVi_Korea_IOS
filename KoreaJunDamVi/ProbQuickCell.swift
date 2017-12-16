@@ -11,11 +11,11 @@ import UIKit
 class ProbQuickCell: UITableViewCell ,JDVRadioButtonManagerDelegate{
 
     
-    @IBOutlet var btn1: UIButton!
-    @IBOutlet var btn2: UIButton!
-    @IBOutlet var btn3: UIButton!
-    @IBOutlet var btn4: UIButton!
-    @IBOutlet var btn5: UIButton!
+    @IBOutlet var btn1: JDVButton!
+    @IBOutlet var btn2: JDVButton!
+    @IBOutlet var btn3: JDVButton!
+    @IBOutlet var btn4: JDVButton!
+    @IBOutlet var btn5: JDVButton!
     @IBOutlet var titleLabel: UILabel!
     var probNum:Int!
     

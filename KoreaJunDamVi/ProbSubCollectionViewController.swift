@@ -20,11 +20,10 @@ class ProbSubCollectionViewController: ProbCollectionViewController {
     
     
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var analButton: UIButton!
+    @IBOutlet var analButton: JDVButton!
     
     @IBAction func analButtonPressed(_ sender: Any) {
         pushHandler?(pageIndex)
-        
     }
     
     override func viewDidLoad() {
