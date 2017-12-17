@@ -47,6 +47,7 @@ class NoteInnerViewController: JDVViewController {
         super.viewDidLoad()
         
         setTitleWithStyle("\(Prob.TestNum)회 \(Prob.ProbNum)번")
+        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
@@ -68,8 +69,6 @@ class NoteInnerViewController: JDVViewController {
         isHideSolution(bool: !isPurchased)
         
     }
-    
-    
     
     func configure(){
         

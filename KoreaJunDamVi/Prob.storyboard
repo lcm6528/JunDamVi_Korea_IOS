@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -924,6 +924,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
@@ -938,6 +939,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
@@ -952,6 +954,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
@@ -966,6 +969,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
@@ -980,6 +984,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3S5-2x-mDe">
@@ -1045,6 +1050,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="resultButtonPressed:" destination="wYf-gj-JhQ" eventType="touchUpInside" id="rIP-Pz-wyk"/>
@@ -1085,6 +1091,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="pushButton" destination="iSd-K8-ooj" id="L1J-RK-GqZ"/>
+                        <outlet property="tableView" destination="ZWI-M3-BcF" id="q2X-jJ-1e2"/>
                         <segue destination="zm0-gX-xPW" kind="presentation" identifier="push" id="28R-Nv-1NB"/>
                     </connections>
                 </viewController>
@@ -1344,6 +1351,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bounceWithInteraction" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="analButtonPressed:" destination="JUk-Qr-IFS" eventType="touchUpInside" id="kar-BY-uVC"/>

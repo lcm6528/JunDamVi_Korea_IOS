@@ -26,6 +26,10 @@ class JDVNoteMenuViewController: JDVViewController{
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
         tableView.tableFooterView = UIView()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
