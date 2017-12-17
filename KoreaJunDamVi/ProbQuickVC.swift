@@ -16,6 +16,7 @@ class ProbQuickTestViewController : JDVViewController {
     
     
     @IBOutlet var pushButton: JDVButton!
+    @IBOutlet var tableView: UITableView!
     
     var option: JDVProbManager.ProbOption!
     
@@ -33,6 +34,7 @@ class ProbQuickTestViewController : JDVViewController {
         pushButton.layer.cornerRadius = 4
         pushButton.layer.borderWidth = 0.5
         pushButton.layer.borderColor = UIColor.gray.cgColor
+        
         
         self.navigationController?.delegate = self
     }
