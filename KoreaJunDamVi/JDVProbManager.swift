@@ -38,29 +38,31 @@ class JDVProbManager: NSObject {
         }
     }
     
-    static func fetchProbs(withSortedOption option:SortedOption,by value:String)->[Prob]{
+    static func fetchProbs(withSortedOption option:SortedOption,by value:String, completion:@escaping ([Prob])->()){
         
         var Probs:[Prob] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
         let val = (option != .test) ?  ("\"" + value + "\"") : (value)
-        
         if (fmdb?.open())! {
             
             let sql1 = "SELECT * FROM Probs WHERE \(option.rawValue) = \(val)"
             let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
-            while result?.next() == true {
-                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let prob = Prob(withDict: dict)
-                
-                Probs.append(prob)
+            var arr = [NSDictionary]()
+            while result?.next() == true{
+
+                arr.append(result!.resultDictionary() as NSDictionary )
             }
+            
+            
+            arr.forEach({ (dict) in
+                Probs.append(Prob(withDict: dict))
+            })
+            
+            completion(Probs)
         }
         fmdb?.close()
-        return Probs
-        
-        
     }
     
     

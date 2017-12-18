@@ -58,7 +58,7 @@ struct Solution {
     func setToAttr(from str:String)->NSAttributedString{
         
         let result = NSMutableAttributedString()
-        result.append(stringToAttrStringInHTML(str))
+        result.append(NSAttributedString(fromHTML:str))
         result.addAttribute(NSAttributedStringKey.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
@@ -101,7 +101,7 @@ struct Solution {
             
         }
         
-        result.append(stringToAttrStringInHTML(str))
+        result.append(NSAttributedString(fromHTML:str))
         return result
         
     }

@@ -79,8 +79,14 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             { action in
                 
                 self.showIndicator()
-                self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
-                self.performSegue(withIdentifier: "pushinit", sender: self)
+//                self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
+                
+                
+                JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
+                    self?.Probs = probs
+                    self?.performSegue(withIdentifier: "pushinit", sender: self)
+                })
+                
                 
         }))
         
@@ -90,8 +96,13 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
                 alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
                     { action in
                         self.showIndicator()
-                        self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
-                        self.performSegue(withIdentifier: "pushcont", sender: self)
+                       
+                        JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
+                            self?.Probs = probs
+                            self?.performSegue(withIdentifier: "pushcont", sender: self)
+                        })
+                        
+                        
                         
                 }
                 ))

@@ -8,8 +8,7 @@
 
 import Foundation
 import UIKit
-
-
+import NSAttributedString_DDHTML
 
 struct Prob {
     var ProbID:Int
@@ -60,7 +59,8 @@ struct Prob {
     mutating func setTestAtt(){
         
         let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
-        let str = stringToAttrStringInHTML(title_String)
+        let str = NSAttributedString(fromHTML: title_String)
+        
         title.append(str)
         title.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
         
@@ -109,8 +109,7 @@ struct Prob {
     func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
         
         let result = NSMutableAttributedString()
-        
-        if let bundlePath = Bundle.main.path(forResource: name, ofType: "png"){
+        if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg"){
             
             let attachIcon:NSTextAttachment = NSTextAttachment()
             attachIcon.image = UIImage(contentsOfFile: bundlePath)
@@ -122,7 +121,7 @@ struct Prob {
             
         }
         
-        result.append(stringToAttrStringInHTML(str))
+        result.append(NSAttributedString(fromHTML:str))
         return result
         
     }

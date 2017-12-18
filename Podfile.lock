@@ -20,6 +20,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - NSAttributedString-DDHTML (1.2.0)
   - PageMenu (1.2.9)
   - Realm (3.0.2):
     - Realm/Headers (= 3.0.2)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - FMDB
   - Google/Analytics
+  - NSAttributedString-DDHTML
   - PageMenu (from `https://github.com/orazz/PageMenu.git`)
   - RealmSwift
   - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
@@ -75,6 +77,7 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  NSAttributedString-DDHTML: 59a7bcd44b92cb7f6f6ef26f52c4baad6b1d01ba
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
@@ -87,6 +90,6 @@ SPEC CHECKSUMS:
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
   XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: 37cd55395ef001edecae94b41d735617aa88211d
+PODFILE CHECKSUM: eff5f3ee98e2fd8a7b6f23d8b5046920f1a66c25
 
 COCOAPODS: 1.3.1

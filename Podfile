@@ -16,5 +16,6 @@ target 'KoreaJunDamVi' do
   pod 'SwiftyStoreKit'
   pod 'DZNEmptyDataSet'
   pod 'TransitionableTab'
+  pod 'NSAttributedString-DDHTML'
   
 end
