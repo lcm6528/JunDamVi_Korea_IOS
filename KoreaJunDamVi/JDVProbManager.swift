@@ -5,6 +5,7 @@
 //  Created by 이창민 on 2016. 6. 28..
 //  Copyright © 2016년 LEETJunDamVi. All rights reserved.
 //
+// TOTO : fetch 함수들에 completion 블럭을 넣도록 바꾸자.
 
 import UIKit
 import FMDB
@@ -54,7 +55,6 @@ class JDVProbManager: NSObject {
 
                 arr.append(result!.resultDictionary() as NSDictionary )
             }
-            
             
             arr.forEach({ (dict) in
                 Probs.append(Prob(withDict: dict))
