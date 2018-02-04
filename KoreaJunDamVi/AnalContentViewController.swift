@@ -9,14 +9,11 @@
 import UIKit
 import XLPagerTabStrip
 class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
-    
-    var itemInfo: IndicatorInfo = "View"
-    
-    @IBOutlet var contentTextView: UITextView!
     var content:String!
+    var itemInfo: IndicatorInfo = "View"
+    @IBOutlet var contentTextView: UITextView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         //TODO : Modeling
         let result = NSMutableAttributedString(string: content)
@@ -31,5 +28,4 @@ class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
-    
 }

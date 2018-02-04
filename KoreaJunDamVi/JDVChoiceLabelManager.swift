@@ -26,13 +26,13 @@ class JDVChoiceViewManager: NSObject {
         get{
             return self.isActive
         }
-        set(isActive){
+        set(isActive) {
             
             if isActive == true{
                 for view in arrayOfViews{
                     view.isUserInteractionEnabled = true
                 }
-            }else{
+            } else {
                 for view in arrayOfViews{
                     view.isUserInteractionEnabled = false
                 }
@@ -46,7 +46,7 @@ class JDVChoiceViewManager: NSObject {
     
     var delegate:JDVChoiceViewManagerDelegate?
     
-    init(WithViews views:UIView ...){
+    init(WithViews views:UIView ...) {
         super.init()
         arrayOfViews = views
         
@@ -58,7 +58,7 @@ class JDVChoiceViewManager: NSObject {
         
     }
     
-    @objc func touchOnLabel(_ sender:UITapGestureRecognizer){
+    @objc func touchOnLabel(_ sender:UITapGestureRecognizer) {
         
         let index:Int = arrayOfViews.index(of: sender.view!)!
         selectLabelAtIndex(index)
@@ -69,7 +69,7 @@ class JDVChoiceViewManager: NSObject {
     }
     
     
-    func setColorForStateAtIndex(_ index:Int, state:StateOfChoice){
+    func setColorForStateAtIndex(_ index:Int, state:StateOfChoice) {
         
         let view = arrayOfViews[index]
         
@@ -98,11 +98,11 @@ class JDVChoiceViewManager: NSObject {
         
     }
     
-    func selectLabelAtIndex(_ index:Int){
+    func selectLabelAtIndex(_ index:Int) {
         
         
         
-        for (idx,_)in arrayOfViews.enumerated(){
+        for (idx,_)in arrayOfViews.enumerated() {
             
             
             setColorForStateAtIndex(idx, state: .normal)

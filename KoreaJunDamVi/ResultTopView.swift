@@ -16,10 +16,8 @@ class ProbResultTopView : UIView {
     
     var delegate: ProbResultSubViewDelegate?
     @IBOutlet var gageView: GageView!
-    
     @IBOutlet var roundView1: RoundView!
     @IBOutlet var roundView2: RoundView!
-    
     @IBOutlet var label_comment: UILabel!
     @IBOutlet var label_grade: UILabel!
     
@@ -29,20 +27,17 @@ class ProbResultTopView : UIView {
     @IBOutlet var label_Score: UILabel!
     
     override init(frame: CGRect) {
-        
         super.init(frame: frame)
         setup()
     }
     
     
     required init(coder aDecoder: NSCoder) {
-        
         super.init(coder: aDecoder)!
         setup()
     }
     
     func setup() {
-        
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
@@ -57,7 +52,6 @@ class ProbResultTopView : UIView {
         let bundle = Bundle(for:type(of: self))
         let nib = UINib(nibName:NibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-        
         return view
     }
     
@@ -66,7 +60,7 @@ class ProbResultTopView : UIView {
     }
     
     
-    func configure(result:TestResult){
+    func configure(result:TestResult) {
         
         switch result.TotalScore {
         case 70...100:
@@ -89,10 +83,10 @@ class ProbResultTopView : UIView {
         label_Score.text = "\(result.TotalScore)"
         label_wrong.text = "\(result.numberOfWrong+result.numberOfPass)"
         
-        gageView.currentValue = CGFloat((Float(result.numberOfRight)/Float(result.Tries.count)) * 100)
+        gageView.currentValue = CGFloat((Float(result.numberOfRight) / Float(result.Tries.count)) * 100)
         
-        let totalRate = Float(result.numberOfRight)/Float(result.Tries.count)
-        var tryRate = Float(result.numberOfRight)/Float(result.Tries.count - result.numberOfPass)
+        let totalRate = Float(result.numberOfRight) / Float(result.Tries.count)
+        var tryRate = Float(result.numberOfRight) / Float(result.Tries.count - result.numberOfPass)
         if tryRate.isNaN{tryRate = Float(0)}
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {

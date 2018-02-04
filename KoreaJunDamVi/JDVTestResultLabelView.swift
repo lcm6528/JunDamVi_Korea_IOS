@@ -19,7 +19,7 @@ import UIKit
     get{
       return titleLabel.text
     }
-    set(title){
+    set(title) {
       titleLabel.text = title
     }
   }
@@ -28,7 +28,7 @@ import UIKit
     get{
       return valueLabel.text
     }
-    set(title){
+    set(title) {
       valueLabel.text = title
     }
   }

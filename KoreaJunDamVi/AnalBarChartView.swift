@@ -29,7 +29,7 @@ import UIKit
   
   var maxRange:CGFloat!
   override var backgroundColor: UIColor?{
-    didSet(value){
+    didSet(value) {
       guard value != nil else {
         return
       }
@@ -84,11 +84,11 @@ import UIKit
   override func layoutSubviews() {
     super.layoutSubviews()
   }
-  func setMaxRange(){
+  func setMaxRange() {
     maxRange = self.height - 65 - 60
   }
   
-  func setValue(forRedBar val1:Int,BlackBar val2:Int, GrayBar val3:Int){
+  func setValue(forRedBar val1:Int,BlackBar val2:Int, GrayBar val3:Int) {
     
     valueForRedBar = val1
     valueForBlackBar = val2
@@ -97,7 +97,7 @@ import UIKit
   }
   
   
-  func setBarUI(withAnimate animated:Bool){
+  func setBarUI(withAnimate animated:Bool) {
     
     
     redBarTitleLabel.text = "\(valueForRedBar!)"
@@ -113,14 +113,14 @@ import UIKit
     if animated{
      animate()
 
-    }else{
+    } else {
     self.layoutIfNeeded()  
     }
     
     
   }
   
-  func animate(){
+  func animate() {
     
     
     let originHeight = [heightOfBar1.constant,heightOfBar2.constant,heightOfBar3.constant]

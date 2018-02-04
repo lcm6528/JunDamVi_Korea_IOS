@@ -9,10 +9,10 @@
 import UIKit
 import UICountingLabel
 import WSProgressHUD
+
 class SimpleResultViewController : UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var gageView: GageView!
     @IBOutlet var circleView: RoundView!
     @IBOutlet var label_right: UICountingLabel!
@@ -20,22 +20,17 @@ class SimpleResultViewController : UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    
     var option:JDVProbManager.ProbOption!
-    
     var result:TestResult!
     var heightOfSubView:CGFloat!
-    
     var addedNote = Set<Note>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = option.sortedOption.description + "-" + option.cacheKey + " 문제 풀이 결과"
-        
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
         tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
@@ -46,7 +41,6 @@ class SimpleResultViewController : UIViewController {
         super.viewWillAppear(animated)
         WSProgressHUD.dismiss()
         JDVProbManager.saveCachedData(with: option.cacheKey, tries: [])
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,30 +51,24 @@ class SimpleResultViewController : UIViewController {
         label_right.countFromZero(to: CGFloat(result.numberOfRight))
         label_wrong.text = "\(result.numberOfWrong+result.numberOfPass)"
         
-        gageView.currentValue = CGFloat((Float(result.numberOfRight)/Float(result.Tries.count)) * 100)
+        gageView.currentValue = CGFloat((Float(result.numberOfRight) / Float(result.Tries.count)) * 100)
         
-        let totalRate = Float(result.numberOfRight)/Float(result.Tries.count)
-        
+        let totalRate = Float(result.numberOfRight) / Float(result.Tries.count)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.circleView.setValue(value: CGFloat(totalRate*100), animate: true)
-            
         }
     }
 }
 
-
-
-extension SimpleResultViewController : UITableViewDelegate, UITableViewDataSource{
+extension SimpleResultViewController: UITableViewDelegate, UITableViewDataSource {
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return result.Tries.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
-        
         cell.configureForSimpleResult(item: result.Tries[indexPath.row])
         cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
         cell.noteButton.tag = indexPath.row
@@ -90,28 +78,22 @@ extension SimpleResultViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "testheader")
         let header = view as! testheader
         return header
     }
     
-    @objc func buttonPressed(_ sender:UIButton){
-        
-        
+    @objc func buttonPressed(_ sender:UIButton) {
         let tryObj = result.Tries[sender.tag]
         let note = Note()
         note.ProbID = tryObj.ProbID
         note.Selection = tryObj.Selection
         
-        if sender.isSelected == false{
-            
+        if sender.isSelected == false {
             JDVNoteManager.saveNote(by: note)
-            
-        }else{
+        } else {
             JDVNoteManager.deleteNote(by: note)
         }
-        
         sender.isSelected = !sender.isSelected
     }
 }

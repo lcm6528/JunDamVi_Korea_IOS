@@ -19,7 +19,7 @@ class TestResultRecord:Object{
     @objc dynamic var numberOfWrong:Int = 0
     @objc dynamic var Score:Int = 0
     
-    convenience init(by result:TestResult){
+    convenience init(by result:TestResult) {
         self.init()
         
         self.TestType = result.TestType
@@ -51,7 +51,7 @@ struct Try {
     var ProbNum:Int
     var State:state = .Pass
     
-    init(withProb prob:Prob,selection select:Int){
+    init(withProb prob:Prob,selection select:Int) {
         self.ProbNum = prob.ProbNum
         self.TestNum = prob.TestNum
         self.ProbID = prob.ProbID
@@ -61,11 +61,11 @@ struct Try {
         
         if Answer == Selection{
             self.State = .Right
-        }else{
+        } else {
             self.State = (Selection == 0) ? (.Pass) : (.Wrong)
         }
     }
-    init(withQuickProb prob:QuickProb,selection select:Int){
+    init(withQuickProb prob:QuickProb,selection select:Int) {
         self.ProbNum = prob.ProbNum
         self.TestNum = prob.TestNum
         self.ProbID = prob.ProbID
@@ -75,7 +75,7 @@ struct Try {
         
         if Answer == Selection{
             self.State = .Right
-        }else{
+        } else {
             self.State = (Selection == 0) ? (.Pass) : (.Wrong)
         }
     }
@@ -96,7 +96,7 @@ struct TestResult{
     var numberOfWrong:Int = 0
     var numberOfPass:Int = 0
     
-    init(withTestType type:String,forKey key:String, withTries tries:[Try]){
+    init(withTestType type:String,forKey key:String, withTries tries:[Try]) {
         self.TestType = type
         self.TestKey = key
         self.Tries = tries
@@ -105,7 +105,7 @@ struct TestResult{
     }
     
     
-    mutating func calculateScore(){
+    mutating func calculateScore() {
         
         
         

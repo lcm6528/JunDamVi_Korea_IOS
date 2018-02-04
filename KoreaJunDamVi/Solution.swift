@@ -29,7 +29,7 @@ struct Solution {
         return setToAttr(from: content2_String)
     }
     
-    init(){
+    init() {
         
         self.ProbID = 0
         self.TestNum = 0
@@ -41,7 +41,7 @@ struct Solution {
         
         
     }
-    init(withDict dict:NSDictionary){
+    init(withDict dict:NSDictionary) {
         
         self.ProbID = dict["probId"] as! Int
         self.TestNum = dict["testnum"] as! Int
@@ -89,7 +89,7 @@ struct Solution {
         
         let result = NSMutableAttributedString()
         
-        if let bundlePath = Bundle.main.path(forResource: name, ofType: "png"){
+        if let bundlePath = Bundle.main.path(forResource: name, ofType: "png") {
             
             let attachIcon:NSTextAttachment = NSTextAttachment()
             attachIcon.image = UIImage(contentsOfFile: bundlePath)

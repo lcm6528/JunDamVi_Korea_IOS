@@ -14,7 +14,7 @@ class SettingsTableViewCell: UITableViewCell {
     @IBOutlet var contentTitleLabel: UILabel!
     @IBOutlet var contentSubtitleLabel: UILabel!
     
-    func configure(model:SettingsViewCellModel){
+    func configure(model:SettingsViewCellModel) {
         
         self.contentImageView.image = model.image
         self.contentTitleLabel.text = model.title

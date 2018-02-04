@@ -68,7 +68,7 @@ protocol JDVTabbarDelegate{
     
   }
   
-  func activeLButton(){
+  func activeLButton() {
     LButton.isSelected = true
     LLine.backgroundColor = JDVBlueColor
     
@@ -77,7 +77,7 @@ protocol JDVTabbarDelegate{
     
   }
   
-  func activeRButton(){
+  func activeRButton() {
     
     RButton.isSelected = true
     RLine.backgroundColor = JDVBlueColor
@@ -88,7 +88,7 @@ protocol JDVTabbarDelegate{
   }
   
   
-  func selectButtonWithTag(tag x: Int){
+  func selectButtonWithTag(tag x: Int) {
     
     switch x {
     case 0:

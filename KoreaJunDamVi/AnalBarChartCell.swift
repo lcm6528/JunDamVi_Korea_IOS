@@ -11,7 +11,7 @@ import UIKit
 class AnalBarChartCell: UICollectionViewCell {
     
     @IBOutlet var barChart: AnalBarChartView!
-    func configure(by record:TestResultRecord){
+    func configure(by record:TestResultRecord) {
         
         
         barChart.setValue(forRedBar: record.numberOfRight,
@@ -33,7 +33,7 @@ class AnalBarChartCell: UICollectionViewCell {
             }
             barChart.bottomLabel.text = "\(record.TestKey)회"
             
-        }else{
+        } else {
             
             barChart.bottomLabel.text = record.TestKey
         }

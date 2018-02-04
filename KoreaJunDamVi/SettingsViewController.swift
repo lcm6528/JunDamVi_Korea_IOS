@@ -36,7 +36,7 @@ class SettingsViewController: JDVViewController {
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate{
     
-    func ShowMail(){
+    func ShowMail() {
         
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
@@ -66,7 +66,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate{
     
     
     
-    func ShowResetAlert(){
+    func ShowResetAlert() {
         
         let alert = UIAlertController(title: "학습내역 초기화", message: "앱 내 모든 정보가 초기화됩니다.", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -93,7 +93,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate{
         self.present(alert, animated: true, completion: nil)
     }
     
-    func ShowRestoreAlert(){
+    func ShowRestoreAlert() {
         
         let alert = UIAlertController(title: "구매내역 복원", message: "앱스토어 구매내역을 복원합니다.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler:

@@ -14,7 +14,7 @@ class JDVTextView: UITextView {
 //    get{
 //      return super.text
 //    }
-//    set(value){
+//    set(value) {
 //      super.text = "\n\(value!)\n"
 //    }
 //  }

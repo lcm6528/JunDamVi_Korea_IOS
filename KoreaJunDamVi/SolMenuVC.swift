@@ -52,7 +52,7 @@ class JDVSolutionMenuViewController: JDVViewController {
         
     }
     
-    func purchase(){
+    func purchase() {
         SwiftyStoreKit.purchaseProduct(ProductID, atomically: true) { result in
             switch result {
             case .success:
@@ -80,7 +80,7 @@ class JDVSolutionMenuViewController: JDVViewController {
     
     
     
-    func preview(){
+    func preview() {
         
         isBlockUserInteract = true
         WSProgressHUD.show(withStatus: "해설 불러오는 중..")
@@ -93,7 +93,7 @@ class JDVSolutionMenuViewController: JDVViewController {
         
         
     }
-    func retrive(){
+    func retrive() {
         
         SwiftyStoreKit.retrieveProductsInfo([ProductID]) { result in
             if let product = result.retrievedProducts.first {
@@ -112,7 +112,7 @@ class JDVSolutionMenuViewController: JDVViewController {
     }
     
     
-    func fetchList(){
+    func fetchList() {
         
         var dict:NSDictionary!
         let path = Bundle.main.path(forResource: "SolList", ofType: "json")
@@ -169,7 +169,7 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
         
         if SCREEN_WIDTH > 430{
             return CGSize(width: 120, height: 120)
-        }else{
+        } else {
             let length = SCREEN_WIDTH/3 - 20
             return CGSize(width: length, height: length)
         }

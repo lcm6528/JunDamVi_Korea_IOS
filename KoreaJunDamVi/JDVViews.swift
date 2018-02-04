@@ -27,7 +27,7 @@ protocol Markable{
 
 extension Markable where Self:UIView{
     
-    func mark(){
+    func mark() {
         
         let label = UILabel(frame: CGRect(x: SCREEN_WIDTH - 53, y: 7, width: 24, height: 20 ))
 

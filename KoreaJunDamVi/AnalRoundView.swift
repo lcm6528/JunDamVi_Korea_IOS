@@ -23,7 +23,7 @@ import UIKit
   @IBOutlet var layerView: UIView!
   
   override var backgroundColor: UIColor?{
-    didSet(value){
+    didSet(value) {
       //      self.view.backgroundColor = UIColor.clear
       guard value != nil else {
         return

@@ -11,22 +11,22 @@ import PageMenu
 
 class JDVProbAnalFrameViewController: JDVViewController {
     
-    var pageMenu : CAPSPageMenu?
-    var data:[(String,Float)] = []
-    var contentData:[String] = []
-    var dataObject:[String:String]!
-    var contentObject:[String:String]!
-    var option:JDVProbManager.SortedOption!
+    var pageMenu: CAPSPageMenu?
+    var data: [(String,Float)] = []
+    var contentData: [String] = []
+    var dataObject: [String:String]!
+    var contentObject: [String:String]!
+    var option: JDVProbManager.SortedOption!
     @IBOutlet var graph: JDVGraph!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         data = dataObject.map{
-            return ($0.key,$0.value.toFloat()!)
+            return ($0.key, $0.value.toFloat()!)
         }
         data.shuffle()
-        for item in data{
+        for item in data {
             contentData.append(contentObject[item.0] ?? "분석자료가 없습니다.")
         }
         
@@ -35,9 +35,9 @@ class JDVProbAnalFrameViewController: JDVViewController {
         graph.setData(model: JDVGraphModel(arrayLiteral: data))
         graph.setHighlight(toStanding: 3)
         
-        var controllerArray : [UIViewController] = []
+        var controllerArray: [UIViewController] = []
         
-        for (index,element) in data.enumerated(){
+        for (index,element) in data.enumerated() {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "JDVAnalContentViewController") as! JDVAnalContentViewController
             controller.title = element.0
             controller.content = contentData[index]
@@ -57,7 +57,7 @@ class JDVProbAnalFrameViewController: JDVViewController {
         ]
         
         
-        pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x:0.0, y:0.0, width:self.view.frame.width, height:self.view.frame.height), pageMenuOptions: parameters)
+        pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x:0.0, y:0.0, width: self.view.frame.width, height: self.view.frame.height), pageMenuOptions: parameters)
         
         self.view.addSubview(pageMenu!.view)
     }

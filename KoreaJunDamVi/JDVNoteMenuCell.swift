@@ -16,7 +16,7 @@ class JDVNoteMenuCell: UITableViewCell {
     @IBOutlet var label_type: UILabel!
     @IBOutlet var label_tags: UILabel!
     
-    func configure(by prob:Prob){
+    func configure(by prob:Prob) {
         
         label_probnum.text = "\(prob.TestNum)회\(prob.ProbNum)번"
         label_score.text = "\(prob.Score)"

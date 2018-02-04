@@ -101,7 +101,7 @@ class RoundView: UIView {
   
   //when value changes in interface builder
   
-  func setValue(value x:CGFloat,animate y:Bool){
+  func setValue(value x:CGFloat,animate y:Bool) {
     
     currentValue = x
     animate = y
@@ -112,12 +112,12 @@ class RoundView: UIView {
   }
   
   
-  func setupContent(){
+  func setupContent() {
     
     titleLabel.text = title
     if animate{
     contentLabel.countFromZero(to: currentValue)
-    }else{
+    } else {
       contentLabel.text = String(format: "%0.1f%%", currentValue)
     }
     

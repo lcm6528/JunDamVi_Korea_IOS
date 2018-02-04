@@ -37,7 +37,7 @@ class JDVNoteMenuViewController: JDVViewController{
         fetchNotes()
     }
     
-    func fetchNotes(){
+    func fetchNotes() {
         
         let realm = try! Realm()
         
