@@ -70,7 +70,7 @@ class NoteInnerViewController: JDVViewController {
         
     }
     
-    func configure(){
+    func configure() {
         
         let title = NSMutableAttributedString(string: "최선의 풀이")
         title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
@@ -87,7 +87,7 @@ class NoteInnerViewController: JDVViewController {
         self.testTitleTextView.attributedText = Prob.title_attString
         self.testContentTextView.attributedText = Prob.article_attString
         self.ScoreLabel.text = "[\(Prob.Score)점]"
-        for (index,textView) in testChoiceTextViews.enumerated(){
+        for (index,textView) in testChoiceTextViews.enumerated() {
             textView.attributedText = Prob.choices_attString[index]
         }
         
@@ -105,7 +105,7 @@ class NoteInnerViewController: JDVViewController {
         if Prob.TestNum >= 33 {
             
             showAlertWithString("해설", message: "\(Prob.TestNum)회차 해설은 준비중입니다.\n빠른 시일 내에 업데이트 될 예정입니다.", sender: self)
-        }else{
+        } else {
             purchase()
         }
         
@@ -116,7 +116,7 @@ class NoteInnerViewController: JDVViewController {
     
     
     
-    func isHideSolution(bool:Bool){
+    func isHideSolution(bool:Bool) {
         
         button_Purchase.isHidden = !bool
         
@@ -131,7 +131,7 @@ class NoteInnerViewController: JDVViewController {
     }
     
     
-    func purchase(){
+    func purchase() {
         SwiftyStoreKit.purchaseProduct(ProductID, atomically: true) { result in
             switch result {
             case .success:

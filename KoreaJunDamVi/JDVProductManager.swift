@@ -21,7 +21,7 @@ class JDVProductManager : NSObject{
         
     }
     
-    static func Purchase(){
+    static func Purchase() {
         SwiftyStoreKit.retrieveProductsInfo([ProductID]) { result in
             if let _ = result.retrievedProducts.first {
                 

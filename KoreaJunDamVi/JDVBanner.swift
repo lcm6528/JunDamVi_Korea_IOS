@@ -54,7 +54,7 @@ protocol JDVBannerDelegate{
     
   }
   
-    @objc func touchBanner(){
+    @objc func touchBanner() {
     
     
     self.delegate?.JDVBannerTouched(self)
@@ -69,7 +69,7 @@ protocol JDVBannerDelegate{
     return view
   }
   
-  func setBannerForPass(_ type:String){
+  func setBannerForPass(_ type:String) {
     
     if type == "lang"{
       
@@ -85,7 +85,7 @@ protocol JDVBannerDelegate{
     
   }
   
-  func setBannerForLink(_ type:String, score:Double){
+  func setBannerForLink(_ type:String, score:Double) {
     
     if type == "lang"{
       

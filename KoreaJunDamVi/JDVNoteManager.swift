@@ -13,7 +13,7 @@ import Toaster
 
 class JDVNoteManager: NSObject {
   
-    static func saveNote(by note:Note){
+    static func saveNote(by note:Note) {
         
         let realm = try! Realm()
         
@@ -25,7 +25,7 @@ class JDVNoteManager: NSObject {
         
     }
   
-    static func deleteNote(by note:Note){
+    static func deleteNote(by note:Note) {
         
         let realm = try! Realm()
         let object = realm.object(ofType: Note.self, forPrimaryKey: note.ProbID)
@@ -43,9 +43,9 @@ class JDVNoteManager: NSObject {
     static func isAdded(by probid:Int)->Bool{
         
         let realm = try! Realm()
-        if let _ = realm.object(ofType: Note.self, forPrimaryKey: probid){
+        if let _ = realm.object(ofType: Note.self, forPrimaryKey: probid) {
             return true
-        }else{
+        } else {
             return false
         }
         

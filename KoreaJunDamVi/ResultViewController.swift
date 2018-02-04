@@ -13,34 +13,24 @@ protocol ProbResultSubViewDelegate {
     func changeView()
 }
 
-class ProbResultViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,ProbResultSubViewDelegate {
+class ProbResultViewController: UIViewController, ProbResultSubViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     
     var option:JDVProbManager.ProbOption!
-    
     var result:TestResult!
     var heightOfSubView:CGFloat!
-    
     var addedNote = Set<Note>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"
-        
-        
-        
-        heightOfSubView = self.view.frame.size.height-64
-        
+        heightOfSubView = self.view.frame.size.height - 64
         let realm = try! Realm()
         //        let trial = realm.objects(TestResultRecord.self).filter{return $0.TestKey == self.option.cacheKey}.count
-        let trial = Array(realm.objects(TestResultRecord.self)).filter {return $0.TestKey == self.option.cacheKey}.count
-        
+        let trial = Array(realm.objects(TestResultRecord.self)).filter { return $0.TestKey == self.option.cacheKey }.count
         
         result.TryNum = trial
         //topView setup
@@ -66,45 +56,18 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewWillAppear(animated)
         WSProgressHUD.dismiss()
         JDVProbManager.saveCachedData(with: option.cacheKey, tries: [])
-        
     }
-    
     
     @IBAction func backButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func changeView(){
-        
+    func changeView() {
         let offsetY:CGFloat = scrollView.contentOffset.y == 0.0 ? heightOfSubView : 0.0
         scrollView.setContentOffset(CGPoint(x: 0, y: offsetY) , animated: true)
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-        return result.Tries.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
-        let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
-        
-        cell.configure(item: result.Tries[indexPath.row])
-        cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)) , for: .touchUpInside)
-        cell.noteButton.tag = indexPath.row
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "testheader")
-        let header = view as! testheader
-        return header
-    }
-    
-    @objc func buttonPressed(_ sender:UIButton){
+    @objc func buttonPressed(_ sender:UIButton) {
         
         let tryObj = result.Tries[sender.tag]
         let note = Note()
@@ -113,10 +76,30 @@ class ProbResultViewController: UIViewController,UITableViewDelegate,UITableView
         
         if sender.isSelected == false{
             JDVNoteManager.saveNote(by: note)
-        }else{
+        } else {
             JDVNoteManager.deleteNote(by: note)
         }
-        
         sender.isSelected = !sender.isSelected
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return result.Tries.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:ProbResultBotCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProbResultBotCell
+        
+        cell.configure(item: result.Tries[indexPath.row])
+        cell.noteButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        cell.noteButton.tag = indexPath.row
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "testheader")
+        let header = view as! testheader
+        return header
     }
 }

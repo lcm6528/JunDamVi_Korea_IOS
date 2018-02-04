@@ -13,7 +13,7 @@ class JDVScoreManager: NSObject {
     struct SimpleResult {
         var Score:Int
         var TestNum:Int
-        init(withKey key:String){
+        init(withKey key:String) {
             Score = getUserDefaultIntValue("\(key)score")
             TestNum = getUserDefaultIntValue("\(key)testnum")
         }
@@ -30,7 +30,7 @@ class JDVScoreManager: NSObject {
         }
     }
     
-    static func configureAnalData(by result:TestResult){
+    static func configureAnalData(by result:TestResult) {
         
         let setScoreAndTestNum:(String)->() = { key in
             setUserDefaultWithInt(result.TotalScore, forKey: "\(key)score")

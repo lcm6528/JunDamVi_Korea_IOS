@@ -44,7 +44,7 @@ class ProbTestFrameViewController: JDVViewController {
             let desc = option.sortedOption.description
             let str = desc[..<desc.index(desc.startIndex, offsetBy: 2)]
             setTitleWithStyle(option.cacheKey + str + " 문제풀기")
-        }else{
+        } else {
             setTitleWithStyle("\(Probs[0].TestNum)회차 문제풀기")
         }
         
@@ -89,7 +89,7 @@ class ProbTestFrameViewController: JDVViewController {
         
         if option.sortedOption == .test{
             JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
-        }else{
+        } else {
             JDVProbManager.saveCachedData(with: option.cacheKey, tries: selections!)
         }
         
@@ -104,7 +104,7 @@ class ProbTestFrameViewController: JDVViewController {
     @objc func onStop() {
         if option.sortedOption == .test{
             JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
-        }else{
+        } else {
             JDVProbManager.saveCachedData(with: option.sortedOption.rawValue, tries: selections!)
         }
     }
@@ -133,7 +133,7 @@ class ProbTestFrameViewController: JDVViewController {
             
             let vc = segue.destination as! ProbResultViewController
             var tries:[Try] = []
-            for (index, prob) in Probs.enumerated(){
+            for (index, prob) in Probs.enumerated() {
                 let item = Try(withProb: prob, selection: selections![index])
                 
                 tries.append(item)
@@ -157,7 +157,7 @@ class ProbTestFrameViewController: JDVViewController {
         }else if segue.identifier == "pushsimple"{
             let vc = segue.destination as! SimpleResultViewController
             var tries:[Try] = []
-            for (index, prob) in Probs.enumerated(){
+            for (index, prob) in Probs.enumerated() {
                 let item = Try(withProb: prob, selection: selections![index])
                 
                 tries.append(item)
@@ -189,7 +189,7 @@ class ProbTestFrameViewController: JDVViewController {
         
         if sender.isSelected == false{
             JDVNoteManager.saveNote(by: note)
-        }else{
+        } else {
             JDVNoteManager.deleteNote(by: note)
         }
         
@@ -208,7 +208,7 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
-    func pushResultVC(withSegue id:String){
+    func pushResultVC(withSegue id:String) {
         
         let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
@@ -237,7 +237,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     
     
-    func setToolbarTitle(_ index:Int){
+    func setToolbarTitle(_ index:Int) {
         
         let numberOfTest:Int = index+1
         toolBarCenterLabel.text = "\(numberOfTest)번"
@@ -252,7 +252,7 @@ class ProbTestFrameViewController: JDVViewController {
         {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "풀이완료", for: .normal)
-        }else{
+        } else {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
         }
@@ -298,7 +298,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         let viewController = viewController as! ProbTestInnerViewController
         var index = viewController.pageIndex as Int
         
-        if(index == 0 || index == NSNotFound){return nil}
+        if(index == 0 || index == NSNotFound) {return nil}
         
         index -= 1
         
@@ -314,13 +314,13 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
         index += 1
         
-        if(index == number_of_pages){return nil}
+        if(index == number_of_pages) {return nil}
         
         return self.pageViewAtIndex(index)
     }
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
+    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int) {
         
         let nextIndex = index
         
@@ -334,14 +334,14 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
         if currentIndex > nextIndex{
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
-        }else{
+        } else {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
         }
         
     }
     
     
-    func gotoNextPage(){
+    func gotoNextPage() {
         
         isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()+1
@@ -364,7 +364,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
     }
     
-    func gotoPrevPage(){
+    func gotoPrevPage() {
         isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()-1
         
@@ -393,7 +393,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
 
 extension ProbTestFrameViewController:UINavigationControllerDelegate{
     
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         WSProgressHUD.dismiss()
         isBlockUserInteract = false
         

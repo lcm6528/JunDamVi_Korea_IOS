@@ -25,7 +25,7 @@ class JDVViewController: UIViewController {
   
   
   
-  func setTitleWithImage(_ text:String){
+  func setTitleWithImage(_ text:String) {
     let textt = " \(text)"
     
     let label:UILabel = UILabel(frame:    CGRect(x: 0, y: 0, width: 180, height: 40))
@@ -56,7 +56,7 @@ class JDVViewController: UIViewController {
   
   
   
-  func setTitleWithStyle(_ text:String){
+  func setTitleWithStyle(_ text:String) {
     
     let label:UILabel = UILabel(frame:    CGRect(x: 0, y: 0, width: 120, height: 40))
     

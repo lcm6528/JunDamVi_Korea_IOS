@@ -19,7 +19,7 @@ class JDVRadioButtonManager: NSObject {
   
   var delegate:JDVRadioButtonManagerDelegate?
   
-  init(WithButtons btn:UIButton ...){
+  init(WithButtons btn:UIButton ...) {
     super.init()
     arrayOfButtons = btn
     for button in arrayOfButtons!{
@@ -32,7 +32,7 @@ class JDVRadioButtonManager: NSObject {
   }
   
   
-    @objc func buttonPressed(_ sender:UIButton){
+    @objc func buttonPressed(_ sender:UIButton) {
     
     if sender.isSelected == true{
       deselectAll()
@@ -57,7 +57,7 @@ class JDVRadioButtonManager: NSObject {
   }
   
   
-  func deselectAll(){
+  func deselectAll() {
     for button in arrayOfButtons{
       
       button.isSelected = false
@@ -65,7 +65,7 @@ class JDVRadioButtonManager: NSObject {
     }
   }
   
-  func selectButtonAtIndex(_ index:Int){
+  func selectButtonAtIndex(_ index:Int) {
     
     if index == -1{
       deselectAll()

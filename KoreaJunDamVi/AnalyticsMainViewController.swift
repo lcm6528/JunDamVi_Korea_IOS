@@ -28,7 +28,7 @@ class AnalyticsMainViewController: JDVViewController {
         
     }
     
-    func configureRoundViews(){
+    func configureRoundViews() {
         let data = JDVScoreManager.AnalModel()
         
         guard data.recent.TestNum != 0 else{
@@ -68,7 +68,7 @@ class AnalyticsMainViewController: JDVViewController {
     
     
     
-    func fetchRecords(){
+    func fetchRecords() {
         
         let realm = try! Realm()
         let result = realm.objects(TestResultRecord.self)

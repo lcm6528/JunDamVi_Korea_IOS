@@ -41,7 +41,7 @@ class JDVGraph: UIView {
     
     
     
-    func setData(model val:JDVGraphModel){
+    func setData(model val:JDVGraphModel) {
         
         dataModel = val
         setup()
@@ -50,7 +50,7 @@ class JDVGraph: UIView {
     
     
     
-    func setHighlight(toStanding val:Int){
+    func setHighlight(toStanding val:Int) {
         highlightRange = val
     }
     
@@ -79,7 +79,7 @@ class JDVGraph: UIView {
         guard dataModel != nil else{return}
         
         //set UI for Highlight
-        for (index,item) in dataModel!.Items.enumerated(){
+        for (index,item) in dataModel!.Items.enumerated() {
             
             if item.standings <= highlightRange{
                 baseArray[index].setHighlight(Bool:true)
@@ -103,7 +103,7 @@ class JDVGraph: UIView {
         let startx = (totalWidth - baseSize.width * CGFloat(numberOfCells))/2
         
         //Set base Frame
-        for (index,base) in baseArray.enumerated(){
+        for (index,base) in baseArray.enumerated() {
             base.frame = CGRect(x: startx + baseSize.width * CGFloat(index), y: 0 , width: baseSize.width, height: baseSize.height)
             self.addSubview(base)
             
@@ -122,7 +122,7 @@ class JDVGraph: UIView {
         super.awakeFromNib()
     }
     
-    func animate(withDuration duration:Double){
+    func animate(withDuration duration:Double) {
         
         
         for cell in baseArray{

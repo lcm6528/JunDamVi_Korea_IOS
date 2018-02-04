@@ -70,13 +70,13 @@ class JDVSolutionInnerViewController: JDVViewController,JDVChoiceViewManagerDele
         // Dispose of any resources that can be recreated.
     }
     
-    func configure(){
+    func configure() {
         
         self.testTitleTextView.attributedText = Prob.title_attString
         
         self.testContentTextView.attributedText = Prob.article_attString
         self.testScoreLabel.text = "[\(Prob.Score)점]"
-        for (index,textView) in testChoiceTextViews.enumerated(){
+        for (index,textView) in testChoiceTextViews.enumerated() {
             textView.attributedText = Prob.choices_attString[index]
         }
         

@@ -45,18 +45,18 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
         }
     }
     
-    func configure(){
+    func configure() {
         
         if option != .test{
             self.testTitleTextView.attributedText = Prob.title_attString_noNum
-        }else{
+        } else {
             self.testTitleTextView.attributedText = Prob.title_attString
         }
         
         self.testContentTextView.attributedText = Prob.article_attString
         
         self.ScoreLabel.text = "[\(Prob.Score)점]"
-        for (index,textView) in testChoiceTextViews.enumerated(){
+        for (index,textView) in testChoiceTextViews.enumerated() {
             textView.attributedText = Prob.choices_attString[index]
         }
     }

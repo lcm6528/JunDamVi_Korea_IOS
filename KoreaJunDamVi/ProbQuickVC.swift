@@ -52,7 +52,7 @@ class ProbQuickTestViewController : JDVViewController {
         
         let vc = segue.destination as! ProbResultViewController
         var tries:[Try] = []
-        for (index, prob) in Probs.enumerated(){
+        for (index, prob) in Probs.enumerated() {
             let item = Try(withQuickProb: prob, selection: selections[index])
             tries.append(item)
         }
@@ -95,7 +95,7 @@ extension ProbQuickTestViewController : UITableViewDataSource{
 
 extension ProbQuickTestViewController : UINavigationControllerDelegate{
     
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         WSProgressHUD.dismiss()
         isBlockUserInteract = false
         

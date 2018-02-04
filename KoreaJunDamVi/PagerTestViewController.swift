@@ -14,7 +14,6 @@ class JDVPagerTestViewController: ButtonBarPagerTabStripViewController {
     let kModel = ["국가","왕","사건","제도","경제","사회","문화","인물","단체","유물","복합","기타"]
     
     override func viewDidAppear(_ animated: Bool) {
-        
         let selectedBarHeight: CGFloat = 2
         
         buttonBarView.selectedBar.frame.origin.y = buttonBarView.frame.size.height - selectedBarHeight

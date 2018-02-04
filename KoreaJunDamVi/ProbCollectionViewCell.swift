@@ -20,7 +20,7 @@ class ProbCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 5
     }
     
-    func configure(by data:[Int]?){
+    func configure(by data:[Int]?) {
         
         guard let data = data else{
             stateLabel.text = "학습 미완료"

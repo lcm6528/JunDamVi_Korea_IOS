@@ -49,7 +49,7 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
             cell.configure(by: cachedData)
             
             
-        }else{
+        } else {
             let cachedData = JDVProbManager.getCachedData(with: dataArray[indexPath.row])
             
             cell.contentLabel.text = dataArray[indexPath.row]
@@ -64,7 +64,7 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
         
         if SCREEN_WIDTH > 430{
             return CGSize(width: 120, height: 120)
-        }else{
+        } else {
             let length = SCREEN_WIDTH/3 - 20
             return CGSize(width: length, height: length)
         }

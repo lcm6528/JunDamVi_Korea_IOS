@@ -39,7 +39,7 @@ class HomeViewController: JDVViewController {
         
     }
   
-    func fetchList(){
+    func fetchList() {
         
         var dict:NSDictionary!
         let path = Bundle.main.path(forResource: "ProbList", ofType: "json")
@@ -54,7 +54,7 @@ class HomeViewController: JDVViewController {
         completeCount = 0
         
         for test in Tests{
-            if let arr = JDVProbManager.getCachedData(with: test){
+            if let arr = JDVProbManager.getCachedData(with: test) {
                 if arr.isEmpty == true{
                     completeCount += 1
                 }
@@ -63,7 +63,7 @@ class HomeViewController: JDVViewController {
         }
     }
     
-    func setDday(){
+    func setDday() {
         
         let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "testday", ofType: "json")!))
         let json = JSON(data:jsondata)["data"]

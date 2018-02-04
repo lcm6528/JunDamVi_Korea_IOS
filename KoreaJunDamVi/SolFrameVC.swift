@@ -106,7 +106,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         note.Selection = 0
         if sender.isSelected == false{
             JDVNoteManager.saveNote(by: note)
-        }else{
+        } else {
             JDVNoteManager.deleteNote(by: note)
         }
         
@@ -121,7 +121,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     
     
-    func gotoNextPage(){
+    func gotoNextPage() {
         
         isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()+1
@@ -142,7 +142,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         
     }
     
-    func gotoPrevPage(){
+    func gotoPrevPage() {
         isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage()-1
         
@@ -158,7 +158,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     }
     
     
-    func setToolbarTitle(_ index:Int){
+    func setToolbarTitle(_ index:Int) {
         
         let numberOfTest:Int = index+1
         toolBarCenterLabel.text = "\(numberOfTest)번"
@@ -173,7 +173,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "", for: .normal)
-        }else{
+        } else {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
         }
@@ -210,7 +210,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         let viewController = viewController as! JDVSolutionInnerViewController
         var index = viewController.pageIndex as Int
         
-        if(index == 0 || index == NSNotFound){return nil}
+        if(index == 0 || index == NSNotFound) {return nil}
         
         index -= 1
         
@@ -226,14 +226,14 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         
         index += 1
         
-        if(index == number_of_pages){return nil}
+        if(index == number_of_pages) {return nil}
         
         return self.pageViewAtIndex(index)
     }
     
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
+    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int) {
         
         let nextIndex = index
         
@@ -247,7 +247,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         
         if currentIndex > nextIndex{
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
-        }else{
+        } else {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
         }
         
@@ -267,7 +267,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
 
 extension JDVSolutionFrameViewController:UINavigationControllerDelegate{
     
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         WSProgressHUD.dismiss()
         isBlockUserInteract = false
     }

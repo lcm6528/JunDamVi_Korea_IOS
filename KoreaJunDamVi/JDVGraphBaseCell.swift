@@ -94,7 +94,7 @@ import UIKit
     return view
   }
   
-  func setHighlight(Bool val:Bool){
+  func setHighlight(Bool val:Bool) {
     
     gageView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
     separatorView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
@@ -106,7 +106,7 @@ import UIKit
     
   }
   
-  func setGageBackgroundColor(with color:UIColor){
+  func setGageBackgroundColor(with color:UIColor) {
     
     gageView.backgroundColor = color
     separatorView.backgroundColor = color
@@ -114,7 +114,7 @@ import UIKit
   }
   
   
-  func setGageHeight(_ const:CGFloat, animate isAnimate:Bool){
+  func setGageHeight(_ const:CGFloat, animate isAnimate:Bool) {
     gageHeightConst.constant = 4
       self.layoutIfNeeded()
     if isAnimate{
@@ -123,7 +123,7 @@ import UIKit
       
         self.layoutIfNeeded()
       })
-    }else{
+    } else {
       gageHeightConst.constant = const
     }
   }

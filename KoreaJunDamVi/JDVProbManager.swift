@@ -39,7 +39,7 @@ class JDVProbManager: NSObject {
         }
     }
     
-    static func fetchProbs(withSortedOption option:SortedOption,by value:String, completion:@escaping ([Prob])->()){
+    static func fetchProbs(withSortedOption option:SortedOption,by value:String, completion:@escaping ([Prob])->()) {
         
         var Probs:[Prob] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
@@ -144,7 +144,7 @@ class JDVProbManager: NSObject {
     
     
     
-    static func saveCachedData(with key:String, tries:[Int]){
+    static func saveCachedData(with key:String, tries:[Int]) {
         
         setUserDefault(value: tries, forKey: key)
     }
@@ -156,7 +156,7 @@ class JDVProbManager: NSObject {
         
     }
     
-    static func deleteCachedData(with key:String){
+    static func deleteCachedData(with key:String) {
         deleteUserDefalut(key)
     }
     

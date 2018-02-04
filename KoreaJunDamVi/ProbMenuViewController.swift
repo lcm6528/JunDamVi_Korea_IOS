@@ -60,7 +60,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    func showIndicator(){
+    func showIndicator() {
         
         WSProgressHUD.show(withStatus: "문제 불러오는 중..")
         isBlockUserInteract = true
@@ -91,7 +91,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         }))
         
         /// if cache data exist
-        if let cachedArr = JDVProbManager.getCachedData(with: currentOption.cacheKey){
+        if let cachedArr = JDVProbManager.getCachedData(with: currentOption.cacheKey) {
             if cachedArr.isEmpty != true{
                 alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
                     { action in
@@ -126,7 +126,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         
     }
     
-    func fetchList(){
+    func fetchList() {
         
         var dict:NSDictionary!
         let path = Bundle.main.path(forResource: "ProbList", ofType: "json")
@@ -151,9 +151,9 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         
     }
     
-    func selectButtonInCollection(atIndex index:Int){
+    func selectButtonInCollection(atIndex index:Int) {
         
-        for (idx,button) in ToolbarButtons.enumerated(){
+        for (idx,button) in ToolbarButtons.enumerated() {
             {()->Bool in return idx == index}() ? (button.isSelected = true) : (button.isSelected = false)
         }
         
@@ -229,7 +229,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
             
             return pageContentViewController
             
-        }else{
+        } else {
             
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbCollectionViewController") as! ProbCollectionViewController
             pageContentViewController.delegate = self
@@ -245,7 +245,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         let viewController = viewController as! ProbCollectionViewController
         var index = viewController.pageIndex as Int
         
-        if(index == 0 || index == NSNotFound){return nil}
+        if(index == 0 || index == NSNotFound) {return nil}
         
         index -= 1
         
@@ -261,14 +261,14 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         index += 1
         
-        if(index == kNumber_of_pages){return nil}
+        if(index == kNumber_of_pages) {return nil}
         
         return self.pageViewAtIndex(index)
     }
     
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int){
+    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int) {
         
         let nextIndex = index
         
@@ -278,7 +278,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         if currentIndex > nextIndex{
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
-        }else{
+        } else {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         }
     }

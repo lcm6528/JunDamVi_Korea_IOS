@@ -34,7 +34,7 @@ struct Prob {
     var theme:String
     var tags:String
     
-    init(withDict dict:NSDictionary){
+    init(withDict dict:NSDictionary) {
         
         self.ProbID = dict["probId"] as! Int
         self.TestNum = dict["testnum"] as! Int
@@ -56,7 +56,7 @@ struct Prob {
     }
     
     
-    mutating func setTestAtt(){
+    mutating func setTestAtt() {
         
         let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
         let str = NSAttributedString(fromHTML: title_String)
@@ -72,7 +72,7 @@ struct Prob {
         
     }
     
-    mutating func setArticleAtt(){
+    mutating func setArticleAtt() {
         
         let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
         result.addAttribute(NSAttributedStringKey.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
@@ -86,11 +86,11 @@ struct Prob {
     }
     
     
-    mutating func setChoices(withArray arr:[String]){
+    mutating func setChoices(withArray arr:[String]) {
         
         choices_String = arr
         
-        for (index,choice) in choices_String.enumerated(){
+        for (index,choice) in choices_String.enumerated() {
             let name = String(format: "%d_%02d", ProbID,index+1)
             let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
             
@@ -109,7 +109,7 @@ struct Prob {
     func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
         
         let result = NSMutableAttributedString()
-        if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg"){
+        if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg") {
             
             let attachIcon:NSTextAttachment = NSTextAttachment()
             attachIcon.image = UIImage(contentsOfFile: bundlePath)
@@ -138,7 +138,7 @@ struct QuickProb {
     var Score:Int
     var Answer:Int
     
-    init(withDict dict:NSDictionary){
+    init(withDict dict:NSDictionary) {
         
         self.ProbID = dict["probId"] as! Int
         self.TestNum = dict["testnum"] as! Int

@@ -31,7 +31,7 @@ class JDVButton: UIButton {
         }
     }
     
-    @objc func bounce(){
+    @objc func bounce() {
         guard bounceWithInteraction == false else{ return }
         UIView.animate(withDuration: 0.1, animations: {
             self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
