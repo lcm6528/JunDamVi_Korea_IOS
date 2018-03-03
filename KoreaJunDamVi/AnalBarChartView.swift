@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class AnalBarChartView: UIView {
   var view:UIView!
-  let NibName:String = "AnalBarChartView"
+  let NibName: String = "AnalBarChartView"
   
   @IBOutlet var heightOfBar1: NSLayoutConstraint!
   @IBOutlet var heightOfBar2: NSLayoutConstraint!
@@ -37,9 +37,9 @@ import UIKit
   }
   
   
-  var valueForRedBar:Int! = 0
-  var valueForBlackBar:Int! = 0
-  var valueForGrayBar:Int! = 0
+  var valueForRedBar: Int! = 0
+  var valueForBlackBar: Int! = 0
+  var valueForGrayBar: Int! = 0
   
   
   
@@ -88,7 +88,7 @@ import UIKit
     maxRange = self.height - 65 - 60
   }
   
-  func setValue(forRedBar val1:Int,BlackBar val2:Int, GrayBar val3:Int) {
+  func setValue(forRedBar val1: Int,BlackBar val2: Int, GrayBar val3: Int) {
     
     valueForRedBar = val1
     valueForBlackBar = val2

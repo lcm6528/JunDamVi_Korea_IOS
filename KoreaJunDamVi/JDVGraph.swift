@@ -17,7 +17,7 @@ class JDVGraph: UIView {
     private var baseArray:[JDVGraphBaseCell] = []
     private var dataModel:JDVGraphModel?
     
-    private var numberOfCells:Int = 0
+    private var numberOfCells: Int = 0
     
     
     // MARK: UI values
@@ -33,7 +33,7 @@ class JDVGraph: UIView {
             self.backgroundColor = viewBackgroundColor
         }
     }
-    var highlightRange:Int = 0{//setter method를 따로 해야하나?
+    var highlightRange: Int = 0{//setter method를 따로 해야하나?
         didSet{
             configureUI()
         }
@@ -50,7 +50,7 @@ class JDVGraph: UIView {
     
     
     
-    func setHighlight(toStanding val:Int) {
+    func setHighlight(toStanding val: Int) {
         highlightRange = val
     }
     

@@ -15,7 +15,7 @@ let ProductID = "koreasolutions"
 class JDVProductManager : NSObject{
     
     
-    static func isPurchased()->Bool{
+    static func isPurchased()->Bool {
         
         return getUserDefaultBoolValue(ProductID)
         

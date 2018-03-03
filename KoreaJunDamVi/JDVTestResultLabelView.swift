@@ -15,7 +15,7 @@ import UIKit
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var valueLabel: UILabel!
   
-  @IBInspectable var title:String?{
+  @IBInspectable var title: String?{
     get{
       return titleLabel.text
     }
@@ -24,7 +24,7 @@ import UIKit
     }
   }
   
-  var value:String?{
+  var value: String?{
     get{
       return valueLabel.text
     }

@@ -10,21 +10,21 @@ import Foundation
 import UIKit
 
 struct Solution {
-    var ProbID:Int
-    var TestNum:Int
-    var ProbNum:Int
+    var ProbID: Int
+    var TestNum: Int
+    var ProbNum: Int
     
-    var keyword_String:String
+    var keyword_String: String
     var keyword_attString: NSAttributedString?{
         return setToAttr(from: keyword_String)
     }
     
-    var content1_String:String
+    var content1_String: String
     var content1_attString:NSAttributedString?{
         return setToAttrWithImage(from: content1_String)
     }
     
-    var content2_String:String
+    var content2_String: String
     var content2_attString:NSAttributedString?{
         return setToAttr(from: content2_String)
     }
@@ -55,7 +55,7 @@ struct Solution {
         
     }
     
-    func setToAttr(from str:String)->NSAttributedString{
+    func setToAttr(from str: String)->NSAttributedString{
         
         let result = NSMutableAttributedString()
         result.append(NSAttributedString(fromHTML:str))
@@ -69,7 +69,7 @@ struct Solution {
         
     }
     
-    func setToAttrWithImage(from str:String)->NSAttributedString{
+    func setToAttrWithImage(from str: String)->NSAttributedString{
         
         let result = replaceTagToImage(withString: str, imgName: "sol_\(ProbID)")
         result.addAttribute(NSAttributedStringKey.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
@@ -85,7 +85,7 @@ struct Solution {
     }
     
     
-    func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH - 20)->NSMutableAttributedString{
+    func replaceTagToImage(withString str: String, imgName name: String, withWidth width:CGFloat = SCREEN_WIDTH - 20)->NSMutableAttributedString{
         
         let result = NSMutableAttributedString()
         

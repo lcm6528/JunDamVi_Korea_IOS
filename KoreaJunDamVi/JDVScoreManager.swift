@@ -11,9 +11,9 @@ import UIKit
 class JDVScoreManager: NSObject {
     
     struct SimpleResult {
-        var Score:Int
-        var TestNum:Int
-        init(withKey key:String) {
+        var Score: Int
+        var TestNum: Int
+        init(withKey key: String) {
             Score = getUserDefaultIntValue("\(key)score")
             TestNum = getUserDefaultIntValue("\(key)testnum")
         }
@@ -57,7 +57,7 @@ class JDVScoreManager: NSObject {
     }
     
     
-    static func getTime(_ year:Int, type:String)-> Int{
+    static func getTime(_ year: Int, type: String)-> Int{
         let keyString = "\(year)\(type)"
         var time  = getUserDefaultIntValue(keyString)
         

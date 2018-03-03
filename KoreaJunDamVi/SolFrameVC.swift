@@ -158,9 +158,9 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     }
     
     
-    func setToolbarTitle(_ index:Int) {
+    func setToolbarTitle(_ index: Int) {
         
-        let numberOfTest:Int = index+1
+        let numberOfTest: Int = index+1
         toolBarCenterLabel.text = "\(numberOfTest)번"
         
         barButton_Star.isSelected = JDVNoteManager.isAdded(by: Probs[index].ProbID)
@@ -192,7 +192,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         
     }
     
-    func pageViewAtIndex(_ index: Int) ->JDVViewController{
+    func pageViewAtIndex(_ index: Int) ->JDVViewController {
         let innerView = self.storyboard?.instantiateViewController(withIdentifier: "JDVSolutionInnerViewController") as! JDVSolutionInnerViewController
         innerView.pageIndex = index
         innerView.Prob = Probs[index]
@@ -233,7 +233,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int) {
+    func gotoPageAtIndex(_ currentIndex: Int , goto index: Int) {
         
         let nextIndex = index
         

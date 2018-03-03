@@ -20,7 +20,7 @@ class RoundView: UIView {
   var value:CGFloat{
     return currentValue
   }
-  @IBInspectable var title:String = "title" {
+  @IBInspectable var title: String = "title" {
     didSet{
       setupContent()
     }

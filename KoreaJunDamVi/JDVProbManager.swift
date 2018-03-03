@@ -12,14 +12,14 @@ import FMDB
 
 class JDVProbManager: NSObject {
     
-    struct ProbOption{
+    struct ProbOption {
         
         var sortedOption:SortedOption = .test
-        var cacheKey:String = ""
+        var cacheKey: String = ""
         
     }
     
-    enum SortedOption:String{
+    enum SortedOption: String{
         case test = "testnum"
         case time = "time"
         case theme = "theme"
@@ -39,7 +39,7 @@ class JDVProbManager: NSObject {
         }
     }
     
-    static func fetchProbs(withSortedOption option:SortedOption,by value:String, completion:@escaping ([Prob])->()) {
+    static func fetchProbs(withSortedOption option:SortedOption,by value: String, completion:@escaping ([Prob])->()) {
         
         var Probs:[Prob] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
@@ -67,7 +67,7 @@ class JDVProbManager: NSObject {
     
     
     
-    static func fetchProbs(withTestnum num:Int)->[Prob]{
+    static func fetchProbs(withTestnum num: Int)->[Prob]{
         
         var Probs:[Prob] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
@@ -88,7 +88,7 @@ class JDVProbManager: NSObject {
         return Probs
     }
     
-    static func fetchProb(withProbID id:Int)->Prob?{
+    static func fetchProb(withProbID id: Int)->Prob?{
         
         var prob:Prob?
         
@@ -144,24 +144,24 @@ class JDVProbManager: NSObject {
     
     
     
-    static func saveCachedData(with key:String, tries:[Int]) {
+    static func saveCachedData(with key: String, tries:[Int]) {
         
         setUserDefault(value: tries, forKey: key)
     }
     
     
-    static func getCachedData(with key:String)->[Int]?{
+    static func getCachedData(with key: String)->[Int]?{
         
         return getUserDefault(key) as? [Int]
         
     }
     
-    static func deleteCachedData(with key:String) {
+    static func deleteCachedData(with key: String) {
         deleteUserDefalut(key)
     }
     
     //QuickProbs
-    static func fetchQuickProbs(withTestnum num:Int)->[QuickProb]{
+    static func fetchQuickProbs(withTestnum num: Int)->[QuickProb]{
         
         var Probs:[QuickProb] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")

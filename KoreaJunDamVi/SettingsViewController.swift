@@ -29,12 +29,10 @@ class SettingsViewController: JDVViewController {
         models[0].handler = ShowResetAlert
         models[1].handler = ShowRestoreAlert
         models[2].handler = ShowMail
-        
     }
-    
 }
 
-extension SettingsViewController: MFMailComposeViewControllerDelegate{
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
     
     func ShowMail() {
         
@@ -63,8 +61,6 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate{
         
         return mailComposerVC
     }
-    
-    
     
     func ShowResetAlert() {
         
@@ -117,7 +113,6 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate{
         alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
             { action in}))
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     @objc(mailComposeController:didFinishWithResult:error:)
@@ -127,14 +122,13 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate{
     }
 }
 
-extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
+extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
         return 3
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsTableViewCell
         cell.configure(model: models[indexPath.row])
@@ -142,7 +136,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         models[indexPath.row].handler()
     }
 }

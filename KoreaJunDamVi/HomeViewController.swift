@@ -59,7 +59,7 @@ class HomeViewController: JDVViewController {
     func setDday() {
         let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "testday", ofType: "json")!))
         let json = JSON(data:jsondata)["data"]
-        let arr = json.arrayObject as! [[String:String]]
+        let arr = json.arrayObject as! [[String: String]]
         
         for item in arr {
             let test = item.first!

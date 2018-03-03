@@ -10,9 +10,9 @@ import UIKit
 import WSProgressHUD
 
 protocol ProbCollectionViewDelegate{
-    func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index:Int)
+    func ProbCollectionViewSelectedRow(pageindex pIdx: Int, atIndex index: Int)
 }
-class ProbCollectionViewController: JDVViewController{
+class ProbCollectionViewController: JDVViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -20,7 +20,7 @@ class ProbCollectionViewController: JDVViewController{
     var delegate:ProbCollectionViewDelegate?
     
     var parentVC:ProbMenuViewController!
-    var pageIndex:Int!
+    var pageIndex: Int!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

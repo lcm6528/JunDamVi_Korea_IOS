@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import TransitionableTab
 
-class HomeTabbarController: UITabBarController{
+class HomeTabbarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class HomeTabbarController: UITabBarController{
     }
 }
 
-extension HomeTabbarController: TransitionableTab{
+extension HomeTabbarController: TransitionableTab {
     func transitionDuration() -> CFTimeInterval {
         return 0.25
     }
@@ -32,7 +32,6 @@ extension HomeTabbarController: TransitionableTab{
     func toTransitionAnimation(layer: CALayer, direction: Direction) -> CAAnimation {
         return DefineAnimation.fade(.to)
 //        return DefineAnimation.move(.to, direction: direction)
-        
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

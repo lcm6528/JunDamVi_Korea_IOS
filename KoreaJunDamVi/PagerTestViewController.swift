@@ -61,7 +61,7 @@ class JDVPagerTestViewController: ButtonBarPagerTabStripViewController {
         
         var arr:[JDVAnalContentViewController] = [JDVAnalContentViewController]()
         
-        for title in kModel{
+        for title in kModel {
             let child = storyboard.instantiateViewController(withIdentifier: "JDVAnalContentViewController") as! JDVAnalContentViewController
             child.itemInfo =  IndicatorInfo(title: title)
             arr.append(child)

@@ -17,7 +17,7 @@ import UIKit
   @IBOutlet var valueLabel: UILabel!
   
   var view:UIView!
-  let NibName:String = "AnalRoundView"
+  let NibName: String = "AnalRoundView"
   
   
   @IBOutlet var layerView: UIView!
@@ -33,17 +33,17 @@ import UIKit
   }
   
   
-  @IBInspectable var title:String = ""{
+  @IBInspectable var title: String = ""{
     didSet{
       self.titleLabel.text = title
     }
   }
-  var value:String = ""{
+  var value: String = ""{
     didSet{
       self.valueLabel.text = value
     }
   }
-  var subTitle:String = ""{
+  var subTitle: String = ""{
     didSet{
       self.subTitleLabel.text = subTitle
     }

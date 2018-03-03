@@ -10,6 +10,6 @@ import Foundation
 
 
 struct Test{
-    var title:String = ""
+    var title: String = ""
     var date:Date = Date()
 }

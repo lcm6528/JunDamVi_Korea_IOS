@@ -17,7 +17,7 @@ class NoteInnerViewController: JDVViewController {
     
     var Prob:Prob!
     var Solv:Solution?
-    var selection:Int!
+    var selection: Int!
     
     @IBOutlet var testTitleTextView: UITextView!
     @IBOutlet var testContentTextView: UITextView!
@@ -58,7 +58,7 @@ class NoteInnerViewController: JDVViewController {
         testChoiceViews[Prob.Answer-1].mark()
         choiceManager?.isActive = false
         
-        if Solv == nil{
+        if Solv == nil {
             Solv = Solution()
         }
         

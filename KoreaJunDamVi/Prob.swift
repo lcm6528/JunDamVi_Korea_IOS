@@ -11,28 +11,28 @@ import UIKit
 import NSAttributedString_DDHTML
 
 struct Prob {
-    var ProbID:Int
-    var TestNum:Int
-    var ProbNum:Int
+    var ProbID: Int
+    var TestNum: Int
+    var ProbNum: Int
     
-    var Score:Int
-    var Score_String:String?
+    var Score: Int
+    var Score_String: String?
     
-    var Answer:Int
-    var title_String:String
+    var Answer: Int
+    var title_String: String
     var title_attString: NSAttributedString?
     var title_attString_noNum: NSAttributedString?
     
-    var article_String:String
+    var article_String: String
     var article_attString:NSAttributedString?
     
     var choices_String:[String] = []
     var choices_attString:[NSAttributedString] = []
     
-    var time:String
-    var type:String
-    var theme:String
-    var tags:String
+    var time: String
+    var type: String
+    var theme: String
+    var tags: String
     
     init(withDict dict:NSDictionary) {
         
@@ -106,7 +106,7 @@ struct Prob {
         
     }
     
-    func replaceTagToImage(withString str:String, imgName name:String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
+    func replaceTagToImage(withString str: String, imgName name: String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
         
         let result = NSMutableAttributedString()
         if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg") {
@@ -132,11 +132,11 @@ struct Prob {
 
 struct QuickProb {
     
-    var ProbID:Int
-    var TestNum:Int
-    var ProbNum:Int
-    var Score:Int
-    var Answer:Int
+    var ProbID: Int
+    var TestNum: Int
+    var ProbNum: Int
+    var Score: Int
+    var Answer: Int
     
     init(withDict dict:NSDictionary) {
         

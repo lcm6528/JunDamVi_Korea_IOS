@@ -11,7 +11,7 @@ import UIKit
 class ProbSubCollectionViewController: ProbCollectionViewController {
 
     var rankingStr:[String]!
-    var subtitle:String!
+    var subtitle: String!
     var pushHandler:((Int)->Void)?
     
     @IBOutlet var label_Ranking1: UILabel!

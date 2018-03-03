@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 class JDVAnalContentViewController: UIViewController,IndicatorInfoProvider {
-    var content:String!
+    var content: String!
     var itemInfo: IndicatorInfo = "View"
     @IBOutlet var contentTextView: UITextView!
     

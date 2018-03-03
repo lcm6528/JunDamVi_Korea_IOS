@@ -12,7 +12,7 @@ class JDVSolutionInnerViewController: JDVViewController,JDVChoiceViewManagerDele
     
     var Prob:Prob!
     var Solv:Solution!
-    var pageIndex:Int!
+    var pageIndex: Int!
     
     
     

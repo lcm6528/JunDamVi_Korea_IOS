@@ -14,7 +14,7 @@ class BlockView: UIView {
     var view:UIView!
     
     
-    let NibName:String = "BlockView"
+    let NibName: String = "BlockView"
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var purchaseButton: UIButton!

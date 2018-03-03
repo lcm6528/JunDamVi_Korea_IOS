@@ -19,7 +19,7 @@ class JDVLabel: UILabel {
 }
 
 
-class JDVLabelWithTBLine:UILabel{
+class JDVLabelWithTBLine: UILabel {
   
   
   override func drawText(in rect: CGRect) {

@@ -12,7 +12,7 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     var Prob:Prob!
     
-    var pageIndex:Int!
+    var pageIndex: Int!
     var selection = 0
     var selectHandler:((Int,Int)->Void)?
     var option:JDVProbManager.SortedOption!

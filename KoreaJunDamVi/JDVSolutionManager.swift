@@ -13,7 +13,7 @@ import FMDB
 
 class JDVSolutionManager: NSObject {
     
-    static func fetchSols(withTestnum num:Int)->[Solution]{
+    static func fetchSols(withTestnum num: Int)->[Solution]{
         
         var Sols:[Solution] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
@@ -34,7 +34,7 @@ class JDVSolutionManager: NSObject {
         return Sols
     }
     
-    static func fetchSol(withProbID id:Int)->Solution?{
+    static func fetchSol(withProbID id: Int)->Solution?{
         
         var sol:Solution?
         
