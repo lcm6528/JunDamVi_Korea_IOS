@@ -23,22 +23,22 @@ class SettingsTableViewCell: UITableViewCell {
     }
 }
 
-enum SettingsOption{
+enum SettingsOption {
     
     case reset
     case restore
     case mail
     case none
-    
 }
-struct SettingsViewCellModel{
+
+struct SettingsViewCellModel {
     
-    let image:UIImage
-    let title:String
-    let desc:String
+    let image: UIImage
+    let title: String
+    let desc: String
     var handler:()->()
     
-    init(withOption opt:SettingsOption) {
+    init(withOption opt: SettingsOption) {
         
         switch opt {
         case .reset:
@@ -61,6 +61,5 @@ struct SettingsViewCellModel{
         }
         
         handler = {}
-        
     }
 }

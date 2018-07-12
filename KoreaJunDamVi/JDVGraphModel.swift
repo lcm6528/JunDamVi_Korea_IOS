@@ -9,15 +9,15 @@
 import UIKit
 
 class JDVGraphDataItem {
-  var title:String
+  var title: String
   var value:Float
-  var standings:Int
+  var standings: Int
 
-  var description:String{
+  var description: String{
     return "\(title) : \(value) / \(standings)"
   }
   
-  init(title text:String = "" , value val:Float = 0) {
+  init(title text: String = "" , value val:Float = 0) {
     title = text
     value = val
     standings = 1
@@ -40,7 +40,7 @@ class JDVGraphModel: NSObject {
   init(arrayLiteral:[(String,Float)]) {
     
     
-    for element in arrayLiteral{
+    for element in arrayLiteral {
       let item = JDVGraphDataItem(title: element.0, value: element.1)
       
       Items.append(item)

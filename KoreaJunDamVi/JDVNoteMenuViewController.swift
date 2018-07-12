@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import DZNEmptyDataSet
 
-class JDVNoteMenuViewController: JDVViewController{
+class JDVNoteMenuViewController: JDVViewController {
     
     @IBOutlet var tableView: UITableView!
     var Notes:[Note] = []

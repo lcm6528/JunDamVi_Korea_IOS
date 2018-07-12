@@ -17,7 +17,7 @@ class ProbQuickCell: UITableViewCell ,JDVRadioButtonManagerDelegate{
     @IBOutlet var btn4: JDVButton!
     @IBOutlet var btn5: JDVButton!
     @IBOutlet var titleLabel: UILabel!
-    var probNum:Int!
+    var probNum: Int!
     
     
     var manager:JDVRadioButtonManager?

@@ -87,7 +87,7 @@ class ProbResultTopView : UIView {
         
         let totalRate = Float(result.numberOfRight) / Float(result.Tries.count)
         var tryRate = Float(result.numberOfRight) / Float(result.Tries.count - result.numberOfPass)
-        if tryRate.isNaN{tryRate = Float(0)}
+        if tryRate.isNaN {tryRate = Float(0)}
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.roundView1.setValue(value: CGFloat(totalRate*100), animate: true)

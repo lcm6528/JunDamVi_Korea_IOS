@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-enum SortingOption{
+enum SortingOption {
     case date
     case year
 }
@@ -16,7 +16,7 @@ enum SortingOption{
 let GA_TrackingID = "UA-73399125-1"
 
 
-enum gaViewId:String{
+enum gaViewId: String{
     case mainView = "GA - 메인메뉴 페이지"
     case probMenuView = "GA - 문제풀이 메뉴 페이지"
     case probTestViewHeader = "GA - 문제 풀이 페이지, "
@@ -48,7 +48,7 @@ let SolLineSpace:CGFloat = 6
 extension Date
 {
     
-    init(dateString:String) {
+    init(dateString: String) {
         let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "yyyyMMdd"
         //dateStringFormatter.timeZone = TimeZone(abbreviation: "UTC")

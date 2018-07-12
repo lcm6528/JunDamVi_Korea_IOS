@@ -20,7 +20,7 @@ func getHeightOfStatusNNaviBar(_ vc: UIViewController) -> CGFloat {
 }
 
 
-func stringToAttrStringInHTML(_ str:String) -> NSAttributedString {
+func stringToAttrStringInHTML(_ str: String) -> NSAttributedString {
     var attrString = NSMutableAttributedString()
     
     do {
@@ -52,17 +52,17 @@ func setUserDefaultWithBool(_ value: Bool, forKey key: String) {
     UserDefaults.standard.set(value, forKey: key)
 }
 
-func getUserDefaultBoolValue(_ key:String) -> Bool {
+func getUserDefaultBoolValue(_ key: String) -> Bool {
     let value = UserDefaults.standard.bool(forKey: key)
     return value
 }
 
 
-func deleteUserDefalut(_ key:String) {
+func deleteUserDefalut(_ key: String) {
     UserDefaults.standard.removeObject(forKey: key)
 }
 
-func getUserDefault(_ key:String) -> AnyObject {
+func getUserDefault(_ key: String) -> AnyObject {
     if let value = UserDefaults.standard.object(forKey: key) {
         return value as AnyObject
     } else {
@@ -70,12 +70,12 @@ func getUserDefault(_ key:String) -> AnyObject {
     }
 }
 
-func getUserDefaultIntValue(_ key:String) -> Int {
+func getUserDefaultIntValue(_ key: String) -> Int {
     let value = UserDefaults.standard.integer(forKey: key)
     return value
 }
 
-func showAlertWithString(_ title:String , message:String, sender:UIViewController) {
+func showAlertWithString(_ title: String , message: String, sender:UIViewController) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
     sender.present(alert, animated: true, completion: nil)
@@ -90,7 +90,7 @@ var isBlockUserInteract:Bool = false {
 }
 
 extension UIStoryboard {
-    class func viewController(storyBoard sbID:String,withID identifier: String) -> UIViewController {
+    class func viewController(storyBoard sbID: String,withID identifier: String) -> UIViewController {
         return UIStoryboard(name: sbID, bundle: nil).instantiateViewController(withIdentifier: identifier)
     }
 }

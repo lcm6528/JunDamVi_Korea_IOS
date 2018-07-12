@@ -18,7 +18,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
     let kNumber_of_pages = 4
     
-    var currentMenu:Int = 0 
+    var currentMenu: Int = 0 
     var currentOption = JDVProbManager.ProbOption()
     var pageViewController:UIPageViewController!
     
@@ -66,7 +66,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         isBlockUserInteract = true
     }
     
-    func ProbCollectionViewSelectedRow(pageindex pIdx:Int, atIndex index: Int) {
+    func ProbCollectionViewSelectedRow(pageindex pIdx: Int, atIndex index: Int) {
         
         let arr = self.dataArray[pIdx]
         currentMenu = pIdx
@@ -151,7 +151,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         
     }
     
-    func selectButtonInCollection(atIndex index:Int) {
+    func selectButtonInCollection(atIndex index: Int) {
         
         for (idx,button) in ToolbarButtons.enumerated() {
             {()->Bool in return idx == index}() ? (button.isSelected = true) : (button.isSelected = false)
@@ -212,7 +212,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
     }
     
-    func pageViewAtIndex(_ index: Int) ->JDVViewController{
+    func pageViewAtIndex(_ index: Int) ->JDVViewController {
         
         if index != 0 {
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
@@ -268,7 +268,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
     
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int) {
+    func gotoPageAtIndex(_ currentIndex: Int , goto index: Int) {
         
         let nextIndex = index
         

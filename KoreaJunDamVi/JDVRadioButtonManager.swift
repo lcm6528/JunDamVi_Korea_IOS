@@ -8,14 +8,14 @@
 
 import UIKit
 protocol JDVRadioButtonManagerDelegate{
-  func JDVRadioButtonManagerDelegate(_ manager:JDVRadioButtonManager ,didSelectedButtonAtIndex index:Int)
+  func JDVRadioButtonManagerDelegate(_ manager:JDVRadioButtonManager ,didSelectedButtonAtIndex index: Int)
 }
 
 class JDVRadioButtonManager: NSObject {
   
   var arrayOfButtons:[UIButton]!
   
-  var tag:Int!
+  var tag: Int!
   
   var delegate:JDVRadioButtonManagerDelegate?
   
@@ -39,12 +39,12 @@ class JDVRadioButtonManager: NSObject {
       self.delegate?.JDVRadioButtonManagerDelegate(self, didSelectedButtonAtIndex: -1)
       return
     }
-    let index:Int = arrayOfButtons.index(of: sender)!
+    let index: Int = arrayOfButtons.index(of: sender)!
     sender.isSelected = true
     sender.backgroundColor = UIColor.selectedRed
     for button in arrayOfButtons!{
       
-      if button === sender{
+      if button === sender {
         
         continue
       }
@@ -65,7 +65,7 @@ class JDVRadioButtonManager: NSObject {
     }
   }
   
-  func selectButtonAtIndex(_ index:Int) {
+  func selectButtonAtIndex(_ index: Int) {
     
     if index == -1{
       deselectAll()

@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol JDVTabbarDelegate{
-  func JDVTabbar(_ tabbar:JDVTabbarView ,didSelectedButtonAtIndex index:Int)
+  func JDVTabbar(_ tabbar:JDVTabbarView ,didSelectedButtonAtIndex index: Int)
 }
 @IBDesignable class JDVTabbarView: UIView {
   
@@ -24,7 +24,7 @@ protocol JDVTabbarDelegate{
   @IBOutlet var LLine: UIView!
   @IBOutlet var RLine: UIView!
   
-  let NibName:String = "JDVTabbarView"
+  let NibName: String = "JDVTabbarView"
   
   var delegate:JDVTabbarDelegate?
   

@@ -9,7 +9,7 @@
 import UIKit
 @objc protocol JDVChoiceViewManagerDelegate{
     
-    @objc optional func JDVChoiceViewManagerDelegate(_ manager:JDVChoiceViewManager ,didSelectedLabelAtIndex index:Int)
+    @objc optional func JDVChoiceViewManagerDelegate(_ manager:JDVChoiceViewManager ,didSelectedLabelAtIndex index: Int)
     
 }
 class JDVChoiceViewManager: NSObject {
@@ -42,7 +42,7 @@ class JDVChoiceViewManager: NSObject {
     }
     
     var arrayOfViews:[UIView]!
-    var indexOfPage:Int!
+    var indexOfPage: Int!
     
     var delegate:JDVChoiceViewManagerDelegate?
     
@@ -60,7 +60,7 @@ class JDVChoiceViewManager: NSObject {
     
     @objc func touchOnLabel(_ sender:UITapGestureRecognizer) {
         
-        let index:Int = arrayOfViews.index(of: sender.view!)!
+        let index: Int = arrayOfViews.index(of: sender.view!)!
         selectLabelAtIndex(index)
         
         
@@ -69,7 +69,7 @@ class JDVChoiceViewManager: NSObject {
     }
     
     
-    func setColorForStateAtIndex(_ index:Int, state:StateOfChoice) {
+    func setColorForStateAtIndex(_ index: Int, state:StateOfChoice) {
         
         let view = arrayOfViews[index]
         
@@ -98,7 +98,7 @@ class JDVChoiceViewManager: NSObject {
         
     }
     
-    func selectLabelAtIndex(_ index:Int) {
+    func selectLabelAtIndex(_ index: Int) {
         
         
         

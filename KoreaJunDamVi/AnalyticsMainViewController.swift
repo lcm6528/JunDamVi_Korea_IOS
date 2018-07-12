@@ -74,7 +74,7 @@ class AnalyticsMainViewController: JDVViewController {
         let result = realm.objects(TestResultRecord.self)
         records = []
         for option in keys{
-            records.append(Array(result).filter{return ($0.TestType == option.rawValue)}.reversed())
+            records.append(Array(result).filter {return ($0.TestType == option.rawValue)}.reversed())
         }
         
         

@@ -208,7 +208,7 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     
-    func pushResultVC(withSegue id:String) {
+    func pushResultVC(withSegue id: String) {
         
         let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
@@ -237,9 +237,9 @@ class ProbTestFrameViewController: JDVViewController {
     
     
     
-    func setToolbarTitle(_ index:Int) {
+    func setToolbarTitle(_ index: Int) {
         
-        let numberOfTest:Int = index+1
+        let numberOfTest: Int = index+1
         toolBarCenterLabel.text = "\(numberOfTest)번"
         
         barButton_Star.isSelected = JDVNoteManager.isAdded(by: Probs[index].ProbID)
@@ -278,7 +278,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
     }
     
-    func pageViewAtIndex(_ index: Int) ->JDVViewController{
+    func pageViewAtIndex(_ index: Int) ->JDVViewController {
         let innerView = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
         innerView.Prob = Probs[index]
         innerView.pageIndex = index
@@ -320,7 +320,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     }
     
     
-    func gotoPageAtIndex(_ currentIndex:Int , goto index:Int) {
+    func gotoPageAtIndex(_ currentIndex: Int , goto index: Int) {
         
         let nextIndex = index
         

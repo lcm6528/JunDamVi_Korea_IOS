@@ -14,8 +14,8 @@ class JDVProbAnalFrameViewController: JDVViewController {
     var pageMenu: CAPSPageMenu?
     var data: [(String,Float)] = []
     var contentData: [String] = []
-    var dataObject: [String:String]!
-    var contentObject: [String:String]!
+    var dataObject: [String: String]!
+    var contentObject: [String: String]!
     var option: JDVProbManager.SortedOption!
     @IBOutlet var graph: JDVGraph!
     

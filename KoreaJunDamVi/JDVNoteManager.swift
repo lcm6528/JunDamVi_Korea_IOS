@@ -40,7 +40,7 @@ class JDVNoteManager: NSObject {
         
     }
     
-    static func isAdded(by probid:Int)->Bool{
+    static func isAdded(by probid: Int)->Bool {
         
         let realm = try! Realm()
         if let _ = realm.object(ofType: Note.self, forPrimaryKey: probid) {

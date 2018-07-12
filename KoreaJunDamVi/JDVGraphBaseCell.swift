@@ -14,7 +14,7 @@ import UIKit
   var view:UIView!
   
   
-  let NibName:String = "JDVGraphBaseCell"
+  let NibName: String = "JDVGraphBaseCell"
   
   var duration:Double = 1
   
@@ -44,7 +44,7 @@ import UIKit
       valueLabel.text = "\(Int(currentValue))%"
     }
   }
-  var title:String  = ""{
+  var title: String  = ""{
     didSet{
       titleLabel.text = title
     }

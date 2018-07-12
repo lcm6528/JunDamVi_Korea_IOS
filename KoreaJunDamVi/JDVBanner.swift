@@ -19,7 +19,7 @@ protocol JDVBannerDelegate{
   var view:UIView!
   
   
-  let NibName:String = "JDVBanner"
+  let NibName: String = "JDVBanner"
   
   @IBOutlet var imageVIew: UIImageView!
   @IBOutlet var titleLabel: UILabel!
@@ -69,7 +69,7 @@ protocol JDVBannerDelegate{
     return view
   }
   
-  func setBannerForPass(_ type:String) {
+  func setBannerForPass(_ type: String) {
     
     if type == "lang"{
       
@@ -85,7 +85,7 @@ protocol JDVBannerDelegate{
     
   }
   
-  func setBannerForLink(_ type:String, score:Double) {
+  func setBannerForLink(_ type: String, score:Double) {
     
     if type == "lang"{
       
@@ -138,7 +138,7 @@ protocol JDVBannerDelegate{
   }
   
   
-  static func getLink(_ type:String, score:Double)->String{
+  static func getLink(_ type: String, score:Double)->String{
     
     if type == "lang"{
       
