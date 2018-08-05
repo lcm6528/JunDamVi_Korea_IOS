@@ -61,7 +61,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     }
     
     func showIndicator() {
-        
         WSProgressHUD.show(withStatus: "문제 불러오는 중..")
         isBlockUserInteract = true
     }
@@ -79,15 +78,11 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             { action in
                 
                 self.showIndicator()
-//                self.Probs = JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey)
-                
                 
                 JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
                     self?.Probs = probs
                     self?.performSegue(withIdentifier: "pushinit", sender: self)
                 })
-                
-                
         }))
         
         /// if cache data exist
@@ -163,7 +158,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case "pushinit":
-            let vc = segue.destination as!ProbTestFrameViewController
+            let vc = segue.destination as! ProbTestFrameViewController
             vc.Probs = self.Probs
             vc.option = currentOption
             self.tabBarController?.tabBar.isHidden = true
@@ -266,8 +261,6 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         return self.pageViewAtIndex(index)
     }
     
-    
-    
     func gotoPageAtIndex(_ currentIndex: Int , goto index: Int) {
         
         let nextIndex = index
@@ -289,5 +282,4 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         return vc.pageIndex
         
     }
-    
 }

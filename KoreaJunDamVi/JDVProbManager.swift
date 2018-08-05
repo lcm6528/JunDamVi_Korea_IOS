@@ -55,7 +55,13 @@ class JDVProbManager: NSObject {
 
                 arr.append(result!.resultDictionary() as NSDictionary )
             }
-            
+            /*
+            //여기서 필터링좀 하자...
+            if option != .test && arr.count > 30 {
+                arr.shuffle()
+                arr = Array(arr[1...30])
+            }
+            */
             arr.forEach({ (dict) in
                 Probs.append(Prob(withDict: dict))
             })
