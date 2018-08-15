@@ -168,9 +168,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             vc.Probs = self.Probs
             vc.option = currentOption
             vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
-            
-            
-            
             self.tabBarController?.tabBar.isHidden = true
             
         case "quick":
@@ -193,26 +190,22 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         self.QuickProbs = []
         
     }
-    
 }
 
-extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource{
+extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     //MARK: UIPageViewDelegate,Datasource
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
-        if completed == true{
+        if completed == true {
             selectButtonInCollection(atIndex: getCurrnetIndexOfPage())
         }
-        
     }
     
     func pageViewAtIndex(_ index: Int) ->JDVViewController {
-        
         if index != 0 {
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
             
-            pageContentViewController.rankingStr = kRankingArr[index-1]
+            pageContentViewController.rankingStr = kRankingArr[index - 1]
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
@@ -256,8 +249,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         index += 1
         
-        if(index == kNumber_of_pages) {return nil}
-        
+        if(index == kNumber_of_pages) { return nil }
         return self.pageViewAtIndex(index)
     }
     
@@ -265,21 +257,19 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         
         let nextIndex = index
         
-        guard nextIndex >= 0 && nextIndex < kNumber_of_pages else {return}
+        guard nextIndex >= 0 && nextIndex < kNumber_of_pages else { return }
         
         let vc = pageViewAtIndex(nextIndex)
         
-        if currentIndex > nextIndex{
+        if currentIndex > nextIndex {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
         } else {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         }
     }
     
-    func getCurrnetIndexOfPage()-> Int{
-        
+    func getCurrnetIndexOfPage() -> Int {
         let vc  = pageViewController.viewControllers?.first as! ProbCollectionViewController
         return vc.pageIndex
-        
     }
 }

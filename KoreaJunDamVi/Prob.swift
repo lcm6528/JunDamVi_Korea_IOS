@@ -131,7 +131,6 @@ struct Prob {
 
 
 struct QuickProb {
-    
     var ProbID: Int
     var TestNum: Int
     var ProbNum: Int
