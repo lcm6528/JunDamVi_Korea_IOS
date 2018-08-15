@@ -13,10 +13,8 @@ import FMDB
 class JDVProbManager: NSObject {
     
     struct ProbOption {
-        
         var sortedOption:SortedOption = .test
         var cacheKey: String = ""
-        
     }
     
     enum SortedOption: String{
@@ -39,9 +37,9 @@ class JDVProbManager: NSObject {
         }
     }
     
-    static func fetchProbs(withSortedOption option:SortedOption,by value: String, completion:@escaping ([Prob])->()) {
+    static func fetchProbs(withSortedOption option:SortedOption,by value: String, completion:@escaping ([Prob]) -> ()) {
         
-        var Probs:[Prob] = []
+        var Probs: [Prob] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
@@ -55,7 +53,13 @@ class JDVProbManager: NSObject {
 
                 arr.append(result!.resultDictionary() as NSDictionary )
             }
-            
+            /*
+            //여기서 필터링좀 하자...
+            if option != .test && arr.count > 30 {
+                arr.shuffle()
+                arr = Array(arr[1...30])
+            }
+            */
             arr.forEach({ (dict) in
                 Probs.append(Prob(withDict: dict))
             })
@@ -65,11 +69,8 @@ class JDVProbManager: NSObject {
         fmdb?.close()
     }
     
-    
-    
-    static func fetchProbs(withTestnum num: Int)->[Prob]{
-        
-        var Probs:[Prob] = []
+    static func fetchProbs(withTestnum num: Int) -> [Prob] {
+        var Probs: [Prob] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
@@ -80,7 +81,6 @@ class JDVProbManager: NSObject {
             while result?.next() == true {
                 let dict:NSDictionary = result!.resultDictionary() as NSDictionary
                 let prob = Prob(withDict: dict)
-                
                 Probs.append(prob)
             }
         }
@@ -88,9 +88,8 @@ class JDVProbManager: NSObject {
         return Probs
     }
     
-    static func fetchProb(withProbID id: Int)->Prob?{
-        
-        var prob:Prob?
+    static func fetchProb(withProbID id: Int) -> Prob? {
+        var prob: Prob?
         
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
@@ -107,14 +106,11 @@ class JDVProbManager: NSObject {
             }
         }
         fmdb?.close()
-        
         return prob
-        
-        
     }
-    static func fetchProbs(withProbID ids:[Int])->[Prob]{
+    static func fetchProbs(withProbID ids:[Int]) -> [Prob] {
         
-        var probs:[Prob] = []
+        var probs: [Prob] = []
         
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
@@ -131,29 +127,18 @@ class JDVProbManager: NSObject {
                     
                 }
             }
-            
         }
         fmdb?.close()
-        
         return probs
-        
-        
     }
     
-    
-    
-    
-    
-    static func saveCachedData(with key: String, tries:[Int]) {
-        
+    static func saveCachedData(with key: String, tries: [Int] ) {
         setUserDefault(value: tries, forKey: key)
     }
     
     
     static func getCachedData(with key: String)->[Int]?{
-        
         return getUserDefault(key) as? [Int]
-        
     }
     
     static func deleteCachedData(with key: String) {
@@ -161,9 +146,9 @@ class JDVProbManager: NSObject {
     }
     
     //QuickProbs
-    static func fetchQuickProbs(withTestnum num: Int)->[QuickProb]{
+    static func fetchQuickProbs(withTestnum num: Int) -> [QuickProb] {
         
-        var Probs:[QuickProb] = []
+        var Probs: [QuickProb] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
@@ -181,6 +166,4 @@ class JDVProbManager: NSObject {
         fmdb?.close()
         return Probs
     }
-    
-    
 }

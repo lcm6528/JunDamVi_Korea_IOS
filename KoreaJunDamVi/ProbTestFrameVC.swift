@@ -9,6 +9,7 @@
 import UIKit
 import WSProgressHUD
 import RealmSwift
+
 class ProbTestFrameViewController: JDVViewController {
     
     @IBOutlet var toolBarCenterLabel: UILabel!
@@ -19,28 +20,31 @@ class ProbTestFrameViewController: JDVViewController {
     
     var number_of_pages = 0
     
-    var Probs:[Prob] = []
-    var result:TestResult!
-    var selections:[Int]?
-    var pageViewController:UIPageViewController!
+    var Probs: [Prob] = []
+    var result: TestResult!
+    var selections: [Int]?
+    var pageViewController: UIPageViewController!
     
     var option:JDVProbManager.ProbOption!
     
     override func setTitleWithStyle(_ text: String) {
         
         self.barButton_title.title = text
-        self.barButton_title.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.ProbNaviBarTitleFont,
-                                                     NSAttributedStringKey.foregroundColor:UIColor.white], for: .normal)
+
+        self.barButton_title.setTitleTextAttributes(
+            [NSAttributedStringKey.font:UIFont.ProbNaviBarTitleFont,
+             NSAttributedStringKey.foregroundColor:UIColor.white],
+            for: .normal)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !Probs.isEmpty{
+        if !Probs.isEmpty {
             number_of_pages = Probs.count
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        if option.sortedOption != .test{
+        if option.sortedOption != .test {
             let desc = option.sortedOption.description
             let str = desc[..<desc.index(desc.startIndex, offsetBy: 2)]
             setTitleWithStyle(option.cacheKey + str + " 문제풀기")
@@ -48,7 +52,7 @@ class ProbTestFrameViewController: JDVViewController {
             setTitleWithStyle("\(Probs[0].TestNum)회차 문제풀기")
         }
         
-        if selections == nil || selections?.isEmpty == true{
+        if selections == nil || selections?.isEmpty == true {
             selections = [Int](repeatElement(0, count: Probs.count))
         }
         
@@ -73,7 +77,6 @@ class ProbTestFrameViewController: JDVViewController {
         
         self.navigationController?.delegate = self
         setToolbarTitle(getCurrnetIndexOfPage())
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,98 +90,82 @@ class ProbTestFrameViewController: JDVViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
         
-        if option.sortedOption == .test{
+        if option.sortedOption == .test {
             JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
         } else {
             JDVProbManager.saveCachedData(with: option.cacheKey, tries: selections!)
         }
-        
-        
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     @objc func onStop() {
-        if option.sortedOption == .test{
+        if option.sortedOption == .test {
             JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
         } else {
             JDVProbManager.saveCachedData(with: option.sortedOption.rawValue, tries: selections!)
         }
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "popup"{
+        if segue.identifier == "popup" {
             let vc = segue.destination as! ProbPopupView
             vc.dataArray = Probs
             vc.selections = selections!
             
-            vc.isNoted = Probs.map{ prob in
+            vc.isNoted = Probs.map {prob in
                 return JDVNoteManager.isAdded(by: prob.ProbID)
             }
             
             vc.didSelectHandler = { [unowned self] index in
-                
                 let currentIdx = self.getCurrnetIndexOfPage()
                 self.gotoPageAtIndex(currentIdx, goto: index)
                 self.setToolbarTitle(currentIdx)
-                
             }
-        }else if segue.identifier == "push"{
-            
+        }else if segue.identifier == "push" {
             let vc = segue.destination as! ProbResultViewController
-            var tries:[Try] = []
+            var tries: [Try] = []
             for (index, prob) in Probs.enumerated() {
                 let item = Try(withProb: prob, selection: selections![index])
-                
                 tries.append(item)
             }
             result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
             vc.result = self.result
             vc.option = option
             
-            if option.sortedOption == .test{
+            if option.sortedOption == .test {
                 JDVScoreManager.configureAnalData(by: result)
             }
             
             let record = TestResultRecord(by: result)
-            
             let realm = try! Realm()
             
             try! realm.write {
                 realm.add(record)
             }
             
-        }else if segue.identifier == "pushsimple"{
+        }else if segue.identifier == "pushsimple" {
             let vc = segue.destination as! SimpleResultViewController
             var tries:[Try] = []
             for (index, prob) in Probs.enumerated() {
                 let item = Try(withProb: prob, selection: selections![index])
-                
                 tries.append(item)
             }
             result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
             vc.result = self.result
             vc.option = option
             
-            
             let record = TestResultRecord(by: result)
-            
             let realm = try! Realm()
             
             try! realm.write {
                 realm.add(record)
             }
-
         }
-        
     }
-    
     
     @IBAction func noteButtonPressed(_ sender: JDVNoteBarButtonItem) {
         let index = getCurrnetIndexOfPage()
@@ -187,26 +174,22 @@ class ProbTestFrameViewController: JDVViewController {
         note.ProbID = Probs[index].ProbID
         note.Selection = selections![index]
         
-        if sender.isSelected == false{
+        if sender.isSelected == false {
             JDVNoteManager.saveNote(by: note)
         } else {
             JDVNoteManager.deleteNote(by: note)
         }
         
         sender.isSelected = !sender.isSelected
-        
     }
     
     @IBAction func popUpList(_ sender: AnyObject) {
         performSegue(withIdentifier: "popup", sender: self)
-        
-        
     }
     
     @IBAction func completeButtonPressed(_ sender: Any) {
         option.sortedOption == .test ? pushResultVC(withSegue: "push") : pushResultVC(withSegue: "pushsimple")
     }
-    
     
     func pushResultVC(withSegue id: String) {
         
@@ -221,7 +204,6 @@ class ProbTestFrameViewController: JDVViewController {
             
         }))
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     @IBAction func leftBarButtonPressed(_ sender: AnyObject) {
@@ -230,23 +212,19 @@ class ProbTestFrameViewController: JDVViewController {
     
     
     @IBAction func rightBarButtonPressed(_ sender: AnyObject) {
-        
         gotoNextPage()
     }
     
-    
-    
-    
     func setToolbarTitle(_ index: Int) {
         
-        let numberOfTest: Int = index+1
+        let numberOfTest: Int = index + 1
         toolBarCenterLabel.text = "\(numberOfTest)번"
         
         barButton_Star.isSelected = JDVNoteManager.isAdded(by: Probs[index].ProbID)
         
-        if index == 0{
-            toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
-            toolBarLeftButton.setTitle( "", for: .normal)
+        if index == 0 {
+            toolBarRightButton.setTitle("\(numberOfTest+1)번", for: .normal)
+            toolBarLeftButton.setTitle("" , for: .normal)
         }
         else if index == number_of_pages - 1
         {
@@ -256,34 +234,25 @@ class ProbTestFrameViewController: JDVViewController {
             toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
             toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
         }
-        
-        
     }
-    
-    
-    
-    
-    
 }
 
 //MARK : PageView Delegate,Datasource
-extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource{
-    
+extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-        if completed == true{
+        if completed == true {
             setToolbarTitle(getCurrnetIndexOfPage())
         }
-        
     }
     
-    func pageViewAtIndex(_ index: Int) ->JDVViewController {
+    func pageViewAtIndex(_ index: Int) -> JDVViewController {
         let innerView = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
         innerView.Prob = Probs[index]
         innerView.pageIndex = index
         innerView.option = option.sortedOption
-        innerView.selectHandler = { (num,selection) -> Void in
+        innerView.selectHandler = { (num, selection) -> Void in
             self.selections![num] = selection
             self.gotoNextPage()
         }
@@ -298,10 +267,9 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         let viewController = viewController as! ProbTestInnerViewController
         var index = viewController.pageIndex as Int
         
-        if(index == 0 || index == NSNotFound) {return nil}
+        if(index == 0 || index == NSNotFound) { return nil }
         
         index -= 1
-        
         return self.pageViewAtIndex(index)
     }
     
@@ -309,30 +277,25 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     {
         let viewController = viewController as! ProbTestInnerViewController
         var index = viewController.pageIndex as Int
-        if((index == NSNotFound))
-        {return nil}
+        if((index == NSNotFound)) { return nil }
         
         index += 1
         
-        if(index == number_of_pages) {return nil}
-        
+        if(index == number_of_pages) { return nil }
         return self.pageViewAtIndex(index)
     }
     
-    
     func gotoPageAtIndex(_ currentIndex: Int , goto index: Int) {
-        
         let nextIndex = index
-        
-        guard nextIndex >= 0 && nextIndex < number_of_pages else {return}
+        guard nextIndex >= 0 && nextIndex < number_of_pages else { return }
         
         let vc = pageViewAtIndex(nextIndex)
         
-        let completion:(Bool)->() = { success in
+        let completion:(Bool) -> () = { success in
             self.setToolbarTitle(nextIndex)
         }
         
-        if currentIndex > nextIndex{
+        if currentIndex > nextIndex {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
         } else {
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
@@ -340,35 +303,29 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
     }
     
-    
     func gotoNextPage() {
-        
         isBlockUserInteract = true
-        let nextIndex = getCurrnetIndexOfPage()+1
+        let nextIndex = getCurrnetIndexOfPage() + 1
         if nextIndex == number_of_pages {
             isBlockUserInteract = false
             option.sortedOption == .test ? pushResultVC(withSegue: "push") : pushResultVC(withSegue: "pushsimple")
             
-            
         }else if nextIndex < number_of_pages{
             let vc = pageViewAtIndex(nextIndex)
-            
             
             pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
                 
                 isBlockUserInteract = false
                 self.setToolbarTitle(self.getCurrnetIndexOfPage())
             })
-            
         }
-        
     }
     
     func gotoPrevPage() {
         isBlockUserInteract = true
-        let nextIndex = getCurrnetIndexOfPage()-1
+        let nextIndex = getCurrnetIndexOfPage() - 1
         
-        guard nextIndex >= 0 else {return}
+        guard nextIndex >= 0 else { return }
         
         let vc = pageViewAtIndex(nextIndex)
         
@@ -376,27 +333,17 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
             isBlockUserInteract = false
             self.setToolbarTitle(self.getCurrnetIndexOfPage())
         })
-        
     }
     
-    
-    
-    func getCurrnetIndexOfPage()-> Int{
-        
+    func getCurrnetIndexOfPage() -> Int{
         let vc  = pageViewController.viewControllers?.first as! ProbTestInnerViewController
         return vc.pageIndex
-        
     }
-    
 }
 
-
-extension ProbTestFrameViewController:UINavigationControllerDelegate{
-    
+extension ProbTestFrameViewController: UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         WSProgressHUD.dismiss()
         isBlockUserInteract = false
-        
     }
-    
 }
