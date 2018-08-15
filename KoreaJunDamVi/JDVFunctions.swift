@@ -215,3 +215,7 @@ extension Sequence {
         return result
     }
 }
+
+public func JundamviLog<T>(_ description: T, _ function: String = #function, _ line: Int = #line) {
+    print("[LOG]\(function)[\(line)]: \(description)")
+}
