@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -44,10 +42,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-dO-w0F">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국사능력검정시험" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-Uo-Dhs">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="18"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="17.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17.5" id="spp-6Q-P9f"/>
                                         </constraints>
@@ -56,13 +54,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yw-och">
-                                        <rect key="frame" x="0.0" y="34" width="375" height="69"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="375" height="69"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="40"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgo-8a-QtJ">
-                                        <rect key="frame" x="0.0" y="103" width="375" height="18"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="375" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="KnZ-gr-2z6"/>
                                         </constraints>
@@ -86,10 +84,10 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-na-GFk" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <rect key="frame" x="10" y="129" width="355" height="297"/>
+                                <rect key="frame" x="10" y="128.5" width="355" height="297.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-PE-YOM" customClass="RoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="51" width="190" height="190"/>
+                                        <rect key="frame" x="82" y="51" width="191" height="191"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nrx-PE-YOM" secondAttribute="height" multiplier="1:1" id="SDC-1d-Alg"/>
                                         </constraints>
@@ -130,7 +128,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J63-bx-UYO">
-                                        <rect key="frame" x="0.0" y="257" width="355" height="39"/>
+                                        <rect key="frame" x="0.0" y="258" width="355" height="38.5"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
                                             <fragment content="총 11개의 기출 문제 중 5개 풀이 진행">
@@ -461,7 +459,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="33" height="29"/>
-        <image name="settings" width="20" height="20"/>
+        <image name="home" width="99" height="89"/>
+        <image name="settings" width="48" height="48"/>
     </resources>
 </document>
