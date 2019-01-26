@@ -10,20 +10,14 @@ import WSProgressHUD
 class JDVSolutionFrameViewController: JDVViewController ,
 UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
-    
     //For test
     var number_of_pages = 0
     ///////////
     
-    
-    
     @IBOutlet var toolBarCenterLabel: UILabel!
     @IBOutlet var toolBarRightButton: UIButton!
     @IBOutlet var toolBarLeftButton: UIButton!
-    
     @IBOutlet var barButton_Star: JDVNoteBarButtonItem!
-    
-    
     
     var pageViewController:UIPageViewController!
     
@@ -31,7 +25,6 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     var Solvs:[Solution] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.setTitleWithStyle("\(Probs[0].TestNum)회 해설")
         if !Probs.isEmpty{
