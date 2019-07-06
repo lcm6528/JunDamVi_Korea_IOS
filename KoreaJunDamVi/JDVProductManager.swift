@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyStoreKit
 import Toaster
-let ProductID = "koreasolutions"
 
+let ProductID = "koreasolutions"
 
 class JDVProductManager : NSObject{
     
