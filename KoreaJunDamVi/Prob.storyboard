@@ -1472,7 +1472,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정답률" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-gb-LKf">
-                                                    <rect key="frame" x="162" y="31.666666666666664" width="35" height="14"/>
+                                                    <rect key="frame" x="162.66666666666666" y="31.666666666666664" width="34" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="DcB-V4-Eb8"/>
                                                     </constraints>
@@ -1686,7 +1686,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         <image name="star" width="21.666666030883789" height="21.666666030883789"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="28R-Nv-1NB"/>
+        <segue reference="Zua-Fs-LAj"/>
         <segue reference="1us-z2-awh"/>
     </inferredMetricsTieBreakers>
 </document>

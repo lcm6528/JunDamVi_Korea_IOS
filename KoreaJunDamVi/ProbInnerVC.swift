@@ -65,6 +65,5 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     func JDVChoiceViewManagerDelegate(_ manager: JDVChoiceViewManager, didSelectedLabelAtIndex index: Int) {
         self.selectHandler?(pageIndex,index+1)
-    }
-    
+    }   
 }

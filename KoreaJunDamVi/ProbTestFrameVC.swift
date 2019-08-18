@@ -36,6 +36,7 @@ class ProbTestFrameViewController: JDVViewController {
              NSAttributedStringKey.foregroundColor:UIColor.white],
             for: .normal)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -325,7 +326,10 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         isBlockUserInteract = true
         let nextIndex = getCurrnetIndexOfPage() - 1
         
-        guard nextIndex >= 0 else { return }
+        guard nextIndex >= 0 else {
+            isBlockUserInteract = false
+            return
+        }
         
         let vc = pageViewAtIndex(nextIndex)
         

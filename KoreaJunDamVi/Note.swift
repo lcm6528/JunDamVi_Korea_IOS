@@ -10,11 +10,30 @@ import Foundation
 import RealmSwift
 
 
-class Note:Object{
+class Note: Object {
     @objc dynamic var ProbID: Int = 0
     @objc dynamic var Selection: Int = 0
     
     override static func primaryKey() -> String? {
         return "ProbID"
+    }
+}
+
+
+struct NoteData {
+    var prob: Prob
+    var sol: Solution
+    var note: Note
+    
+    var probID: Int {
+        return prob.ProbID
+    }
+    
+    var selection: Int {
+        return note.Selection
+    }
+    
+    var desc: String {
+        return "\(prob.TestNum)회 \(prob.ProbNum)번"
     }
 }

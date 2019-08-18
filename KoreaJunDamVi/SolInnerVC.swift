@@ -14,9 +14,6 @@ class JDVSolutionInnerViewController: JDVViewController,JDVChoiceViewManagerDele
     var Solv:Solution!
     var pageIndex: Int!
     
-    
-    
-    
     @IBOutlet var testTitleTextView: UITextView!
     @IBOutlet var testContentTextView: UITextView!
     @IBOutlet var testScoreLabel: UILabel!
@@ -36,7 +33,6 @@ class JDVSolutionInnerViewController: JDVViewController,JDVChoiceViewManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let title = NSMutableAttributedString(string: "최선의 풀이")
         title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
@@ -65,11 +61,6 @@ class JDVSolutionInnerViewController: JDVViewController,JDVChoiceViewManagerDele
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func configure() {
         
         self.testTitleTextView.attributedText = Prob.title_attString
@@ -83,10 +74,6 @@ class JDVSolutionInnerViewController: JDVViewController,JDVChoiceViewManagerDele
         self.solKeywordTextView.attributedText = Solv.keyword_attString
         self.solContentTextView1.attributedText = Solv.content1_attString
         self.solContentTextView2.attributedText = Solv.content2_attString
-        
     }
-    
-    
-    
 }
 

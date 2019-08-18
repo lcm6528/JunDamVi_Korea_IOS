@@ -11,13 +11,11 @@ import SwiftyStoreKit
 import Toaster
 class NoteInnerViewController: JDVViewController {
     
-    
     @IBOutlet var button_Purchase: UIButton!
     @IBOutlet var stackView: UIStackView!
     
-    var Prob:Prob!
-    var Solv:Solution?
-    var selection: Int!
+    var noteData: NoteData!
+    var pageIndex: Int!
     
     @IBOutlet var testTitleTextView: UITextView!
     @IBOutlet var testContentTextView: UITextView!
@@ -46,28 +44,23 @@ class NoteInnerViewController: JDVViewController {
         
         super.viewDidLoad()
         
-        setTitleWithStyle("\(Prob.TestNum)회 \(Prob.ProbNum)번")
-        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
         
-        if selection != 0 { choiceManager?.setColorForStateAtIndex(selection-1, state: .selected) }
+        if noteData.selection != 0 { choiceManager?.setColorForStateAtIndex(noteData.selection-1, state: .selected) }
         
-        choiceManager?.setColorForStateAtIndex(Prob.Answer-1, state: .auth)
-        testChoiceViews[Prob.Answer-1].mark()
+        choiceManager?.setColorForStateAtIndex(noteData.prob.Answer-1, state: .auth)
+        testChoiceViews[noteData.prob.Answer-1].mark()
         choiceManager?.isActive = false
         
-        if Solv == nil {
-            Solv = Solution()
-        }
-        
         configure()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         isPurchased = JDVProductManager.isPurchased()
-        
         isHideSolution(bool: !isPurchased)
-        
     }
     
     func configure() {
@@ -84,37 +77,22 @@ class NoteInnerViewController: JDVViewController {
         solSubtitleLabel.attributedText = subtitle
         
         
-        self.testTitleTextView.attributedText = Prob.title_attString
-        self.testContentTextView.attributedText = Prob.article_attString
-        self.ScoreLabel.text = "[\(Prob.Score)점]"
+        self.testTitleTextView.attributedText = noteData.prob.title_attString
+        self.testContentTextView.attributedText = noteData.prob.article_attString
+        self.ScoreLabel.text = "[\(noteData.prob.Score)점]"
         for (index,textView) in testChoiceTextViews.enumerated() {
-            textView.attributedText = Prob.choices_attString[index]
+            textView.attributedText = noteData.prob.choices_attString[index]
         }
         
-        
-        
-        self.solKeywordTextView.attributedText = Solv?.keyword_attString
-        self.solContentTextView1.attributedText = Solv?.content1_attString
-        self.solContentTextView2.attributedText = Solv?.content2_attString
-        
+        self.solKeywordTextView.attributedText = noteData.sol.keyword_attString
+        self.solContentTextView1.attributedText = noteData.sol.content1_attString
+        self.solContentTextView2.attributedText = noteData.sol.content2_attString
     }
     
     
     @IBAction func purchaseButtonPressed(_ sender: Any) {
-        
-        if Prob.TestNum >= 33 {
-            
-            showAlertWithString("해설", message: "\(Prob.TestNum)회차 해설은 준비중입니다.\n빠른 시일 내에 업데이트 될 예정입니다.", sender: self)
-        } else {
-            purchase()
-        }
-        
-        
-        
+        purchase()
     }
-    
-    
-    
     
     func isHideSolution(bool:Bool) {
         
@@ -127,9 +105,7 @@ class NoteInnerViewController: JDVViewController {
         solKeywordTextView.isHidden = bool
         solContentTextView1.isHidden = bool
         solContentTextView2.isHidden = bool
-        
     }
-    
     
     func purchase() {
         SwiftyStoreKit.purchaseProduct(ProductID, atomically: true) { result in
@@ -147,7 +123,4 @@ class NoteInnerViewController: JDVViewController {
             }
         }
     }
-    
-    
-    
 }

@@ -25,8 +25,7 @@ class JDVNoteManager: NSObject {
         
     }
   
-    static func deleteNote(by note:Note) {
-        
+    static func deleteNote(by note: Note) {
         let realm = try! Realm()
         let object = realm.object(ofType: Note.self, forPrimaryKey: note.ProbID)
         
@@ -37,7 +36,19 @@ class JDVNoteManager: NSObject {
             ToastCenter.default.cancelAll()
             Toast(text: "오답노트 삭제완료").show()
         }
+    }
+    
+    static func deleteNote(by probID: Int) {
+        let realm = try! Realm()
+        let object = realm.object(ofType: Note.self, forPrimaryKey: probID)
         
+        try! realm.write {
+            if object != nil {
+                realm.delete(object!)
+            }
+            ToastCenter.default.cancelAll()
+            Toast(text: "오답노트 삭제완료").show()
+        }
     }
     
     static func isAdded(by probid: Int)->Bool {

@@ -1119,6 +1119,7 @@
 		ED9820721E8E2BF90006F711 /* JDVProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9820711E8E2BF90006F711 /* JDVProductManager.swift */; };
 		ED9820741E8E852A0006F711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9820731E8E852A0006F711 /* StoreKit.framework */; };
 		ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */; };
+		EDA606AA23098BD100F45052 /* NoteFrameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606A923098BD100F45052 /* NoteFrameVC.swift */; };
 		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
 		EDAF8D621FE40B1E002A9417 /* JDVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8D611FE40B1E002A9417 /* JDVButton.swift */; };
 		EDB5F78C1ED45FAC0093ABC6 /* MNVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */; };
@@ -2375,6 +2376,7 @@
 		ED9820711E8E2BF90006F711 /* JDVProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVProductManager.swift; sourceTree = "<group>"; };
 		ED9820731E8E852A0006F711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnalList.json; sourceTree = "<group>"; };
+		EDA606A923098BD100F45052 /* NoteFrameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFrameVC.swift; sourceTree = "<group>"; };
 		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
 		EDAF8D611FE40B1E002A9417 /* JDVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDVButton.swift; sourceTree = "<group>"; };
 		EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNVersion.swift; sourceTree = "<group>"; };
@@ -2585,6 +2587,7 @@
 				375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */,
 				375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */,
 				EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */,
+				EDA606A923098BD100F45052 /* NoteFrameVC.swift */,
 			);
 			name = Note;
 			sourceTree = "<group>";
@@ -5570,6 +5573,7 @@
 				37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */,
 				37F7CD2F1DE6B0FE0085A2E4 /* JDVChoiceLabelManager.swift in Sources */,
 				EDF21AD71E81050B00F78466 /* Solution.swift in Sources */,
+				EDA606AA23098BD100F45052 /* NoteFrameVC.swift in Sources */,
 				377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */,
 				37D0517D1E260DCA00D92E89 /* SolInnerVC.swift in Sources */,
 				375373A21E0BA49100205C13 /* JDVColors.swift in Sources */,

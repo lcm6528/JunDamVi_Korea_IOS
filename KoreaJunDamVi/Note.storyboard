@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E90-OQ-O5t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E90-OQ-O5t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,6 +17,9 @@
         </array>
         <array key="NanumBarunGothicUltraLight.ttf">
             <string>NanumBarunGothicUltraLight</string>
+        </array>
+        <array key="NanumGothic.ttf">
+            <string>NanumGothic</string>
         </array>
         <array key="NanumMyeongjo.ttf">
             <string>NanumMyeongjo</string>
@@ -64,7 +67,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-D1-aEE">
-                                        <rect key="frame" x="81" y="9" width="0.0" height="22"/>
+                                        <rect key="frame" x="81" y="9" width="0.5" height="22"/>
                                         <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="WAW-hU-j1J"/>
@@ -72,7 +75,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmU-rW-bNI">
-                                        <rect key="frame" x="81" y="0.0" width="50" height="40"/>
+                                        <rect key="frame" x="81.5" y="0.0" width="50" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="iYp-Dq-njm"/>
                                         </constraints>
@@ -81,7 +84,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwJ-qr-AU2">
-                                        <rect key="frame" x="131" y="9" width="1" height="22"/>
+                                        <rect key="frame" x="131.5" y="9" width="0.5" height="22"/>
                                         <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="0.5" id="JR4-2l-lF5"/>
@@ -89,13 +92,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시대" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uut-Ns-D5I">
-                                        <rect key="frame" x="132" y="0.0" width="81" height="40"/>
+                                        <rect key="frame" x="132" y="0.0" width="80.5" height="40"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XdJ-6i-OU8">
-                                        <rect key="frame" x="213" y="9" width="0.0" height="22"/>
+                                        <rect key="frame" x="212.5" y="9" width="0.5" height="22"/>
                                         <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="ZLU-sr-vAU"/>
@@ -109,7 +112,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eao-qK-XGm">
-                                        <rect key="frame" x="294" y="9" width="0.0" height="22"/>
+                                        <rect key="frame" x="294" y="9" width="0.5" height="22"/>
                                         <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Pm7-CJ-y01"/>
@@ -117,7 +120,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-en-XsX">
-                                        <rect key="frame" x="294" y="0.0" width="81" height="40"/>
+                                        <rect key="frame" x="294.5" y="0.0" width="80.5" height="40"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -167,16 +170,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owG-sW-e8s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문항" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2b-fm-Owr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="81" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="81" height="43.5"/>
                                                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CwU-Wn-OfP">
-                                                            <rect key="frame" x="81" y="11" width="0.0" height="22"/>
+                                                            <rect key="frame" x="81" y="11" width="0.5" height="22"/>
                                                             <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="Ic9-Qd-aqu"/>
@@ -184,7 +187,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO9-8W-ggu">
-                                                            <rect key="frame" x="81" y="0.0" width="50" height="43"/>
+                                                            <rect key="frame" x="81.5" y="0.0" width="50" height="43.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="KCW-5i-gzD"/>
                                                             </constraints>
@@ -193,7 +196,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep4-bS-9NL">
-                                                            <rect key="frame" x="131" y="11" width="1" height="22"/>
+                                                            <rect key="frame" x="131.5" y="11" width="0.5" height="22"/>
                                                             <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="OiR-kz-iP8"/>
@@ -201,13 +204,13 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시대" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKj-sc-MKA">
-                                                            <rect key="frame" x="132" y="0.0" width="81" height="43"/>
+                                                            <rect key="frame" x="132" y="0.0" width="80.5" height="43.5"/>
                                                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtE-vV-8F8">
-                                                            <rect key="frame" x="213" y="11" width="0.0" height="22"/>
+                                                            <rect key="frame" x="212.5" y="11" width="0.5" height="22"/>
                                                             <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="HB9-CX-YFx"/>
@@ -215,13 +218,13 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유형" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahc-hV-onh">
-                                                            <rect key="frame" x="213" y="0.0" width="81" height="43"/>
+                                                            <rect key="frame" x="213" y="0.0" width="81" height="43.5"/>
                                                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmE-rP-Abp">
-                                                            <rect key="frame" x="294" y="11" width="0.0" height="22"/>
+                                                            <rect key="frame" x="294" y="11" width="0.5" height="22"/>
                                                             <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="TMc-Tn-6Dh"/>
@@ -229,7 +232,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naM-wh-NFU">
-                                                            <rect key="frame" x="294" y="0.0" width="81" height="43"/>
+                                                            <rect key="frame" x="294.5" y="0.0" width="80.5" height="43.5"/>
                                                             <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -306,7 +309,7 @@
                     <navigationItem key="navigationItem" title="오답 노트" id="p9f-lr-Czr"/>
                     <connections>
                         <outlet property="tableView" destination="clV-iN-wbg" id="niR-Kw-QS4"/>
-                        <segue destination="02g-g4-zz8" kind="show" identifier="push" id="Q5w-8U-2rq"/>
+                        <segue destination="rkz-UU-yX4" kind="show" identifier="push" id="6yI-Vn-9FJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc6-2C-VPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,22 +341,22 @@
         <!--Note Inner View Controller-->
         <scene sceneID="1gC-HT-2Mp">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="02g-g4-zz8" customClass="NoteInnerViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteInnerViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="02g-g4-zz8" customClass="NoteInnerViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="abV-Sm-D5s"/>
                         <viewControllerLayoutGuide type="bottom" id="cj1-8x-W8z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="T2W-OC-COq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtf-VN-y15">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtf-VN-y15">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-G7-wzv">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-G7-wzv">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="766.5"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zN1-QF-X14">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zN1-QF-X14">
                                                 <rect key="frame" x="8" y="8" width="311" height="34.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
@@ -370,10 +373,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCa-Qw-SVe" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pCa-Qw-SVe" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="253.5" width="351" height="34.5"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1L-si-svL">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1L-si-svL">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -388,10 +391,10 @@
                                                     <constraint firstItem="n1L-si-svL" firstAttribute="centerY" secondItem="pCa-Qw-SVe" secondAttribute="centerY" id="haS-tc-kuZ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJk-93-2N9" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJk-93-2N9" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="290" width="351" height="34.5"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDP-aF-Rku">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDP-aF-Rku">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -405,10 +408,10 @@
                                                     <constraint firstItem="hDP-aF-Rku" firstAttribute="leading" secondItem="FJk-93-2N9" secondAttribute="leading" constant="8" id="hVA-zp-mOv"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKJ-KP-fb6" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QKJ-KP-fb6" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="326.5" width="351" height="34.5"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNG-qd-ewZ">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNG-qd-ewZ">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -422,10 +425,10 @@
                                                     <constraint firstItem="eNG-qd-ewZ" firstAttribute="leading" secondItem="QKJ-KP-fb6" secondAttribute="leading" constant="8" id="EVU-O9-qPs"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Ao-wSS" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Ao-wSS" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="363" width="351" height="34.5"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASL-YE-sU5">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASL-YE-sU5">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -439,10 +442,10 @@
                                                     <constraint firstItem="ASL-YE-sU5" firstAttribute="top" secondItem="puV-Ao-wSS" secondAttribute="top" id="oDp-4h-Z6Z"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-73-eCX" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-73-eCX" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="399.5" width="351" height="34.5"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="5. 집현전을 설치하여 인재를 " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5n-MM-WcK">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="5. 집현전을 설치하여 인재를 " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5n-MM-WcK">
                                                         <rect key="frame" x="8" y="0.0" width="305" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -456,17 +459,17 @@
                                                     <constraint firstItem="a5n-MM-WcK" firstAttribute="top" secondItem="wDE-73-eCX" secondAttribute="top" id="mgK-fe-GQm"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-46-mie" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-46-mie" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="46.5" width="375" height="199"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="deq-6a-d4a">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="deq-6a-d4a">
                                                         <rect key="frame" x="8" y="8" width="359" height="182"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text">왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. 이에 생각건대, 선왕 때 명하신 책이 과인이 계승한 뒤에 완성을 보게 되었으니, 내가 비감한 마음을 금치 못하겠다. 허준에게 말 한 필을 직접 주어 그 공에 보답하고 속히 간행하도록 하라.”라고 하였다.</string>
                                                         <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-9r-ZwU">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-9r-ZwU">
                                                         <rect key="frame" x="0.0" y="198" width="375" height="1"/>
                                                         <color key="backgroundColor" red="0.60392156860000001" green="0.59999999999999998" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -485,11 +488,11 @@
                                                     <constraint firstItem="HA7-9r-ZwU" firstAttribute="top" secondItem="deq-6a-d4a" secondAttribute="bottom" constant="8" id="nG6-CD-633"/>
                                                 </constraints>
                                             </view>
-                                            <view alpha="0.94999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-lk-cof">
+                                            <view alpha="0.94999998807907104" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAM-lk-cof">
                                                 <rect key="frame" x="0.0" y="450" width="375" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제 해설" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1D-bT-fDw">
-                                                        <rect key="frame" x="147" y="10" width="81" height="21"/>
+                                                        <rect key="frame" x="147" y="9.5" width="81" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="0FH-XE-8ZR"/>
                                                             <constraint firstAttribute="width" constant="81" id="b0j-jb-aTF"/>
@@ -499,14 +502,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQd-8p-Vbi">
-                                                        <rect key="frame" x="12" y="20" width="131" height="1"/>
+                                                        <rect key="frame" x="12" y="20" width="131" height="0.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="8u7-Xw-2MV"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4U0-Q0-Yea">
-                                                        <rect key="frame" x="232" y="20" width="131" height="1"/>
+                                                        <rect key="frame" x="232" y="20" width="131" height="0.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="20r-SI-IxC"/>
@@ -526,8 +529,8 @@
                                                     <constraint firstAttribute="height" constant="40" id="w0c-l9-dgs"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tE7-s8-Ir8">
-                                                <rect key="frame" x="12" y="498" width="351" height="260.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tE7-s8-Ir8">
+                                                <rect key="frame" x="12" y="498" width="351" height="260"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVH-yh-KiJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="351" height="50"/>
@@ -543,7 +546,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjL-0b-mNw">
-                                                        <rect key="frame" x="0.0" y="58" width="351" height="21"/>
+                                                        <rect key="frame" x="0.0" y="58" width="351" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="mds-uM-9Gf"/>
                                                         </constraints>
@@ -552,13 +555,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-WB-cyS">
-                                                        <rect key="frame" x="0.0" y="87" width="351" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="86.5" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKE-yv-3FH">
-                                                        <rect key="frame" x="0.0" y="128.5" width="351" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="128" width="351" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="fjZ-gX-gfb"/>
                                                         </constraints>
@@ -577,13 +580,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C70-GO-fbC">
-                                                        <rect key="frame" x="0.0" y="157" width="351" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="156.5" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZu-8j-hIV">
-                                                        <rect key="frame" x="0.0" y="198.5" width="351" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="198" width="351" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="ULs-aa-Uof"/>
                                                         </constraints>
@@ -602,7 +605,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-tP-neZ">
-                                                        <rect key="frame" x="0.0" y="227" width="351" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="226.5" width="351" height="33.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -704,10 +707,136 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBD-ei-zVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.8" y="149.77511244377811"/>
+            <point key="canvasLocation" x="1788" y="812"/>
+        </scene>
+        <!--Note FrameVC-->
+        <scene sceneID="fMW-DY-W72">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="rkz-UU-yX4" customClass="NoteFrameVC" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ys9-97-Kun"/>
+                        <viewControllerLayoutGuide type="bottom" id="D34-jI-Qso"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M6H-Cw-f3G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rI5-vP-GOg" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-ip-HJN">
+                                        <rect key="frame" x="142.5" y="40" width="90" height="4"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="ivT-Ge-e3F"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-He-TmH">
+                                        <rect key="frame" x="147.5" y="11.5" width="80" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="BWP-M1-lgt"/>
+                                            <constraint firstAttribute="height" constant="21" id="joW-1B-sSs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVF-gu-IeJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <state key="normal" title="1번">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leftBarButtonPressed:" destination="rkz-UU-yX4" eventType="touchUpInside" id="749-34-3Ol"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIy-cm-LbA">
+                                        <rect key="frame" x="285" y="0.0" width="90" height="44"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <state key="normal" title="3번">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rightBarButtonPressed:" destination="rkz-UU-yX4" eventType="touchUpInside" id="uE9-Qc-Tz5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hJQ-He-TmH" firstAttribute="centerX" secondItem="rI5-vP-GOg" secondAttribute="centerX" id="0SU-kD-68q"/>
+                                    <constraint firstItem="Sej-ip-HJN" firstAttribute="centerX" secondItem="rI5-vP-GOg" secondAttribute="centerX" id="3z0-iK-uMR"/>
+                                    <constraint firstAttribute="height" constant="44" id="97A-Tt-TQC"/>
+                                    <constraint firstItem="GVF-gu-IeJ" firstAttribute="top" secondItem="rI5-vP-GOg" secondAttribute="top" id="Idt-uJ-3qS"/>
+                                    <constraint firstItem="GVF-gu-IeJ" firstAttribute="leading" secondItem="rI5-vP-GOg" secondAttribute="leading" id="RIg-ti-kar"/>
+                                    <constraint firstItem="GVF-gu-IeJ" firstAttribute="width" secondItem="rI5-vP-GOg" secondAttribute="width" multiplier="0.24" id="S4Q-TR-aBq"/>
+                                    <constraint firstItem="nIy-cm-LbA" firstAttribute="width" secondItem="rI5-vP-GOg" secondAttribute="width" multiplier="0.24" id="Yx6-q2-mLh"/>
+                                    <constraint firstItem="Sej-ip-HJN" firstAttribute="width" secondItem="rI5-vP-GOg" secondAttribute="width" multiplier="0.24" id="eXI-kB-Cz7"/>
+                                    <constraint firstItem="nIy-cm-LbA" firstAttribute="top" secondItem="rI5-vP-GOg" secondAttribute="top" id="iIF-On-xIq"/>
+                                    <constraint firstItem="hJQ-He-TmH" firstAttribute="centerY" secondItem="rI5-vP-GOg" secondAttribute="centerY" id="kBE-nB-ccN"/>
+                                    <constraint firstAttribute="bottom" secondItem="GVF-gu-IeJ" secondAttribute="bottom" id="qry-SM-ecc"/>
+                                    <constraint firstAttribute="bottom" secondItem="nIy-cm-LbA" secondAttribute="bottom" id="qwz-5Y-z4B"/>
+                                    <constraint firstAttribute="trailing" secondItem="nIy-cm-LbA" secondAttribute="trailing" id="rbL-vX-5jg"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sej-ip-HJN" secondAttribute="bottom" id="zmK-Ga-gr3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rI5-vP-GOg" secondAttribute="trailing" id="JFE-rl-hQw"/>
+                            <constraint firstItem="rI5-vP-GOg" firstAttribute="leading" secondItem="M6H-Cw-f3G" secondAttribute="leading" id="xZm-6W-2nW"/>
+                            <constraint firstItem="rI5-vP-GOg" firstAttribute="top" secondItem="ys9-97-Kun" secondAttribute="bottom" id="zzc-I1-qcN"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="r3n-bW-eNj">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="backBtn" style="plain" id="UEa-Fi-FOQ">
+                                <inset key="imageInsets" minX="-8" minY="3" maxX="12" maxY="0.0"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="rkz-UU-yX4" id="8FQ-KN-ALL"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" title="오답노트" id="pyW-ne-4ez">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="star" style="plain" id="uFO-C1-2QF" customClass="JDVNoteBarButtonItem" customModule="KoreaJunDamVi" customModuleProvider="target">
+                            <connections>
+                                <action selector="noteButtonPressed:" destination="rkz-UU-yX4" id="eRY-kM-MA8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="barButton_Star" destination="uFO-C1-2QF" id="7Ug-iy-bSh"/>
+                        <outlet property="barButton_title" destination="pyW-ne-4ez" id="xdk-Y8-8kP"/>
+                        <outlet property="toolBarCenterLabel" destination="hJQ-He-TmH" id="U27-x9-z3Z"/>
+                        <outlet property="toolBarLeftButton" destination="GVF-gu-IeJ" id="dgo-VZ-JVl"/>
+                        <outlet property="toolBarRightButton" destination="nIy-cm-LbA" id="tfb-kW-OeU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XrO-V4-Ag1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450" y="150"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Uuv-tA-ZWL">
+            <objects>
+                <pageViewController storyboardIdentifier="NotePageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FpO-4l-wvL" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="200"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kj9-lm-uMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="-109"/>
         </scene>
     </scenes>
     <resources>
-        <image name="note" width="29" height="29"/>
+        <image name="backBtn" width="14" height="25"/>
+        <image name="note" width="29.666666030883789" height="29.666666030883789"/>
+        <image name="star" width="21.666666030883789" height="21.666666030883789"/>
     </resources>
 </document>

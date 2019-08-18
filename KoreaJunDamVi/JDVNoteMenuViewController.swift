@@ -13,14 +13,10 @@ import DZNEmptyDataSet
 class JDVNoteMenuViewController: JDVViewController {
     
     @IBOutlet var tableView: UITableView!
-    var Notes:[Note] = []
     
-    var probs:[Prob] = []
-    
-    var currentIndex = 0
-    
+    var noteDatas: [NoteData] = []
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.setTitleWithStyle("오답노트")
         tableView.emptyDataSetDelegate = self
@@ -29,52 +25,58 @@ class JDVNoteMenuViewController: JDVViewController {
         
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchNotes()
+        fetchData()
     }
     
-    func fetchNotes() {
-        
+    func fetchData() {
         let realm = try! Realm()
         
         let result = realm.objects(Note.self)
-        Notes = Array(result)
         
-        probs = JDVProbManager.fetchProbs(withProbID: Notes.map{$0.ProbID})
+        let notes = Array(result)
+        let probs = JDVProbManager.fetchProbs(withProbID: notes.map{ $0.ProbID })
+        let sols = JDVSolutionManager.fetchSols(withProbID: notes.map{ $0.ProbID })
+        
+        NSLog("\(notes.count) \(probs.count) \(sols.count)")
+        if notes.count != probs.count || probs.count != sols.count || sols.count != notes.count {
+            showAlertWithString("데이터 오류", message: "저장된 데이터가 손상되었습니다. 설정화면에서 학습내역 초기화를 통하여 해결할 수 있습니다.", sender: self)
+            return
+        }
+        noteDatas.removeAll()
+        for i in 0..<notes.count {
+            noteDatas.append(NoteData(prob: probs[i], sol: sols[i], note: notes[i]))
+        }
+        
         self.tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! NoteInnerViewController
-        vc.Prob = probs[currentIndex]
-        vc.Solv = JDVSolutionManager.fetchSol(withProbID: probs[currentIndex].ProbID)
-        vc.selection = Notes[currentIndex].Selection
-        
+        let vc = segue.destination as! NoteFrameVC
+        vc.noteDatas = noteDatas
+        vc.initialIdx = sender as? Int ?? 0
         self.tabBarController?.tabBar.isHidden = true
     }
-    
 }
 
 
-extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource{
+extension JDVNoteMenuViewController: UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JDVNoteMenuCell
-        cell.configure(by: probs[indexPath.row])
+        cell.configure(by: noteDatas[indexPath.row].prob)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return probs.count
+        return noteDatas.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentIndex = indexPath.row
-        performSegue(withIdentifier: "push", sender: self)
+        performSegue(withIdentifier: "push", sender: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -83,10 +85,11 @@ extension JDVNoteMenuViewController: UITableViewDelegate,UITableViewDataSource,D
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            JDVNoteManager.deleteNote(by: Notes[indexPath.row])
-            fetchNotes()   
+            JDVNoteManager.deleteNote(by: noteDatas[indexPath.row].note)
+            fetchData()
         }
     }
+    
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "삭제"
     }
