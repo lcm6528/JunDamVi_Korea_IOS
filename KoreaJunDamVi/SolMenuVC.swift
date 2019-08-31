@@ -15,8 +15,7 @@ class JDVSolutionMenuViewController: JDVViewController {
     
     var dataArray:[String] = []
     
-    var Probs:[Prob] = []
-    var Solvs:[Solution] = []
+    var probData: [ProbData] = []
     let blockView =  BlockView()
     
     var isPurchased: Bool = false {
@@ -79,9 +78,7 @@ class JDVSolutionMenuViewController: JDVViewController {
     func preview() {
         isBlockUserInteract = true
         WSProgressHUD.show(withStatus: "해설 불러오는 중..")
-        
-        self.Probs = JDVProbManager.fetchProbs(withTestnum: dataArray[0].toInt()!)
-        self.Solvs = JDVSolutionManager.fetchSols(withTestnum: dataArray[0].toInt()!)
+        fetchData(index: dataArray[0].toInt()!)
         
         self.performSegue(withIdentifier: "push", sender: self)
     }
@@ -118,6 +115,14 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.collectionView.reloadData()
     }
     
+    func fetchData(index: Int) {
+        let probs = JDVProbManager.fetchProbs(withTestnum: index)
+        
+        probData.removeAll()
+        for i in 0 ..< probs.count {
+            probData.append(probs[i])
+        }
+    }
     
     
     
@@ -125,11 +130,8 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.tabBarController?.tabBar.isHidden = true
         
         let vc = segue.destination as! JDVSolutionFrameViewController
-        vc.Probs = self.Probs
-        vc.Solvs = self.Solvs
+        vc.probData = self.probData
     }
-    
-    
 }
 
 
@@ -155,7 +157,7 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if SCREEN_WIDTH > 430{
+        if SCREEN_WIDTH > 430 {
             return CGSize(width: 120, height: 120)
         } else {
             let length = SCREEN_WIDTH/3 - 20
@@ -167,12 +169,10 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
         guard isPurchased == true else{ return }
         isBlockUserInteract = true
         WSProgressHUD.show(withStatus: "해설 불러오는 중..")
+        fetchData(index: dataArray[indexPath.row].toInt()!)
         
-        self.Probs = JDVProbManager.fetchProbs(withTestnum: dataArray[indexPath.row].toInt()!)
-        self.Solvs = JDVSolutionManager.fetchSols(withTestnum: dataArray[indexPath.row].toInt()!)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.performSegue(withIdentifier: "push", sender: self)
-            
         }
     }
 }

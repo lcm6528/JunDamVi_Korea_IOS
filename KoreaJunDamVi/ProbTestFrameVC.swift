@@ -20,7 +20,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     var number_of_pages = 0
     
-    var Probs: [Prob] = []
+    var probData: [ProbData] = []
     var result: TestResult!
     var selections: [Int]?
     var pageViewController: UIPageViewController!
@@ -40,8 +40,8 @@ class ProbTestFrameViewController: JDVViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !Probs.isEmpty {
-            number_of_pages = Probs.count
+        if !probData.isEmpty {
+            number_of_pages = probData.count
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
@@ -50,11 +50,11 @@ class ProbTestFrameViewController: JDVViewController {
             let str = desc[..<desc.index(desc.startIndex, offsetBy: 2)]
             setTitleWithStyle(option.cacheKey + str + " 문제풀기")
         } else {
-            setTitleWithStyle("\(Probs[0].TestNum)회차 문제풀기")
+            setTitleWithStyle("\(probData[0].prob.TestNum)회차 문제풀기")
         }
         
         if selections == nil || selections?.isEmpty == true {
-            selections = [Int](repeatElement(0, count: Probs.count))
+            selections = [Int](repeatElement(0, count: probData.count))
         }
         
         //////PageVC Settings///////
@@ -62,12 +62,12 @@ class ProbTestFrameViewController: JDVViewController {
         
         pageViewController.delegate = self
         pageViewController.dataSource = self
-        let initialContenViewController = self.pageViewAtIndex(0) as! ProbTestInnerViewController
+        let initialContenViewController = self.pageViewAtIndex(0) as! TempleteVC
         
         let viewControllers = NSArray(object: initialContenViewController)
         
         
-        self.pageViewController.setViewControllers(viewControllers as! [ProbTestInnerViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         
         self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
         
@@ -82,17 +82,15 @@ class ProbTestFrameViewController: JDVViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(onStop), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
-        
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
         
         if option.sortedOption == .test {
-            JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+            JDVProbManager.saveCachedData(with: "\(probData[0].prob.TestNum)", tries: selections!)
         } else {
             JDVProbManager.saveCachedData(with: option.cacheKey, tries: selections!)
         }
@@ -104,7 +102,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     @objc func onStop() {
         if option.sortedOption == .test {
-            JDVProbManager.saveCachedData(with: "\(Probs[0].TestNum)", tries: selections!)
+            JDVProbManager.saveCachedData(with: "\(probData[0].prob.TestNum)", tries: selections!)
         } else {
             JDVProbManager.saveCachedData(with: option.sortedOption.rawValue, tries: selections!)
         }
@@ -114,11 +112,11 @@ class ProbTestFrameViewController: JDVViewController {
         
         if segue.identifier == "popup" {
             let vc = segue.destination as! ProbPopupView
-            vc.dataArray = Probs
+            vc.dataArray = probData
             vc.selections = selections!
             
-            vc.isNoted = Probs.map {prob in
-                return JDVNoteManager.isAdded(by: prob.ProbID)
+            vc.isNoted = probData.map { prob in
+                return JDVNoteManager.isAdded(by: prob.probID)
             }
             
             vc.didSelectHandler = { [unowned self] index in
@@ -126,13 +124,14 @@ class ProbTestFrameViewController: JDVViewController {
                 self.gotoPageAtIndex(currentIdx, goto: index)
                 self.setToolbarTitle(currentIdx)
             }
-        }else if segue.identifier == "push" {
+        } else if segue.identifier == "push" {
             let vc = segue.destination as! ProbResultViewController
             var tries: [Try] = []
-            for (index, prob) in Probs.enumerated() {
-                let item = Try(withProb: prob, selection: selections![index])
+            for (index, prob) in probData.enumerated() {
+                let item = Try(withProb: prob.prob, selection: selections![index])
                 tries.append(item)
             }
+            
             result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
             vc.result = self.result
             vc.option = option
@@ -148,11 +147,11 @@ class ProbTestFrameViewController: JDVViewController {
                 realm.add(record)
             }
             
-        }else if segue.identifier == "pushsimple" {
+        } else if segue.identifier == "pushsimple" {
             let vc = segue.destination as! SimpleResultViewController
-            var tries:[Try] = []
-            for (index, prob) in Probs.enumerated() {
-                let item = Try(withProb: prob, selection: selections![index])
+            var tries: [Try] = []
+            for (index, prob) in probData.enumerated() {
+                let item = Try(withProb: prob.prob, selection: selections![index])
                 tries.append(item)
             }
             result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
@@ -172,7 +171,7 @@ class ProbTestFrameViewController: JDVViewController {
         let index = getCurrnetIndexOfPage()
         
         let note = Note()
-        note.ProbID = Probs[index].ProbID
+        note.ProbID = probData[index].probID
         note.Selection = selections![index]
         
         if sender.isSelected == false {
@@ -221,7 +220,7 @@ class ProbTestFrameViewController: JDVViewController {
         let numberOfTest: Int = index + 1
         toolBarCenterLabel.text = "\(numberOfTest)번"
         
-        barButton_Star.isSelected = JDVNoteManager.isAdded(by: Probs[index].ProbID)
+        barButton_Star.isSelected = JDVNoteManager.isAdded(by: probData[index].probID)
         
         if index == 0 {
             toolBarRightButton.setTitle("\(numberOfTest+1)번", for: .normal)
@@ -249,23 +248,23 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     }
     
     func pageViewAtIndex(_ index: Int) -> JDVViewController {
-        let innerView = self.storyboard?.instantiateViewController(withIdentifier: "ProbTestInnerViewController") as! ProbTestInnerViewController
-        innerView.Prob = Probs[index]
+        let innerView = UIStoryboard(name: "Templete", bundle: nil).instantiateViewController(withIdentifier: "TempleteVC") as! TempleteVC
+        innerView.probData = probData[index]
         innerView.pageIndex = index
-        innerView.option = option.sortedOption
+        innerView.templeteOption = .TEST
+        innerView.templete = TEMPLETE_NoSolution
+        innerView.selection = selections![index]
         innerView.selectHandler = { (num, selection) -> Void in
             self.selections![num] = selection
             self.gotoNextPage()
         }
-        if selections![index] != 0 {
-            innerView.selection = selections![index]
-        }
+        
         return innerView
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
-        let viewController = viewController as! ProbTestInnerViewController
+        let viewController = viewController as! TempleteVC
         var index = viewController.pageIndex as Int
         
         if(index == 0 || index == NSNotFound) { return nil }
@@ -276,7 +275,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
-        let viewController = viewController as! ProbTestInnerViewController
+        let viewController = viewController as! TempleteVC
         var index = viewController.pageIndex as Int
         if((index == NSNotFound)) { return nil }
         
@@ -340,7 +339,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
     }
     
     func getCurrnetIndexOfPage() -> Int{
-        let vc  = pageViewController.viewControllers?.first as! ProbTestInnerViewController
+        let vc  = pageViewController.viewControllers?.first as! TempleteVC
         return vc.pageIndex
     }
 }

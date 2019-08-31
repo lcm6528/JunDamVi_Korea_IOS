@@ -10,8 +10,7 @@ import UIKit
 
 class ProbPopupView: UIViewController {
     
-    
-    var dataArray:[Prob] = []
+    var dataArray:[ProbData] = []
     var selections:[Int] = []
     var isNoted:[Bool] = []
     
@@ -60,7 +59,7 @@ extension ProbPopupView:UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProbPopupCell
         
-        cell.configure(WithProb: dataArray[indexPath.row], selections: selections[indexPath.row], isNoted: isNoted[indexPath.row])
+        cell.configure(WithProb: dataArray[indexPath.row].prob, selections: selections[indexPath.row], isNoted: isNoted[indexPath.row])
         cell.label_ProbNum.text = "\(indexPath.row+1)번"
         return cell
         

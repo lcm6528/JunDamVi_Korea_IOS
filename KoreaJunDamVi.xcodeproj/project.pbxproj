@@ -83,7 +83,6 @@
 		37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD1F1DE6B0FD0085A2E4 /* JDVNoteManager.swift */; };
 		37F7CD311DE6B0FE0085A2E4 /* JDVScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */; };
 		37F7CD321DE6B0FE0085A2E4 /* JDVProbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */; };
-		37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */; };
 		37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */; };
 		37F7CD361DE6B1A60085A2E4 /* ProbCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */; };
 		37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7CD381DE6B1FD0085A2E4 /* DataController.swift */; };
@@ -1120,6 +1119,11 @@
 		ED9820741E8E852A0006F711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9820731E8E852A0006F711 /* StoreKit.framework */; };
 		ED9ECBAF1E8BF0F100075DC3 /* AnalList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */; };
 		EDA606AA23098BD100F45052 /* NoteFrameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606A923098BD100F45052 /* NoteFrameVC.swift */; };
+		EDA606AC23129CC600F45052 /* Templete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA606AB23129CC600F45052 /* Templete.storyboard */; };
+		EDA606AE2312A40400F45052 /* TempleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606AD2312A40400F45052 /* TempleteVC.swift */; };
+		EDA606B12312A45200F45052 /* ProbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606B02312A45200F45052 /* ProbCell.swift */; };
+		EDA606B32312A46000F45052 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606B22312A46000F45052 /* SelectionCell.swift */; };
+		EDA606B52312A4DB00F45052 /* SolutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606B42312A4DB00F45052 /* SolutionCell.swift */; };
 		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
 		EDAF8D621FE40B1E002A9417 /* JDVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF8D611FE40B1E002A9417 /* JDVButton.swift */; };
 		EDB5F78C1ED45FAC0093ABC6 /* MNVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */; };
@@ -1338,7 +1342,6 @@
 		37F7CD1F1DE6B0FD0085A2E4 /* JDVNoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVNoteManager.swift; sourceTree = "<group>"; };
 		37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVScoreManager.swift; sourceTree = "<group>"; };
 		37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVProbManager.swift; sourceTree = "<group>"; };
-		37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVSolutionManager.swift; sourceTree = "<group>"; };
 		37F7CD231DE6B0FD0085A2E4 /* JDVLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVLabels.swift; sourceTree = "<group>"; };
 		37F7CD351DE6B1A60085A2E4 /* ProbCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewController.swift; sourceTree = "<group>"; };
 		37F7CD381DE6B1FD0085A2E4 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -2377,6 +2380,11 @@
 		ED9820731E8E852A0006F711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		ED9ECBAE1E8BF0F100075DC3 /* AnalList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnalList.json; sourceTree = "<group>"; };
 		EDA606A923098BD100F45052 /* NoteFrameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFrameVC.swift; sourceTree = "<group>"; };
+		EDA606AB23129CC600F45052 /* Templete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Templete.storyboard; sourceTree = "<group>"; };
+		EDA606AD2312A40400F45052 /* TempleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleteVC.swift; sourceTree = "<group>"; };
+		EDA606B02312A45200F45052 /* ProbCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbCell.swift; sourceTree = "<group>"; };
+		EDA606B22312A46000F45052 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		EDA606B42312A4DB00F45052 /* SolutionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionCell.swift; sourceTree = "<group>"; };
 		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
 		EDAF8D611FE40B1E002A9417 /* JDVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDVButton.swift; sourceTree = "<group>"; };
 		EDB5F78B1ED45FAC0093ABC6 /* MNVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNVersion.swift; sourceTree = "<group>"; };
@@ -2584,8 +2592,8 @@
 		375373A91E11532D00205C13 /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */,
 				375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */,
+				375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */,
 				EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */,
 				EDA606A923098BD100F45052 /* NoteFrameVC.swift */,
 			);
@@ -2708,7 +2716,6 @@
 				37F7CD1F1DE6B0FD0085A2E4 /* JDVNoteManager.swift */,
 				37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */,
 				37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */,
-				37F7CD221DE6B0FD0085A2E4 /* JDVSolutionManager.swift */,
 				ED9820711E8E2BF90006F711 /* JDVProductManager.swift */,
 			);
 			name = Managers;
@@ -2779,6 +2786,7 @@
 				375373A41E0BAD8A00205C13 /* ProbTest */,
 				ED9ECBB01E8BF12100075DC3 /* Result */,
 				37D051791E260CDD00D92E89 /* ProbAnal */,
+				EDA606AF2312A43900F45052 /* Templete */,
 			);
 			name = Prob;
 			sourceTree = "<group>";
@@ -4057,6 +4065,18 @@
 			name = Result;
 			sourceTree = "<group>";
 		};
+		EDA606AF2312A43900F45052 /* Templete */ = {
+			isa = PBXGroup;
+			children = (
+				EDA606AB23129CC600F45052 /* Templete.storyboard */,
+				EDA606AD2312A40400F45052 /* TempleteVC.swift */,
+				EDA606B02312A45200F45052 /* ProbCell.swift */,
+				EDA606B22312A46000F45052 /* SelectionCell.swift */,
+				EDA606B42312A4DB00F45052 /* SolutionCell.swift */,
+			);
+			name = Templete;
+			sourceTree = "<group>";
+		};
 		EDDEF42322CA5E0800BF9952 /* 43 */ = {
 			isa = PBXGroup;
 			children = (
@@ -4584,6 +4604,7 @@
 				ED5FFC171FE7F3C4003CD4C3 /* 2930.jpg in Resources */,
 				EDDEF46E22CA5E0900BF9952 /* 4329.jpg in Resources */,
 				ED5FFE3C1FE7F404003CD4C3 /* 3544.jpg in Resources */,
+				EDA606AC23129CC600F45052 /* Templete.storyboard in Resources */,
 				ED5FFC8E1FE7F3CD003CD4C3 /* 3010_01.jpg in Resources */,
 				ED5FF91C1FE7E7BA003CD4C3 /* 3730.jpg in Resources */,
 				ED5FFD7A1FE7F3ED003CD4C3 /* 3334.jpg in Resources */,
@@ -5530,6 +5551,7 @@
 				378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */,
 				375373B31E122B1300205C13 /* JDVGraphBaseCell.swift in Sources */,
 				37D788851E31EAE00039F999 /* JDVShadowView.swift in Sources */,
+				EDA606B32312A46000F45052 /* SelectionCell.swift in Sources */,
 				37F7CD271DE6B0FD0085A2E4 /* JDVViewController.swift in Sources */,
 				376265FF1DFE9F480048317F /* ResultBotView.swift in Sources */,
 				375373A61E0BADA100205C13 /* ProbQuickVC.swift in Sources */,
@@ -5539,11 +5561,13 @@
 				37F000971E07C27B00DA1350 /* GageView.swift in Sources */,
 				ED72684B1E8BD56000ACAE28 /* SolMenuCell.swift in Sources */,
 				ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */,
+				EDA606AE2312A40400F45052 /* TempleteVC.swift in Sources */,
 				ED9820721E8E2BF90006F711 /* JDVProductManager.swift in Sources */,
 				375EDAB81E41FDC200D521C9 /* JDVViews.swift in Sources */,
 				37E542651E5E9B6D0017884E /* Prob.swift in Sources */,
 				37F7CD341DE6B0FE0085A2E4 /* JDVLabels.swift in Sources */,
 				37A985981E41BDE300853D71 /* BlockView.swift in Sources */,
+				EDA606B12312A45200F45052 /* ProbCell.swift in Sources */,
 				3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */,
 				EDB768FB1E6FE28700A2715A /* NoteInnerVC.swift in Sources */,
 				ED840A631FD4694F00527FD8 /* HomeTabbarController.swift in Sources */,
@@ -5554,7 +5578,6 @@
 				37F7CD391DE6B1FD0085A2E4 /* DataController.swift in Sources */,
 				376265F91DFE888E0048317F /* ResultViewController.swift in Sources */,
 				375373A81E11532900205C13 /* JDVNoteMenuViewController.swift in Sources */,
-				37F7CD331DE6B0FE0085A2E4 /* JDVSolutionManager.swift in Sources */,
 				375373AE1E122A5C00205C13 /* SolMenuVC.swift in Sources */,
 				37D99B0E1DE87AC30017F7CF /* ProbTestFrameVC.swift in Sources */,
 				3745DD291E63EE3C005CC446 /* TestResult.swift in Sources */,
@@ -5566,6 +5589,7 @@
 				376265FD1DFE8B140048317F /* ResultTopView.swift in Sources */,
 				376CB42C1E2F2D7300AC8F49 /* AnalRoundView.swift in Sources */,
 				37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */,
+				EDA606B52312A4DB00F45052 /* SolutionCell.swift in Sources */,
 				37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */,
 				3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */,
 				37F7CD251DE6B0FD0085A2E4 /* JDVFunctions.swift in Sources */,

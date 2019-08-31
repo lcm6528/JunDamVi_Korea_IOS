@@ -25,7 +25,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     let options: [JDVProbManager.SortedOption] = [.test, .time, .type, .theme]
     
     var dataArray: [[String]] = []
-    var Probs: [Prob] = []
+    var probData: [ProbData] = []
     var QuickProbs: [QuickProb] = []
     
     var AnalData: JSON!
@@ -77,8 +77,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
                 
                 self.showIndicator()
                 
-                JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
-                    self?.Probs = probs
+                JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self] (probs) in
+                    self?.probData = probs
                     self?.performSegue(withIdentifier: "pushinit", sender: self)
                 })
         }))
@@ -90,8 +90,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
                     { action in
                         self.showIndicator()
                        
-                        JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
-                            self?.Probs = probs
+                        JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self] (probs) in
+                            self?.probData = probs
                             self?.performSegue(withIdentifier: "pushcont", sender: self)
                         })
                 }
@@ -99,7 +99,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             }
         }
         
-        if currentOption.sortedOption == .test{
+        if currentOption.sortedOption == .test {
             alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
                 { action in
                     self.showIndicator()
@@ -151,13 +151,13 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         switch segue.identifier! {
         case "pushinit":
             let vc = segue.destination as! ProbTestFrameViewController
-            vc.Probs = self.Probs
+            vc.probData = self.probData
             vc.option = currentOption
             self.tabBarController?.tabBar.isHidden = true
             
         case "pushcont":
             let vc = segue.destination as!ProbTestFrameViewController
-            vc.Probs = self.Probs
+            vc.probData = self.probData
             vc.option = currentOption
             vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
             self.tabBarController?.tabBar.isHidden = true
@@ -178,7 +178,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             return
         }
         
-        self.Probs = []
+        self.probData = []
         self.QuickProbs = []
     }
 }

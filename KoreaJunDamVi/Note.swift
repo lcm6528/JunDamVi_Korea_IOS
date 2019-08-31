@@ -20,20 +20,29 @@ class Note: Object {
 }
 
 
-struct NoteData {
+struct ProbData {
     var prob: Prob
     var sol: Solution
-    var note: Note
+    var note: Note?
     
     var probID: Int {
         return prob.ProbID
     }
     
     var selection: Int {
-        return note.Selection
+        return note?.Selection ?? 0
     }
     
     var desc: String {
         return "\(prob.TestNum)회 \(prob.ProbNum)번"
+    }
+    
+    var answer: Int {
+        return prob.Answer - 1
+    }
+    
+    init(withDict dict:NSDictionary) {
+        self.prob = Prob(withDict: dict)
+        self.sol = Solution(withDict: dict)
     }
 }

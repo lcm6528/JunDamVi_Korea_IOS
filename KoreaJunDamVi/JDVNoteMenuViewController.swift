@@ -14,7 +14,7 @@ class JDVNoteMenuViewController: JDVViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var noteDatas: [NoteData] = []
+    var noteDatas: [ProbData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +38,16 @@ class JDVNoteMenuViewController: JDVViewController {
         let result = realm.objects(Note.self)
         
         let notes = Array(result)
-        let probs = JDVProbManager.fetchProbs(withProbID: notes.map{ $0.ProbID })
-        let sols = JDVSolutionManager.fetchSols(withProbID: notes.map{ $0.ProbID })
+        var probs = JDVProbManager.fetchProbs(withProbID: notes.map{ $0.ProbID })
         
-        NSLog("\(notes.count) \(probs.count) \(sols.count)")
-        if notes.count != probs.count || probs.count != sols.count || sols.count != notes.count {
+        if notes.count != probs.count {
             showAlertWithString("데이터 오류", message: "저장된 데이터가 손상되었습니다. 설정화면에서 학습내역 초기화를 통하여 해결할 수 있습니다.", sender: self)
             return
         }
         noteDatas.removeAll()
         for i in 0..<notes.count {
-            noteDatas.append(NoteData(prob: probs[i], sol: sols[i], note: notes[i]))
+            probs[i].note = notes[i]
+            noteDatas.append(probs[i])
         }
         
         self.tableView.reloadData()

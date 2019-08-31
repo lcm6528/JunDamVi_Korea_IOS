@@ -13,8 +13,8 @@ import Toaster
 
 class JDVNoteManager: NSObject {
   
-    static func saveNote(by note:Note) {
-        
+    static func saveNote(by note: Note?) {
+        guard let note = note else { return }
         let realm = try! Realm()
         
         try! realm.write {
@@ -25,7 +25,9 @@ class JDVNoteManager: NSObject {
         
     }
   
-    static func deleteNote(by note: Note) {
+    static func deleteNote(by note: Note?) {
+        guard let note = note else { return }
+        
         let realm = try! Realm()
         let object = realm.object(ofType: Note.self, forPrimaryKey: note.ProbID)
         

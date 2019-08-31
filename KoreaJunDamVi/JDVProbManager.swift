@@ -37,9 +37,9 @@ class JDVProbManager: NSObject {
         }
     }
     
-    static func fetchProbs(withSortedOption option:SortedOption,by value: String, completion:@escaping ([Prob]) -> ()) {
+    static func fetchProbs(withSortedOption option: SortedOption,by value: String, completion:@escaping ([ProbData]) -> ()) {
         
-        var Probs: [Prob] = []
+        var Probs: [ProbData] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
@@ -53,15 +53,9 @@ class JDVProbManager: NSObject {
 
                 arr.append(result!.resultDictionary() as NSDictionary )
             }
-            /*
-            //여기서 필터링좀 하자...
-            if option != .test && arr.count > 30 {
-                arr.shuffle()
-                arr = Array(arr[1...30])
-            }
-            */
+           
             arr.forEach({ (dict) in
-                Probs.append(Prob(withDict: dict))
+                Probs.append(ProbData(withDict: dict))
             })
             
             completion(Probs)
@@ -69,8 +63,8 @@ class JDVProbManager: NSObject {
         fmdb?.close()
     }
     
-    static func fetchProbs(withTestnum num: Int) -> [Prob] {
-        var Probs: [Prob] = []
+    static func fetchProbs(withTestnum num: Int) -> [ProbData] {
+        var Probs: [ProbData] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
@@ -80,7 +74,7 @@ class JDVProbManager: NSObject {
             let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
             while result?.next() == true {
                 let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let prob = Prob(withDict: dict)
+                let prob = ProbData(withDict: dict)
                 Probs.append(prob)
             }
         }
@@ -88,8 +82,8 @@ class JDVProbManager: NSObject {
         return Probs
     }
     
-    static func fetchProb(withProbID id: Int) -> Prob? {
-        var prob: Prob?
+    static func fetchProb(withProbID id: Int) -> ProbData? {
+        var prob: ProbData?
         
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
@@ -100,7 +94,7 @@ class JDVProbManager: NSObject {
             let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
             while result?.next() == true {
                 let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let item = Prob(withDict: dict)
+                let item = ProbData(withDict: dict)
                 
                 prob = item
             }
@@ -108,9 +102,9 @@ class JDVProbManager: NSObject {
         fmdb?.close()
         return prob
     }
-    static func fetchProbs(withProbID ids:[Int]) -> [Prob] {
+    static func fetchProbs(withProbID ids:[Int]) -> [ProbData] {
         
-        var probs: [Prob] = []
+        var probs: [ProbData] = []
         
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
@@ -122,7 +116,7 @@ class JDVProbManager: NSObject {
                 let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
                 while result?.next() == true {
                     let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                    let item = Prob(withDict: dict)
+                    let item = ProbData(withDict: dict)
                     probs.append(item)
                     
                 }

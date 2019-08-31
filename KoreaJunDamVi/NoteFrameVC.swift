@@ -20,7 +20,7 @@ class NoteFrameVC: JDVViewController {
     
     var number_of_pages = 0
     var initialIdx = 0
-    var noteDatas: [NoteData] = []
+    var noteDatas: [ProbData] = []
     var pageViewController: UIPageViewController!
     
     var option:JDVProbManager.ProbOption!
@@ -48,14 +48,20 @@ class NoteFrameVC: JDVViewController {
         
         pageViewController.delegate = self
         pageViewController.dataSource = self
-        let initialContenViewController = self.pageViewAtIndex(initialIdx) as! NoteInnerViewController
+        let initialContenViewController = self.pageViewAtIndex(initialIdx) as! TempleteVC
         
         let viewControllers = NSArray(object: initialContenViewController)
         
         
-        self.pageViewController.setViewControllers(viewControllers as! [NoteInnerViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
+        if #available(iOS 11.0, *) {
+            let height = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height ?? 0
+            let inset = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+            self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: height + inset)
+        } else {
+            self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
+        }
         
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
@@ -121,16 +127,18 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
     }
     
     func pageViewAtIndex(_ index: Int) -> JDVViewController {
-        let innerView = self.storyboard?.instantiateViewController(withIdentifier: "NoteInnerViewController") as! NoteInnerViewController
-        innerView.noteData = noteDatas[index]
+        let innerView = UIStoryboard(name: "Templete", bundle: nil).instantiateViewController(withIdentifier: "TempleteVC") as! TempleteVC
+        innerView.probData = noteDatas[index]
         innerView.pageIndex = index
+        innerView.templete = TEMPLETE_Solution
+        innerView.templeteOption = .NOTE
         
         return innerView
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
-        let viewController = viewController as! NoteInnerViewController
+        let viewController = viewController as! TempleteVC
         var index = viewController.pageIndex as Int
         
         if(index == 0 || index == NSNotFound) { return nil }
@@ -141,7 +149,7 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
-        let viewController = viewController as! NoteInnerViewController
+        let viewController = viewController as! TempleteVC
         var index = viewController.pageIndex as Int
         if((index == NSNotFound)) { return nil }
         
@@ -205,7 +213,7 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
     }
     
     func getCurrnetIndexOfPage() -> Int{
-        let vc  = pageViewController.viewControllers?.first as! NoteInnerViewController
+        let vc  = pageViewController.viewControllers?.first as! TempleteVC
         return vc.pageIndex
     }
 }

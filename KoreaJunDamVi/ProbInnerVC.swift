@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegate {
+class ProbTestInnerViewController: JDVViewController {
     
-    var Prob:Prob!
+    var probData: ProbData!
     
     var pageIndex: Int!
     var selection = 0
@@ -25,13 +25,12 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     @IBOutlet var testChoiceViews: [UIView]!
     @IBOutlet var testChoiceTextViews: [UITextView]!
     
-    var choiceManager:JDVChoiceViewManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
-        choiceManager?.indexOfPage = pageIndex
-        choiceManager?.delegate = self
+//        choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
+//        choiceManager?.indexOfPage = pageIndex
+//        choiceManager?.delegate = self
         
         configure()
         
@@ -39,31 +38,21 @@ class ProbTestInnerViewController: JDVViewController,JDVChoiceViewManagerDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-        if selection != 0 {
-            choiceManager?.setColorForStateAtIndex(selection-1, state: .selected)
-        }
     }
     
     func configure() {
-        
+        let prob = probData.prob
         if option != .test{
-            self.testTitleTextView.attributedText = Prob.title_attString_noNum
+            self.testTitleTextView.attributedText = prob.title_attString_noNum
         } else {
-            self.testTitleTextView.attributedText = Prob.title_attString
+            self.testTitleTextView.attributedText = prob.title_attString
         }
         
-        self.testContentTextView.attributedText = Prob.article_attString
+        self.testContentTextView.attributedText = prob.article_attString
         
-        self.ScoreLabel.text = "[\(Prob.Score)점]"
+        self.ScoreLabel.text = "[\(prob.Score)점]"
         for (index,textView) in testChoiceTextViews.enumerated() {
-            textView.attributedText = Prob.choices_attString[index]
+            textView.attributedText = prob.choices_attString[index]
         }
     }
-    
-    
-    
-    func JDVChoiceViewManagerDelegate(_ manager: JDVChoiceViewManager, didSelectedLabelAtIndex index: Int) {
-        self.selectHandler?(pageIndex,index+1)
-    }   
 }

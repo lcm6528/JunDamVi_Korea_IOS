@@ -14,7 +14,7 @@ class NoteInnerViewController: JDVViewController {
     @IBOutlet var button_Purchase: UIButton!
     @IBOutlet var stackView: UIStackView!
     
-    var noteData: NoteData!
+    var noteData: ProbData!
     var pageIndex: Int!
     
     @IBOutlet var testTitleTextView: UITextView!
@@ -35,7 +35,6 @@ class NoteInnerViewController: JDVViewController {
     @IBOutlet var solContentTextView2: UITextView!
     
     
-    var choiceManager:JDVChoiceViewManager?
     
     var isPurchased:Bool = false
     
@@ -46,13 +45,13 @@ class NoteInnerViewController: JDVViewController {
         
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
-        
-        if noteData.selection != 0 { choiceManager?.setColorForStateAtIndex(noteData.selection-1, state: .selected) }
-        
-        choiceManager?.setColorForStateAtIndex(noteData.prob.Answer-1, state: .auth)
-        testChoiceViews[noteData.prob.Answer-1].mark()
-        choiceManager?.isActive = false
+//        choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
+//
+//        if noteData.selection != 0 { choiceManager?.setColorForStateAtIndex(noteData.selection-1, state: .selected) }
+//
+//        choiceManager?.setColorForStateAtIndex(noteData.prob.Answer-1, state: .auth)
+//        testChoiceViews[noteData.prob.Answer-1].mark()
+//        choiceManager?.isActive = false
         
         configure()
     }
