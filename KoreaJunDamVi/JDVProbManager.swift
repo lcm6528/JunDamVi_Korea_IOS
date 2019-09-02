@@ -17,11 +17,12 @@ class JDVProbManager: NSObject {
         var cacheKey: String = ""
     }
     
-    enum SortedOption: String{
+    enum SortedOption: String {
         case test = "testnum"
         case time = "time"
         case theme = "theme"
         case type = "type"
+        case note = "note"
         
         var description: String {
             switch self {
@@ -31,13 +32,15 @@ class JDVProbManager: NSObject {
                 return "시대별"
             case .theme:
                 return "테마별"
-            case.type:
+            case .type:
                 return "유형별"
+            case .note:
+                return "오답 노트"
             }
         }
     }
     
-    static func fetchProbs(withSortedOption option: SortedOption,by value: String, completion:@escaping ([ProbData]) -> ()) {
+    static func fetchProbs(withSortedOption option: SortedOption, by value: String, completion:@escaping ([ProbData]) -> ()) {
         
         var Probs: [ProbData] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
@@ -110,15 +113,13 @@ class JDVProbManager: NSObject {
         let fmdb = FMDatabase(path: dbPath?.path)
         
         if (fmdb?.open())! {
-            
             for id in ids{
                 let sql1 = "SELECT * FROM Probs WHERE probid = \(id)"
                 let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
                 while result?.next() == true {
-                    let dict:NSDictionary = result!.resultDictionary() as NSDictionary
+                    let dict: NSDictionary = result!.resultDictionary() as NSDictionary
                     let item = ProbData(withDict: dict)
                     probs.append(item)
-                    
                 }
             }
         }
@@ -131,7 +132,7 @@ class JDVProbManager: NSObject {
     }
     
     
-    static func getCachedData(with key: String)->[Int]?{
+    static func getCachedData(with key: String) -> [Int]? {
         return getUserDefault(key) as? [Int]
     }
     
@@ -141,7 +142,6 @@ class JDVProbManager: NSObject {
     
     //QuickProbs
     static func fetchQuickProbs(withTestnum num: Int) -> [QuickProb] {
-        
         var Probs: [QuickProb] = []
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)

@@ -13,7 +13,8 @@ class ProbResultBotView: UIView {
     var view: UIView!
     let NibName: String = "ProbResultBotView"
     var delegate: ProbResultSubViewDelegate?
-    var dismissHandler: (()->Void)?
+    var dismissHandler: (() -> Void)?
+    var addNoteHandler: (() -> Void)?
     
     @IBOutlet var noteButton: UIButton!
     @IBOutlet var tableView: UITableView!
@@ -79,6 +80,9 @@ class ProbResultBotView: UIView {
         dismissHandler?()
     }
     
-    @IBAction func addNote(_ sender: Any) {
+    @IBAction func addNote(_ sender: UIButton) {
+        sender.isEnabled = false
+        sender.backgroundColor = .gray
+        addNoteHandler?()
     }
 }

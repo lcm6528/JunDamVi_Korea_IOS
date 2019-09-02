@@ -35,12 +35,11 @@ class TestResultRecord:Object{
 
 
 enum state: String {
-    
     case Right = "O"
     case Wrong = "X"
     case Pass = "Pass"
-    
 }
+
 struct Try {
     
     var Score: Int

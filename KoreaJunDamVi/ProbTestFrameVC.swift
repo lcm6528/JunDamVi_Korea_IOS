@@ -45,12 +45,15 @@ class ProbTestFrameViewController: JDVViewController {
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        if option.sortedOption != .test {
+        
+        if option.sortedOption == .test {
+            setTitleWithStyle("\(probData[0].prob.TestNum)회차 문제풀기")
+        } else if option.sortedOption == .note {
+            setTitleWithStyle("오답 노트 문제풀기")
+        } else {
             let desc = option.sortedOption.description
             let str = desc[..<desc.index(desc.startIndex, offsetBy: 2)]
             setTitleWithStyle(option.cacheKey + str + " 문제풀기")
-        } else {
-            setTitleWithStyle("\(probData[0].prob.TestNum)회차 문제풀기")
         }
         
         if selections == nil || selections?.isEmpty == true {
@@ -89,6 +92,8 @@ class ProbTestFrameViewController: JDVViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
         
+        guard option.sortedOption != .note else { return }
+        
         if option.sortedOption == .test {
             JDVProbManager.saveCachedData(with: "\(probData[0].prob.TestNum)", tries: selections!)
         } else {
@@ -101,6 +106,8 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     @objc func onStop() {
+        guard option.sortedOption != .note else { return }
+        
         if option.sortedOption == .test {
             JDVProbManager.saveCachedData(with: "\(probData[0].prob.TestNum)", tries: selections!)
         } else {
@@ -192,7 +199,6 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     func pushResultVC(withSegue id: String) {
-        
         let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
@@ -216,23 +222,28 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     func setToolbarTitle(_ index: Int) {
-        
         let numberOfTest: Int = index + 1
-        toolBarCenterLabel.text = "\(numberOfTest)번"
-        
         barButton_Star.isSelected = JDVNoteManager.isAdded(by: probData[index].probID)
         
+        let thisDesc = option.sortedOption == .note ? probData[index].desc : "\(numberOfTest)번"
+        
+        toolBarCenterLabel.text = thisDesc
+        
         if index == 0 {
-            toolBarRightButton.setTitle("\(numberOfTest+1)번", for: .normal)
+            let nextDesc = option.sortedOption == .note ? probData[index + 1].desc : "\(numberOfTest + 1)번"
+            toolBarRightButton.setTitle(nextDesc, for: .normal)
             toolBarLeftButton.setTitle("" , for: .normal)
-        }
-        else if index == number_of_pages - 1
-        {
-            toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
+        } else if index == number_of_pages - 1 {
+            let prevDesc = option.sortedOption == .note ? probData[index - 1].desc : "\(numberOfTest - 1)번"
+            
+            toolBarLeftButton.setTitle(prevDesc, for: .normal)
             toolBarRightButton.setTitle( "풀이완료", for: .normal)
         } else {
-            toolBarLeftButton.setTitle( "\(numberOfTest-1)번", for: .normal)
-            toolBarRightButton.setTitle( "\(numberOfTest+1)번", for: .normal)
+            let nextDesc = option.sortedOption == .note ? probData[index + 1].desc : "\(numberOfTest + 1)번"
+            let prevDesc = option.sortedOption == .note ? probData[index - 1].desc : "\(numberOfTest - 1)번"
+            
+            toolBarLeftButton.setTitle(prevDesc, for: .normal)
+            toolBarRightButton.setTitle(nextDesc, for: .normal)
         }
     }
 }

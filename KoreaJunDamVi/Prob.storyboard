@@ -662,7 +662,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         <!--Prob Test Frame View Controller-->
         <scene sceneID="Zir-BU-cp8">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProbTestFrameViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pS0-rT-F5h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1652,7 +1652,7 @@ gqzsl4XsnYQg7LaU7KeEA+2VmOyYgOuLpC4
         <image name="star" width="21.666666030883789" height="21.666666030883789"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="28R-Nv-1NB"/>
+        <segue reference="Zua-Fs-LAj"/>
         <segue reference="1us-z2-awh"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2594,8 +2594,8 @@
 		375373A91E11532D00205C13 /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */,
 				375373A71E11532900205C13 /* JDVNoteMenuViewController.swift */,
+				375373AA1E1153B200205C13 /* JDVNoteMenuCell.swift */,
 				EDB768FA1E6FE28700A2715A /* NoteInnerVC.swift */,
 				EDA606A923098BD100F45052 /* NoteFrameVC.swift */,
 			);
@@ -5751,7 +5751,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZH9C52WH4J;
 				INFOPLIST_FILE = KoreaJunDamVi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JunDamVi.Korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5771,7 +5771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZH9C52WH4J;
 				INFOPLIST_FILE = KoreaJunDamVi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JunDamVi.Korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";

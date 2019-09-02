@@ -15,13 +15,16 @@ class JDVNoteMenuViewController: JDVViewController {
     @IBOutlet var tableView: UITableView!
     
     var noteDatas: [ProbData] = []
-
+    var option = JDVProbManager.ProbOption()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitleWithStyle("오답노트")
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
         tableView.tableFooterView = UIView()
+        
+        option.sortedOption = .note
         
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
@@ -54,10 +57,25 @@ class JDVNoteMenuViewController: JDVViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! NoteFrameVC
-        vc.noteDatas = noteDatas
-        vc.initialIdx = sender as? Int ?? 0
-        self.tabBarController?.tabBar.isHidden = true
+        switch segue.identifier! {
+        case "pushinit":
+            let vc = segue.destination as! ProbTestFrameViewController
+            vc.probData = self.noteDatas
+            vc.option = option
+            self.tabBarController?.tabBar.isHidden = true
+            
+        case "push":
+            let vc = segue.destination as! NoteFrameVC
+            vc.noteDatas = noteDatas
+            vc.initialIdx = sender as? Int ?? 0
+            self.tabBarController?.tabBar.isHidden = true
+        default :
+            return
+        }
+    }
+    
+    @IBAction func probButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "pushinit", sender: nil)
     }
 }
 

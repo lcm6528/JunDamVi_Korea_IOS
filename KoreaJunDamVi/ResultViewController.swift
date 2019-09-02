@@ -48,6 +48,18 @@ class ProbResultViewController: UIViewController, ProbResultSubViewDelegate, UIT
             self.tabBarController?.selectedIndex = 3
             self.dismiss(animated: true, completion: nil)
         }
+        botView.addNoteHandler = {
+            let wrongNotes: [Note] = self.result.Tries
+                .filter({ $0.State == .Wrong })
+                .map({
+                    let note = Note()
+                    note.ProbID = $0.ProbID
+                    note.Selection = $0.Selection
+                    return note
+                })
+            JDVNoteManager.saveNotes(by: wrongNotes)
+            botView.tableView.reloadDataWithoutScroll()
+        }
         
         contentView.addSubview(topView)
         contentView.addSubview(botView)
