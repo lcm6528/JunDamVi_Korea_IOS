@@ -13,7 +13,7 @@ import FMDB
 class JDVProbManager: NSObject {
     
     struct ProbOption {
-        var sortedOption:SortedOption = .test
+        var sortedOption: SortedOption = .test
         var cacheKey: String = ""
     }
     

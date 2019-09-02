@@ -115,7 +115,6 @@ class NoteInnerViewController: JDVViewController {
                 self.isPurchased = true
                 self.isHideSolution(bool: !self.isPurchased)
                 
-                
             case .error:
                 Toast(text: "결제 중 오류가 발생했습니다.").show()
                 

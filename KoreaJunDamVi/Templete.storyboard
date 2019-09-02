@@ -100,7 +100,7 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-dS-HMf" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="12" y="4" width="390" height="36"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-3W-9yh">
+                                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-3W-9yh">
                                                             <rect key="frame" x="8" y="0.0" width="344" height="36"/>
                                                             <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -224,6 +224,73 @@
                                         <connections>
                                             <outlet property="contentTextView" destination="gKH-CM-pDh" id="oCS-yS-ImR"/>
                                             <outlet property="titleLabel" destination="Mav-Bp-azr" id="vIN-FE-hiw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showauth" rowHeight="70" id="d34-pO-24l" customClass="ShowAuthCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="479" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d34-pO-24l" id="dWg-ju-y0h">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2k-Ma-Gf6" customClass="JDVAuthButton" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="382" height="50"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.28627450980392155" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="cri-bK-BpZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="지금 정답 확인하기">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonPressed:" destination="d34-pO-24l" eventType="touchUpInside" id="uPg-Ql-Wd2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="U2k-Ma-Gf6" firstAttribute="leading" secondItem="dWg-ju-y0h" secondAttribute="leading" constant="16" id="74T-Sv-IEc"/>
+                                                <constraint firstAttribute="trailing" secondItem="U2k-Ma-Gf6" secondAttribute="trailing" constant="16" id="Fiy-eO-4LW"/>
+                                                <constraint firstAttribute="bottom" secondItem="U2k-Ma-Gf6" secondAttribute="bottom" constant="4" id="J4w-qr-Nkl"/>
+                                                <constraint firstItem="U2k-Ma-Gf6" firstAttribute="top" secondItem="dWg-ju-y0h" secondAttribute="top" constant="16" id="sy2-hT-ecr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="U2k-Ma-Gf6" id="BoG-3V-wNR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showsol" rowHeight="58" id="uYQ-H2-NGM" customClass="ShowSolCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="549" width="414" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYQ-H2-NGM" id="3EU-xU-oCp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-AX-xyb" customClass="JDVSolButton" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="4" width="382" height="50"/>
+                                                    <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="qlp-09-Ge6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="해설 보기">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="EjP-AX-xyb" firstAttribute="leading" secondItem="3EU-xU-oCp" secondAttribute="leading" constant="16" id="ARi-ZH-bZu"/>
+                                                <constraint firstItem="EjP-AX-xyb" firstAttribute="top" secondItem="3EU-xU-oCp" secondAttribute="top" constant="4" id="n6e-xu-4Tr"/>
+                                                <constraint firstAttribute="trailing" secondItem="EjP-AX-xyb" secondAttribute="trailing" constant="16" id="uEI-Ff-IxN"/>
+                                                <constraint firstAttribute="bottom" secondItem="EjP-AX-xyb" secondAttribute="bottom" constant="4" id="wym-jg-Ceg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="EjP-AX-xyb" id="s7d-Il-O0n"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

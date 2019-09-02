@@ -83,33 +83,28 @@ struct Try {
     
 }
 
-struct TestResult{
+struct TestResult {
     
     var TryNum: Int?
     var TotalScore: Int = 0
     var TestType: String
     var TestKey: String
     
-    var Tries:[Try] = []
+    var Tries: [Try] = []
     
     var numberOfRight: Int = 0
     var numberOfWrong: Int = 0
     var numberOfPass: Int = 0
     
-    init(withTestType type: String,forKey key: String, withTries tries:[Try]) {
+    init(withTestType type: String,forKey key: String, withTries tries: [Try]) {
         self.TestType = type
         self.TestKey = key
         self.Tries = tries
         calculateScore()
-        
     }
     
-    
     mutating func calculateScore() {
-        
-        
-        
-        for Try in Tries{
+        for Try in Tries {
             switch Try.State {
             case .Right:
                 TotalScore += Try.Score
@@ -118,7 +113,6 @@ struct TestResult{
                 numberOfWrong += 1
             case .Pass:
                 numberOfPass += 1
-                
             }
         }
     }

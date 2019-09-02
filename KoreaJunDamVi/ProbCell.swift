@@ -30,3 +30,24 @@ class ProbCell: UITableViewCell, TempleteCell {
         self.scoreLabel.text = "[\(prob.Score)점]"
     }
 }
+
+class ShowAuthCell: UITableViewCell, TempleteCell {
+    
+    @IBOutlet weak var button: JDVAuthButton!
+    
+    func configure(data: ProbData, idx: Int, option: TEMPLETE_OPTION) {
+        button.auth = data.answer + 1
+    }
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+}
+
+class ShowSolCell: UITableViewCell, TempleteCell {
+    
+    @IBOutlet weak var button: JDVAuthButton!
+    
+    func configure(data: ProbData, idx: Int, option: TEMPLETE_OPTION) {
+    }
+}
+

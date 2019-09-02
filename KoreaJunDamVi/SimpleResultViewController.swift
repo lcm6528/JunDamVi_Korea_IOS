@@ -45,6 +45,7 @@ class SimpleResultViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.setNeedsStatusBarAppearanceUpdate()
         label_right.format = "%d"
         label_right.method = .easeIn
         label_right.animationDuration = 0.8

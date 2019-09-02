@@ -17,6 +17,7 @@ class ProbResultBotView: UIView {
     
     @IBOutlet var noteButton: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var noteCountLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,11 +67,18 @@ class ProbResultBotView: UIView {
         return view
     }
     
+    func configure(result: TestResult) {
+        noteCountLabel.text = "\(result.numberOfWrong) 개"
+    }
+    
     @objc func changeView(_ sender: AnyObject) {
         self.delegate?.changeView()
     }
     
     @IBAction func goNote(_ sender: Any) {
         dismissHandler?()
+    }
+    
+    @IBAction func addNote(_ sender: Any) {
     }
 }

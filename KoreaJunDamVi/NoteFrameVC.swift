@@ -130,7 +130,7 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
         let innerView = UIStoryboard(name: "Templete", bundle: nil).instantiateViewController(withIdentifier: "TempleteVC") as! TempleteVC
         innerView.probData = noteDatas[index]
         innerView.pageIndex = index
-        innerView.templete = TEMPLETE_Solution
+        innerView.templete = JDVProductManager.isPurchased() ? TEMPLETE_Solution : TEMPLETE_NOTE_NoSolution
         innerView.templeteOption = .NOTE
         
         return innerView

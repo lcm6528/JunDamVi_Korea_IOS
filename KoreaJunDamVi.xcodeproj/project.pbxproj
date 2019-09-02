@@ -1110,6 +1110,7 @@
 		ED6A32C41E655228002277FD /* ProbQuickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A32C31E655228002277FD /* ProbQuickCell.swift */; };
 		ED7268491E8BD46F00ACAE28 /* SolList.json in Resources */ = {isa = PBXBuildFile; fileRef = ED7268481E8BD46F00ACAE28 /* SolList.json */; };
 		ED72684B1E8BD56000ACAE28 /* SolMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */; };
+		ED7DB863231BE64000BA7D9A /* JDVAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DB862231BE64000BA7D9A /* JDVAuthButton.swift */; };
 		ED840A631FD4694F00527FD8 /* HomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED840A621FD4694F00527FD8 /* HomeTabbarController.swift */; };
 		ED8A3BD31E8904D1005BDAC1 /* ProbSubCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */; };
 		ED8A3BD51E895159005BDAC1 /* ProbPopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */; };
@@ -2371,6 +2372,7 @@
 		ED6A32C31E655228002277FD /* ProbQuickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbQuickCell.swift; sourceTree = "<group>"; };
 		ED7268481E8BD46F00ACAE28 /* SolList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SolList.json; sourceTree = "<group>"; };
 		ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolMenuCell.swift; sourceTree = "<group>"; };
+		ED7DB862231BE64000BA7D9A /* JDVAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDVAuthButton.swift; sourceTree = "<group>"; };
 		ED840A621FD4694F00527FD8 /* HomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarController.swift; sourceTree = "<group>"; };
 		ED8A3BD21E8904D1005BDAC1 /* ProbSubCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbSubCollectionViewController.swift; sourceTree = "<group>"; };
 		ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbPopupCell.swift; sourceTree = "<group>"; };
@@ -2704,6 +2706,7 @@
 				37F000961E07C27B00DA1350 /* GageView.swift */,
 				37A985971E41BDE300853D71 /* BlockView.swift */,
 				37A985991E41BDEE00853D71 /* BlockView.xib */,
+				ED7DB862231BE64000BA7D9A /* JDVAuthButton.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -5591,6 +5594,7 @@
 				37E033711DE5582C00A5C4AC /* SettingsTableViewCell.swift in Sources */,
 				EDA606B52312A4DB00F45052 /* SolutionCell.swift in Sources */,
 				37E0336E1DE5581700A5C4AC /* SettingsViewController.swift in Sources */,
+				ED7DB863231BE64000BA7D9A /* JDVAuthButton.swift in Sources */,
 				3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */,
 				37F7CD251DE6B0FD0085A2E4 /* JDVFunctions.swift in Sources */,
 				37D051A11E275D3700D92E89 /* ProbPopupV.swift in Sources */,

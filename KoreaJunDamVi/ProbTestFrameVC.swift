@@ -252,7 +252,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         innerView.probData = probData[index]
         innerView.pageIndex = index
         innerView.templeteOption = .TEST
-        innerView.templete = TEMPLETE_NoSolution
+        innerView.templete = TEMPLETE_TEST_NoSolution
         innerView.selection = selections![index]
         innerView.selectHandler = { (num, selection) -> Void in
             self.selections![num] = selection
