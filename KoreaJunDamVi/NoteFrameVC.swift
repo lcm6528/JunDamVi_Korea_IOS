@@ -58,7 +58,11 @@ class NoteFrameVC: JDVViewController {
         if #available(iOS 11.0, *) {
             let height = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height ?? 0
             let inset = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
-            self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: height + inset)
+            if JDVUserManager.hasTopNotch {
+                self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: height + inset)
+            } else {
+                self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
+            }
         } else {
             self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
         }
@@ -103,15 +107,17 @@ class NoteFrameVC: JDVViewController {
         
         barButton_Star.isSelected = JDVNoteManager.isAdded(by: noteDatas[index].probID)
         
-        if index == 0 {
-            toolBarRightButton.setTitle(noteDatas[index + 1].desc, for: .normal)
-            toolBarLeftButton.setTitle("" , for: .normal)
-        } else if index == number_of_pages - 1 {
-            toolBarLeftButton.setTitle( noteDatas[index - 1].desc, for: .normal)
-            toolBarRightButton.setTitle( "", for: .normal)
-        } else {
-            toolBarLeftButton.setTitle(noteDatas[index - 1].desc, for: .normal)
-            toolBarRightButton.setTitle(noteDatas[index + 1].desc, for: .normal)
+        if noteDatas.count > 1 {
+            if index == 0 {
+                toolBarRightButton.setTitle(noteDatas[index + 1].desc, for: .normal)
+                toolBarLeftButton.setTitle("" , for: .normal)
+            } else if index == number_of_pages - 1 {
+                toolBarLeftButton.setTitle( noteDatas[index - 1].desc, for: .normal)
+                toolBarRightButton.setTitle( "", for: .normal)
+            } else {
+                toolBarLeftButton.setTitle(noteDatas[index - 1].desc, for: .normal)
+                toolBarRightButton.setTitle(noteDatas[index + 1].desc, for: .normal)
+            }
         }
     }
 }

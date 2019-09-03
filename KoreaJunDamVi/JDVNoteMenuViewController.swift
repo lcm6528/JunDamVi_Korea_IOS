@@ -75,6 +75,10 @@ class JDVNoteMenuViewController: JDVViewController {
     }
     
     @IBAction func probButtonPressed(_ sender: Any) {
+        guard noteDatas.count != 0 else {
+            showAlertWithString("오류", message: "오답노트를 추가해주세요!", sender: self)
+            return
+        }
         performSegue(withIdentifier: "pushinit", sender: nil)
     }
 }

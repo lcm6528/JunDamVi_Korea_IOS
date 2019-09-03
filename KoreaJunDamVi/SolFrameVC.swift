@@ -47,7 +47,11 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
         if #available(iOS 11.0, *) {
             let height = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height ?? 0
             let inset = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
-            self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: height + inset)
+            if JDVUserManager.hasTopNotch {
+                self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: height + inset)
+            } else {
+                self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
+            }
         } else {
             self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
         }

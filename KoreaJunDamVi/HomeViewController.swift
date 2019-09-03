@@ -107,9 +107,11 @@ class HomeViewController: JDVViewController {
     }
     
     @IBAction func applyButtonPressed(_ sender: Any) {
-        if let url = URL(string: "http://www.historyexam.go.kr/main/mainPage.do") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        showAlertWithSelect("접수하러가기", message: "한국사능력검정시험 사이트로\n이동합니다.", sender: self, handler: { (_) in
+            if let url = URL(string: "http://www.historyexam.go.kr/main/mainPage.do") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

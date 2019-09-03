@@ -28,7 +28,6 @@ class ProbTestFrameViewController: JDVViewController {
     var option:JDVProbManager.ProbOption!
     
     override func setTitleWithStyle(_ text: String) {
-        
         self.barButton_title.title = text
 
         self.barButton_title.setTitleTextAttributes(
@@ -44,7 +43,6 @@ class ProbTestFrameViewController: JDVViewController {
             number_of_pages = probData.count
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        
         
         if option.sortedOption == .test {
             setTitleWithStyle("\(probData[0].prob.TestNum)회차 문제풀기")
@@ -72,8 +70,17 @@ class ProbTestFrameViewController: JDVViewController {
         
         self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
-        
+        if #available(iOS 11.0, *) {
+            let height = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height ?? 0
+            let inset = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+            if JDVUserManager.hasTopNotch {
+                self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: height + inset)
+            } else {
+                self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
+            }
+        } else {
+            self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
+        }
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMove(toParentViewController: self)
@@ -116,7 +123,6 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "popup" {
             let vc = segue.destination as! ProbPopupView
             vc.dataArray = probData
