@@ -22,14 +22,14 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - NSAttributedString-DDHTML (1.2.0)
   - PageMenu (1.2.9)
-  - Realm (3.0.2):
-    - Realm/Headers (= 3.0.2)
-  - Realm/Headers (3.0.2)
-  - RealmSwift (3.0.2):
-    - Realm (= 3.0.2)
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
   - Shimmer (1.0.2)
   - SwiftyJSON (3.0.0)
-  - SwiftyStoreKit (0.8.2)
+  - SwiftyStoreKit (0.15.0)
   - Toaster (2.1.1)
   - TransitionableTab (0.1.1)
   - UICountingLabel (1.4.0)
@@ -51,6 +51,28 @@ DEPENDENCIES:
   - UICountingLabel
   - WSProgressHUD
   - XLPagerTabStrip
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DZNEmptyDataSet
+    - FirebaseAnalytics
+    - FirebaseInstanceID
+    - FMDB
+    - Google
+    - GoogleAnalytics
+    - GoogleInterchangeUtilities
+    - GoogleSymbolUtilities
+    - GoogleUtilities
+    - NSAttributedString-DDHTML
+    - Realm
+    - RealmSwift
+    - Shimmer
+    - SwiftyStoreKit
+    - Toaster
+    - TransitionableTab
+    - UICountingLabel
+    - WSProgressHUD
+    - XLPagerTabStrip
 
 EXTERNAL SOURCES:
   PageMenu:
@@ -79,11 +101,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   NSAttributedString-DDHTML: 59a7bcd44b92cb7f6f6ef26f52c4baad6b1d01ba
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
-  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
-  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
-  SwiftyStoreKit: 901059a0058e808a2a3b36c3a6de886e4c6f8f6e
+  SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   TransitionableTab: 0aa1dee3db142d356dad0b51cd9e8dcdf5bf29a5
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
@@ -92,4 +114,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: eff5f3ee98e2fd8a7b6f23d8b5046920f1a66c25
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0

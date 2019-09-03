@@ -22,13 +22,13 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     var currentOption = JDVProbManager.ProbOption()
     var pageViewController:UIPageViewController!
     
-    let options:[JDVProbManager.SortedOption] = [.test,.time,.type,.theme]
+    let options: [JDVProbManager.SortedOption] = [.test, .time, .type, .theme]
     
-    var dataArray:[[String]] = []
-    var Probs:[Prob] = []
-    var QuickProbs:[QuickProb] = []
+    var dataArray: [[String]] = []
+    var probData: [ProbData] = []
+    var QuickProbs: [QuickProb] = []
     
-    var AnalData:JSON!
+    var AnalData: JSON!
     
     @IBOutlet var ToolbarButtons: [UIButton]!
     
@@ -52,8 +52,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMove(toParentViewController: self)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,8 +77,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
                 
                 self.showIndicator()
                 
-                JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
-                    self?.Probs = probs
+                JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self] (probs) in
+                    self?.probData = probs
                     self?.performSegue(withIdentifier: "pushinit", sender: self)
                 })
         }))
@@ -92,80 +90,74 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
                     { action in
                         self.showIndicator()
                        
-                        JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self](probs) in
-                            self?.Probs = probs
+                        JDVProbManager.fetchProbs(withSortedOption: self.currentOption.sortedOption, by: self.currentOption.cacheKey, completion: { [weak self] (probs) in
+                            self?.probData = probs
                             self?.performSegue(withIdentifier: "pushcont", sender: self)
                         })
-                        
-                        
-                        
                 }
                 ))
             }
         }
         
-        if currentOption.sortedOption == .test{
+        if currentOption.sortedOption == .test {
             alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
                 { action in
                     self.showIndicator()
                     self.QuickProbs = JDVProbManager.fetchQuickProbs(withTestnum: arr[index].toInt()!)
                     self.performSegue(withIdentifier: "quick", sender: self)
-                    
             }
             ))
         }
         alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
-            { action in}))
+            { action in }))
         
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     func fetchList() {
         
-        var dict:NSDictionary!
+        var dict: NSDictionary!
         let path = Bundle.main.path(forResource: "ProbList", ofType: "json")
         let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
         do {
             let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
             dict = object as! NSDictionary
-        } catch {}
+        } catch { }
         
-        for option in options{
-            dataArray.append(dict.value(forKey: option.rawValue) as!  [String])
+        for option in options {
+            dataArray.append(dict.value(forKey: option.rawValue) as! [String])
         }
         
         let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "AnalList", ofType: "json")!))
-        AnalData = JSON(data:jsondata)
-        
+        AnalData = JSON(data: jsondata)
     }
     
     @IBAction func ToolbarButtonSelected(_ sender: UIButton) {
+        guard currentMenu != sender.tag else { return }
+        
+        currentMenu = sender.tag
         selectButtonInCollection(atIndex: sender.tag)
         gotoPageAtIndex(getCurrnetIndexOfPage(), goto: sender.tag)
-        
     }
     
     func selectButtonInCollection(atIndex index: Int) {
         
         for (idx,button) in ToolbarButtons.enumerated() {
-            {()->Bool in return idx == index}() ? (button.isSelected = true) : (button.isSelected = false)
+            { ()->Bool in return idx == index}() ? (button.isSelected = true) : (button.isSelected = false)
         }
-        
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case "pushinit":
             let vc = segue.destination as! ProbTestFrameViewController
-            vc.Probs = self.Probs
+            vc.probData = self.probData
             vc.option = currentOption
             self.tabBarController?.tabBar.isHidden = true
             
         case "pushcont":
-            let vc = segue.destination as!ProbTestFrameViewController
-            vc.Probs = self.Probs
+            let vc = segue.destination as! ProbTestFrameViewController
+            vc.probData = self.probData
             vc.option = currentOption
             vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
             self.tabBarController?.tabBar.isHidden = true
@@ -186,13 +178,12 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             return
         }
         
-        self.Probs = []
+        self.probData = []
         self.QuickProbs = []
-        
     }
 }
 
-extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControllerDataSource {
+extension ProbMenuViewController:UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     //MARK: UIPageViewDelegate,Datasource
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -201,7 +192,7 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
         }
     }
     
-    func pageViewAtIndex(_ index: Int) ->JDVViewController {
+    func pageViewAtIndex(_ index: Int) -> JDVViewController {
         if index != 0 {
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
             
@@ -214,38 +205,31 @@ extension ProbMenuViewController:UIPageViewControllerDelegate,UIPageViewControll
                 self.currentMenu = index
                 self.performSegue(withIdentifier: "pushanal", sender: self)
             }
-            
             return pageContentViewController
             
         } else {
-            
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbCollectionViewController") as! ProbCollectionViewController
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
             return pageContentViewController
-            
         }
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
-    {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let viewController = viewController as! ProbCollectionViewController
         var index = viewController.pageIndex as Int
         
-        if(index == 0 || index == NSNotFound) {return nil}
-        
+        if(index == 0 || index == NSNotFound) { return nil }
         index -= 1
-        
         return self.pageViewAtIndex(index)
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
-    {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let viewController = viewController as! ProbCollectionViewController
         var index = viewController.pageIndex as Int
         if((index == NSNotFound))
-        {return nil}
+        { return nil }
         
         index += 1
         

@@ -13,8 +13,8 @@ import Toaster
 
 class JDVNoteManager: NSObject {
   
-    static func saveNote(by note:Note) {
-        
+    static func saveNote(by note: Note?) {
+        guard let note = note , !isAdded(by: note.ProbID) else { return }
         let realm = try! Realm()
         
         try! realm.write {
@@ -22,10 +22,26 @@ class JDVNoteManager: NSObject {
             ToastCenter.default.cancelAll()
             Toast(text: "오답노트 저장완료").show()
         }
+    }
+    
+    static func saveNotes(by notes: [Note]) {
+        guard !notes.isEmpty else { return }
+        let realm = try! Realm()
         
+        try! realm.write {
+            for note in notes {
+                if !isAdded(by: note.ProbID) {
+                    realm.add(note)
+                }
+            }
+            
+            ToastCenter.default.cancelAll()
+            Toast(text: "오답노트 저장완료").show()
+        }
     }
   
-    static func deleteNote(by note:Note) {
+    static func deleteNote(by note: Note?) {
+        guard let note = note else { return }
         
         let realm = try! Realm()
         let object = realm.object(ofType: Note.self, forPrimaryKey: note.ProbID)
@@ -37,7 +53,19 @@ class JDVNoteManager: NSObject {
             ToastCenter.default.cancelAll()
             Toast(text: "오답노트 삭제완료").show()
         }
+    }
+    
+    static func deleteNote(by probID: Int) {
+        let realm = try! Realm()
+        let object = realm.object(ofType: Note.self, forPrimaryKey: probID)
         
+        try! realm.write {
+            if object != nil {
+                realm.delete(object!)
+            }
+            ToastCenter.default.cancelAll()
+            Toast(text: "오답노트 삭제완료").show()
+        }
     }
     
     static func isAdded(by probid: Int)->Bool {

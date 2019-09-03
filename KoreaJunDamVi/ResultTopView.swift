@@ -60,7 +60,7 @@ class ProbResultTopView : UIView {
     }
     
     
-    func configure(result:TestResult) {
+    func configure(result: TestResult) {
         
         switch result.TotalScore {
         case 70...100:

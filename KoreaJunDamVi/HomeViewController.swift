@@ -16,6 +16,7 @@ class HomeViewController: JDVViewController {
     @IBOutlet var ddayTitleLabel: UILabel!
     @IBOutlet var ddayCotentLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet weak var applyButton: JDVButton!
     
     var Tests:[String] = []
     var completeCount = 0
@@ -24,6 +25,8 @@ class HomeViewController: JDVViewController {
         super.viewDidLoad()
         self.setTitleWithStyle("한국사 비법노트")
         self.centerContainerView.layer.cornerRadius = 5.0
+        self.applyButton.layer.cornerRadius = 3
+        self.dateLabel.layer.cornerRadius = 10
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +38,6 @@ class HomeViewController: JDVViewController {
     }
   
     func fetchList() {
-        
         var dict:NSDictionary!
         let path = Bundle.main.path(forResource: "ProbList", ofType: "json")
         let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
@@ -102,6 +104,14 @@ class HomeViewController: JDVViewController {
     
     @IBAction func settingButtonPressed(_ sender: AnyObject) {
         performSegue(withIdentifier: "settings", sender: self)
+    }
+    
+    @IBAction func applyButtonPressed(_ sender: Any) {
+        showAlertWithSelect("접수하러가기", message: "한국사능력검정시험 사이트로\n이동합니다.", sender: self, handler: { (_) in
+            if let url = URL(string: "http://www.historyexam.go.kr/main/mainPage.do") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

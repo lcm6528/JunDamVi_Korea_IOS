@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 if product.needsFinishTransaction {
                     // Deliver content from server, then:
+                    setUserDefaultWithBool(true, forKey: ProductID)
                     SwiftyStoreKit.finishTransaction(product.transaction)
                 }
                 print("purchased: \(product)")

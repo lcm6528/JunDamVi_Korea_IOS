@@ -28,9 +28,15 @@ class SimpleResultViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = option.sortedOption.description + "-" + option.cacheKey + " 문제 풀이 결과"
+        if option.sortedOption == .note {
+            titleLabel.text = option.sortedOption.description + " 문제 풀이 결과"
+        } else {
+            titleLabel.text = option.sortedOption.description + "-" + option.cacheKey + " 문제 풀이 결과"
+        }
+        
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
         tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView()
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
@@ -40,11 +46,15 @@ class SimpleResultViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         WSProgressHUD.dismiss()
-        JDVProbManager.saveCachedData(with: option.cacheKey, tries: [])
+        
+        if option.sortedOption != .note {
+            JDVProbManager.saveCachedData(with: option.cacheKey, tries: [])
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.setNeedsStatusBarAppearanceUpdate()
         label_right.format = "%d"
         label_right.method = .easeIn
         label_right.animationDuration = 0.8

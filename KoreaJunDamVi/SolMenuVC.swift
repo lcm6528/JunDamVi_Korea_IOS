@@ -15,16 +15,16 @@ class JDVSolutionMenuViewController: JDVViewController {
     
     var dataArray:[String] = []
     
-    var Probs:[Prob] = []
-    var Solvs:[Solution] = []
+    var probData: [ProbData] = []
     let blockView =  BlockView()
     
-    var isPurchased:Bool = false{
+    var isPurchased: Bool = false {
         didSet{
             self.blockView.isHidden = self.isPurchased
         }
     }
     @IBOutlet var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,15 +41,12 @@ class JDVSolutionMenuViewController: JDVViewController {
             default:
                 print("error in blockView Handler")
             }
-            
         }
-        
         
         self.view.addSubview(blockView)
         self.isPurchased = JDVProductManager.isPurchased()
         
         fetchList()
-        
     }
     
     func purchase() {
@@ -78,23 +75,15 @@ class JDVSolutionMenuViewController: JDVViewController {
         }
     }
     
-    
-    
     func preview() {
-        
         isBlockUserInteract = true
         WSProgressHUD.show(withStatus: "해설 불러오는 중..")
-        
-        
-        self.Probs = JDVProbManager.fetchProbs(withTestnum: dataArray[0].toInt()!)
-        self.Solvs = JDVSolutionManager.fetchSols(withTestnum: dataArray[0].toInt()!)
+        fetchData(index: dataArray[0].toInt()!)
         
         self.performSegue(withIdentifier: "push", sender: self)
-        
-        
     }
+    
     func retrive() {
-        
         SwiftyStoreKit.retrieveProductsInfo([ProductID]) { result in
             if let product = result.retrievedProducts.first {
                 let priceString = product.localizedPrice!
@@ -108,7 +97,6 @@ class JDVSolutionMenuViewController: JDVViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
         self.isPurchased = JDVProductManager.isPurchased()
-        
     }
     
     
@@ -127,6 +115,14 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.collectionView.reloadData()
     }
     
+    func fetchData(index: Int) {
+        let probs = JDVProbManager.fetchProbs(withTestnum: index)
+        
+        probData.removeAll()
+        for i in 0 ..< probs.count {
+            probData.append(probs[i])
+        }
+    }
     
     
     
@@ -134,18 +130,13 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.tabBarController?.tabBar.isHidden = true
         
         let vc = segue.destination as! JDVSolutionFrameViewController
-        vc.Probs = self.Probs
-        vc.Solvs = self.Solvs
+        vc.probData = self.probData
     }
-    
-    
 }
 
 
 
 extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataArray.count
@@ -153,7 +144,6 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SolMenuCell
-        
         
         let title = NSMutableAttributedString(string: "\(dataArray[indexPath.row])회")
         title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
@@ -167,27 +157,22 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if SCREEN_WIDTH > 430{
+        if SCREEN_WIDTH > 430 {
             return CGSize(width: 120, height: 120)
         } else {
             let length = SCREEN_WIDTH/3 - 20
             return CGSize(width: length, height: length)
         }
-        
-        
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard isPurchased == true else{ return }
         isBlockUserInteract = true
         WSProgressHUD.show(withStatus: "해설 불러오는 중..")
+        fetchData(index: dataArray[indexPath.row].toInt()!)
         
-        self.Probs = JDVProbManager.fetchProbs(withTestnum: dataArray[indexPath.row].toInt()!)
-        self.Solvs = JDVSolutionManager.fetchSols(withTestnum: dataArray[indexPath.row].toInt()!)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.performSegue(withIdentifier: "push", sender: self)
-            
         }
-        
     }
-    
 }

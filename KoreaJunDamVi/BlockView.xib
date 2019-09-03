@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,6 +14,9 @@
         </array>
         <array key="NanumBarunGothicBold.ttf">
             <string>NanumBarunGothicBold</string>
+        </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
         </array>
     </customFonts>
     <objects>
@@ -41,7 +43,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRu-xT-1vU">
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRu-xT-1vU" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                     <rect key="frame" x="109" y="296.5" width="157.5" height="50"/>
                     <color key="backgroundColor" red="0.99215686270000003" green="0.61960784310000006" blue="0.039215686270000001" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -62,7 +64,7 @@
                         <constraint firstAttribute="width" constant="60" id="wc1-CA-f9M"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매 후 이용 가능 $4.39" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55G-Ht-2wc">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매 후 이용 가능 \4,900" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55G-Ht-2wc">
                     <rect key="frame" x="127.5" y="249.5" width="120" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="Rnn-dk-gMb"/>
@@ -72,7 +74,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-Js-qcH">
+                <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-Js-qcH" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                     <rect key="frame" x="109" y="354.5" width="157.5" height="30"/>
                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -86,6 +88,17 @@
                         <action selector="preViewButtonAction:" destination="-1" eventType="touchUpInside" id="6F8-Qx-bv1"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1g-GP-g1P">
+                    <rect key="frame" x="66.5" y="392.5" width="242" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="VZf-aw-1JO"/>
+                    </constraints>
+                    <string key="text">해설 구매 후 이용불가 시
+홈 - 설정 화면의 '구매 내역 복원' 기능을 이용해주세요.</string>
+                    <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.87" colorSpace="calibratedRGB"/>
             <constraints>
@@ -97,7 +110,9 @@
                 <constraint firstItem="xHF-uo-ymo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q3Y-GE-ejV"/>
                 <constraint firstItem="55G-Ht-2wc" firstAttribute="top" secondItem="xHF-uo-ymo" secondAttribute="bottom" constant="6" id="aGL-uf-yqf"/>
                 <constraint firstItem="6pe-Js-qcH" firstAttribute="width" secondItem="FRu-xT-1vU" secondAttribute="width" id="abS-Bx-tXu"/>
+                <constraint firstItem="v1g-GP-g1P" firstAttribute="top" secondItem="6pe-Js-qcH" secondAttribute="bottom" constant="8" id="ex2-qO-1Q7"/>
                 <constraint firstItem="6pe-Js-qcH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gJA-eN-RUB"/>
+                <constraint firstItem="v1g-GP-g1P" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kHY-cI-Jjc"/>
                 <constraint firstItem="6pe-Js-qcH" firstAttribute="top" secondItem="FRu-xT-1vU" secondAttribute="bottom" constant="8" id="s03-qf-kvo"/>
                 <constraint firstItem="55G-Ht-2wc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="u02-gr-Lhg"/>
                 <constraint firstItem="55G-Ht-2wc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.8" id="vbt-y4-bcq"/>
@@ -108,6 +123,6 @@
         </view>
     </objects>
     <resources>
-        <image name="lock" width="16" height="16"/>
+        <image name="lock" width="50" height="50"/>
     </resources>
 </document>
