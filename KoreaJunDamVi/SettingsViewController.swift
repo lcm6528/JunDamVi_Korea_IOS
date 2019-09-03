@@ -96,11 +96,11 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
             { action in
                 
                 SwiftyStoreKit.restorePurchases(atomically: true) { results in
-                    if results.restoreFailedProducts.count > 0 {
-                        print("Restore Failed: \(results.restoreFailedProducts)")
+                    if results.restoreFailedPurchases.count > 0 {
+                        print("Restore Failed: \(results.restoreFailedPurchases)")
                         showAlertWithString("복원 실패", message: "구매내역 복원에 실패하였습니다.", sender: self)
                     }
-                    else if results.restoredProducts.count > 0 {
+                    else if results.restoredPurchases.count > 0 {
                         showAlertWithString("복원 완료", message: "구매내역을 복원하였습니다.", sender: self)
                         setUserDefaultWithBool(true, forKey: ProductID)
                     }

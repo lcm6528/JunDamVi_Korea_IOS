@@ -10,60 +10,34 @@ import UIKit
 
 class JDVButton: UIButton {
     
-    private var buttonScales:Dictionary = [UInt: CGFloat]()
-    
-    @IBInspectable var bounceWithInteraction:Bool = false
-    
-    override var isHighlighted: Bool {
-        didSet {
-            changeScaleForStateChange()
-        }
-    }
     override var isSelected: Bool {
         didSet {
-            changeScaleForStateChange()
-            
-        }
-    }
-    override var isEnabled: Bool {
-        didSet {
-            changeScaleForStateChange()
+            refreshUI()
         }
     }
     
-    @objc func bounce() {
-        guard bounceWithInteraction == false else{ return }
-        UIView.animate(withDuration: 0.1, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        }) { (completion) in
-            UIView.animate(withDuration: 0.1, animations: {
-                self.transform = CGAffineTransform.identity
-            })
-        }
-        
-    }
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.buttonScales[UIControlState.normal.rawValue] = 1.0
-        self.buttonScales[UIControlState.disabled.rawValue] = 1.0
-        self.buttonScales[UIControlState.highlighted.rawValue] = 0.9
-        
-        self.addTarget(self, action: #selector(JDVButton.bounce), for: .touchUpInside)
         self.layer.masksToBounds = true
     }
     
-    private func changeScaleForStateChange() {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
-        guard bounceWithInteraction == true else{ return }
-        if let scale = buttonScales[state.rawValue] ?? buttonScales[UIControlState.normal.rawValue] {
-            if transform.a != scale && transform.b != scale {
-                let animations = {
-                    self.transform = CGAffineTransform(scaleX: scale, y: scale)
-                }
-                UIView.animate(withDuration: 0.1, animations: animations)
-            }
-        }
+        UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }, completion: nil)
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
+            self.transform = CGAffineTransform.identity
+        })
+    }
     
+    func refreshUI() {
+        
+    }
 }

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumBarunGothicBold.ttf">
+            <string>NanumBarunGothicBold</string>
+        </array>
+        <array key="NanumBarunGothicLight.ttf">
+            <string>NanumBarunGothicLight</string>
+        </array>
         <array key="NanumBarunGothicUltraLight.ttf">
             <string>NanumBarunGothicUltraLight</string>
         </array>
@@ -17,6 +23,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProbResultBotView" customModule="KoreaJunDamVi" customModuleProvider="target">
             <connections>
                 <outlet property="noteButton" destination="lgJ-3S-Q29" id="aBA-iK-xfX"/>
+                <outlet property="noteCountLabel" destination="F3G-rc-upw" id="zz5-82-xsK"/>
                 <outlet property="tableView" destination="2xr-pp-z4f" id="1Dx-mh-2A5"/>
             </connections>
         </placeholder>
@@ -29,14 +36,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="2xr-pp-z4f">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
                             <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-gA-xwB">
-                            <rect key="frame" x="0.0" y="533" width="375" height="70"/>
+                            <rect key="frame" x="0.0" y="513" width="375" height="70"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-3S-Q29">
-                                    <rect key="frame" x="97" y="15" width="180" height="40"/>
+                                    <rect key="frame" x="97.5" y="15" width="180" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="180" id="Tvo-7B-SqD"/>
@@ -66,17 +73,67 @@
                                 <constraint firstAttribute="trailing" secondItem="uwr-Tc-NC6" secondAttribute="trailing" id="V3m-KY-PGe"/>
                                 <constraint firstItem="lgJ-3S-Q29" firstAttribute="centerY" secondItem="bFH-gA-xwB" secondAttribute="centerY" id="mLg-jx-5c3"/>
                                 <constraint firstItem="uwr-Tc-NC6" firstAttribute="top" secondItem="bFH-gA-xwB" secondAttribute="top" id="qHO-2K-h9w"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="usa-Hd-tqj"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wD9-Mg-NIQ">
+                            <rect key="frame" x="0.0" y="473" width="375" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오답 문제 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqH-55-VZt">
+                                    <rect key="frame" x="15" y="10" width="68.5" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="v0b-Hs-87H"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-rc-upw">
+                                    <rect key="frame" x="83.5" y="10" width="25.5" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="tLS-kN-TaO"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QZ-lD-LJa" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                    <rect key="frame" x="286" y="7" width="81" height="26"/>
+                                    <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="81" id="EQh-ak-JNe"/>
+                                        <constraint firstAttribute="height" constant="26" id="etP-59-4Cj"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
+                                    <state key="normal" title="자동 추가">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addNote:" destination="-1" eventType="touchUpInside" id="G5V-0q-vtM"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.32156862749999998" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="F3G-rc-upw" firstAttribute="leading" secondItem="ZqH-55-VZt" secondAttribute="trailing" id="5kq-2H-7Om"/>
+                                <constraint firstItem="8QZ-lD-LJa" firstAttribute="centerY" secondItem="wD9-Mg-NIQ" secondAttribute="centerY" id="FKo-t9-RQY"/>
+                                <constraint firstItem="ZqH-55-VZt" firstAttribute="leading" secondItem="wD9-Mg-NIQ" secondAttribute="leading" constant="15" id="IMN-AC-J7v"/>
+                                <constraint firstItem="ZqH-55-VZt" firstAttribute="centerY" secondItem="wD9-Mg-NIQ" secondAttribute="centerY" id="NlV-1k-Eih"/>
+                                <constraint firstAttribute="height" constant="40" id="hMr-Di-Bms"/>
+                                <constraint firstAttribute="trailing" secondItem="8QZ-lD-LJa" secondAttribute="trailing" constant="8" id="r6I-2R-9aj"/>
+                                <constraint firstItem="F3G-rc-upw" firstAttribute="centerY" secondItem="ZqH-55-VZt" secondAttribute="centerY" id="yqh-Eb-BiT"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.8980392157" green="0.88235294119999996" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="wD9-Mg-NIQ" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="0xv-6D-cV1"/>
+                        <constraint firstItem="wD9-Mg-NIQ" firstAttribute="top" secondItem="2xr-pp-z4f" secondAttribute="bottom" id="PuQ-hN-kcu"/>
+                        <constraint firstItem="bFH-gA-xwB" firstAttribute="top" secondItem="wD9-Mg-NIQ" secondAttribute="bottom" id="VhE-OR-MFg"/>
                         <constraint firstItem="2xr-pp-z4f" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="Yd6-Fd-qGI"/>
-                        <constraint firstItem="bFH-gA-xwB" firstAttribute="top" secondItem="2xr-pp-z4f" secondAttribute="bottom" id="bEY-6C-wee"/>
-                        <constraint firstAttribute="bottom" secondItem="bFH-gA-xwB" secondAttribute="bottom" id="bnx-a9-9mK"/>
+                        <constraint firstAttribute="bottom" secondItem="bFH-gA-xwB" secondAttribute="bottom" constant="20" id="bnx-a9-9mK"/>
                         <constraint firstAttribute="trailing" secondItem="bFH-gA-xwB" secondAttribute="trailing" id="c2x-6x-OmT"/>
                         <constraint firstItem="2xr-pp-z4f" firstAttribute="top" secondItem="zkE-OA-9k8" secondAttribute="top" id="cvQ-n0-dIO"/>
+                        <constraint firstAttribute="trailing" secondItem="wD9-Mg-NIQ" secondAttribute="trailing" id="fXl-tI-bYb"/>
                         <constraint firstAttribute="trailing" secondItem="2xr-pp-z4f" secondAttribute="trailing" id="hNy-T3-9ya"/>
                         <constraint firstItem="bFH-gA-xwB" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="qPr-hz-1aV"/>
                     </constraints>
@@ -91,10 +148,10 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="34.5" y="54.5"/>
+            <point key="canvasLocation" x="34.399999999999999" y="54.422788605697157"/>
         </view>
     </objects>
     <resources>
-        <image name="button_goResult" width="40" height="27"/>
+        <image name="button_goResult" width="40" height="27.5"/>
     </resources>
 </document>

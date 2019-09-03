@@ -26,7 +26,7 @@ struct Prob {
     var article_String: String
     var article_attString:NSAttributedString?
     
-    var choices_String:[String] = []
+    var choices_String:[ String] = []
     var choices_attString:[NSAttributedString] = []
     
     var time: String
@@ -35,7 +35,6 @@ struct Prob {
     var tags: String
     
     init(withDict dict:NSDictionary) {
-        
         self.ProbID = dict["probId"] as! Int
         self.TestNum = dict["testnum"] as! Int
         self.ProbNum = dict["probnum"] as! Int
@@ -52,12 +51,9 @@ struct Prob {
         setChoices(withArray: [dict["choice1"] as! String,dict["choice2"] as! String,dict["choice3"] as! String,dict["choice4"] as! String,dict["choice5"] as! String])
         setTestAtt()
         setArticleAtt()
-        
     }
     
-    
     mutating func setTestAtt() {
-        
         let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
         let str = NSAttributedString(fromHTML: title_String)
         
@@ -69,11 +65,9 @@ struct Prob {
         
         self.title_attString_noNum = titleNoNum
         self.title_attString = title
-        
     }
     
     mutating func setArticleAtt() {
-        
         let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
         result.addAttribute(NSAttributedStringKey.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
         
@@ -82,17 +76,14 @@ struct Prob {
         result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         self.article_attString = result
-        
     }
     
-    
     mutating func setChoices(withArray arr:[String]) {
-        
         choices_String = arr
         
         for (index,choice) in choices_String.enumerated() {
-            let name = String(format: "%d_%02d", ProbID,index+1)
-            let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH/4)
+            let name = String(format: "%d_%02d", ProbID,index + 1)
+            let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH / 4)
             
             result.addAttribute(NSAttributedStringKey.font, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
             
@@ -101,16 +92,12 @@ struct Prob {
             result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
             
             choices_attString.append(result)
-            
         }
-        
     }
     
-    func replaceTagToImage(withString str: String, imgName name: String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9)->NSMutableAttributedString{
-        
+    func replaceTagToImage(withString str: String, imgName name: String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9) -> NSMutableAttributedString {
         let result = NSMutableAttributedString()
         if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg") {
-            
             let attachIcon:NSTextAttachment = NSTextAttachment()
             attachIcon.image = UIImage(contentsOfFile: bundlePath)
             let scaleFactor = attachIcon.image!.size.width / (width)
@@ -118,20 +105,14 @@ struct Prob {
             let imageString = NSAttributedString(attachment: attachIcon)
             result.append(imageString)
             result.append(NSAttributedString(string: "\n"))
-            
         }
         
         result.append(NSAttributedString(fromHTML:str))
         return result
-        
     }
-    
 }
 
-
-
 struct QuickProb {
-    
     var ProbID: Int
     var TestNum: Int
     var ProbNum: Int
@@ -139,7 +120,6 @@ struct QuickProb {
     var Answer: Int
     
     init(withDict dict:NSDictionary) {
-        
         self.ProbID = dict["probId"] as! Int
         self.TestNum = dict["testnum"] as! Int
         self.ProbNum = dict["probnum"] as! Int

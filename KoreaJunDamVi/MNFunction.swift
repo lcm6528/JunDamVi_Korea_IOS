@@ -12,7 +12,7 @@ import UIKit
 let SCREEN_WIDTH  = UIScreen.main.bounds.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.height
 let NaviBar_Height = 44
-let StatusBar_Height = 20
+let StatusBar_Height = UIApplication.shared.statusBarFrame.height
 
 func getHeightOfStatusNNaviBar(_ vc: UIViewController) -> CGFloat {
     let height = vc.navigationController?.navigationBar.frame.size.height ?? 0
@@ -78,6 +78,14 @@ func getUserDefaultIntValue(_ key: String) -> Int {
 func showAlertWithString(_ title: String , message: String, sender:UIViewController) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
+    sender.present(alert, animated: true, completion: nil)
+}
+
+func showAlertWithSelect(_ title: String , message: String, sender: UIViewController, handler: ((UIAlertAction)->())?, canceltype: UIAlertAction.Style = .default, confirmtype: UIAlertAction.Style = .default, cancelHandler: ((UIAlertAction)->())? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "닫기", style: canceltype, handler: cancelHandler))
+    alert.addAction(UIAlertAction(title: "확인", style: confirmtype, handler: handler))
+    sender.view.endEditing(true)
     sender.present(alert, animated: true, completion: nil)
 }
 

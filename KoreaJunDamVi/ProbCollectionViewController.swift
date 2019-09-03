@@ -51,21 +51,18 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
             
         } else {
             let cachedData = JDVProbManager.getCachedData(with: dataArray[indexPath.row])
-            
             cell.contentLabel.text = dataArray[indexPath.row]
             cell.configure(by: cachedData)
         }
-        
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if SCREEN_WIDTH > 430{
+        if SCREEN_WIDTH > 430 {
             return CGSize(width: 120, height: 120)
         } else {
-            let length = SCREEN_WIDTH/3 - 20
+            let length = SCREEN_WIDTH / 3 - 20
             return CGSize(width: length, height: length)
         }
     }
@@ -74,17 +71,14 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
         self.delegate?.ProbCollectionViewSelectedRow(pageindex: pageIndex, atIndex: indexPath.row)
     }
     
-    
     //CollectionView cell Highlight Indicate
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = UIColor.lightGray
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = UIColor.white
-        
     }
 }

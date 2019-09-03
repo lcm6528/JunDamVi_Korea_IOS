@@ -19,15 +19,15 @@ class ProbResultViewController: UIViewController, ProbResultSubViewDelegate, UIT
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     
-    var option:JDVProbManager.ProbOption!
-    var result:TestResult!
-    var heightOfSubView:CGFloat!
+    var option: JDVProbManager.ProbOption!
+    var result: TestResult!
+    var heightOfSubView: CGFloat!
     var addedNote = Set<Note>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"
-        heightOfSubView = self.view.frame.size.height - 64
+        heightOfSubView = self.view.frame.size.height - 44 - StatusBar_Height
         let realm = try! Realm()
         //        let trial = realm.objects(TestResultRecord.self).filter {return $0.TestKey == self.option.cacheKey}.count
         let trial = Array(realm.objects(TestResultRecord.self)).filter { return $0.TestKey == self.option.cacheKey }.count
@@ -40,12 +40,25 @@ class ProbResultViewController: UIViewController, ProbResultSubViewDelegate, UIT
         
         //botView setup
         let botView = ProbResultBotView(frame: CGRect(x: 0, y: heightOfSubView, width: SCREEN_WIDTH, height: heightOfSubView))
+        botView.configure(result: result)
         botView.delegate = self
         botView.tableView.delegate = self
         botView.tableView.dataSource = self
         botView.dismissHandler = {
             self.tabBarController?.selectedIndex = 3
             self.dismiss(animated: true, completion: nil)
+        }
+        botView.addNoteHandler = {
+            let wrongNotes: [Note] = self.result.Tries
+                .filter({ $0.State == .Wrong })
+                .map({
+                    let note = Note()
+                    note.ProbID = $0.ProbID
+                    note.Selection = $0.Selection
+                    return note
+                })
+            JDVNoteManager.saveNotes(by: wrongNotes)
+            botView.tableView.reloadDataWithoutScroll()
         }
         
         contentView.addSubview(topView)
