@@ -121,7 +121,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
         do {
             let object = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-            dict = object as! NSDictionary
+            dict = (object as! NSDictionary)
         } catch { }
         
         for option in options {
@@ -159,7 +159,19 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             let vc = segue.destination as! ProbTestFrameViewController
             vc.probData = self.probData
             vc.option = currentOption
-            vc.selections = JDVProbManager.getCachedData(with: currentOption.cacheKey)
+            
+                
+            let savedSelection = JDVProbManager.getCachedData(with: currentOption.cacheKey) ?? []
+            var newSelections = [Int](repeatElement(0, count: probData.count))
+            if vc.probData.count > savedSelection.count {
+                for (i, select) in savedSelection.enumerated() {
+                    newSelections[i] = select
+                }
+                vc.selections = newSelections
+            } else {
+                vc.selections = savedSelection
+            }
+            
             self.tabBarController?.tabBar.isHidden = true
             
         case "quick":

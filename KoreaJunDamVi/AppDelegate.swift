@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import SwiftyStoreKit
+import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    
+    FirebaseApp.configure()
     let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     print(documentPath)
     
@@ -36,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+
     return true
     
   }

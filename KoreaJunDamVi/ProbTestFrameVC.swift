@@ -9,6 +9,7 @@
 import UIKit
 import WSProgressHUD
 import RealmSwift
+import Firebase
 
 class ProbTestFrameViewController: JDVViewController {
     
@@ -271,9 +272,19 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         innerView.templeteOption = .TEST
         innerView.templete = TEMPLETE_TEST_NoSolution
         innerView.selection = selections![index]
-        innerView.selectHandler = { (num, selection) -> Void in
-            self.selections![num] = selection
-            self.gotoNextPage()
+        innerView.selectHandler = { [weak self] (num, selection) -> Void in
+            
+            guard let strongSelf = self else { return }
+            strongSelf.selections![num] = selection
+            Analytics.logEvent("selection", parameters: ["selection\(innerView.probData.probID)":"\(selection)"])
+            
+            if strongSelf.option.sortedOption == .test {
+                JDVProbManager.saveCachedData(with: "\(strongSelf.probData[0].prob.TestNum)", tries: strongSelf.selections!)
+            } else {
+                JDVProbManager.saveCachedData(with: strongSelf.option.cacheKey, tries: strongSelf.selections!)
+            }
+            
+            strongSelf.gotoNextPage()
         }
         
         return innerView

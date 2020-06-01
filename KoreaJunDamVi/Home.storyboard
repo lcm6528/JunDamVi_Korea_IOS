@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +64,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.10.156" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgo-8a-QtJ">
-                                                        <rect key="frame" x="142.66666666666666" y="105.66666666666666" width="90" height="20"/>
+                                                        <rect key="frame" x="137.66666666666666" y="105.66666666666666" width="100" height="20"/>
                                                         <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="I2e-wd-W2p"/>
@@ -687,12 +685,21 @@
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="applyButton" destination="u2m-e2-YWt" id="AdK-Xy-Vgm"/>
+                        <outlet property="cancelLabel" destination="h3z-Ic-CAd" id="P9H-SM-Rto"/>
                         <outlet property="centerContainerView" destination="9x7-na-GFk" id="WAC-qz-sz9"/>
+                        <outlet property="changeLabel" destination="zJ2-gE-cIc" id="DBD-QF-u6J"/>
                         <outlet property="dateLabel" destination="Fgo-8a-QtJ" id="Eh3-sZ-pht"/>
+                        <outlet property="dateStringLabel" destination="cnd-oM-9aK" id="1rk-pw-Owy"/>
                         <outlet property="ddayCotentLabel" destination="1Ex-Yw-och" id="rTT-DJ-ITp"/>
                         <outlet property="ddayTitleLabel" destination="K5j-Uo-Dhs" id="8BQ-Iz-i4h"/>
+                        <outlet property="endLabel" destination="vXn-4C-AHl" id="CfC-Iy-hKB"/>
                         <outlet property="label_MidView" destination="J63-bx-UYO" id="7HD-2d-lLL"/>
+                        <outlet property="numLabel" destination="uOR-uL-6be" id="kqa-t0-5fU"/>
+                        <outlet property="photoLabel" destination="bRf-FE-y2A" id="fRl-rg-EEh"/>
+                        <outlet property="printLabel" destination="bbo-p7-z8O" id="FrQ-KX-bon"/>
+                        <outlet property="resultLabel" destination="Hke-O0-UaC" id="Uxr-XQ-CS3"/>
                         <outlet property="roundView1" destination="nrx-PE-YOM" id="52P-6O-7NE"/>
+                        <outlet property="startLabel" destination="GWQ-xV-Y7M" id="nTB-a4-WVm"/>
                         <segue destination="51A-xg-v2c" kind="show" identifier="settings" id="Qpl-yE-vO3"/>
                     </connections>
                 </viewController>

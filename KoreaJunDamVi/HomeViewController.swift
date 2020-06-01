@@ -18,6 +18,17 @@ class HomeViewController: JDVViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet weak var applyButton: JDVButton!
     
+    @IBOutlet weak var numLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var endLabel: UILabel!
+    @IBOutlet weak var dateStringLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var changeLabel: UILabel!
+    @IBOutlet weak var photoLabel: UILabel!
+    @IBOutlet weak var printLabel: UILabel!
+    @IBOutlet weak var cancelLabel: UILabel!
+    
+    
     var Tests:[String] = []
     var completeCount = 0
     
@@ -64,21 +75,48 @@ class HomeViewController: JDVViewController {
         let arr = json.arrayObject as! [[String: String]]
         
         for item in arr {
-            let test = item.first!
-            let date = Date(dateString: item.first!.value)
+            let test = item["num"]!
+            let date = Date(dateString: item["day"]!)
             let now = Date()
             if date < now { continue }
             else if date > now {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy. MM. dd"
-                
-                let dday = date.daysFromNow()
-                ddayTitleLabel.text = "\(test.key)회 한국사능력검정시험"
-                ddayCotentLabel.text = "D\(dday)"
-                dateLabel.text = formatter.string(from: date)
+                setInfo(data: item)
                 break
             }
         }
+    }
+    
+    func setInfo(data: [String : String]) {
+        guard let test = data["num"] else { return }
+        guard let day = data["day"] else { return }
+        guard let start = data["start"]  else { return }
+        guard let end = data["end"] else { return }
+        guard let date = data["date"] else { return }
+        guard let result = data["result"] else { return }
+        guard let change = data["change"] else { return }
+        guard let photo = data["photo"] else { return }
+        guard let print = data["print"] else { return }
+        guard let cancel = data["cancel"] else { return }
+        
+        let dateObject = Date(dateString: day)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy. MM. dd"
+        
+        let dday = dateObject.daysFromNow()
+        ddayTitleLabel.text = "\(test)회 한국사능력검정시험"
+        ddayCotentLabel.text = "D\(dday)"
+        dateLabel.text = formatter.string(from: dateObject)
+        numLabel.text = test
+        startLabel.text = start
+        endLabel.text = end
+        dateStringLabel.text = date
+        resultLabel.text = result
+        changeLabel.text = change
+        photoLabel.text = photo
+        printLabel.text = print
+        cancelLabel.text = cancel
+        
     }
     
     func getAttrStr(totalValue total: Int, withValue value: Int)->NSMutableAttributedString {
