@@ -276,7 +276,9 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
             
             guard let strongSelf = self else { return }
             strongSelf.selections![num] = selection
-            Analytics.logEvent("selection", parameters: ["selection\(innerView.probData.probID)":"\(selection)"])
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters:
+                ["id" : innerView.probData.probID,
+                 "content" : "\(selection)"])
             
             if strongSelf.option.sortedOption == .test {
                 JDVProbManager.saveCachedData(with: "\(strongSelf.probData[0].prob.TestNum)", tries: strongSelf.selections!)
