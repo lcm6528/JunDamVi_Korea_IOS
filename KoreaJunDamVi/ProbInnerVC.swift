@@ -15,7 +15,7 @@ class ProbTestInnerViewController: JDVViewController {
     var pageIndex: Int!
     var selection = 0
     var selectHandler:((Int,Int)->Void)?
-    var option:JDVProbManager.SortedOption!
+    var option: SortedOption!
     
     @IBOutlet var testTitleTextView: UITextView!
     @IBOutlet var testContentTextView: UITextView!

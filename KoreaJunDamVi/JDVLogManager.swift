@@ -81,3 +81,10 @@ public class JDVLogManager: NSObject {
         }
     }
 }
+
+
+class ClientLogger {
+    static func log(log: String) {
+        print("[JDVLOG] \(log)")
+    }
+}

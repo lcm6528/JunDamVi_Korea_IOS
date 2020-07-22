@@ -12,17 +12,13 @@ import FMDB
 import SwiftyJSON
 class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     
-    ////static data
-    let kRankingArr = [["조선(24%)","일제강점기(14%)","근대 조선(13%)"],["해석(31%)","암기(20%)","테마(19%)"],["사건(22%)","문화(15%)","제도(12%)"]]
-    ////
-    
     let kNumber_of_pages = 4
     
     var currentMenu: Int = 0 
     var currentOption = JDVProbManager.ProbOption()
     var pageViewController:UIPageViewController!
     
-    let options: [JDVProbManager.SortedOption] = [.test, .time, .type, .theme]
+    let options: [SortedOption] = [.test, .time, .type, .theme]
     
     var dataArray: [[String]] = []
     var probData: [ProbData] = []
@@ -141,9 +137,8 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
     }
     
     func selectButtonInCollection(atIndex index: Int) {
-        
         for (idx,button) in ToolbarButtons.enumerated() {
-            { ()->Bool in return idx == index}() ? (button.isSelected = true) : (button.isSelected = false)
+            (idx == index) ? (button.isSelected = true) : (button.isSelected = false)
         }
     }
     
@@ -182,9 +177,6 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             
         case "pushanal":
             let vc = segue.destination as! JDVProbAnalFrameViewController
-            let key = options[currentMenu].rawValue
-            vc.dataObject = AnalData["data"][key].dictionaryObject as! [String : String]
-            vc.contentObject = AnalData["content"][key].dictionaryObject as! [String : String]
             vc.option = options[currentMenu]
         default :
             return
@@ -208,11 +200,10 @@ extension ProbMenuViewController:UIPageViewControllerDelegate, UIPageViewControl
         if index != 0 {
             let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProbSubCollectionViewController") as! ProbSubCollectionViewController
             
-            pageContentViewController.rankingStr = kRankingArr[index - 1]
             pageContentViewController.delegate = self
             pageContentViewController.pageIndex = index
             pageContentViewController.dataArray = self.dataArray[index]
-            pageContentViewController.subtitle = options[index].description
+            pageContentViewController.option = options[index]
             pageContentViewController.pushHandler = { index in
                 self.currentMenu = index
                 self.performSegue(withIdentifier: "pushanal", sender: self)

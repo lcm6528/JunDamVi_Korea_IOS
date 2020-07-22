@@ -19,7 +19,7 @@ class AnalyticsMainViewController: JDVViewController {
     
     var records:[[TestResultRecord]] = []
     
-    var keys:[JDVProbManager.SortedOption] = [.test,.time,.type,.theme]
+    var keys:[SortedOption] = [.test,.time,.type,.theme]
     
     override func viewDidLoad() {
         super.viewDidLoad()

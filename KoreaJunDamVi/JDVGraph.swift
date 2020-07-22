@@ -33,7 +33,7 @@ class JDVGraph: UIView {
             self.backgroundColor = viewBackgroundColor
         }
     }
-    var highlightRange: Int = 0{//setter method를 따로 해야하나?
+    var highlightRange: Int = 3 {
         didSet{
             configureUI()
         }
@@ -47,13 +47,6 @@ class JDVGraph: UIView {
         setup()
         configureUI()
     }
-    
-    
-    
-    func setHighlight(toStanding val: Int) {
-        highlightRange = val
-    }
-    
     
     //once
     func setup() {

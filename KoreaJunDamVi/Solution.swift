@@ -89,7 +89,7 @@ struct Solution {
         
         let result = NSMutableAttributedString()
         
-        if let bundlePath = Bundle.main.path(forResource: name, ofType: "png") {
+        if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg") {
             
             let attachIcon:NSTextAttachment = NSTextAttachment()
             attachIcon.image = UIImage(contentsOfFile: bundlePath)

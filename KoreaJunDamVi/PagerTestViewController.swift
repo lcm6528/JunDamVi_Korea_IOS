@@ -59,6 +59,7 @@ class JDVPagerTestViewController: ButtonBarPagerTabStripViewController {
         
         let storyboard = UIStoryboard(name: "Solution", bundle: nil)
         
+        
         var arr:[JDVAnalContentViewController] = [JDVAnalContentViewController]()
         
         for title in kModel {

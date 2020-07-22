@@ -10,6 +10,29 @@
 import UIKit
 import FMDB
 
+enum SortedOption: String {
+    case test = "testnum"
+    case time = "time"
+    case theme = "theme"
+    case type = "type"
+    case note = "note"
+    
+    var description: String {
+        switch self {
+        case .test:
+            return "회차별"
+        case .time:
+            return "시대별"
+        case .theme:
+            return "테마별"
+        case .type:
+            return "유형별"
+        case .note:
+            return "오답 노트"
+        }
+    }
+}
+
 class JDVProbManager: NSObject {
     
     struct ProbOption {
@@ -17,28 +40,7 @@ class JDVProbManager: NSObject {
         var cacheKey: String = ""
     }
     
-    enum SortedOption: String {
-        case test = "testnum"
-        case time = "time"
-        case theme = "theme"
-        case type = "type"
-        case note = "note"
-        
-        var description: String {
-            switch self {
-            case .test:
-                return "회차별"
-            case .time:
-                return "시대별"
-            case .theme:
-                return "테마별"
-            case .type:
-                return "유형별"
-            case .note:
-                return "오답 노트"
-            }
-        }
-    }
+    
     
     static func fetchProbs(withSortedOption option: SortedOption, by value: String, completion:@escaping ([ProbData]) -> ()) {
         
