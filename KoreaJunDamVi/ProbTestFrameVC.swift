@@ -133,10 +133,10 @@ class ProbTestFrameViewController: JDVViewController {
                 return JDVNoteManager.isAdded(by: prob.probID)
             }
             
-            vc.didSelectHandler = { [unowned self] index in
-                let currentIdx = self.getCurrnetIndexOfPage()
-                self.gotoPageAtIndex(currentIdx, goto: index)
-                self.setToolbarTitle(currentIdx)
+            vc.didSelectHandler = { [weak self] index in
+                let currentIdx = self?.getCurrnetIndexOfPage() ?? 0
+                self?.gotoPageAtIndex(currentIdx, goto: index)
+                self?.setToolbarTitle(currentIdx)
             }
         } else if segue.identifier == "push" {
             let vc = segue.destination as! ProbResultViewController
@@ -210,9 +210,9 @@ class ProbTestFrameViewController: JDVViewController {
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
             WSProgressHUD.show(withStatus: "체점 중 ..")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.performSegue(withIdentifier: id, sender: self)
-                self.navigationController?.popViewController(animated: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
+                self?.performSegue(withIdentifier: id, sender: self)
+                self?.navigationController?.popViewController(animated: false)
             })
             
         }))
@@ -272,22 +272,23 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         innerView.templeteOption = .TEST
         innerView.templete = TEMPLETE_TEST_NoSolution
         innerView.selection = selections![index]
-        innerView.selectHandler = { [weak self] (num, selection) -> Void in
-            
-            guard let strongSelf = self else { return }
-            strongSelf.selections![num] = selection
-            Analytics.logEvent(AnalyticsEventSelectContent, parameters:
-                ["id" : innerView.probData.probID,
-                 "content" : "\(selection)"])
-            
-            if strongSelf.option.sortedOption == .test {
-                JDVProbManager.saveCachedData(with: "\(strongSelf.probData[0].prob.TestNum)", tries: strongSelf.selections!)
-            } else {
-                JDVProbManager.saveCachedData(with: strongSelf.option.cacheKey, tries: strongSelf.selections!)
-            }
-            
-            strongSelf.gotoNextPage()
-        }
+        innerView.delegate = self
+//        innerView.selectHandler = { [weak self] (num, selection) -> Void in
+//
+//            guard let strongSelf = self else { return }
+//            strongSelf.selections![num] = selection
+//            Analytics.logEvent(AnalyticsEventSelectContent, parameters:
+//                ["id" : innerView.probData.probID,
+//                 "content" : "\(selection)"])
+//
+//            if strongSelf.option.sortedOption == .test {
+//                JDVProbManager.saveCachedData(with: "\(strongSelf.probData[0].prob.TestNum)", tries: strongSelf.selections!)
+//            } else {
+//                JDVProbManager.saveCachedData(with: strongSelf.option.cacheKey, tries: strongSelf.selections!)
+//            }
+//
+//            self?.gotoNextPage()
+//        }
         
         return innerView
     }
@@ -321,8 +322,8 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
         let vc = pageViewAtIndex(nextIndex)
         
-        let completion:(Bool) -> () = { success in
-            self.setToolbarTitle(nextIndex)
+        let completion:(Bool) -> () = { [weak self] success in
+            self?.setToolbarTitle(nextIndex)
         }
         
         if currentIndex > nextIndex {
@@ -343,10 +344,10 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         }else if nextIndex < number_of_pages{
             let vc = pageViewAtIndex(nextIndex)
             
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
+            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { [weak self] (completion) in
                 
                 isBlockUserInteract = false
-                self.setToolbarTitle(self.getCurrnetIndexOfPage())
+                self?.setToolbarTitle(self?.getCurrnetIndexOfPage() ?? 0)
             })
         }
     }
@@ -362,21 +363,39 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
         let vc = pageViewAtIndex(nextIndex)
         
-        pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
+        pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { [weak self] (completion) in
             isBlockUserInteract = false
-            self.setToolbarTitle(self.getCurrnetIndexOfPage())
+            self?.setToolbarTitle(self?.getCurrnetIndexOfPage() ?? 0)
         })
     }
     
-    func getCurrnetIndexOfPage() -> Int{
+    func getCurrnetIndexOfPage() -> Int {
         let vc  = pageViewController.viewControllers?.first as! TempleteVC
         return vc.pageIndex
     }
 }
 
-extension ProbTestFrameViewController: UINavigationControllerDelegate{
+extension ProbTestFrameViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         WSProgressHUD.dismiss()
         isBlockUserInteract = false
+    }
+}
+
+extension ProbTestFrameViewController: TempleteDelegate {
+    func select(probId: Int, probNum: Int, choice: Int) {
+        
+        let params: [String: Any] = ["id" : probId,
+        "content" : "\(choice)"]
+        self.selections![probNum] = choice
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
+        ClientLogger.log(log: params.description)
+        if self.option.sortedOption == .test {
+            JDVProbManager.saveCachedData(with: "\(self.probData[0].prob.TestNum)", tries: self.selections!)
+        } else {
+            JDVProbManager.saveCachedData(with: self.option.cacheKey, tries: self.selections!)
+        }
+        
+        self.gotoNextPage()
     }
 }

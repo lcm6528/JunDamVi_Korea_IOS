@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		05E0113D8C6B0C6415A1EA4D /* Pods_KoreaJunDamVi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */; };
 		3711B3B41DE6C27B008BC74C /* ProbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */; };
-		3737473E1E1B8385008A37E7 /* AnalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */; };
 		373DE7CC1E0A9B9000FACD62 /* ResultBotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */; };
 		3741FA851E60098A004EEA73 /* Database.db in Resources */ = {isa = PBXBuildFile; fileRef = 3741FA841E600851004EEA73 /* Database.db */; };
 		3741FA871E60170B004EEA73 /* JDVFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741FA861E60170B004EEA73 /* JDVFonts.swift */; };
@@ -46,7 +45,6 @@
 		378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */; };
 		379DB8981DBF3D1700882280 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8971DBF3D1700882280 /* RoundView.swift */; };
 		379DB89A1DBF3E3400882280 /* Radian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DB8991DBF3E3400882280 /* Radian.swift */; };
-		37A2E1411E16422400F42C40 /* PagerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2E1401E16422400F42C40 /* PagerTestViewController.swift */; };
 		37A985981E41BDE300853D71 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A985971E41BDE300853D71 /* BlockView.swift */; };
 		37A9859A1E41BDEE00853D71 /* BlockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A985991E41BDEE00853D71 /* BlockView.xib */; };
 		37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */; };
@@ -59,7 +57,6 @@
 		37D788831E30A2EE0039F999 /* AnalContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D788821E30A2EE0039F999 /* AnalContentCell.swift */; };
 		37D788851E31EAE00039F999 /* JDVShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D788841E31EAE00039F999 /* JDVShadowView.swift */; };
 		37D99B0E1DE87AC30017F7CF /* ProbTestFrameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99B0D1DE87AC30017F7CF /* ProbTestFrameVC.swift */; };
-		37D99B101DE87B1D0017F7CF /* ProbInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99B0F1DE87B1D0017F7CF /* ProbInnerVC.swift */; };
 		37E033671DE5521000A5C4AC /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E033661DE5521000A5C4AC /* Note.storyboard */; };
 		37E033691DE5524100A5C4AC /* Solution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E033681DE5524100A5C4AC /* Solution.storyboard */; };
 		37E0336B1DE5532000A5C4AC /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E0336A1DE5532000A5C4AC /* Analytics.storyboard */; };
@@ -1508,7 +1505,6 @@
 /* Begin PBXFileReference section */
 		2D36EBE354F0B953A60C91A9 /* Pods_KoreaJunDamVi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoreaJunDamVi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3711B3B31DE6C27B008BC74C /* ProbCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbCollectionViewCell.swift; sourceTree = "<group>"; };
-		3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalContentViewController.swift; sourceTree = "<group>"; };
 		373DE7CB1E0A9B9000FACD62 /* ResultBotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBotCell.swift; sourceTree = "<group>"; };
 		3741FA841E600851004EEA73 /* Database.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.db; sourceTree = "<group>"; };
 		3741FA861E60170B004EEA73 /* JDVFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVFonts.swift; sourceTree = "<group>"; };
@@ -1547,7 +1543,6 @@
 		378B3ADA1E14D1A60049A270 /* JDVGraphModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVGraphModel.swift; sourceTree = "<group>"; };
 		379DB8971DBF3D1700882280 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		379DB8991DBF3E3400882280 /* Radian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radian.swift; sourceTree = "<group>"; };
-		37A2E1401E16422400F42C40 /* PagerTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerTestViewController.swift; sourceTree = "<group>"; };
 		37A985971E41BDE300853D71 /* BlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		37A985991E41BDEE00853D71 /* BlockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockView.xib; sourceTree = "<group>"; };
 		37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVTextView.swift; sourceTree = "<group>"; };
@@ -1560,7 +1555,6 @@
 		37D788821E30A2EE0039F999 /* AnalContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalContentCell.swift; sourceTree = "<group>"; };
 		37D788841E31EAE00039F999 /* JDVShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVShadowView.swift; sourceTree = "<group>"; };
 		37D99B0D1DE87AC30017F7CF /* ProbTestFrameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbTestFrameVC.swift; sourceTree = "<group>"; };
-		37D99B0F1DE87B1D0017F7CF /* ProbInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbInnerVC.swift; sourceTree = "<group>"; };
 		37E033661DE5521000A5C4AC /* Note.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
 		37E033681DE5524100A5C4AC /* Solution.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Solution.storyboard; sourceTree = "<group>"; };
 		37E0336A1DE5532000A5C4AC /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
@@ -3064,7 +3058,6 @@
 			isa = PBXGroup;
 			children = (
 				37D99B0D1DE87AC30017F7CF /* ProbTestFrameVC.swift */,
-				37D99B0F1DE87B1D0017F7CF /* ProbInnerVC.swift */,
 				37D051A01E275D3700D92E89 /* ProbPopupV.swift */,
 				ED8A3BD41E895159005BDAC1 /* ProbPopupCell.swift */,
 				375373A51E0BADA100205C13 /* ProbQuickVC.swift */,
@@ -3213,8 +3206,6 @@
 		37D051791E260CDD00D92E89 /* ProbAnal */ = {
 			isa = PBXGroup;
 			children = (
-				37A2E1401E16422400F42C40 /* PagerTestViewController.swift */,
-				3737473D1E1B8385008A37E7 /* AnalContentViewController.swift */,
 				3742923A1E24C65200DBE230 /* ProbAnalFrameViewController.swift */,
 			);
 			name = ProbAnal;
@@ -6502,7 +6493,6 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NSAttributedString-DDHTML/NSAttributedString_DDHTML.framework",
-				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
@@ -6512,7 +6502,6 @@
 				"${BUILT_PRODUCTS_DIR}/TransitionableTab/TransitionableTab.framework",
 				"${BUILT_PRODUCTS_DIR}/UICountingLabel/UICountingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/WSProgressHUD/WSProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -6522,7 +6511,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSAttributedString_DDHTML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
@@ -6532,7 +6520,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionableTab.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICountingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WSProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6549,9 +6536,7 @@
 			files = (
 				37F7CD2A1DE6B0FE0085A2E4 /* JDVTestResultLabelView.swift in Sources */,
 				3742923B1E24C65200DBE230 /* ProbAnalFrameViewController.swift in Sources */,
-				37A2E1411E16422400F42C40 /* PagerTestViewController.swift in Sources */,
 				37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */,
-				3737473E1E1B8385008A37E7 /* AnalContentViewController.swift in Sources */,
 				37F7CD321DE6B0FE0085A2E4 /* JDVProbManager.swift in Sources */,
 				EDADF7E12381B69200C1D5B6 /* UnitTest.swift in Sources */,
 				378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */,
@@ -6626,7 +6611,6 @@
 				37F7CD301DE6B0FE0085A2E4 /* JDVNoteManager.swift in Sources */,
 				37D0517B1E260D3100D92E89 /* SolFrameVC.swift in Sources */,
 				37F7CD241DE6B0FD0085A2E4 /* JDVNavigationController.swift in Sources */,
-				37D99B101DE87B1D0017F7CF /* ProbInnerVC.swift in Sources */,
 				EDAF8D621FE40B1E002A9417 /* JDVButton.swift in Sources */,
 				375EB9171DBDE55900337236 /* KoreaJunDamVi.xcdatamodeld in Sources */,
 			);

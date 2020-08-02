@@ -70,7 +70,6 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - NSAttributedString-DDHTML (1.2.0)
-  - PageMenu (1.2.9)
   - Realm (3.20.0):
     - Realm/Headers (= 3.20.0)
   - Realm/Headers (3.20.0)
@@ -84,7 +83,6 @@ PODS:
   - UICountingLabel (1.4.0)
   - WSProgressHUD (1.1.1):
     - Shimmer
-  - XLPagerTabStrip (8.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -92,7 +90,6 @@ DEPENDENCIES:
   - Firebase/Analytics
   - FMDB
   - NSAttributedString-DDHTML
-  - PageMenu (from `https://github.com/orazz/PageMenu.git`)
   - RealmSwift (~> 3.20.0)
   - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
   - SwiftyStoreKit
@@ -100,7 +97,6 @@ DEPENDENCIES:
   - TransitionableTab
   - UICountingLabel
   - WSProgressHUD
-  - XLPagerTabStrip
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -127,19 +123,13 @@ SPEC REPOS:
     - TransitionableTab
     - UICountingLabel
     - WSProgressHUD
-    - XLPagerTabStrip
 
 EXTERNAL SOURCES:
-  PageMenu:
-    :git: https://github.com/orazz/PageMenu.git
   SwiftyJSON:
     :branch: swift3
     :git: https://github.com/appsailor/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
-  PageMenu:
-    :commit: ace3d8d095c9c165113d3ac797f317fe7faecbae
-    :git: https://github.com/orazz/PageMenu.git
   SwiftyJSON:
     :commit: de73429b38b8994f614fb27c5ec094bb8a4833f2
     :git: https://github.com/appsailor/SwiftyJSON.git
@@ -160,7 +150,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NSAttributedString-DDHTML: 59a7bcd44b92cb7f6f6ef26f52c4baad6b1d01ba
-  PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
@@ -170,8 +159,7 @@ SPEC CHECKSUMS:
   TransitionableTab: 0aa1dee3db142d356dad0b51cd9e8dcdf5bf29a5
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
-  XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: c73afe10bbea8db9d56c7215569a4e821a9704fd
+PODFILE CHECKSUM: dadaf252a90ebfca8f53cf20f7768e0d3cab06cf
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

@@ -62,6 +62,10 @@ let TEMPLETE_Solution: [TEMPLETE_TYPE] = [TEMPLETE_TYPE.PROBLEM] + TEMPLETE_SELE
 
 public let SHOW_SOL_KEY = "SHOWSOL"
 
+protocol TempleteDelegate: class {
+    func select(probId: Int, probNum: Int, choice: Int)
+}
+
 class TempleteVC: JDVViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -72,7 +76,7 @@ class TempleteVC: JDVViewController {
     var probData: ProbData!
     var pageIndex: Int!
     var selection = 0
-    var selectHandler:((Int, Int) -> Void)?
+    weak var delegate: TempleteDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,9 +97,9 @@ class TempleteVC: JDVViewController {
             self.tableView.reloadDataWithoutScroll()
         } else {
             showAlertWithSelect("해설 구매", message: "한국사 비법노트 해설\n(₩4,900)을 구매합니다.\n이미 구매하셨을 경우, 추가 결제는 진행되지 않습니다", sender: self, handler: { (_) in
-                JDVProductManager.Purchase { (success) in
+                JDVProductManager.Purchase { [weak self] (success) in
                     if success {
-                        self.showSol()
+                        self?.showSol()
                     }
                 }
             })
@@ -154,7 +158,7 @@ extension TempleteVC: UITableViewDelegate, UITableViewDataSource {
         let item = templete[index]
         
         if case .CHOICE(let idx) = item {
-            selectHandler?(self.pageIndex, idx + 1)
+            self.delegate?.select(probId: self.probData.probID, probNum: self.pageIndex, choice: idx + 1)
         }
     }
 }
