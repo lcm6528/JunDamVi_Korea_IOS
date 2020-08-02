@@ -97,13 +97,21 @@ struct Prob {
     
     func replaceTagToImage(withString str: String, imgName name: String, withWidth width:CGFloat = SCREEN_WIDTH * 0.9) -> NSMutableAttributedString {
         let result = NSMutableAttributedString()
-        if let bundlePath = Bundle.main.path(forResource: name, ofType: "jpg") {
-            let attachIcon:NSTextAttachment = NSTextAttachment()
-            attachIcon.image = UIImage(contentsOfFile: bundlePath)
-            let scaleFactor = attachIcon.image!.size.width / (width)
-            attachIcon.image = UIImage(cgImage: attachIcon.image!.cgImage!, scale: scaleFactor, orientation: UIImageOrientation.up)
-            let imageString = NSAttributedString(attachment: attachIcon)
-            result.append(imageString)
+        if let bundlePath = Bundle.main.url(forResource: name, withExtension: "jpg") {
+            
+            if let imageData = try? Data(contentsOf: bundlePath),
+                let image = UIImage(data: imageData),
+                let origin = image.cgImage {
+                
+                let attachIcon:NSTextAttachment = NSTextAttachment()
+                let scaleFactor = image.size.width / (width)
+                let newImage = UIImage(cgImage: origin, scale: scaleFactor, orientation: UIImageOrientation.up)
+                attachIcon.image = newImage
+                let imageString = NSAttributedString(attachment: attachIcon)
+                result.append(imageString)
+            }
+            
+            
             result.append(NSAttributedString(string: "\n"))
         }
         
