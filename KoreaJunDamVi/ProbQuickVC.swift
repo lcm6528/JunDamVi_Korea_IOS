@@ -57,7 +57,7 @@ class ProbQuickTestViewController : JDVViewController {
             tries.append(item)
         }
         
-        result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
+        result = TestResult(testNum: Probs.first?.TestNum ?? 0,TestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
         vc.result = self.result
         vc.option = option
         JDVScoreManager.configureAnalData(by: result)
@@ -81,8 +81,9 @@ extension ProbQuickTestViewController : UITableViewDataSource{
         cell.probNum = indexPath.row
         cell.titleLabel.text = "\(indexPath.row+1)번"
         cell.manager?.selectButtonAtIndex(selections[indexPath.row]-1)
-        cell.SelectionHandelr = { (probnum,selection) -> Void in
-            self.selections[probnum] = selection
+        cell.SelectionHandelr = { [weak self] (probnum,selection) -> Void in
+            self?.selections[probnum] = selection
+            self?.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
         }
         return cell
     }

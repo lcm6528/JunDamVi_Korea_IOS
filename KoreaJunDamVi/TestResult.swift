@@ -82,12 +82,35 @@ struct Try {
     
 }
 
+enum ResultType: String {
+    case grade1 = "1급"
+    case grade2 = "2급"
+    case grade3 = "3급"
+    case fail = "불합격"
+    
+    func getComment() -> String {
+        switch self {
+        case .grade1:
+            return "당신은 한국사 마스터!"
+        case .grade2:
+            return "1급에 도전하세요!"
+        case .grade3:
+            return "1급에 도전하세요!"
+        case .fail:
+            return "포기하지 마세요!"
+        }
+    }
+}
+
 struct TestResult {
     
     var TryNum: Int?
     var TotalScore: Int = 0
     var TestType: String
     var TestKey: String
+    var testNum = 0
+    
+    var result: ResultType = .fail
     
     var Tries: [Try] = []
     
@@ -95,10 +118,11 @@ struct TestResult {
     var numberOfWrong: Int = 0
     var numberOfPass: Int = 0
     
-    init(withTestType type: String,forKey key: String, withTries tries: [Try]) {
+    init(testNum: Int = 0, TestType type: String,forKey key: String, withTries tries: [Try]) {
         self.TestType = type
         self.TestKey = key
         self.Tries = tries
+        self.testNum = testNum
         calculateScore()
     }
     
@@ -112,6 +136,28 @@ struct TestResult {
                 numberOfWrong += 1
             case .Pass:
                 numberOfPass += 1
+            }
+        }
+        
+        if self.testNum < 47 {
+            switch self.TotalScore {
+            case 70...100:
+                self.result = .grade1
+            case 60...69:
+                self.result = .grade2
+            default:
+                self.result = .fail
+            }
+        } else {
+            switch self.TotalScore {
+            case 80...100:
+                self.result = .grade1
+            case 70...79:
+                self.result = .grade2
+            case 60...69:
+                self.result = .grade3
+            default:
+                self.result = .fail
             }
         }
     }

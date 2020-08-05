@@ -62,17 +62,8 @@ class ProbResultTopView : UIView {
     
     func configure(result: TestResult) {
         
-        switch result.TotalScore {
-        case 70...100:
-            label_grade.text = "1급"
-            label_comment.text = "당신은 한국사 마스터!"
-        case 60...69:
-            label_grade.text = "2급"
-            label_comment.text = "1급에 도전하세요!"
-        default:
-            label_grade.text = "불합격"
-            label_comment.text = "포기하지 마세요!"
-        }
+        label_grade.text = result.result.rawValue
+        label_comment.text = result.result.getComment()
         
         label_Trial.text = "\(result.TryNum ?? 1)"
         label_correct.format = "%d"

@@ -25,6 +25,10 @@ class SimpleResultViewController : UIViewController {
     var heightOfSubView:CGFloat!
     var addedNote = Set<Note>()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

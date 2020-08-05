@@ -50,7 +50,6 @@
 		37B1E5E11DEB12EC008B6206 /* JDVTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */; };
 		37BE73221E02849A00D00259 /* ProbResultBotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37BE73211E02849A00D00259 /* ProbResultBotCell.xib */; };
 		37D0517B1E260D3100D92E89 /* SolFrameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D0517A1E260D3100D92E89 /* SolFrameVC.swift */; };
-		37D0517D1E260DCA00D92E89 /* SolInnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */; };
 		37D051A11E275D3700D92E89 /* ProbPopupV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D051A01E275D3700D92E89 /* ProbPopupV.swift */; };
 		37D7887F1E3099CF0039F999 /* AnalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */; };
 		37D788811E3099D90039F999 /* AnalBarChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D788801E3099D90039F999 /* AnalBarChartView.xib */; };
@@ -1230,7 +1229,6 @@
 		EDA606B32312A46000F45052 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606B22312A46000F45052 /* SelectionCell.swift */; };
 		EDA606B52312A4DB00F45052 /* SolutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA606B42312A4DB00F45052 /* SolutionCell.swift */; };
 		EDA6C1171E8C15C900FB6398 /* SimpleResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */; };
-		EDADF7E12381B69200C1D5B6 /* UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADF7E02381B69200C1D5B6 /* UnitTest.swift */; };
 		EDADF81D2381BC7500C1D5B6 /* 4548.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDADF7E32381BC7500C1D5B6 /* 4548.jpg */; };
 		EDADF81E2381BC7500C1D5B6 /* 4549.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDADF7E42381BC7500C1D5B6 /* 4549.jpg */; };
 		EDADF81F2381BC7500C1D5B6 /* 4512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDADF7E52381BC7500C1D5B6 /* 4512.jpg */; };
@@ -1548,7 +1546,6 @@
 		37B1E5E01DEB12EC008B6206 /* JDVTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDVTextView.swift; sourceTree = "<group>"; };
 		37BE73211E02849A00D00259 /* ProbResultBotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProbResultBotCell.xib; sourceTree = "<group>"; };
 		37D0517A1E260D3100D92E89 /* SolFrameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolFrameVC.swift; sourceTree = "<group>"; };
-		37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolInnerVC.swift; sourceTree = "<group>"; };
 		37D051A01E275D3700D92E89 /* ProbPopupV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbPopupV.swift; sourceTree = "<group>"; };
 		37D7887E1E3099CF0039F999 /* AnalBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalBarChartView.swift; sourceTree = "<group>"; };
 		37D788801E3099D90039F999 /* AnalBarChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalBarChartView.xib; sourceTree = "<group>"; };
@@ -2730,7 +2727,6 @@
 		EDA606B22312A46000F45052 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		EDA606B42312A4DB00F45052 /* SolutionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionCell.swift; sourceTree = "<group>"; };
 		EDA6C1161E8C15C900FB6398 /* SimpleResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleResultViewController.swift; sourceTree = "<group>"; };
-		EDADF7E02381B69200C1D5B6 /* UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTest.swift; sourceTree = "<group>"; };
 		EDADF7E32381BC7500C1D5B6 /* 4548.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4548.jpg; sourceTree = "<group>"; };
 		EDADF7E42381BC7500C1D5B6 /* 4549.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4549.jpg; sourceTree = "<group>"; };
 		EDADF7E52381BC7500C1D5B6 /* 4512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4512.jpg; sourceTree = "<group>"; };
@@ -3094,7 +3090,6 @@
 				375373AD1E122A5C00205C13 /* SolMenuVC.swift */,
 				ED72684A1E8BD56000ACAE28 /* SolMenuCell.swift */,
 				37D0517A1E260D3100D92E89 /* SolFrameVC.swift */,
-				37D0517C1E260DCA00D92E89 /* SolInnerVC.swift */,
 			);
 			name = Solution;
 			sourceTree = "<group>";
@@ -3298,7 +3293,6 @@
 			children = (
 				375EB9121DBDE55900337236 /* Main.storyboard */,
 				3747EEA21DC1CAFC0029DC27 /* Home.storyboard */,
-				EDADF7E02381B69200C1D5B6 /* UnitTest.swift */,
 				3747EEA41DC1CBA60029DC27 /* Prob.storyboard */,
 				375373AC1E1226CE00205C13 /* Prob Result */,
 				37E033661DE5521000A5C4AC /* Note.storyboard */,
@@ -6538,7 +6532,6 @@
 				3742923B1E24C65200DBE230 /* ProbAnalFrameViewController.swift in Sources */,
 				37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */,
 				37F7CD321DE6B0FE0085A2E4 /* JDVProbManager.swift in Sources */,
-				EDADF7E12381B69200C1D5B6 /* UnitTest.swift in Sources */,
 				378B3ADB1E14D1A60049A270 /* JDVGraphModel.swift in Sources */,
 				ED7DB8D4231EC3D200BA7D9A /* JDVUserManager.swift in Sources */,
 				375373B31E122B1300205C13 /* JDVGraphBaseCell.swift in Sources */,
@@ -6594,7 +6587,6 @@
 				EDF21AD71E81050B00F78466 /* Solution.swift in Sources */,
 				EDA606AA23098BD100F45052 /* NoteFrameVC.swift in Sources */,
 				377BB0E61DC87BE600C9D08D /* MNFunction.swift in Sources */,
-				37D0517D1E260DCA00D92E89 /* SolInnerVC.swift in Sources */,
 				375373A21E0BA49100205C13 /* JDVColors.swift in Sources */,
 				EDB5F78C1ED45FAC0093ABC6 /* MNVersion.swift in Sources */,
 				EDE84D631E6D286C0062B1A8 /* Note.swift in Sources */,
@@ -6743,7 +6735,7 @@
 				INFOPLIST_FILE = KoreaJunDamVi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.6;
+				MARKETING_VERSION = 2.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JunDamVi.Korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -6764,7 +6756,7 @@
 				INFOPLIST_FILE = KoreaJunDamVi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.6;
+				MARKETING_VERSION = 2.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JunDamVi.Korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

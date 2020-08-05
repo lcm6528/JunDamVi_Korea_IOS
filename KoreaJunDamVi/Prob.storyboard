@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -234,7 +234,7 @@
                                                     <rect key="frame" x="0.0" y="96" width="120" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-p8-LMz">
-                                                            <rect key="frame" x="8" y="1" width="104" height="21"/>
+                                                            <rect key="frame" x="8" y="1" width="104" height="22"/>
                                                             <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
                                                             <color key="textColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -243,7 +243,7 @@
                                                     <color key="backgroundColor" red="0.792156862745098" green="0.76470588235294112" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="7kF-p8-LMz" firstAttribute="top" secondItem="dq8-g8-GAg" secondAttribute="top" constant="1" id="DMC-zD-RIe"/>
-                                                        <constraint firstAttribute="bottom" secondItem="7kF-p8-LMz" secondAttribute="bottom" constant="2" id="YdB-od-KH5"/>
+                                                        <constraint firstAttribute="bottom" secondItem="7kF-p8-LMz" secondAttribute="bottom" constant="1" id="YdB-od-KH5"/>
                                                         <constraint firstAttribute="trailing" secondItem="7kF-p8-LMz" secondAttribute="trailing" constant="8" id="ZpO-p6-zRT"/>
                                                         <constraint firstItem="7kF-p8-LMz" firstAttribute="leading" secondItem="dq8-g8-GAg" secondAttribute="leading" constant="8" id="lsr-TF-v7H"/>
                                                         <constraint firstItem="7kF-p8-LMz" firstAttribute="centerY" secondItem="dq8-g8-GAg" secondAttribute="centerY" id="xh7-Na-fWd"/>
@@ -1032,7 +1032,7 @@
                                                     <rect key="frame" x="0.0" y="96" width="120" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-Ny-nhE">
-                                                            <rect key="frame" x="8" y="1" width="104" height="21"/>
+                                                            <rect key="frame" x="8" y="1" width="104" height="22"/>
                                                             <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
                                                             <color key="textColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1044,7 +1044,7 @@
                                                         <constraint firstItem="Cx0-Ny-nhE" firstAttribute="leading" secondItem="6gj-D0-Miz" secondAttribute="leading" constant="8" id="AZK-Pc-4Ra"/>
                                                         <constraint firstItem="Cx0-Ny-nhE" firstAttribute="top" secondItem="6gj-D0-Miz" secondAttribute="top" constant="1" id="KuZ-Us-9CK"/>
                                                         <constraint firstItem="Cx0-Ny-nhE" firstAttribute="centerY" secondItem="6gj-D0-Miz" secondAttribute="centerY" id="dWg-QB-zdf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Cx0-Ny-nhE" secondAttribute="bottom" constant="2" id="vIf-75-0u7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Cx0-Ny-nhE" secondAttribute="bottom" constant="1" id="vIf-75-0u7"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1458,6 +1458,10 @@
             <point key="canvasLocation" x="2690" y="717"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="28R-Nv-1NB"/>
+        <segue reference="1us-z2-awh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="backBtn" width="14" height="25"/>
         <image name="balloon_black" width="50.5" height="58.5"/>
@@ -1471,8 +1475,4 @@
         <image name="small_star_selected" width="20" height="20"/>
         <image name="star" width="21.666666030883789" height="21.666666030883789"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="28R-Nv-1NB"/>
-        <segue reference="1us-z2-awh"/>
-    </inferredMetricsTieBreakers>
 </document>

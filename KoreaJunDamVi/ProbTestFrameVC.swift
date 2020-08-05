@@ -146,7 +146,7 @@ class ProbTestFrameViewController: JDVViewController {
                 tries.append(item)
             }
             
-            result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
+            result = TestResult(testNum: probData.first?.prob.TestNum ?? 0,TestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
             vc.result = self.result
             vc.option = option
             
@@ -168,7 +168,7 @@ class ProbTestFrameViewController: JDVViewController {
                 let item = Try(withProb: prob.prob, selection: selections![index])
                 tries.append(item)
             }
-            result = TestResult(withTestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
+            result = TestResult(testNum: probData.first?.prob.TestNum ?? 0,TestType: option.sortedOption.rawValue, forKey: option.cacheKey, withTries: tries)
             vc.result = self.result
             vc.option = option
             

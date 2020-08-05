@@ -13,6 +13,7 @@ import DZNEmptyDataSet
 class JDVNoteMenuViewController: JDVViewController {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var probButton: JDVButton!
     
     var noteDatas: [ProbData] = []
     var option = JDVProbManager.ProbOption()
@@ -53,7 +54,8 @@ class JDVNoteMenuViewController: JDVViewController {
             noteDatas.append(probs[i])
         }
         
-        self.tableView.reloadData()
+        self.probButton.isHidden = notes.count < 2
+        self.tableView.reloadDataWithoutScroll()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

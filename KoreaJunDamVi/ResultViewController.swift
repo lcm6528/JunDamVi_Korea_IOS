@@ -24,6 +24,10 @@ class ProbResultViewController: UIViewController, ProbResultSubViewDelegate, UIT
     var heightOfSubView: CGFloat!
     var addedNote = Set<Note>()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = "\(result.Tries[0].TestNum)회 문제 풀이 결과"
