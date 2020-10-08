@@ -23,6 +23,7 @@ class JDVSolutionMenuViewController: JDVViewController {
             self.blockView.isHidden = self.isPurchased
         }
     }
+    
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -99,10 +100,9 @@ class JDVSolutionMenuViewController: JDVViewController {
         self.isPurchased = JDVProductManager.isPurchased()
     }
     
-    
     func fetchList() {
         
-        var dict:NSDictionary!
+        var dict: NSDictionary!
         let path = Bundle.main.path(forResource: "SolList", ofType: "json")
         let data = try? Data(contentsOf: URL(fileURLWithPath: path!))
         do {
@@ -123,8 +123,6 @@ class JDVSolutionMenuViewController: JDVViewController {
             probData.append(probs[i])
         }
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.tabBarController?.tabBar.isHidden = true

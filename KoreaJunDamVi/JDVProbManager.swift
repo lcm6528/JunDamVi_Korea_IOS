@@ -49,14 +49,15 @@ class JDVProbManager: NSObject {
         let fmdb = FMDatabase(path: dbPath?.path)
         
         let val = (option != .test) ?  ("\"" + value + "\"") : (value)
-        if (fmdb?.open())! {
+        if (fmdb.open()) {
             
             let sql1 = "SELECT * FROM Probs WHERE \(option.rawValue) = \(val)"
-            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+            let result = fmdb.executeQuery(sql1, withArgumentsIn: [])
             var arr = [NSDictionary]()
-            while result?.next() == true{
-
-                arr.append(result!.resultDictionary() as NSDictionary )
+            while result?.next() == true {
+                if let result = result?.resultDictionary as NSDictionary? {
+                    arr.append(result)
+                }
             }
            
             arr.forEach({ (dict) in
@@ -65,7 +66,7 @@ class JDVProbManager: NSObject {
             
             completion(Probs)
         }
-        fmdb?.close()
+        fmdb.close()
     }
     
     static func fetchProbs(withTestnum num: Int) -> [ProbData] {
@@ -73,17 +74,18 @@ class JDVProbManager: NSObject {
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
-        if (fmdb?.open())! {
+        if (fmdb.open()) {
             
             let sql1 = "SELECT * FROM Probs WHERE testnum = \(num)"
-            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+            let result = fmdb.executeQuery(sql1, withArgumentsIn: [])
             while result?.next() == true {
-                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let prob = ProbData(withDict: dict)
-                Probs.append(prob)
+                if let result = result?.resultDictionary as NSDictionary? {
+                    let prob = ProbData(withDict: result)
+                    Probs.append(prob)
+                }
             }
         }
-        fmdb?.close()
+        fmdb.close()
         return Probs
     }
     
@@ -93,20 +95,22 @@ class JDVProbManager: NSObject {
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
-        if (fmdb?.open())! {
+        if (fmdb.open()) {
             
             let sql1 = "SELECT * FROM Probs WHERE probid = \(id)"
-            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+            let result = fmdb.executeQuery(sql1, withArgumentsIn: [])
             while result?.next() == true {
-                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let item = ProbData(withDict: dict)
                 
-                prob = item
+                if let result = result?.resultDictionary as NSDictionary? {
+                    let item = ProbData(withDict: result)
+                    prob = item
+                }
             }
         }
-        fmdb?.close()
+        fmdb.close()
         return prob
     }
+    
     static func fetchProbs(withProbID ids:[Int]) -> [ProbData] {
         
         var probs: [ProbData] = []
@@ -114,18 +118,19 @@ class JDVProbManager: NSObject {
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
-        if (fmdb?.open())! {
+        if (fmdb.open()) {
             for id in ids{
                 let sql1 = "SELECT * FROM Probs WHERE probid = \(id)"
-                let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+                let result = fmdb.executeQuery(sql1, withArgumentsIn: [])
                 while result?.next() == true {
-                    let dict: NSDictionary = result!.resultDictionary() as NSDictionary
-                    let item = ProbData(withDict: dict)
-                    probs.append(item)
+                    if let result = result?.resultDictionary as NSDictionary? {
+                        let item = ProbData(withDict: result)
+                        probs.append(item)
+                    }
                 }
             }
         }
-        fmdb?.close()
+        fmdb.close()
         return probs
     }
     
@@ -148,18 +153,23 @@ class JDVProbManager: NSObject {
         let dbPath = Bundle.main.url(forResource: "Database", withExtension: "db")
         let fmdb = FMDatabase(path: dbPath?.path)
         
-        if (fmdb?.open())! {
+        if (fmdb.open()) {
             
             let sql1 = "SELECT probId, testnum, probnum, answer, answer, score  FROM Probs WHERE testnum = \(num)"
-            let result = fmdb?.executeQuery(sql1, withArgumentsIn: nil)
+            let result = fmdb.executeQuery(sql1, withArgumentsIn: [])
             while result?.next() == true {
-                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
-                let prob = QuickProb(withDict: dict)
-                
-                Probs.append(prob)
+                if let result = result?.resultDictionary as NSDictionary? {
+                    let prob = QuickProb(withDict: result)
+                    
+                    Probs.append(prob)
+                }
+//                let dict:NSDictionary = result!.resultDictionary() as NSDictionary
+//                let prob = QuickProb(withDict: dict)
+//
+//                Probs.append(prob)
             }
         }
-        fmdb?.close()
+        fmdb.close()
         return Probs
     }
 }

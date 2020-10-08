@@ -5,7 +5,8 @@ use_frameworks!
 target 'KoreaJunDamVi' do
   
   pod 'Firebase/Analytics'
-#  pod 'Firebase/Core'
+  pod 'Firebase/Core'
+  pod 'Firebase/Crashlytics'
   pod 'UICountingLabel'
   pod 'FMDB'
   pod 'Toaster', '~> 2.1.0'
