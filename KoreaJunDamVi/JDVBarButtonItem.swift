@@ -9,24 +9,22 @@
 import UIKit
 
 class JDVBarButtonItem : UIBarButtonItem {
-  
+    
     fileprivate var actionHandler: (() -> Void)?
-  
+    
     convenience init(title: String?, style: UIBarButtonItemStyle, actionHandler: (() -> Void)?) {
-    self.init(title: title, style: style, target: nil, action: nil)
-    self.target = self
-    self.action = #selector(JDVBarButtonItem.barButtonItemPressed(_:))
-    self.actionHandler = actionHandler
-  }
-  
-    @objc func barButtonItemPressed(_ sender: UIBarButtonItem) {
-    if let actionHandler = self.actionHandler {
-      actionHandler()
+        self.init(title: title, style: style, target: nil, action: nil)
+        self.target = self
+        self.action = #selector(JDVBarButtonItem.barButtonItemPressed(_:))
+        self.actionHandler = actionHandler
     }
-  }
-  
+    
+    @objc func barButtonItemPressed(_ sender: UIBarButtonItem) {
+        if let actionHandler = self.actionHandler {
+            actionHandler()
+        }
+    }
 }
-
 
 class JDVNoteBarButtonItem: UIBarButtonItem{
     

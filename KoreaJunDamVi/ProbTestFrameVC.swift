@@ -395,7 +395,8 @@ extension ProbTestFrameViewController: TempleteDelegate {
         } else {
             JDVProbManager.saveCachedData(with: self.option.cacheKey, tries: self.selections!)
         }
-        
-        self.gotoNextPage()
+        if getUserDefaultBoolValue(kAutoNextKey) {
+            self.gotoNextPage()
+        }
     }
 }

@@ -18,7 +18,9 @@ class SettingsViewController: JDVViewController {
     
     var models = [SettingsViewCellModel(withOption: SettingsOption.reset),
                   SettingsViewCellModel(withOption: SettingsOption.restore),
-                  SettingsViewCellModel(withOption: SettingsOption.mail)]
+                  SettingsViewCellModel(withOption: SettingsOption.mail),
+                  SettingsViewCellModel(withOption: SettingsOption.autonext),
+                  SettingsViewCellModel(withOption: SettingsOption.showprob)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,7 @@ class SettingsViewController: JDVViewController {
         versionLabel.text = "Ver \(MNVersion.currentVersion)"
         self.setTitleWithStyle("설정")
         
-        models[0].handler = ShowResetAlert
-        models[1].handler = ShowRestoreAlert
-        models[2].handler = ShowMail
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -66,7 +66,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         
         let alert = UIAlertController(title: "학습내역 초기화", message: "앱 내 모든 정보가 초기화됩니다.", preferredStyle: UIAlertControllerStyle.alert)
         
-        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler:
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive, handler:
             { action in
                 
                 let realm = try! Realm()
@@ -90,7 +90,6 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     }
     
     func ShowRestoreAlert() {
-        
         let alert = UIAlertController(title: "구매내역 복원", message: "앱스토어 구매내역을 복원합니다.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler:
             { action in
@@ -117,25 +116,68 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     
     @objc(mailComposeController:didFinishWithResult:error:)
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult,error: Error?) {
-        
         controller.dismiss(animated: true)
+    }
+    
+    @objc func toggleSwitch(_ sender: UISwitch) {
+        let isOn = sender.isOn
+        let key = sender.tag == 1 ? kAutoNextKey : kShowProbKey
+        setUserDefaultWithBool(isOn, forKey: key)
+        
+        if sender.tag == 1 && isOn {
+            setUserDefaultWithBool(false, forKey: kShowProbKey)
+            tableView.reloadData()
+        }
+        
+        if sender.tag == 2 && isOn {
+            setUserDefaultWithBool(false, forKey: kAutoNextKey)
+            tableView.reloadData()
+        }
     }
 }
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 3
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsTableViewCell
-        cell.configure(model: models[indexPath.row])
+        let item = models[indexPath.row]
+        cell.configure(model: item)
+        
+        if item.option == .autonext {
+            let lightSwitch = UISwitch(frame: .zero)
+            lightSwitch.isOn = getUserDefaultBoolValue(kAutoNextKey)
+            lightSwitch.addTarget(self, action: #selector(toggleSwitch(_:)), for: .valueChanged)
+            lightSwitch.tag = 1
+            cell.accessoryView = lightSwitch
+        } else if item.option == .showprob {
+            let lightSwitch = UISwitch(frame: .zero)
+            lightSwitch.isOn = getUserDefaultBoolValue(kShowProbKey)
+            lightSwitch.addTarget(self, action: #selector(toggleSwitch(_:)), for: .valueChanged)
+            lightSwitch.tag = 2
+            cell.accessoryView = lightSwitch
+        } else {
+            cell.accessoryView = nil
+        }
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        models[indexPath.row].handler()
+        let item = models[indexPath.row]
+        switch item.option {
+        case .mail:
+            ShowMail()
+        case .reset:
+            ShowResetAlert()
+        case .restore:
+            ShowRestoreAlert()
+        default:
+            break
+        }
     }
 }

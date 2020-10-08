@@ -125,7 +125,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         }
         
         let jsondata = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "AnalList", ofType: "json")!))
-        AnalData = JSON(data: jsondata)
+        AnalData = try! JSON(data: jsondata)
     }
     
     @IBAction func ToolbarButtonSelected(_ sender: UIButton) {

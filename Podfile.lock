@@ -1,41 +1,41 @@
 PODS:
-  - Alamofire (5.2.2)
+  - Alamofire (4.9.1)
   - DZNEmptyDataSet (1.8.1)
-  - Firebase/Analytics (6.30.0):
+  - Firebase/Analytics (6.34.0):
     - Firebase/Core
-  - Firebase/Core (6.30.0):
+  - Firebase/Core (6.34.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.7.2)
-  - Firebase/CoreOnly (6.30.0):
-    - FirebaseCore (= 6.10.0)
-  - Firebase/Crashlytics (6.30.0):
+    - FirebaseAnalytics (= 6.9.0)
+  - Firebase/CoreOnly (6.34.0):
+    - FirebaseCore (= 6.10.4)
+  - Firebase/Crashlytics (6.34.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 4.4.0)
-  - FirebaseAnalytics (6.7.2):
-    - FirebaseCore (~> 6.8)
-    - FirebaseInstallations (~> 1.4)
-    - GoogleAppMeasurement (= 6.7.2)
+    - FirebaseCrashlytics (~> 4.6.2)
+  - FirebaseAnalytics (6.9.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.7)
+    - GoogleAppMeasurement (= 6.9.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30905.0)
-  - FirebaseCore (6.10.0):
-    - FirebaseCoreDiagnostics (~> 1.3)
+    - nanopb (~> 1.30906.0)
+  - FirebaseCore (6.10.4):
+    - FirebaseCoreDiagnostics (~> 1.6)
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/Logger (~> 6.7)
-  - FirebaseCoreDiagnostics (1.5.0):
-    - GoogleDataTransport (~> 7.0)
+  - FirebaseCoreDiagnostics (1.7.0):
+    - GoogleDataTransport (~> 7.4)
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/Logger (~> 6.7)
-    - nanopb (~> 1.30905.0)
-  - FirebaseCrashlytics (4.4.0):
+    - nanopb (~> 1.30906.0)
+  - FirebaseCrashlytics (4.6.2):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.6)
     - GoogleDataTransport (~> 7.2)
-    - nanopb (~> 1.30905.0)
+    - nanopb (~> 1.30906.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstallations (1.6.0):
+  - FirebaseInstallations (1.7.0):
     - FirebaseCore (~> 6.10)
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
@@ -43,14 +43,14 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GoogleAppMeasurement (6.7.2):
+  - GoogleAppMeasurement (6.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30905.0)
-  - GoogleDataTransport (7.2.0):
-    - nanopb (~> 1.30905.0)
+    - nanopb (~> 1.30906.0)
+  - GoogleDataTransport (7.5.0):
+    - nanopb (~> 1.30906.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -70,23 +70,22 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
-  - nanopb (1.30905.0):
-    - nanopb/decode (= 1.30905.0)
-    - nanopb/encode (= 1.30905.0)
-  - nanopb/decode (1.30905.0)
-  - nanopb/encode (1.30905.0)
+  - nanopb (1.30906.0):
+    - nanopb/decode (= 1.30906.0)
+    - nanopb/encode (= 1.30906.0)
+  - nanopb/decode (1.30906.0)
+  - nanopb/encode (1.30906.0)
   - NSAttributedString-DDHTML (1.2.0)
-  - PromisesObjC (1.2.10)
+  - PromisesObjC (1.2.11)
   - Realm (3.20.0):
     - Realm/Headers (= 3.20.0)
   - Realm/Headers (3.20.0)
   - RealmSwift (3.20.0):
     - Realm (= 3.20.0)
   - Shimmer (1.0.2)
-  - SwiftyJSON (3.0.0)
+  - SwiftyJSON (5.0.0)
   - SwiftyStoreKit (0.16.1)
-  - Toaster (2.1.1)
-  - TransitionableTab (0.2.0)
+  - Toaster (2.3.0)
   - UICountingLabel (1.4.1)
   - WSProgressHUD (1.1.5):
     - Shimmer
@@ -100,10 +99,9 @@ DEPENDENCIES:
   - FMDB
   - NSAttributedString-DDHTML
   - RealmSwift (~> 3.20.0)
-  - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
+  - SwiftyJSON
   - SwiftyStoreKit
-  - Toaster (~> 2.1.0)
-  - TransitionableTab
+  - Toaster (from `https://github.com/devxoul/Toaster.git`, branch `master`)
   - UICountingLabel
   - WSProgressHUD
 
@@ -127,48 +125,46 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Shimmer
+    - SwiftyJSON
     - SwiftyStoreKit
-    - Toaster
-    - TransitionableTab
     - UICountingLabel
     - WSProgressHUD
 
 EXTERNAL SOURCES:
-  SwiftyJSON:
-    :branch: swift3
-    :git: https://github.com/appsailor/SwiftyJSON.git
+  Toaster:
+    :branch: master
+    :git: https://github.com/devxoul/Toaster.git
 
 CHECKOUT OPTIONS:
-  SwiftyJSON:
-    :commit: de73429b38b8994f614fb27c5ec094bb8a4833f2
-    :git: https://github.com/appsailor/SwiftyJSON.git
+  Toaster:
+    :commit: aec54fc48d3d36279424103de0784c23862d19df
+    :git: https://github.com/devxoul/Toaster.git
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  Firebase: 210f41ca352067d83b1ba4fd2e7fb49a0c017397
-  FirebaseAnalytics: a299a86ef70fcc6aa011418bc65a7e101fb9636c
-  FirebaseCore: 9a41e2de78fef10f63cee30ab10e2945266bc1fc
-  FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
-  FirebaseCrashlytics: 859918905322e8816d2b5ab7fe54bf5a0c84d21c
-  FirebaseInstallations: 45f9d44d3a8d6f780fa337ee8987dad87210fcbc
+  Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
+  FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
+  FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
+  FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
+  FirebaseCrashlytics: 1a747c9cc084a24dc6d9511c991db1cd078154eb
+  FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GoogleAppMeasurement: 3def7652b1f5b5a576178dc332e2a36a260fbef6
-  GoogleDataTransport: 672fb0ce96fe7f7f31d43672fca62ad2c9c86f7b
+  GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
+  GoogleDataTransport: 445302b7da4216da63071a4c29e7023f47192e5a
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   NSAttributedString-DDHTML: 59a7bcd44b92cb7f6f6ef26f52c4baad6b1d01ba
-  PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
-  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
-  TransitionableTab: 54a5d0af475033bdb83959fde4e5d6201af7e2ab
+  Toaster: 33d27524fb6829cdb6b247c924beab0cfa001b3e
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
   WSProgressHUD: 8214e549869776514e8055527c590a109c025e3e
 
-PODFILE CHECKSUM: aaa2f23dd334c3da736e7598fa7076e0f98b5974
+PODFILE CHECKSUM: 7b9541e908415de48608f67d228f73af14308b1d
 
 COCOAPODS: 1.9.3

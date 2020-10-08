@@ -34,6 +34,8 @@ let fontsizeOfArticle:CGFloat = 18.0
 let fontsizeOfbasic:CGFloat = 14.0
 let fontsizeOfguide:CGFloat = 14.0
 let fontsizeOfproblem:CGFloat = 17.0
+let kAutoNextKey: String = "autonext"
+let kShowProbKey: String = "showprob"
 
 let font_guide_lang:UIFont = UIFont(name: "NanumMyeongjoExtraBold", size: fontsizeOfguide)!
 let font_guide_reas:UIFont = UIFont(name: "NanumMyeongjo", size: fontsizeOfproblem)!
