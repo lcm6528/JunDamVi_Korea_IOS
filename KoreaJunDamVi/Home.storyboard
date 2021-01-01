@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,8 +36,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-mU-gBQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1229"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Te-uP-h5F">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="884"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="5Te-uP-h5F">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="922"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-dO-w0F">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -51,7 +51,7 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-74" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yw-och">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ex-Yw-och">
                                                         <rect key="frame" x="0.0" y="41.666666666666657" width="375" height="64"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="64" id="gpd-cZ-acB"/>
@@ -60,11 +60,11 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.10.156" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgo-8a-QtJ">
-                                                        <rect key="frame" x="137.66666666666666" y="105.66666666666666" width="100" height="20"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시험일정 업데이트 예정입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgo-8a-QtJ">
+                                                        <rect key="frame" x="107.33333333333333" y="105.66666666666666" width="160.66666666666669" height="20"/>
                                                         <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="I2e-wd-W2p"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="I2e-wd-W2p"/>
                                                             <constraint firstAttribute="height" constant="20" id="KnZ-gr-2z6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
@@ -86,7 +86,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsL-Zx-7ww">
-                                                <rect key="frame" x="0.0" y="158" width="375" height="726"/>
+                                                <rect key="frame" x="0.0" y="163" width="375" height="759"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-na-GFk" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                         <rect key="frame" x="14" y="0.0" width="347" height="297.66666666666669"/>
@@ -168,7 +168,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnJ-Sr-Lck" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                        <rect key="frame" x="14" y="305.66666666666663" width="347" height="400"/>
+                                                        <rect key="frame" x="14" y="305.66666666666663" width="347" height="450"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시험 일정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuL-rB-8C3">
                                                                 <rect key="frame" x="8" y="8" width="61" height="34"/>
@@ -196,7 +196,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nho-cs-mid">
-                                                                <rect key="frame" x="8" y="50" width="331" height="342"/>
+                                                                <rect key="frame" x="8" y="50" width="331" height="388"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3n-da-oPt">
                                                                         <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
@@ -221,7 +221,7 @@
                                                                                     <constraint firstAttribute="width" constant="80" id="ogk-YN-sPN"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45회" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOR-uL-6be">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOR-uL-6be">
                                                                                 <rect key="frame" x="96" y="-0.66666666666662877" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="oQG-N6-sqz"/>
@@ -248,13 +248,13 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlF-c9-2Ek">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-Zl-0vh">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-Zl-0vh">
                                                                                         <rect key="frame" x="15" y="6.6666666666667407" width="50" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="cs4-2y-Q53"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
-                                                                                        <nil key="textColor"/>
+                                                                                        <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -265,13 +265,13 @@
                                                                                     <constraint firstAttribute="width" constant="80" id="LIU-u6-IYb"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 9월 24일 (화) 09:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWQ-xV-Y7M">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWQ-xV-Y7M">
                                                                                 <rect key="frame" x="96" y="-0.66666666666662877" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="y45-2g-J5l"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
-                                                                                <nil key="textColor"/>
+                                                                                <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -292,13 +292,13 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLT-yL-vPV">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수마감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-mB-JnI">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가접수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-mB-JnI">
                                                                                         <rect key="frame" x="15" y="6.6666666666667407" width="50" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="B6h-Rs-6vB"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
-                                                                                        <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -309,13 +309,13 @@
                                                                                     <constraint firstItem="EWS-mB-JnI" firstAttribute="centerY" secondItem="JLT-yL-vPV" secondAttribute="centerY" id="eDM-M4-Ohh"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 10월 4일 (금) 18:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXn-4C-AHl">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXn-4C-AHl">
                                                                                 <rect key="frame" x="96" y="-0.66666666666662877" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="3t8-p6-c0k"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
-                                                                                <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -353,7 +353,7 @@
                                                                                     <constraint firstItem="dEp-6A-lFY" firstAttribute="centerY" secondItem="CRa-Wm-6eY" secondAttribute="centerY" id="LSM-5F-zFU"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 10월 26일 (토)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnd-oM-9aK">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnd-oM-9aK">
                                                                                 <rect key="frame" x="96" y="-0.66666666666662877" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="Ndg-63-pZn"/>
@@ -397,7 +397,7 @@
                                                                                     <constraint firstAttribute="width" constant="80" id="sgQ-Cn-0dz"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 11월 8일 (금)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hke-O0-UaC">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hke-O0-UaC">
                                                                                 <rect key="frame" x="96" y="-0.66666666666662877" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="HNH-BQ-5lI"/>
@@ -441,13 +441,11 @@
                                                                                     <constraint firstAttribute="width" constant="80" id="uEB-jy-NOE"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJ2-gE-cIc">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJ2-gE-cIc">
                                                                                 <rect key="frame" x="96" y="5.3333333333333712" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="nRj-sm-qIC"/>
                                                                                 </constraints>
-                                                                                <string key="text">2019년 09월 24일 (화) 09:00:00 ~
-2019년 10월 20일 (일) 12:59:59</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -487,13 +485,11 @@
                                                                                     <constraint firstItem="yyl-YX-5e3" firstAttribute="centerY" secondItem="Rn8-UV-Qon" secondAttribute="centerY" id="sCr-94-5HM"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRf-FE-y2A">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRf-FE-y2A">
                                                                                 <rect key="frame" x="96" y="5.3333333333333712" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="Hb1-AC-Iow"/>
                                                                                 </constraints>
-                                                                                <string key="text">2019년 09월 24일 (화) 09:00:00 ~
-2019년 10월 26일 (토) 시험 시작 전까지</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -533,7 +529,7 @@
                                                                                     <constraint firstItem="GGo-ap-IYs" firstAttribute="centerY" secondItem="UI9-RS-mjS" secondAttribute="centerY" id="zLa-ti-aLj"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 10월 22일 (화) 15:00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-p7-z8O">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-p7-z8O">
                                                                                 <rect key="frame" x="96" y="-0.66666666666662877" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="03Q-St-xMk"/>
@@ -560,12 +556,12 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJC-fm-Mzk">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="46"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수취소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDF-ve-76v">
-                                                                                        <rect key="frame" x="15" y="12.666666666666741" width="50" height="20.333333333333329"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수취소(전액)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDF-ve-76v">
+                                                                                        <rect key="frame" x="2.6666666666666714" y="12.666666666666741" width="75" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="tAc-Kh-GRu"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
+                                                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="12"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
@@ -577,13 +573,11 @@
                                                                                     <constraint firstAttribute="width" constant="80" id="sXC-Ly-p5S"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3z-Ic-CAd">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3z-Ic-CAd">
                                                                                 <rect key="frame" x="96" y="5.3333333333333712" width="227" height="35"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="35" id="w7p-Wu-ae2"/>
                                                                                 </constraints>
-                                                                                <string key="text">2019년 09월 24일 (화) 09:00:00 ~
-2019년 10월 20일 (일) 23:59:59</string>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -598,6 +592,50 @@
                                                                             <constraint firstItem="UJC-fm-Mzk" firstAttribute="leading" secondItem="HOB-a7-WRz" secondAttribute="leading" id="dB1-si-D3g"/>
                                                                             <constraint firstItem="h3z-Ic-CAd" firstAttribute="centerY" secondItem="UJC-fm-Mzk" secondAttribute="centerY" id="lXG-Js-m0q"/>
                                                                             <constraint firstItem="h3z-Ic-CAd" firstAttribute="leading" secondItem="UJC-fm-Mzk" secondAttribute="trailing" constant="16" id="sc6-KT-oci"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0P-hu-98f">
+                                                                        <rect key="frame" x="0.0" y="342" width="331" height="46"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-4v-XmF">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="46"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수취소(반액)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZH-Vy-035">
+                                                                                        <rect key="frame" x="2.6666666666666714" y="12.666666666666741" width="75" height="20.333333333333329"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="20.329999999999998" id="Kh4-Si-lxb"/>
+                                                                                        </constraints>
+                                                                                        <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="12"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="80" id="5IE-Xp-Ieg"/>
+                                                                                    <constraint firstItem="rZH-Vy-035" firstAttribute="centerY" secondItem="7ZE-4v-XmF" secondAttribute="centerY" id="Grx-PK-O3f"/>
+                                                                                    <constraint firstItem="rZH-Vy-035" firstAttribute="centerX" secondItem="7ZE-4v-XmF" secondAttribute="centerX" id="TvE-v1-Zm5"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jw-g9-Cbt">
+                                                                                <rect key="frame" x="96" y="5.3333333333333712" width="227" height="35"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="35" id="VBb-HK-atT"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="1jw-g9-Cbt" secondAttribute="trailing" constant="8" id="GYZ-zP-hqp"/>
+                                                                            <constraint firstItem="7ZE-4v-XmF" firstAttribute="leading" secondItem="m0P-hu-98f" secondAttribute="leading" id="RTO-17-yaH"/>
+                                                                            <constraint firstAttribute="height" constant="46" id="Ya5-UE-tV1"/>
+                                                                            <constraint firstItem="1jw-g9-Cbt" firstAttribute="centerY" secondItem="7ZE-4v-XmF" secondAttribute="centerY" id="gdm-Ja-odv"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="7ZE-4v-XmF" secondAttribute="bottom" id="koS-NU-ovA"/>
+                                                                            <constraint firstItem="1jw-g9-Cbt" firstAttribute="leading" secondItem="7ZE-4v-XmF" secondAttribute="trailing" constant="16" id="tdY-Qc-3zF"/>
+                                                                            <constraint firstItem="7ZE-4v-XmF" firstAttribute="top" secondItem="m0P-hu-98f" secondAttribute="top" id="uaN-Yl-gvZ"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
@@ -621,7 +659,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="g9c-kJ-hK7" firstAttribute="top" secondItem="CuL-rB-8C3" secondAttribute="bottom" constant="3" id="01u-Ub-sI2"/>
-                                                            <constraint firstAttribute="height" constant="400" id="1qe-oR-2lN"/>
+                                                            <constraint firstAttribute="height" constant="450" id="1qe-oR-2lN"/>
                                                             <constraint firstItem="u2m-e2-YWt" firstAttribute="centerY" secondItem="CuL-rB-8C3" secondAttribute="centerY" id="4bL-5Q-fh5"/>
                                                             <constraint firstAttribute="trailing" secondItem="g9c-kJ-hK7" secondAttribute="trailing" constant="8" id="5v0-W0-ysR"/>
                                                             <constraint firstItem="g9c-kJ-hK7" firstAttribute="leading" secondItem="hnJ-Sr-Lck" secondAttribute="leading" constant="8" id="CEj-Qt-adi"/>
@@ -644,7 +682,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="hnJ-Sr-Lck" secondAttribute="trailing" constant="14" id="XMs-V5-fKO"/>
                                                     <constraint firstItem="9x7-na-GFk" firstAttribute="top" secondItem="NsL-Zx-7ww" secondAttribute="top" id="gZs-Vc-b6y"/>
                                                     <constraint firstItem="hnJ-Sr-Lck" firstAttribute="leading" secondItem="NsL-Zx-7ww" secondAttribute="leading" constant="14" id="j83-qc-44O"/>
-                                                    <constraint firstAttribute="height" constant="726" id="kHs-Uu-1i3"/>
+                                                    <constraint firstAttribute="height" constant="759" id="kHs-Uu-1i3"/>
                                                     <constraint firstAttribute="trailing" secondItem="9x7-na-GFk" secondAttribute="trailing" constant="14" id="slp-5E-F38"/>
                                                 </constraints>
                                             </view>
@@ -682,6 +720,7 @@
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="applyButton" destination="u2m-e2-YWt" id="AdK-Xy-Vgm"/>
+                        <outlet property="cancel50Label" destination="1jw-g9-Cbt" id="dFX-wb-5wD"/>
                         <outlet property="cancelLabel" destination="h3z-Ic-CAd" id="P9H-SM-Rto"/>
                         <outlet property="centerContainerView" destination="9x7-na-GFk" id="WAC-qz-sz9"/>
                         <outlet property="changeLabel" destination="zJ2-gE-cIc" id="DBD-QF-u6J"/>

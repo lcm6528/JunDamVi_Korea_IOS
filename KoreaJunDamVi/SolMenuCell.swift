@@ -16,5 +16,4 @@ class SolMenuCell: UICollectionViewCell {
         //UI Set
         self.layer.cornerRadius = 5
     }
-    
 }

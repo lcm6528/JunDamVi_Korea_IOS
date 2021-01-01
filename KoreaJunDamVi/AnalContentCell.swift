@@ -9,20 +9,7 @@
 import UIKit
 
 class AnalContentCell: UITableViewCell {
-    
-    
     @IBOutlet var shadowView: JDVShadowView!
     @IBOutlet var label_title: JDVLabelWithTBLine!
     @IBOutlet var collectionView: UICollectionView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-        
 }

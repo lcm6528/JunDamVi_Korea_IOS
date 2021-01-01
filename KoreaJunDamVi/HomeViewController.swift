@@ -27,6 +27,7 @@ class HomeViewController: JDVViewController {
     @IBOutlet weak var photoLabel: UILabel!
     @IBOutlet weak var printLabel: UILabel!
     @IBOutlet weak var cancelLabel: UILabel!
+    @IBOutlet weak var cancel50Label: UILabel!
     
     
     var Tests:[String] = []
@@ -38,6 +39,7 @@ class HomeViewController: JDVViewController {
         self.centerContainerView.layer.cornerRadius = 5.0
         self.applyButton.layer.cornerRadius = 3
         self.dateLabel.layer.cornerRadius = 10
+        self.dateLabel.text = "  시험일정 업데이트 예정입니다.  "
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,14 +91,15 @@ class HomeViewController: JDVViewController {
     func setInfo(data: [String : String]) {
         guard let test = data["num"] else { return }
         guard let day = data["day"] else { return }
-        guard let start = data["start"]  else { return }
-        guard let end = data["end"] else { return }
+        guard let apply = data["apply"]  else { return }
+        guard let bonus = data["bonus"] else { return }
         guard let date = data["date"] else { return }
         guard let result = data["result"] else { return }
         guard let change = data["change"] else { return }
         guard let photo = data["photo"] else { return }
         guard let print = data["print"] else { return }
-        guard let cancel = data["cancel"] else { return }
+        guard let cancel100 = data["cancel100"] else { return }
+        guard let cancel50 = data["cancel50"] else { return }
         
         let dateObject = Date(dateString: day)
         
@@ -108,15 +111,15 @@ class HomeViewController: JDVViewController {
         ddayCotentLabel.text = "D\(dday)"
         dateLabel.text = formatter.string(from: dateObject)
         numLabel.text = test
-        startLabel.text = start
-        endLabel.text = end
+        startLabel.text = apply
+        endLabel.text = bonus
         dateStringLabel.text = date
         resultLabel.text = result
         changeLabel.text = change
         photoLabel.text = photo
         printLabel.text = print
-        cancelLabel.text = cancel
-        
+        cancelLabel.text = cancel100
+        cancel50Label.text = cancel50
     }
     
     func getAttrStr(totalValue total: Int, withValue value: Int)->NSMutableAttributedString {

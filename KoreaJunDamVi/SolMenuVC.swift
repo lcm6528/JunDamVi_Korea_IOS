@@ -12,7 +12,6 @@ import SwiftyStoreKit
 import Toaster
 class JDVSolutionMenuViewController: JDVViewController {
     
-    
     var dataArray:[String] = []
     
     var probData: [ProbData] = []

@@ -25,7 +25,6 @@ class NoteInnerViewController: JDVViewController {
     @IBOutlet var testChoiceViews: [JDVViewWithBotLine]!
     @IBOutlet var testChoiceTextViews: [UITextView]!
     
-    
     @IBOutlet var solKeywordLabel: UILabel!
     @IBOutlet var solTitleLabel: UILabel!
     @IBOutlet var solSubtitleLabel: UILabel!
@@ -34,24 +33,13 @@ class NoteInnerViewController: JDVViewController {
     @IBOutlet var solContentTextView1: UITextView!
     @IBOutlet var solContentTextView2: UITextView!
     
-    
-    
     var isPurchased:Bool = false
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        
-//        choiceManager = JDVChoiceViewManager(WithViews: testChoiceViews[0],testChoiceViews[1],testChoiceViews[2],testChoiceViews[3],testChoiceViews[4])
-//
-//        if noteData.selection != 0 { choiceManager?.setColorForStateAtIndex(noteData.selection-1, state: .selected) }
-//
-//        choiceManager?.setColorForStateAtIndex(noteData.prob.Answer-1, state: .auth)
-//        testChoiceViews[noteData.prob.Answer-1].mark()
-//        choiceManager?.isActive = false
         
         configure()
     }

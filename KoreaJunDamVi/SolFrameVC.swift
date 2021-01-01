@@ -9,10 +9,9 @@ import UIKit
 import WSProgressHUD
 class JDVSolutionFrameViewController: JDVViewController ,
 UIPageViewControllerDelegate,UIPageViewControllerDataSource {
-    
     //For test
     var number_of_pages = 0
-    ///////////
+    ///
     
     @IBOutlet var toolBarCenterLabel: UILabel!
     @IBOutlet var toolBarRightButton: UIButton!
@@ -130,9 +129,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
                 isBlockUserInteract = false
                 self.setToolbarTitle(self.getCurrnetIndexOfPage())
             })
-            
         }
-        
     }
     
     func gotoPrevPage() {
@@ -150,9 +147,7 @@ UIPageViewControllerDelegate,UIPageViewControllerDataSource {
             isBlockUserInteract = false
             self.setToolbarTitle(self.getCurrnetIndexOfPage())
         })
-        
     }
-    
     
     func setToolbarTitle(_ index: Int) {
         let numberOfTest: Int = index+1

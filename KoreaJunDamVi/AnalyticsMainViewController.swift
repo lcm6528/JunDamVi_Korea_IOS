@@ -54,22 +54,13 @@ class AnalyticsMainViewController: JDVViewController {
         
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchRecords()
         configureRoundViews()
     }
     
-    
-    
     func fetchRecords() {
-        
         let realm = try! Realm()
         let result = realm.objects(TestResultRecord.self)
         records = []
@@ -77,38 +68,29 @@ class AnalyticsMainViewController: JDVViewController {
             records.append(Array(result).filter {return ($0.TestType == option.rawValue)}.reversed())
         }
         
-        
-        
         tableView.reloadData()
         let cells = tableView.visibleCells as! [AnalContentCell]
         for cell in cells{
             cell.collectionView.reloadData()
         }
     }
-    
-    
 }
+
 extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionViewDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let record = records[collectionView.tag][indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AnalBarChartCell
         cell.configure(by: record)
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return records[collectionView.tag].count
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
         let chartcell = cell as! AnalBarChartCell
         chartcell.barChart.setBarUI(withAnimate: true)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -120,10 +102,7 @@ extension AnalyticsMainViewController : UICollectionViewDataSource,UICollectionV
     }
 }
 
-
-
 extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegate{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -140,14 +119,6 @@ extension AnalyticsMainViewController : UITableViewDataSource,UITableViewDelegat
         
         cell.collectionView.reloadData()
         
-        
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! AnalContentCell
-        
-    }
-    
-    
 }
