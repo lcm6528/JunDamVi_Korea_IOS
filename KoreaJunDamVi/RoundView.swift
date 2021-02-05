@@ -54,7 +54,7 @@ class RoundView: UIView {
     
     foregroundLayer.fillColor = nil
     foregroundLayer.strokeEnd = 0.0
-    foregroundLayer.lineCap = kCALineCapRound
+    foregroundLayer.lineCap = CAShapeLayerLineCap.round
     foregroundLayer.cornerRadius = 4.0
 //    foregroundLayer.shadowRadius = 10.0
 //    foregroundLayer.shadowColor = UIColor.white.cgColor
@@ -92,9 +92,9 @@ class RoundView: UIView {
     
     addSubview(titleLabel)
     
-    bringSubview(toFront: titleLabel)
-    bringSubview(toFront: separator)
-    bringSubview(toFront: contentLabel)
+    bringSubviewToFront(titleLabel)
+    bringSubviewToFront(separator)
+    bringSubviewToFront(contentLabel)
     
     
   }
@@ -205,8 +205,8 @@ class RoundView: UIView {
   func setAttForContent(value:CGFloat)->NSMutableAttributedString{
     
     let attStr = NSMutableAttributedString(string: "\(value)%")
-    attStr.addAttributes([NSAttributedStringKey.font: UIFont(name: "NanumBarunGothicLight", size: 36)!], range: NSRange(location: 0, length: attStr.length-1) )
-    attStr.addAttributes([NSAttributedStringKey.font: UIFont(name: "NanumBarunGothicLight", size: 22)!], range: NSRange(location: attStr.length-1, length: 1) )
+    attStr.addAttributes([NSAttributedString.Key.font: UIFont(name: "NanumBarunGothicLight", size: 36)!], range: NSRange(location: 0, length: attStr.length-1) )
+    attStr.addAttributes([NSAttributedString.Key.font: UIFont(name: "NanumBarunGothicLight", size: 22)!], range: NSRange(location: attStr.length-1, length: 1) )
     return attStr
     
     

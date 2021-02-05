@@ -64,9 +64,9 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
     
     func ShowResetAlert() {
         
-        let alert = UIAlertController(title: "학습내역 초기화", message: "앱 내 모든 정보가 초기화됩니다.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "학습내역 초기화", message: "앱 내 모든 정보가 초기화됩니다.", preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive, handler:
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.destructive, handler:
             { action in
                 
                 let realm = try! Realm()
@@ -84,14 +84,14 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
                 
         }))
         
-        alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
+        alert.addAction(UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler:
             { action in}))
         self.present(alert, animated: true, completion: nil)
     }
     
     func ShowRestoreAlert() {
-        let alert = UIAlertController(title: "구매내역 복원", message: "앱스토어 구매내역을 복원합니다.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler:
+        let alert = UIAlertController(title: "구매내역 복원", message: "앱스토어 구매내역을 복원합니다.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler:
             { action in
                 
                 SwiftyStoreKit.restorePurchases(atomically: true) { results in
@@ -109,7 +109,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
                 }
         }))
         
-        alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
+        alert.addAction(UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler:
             { action in}))
         self.present(alert, animated: true, completion: nil)
     }

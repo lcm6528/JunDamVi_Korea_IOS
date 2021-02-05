@@ -58,10 +58,10 @@ struct Prob {
         let str = NSAttributedString(fromHTML: title_String)
         
         title.append(str)
-        title.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
+        title.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
         
         let titleNoNum = NSMutableAttributedString(attributedString: str)
-        titleNoNum.addAttribute(NSAttributedStringKey.font, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
+        titleNoNum.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
         
         self.title_attString_noNum = titleNoNum
         self.title_attString = title
@@ -69,11 +69,11 @@ struct Prob {
     
     mutating func setArticleAtt() {
         let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
-        result.addAttribute(NSAttributedStringKey.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedString.Key.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = ProbLineSpace
-        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         self.article_attString = result
     }
@@ -85,11 +85,11 @@ struct Prob {
             let name = String(format: "%d_%02d", ProbID,index + 1)
             let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH / 4)
             
-            result.addAttribute(NSAttributedStringKey.font, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
+            result.addAttribute(NSAttributedString.Key.font, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
             
             let style = NSMutableParagraphStyle()
             style.lineSpacing = ProbLineSpace
-            result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+            result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
             
             choices_attString.append(result)
         }
@@ -105,7 +105,7 @@ struct Prob {
                 
                 let attachIcon:NSTextAttachment = NSTextAttachment()
                 let scaleFactor = image.size.width / (width)
-                let newImage = UIImage(cgImage: origin, scale: scaleFactor, orientation: UIImageOrientation.up)
+                let newImage = UIImage(cgImage: origin, scale: scaleFactor, orientation: UIImage.Orientation.up)
                 attachIcon.image = newImage
                 let imageString = NSAttributedString(attachment: attachIcon)
                 result.append(imageString)

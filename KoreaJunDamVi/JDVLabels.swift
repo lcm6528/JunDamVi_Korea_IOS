@@ -14,7 +14,7 @@ class JDVLabel: UILabel {
   
   override func drawText(in rect: CGRect) {
     let inset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-    super.drawText(in: UIEdgeInsetsInsetRect(rect, inset))
+    super.drawText(in: rect.inset(by: inset))
   }
 }
 

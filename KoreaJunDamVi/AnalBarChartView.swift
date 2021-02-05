@@ -50,7 +50,7 @@ import UIKit
     func setup() {
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         addSubview(view)
         setMaxRange()
     }

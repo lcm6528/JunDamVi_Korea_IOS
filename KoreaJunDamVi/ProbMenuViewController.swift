@@ -42,12 +42,12 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         
         let viewControllers = NSArray(object: initialContenViewController)
         
-        self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-104)
         
-        self.addChildViewController(self.pageViewController)
+        self.addChild(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMove(toParentViewController: self)
+        self.pageViewController.didMove(toParent: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,9 +66,9 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         currentOption.sortedOption = options[pIdx]
         currentOption.cacheKey = arr[index]
         
-        let alert = UIAlertController(title: "문제풀기", message: currentOption.sortedOption.description + " 문제풀기 - " + currentOption.cacheKey, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "문제풀기", message: currentOption.sortedOption.description + " 문제풀기 - " + currentOption.cacheKey, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "처음부터 풀기", style: UIAlertActionStyle.default, handler:
+        alert.addAction(UIAlertAction(title: "처음부터 풀기", style: UIAlertAction.Style.default, handler:
             { action in
                 
                 self.showIndicator()
@@ -82,7 +82,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         /// if cache data exist
         if let cachedArr = JDVProbManager.getCachedData(with: currentOption.cacheKey) {
             if cachedArr.isEmpty != true{
-                alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertActionStyle.default, handler:
+                alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertAction.Style.default, handler:
                     { action in
                         self.showIndicator()
                        
@@ -96,7 +96,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         }
         
         if currentOption.sortedOption == .test {
-            alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertActionStyle.default, handler:
+            alert.addAction(UIAlertAction(title: "빠른채점", style: UIAlertAction.Style.default, handler:
                 { action in
                     self.showIndicator()
                     self.QuickProbs = JDVProbManager.fetchQuickProbs(withTestnum: arr[index].toInt()!)
@@ -104,7 +104,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             }
             ))
         }
-        alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:
+        alert.addAction(UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler:
             { action in }))
         
         self.present(alert, animated: true, completion: nil)
@@ -249,9 +249,9 @@ extension ProbMenuViewController:UIPageViewControllerDelegate, UIPageViewControl
         let vc = pageViewAtIndex(nextIndex)
         
         if currentIndex > nextIndex {
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: nil)
         } else {
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         }
     }
     

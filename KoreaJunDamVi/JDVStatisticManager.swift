@@ -58,8 +58,8 @@ struct CommentItem: Decodable {
         let result = NSMutableAttributedString(string: content.replacingOccurrences(of: "\\n", with: "\n"))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = ProbLineSpace
-        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
-        result.addAttribute(NSAttributedStringKey.font, value: UIFont.ProbNaviBarTitleFont, range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedString.Key.font, value: UIFont.ProbNaviBarTitleFont, range: NSRange(location: 0, length: result.length))
         return result
     }
 }

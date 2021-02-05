@@ -5525,7 +5525,7 @@
 					375EB90A1DBDE55900337236 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = ZH9C52WH4J;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1240;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
@@ -5537,10 +5537,9 @@
 			};
 			buildConfigurationList = 375EB9061DBDE55900337236 /* Build configuration list for PBXProject "KoreaJunDamVi" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -7443,7 +7442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JunDamVi.Korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -7465,7 +7464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JunDamVi.Korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

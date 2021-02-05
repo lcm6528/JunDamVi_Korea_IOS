@@ -106,7 +106,7 @@ extension JDVNoteMenuViewController: UITableViewDelegate, UITableViewDataSource,
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             JDVNoteManager.deleteNote(by: noteDatas[indexPath.row].note)
             fetchData()
@@ -118,6 +118,6 @@ extension JDVNoteMenuViewController: UITableViewDelegate, UITableViewDataSource,
     }
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "저장된 오답노트가 없습니다!", attributes: [NSAttributedStringKey.font:UIFont.EmptySetTitle])
+        return NSAttributedString(string: "저장된 오답노트가 없습니다!", attributes: [NSAttributedString.Key.font:UIFont.EmptySetTitle])
     }
 }

@@ -32,8 +32,8 @@ class ProbTestFrameViewController: JDVViewController {
         self.barButton_title.title = text
 
         self.barButton_title.setTitleTextAttributes(
-            [NSAttributedStringKey.font:UIFont.ProbNaviBarTitleFont,
-             NSAttributedStringKey.foregroundColor:UIColor.white],
+            [NSAttributedString.Key.font:UIFont.ProbNaviBarTitleFont,
+             NSAttributedString.Key.foregroundColor:UIColor.white],
             for: .normal)
     }
     
@@ -69,7 +69,7 @@ class ProbTestFrameViewController: JDVViewController {
         let viewControllers = NSArray(object: initialContenViewController)
         
         
-        self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         
         if #available(iOS 11.0, *) {
             let height = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height ?? 0
@@ -82,9 +82,9 @@ class ProbTestFrameViewController: JDVViewController {
         } else {
             self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
         }
-        self.addChildViewController(self.pageViewController)
+        self.addChild(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMove(toParentViewController: self)
+        self.pageViewController.didMove(toParent: self)
         //////////////////////
         
         self.navigationController?.delegate = self
@@ -93,7 +93,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(onStop), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onStop), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -206,9 +206,9 @@ class ProbTestFrameViewController: JDVViewController {
     }
     
     func pushResultVC(withSegue id: String) {
-        let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "닫기", style: UIAlertActionStyle.cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
+        let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "닫기", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { (action) in
             WSProgressHUD.show(withStatus: "체점 중 ..")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
                 self?.performSegue(withIdentifier: id, sender: self)
@@ -327,9 +327,9 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         }
         
         if currentIndex > nextIndex {
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: completion)
         } else {
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: completion)
         }
         
     }
@@ -344,7 +344,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         }else if nextIndex < number_of_pages{
             let vc = pageViewAtIndex(nextIndex)
             
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { [weak self] (completion) in
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: { [weak self] (completion) in
                 
                 isBlockUserInteract = false
                 self?.setToolbarTitle(self?.getCurrnetIndexOfPage() ?? 0)
@@ -363,7 +363,7 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         
         let vc = pageViewAtIndex(nextIndex)
         
-        pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { [weak self] (completion) in
+        pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: { [weak self] (completion) in
             isBlockUserInteract = false
             self?.setToolbarTitle(self?.getCurrnetIndexOfPage() ?? 0)
         })

@@ -30,8 +30,8 @@ class NoteFrameVC: JDVViewController {
         self.barButton_title.title = text
         
         self.barButton_title.setTitleTextAttributes(
-            [NSAttributedStringKey.font:UIFont.ProbNaviBarTitleFont,
-             NSAttributedStringKey.foregroundColor:UIColor.white],
+            [NSAttributedString.Key.font:UIFont.ProbNaviBarTitleFont,
+             NSAttributedString.Key.foregroundColor:UIColor.white],
             for: .normal)
     }
     
@@ -53,7 +53,7 @@ class NoteFrameVC: JDVViewController {
         let viewControllers = NSArray(object: initialContenViewController)
         
         
-        self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         
         if #available(iOS 11.0, *) {
             let height = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height ?? 0
@@ -67,9 +67,9 @@ class NoteFrameVC: JDVViewController {
             self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - 44)
         }
         
-        self.addChildViewController(self.pageViewController)
+        self.addChild(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMove(toParentViewController: self)
+        self.pageViewController.didMove(toParent: self)
         //////////////////////
         
         self.navigationController?.delegate = self
@@ -176,9 +176,9 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
         }
         
         if currentIndex > nextIndex {
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: completion)
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: completion)
         } else {
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: completion)
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: completion)
         }
         
     }
@@ -193,7 +193,7 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
         } else if nextIndex < number_of_pages {
             let vc = pageViewAtIndex(nextIndex)
             
-            pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: { (completion) in
+            pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: { (completion) in
                 
                 isBlockUserInteract = false
                 self.setToolbarTitle(self.getCurrnetIndexOfPage())
@@ -212,7 +212,7 @@ extension NoteFrameVC: UIPageViewControllerDelegate, UIPageViewControllerDataSou
         
         let vc = pageViewAtIndex(nextIndex)
         
-        pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: { (completion) in
+        pageViewController.setViewControllers([vc], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: { (completion) in
             isBlockUserInteract = false
             self.setToolbarTitle(self.getCurrnetIndexOfPage())
         })

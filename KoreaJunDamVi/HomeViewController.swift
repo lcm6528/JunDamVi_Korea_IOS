@@ -130,10 +130,10 @@ class HomeViewController: JDVViewController {
         let str3 = NSMutableAttributedString(string: "\(value)개 ")
         let str4 = NSMutableAttributedString(string: "풀이 진행")
         
-        str1.addAttributes([NSAttributedStringKey.font: font1, NSAttributedStringKey.foregroundColor: UIColor.untBlack757575], range: NSRange(location: 0, length: str1.length))
-        str2.addAttributes([NSAttributedStringKey.font: font2, NSAttributedStringKey.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str2.length))
-        str3.addAttributes([NSAttributedStringKey.font: font1, NSAttributedStringKey.foregroundColor: UIColor.untPaleRed], range: NSRange(location: 0, length: str3.length))
-        str4.addAttributes([NSAttributedStringKey.font: font2, NSAttributedStringKey.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str4.length))
+        str1.addAttributes([NSAttributedString.Key.font: font1, NSAttributedString.Key.foregroundColor: UIColor.untBlack757575], range: NSRange(location: 0, length: str1.length))
+        str2.addAttributes([NSAttributedString.Key.font: font2, NSAttributedString.Key.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str2.length))
+        str3.addAttributes([NSAttributedString.Key.font: font1, NSAttributedString.Key.foregroundColor: UIColor.untPaleRed], range: NSRange(location: 0, length: str3.length))
+        str4.addAttributes([NSAttributedString.Key.font: font2, NSAttributedString.Key.foregroundColor: UIColor.untBlack505050], range: NSRange(location: 0, length: str4.length))
         
         let str = NSMutableAttributedString()
         str.append(str1)
@@ -150,7 +150,7 @@ class HomeViewController: JDVViewController {
     @IBAction func applyButtonPressed(_ sender: Any) {
         showAlertWithSelect("접수하러가기", message: "한국사능력검정시험 사이트로\n이동합니다.", sender: self, handler: { (_) in
             if let url = URL(string: "http://www.historyexam.go.kr/main/mainPage.do") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             }
         })
     }
@@ -163,4 +163,9 @@ class HomeViewController: JDVViewController {
             return
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

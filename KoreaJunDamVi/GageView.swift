@@ -66,7 +66,7 @@ class GageView: UIView {
     
     shapeLayer.frame = self.bounds
     shapeLayer.lineWidth = self.bounds.height
-    shapeLayer.lineCap = kCALineCapRound
+    shapeLayer.lineCap = CAShapeLayerLineCap.round
     let path = UIBezierPath()
     path.move(to: CGPoint(x: 0, y: self.bounds.height/2))
     path.addLine(to: CGPoint(x: self.bounds.size.width, y: self.bounds.height/2))

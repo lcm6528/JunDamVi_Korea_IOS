@@ -53,14 +53,14 @@ class NoteInnerViewController: JDVViewController {
     func configure() {
         
         let title = NSMutableAttributedString(string: "최선의 풀이")
-        title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
-        title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothicUltraLight", size: 17)! ], range: NSRange(location: 2,length: 4))
+        title.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
+        title.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothicUltraLight", size: 17)! ], range: NSRange(location: 2,length: 4))
         solTitleLabel.attributedText = title
         
         
         let subtitle = NSMutableAttributedString(string: "차선의 풀이")
-        subtitle.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
-        subtitle.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothicUltraLight", size: 17)! ], range: NSRange(location: 2,length: 4))
+        subtitle.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothic", size: 17)! ], range: NSRange(location: 0,length: 2))
+        subtitle.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothicUltraLight", size: 17)! ], range: NSRange(location: 2,length: 4))
         solSubtitleLabel.attributedText = subtitle
         
         

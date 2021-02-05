@@ -59,11 +59,11 @@ struct Solution {
         
         let result = NSMutableAttributedString()
         result.append(NSAttributedString(fromHTML:str))
-        result.addAttribute(NSAttributedStringKey.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedString.Key.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = SolLineSpace
-        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         return result
         
@@ -72,11 +72,11 @@ struct Solution {
     func setToAttrWithImage(from str: String)->NSAttributedString{
         
         let result = replaceTagToImage(withString: str, imgName: "sol_\(ProbID)")
-        result.addAttribute(NSAttributedStringKey.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedString.Key.font, value: UIFont.solutionFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = SolLineSpace
-        result.addAttributes([NSAttributedStringKey.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+        result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
         
         
         return result
@@ -95,7 +95,7 @@ struct Solution {
                 
                 let attachIcon:NSTextAttachment = NSTextAttachment()
                 let scaleFactor = image.size.width / (width)
-                let newImage = UIImage(cgImage: origin, scale: scaleFactor, orientation: UIImageOrientation.up)
+                let newImage = UIImage(cgImage: origin, scale: scaleFactor, orientation: UIImage.Orientation.up)
                 attachIcon.image = newImage
                 let imageString = NSAttributedString(attachment: attachIcon)
                 result.append(imageString)

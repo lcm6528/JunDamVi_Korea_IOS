@@ -39,7 +39,7 @@ class BlockView: UIView {
     func setup() {
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         
         titleLabel.layer.cornerRadius = 15
         purchaseButton.layer.cornerRadius = 3

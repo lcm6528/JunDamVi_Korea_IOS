@@ -12,7 +12,7 @@ class JDVBarButtonItem : UIBarButtonItem {
     
     fileprivate var actionHandler: (() -> Void)?
     
-    convenience init(title: String?, style: UIBarButtonItemStyle, actionHandler: (() -> Void)?) {
+    convenience init(title: String?, style: UIBarButtonItem.Style, actionHandler: (() -> Void)?) {
         self.init(title: title, style: style, target: nil, action: nil)
         self.target = self
         self.action = #selector(JDVBarButtonItem.barButtonItemPressed(_:))

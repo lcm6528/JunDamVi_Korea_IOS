@@ -143,8 +143,8 @@ extension JDVSolutionMenuViewController : UICollectionViewDataSource,UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SolMenuCell
         
         let title = NSMutableAttributedString(string: "\(dataArray[indexPath.row])회")
-        title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
-        title.addAttributes([NSAttributedStringKey.font : UIFont(name: "NanumBarunGothic", size: 18)! ], range: NSRange(location: 2,length: 1))
+        title.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
+        title.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothic", size: 18)! ], range: NSRange(location: 2,length: 1))
         
         cell.titleLabel.attributedText = title
         
