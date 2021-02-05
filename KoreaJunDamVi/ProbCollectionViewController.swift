@@ -26,6 +26,11 @@ class ProbCollectionViewController: JDVViewController {
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
 }
 
 extension ProbCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
@@ -59,10 +64,11 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if SCREEN_WIDTH > 430 {
+        let width = view.size.width
+        if width > 430 {
             return CGSize(width: 120, height: 120)
         } else {
-            let length = SCREEN_WIDTH / 3 - 20
+            let length = width / 3 - 20
             return CGSize(width: length, height: length)
         }
     }

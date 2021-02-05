@@ -26,7 +26,7 @@ class ProbTestFrameViewController: JDVViewController {
     var selections: [Int]?
     var pageViewController: UIPageViewController!
     
-    var option:JDVProbManager.ProbOption!
+    var option: JDVProbManager.ProbOption!
     
     override func setTitleWithStyle(_ text: String) {
         self.barButton_title.title = text
@@ -209,7 +209,7 @@ class ProbTestFrameViewController: JDVViewController {
         let alert = UIAlertController(title: "풀이완료", message: "문제풀이를 종료하고\n결과를 확인하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "닫기", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { (action) in
-            WSProgressHUD.show(withStatus: "체점 중 ..")
+            WSProgressHUD.show(withStatus: "채점 중 ..")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
                 self?.performSegue(withIdentifier: id, sender: self)
                 self?.navigationController?.popViewController(animated: false)
@@ -269,26 +269,10 @@ extension ProbTestFrameViewController:UIPageViewControllerDelegate,UIPageViewCon
         let innerView = UIStoryboard(name: "Templete", bundle: nil).instantiateViewController(withIdentifier: "TempleteVC") as! TempleteVC
         innerView.probData = probData[index]
         innerView.pageIndex = index
-        innerView.templeteOption = .TEST
         innerView.templete = TEMPLETE_TEST_NoSolution
         innerView.selection = selections![index]
         innerView.delegate = self
-//        innerView.selectHandler = { [weak self] (num, selection) -> Void in
-//
-//            guard let strongSelf = self else { return }
-//            strongSelf.selections![num] = selection
-//            Analytics.logEvent(AnalyticsEventSelectContent, parameters:
-//                ["id" : innerView.probData.probID,
-//                 "content" : "\(selection)"])
-//
-//            if strongSelf.option.sortedOption == .test {
-//                JDVProbManager.saveCachedData(with: "\(strongSelf.probData[0].prob.TestNum)", tries: strongSelf.selections!)
-//            } else {
-//                JDVProbManager.saveCachedData(with: strongSelf.option.cacheKey, tries: strongSelf.selections!)
-//            }
-//
-//            self?.gotoNextPage()
-//        }
+        innerView.templeteOption = self.option.sortedOption.isCurated() ? .CURATED : .TEST
         
         return innerView
     }

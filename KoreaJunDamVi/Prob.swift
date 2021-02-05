@@ -22,6 +22,7 @@ struct Prob {
     var title_String: String
     var title_attString: NSAttributedString?
     var title_attString_noNum: NSAttributedString?
+    var title_attString_probId: NSAttributedString?
     
     var article_String: String
     var article_attString:NSAttributedString?
@@ -33,6 +34,10 @@ struct Prob {
     var type: String
     var theme: String
     var tags: String
+    
+    var desc: String {
+        return "\(time) / \(type) / \(theme)"
+    }
     
     init(withDict dict:NSDictionary) {
         self.ProbID = dict["probId"] as! Int
@@ -54,6 +59,7 @@ struct Prob {
     }
     
     mutating func setTestAtt() {
+        let probId = NSMutableAttributedString(string: "[\(self.TestNum)회 \(self.ProbNum)번] ")
         let title = NSMutableAttributedString(string: "\(self.ProbNum). ")
         let str = NSAttributedString(fromHTML: title_String)
         
@@ -63,12 +69,17 @@ struct Prob {
         let titleNoNum = NSMutableAttributedString(attributedString: str)
         titleNoNum.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
         
+        probId.append(str)
+        probId.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: probId.length))
+        
+        self.title_attString_probId = probId
         self.title_attString_noNum = titleNoNum
         self.title_attString = title
     }
     
     mutating func setArticleAtt() {
-        let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)")
+        let imageWidthRatio: CGFloat = UIDevice.current.isIPadOrLandscape ? 0.4 : 0.8
+        let result = replaceTagToImage(withString: article_String, imgName: "\(ProbID)", withWidth: SCREEN_WIDTH * imageWidthRatio)
         result.addAttribute(NSAttributedString.Key.font, value: UIFont.articleFont, range: NSRange(location: 0, length: result.length))
         
         let style = NSMutableParagraphStyle()
@@ -83,7 +94,8 @@ struct Prob {
         
         for (index,choice) in choices_String.enumerated() {
             let name = String(format: "%d_%02d", ProbID,index + 1)
-            let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH / 4)
+            let imageWidthRatio: CGFloat = UIDevice.current.isIPadOrLandscape ? 0.4 : 0.5
+            let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH * imageWidthRatio)
             
             result.addAttribute(NSAttributedString.Key.font, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))
             

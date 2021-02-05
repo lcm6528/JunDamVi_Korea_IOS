@@ -1,8 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.3'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'KoreaJunDamVi' do
+  pod 'SnapKit', '~> 5.0.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/Crashlytics'

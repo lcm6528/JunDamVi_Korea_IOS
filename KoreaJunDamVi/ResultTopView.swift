@@ -14,6 +14,8 @@ class ProbResultTopView : UIView {
     var view: UIView!
     let NibName: String = "ProbResultTopView"
     
+    @IBOutlet weak var markHeightConstraint: NSLayoutConstraint!
+    
     var delegate: ProbResultSubViewDelegate?
     @IBOutlet var gageView: GageView!
     @IBOutlet var roundView1: RoundView!
@@ -25,6 +27,8 @@ class ProbResultTopView : UIView {
     @IBOutlet var label_wrong: UILabel!
     @IBOutlet var label_Trial: UILabel!
     @IBOutlet var label_Score: UILabel!
+    
+    @IBOutlet weak var ratioView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +44,6 @@ class ProbResultTopView : UIView {
     func setup() {
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         addSubview(view)
         
         label_Trial.layer.cornerRadius = 6
@@ -84,5 +87,15 @@ class ProbResultTopView : UIView {
             self.roundView1.setValue(value: CGFloat(totalRate*100), animate: true)
             self.roundView2.setValue(value: CGFloat(tryRate*100), animate: true)
         }
+    }
+    
+    func refreshLayout(isLandscape: Bool) {
+        
+        if !UIDevice.current.isIPad {
+            markHeightConstraint.constant = isLandscape ? 100 : 150
+            ratioView.isHidden = isLandscape
+        }
+        
+        layoutSubviews()
     }
 }

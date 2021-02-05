@@ -16,7 +16,8 @@ struct Solution {
     
     var keyword_String: String
     var keyword_attString: NSAttributedString?{
-        return setToAttr(from: keyword_String)
+        let input = "\(self.desc)\n\(keyword_String)"
+        return setToAttr(from: input)
     }
     
     var content1_String: String
@@ -29,8 +30,15 @@ struct Solution {
         return setToAttr(from: content2_String)
     }
     
+    var time: String
+    var type: String
+    var theme: String
+    
+    var desc: String {
+        return "\(time) / \(type) / \(theme)"
+    }
+    
     init() {
-        
         self.ProbID = 0
         self.TestNum = 0
         self.ProbNum = 0
@@ -39,20 +47,22 @@ struct Solution {
         self.content1_String = ""
         self.content2_String = ""
         
-        
+        self.time = ""
+        self.type = ""
+        self.theme = ""
     }
     init(withDict dict:NSDictionary) {
-        
         self.ProbID = dict["probId"] as! Int
         self.TestNum = dict["testnum"] as! Int
         self.ProbNum = dict["probnum"] as! Int
     
+        self.type = dict["type"] as? String ?? ""
+        self.time = dict["time"] as? String ?? ""
+        self.theme = dict["theme"] as? String ?? ""
         
         self.keyword_String = dict["keyword"] as? String ?? ""
         self.content1_String = dict["content1"] as? String ?? ""
         self.content2_String = dict["content2"] as? String ?? ""
-        
-        
     }
     
     func setToAttr(from str: String)->NSAttributedString{

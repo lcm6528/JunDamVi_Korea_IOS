@@ -31,6 +31,10 @@ enum SortedOption: String {
             return "오답 노트"
         }
     }
+    
+    func isCurated() -> Bool {
+        return (self == .theme || self == .time || self == .type)
+    }
 }
 
 class JDVProbManager: NSObject {

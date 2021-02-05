@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,14 +37,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="prob" rowHeight="294" id="xvn-g7-eha" customClass="ProbCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="294"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="prob" id="xvn-g7-eha" customClass="ProbCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="208"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xvn-g7-eha" id="6XR-wI-on9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-Fn-lw2">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-Fn-lw2">
                                                     <rect key="frame" x="8" y="8" width="350" height="34.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
@@ -64,7 +62,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tlP-jg-Lxy" customClass="JDVTextViewPadding" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="55" width="414" height="231"/>
+                                                    <rect key="frame" x="0.0" y="55" width="414" height="145"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. 이에 생각건대, 선왕 때 명하신 책이 과인이 계승한 뒤에 완성을 보게 되었으니, 내가 비감한 마음을 금치 못하겠다. 허준에게 말 한 필을 직접 주어 그 공에 보답하고 속히 간행하도록 하라.”라고 하였다.</string>
                                                     <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
@@ -76,11 +74,11 @@
                                                 <constraint firstItem="tlP-jg-Lxy" firstAttribute="leading" secondItem="6XR-wI-on9" secondAttribute="leading" id="0DB-Dl-ifh"/>
                                                 <constraint firstAttribute="trailing" secondItem="tlP-jg-Lxy" secondAttribute="trailing" id="DA3-g9-0CA"/>
                                                 <constraint firstItem="M2e-Fn-lw2" firstAttribute="top" secondItem="6XR-wI-on9" secondAttribute="top" constant="8" id="KpI-Nt-Nxh"/>
+                                                <constraint firstItem="tlP-jg-Lxy" firstAttribute="top" secondItem="M2e-Fn-lw2" secondAttribute="bottom" constant="12.5" id="U1W-GC-I0c"/>
                                                 <constraint firstItem="M2e-Fn-lw2" firstAttribute="leading" secondItem="6XR-wI-on9" secondAttribute="leading" constant="8" id="XmI-iL-8UD"/>
                                                 <constraint firstItem="vrK-x8-nas" firstAttribute="top" secondItem="M2e-Fn-lw2" secondAttribute="top" id="b6e-XQ-Q3i"/>
                                                 <constraint firstAttribute="trailing" secondItem="vrK-x8-nas" secondAttribute="trailing" id="hgM-Y4-AbE"/>
                                                 <constraint firstItem="vrK-x8-nas" firstAttribute="leading" secondItem="M2e-Fn-lw2" secondAttribute="trailing" constant="6" id="i5K-Cm-8cm"/>
-                                                <constraint firstItem="tlP-jg-Lxy" firstAttribute="top" secondItem="vrK-x8-nas" secondAttribute="bottom" constant="12" id="qLF-0I-VGQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="tlP-jg-Lxy" secondAttribute="bottom" constant="8" id="zYa-Mq-39G"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -91,17 +89,17 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choice" id="bcX-ww-fsa" customClass="SelectionCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="322" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="236" width="414" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bcX-ww-fsa" id="Cev-F9-foh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-dS-HMf" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="12" y="4" width="390" height="36"/>
+                                                    <rect key="frame" x="12" y="4" width="390" height="34.5"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-3W-9yh">
-                                                            <rect key="frame" x="8" y="0.0" width="344" height="36"/>
+                                                            <rect key="frame" x="8" y="0.0" width="344" height="34.5"/>
                                                             <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -130,10 +128,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="separator" id="HKT-Tn-gpw" customClass="SeparatorCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="366" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="278.5" width="414" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HKT-Tn-gpw" id="rTE-gI-vce">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HKT-Tn-gpw" id="rTE-gI-vce">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.94999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-CO-h4A">
@@ -188,7 +186,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="solution" rowHeight="69" id="fVN-pb-hMV" customClass="SolutionCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="410" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="318.5" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fVN-pb-hMV" id="2mR-2w-aQC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -227,13 +225,13 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showauth" rowHeight="70" id="d34-pO-24l" customClass="ShowAuthCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="479" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="387.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d34-pO-24l" id="dWg-ju-y0h">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2k-Ma-Gf6" customClass="JDVAuthButton" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2k-Ma-Gf6" customClass="JDVAuthButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="16" width="382" height="50"/>
                                                     <color key="backgroundColor" red="0.0" green="0.28627450980392155" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -262,13 +260,13 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showsol" rowHeight="58" id="uYQ-H2-NGM" customClass="ShowSolCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="549" width="414" height="58"/>
+                                        <rect key="frame" x="0.0" y="457.5" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYQ-H2-NGM" id="3EU-xU-oCp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-AX-xyb" customClass="JDVSolButton" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-AX-xyb" customClass="JDVSolButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="4" width="382" height="50"/>
                                                     <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -300,6 +298,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ADz-zd-R6E"/>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qcd-MV-Pzc" firstAttribute="top" secondItem="81C-0d-a1v" secondAttribute="top" id="K4Z-JW-7gb"/>
@@ -307,7 +306,6 @@
                             <constraint firstItem="qcd-MV-Pzc" firstAttribute="leading" secondItem="ADz-zd-R6E" secondAttribute="leading" id="nSj-GK-GYU"/>
                             <constraint firstAttribute="bottom" secondItem="qcd-MV-Pzc" secondAttribute="bottom" id="nzF-0s-mTy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ADz-zd-R6E"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qcd-MV-Pzc" id="cm6-mV-Qgh"/>

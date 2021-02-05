@@ -24,7 +24,7 @@ extension UIFont {
         return UIFont(name: "NanumMyeongjoBold", size: 15)!
     }
     class var articleFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 16)!
+        return UIFont(name: "NanumMyeongjo", size: 15)!
     }
     class var choiceFont: UIFont {
         return UIFont(name: "NanumMyeongjo", size: 15)!

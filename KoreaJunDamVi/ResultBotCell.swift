@@ -28,9 +28,7 @@ class ProbResultBotCell: UITableViewCell {
         noteButton.isSelected = JDVNoteManager.isAdded(by: item.ProbID)
     }
     
-    func configureForSimpleResult(item:Try) {   
-        ProbNumLabel.textAlignment = .left
-        
+    func configureForSimpleResult(item:Try) {        
         ProbNumLabel.text = "  \(item.TestNum)회 \(item.ProbNum)번  "
         ScoreLabel.text = "\(item.Score)점"
         AnswerLabel.text = "\(item.Answer)"

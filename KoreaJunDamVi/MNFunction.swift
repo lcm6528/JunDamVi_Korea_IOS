@@ -111,3 +111,13 @@ extension String {
         return Float(self)
     }
 }
+
+extension UIDevice {
+    var isIPad: Bool {
+        return UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
+    var isIPadOrLandscape: Bool {
+        return isIPad || UIApplication.shared.statusBarOrientation.isLandscape
+    }
+}

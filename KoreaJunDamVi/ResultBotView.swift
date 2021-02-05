@@ -33,7 +33,6 @@ class ProbResultBotView: UIView {
     func setup() {
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,  UIView.AutoresizingMask.flexibleHeight]
         
         noteButton.layer.cornerRadius = 4
         noteButton.layer.borderWidth = 0.5
@@ -41,19 +40,6 @@ class ProbResultBotView: UIView {
         
         tableView.register(UINib(nibName: "testheader", bundle: nil), forHeaderFooterViewReuseIdentifier: "testheader")
         tableView.register(UINib(nibName: "ProbResultBotCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.font = UIFont(name: "NanumBarunGothicUltraLight", size: 18)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.setTitle("요약 결과 보기", for: .normal)
-        button.addTarget(self, action: #selector(changeView(_:)), for: .touchUpInside)
-        button.backgroundColor = UIColor.clear
-        
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
-        v.backgroundColor = UIColor.clear
-        v.addSubview(button)
-        tableView.tableHeaderView = v
         
         addSubview(view)
     }
@@ -72,7 +58,7 @@ class ProbResultBotView: UIView {
         noteCountLabel.text = "\(result.numberOfWrong) 개"
     }
     
-    @objc func changeView(_ sender: AnyObject) {
+    @IBAction func changeView(_ sender: AnyObject) {
         self.delegate?.changeView()
     }
     

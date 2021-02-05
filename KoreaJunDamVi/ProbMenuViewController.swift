@@ -41,9 +41,9 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         let initialContenViewController = self.pageViewAtIndex(0) as! ProbCollectionViewController
         
         let viewControllers = NSArray(object: initialContenViewController)
-        
+        let tabbarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
         self.pageViewController.setViewControllers(viewControllers as! [ProbCollectionViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
-        self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height-104)
+        self.pageViewController.view.frame = CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height - tabbarHeight)
         
         self.addChild(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)

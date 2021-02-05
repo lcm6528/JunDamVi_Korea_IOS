@@ -167,8 +167,6 @@ extension TempleteVC: UITableViewDelegate, UITableViewDataSource {
         if case .CHOICE(let idx) = item {
             self.delegate?.select(probId: self.probData.probID, probNum: self.pageIndex, choice: idx + 1)
             
-            
-            
             if !getUserDefaultBoolValue(kAutoNextKey) {
                 var rows: [IndexPath] = [IndexPath(row: idx + 1, section: 0)]
                 if selection != 0 {

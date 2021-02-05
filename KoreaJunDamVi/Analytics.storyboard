@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ntY-iC-ylh">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ntY-iC-ylh">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,7 +20,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="m31-bt-gXz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -44,38 +41,51 @@
                         <viewControllerLayoutGuide type="bottom" id="EoF-oO-AeF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Trs-6z-hSE">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="300" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-qB-3BX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="D94-CX-xUX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-qU-wxS" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="16" width="101" height="101"/>
+                                            <rect key="frame" x="22.333333333333329" y="16" width="100" height="100"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="height" multiplier="1:1" id="HVu-dT-ClF"/>
+                                                <constraint firstAttribute="width" constant="100" id="hyo-OK-Rj7"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="최근 점수"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUE-vA-y1y" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                            <rect key="frame" x="137" y="16" width="101" height="101"/>
+                                            <rect key="frame" x="157" y="16" width="100" height="100"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="gmX-7k-dLs"/>
                                                 <constraint firstAttribute="width" secondItem="OUE-vA-y1y" secondAttribute="height" multiplier="1:1" id="wvK-NH-SdH"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="최고 점수"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJn-5d-SDD" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                            <rect key="frame" x="291.66666666666669" y="16" width="100" height="100"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="mJb-EC-81g"/>
+                                                <constraint firstAttribute="width" secondItem="pJn-5d-SDD" secondAttribute="height" multiplier="1:1" id="prI-8A-npB"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="최저 점수"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-vo-2zQ">
-                                            <rect key="frame" x="8" y="137" width="359" height="21"/>
+                                            <rect key="frame" x="8" y="137" width="398" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="4rs-06-IE2"/>
                                             </constraints>
@@ -88,49 +98,36 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJn-5d-SDD" customClass="AnalRoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                            <rect key="frame" x="258" y="16" width="101" height="101"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="pJn-5d-SDD" secondAttribute="height" multiplier="1:1" id="prI-8A-npB"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="최저 점수"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="OUE-vA-y1y" firstAttribute="leading" secondItem="6Nc-qU-wxS" secondAttribute="trailing" constant="20" id="2Va-Ad-3KL"/>
-                                        <constraint firstItem="pJn-5d-SDD" firstAttribute="leading" secondItem="OUE-vA-y1y" secondAttribute="trailing" constant="20" id="7TC-kb-pFM"/>
+                                        <constraint firstItem="pJn-5d-SDD" firstAttribute="centerX" secondItem="D94-CX-xUX" secondAttribute="centerX" multiplier="1.65" id="9sK-gc-rmB"/>
                                         <constraint firstAttribute="bottom" secondItem="DB2-vo-2zQ" secondAttribute="bottom" constant="2" id="E87-Xc-jVV"/>
                                         <constraint firstAttribute="trailing" secondItem="DB2-vo-2zQ" secondAttribute="trailing" constant="8" id="KQP-fY-Kpu"/>
                                         <constraint firstItem="OUE-vA-y1y" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="Lfa-Ke-FN1"/>
-                                        <constraint firstItem="OUE-vA-y1y" firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="width" id="PPG-Zd-3UP"/>
+                                        <constraint firstItem="6Nc-qU-wxS" firstAttribute="centerX" secondItem="D94-CX-xUX" secondAttribute="centerX" multiplier="0.35" id="MQ1-6S-tCZ"/>
+                                        <constraint firstItem="OUE-vA-y1y" firstAttribute="centerX" secondItem="D94-CX-xUX" secondAttribute="centerX" id="UYD-yW-jFx"/>
                                         <constraint firstItem="6Nc-qU-wxS" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="eSh-eI-PSe"/>
-                                        <constraint firstAttribute="trailing" secondItem="pJn-5d-SDD" secondAttribute="trailing" constant="16" id="ecI-3G-Nbk"/>
                                         <constraint firstItem="pJn-5d-SDD" firstAttribute="top" secondItem="D94-CX-xUX" secondAttribute="top" constant="16" id="s8l-I8-Sla"/>
-                                        <constraint firstItem="6Nc-qU-wxS" firstAttribute="leading" secondItem="D94-CX-xUX" secondAttribute="leading" constant="16" id="xVq-mB-SEA"/>
                                         <constraint firstItem="DB2-vo-2zQ" firstAttribute="leading" secondItem="D94-CX-xUX" secondAttribute="leading" constant="8" id="yM6-3b-mVs"/>
-                                        <constraint firstItem="pJn-5d-SDD" firstAttribute="width" secondItem="6Nc-qU-wxS" secondAttribute="width" id="zl3-L6-8GX"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xQc-un-gKK" customClass="AnalContentCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="161" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="188" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQc-un-gKK" id="IPe-cN-UT9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-FE-b8g" customClass="JDVShadowView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="359" height="283"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="283.66666666666669"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsZ-Vh-Ah7">
-                                                            <rect key="frame" x="186" y="254" width="168" height="24"/>
+                                                            <rect key="frame" x="225" y="254.66666666666669" width="168" height="24"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCo-bB-zTC">
-                                                                    <rect key="frame" x="60" y="5" width="15" height="15"/>
+                                                                    <rect key="frame" x="60" y="4.3333333333333144" width="15" height="15"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="15" id="N63-xs-f5T"/>
@@ -148,7 +145,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwt-C5-oyd">
-                                                                    <rect key="frame" x="4" y="5" width="15" height="15"/>
+                                                                    <rect key="frame" x="4" y="4.3333333333333144" width="15" height="15"/>
                                                                     <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="15" id="Qbz-Xy-vfd"/>
@@ -166,7 +163,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agL-vx-1vy">
-                                                                    <rect key="frame" x="116" y="5" width="15" height="15"/>
+                                                                    <rect key="frame" x="116" y="4.3333333333333144" width="15" height="15"/>
                                                                     <color key="backgroundColor" red="0.70452362729999995" green="0.70192897399999998" blue="0.69414501409999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="15" id="IZ9-Lq-1Q3"/>
@@ -174,7 +171,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 패스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjW-Bt-JQJ">
-                                                                    <rect key="frame" x="134" y="5.5" width="30" height="13"/>
+                                                                    <rect key="frame" x="134" y="5.3333333333333144" width="30" height="13"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="13" id="JgV-z8-ChR"/>
                                                                         <constraint firstAttribute="width" constant="30" id="iDV-aj-JbN"/>
@@ -204,7 +201,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회차별 점수" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-E6-OHh" customClass="JDVLabelWithTBLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                            <rect key="frame" x="137" y="8" width="85" height="20"/>
+                                                            <rect key="frame" x="156.66666666666666" y="8" width="85" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="1cy-9z-hAG"/>
                                                                 <constraint firstAttribute="width" constant="85" id="AMZ-9s-GFd"/>
@@ -214,7 +211,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-db-jNb">
-                                                            <rect key="frame" x="8" y="36" width="343" height="217"/>
+                                                            <rect key="frame" x="8" y="35.999999999999986" width="382" height="217.66666666666663"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="51J-z3-aWv">
                                                                 <size key="itemSize" width="80" height="232"/>
@@ -224,7 +221,7 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bqp-g5-7Pp" customClass="AnalBarChartCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="-7.5" width="80" height="232"/>
+                                                                    <rect key="frame" x="0.0" y="-7.333333333333333" width="80" height="232"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="232"/>
@@ -299,8 +296,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I92-IQ-gTd"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="highView" destination="OUE-vA-y1y" id="u1Z-6V-TJx"/>
                         <outlet property="recentView" destination="6Nc-qU-wxS" id="B81-9k-IjT"/>
@@ -314,6 +309,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="anal" width="16" height="16"/>
+        <image name="anal" width="29.666666030883789" height="29.666666030883789"/>
     </resources>
 </document>

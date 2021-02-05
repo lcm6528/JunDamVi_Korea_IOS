@@ -40,7 +40,7 @@ class ProbQuickTestViewController : JDVViewController {
     }
     
     @IBAction func resultButtonPressed(_ sender: AnyObject) {
-        WSProgressHUD.show(withStatus: "체점 중 ..")
+        WSProgressHUD.show(withStatus: "채점 중 ..")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.performSegue(withIdentifier: "push", sender: self)
             self.navigationController?.popViewController(animated: true)

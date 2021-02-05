@@ -83,6 +83,7 @@ PODS:
   - RealmSwift (3.20.0):
     - Realm (= 3.20.0)
   - Shimmer (1.0.2)
+  - SnapKit (5.0.1)
   - SwiftyJSON (5.0.0)
   - SwiftyStoreKit (0.16.1)
   - Toaster (2.3.0)
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - FMDB
   - NSAttributedString-DDHTML
   - RealmSwift (~> 3.20.0)
+  - SnapKit (~> 5.0.0)
   - SwiftyJSON
   - SwiftyStoreKit
   - Toaster (from `https://github.com/devxoul/Toaster.git`, branch `master`)
@@ -125,6 +127,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Shimmer
+    - SnapKit
     - SwiftyJSON
     - SwiftyStoreKit
     - UICountingLabel
@@ -159,12 +162,13 @@ SPEC CHECKSUMS:
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toaster: 33d27524fb6829cdb6b247c924beab0cfa001b3e
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
   WSProgressHUD: 8214e549869776514e8055527c590a109c025e3e
 
-PODFILE CHECKSUM: 7b9541e908415de48608f67d228f73af14308b1d
+PODFILE CHECKSUM: 2219cdd3fda841263db249c31a9f02c99283d50f
 
 COCOAPODS: 1.10.1
