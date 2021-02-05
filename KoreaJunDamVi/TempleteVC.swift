@@ -99,7 +99,7 @@ class TempleteVC: JDVViewController {
             self.tableView.reloadDataWithoutScroll()
             self.tableView.scrollToRow(at: IndexPath(row: 6, section: 0), at: .top, animated: true)
         } else {
-            showAlertWithSelect("해설 구매", message: "한국사 비법노트 해설\n(₩4,900)을 구매합니다.\n이미 구매하셨을 경우, 추가 결제는 진행되지 않습니다", sender: self, handler: { (_) in
+            showAlertWithSelect("해설 구매", message: "한국사 비법노트 해설\n(₩5,900)을 구매합니다.\n이미 구매하셨을 경우, 추가 결제는 진행되지 않습니다", sender: self, handler: { (_) in
                 JDVProductManager.Purchase { [weak self] (success) in
                     if success {
                         self?.showSol()
