@@ -65,12 +65,17 @@ struct Prob {
         
         title.append(str)
         title.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: title.length))
+        title.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.textBlack0, range: NSRange(location: 0, length: title.length))
         
         let titleNoNum = NSMutableAttributedString(attributedString: str)
         titleNoNum.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: titleNoNum.length))
+        titleNoNum.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.textBlack0, range: NSRange(location: 0, length: titleNoNum.length))
+        
         
         probId.append(str)
         probId.addAttribute(NSAttributedString.Key.font, value: UIFont.titleFont, range: NSRange(location: 0, length: probId.length))
+        probId.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.textBlack0, range: NSRange(location: 0, length: probId.length))
+        
         
         self.title_attString_probId = probId
         self.title_attString_noNum = titleNoNum
@@ -85,6 +90,8 @@ struct Prob {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = ProbLineSpace
         result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
+        result.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.textBlack0, range: NSRange(location: 0, length: result.length))
+        
         
         self.article_attString = result
     }

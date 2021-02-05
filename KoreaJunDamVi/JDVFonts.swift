@@ -21,7 +21,7 @@ extension UIFont {
         return UIFont(name: "NanumBarunGothicLight", size: 13)!
     }
     class var titleFont: UIFont {
-        return UIFont(name: "NanumMyeongjoBold", size: 15)!
+        return UIFont(name: "NanumMyeongjo", size: 15)!
     }
     class var articleFont: UIFont {
         return UIFont(name: "NanumMyeongjo", size: 15)!
@@ -30,6 +30,30 @@ extension UIFont {
         return UIFont(name: "NanumMyeongjo", size: 15)!
     }
     class var solutionFont: UIFont {
-        return UIFont(name: "NanumBarunGothicLight", size: 15)!
+        return UIFont(name: "NanumMyeongjo", size: 15)!
+    }
+    class var scoreFont: UIFont {
+        return UIFont(name: "NanumMyeongjoExtraBold", size: 15)!
+    }
+    
+    static func lightFont(size: CGFloat) -> UIFont {
+        if let font = UIFont(name: "AppleSDGothicNeo-Light", size: size) {
+            return font
+        }
+        return UIFont.systemFont(ofSize:size)
+    }
+    
+    static func regularFont(size: CGFloat) -> UIFont {
+        if let font = UIFont(name: "AppleSDGothicNeo-Regular", size: size) {
+            return font
+        }
+        return UIFont.systemFont(ofSize:size)
+    }
+    
+    static func mediumFont(size: CGFloat) -> UIFont {
+        if let font = UIFont(name: "AppleSDGothicNeo-Medium", size: size) {
+            return font
+        }
+        return UIFont.systemFont(ofSize:size)
     }
 }

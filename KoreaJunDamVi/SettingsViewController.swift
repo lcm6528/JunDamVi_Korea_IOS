@@ -29,6 +29,7 @@ class SettingsViewController: JDVViewController {
         self.setTitleWithStyle("설정")
         
         tableView.tableFooterView = UIView()
+        tableView.separatorColor = UIColor.lineBlack
     }
 }
 

@@ -74,7 +74,7 @@ struct Solution {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = SolLineSpace
         result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
-        
+        result.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.textBlack0, range: NSRange(location: 0, length: result.length))
         return result
         
     }
@@ -87,7 +87,7 @@ struct Solution {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = SolLineSpace
         result.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: result.length))
-        
+        result.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.textBlack0, range: NSRange(location: 0, length: result.length))
         
         return result
 

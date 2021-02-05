@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,7 +33,7 @@
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국사 비법노트 전체 회차 해설" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHF-uo-ymo">
                     <rect key="frame" x="67.5" y="213.5" width="240" height="30"/>
-                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.84903017241379308" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="bgBlcokVIew"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="Dck-BE-Ib6"/>
                         <constraint firstAttribute="height" constant="30" id="Mze-R6-tpb"/>
@@ -87,7 +88,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1g-GP-g1P">
-                    <rect key="frame" x="66.5" y="392.5" width="242" height="30"/>
+                    <rect key="frame" x="68.5" y="392.5" width="238" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="VZf-aw-1JO"/>
                     </constraints>
@@ -98,7 +99,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.87" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="bgBlcokVIew"/>
             <constraints>
                 <constraint firstItem="62r-UG-Tx8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Q1-XJ-XAi"/>
                 <constraint firstItem="FRu-xT-1vU" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.42" id="A0I-pD-iwA"/>
@@ -122,5 +123,8 @@
     </objects>
     <resources>
         <image name="lock" width="50" height="50"/>
+        <namedColor name="bgBlcokVIew">
+            <color red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.87" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

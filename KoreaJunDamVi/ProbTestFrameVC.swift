@@ -33,7 +33,7 @@ class ProbTestFrameViewController: JDVViewController {
 
         self.barButton_title.setTitleTextAttributes(
             [NSAttributedString.Key.font:UIFont.ProbNaviBarTitleFont,
-             NSAttributedString.Key.foregroundColor:UIColor.white],
+             NSAttributedString.Key.foregroundColor:UIColor.textBlack0],
             for: .normal)
     }
     

@@ -10,9 +10,18 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    class var untBlack505050: UIColor {
-        return UIColor(white: 50.0 / 255.0, alpha: 1.0)
-    }
+    class var textBlack50: UIColor { return UIColor(named: #function)! }
+    class var lineBlack: UIColor { return UIColor(named: #function)! }
+    class var bgIvory2: UIColor { return UIColor(named: #function)! }
+    class var bgWhite: UIColor { return UIColor(named: #function)! }
+    class var bgWhite0: UIColor { return UIColor(named: #function)! }
+    class var bgWhite1: UIColor { return UIColor(named: #function)! }
+    class var textBlack0: UIColor { return UIColor(named: #function)! }
+    class var textRed: UIColor { return UIColor(named: #function)! }
+    class var bgSelectRed: UIColor { return UIColor(named: #function)! }
+    class var bgSelectBlue: UIColor { return UIColor(named: #function)! }
+    
+    
     
     class var untPaleRed: UIColor {
         return UIColor(red: 225.0 / 255.0, green: 64.0 / 255.0, blue: 64.0 / 255.0, alpha: 1.0)
@@ -24,9 +33,9 @@ extension UIColor {
         return UIColor(red: 234.0 / 255.0, green: 233.0 / 255.0, blue: 228.0 / 255.0, alpha: 1.0)
     }
     
-    class var untBlack757575: UIColor {
-        return UIColor(white: 75.0 / 255.0, alpha: 1.0)
-    }
+    class var textBlack75: UIColor { return UIColor(named: #function)! }
+    
+//    static func untBlack75
     
     class var selectedRed: UIColor {
         return UIColor(red: 237.0 / 255.0, green: 201.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
@@ -62,12 +71,6 @@ extension UIColor {
     class var selectedBorderRed: UIColor {
         return UIColor(red: 248.0 / 255.0, green: 156.0 / 255.0, blue: 138.0 / 255.0, alpha: 0.65)
     }
-    class var selectedBackgroundRed: UIColor {
-        return UIColor(red: 236.0 / 255.0, green: 202.0 / 255.0, blue: 191.0 / 255.0, alpha: 1)
-    }
-    
-    
-    
 }
 
 

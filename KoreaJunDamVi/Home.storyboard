@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1Q-yt-LHV">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment version="4624" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +23,9 @@
         </array>
         <array key="NanumGothic.ttf">
             <string>NanumGothic</string>
+        </array>
+        <array key="NanumGothicBold.ttf">
+            <string>NanumGothicBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -61,7 +65,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시험일정 업데이트 예정입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgo-8a-QtJ">
-                                                        <rect key="frame" x="107.33333333333333" y="105.66666666666666" width="160.66666666666669" height="20"/>
+                                                        <rect key="frame" x="109.00000000000001" y="105.66666666666666" width="157.33333333333337" height="20"/>
                                                         <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="I2e-wd-W2p"/>
@@ -122,19 +126,19 @@
                                                                     <constraint firstAttribute="height" constant="16" id="1PV-JE-P28"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="10"/>
-                                                                <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" name="textBlack50"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6v2-Pz-Qvg">
                                                                 <rect key="frame" x="14" y="34" width="319" height="1"/>
-                                                                <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="lineBlack"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Ff8-kB-aES"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J63-bx-UYO">
                                                                 <rect key="frame" x="0.0" y="257.66666666666669" width="347" height="39"/>
-                                                                <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="총 11개의 기출 문제 중 5개 풀이 진행">
                                                                         <attributes>
@@ -147,7 +151,7 @@
                                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" name="bgWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="nrx-PE-YOM" firstAttribute="top" secondItem="6v2-Pz-Qvg" secondAttribute="bottom" constant="16" id="0zB-pE-2VH"/>
                                                             <constraint firstItem="Oj5-ht-cdr" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="top" constant="12" id="4mV-7P-0N8"/>
@@ -185,12 +189,12 @@
                                                                 <string key="text">*일정변경의 가능성이 있으니,
  한국사 시험 안내 사이트에서 수시로 확인해주세요.</string>
                                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="8"/>
-                                                                <color key="textColor" red="0.32156862749999998" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" name="textBrown"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-kJ-hK7">
                                                                 <rect key="frame" x="8" y="45" width="331" height="1"/>
-                                                                <color key="backgroundColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="lineBlack"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="lRD-ft-WGy"/>
                                                                 </constraints>
@@ -205,16 +209,16 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbx-aY-eDs">
-                                                                                        <rect key="frame" x="27.666666666666664" y="6.6666666666667407" width="25" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="28" y="6.6666666666667407" width="24.333333333333329" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="FV8-Kr-L9M"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
-                                                                                        <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <color key="textColor" name="textRed"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="Kbx-aY-eDs" firstAttribute="centerY" secondItem="n2h-8r-X4T" secondAttribute="centerY" id="BH5-fa-YEE"/>
                                                                                     <constraint firstItem="Kbx-aY-eDs" firstAttribute="centerX" secondItem="n2h-8r-X4T" secondAttribute="centerX" id="ltR-DS-Qpn"/>
@@ -227,11 +231,11 @@
                                                                                     <constraint firstAttribute="height" constant="35" id="oQG-N6-sqz"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
-                                                                                <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <color key="textColor" name="textRed"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstItem="n2h-8r-X4T" firstAttribute="top" secondItem="i3n-da-oPt" secondAttribute="top" id="Lq1-6h-hZ7"/>
                                                                             <constraint firstItem="uOR-uL-6be" firstAttribute="leading" secondItem="n2h-8r-X4T" secondAttribute="trailing" constant="16" id="YDI-rY-oa6"/>
@@ -249,16 +253,16 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-Zl-0vh">
-                                                                                        <rect key="frame" x="15" y="6.6666666666667407" width="50" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="15.666666666666668" y="6.6666666666667407" width="48.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="cs4-2y-Q53"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
-                                                                                        <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                        <color key="textColor" name="textRed"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="xpp-Zl-0vh" firstAttribute="centerY" secondItem="QlF-c9-2Ek" secondAttribute="centerY" id="CIy-o1-Q7l"/>
                                                                                     <constraint firstItem="xpp-Zl-0vh" firstAttribute="centerX" secondItem="QlF-c9-2Ek" secondAttribute="centerX" id="D61-2C-cnw"/>
@@ -271,11 +275,11 @@
                                                                                     <constraint firstAttribute="height" constant="35" id="y45-2g-J5l"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
-                                                                                <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <color key="textColor" name="textRed"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstItem="QlF-c9-2Ek" firstAttribute="top" secondItem="Bnp-wU-qRz" secondAttribute="top" id="6m0-am-l8o"/>
                                                                             <constraint firstItem="QlF-c9-2Ek" firstAttribute="leading" secondItem="Bnp-wU-qRz" secondAttribute="leading" id="NpW-LU-UM0"/>
@@ -293,7 +297,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가접수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-mB-JnI">
-                                                                                        <rect key="frame" x="15" y="6.6666666666667407" width="50" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="15.666666666666668" y="6.6666666666667407" width="48.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="B6h-Rs-6vB"/>
                                                                                         </constraints>
@@ -302,7 +306,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="EWS-mB-JnI" firstAttribute="centerX" secondItem="JLT-yL-vPV" secondAttribute="centerX" id="KMK-5l-et4"/>
                                                                                     <constraint firstAttribute="width" constant="80" id="LhA-ZI-Z9z"/>
@@ -319,7 +323,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstItem="vXn-4C-AHl" firstAttribute="leading" secondItem="JLT-yL-vPV" secondAttribute="trailing" constant="16" id="Ua5-dq-AVG"/>
                                                                             <constraint firstAttribute="bottom" secondItem="JLT-yL-vPV" secondAttribute="bottom" id="Uzk-7Z-3qN"/>
@@ -337,16 +341,16 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시험일시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEp-6A-lFY">
-                                                                                        <rect key="frame" x="15" y="6.6666666666667407" width="50" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="15.666666666666668" y="6.6666666666667407" width="48.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="ew4-Uo-eSv"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="14"/>
-                                                                                        <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <color key="textColor" name="textRed"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="80" id="81k-xM-4Ed"/>
                                                                                     <constraint firstItem="dEp-6A-lFY" firstAttribute="centerX" secondItem="CRa-Wm-6eY" secondAttribute="centerX" id="Jtm-cs-GYN"/>
@@ -359,11 +363,11 @@
                                                                                     <constraint firstAttribute="height" constant="35" id="Ndg-63-pZn"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="13"/>
-                                                                                <color key="textColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <color key="textColor" name="textRed"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="cnd-oM-9aK" secondAttribute="trailing" constant="8" id="4Z8-Tb-95Y"/>
                                                                             <constraint firstItem="CRa-Wm-6eY" firstAttribute="leading" secondItem="SAz-d4-2ts" secondAttribute="leading" id="M67-uc-Bcv"/>
@@ -381,7 +385,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결과발표" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UB-i4-STa">
-                                                                                        <rect key="frame" x="15" y="6.6666666666667407" width="50" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="15.666666666666668" y="6.6666666666667407" width="48.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="8gH-HE-Or3"/>
                                                                                         </constraints>
@@ -390,7 +394,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="9UB-i4-STa" firstAttribute="centerX" secondItem="YPX-He-cK1" secondAttribute="centerX" id="GMi-eR-2xF"/>
                                                                                     <constraint firstItem="9UB-i4-STa" firstAttribute="centerY" secondItem="YPX-He-cK1" secondAttribute="centerY" id="c3c-v1-VmU"/>
@@ -407,7 +411,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstItem="YPX-He-cK1" firstAttribute="leading" secondItem="N6N-83-ef1" secondAttribute="leading" id="AUc-JO-wQu"/>
                                                                             <constraint firstItem="YPX-He-cK1" firstAttribute="top" secondItem="N6N-83-ef1" secondAttribute="top" id="UjE-s3-1Uj"/>
@@ -425,7 +429,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="46"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시험장변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMq-Q1-72x">
-                                                                                        <rect key="frame" x="8.6666666666666679" y="12.666666666666741" width="62.666666666666657" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="9.6666666666666679" y="12.666666666666741" width="60.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="hNP-nm-dKD"/>
                                                                                         </constraints>
@@ -434,7 +438,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="DMq-Q1-72x" firstAttribute="centerY" secondItem="EhN-lq-O81" secondAttribute="centerY" id="G5l-ez-iXu"/>
                                                                                     <constraint firstItem="DMq-Q1-72x" firstAttribute="centerX" secondItem="EhN-lq-O81" secondAttribute="centerX" id="Jat-Dp-ZPG"/>
@@ -451,7 +455,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstItem="EhN-lq-O81" firstAttribute="top" secondItem="lUq-m9-aIB" secondAttribute="top" id="Mof-Bu-6Ci"/>
                                                                             <constraint firstAttribute="trailing" secondItem="zJ2-gE-cIc" secondAttribute="trailing" constant="8" id="Zw2-sf-Epm"/>
@@ -469,7 +473,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="46"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyl-YX-5e3">
-                                                                                        <rect key="frame" x="15" y="12.666666666666741" width="50" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="15.666666666666668" y="12.666666666666741" width="48.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="YgR-oX-kkP"/>
                                                                                         </constraints>
@@ -478,7 +482,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="80" id="BKd-C3-9Ho"/>
                                                                                     <constraint firstItem="yyl-YX-5e3" firstAttribute="centerX" secondItem="Rn8-UV-Qon" secondAttribute="centerX" id="j36-Zg-Q6p"/>
@@ -495,7 +499,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstItem="bRf-FE-y2A" firstAttribute="centerY" secondItem="Rn8-UV-Qon" secondAttribute="centerY" id="0oV-JU-GcJ"/>
                                                                             <constraint firstAttribute="height" constant="46" id="39K-FM-p0R"/>
@@ -513,7 +517,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수험표출력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-ap-IYs">
-                                                                                        <rect key="frame" x="8.6666666666666679" y="6.6666666666667407" width="62.666666666666657" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="9.6666666666666679" y="6.6666666666667407" width="60.666666666666657" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="Qjg-88-baP"/>
                                                                                         </constraints>
@@ -522,7 +526,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="GGo-ap-IYs" firstAttribute="centerX" secondItem="UI9-RS-mjS" secondAttribute="centerX" id="0f7-gf-voH"/>
                                                                                     <constraint firstAttribute="width" constant="80" id="Esy-6e-r1e"/>
@@ -539,7 +543,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="bbo-p7-z8O" secondAttribute="trailing" constant="8" id="Efz-XJ-9oE"/>
                                                                             <constraint firstItem="UI9-RS-mjS" firstAttribute="leading" secondItem="CG0-NA-xeT" secondAttribute="leading" id="JEa-Rp-JX5"/>
@@ -557,7 +561,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="46"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수취소(전액)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDF-ve-76v">
-                                                                                        <rect key="frame" x="2.6666666666666714" y="12.666666666666741" width="75" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="5.6666666666666643" y="12.666666666666741" width="68.666666666666686" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="tAc-Kh-GRu"/>
                                                                                         </constraints>
@@ -566,7 +570,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="tDF-ve-76v" firstAttribute="centerX" secondItem="UJC-fm-Mzk" secondAttribute="centerX" id="jhK-un-iSl"/>
                                                                                     <constraint firstItem="tDF-ve-76v" firstAttribute="centerY" secondItem="UJC-fm-Mzk" secondAttribute="centerY" id="ndq-Uv-uy1"/>
@@ -583,7 +587,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="h3z-Ic-CAd" secondAttribute="trailing" constant="8" id="HEJ-9S-tvh"/>
                                                                             <constraint firstAttribute="height" constant="46" id="KIT-aU-Qv9"/>
@@ -601,7 +605,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="46"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접수취소(반액)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZH-Vy-035">
-                                                                                        <rect key="frame" x="2.6666666666666714" y="12.666666666666741" width="75" height="20.333333333333329"/>
+                                                                                        <rect key="frame" x="5.6666666666666643" y="12.666666666666741" width="68.666666666666686" height="20.333333333333329"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20.329999999999998" id="Kh4-Si-lxb"/>
                                                                                         </constraints>
@@ -610,7 +614,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" name="bgWhite2"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="80" id="5IE-Xp-Ieg"/>
                                                                                     <constraint firstItem="rZH-Vy-035" firstAttribute="centerY" secondItem="7ZE-4v-XmF" secondAttribute="centerY" id="Grx-PK-O3f"/>
@@ -627,7 +631,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="bgIvory"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="1jw-g9-Cbt" secondAttribute="trailing" constant="8" id="GYZ-zP-hqp"/>
                                                                             <constraint firstItem="7ZE-4v-XmF" firstAttribute="leading" secondItem="m0P-hu-98f" secondAttribute="leading" id="RTO-17-yaH"/>
@@ -656,7 +660,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" name="bgWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="g9c-kJ-hK7" firstAttribute="top" secondItem="CuL-rB-8C3" secondAttribute="bottom" constant="3" id="01u-Ub-sI2"/>
                                                             <constraint firstAttribute="height" constant="450" id="1qe-oR-2lN"/>
@@ -675,7 +679,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="bgIvory"/>
                                                 <constraints>
                                                     <constraint firstItem="hnJ-Sr-Lck" firstAttribute="top" secondItem="9x7-na-GFk" secondAttribute="bottom" constant="8" id="DrT-b6-8AE"/>
                                                     <constraint firstItem="9x7-na-GFk" firstAttribute="leading" secondItem="NsL-Zx-7ww" secondAttribute="leading" constant="14" id="MWe-oA-4ex"/>
@@ -687,7 +691,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="bgIvory"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -700,7 +704,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wdS-aV-oLZ"/>
-                        <color key="backgroundColor" red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="p2t-mU-gBQ" firstAttribute="trailing" secondItem="wdS-aV-oLZ" secondAttribute="trailing" id="3bm-36-1VJ"/>
                             <constraint firstItem="wdS-aV-oLZ" firstAttribute="bottom" secondItem="p2t-mU-gBQ" secondAttribute="bottom" id="5pm-mi-RZa"/>
@@ -755,42 +759,43 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="wbL-EJ-eTP" customClass="SettingsTableViewCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="wbL-EJ-eTP" customClass="SettingsTableViewCell" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wbL-EJ-eTP" id="6Gq-h2-aQB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aQ-WS-35l">
-                                                    <rect key="frame" x="4" y="4" width="367" height="62"/>
+                                                    <rect key="frame" x="4" y="4" width="367" height="72"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학습내역 초기화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-JT-K4F">
-                                                            <rect key="frame" x="12" y="8" width="347" height="25"/>
+                                                            <rect key="frame" x="12" y="12" width="347" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="srD-ta-yyJ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학습내역을 초기화하면 앱 내 모든 정보가 초기화됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II7-Aj-ahB">
-                                                            <rect key="frame" x="13" y="34" width="346" height="20"/>
+                                                            <rect key="frame" x="12" y="42" width="347" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="FQw-06-jLg"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="11"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="12"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="II7-Aj-ahB" secondAttribute="trailing" constant="8" id="00B-dd-UXA"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qgd-JT-K4F" secondAttribute="trailing" constant="8" id="6JJ-SS-AVp"/>
-                                                        <constraint firstItem="II7-Aj-ahB" firstAttribute="leading" secondItem="Qgd-JT-K4F" secondAttribute="leading" constant="1" id="A05-d5-c4T"/>
-                                                        <constraint firstAttribute="bottom" secondItem="II7-Aj-ahB" secondAttribute="bottom" constant="8" id="CrJ-qx-VOo"/>
-                                                        <constraint firstItem="Qgd-JT-K4F" firstAttribute="top" secondItem="6aQ-WS-35l" secondAttribute="top" constant="8" id="D19-Yc-hQY"/>
+                                                        <constraint firstItem="II7-Aj-ahB" firstAttribute="leading" secondItem="Qgd-JT-K4F" secondAttribute="leading" id="A05-d5-c4T"/>
+                                                        <constraint firstAttribute="bottom" secondItem="II7-Aj-ahB" secondAttribute="bottom" constant="10" id="CrJ-qx-VOo"/>
+                                                        <constraint firstItem="Qgd-JT-K4F" firstAttribute="top" secondItem="6aQ-WS-35l" secondAttribute="top" constant="12" id="D19-Yc-hQY"/>
                                                         <constraint firstItem="Qgd-JT-K4F" firstAttribute="leading" secondItem="6aQ-WS-35l" secondAttribute="leading" constant="12" id="GpX-IG-3GZ"/>
                                                     </constraints>
                                                 </view>
@@ -872,5 +877,26 @@
     <resources>
         <image name="home" width="33" height="29.666666030883789"/>
         <image name="settings" width="20" height="20"/>
+        <namedColor name="bgIvory">
+            <color red="0.9179999828338623" green="0.90200001001358032" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgWhite2">
+            <color red="0.97600001096725464" green="0.96899998188018799" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="lineBlack">
+            <color red="0.68999999761581421" green="0.68999999761581421" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textBlack50">
+            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="textBrown">
+            <color red="0.32156862749999998" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="textRed">
+            <color red="0.57300001382827759" green="0.10199999809265137" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

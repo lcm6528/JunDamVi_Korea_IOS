@@ -19,7 +19,7 @@ class ProbPopupCell : UICollectionViewCell {
         
         imgView_Star.image =  isnoted ? UIImage(named: "small_star_selected") : UIImage(named: "small_star_unselected")
         imgView_Check.image = select == 0 ? UIImage(named: "uncheck") :  UIImage(named: "check")
-        self.backgroundColor = select == 0 ? UIColor.white : UIColor.popupCellIvory
+        self.backgroundColor = select == 0 ? UIColor.bgWhite1 : UIColor.bgIvory2
         
     }
     

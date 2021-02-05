@@ -14,7 +14,7 @@ class JDVViewWithBotLine: UIView {
         super.draw(rect)
         
         let botLine = UIView(frame: CGRect(x: 0, y: rect.height - 0.3, width: rect.width, height: 0.3))
-        botLine.backgroundColor = UIColor.lightGray
+        botLine.backgroundColor = UIColor(named: "lineBlack")
         
         marker.clipsToBounds = true
         marker.textAlignment = .center
@@ -23,7 +23,6 @@ class JDVViewWithBotLine: UIView {
         marker.backgroundColor = UIColor.noteMarkBlud
         marker.textColor = UIColor.white
         marker.font =  UIFont(name: "NanumBarunGothic", size: 10)!
-//        marker.isHidden = true
         
         self.addSubview(botLine)
         

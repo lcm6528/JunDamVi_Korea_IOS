@@ -29,35 +29,35 @@ class SelectionCell: UITableViewCell, TempleteCell {
         
         switch state {
         case .SELECTED:
-            contentContainerView.backgroundColor = UIColor.selectedBackgroundRed
+            contentContainerView.backgroundColor = UIColor.bgSelectRed
             contentContainerView.layer.borderColor = UIColor.selectedBorderRed.cgColor
             contentContainerView.layer.borderWidth = 1
             contentContainerView.layer.cornerRadius = 3
-            contentTextView.textColor = UIColor.black
+            contentTextView.textColor = UIColor.textBlack0
             contentContainerView.hideMark()
             
         case .AUTH:
-            contentContainerView.backgroundColor = UIColor.authBackgorundSkyBlue
+            contentContainerView.backgroundColor = UIColor.bgSelectBlue
             contentContainerView.layer.borderColor = UIColor.authborderSkyBlue.cgColor
             contentContainerView.layer.borderWidth = 1
             contentContainerView.layer.cornerRadius = 3
-            contentTextView.textColor = UIColor.black
+            contentTextView.textColor = UIColor.textBlack0
             contentContainerView.showMark()
             
         case .NONE:
-            contentContainerView.backgroundColor = UIColor.white
+            contentContainerView.backgroundColor = UIColor.bgWhite
             contentContainerView.layer.borderColor = UIColor.clear.cgColor
             contentContainerView.layer.borderWidth = 0
             contentContainerView.layer.cornerRadius = 0
-            contentTextView.textColor = UIColor.black
+            contentTextView.textColor = UIColor.textBlack0
             contentContainerView.hideMark()
         
         case .NOTE_SELECTED:
-            contentContainerView.backgroundColor = UIColor.white
+            contentContainerView.backgroundColor = UIColor.bgWhite
             contentContainerView.layer.borderColor = UIColor.clear.cgColor
             contentContainerView.layer.borderWidth = 0
             contentContainerView.layer.cornerRadius = 0
-            contentTextView.textColor = UIColor.red
+            contentTextView.textColor = UIColor.textRed
             contentContainerView.hideMark()
         }
     }

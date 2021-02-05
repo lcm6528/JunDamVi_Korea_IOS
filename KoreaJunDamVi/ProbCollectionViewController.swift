@@ -80,11 +80,11 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
     //CollectionView cell Highlight Indicate
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = UIColor.lightGray
+        cell?.backgroundColor = UIColor.bgWhite
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = UIColor.white
+        cell?.backgroundColor = UIColor.bgWhite
     }
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -35,18 +37,19 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcd-MV-Pzc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="bgIvory"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="prob" id="xvn-g7-eha" customClass="ProbCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="208"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xvn-g7-eha" id="6XR-wI-on9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="2. 밑줄 그은 '왕'의 업적으로 옳은 것은?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-Fn-lw2">
-                                                    <rect key="frame" x="8" y="8" width="350" height="34.5"/>
+                                                    <rect key="frame" x="8" y="8" width="350" height="35.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" lookupSuggestion="YES"/>
@@ -62,14 +65,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tlP-jg-Lxy" customClass="JDVTextViewPadding" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="55" width="414" height="145"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="0.0" y="56" width="414" height="150"/>
+                                                    <color key="backgroundColor" name="bgWhite"/>
                                                     <string key="text">왕이 이르기를, “양평군 허준은 일찍이 의방을 찬집하라는 선왕의 특명을 받아 몇 년 동안 자료를 수집하였고, 심지어 유배되어 옮겨다니는 가운데서도 그 일을 쉬지 않고 하여 이제 비로소 책으로 엮어 올렸다. 이에 생각건대, 선왕 때 명하신 책이 과인이 계승한 뒤에 완성을 보게 되었으니, 내가 비감한 마음을 금치 못하겠다. 허준에게 말 한 필을 직접 주어 그 공에 보답하고 속히 간행하도록 하라.”라고 하였다.</string>
+                                                    <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstItem="tlP-jg-Lxy" firstAttribute="leading" secondItem="6XR-wI-on9" secondAttribute="leading" id="0DB-Dl-ifh"/>
                                                 <constraint firstAttribute="trailing" secondItem="tlP-jg-Lxy" secondAttribute="trailing" id="DA3-g9-0CA"/>
@@ -89,22 +93,23 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choice" id="bcX-ww-fsa" customClass="SelectionCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="236" width="414" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="242" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bcX-ww-fsa" id="Cev-F9-foh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="42.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-dS-HMf" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="12" y="4" width="390" height="34.5"/>
+                                                    <rect key="frame" x="12" y="4" width="390" height="35.5"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1. 명과 후금 사이에서 중립 외교를 펼쳤다. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-3W-9yh">
-                                                            <rect key="frame" x="8" y="0.0" width="344" height="34.5"/>
+                                                            <rect key="frame" x="8" y="0.0" width="344" height="35.5"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
                                                             <fontDescription key="fontDescription" name="NanumMyeongjo" family="NanumMyeongjo" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgWhite0"/>
                                                     <constraints>
                                                         <constraint firstItem="9Ow-3W-9yh" firstAttribute="leading" secondItem="sEK-dS-HMf" secondAttribute="leading" constant="8" id="PNL-ZK-A4z"/>
                                                         <constraint firstItem="9Ow-3W-9yh" firstAttribute="centerY" secondItem="sEK-dS-HMf" secondAttribute="centerY" id="SYv-Uv-uuK"/>
@@ -114,7 +119,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="sEK-dS-HMf" secondAttribute="trailing" constant="12" id="7v7-QD-SCS"/>
                                                 <constraint firstAttribute="bottom" secondItem="sEK-dS-HMf" secondAttribute="bottom" constant="4" id="8MP-7s-w3h"/>
@@ -128,7 +133,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="separator" id="HKT-Tn-gpw" customClass="SeparatorCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="278.5" width="414" height="40"/>
+                                        <rect key="frame" x="0.0" y="285.5" width="414" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HKT-Tn-gpw" id="rTE-gI-vce">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -149,20 +154,20 @@
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkE-5Z-mJC">
                                                             <rect key="frame" x="12" y="20" width="150.5" height="0.5"/>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" name="lineBlack"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="0.5" id="Vhb-ny-9xt"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnp-vv-AAe">
                                                             <rect key="frame" x="251.5" y="20" width="150.5" height="0.5"/>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" name="lineBlack"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="0.5" id="1iu-mc-U5f"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgIvory"/>
                                                     <constraints>
                                                         <constraint firstItem="Cnp-vv-AAe" firstAttribute="leading" secondItem="LTa-za-idG" secondAttribute="trailing" constant="4" id="A3H-60-rxD"/>
                                                         <constraint firstItem="LTa-za-idG" firstAttribute="centerX" secondItem="oKX-CO-h4A" secondAttribute="centerX" id="CwT-kB-Gbj"/>
@@ -176,7 +181,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstItem="oKX-CO-h4A" firstAttribute="top" secondItem="rTE-gI-vce" secondAttribute="top" id="0lI-Av-Q0N"/>
                                                 <constraint firstAttribute="bottom" secondItem="oKX-CO-h4A" secondAttribute="bottom" id="i8p-Od-nOE"/>
@@ -186,7 +191,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="solution" rowHeight="69" id="fVN-pb-hMV" customClass="SolutionCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="318.5" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="325.5" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fVN-pb-hMV" id="2mR-2w-aQC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -203,12 +208,13 @@
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-CM-pDh" customClass="JDVTextViewPadding" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="2" y="43.5" width="410" height="17.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgIvory2"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="gKH-CM-pDh" secondAttribute="trailing" constant="2" id="9Ry-eE-fVU"/>
                                                 <constraint firstAttribute="bottom" secondItem="gKH-CM-pDh" secondAttribute="bottom" constant="8" id="HcQ-eH-ewP"/>
@@ -225,7 +231,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showauth" rowHeight="70" id="d34-pO-24l" customClass="ShowAuthCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="387.5" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="394.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d34-pO-24l" id="dWg-ju-y0h">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -233,7 +239,7 @@
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2k-Ma-Gf6" customClass="JDVAuthButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="16" width="382" height="50"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.28627450980392155" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="cri-bK-BpZ"/>
                                                     </constraints>
@@ -247,7 +253,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstItem="U2k-Ma-Gf6" firstAttribute="leading" secondItem="dWg-ju-y0h" secondAttribute="leading" constant="16" id="74T-Sv-IEc"/>
                                                 <constraint firstAttribute="trailing" secondItem="U2k-Ma-Gf6" secondAttribute="trailing" constant="16" id="Fiy-eO-4LW"/>
@@ -260,7 +266,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showsol" rowHeight="58" id="uYQ-H2-NGM" customClass="ShowSolCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="457.5" width="414" height="58"/>
+                                        <rect key="frame" x="0.0" y="464.5" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYQ-H2-NGM" id="3EU-xU-oCp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
@@ -268,7 +274,7 @@
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjP-AX-xyb" customClass="JDVSolButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="4" width="382" height="50"/>
-                                                    <color key="backgroundColor" red="0.57254901960000004" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="textRed"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="qlp-09-Ge6"/>
                                                     </constraints>
@@ -279,7 +285,7 @@
                                                     </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstItem="EjP-AX-xyb" firstAttribute="leading" secondItem="3EU-xU-oCp" secondAttribute="leading" constant="16" id="ARi-ZH-bZu"/>
                                                 <constraint firstItem="EjP-AX-xyb" firstAttribute="top" secondItem="3EU-xU-oCp" secondAttribute="top" constant="4" id="n6e-xu-4Tr"/>
@@ -316,4 +322,30 @@
             <point key="canvasLocation" x="155.07246376811597" y="29.464285714285712"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="bgIvory">
+            <color red="0.9179999828338623" green="0.90200001001358032" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgIvory2">
+            <color red="0.792156862745098" green="0.792156862745098" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgWhite0">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lineBlack">
+            <color red="0.68999999761581421" green="0.68999999761581421" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textRed">
+            <color red="0.57300001382827759" green="0.10199999809265137" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

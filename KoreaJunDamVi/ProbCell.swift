@@ -30,6 +30,7 @@ class ProbCell: UITableViewCell, TempleteCell {
         }
         self.contentTextView.attributedText = prob.article_attString
         self.scoreLabel.text = "[\(prob.Score)점]"
+        self.scoreLabel.font = UIFont.scoreFont
     }
 }
 

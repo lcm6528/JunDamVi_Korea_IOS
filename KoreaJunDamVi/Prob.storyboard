@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -48,13 +49,13 @@
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-L7-2KQ">
                                         <rect key="frame" x="94" y="0.0" width="93" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="시대별">
-                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" name="textUnselectedGray"/>
                                         </state>
                                         <state key="selected">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="iTa-vq-DKi"/>
@@ -62,13 +63,13 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Qh-DsV">
                                         <rect key="frame" x="188" y="0.0" width="93" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="유형별">
-                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" name="textUnselectedGray"/>
                                         </state>
                                         <state key="selected">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="IDA-DP-yQ8"/>
@@ -76,13 +77,13 @@
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-8w-w1X">
                                         <rect key="frame" x="282" y="0.0" width="93" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="테마별">
-                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" name="textUnselectedGray"/>
                                         </state>
                                         <state key="selected">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="IDo-Vl-bJQ"/>
@@ -90,7 +91,7 @@
                                     </button>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Af-0W-erO">
                                         <rect key="frame" x="93" y="8.6666666666666714" width="1" height="23"/>
-                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="textBlack50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="8dl-8Z-H2X"/>
                                             <constraint firstAttribute="width" constant="1" id="BcU-NW-qhw"/>
@@ -98,7 +99,7 @@
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4W-KJ-hlz">
                                         <rect key="frame" x="187" y="8.6666666666666714" width="1" height="23"/>
-                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="textBlack50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="psS-RA-EUh"/>
                                             <constraint firstAttribute="height" constant="23" id="wlM-vr-DrQ"/>
@@ -106,7 +107,7 @@
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spC-iE-wJD">
                                         <rect key="frame" x="281" y="8.6666666666666714" width="1" height="23"/>
-                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.12549019607843137" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="textBlack50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="5ds-DI-zlf"/>
                                             <constraint firstAttribute="height" constant="23" id="PPN-OY-PMG"/>
@@ -114,20 +115,20 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ2-sn-Bnn">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="회차별">
-                                            <color key="titleColor" red="0.6588235294117647" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" name="textUnselectedGray"/>
                                         </state>
                                         <state key="selected">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="ToolbarButtonSelected:" destination="xTc-8c-Vlx" eventType="touchUpInside" id="fvp-0k-UEf"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="bgWhite"/>
                                 <constraints>
                                     <constraint firstItem="EEY-L7-2KQ" firstAttribute="leading" secondItem="7Af-0W-erO" secondAttribute="trailing" id="27a-RK-5bD"/>
                                     <constraint firstAttribute="bottom" secondItem="y6V-8w-w1X" secondAttribute="bottom" id="3Ln-Ek-NnB"/>
@@ -156,7 +157,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pMJ-uN-sh3"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="pMJ-uN-sh3" firstAttribute="trailing" secondItem="uV4-u2-t56" secondAttribute="trailing" id="Tsh-7G-QFx"/>
                             <constraint firstItem="uV4-u2-t56" firstAttribute="top" secondItem="pMJ-uN-sh3" secondAttribute="top" id="UVM-nj-RjZ"/>
@@ -192,7 +193,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ljR-cr-tdM">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="bgIvory"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="2Zt-Qc-8Qq">
                                     <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -237,11 +238,11 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-p8-LMz">
                                                             <rect key="frame" x="8" y="1" width="104" height="22"/>
                                                             <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
-                                                            <color key="textColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" name="textBlack50"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.792156862745098" green="0.76470588235294112" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="bgWhite2"/>
                                                     <constraints>
                                                         <constraint firstItem="7kF-p8-LMz" firstAttribute="top" secondItem="dq8-g8-GAg" secondAttribute="top" constant="1" id="DMC-zD-RIe"/>
                                                         <constraint firstAttribute="bottom" secondItem="7kF-p8-LMz" secondAttribute="bottom" constant="1" id="YdB-od-KH5"/>
@@ -252,7 +253,7 @@
                                                 </view>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="GhI-Q6-t8J" secondAttribute="trailing" constant="8" id="8Mh-gk-4Kz"/>
                                             <constraint firstItem="MJI-9c-jcD" firstAttribute="leading" secondItem="pNW-BK-MjP" secondAttribute="leadingMargin" id="Caj-yR-998"/>
@@ -283,7 +284,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Za2-9l-NH2"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="Za2-9l-NH2" firstAttribute="bottom" secondItem="ljR-cr-tdM" secondAttribute="bottom" id="SDC-BW-LqO"/>
                             <constraint firstItem="Za2-9l-NH2" firstAttribute="trailing" secondItem="ljR-cr-tdM" secondAttribute="trailing" id="Xhq-lL-v8X"/>
@@ -310,7 +311,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="12g-sw-6Fs">
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
-                                <color key="backgroundColor" red="0.64313725490196072" green="0.63921568627450975" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="bgBlack50"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.5" id="SSz-gN-nlg">
                                     <size key="itemSize" width="75" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -350,7 +351,7 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.91764705882352937" green="0.9137254901960784" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="bgIvory"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="mJQ-By-4ZH" secondAttribute="trailing" constant="8" id="LyS-Zn-7O1"/>
                                             <constraint firstItem="Zo9-aO-YRp" firstAttribute="width" secondItem="TZi-39-ICC" secondAttribute="width" multiplier="0.4" id="f6O-ot-qgV"/>
@@ -442,7 +443,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-FV-21v">
                                         <rect key="frame" x="142.66666666666666" y="40" width="90" height="4"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="TO3-Ce-lbB"/>
                                         </constraints>
@@ -461,7 +462,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                         <state key="normal" title="1번">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="leftBarButtonPressed:" destination="eJ4-GU-UW1" eventType="touchUpInside" id="t4p-II-fxo"/>
@@ -471,14 +472,14 @@
                                         <rect key="frame" x="285" y="0.0" width="90" height="44"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                         <state key="normal" title="3번">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="rightBarButtonPressed:" destination="eJ4-GU-UW1" eventType="touchUpInside" id="r9j-dd-efU"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="bgWhite"/>
                                 <constraints>
                                     <constraint firstItem="XzH-FV-21v" firstAttribute="centerX" secondItem="4Pu-Lp-qv1" secondAttribute="centerX" id="G3k-eW-g0F"/>
                                     <constraint firstItem="xim-Qq-pxT" firstAttribute="top" secondItem="4Pu-Lp-qv1" secondAttribute="top" id="Ite-fZ-Zki"/>
@@ -498,7 +499,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lso-1k-9AM"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="Lso-1k-9AM" firstAttribute="trailing" secondItem="4Pu-Lp-qv1" secondAttribute="trailing" id="Egk-KR-9jv"/>
                             <constraint firstItem="4Pu-Lp-qv1" firstAttribute="leading" secondItem="Lso-1k-9AM" secondAttribute="leading" id="Mdk-Co-gPg"/>
@@ -550,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSU-8P-3wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="224"/>
+            <point key="canvasLocation" x="1932" y="223.89162561576356"/>
         </scene>
         <!--Prob Result View Controller-->
         <scene sceneID="u89-OR-9Pc">
@@ -648,7 +649,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-M3-BcF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="bgIvory"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="CfD-N0-GRe" customClass="ProbQuickCell" customModule="KoreaJunDamVi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
@@ -659,10 +660,10 @@
                                             <subviews>
                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Y1-oz1" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="324" y="3" width="47" height="54"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="5번">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
@@ -671,10 +672,10 @@
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="272.66666666666669" y="3" width="47.333333333333314" height="54"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="4번">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
@@ -683,10 +684,10 @@
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="221.66666666666666" y="3" width="46.999999999999972" height="54"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="3번">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
@@ -695,10 +696,10 @@
                                                 </button>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="170.66666666666666" y="3" width="47" height="54"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="2번">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
@@ -707,10 +708,10 @@
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                                     <rect key="frame" x="119.66666666666669" y="3" width="47" height="54"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="1번">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
@@ -724,7 +725,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="bgIvory"/>
                                             <constraints>
                                                 <constraint firstItem="RQI-hg-IYg" firstAttribute="centerY" secondItem="GeR-AQ-DL0" secondAttribute="centerY" id="0Qy-b1-LIa"/>
                                                 <constraint firstAttribute="trailing" secondItem="uOx-Y1-oz1" secondAttribute="trailing" constant="4" id="5Cn-N9-5PW"/>
@@ -754,6 +755,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="3S5-2x-mDe" secondAttribute="bottom" constant="2" id="zoS-LM-2gq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="bgIvory"/>
                                         <connections>
                                             <outlet property="btn1" destination="RQI-hg-IYg" id="aTL-7H-hAb"/>
                                             <outlet property="btn2" destination="GgK-Bz-ClN" id="IPA-dd-jZO"/>
@@ -774,14 +776,14 @@
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
                                         <rect key="frame" x="97.666666666666686" y="15" width="180" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Na2-es-ddv"/>
                                             <constraint firstAttribute="width" constant="180" id="cmn-Oj-Wyq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="17"/>
                                         <state key="normal" title=" 풀이 결과 확인" image="button_gotoNote">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isBouncable" value="YES"/>
@@ -793,13 +795,13 @@
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-ie-3Dn">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.66666666666666663"/>
-                                        <color key="backgroundColor" red="0.49019607843137253" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="lineBlack"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="kCF-lM-J46"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.88235294117647056" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="bgIvory2"/>
                                 <constraints>
                                     <constraint firstItem="iSd-K8-ooj" firstAttribute="centerX" secondItem="8wC-5e-fdd" secondAttribute="centerX" id="0qK-9h-RMN"/>
                                     <constraint firstAttribute="height" constant="70" id="JI2-Fi-tq3"/>
@@ -993,7 +995,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g1j-Ts-sSb">
                                 <rect key="frame" x="0.0" y="169.66666666666666" width="320" height="497.33333333333337"/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="bgIvory"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="Phq-gV-Psn">
                                     <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1030,7 +1032,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.79215686269999996" green="0.76470588240000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" name="bgWhite2"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="Cx0-Ny-nhE" secondAttribute="trailing" constant="8" id="7BY-uj-rTX"/>
                                                         <constraint firstItem="Cx0-Ny-nhE" firstAttribute="leading" secondItem="6gj-D0-Miz" secondAttribute="leading" constant="8" id="AZK-Pc-4Ra"/>
@@ -1041,7 +1043,7 @@
                                                 </view>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="bgWhite"/>
                                         <constraints>
                                             <constraint firstItem="OG0-q9-5b5" firstAttribute="centerX" secondItem="PU8-gy-eIJ" secondAttribute="centerX" id="1dh-cd-fg7"/>
                                             <constraint firstItem="iaA-6S-rNh" firstAttribute="top" secondItem="PU8-gy-eIJ" secondAttribute="top" constant="4" id="Dzg-Ek-UKq"/>
@@ -1081,7 +1083,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1위 조선시대(24%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-Ik-iWt">
                                 <rect key="frame" x="8" y="81" width="96" height="30"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIvory2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RWP-me-jrO"/>
                                 </constraints>
@@ -1091,7 +1093,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2위 일제강점기(24%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MN0-9a-ye9">
                                 <rect key="frame" x="112" y="81" width="96" height="30"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIvory2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hag-mK-agV"/>
                                 </constraints>
@@ -1101,7 +1103,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3위 조선시대(24%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PX-HD-pRE">
                                 <rect key="frame" x="216" y="81" width="96" height="30"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIvory2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="soM-zM-bAJ"/>
                                 </constraints>
@@ -1136,7 +1138,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0eD-Od-OkX"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="9PX-HD-pRE" firstAttribute="leading" secondItem="MN0-9a-ye9" secondAttribute="trailing" constant="8" id="1Fx-Jj-wyu"/>
                             <constraint firstItem="9PX-HD-pRE" firstAttribute="centerY" secondItem="MN0-9a-ye9" secondAttribute="centerY" id="3Ac-Ly-QGW"/>
@@ -1451,7 +1453,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="28R-Nv-1NB"/>
+        <segue reference="Zua-Fs-LAj"/>
         <segue reference="1us-z2-awh"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1466,6 +1468,36 @@
         <image name="resultLabel" width="225" height="30.5"/>
         <image name="small_star_selected" width="20" height="20"/>
         <image name="star" width="21.666666030883789" height="21.666666030883789"/>
+        <namedColor name="bgBlack50">
+            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgIvory">
+            <color red="0.9179999828338623" green="0.90200001001358032" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgIvory2">
+            <color red="0.792156862745098" green="0.792156862745098" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgWhite0">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgWhite2">
+            <color red="0.97600001096725464" green="0.96899998188018799" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="lineBlack">
+            <color red="0.68999999761581421" green="0.68999999761581421" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textBlack50">
+            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="textUnselectedGray">
+            <color red="0.6588235294" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
