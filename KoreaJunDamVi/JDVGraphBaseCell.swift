@@ -10,121 +10,100 @@ import UIKit
 
 
 @IBDesignable class JDVGraphBaseCell: UIView {
-  
-  var view:UIView!
-  
-  
-  let NibName: String = "JDVGraphBaseCell"
-  
-  var duration:Double = 1
-  
-  @IBOutlet var gageHeightConst: NSLayoutConstraint!
-  
-  @IBOutlet var titleLabel: UILabel!
-  @IBOutlet var valueLabel: UILabel!
-  @IBOutlet var gageView: UIView!
-  @IBOutlet var separatorView: UIView!
-  @IBOutlet var highlightBalloon: UIImageView!
-  
-  @IBOutlet var bottomConst: NSLayoutConstraint!
-  
-  var normalGageColor:UIColor!
-  var highlightGagecolor:UIColor!
-  
-  
-  
-  var highlight:Bool = false{
-    didSet{
-      setHighlight(Bool: highlight)
+    
+    var view:UIView!
+    let NibName: String = "JDVGraphBaseCell"
+    
+    var duration: Double = 1
+    
+    @IBOutlet var gageHeightConst: NSLayoutConstraint!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
+    @IBOutlet var gageView: UIView!
+    @IBOutlet var separatorView: UIView!
+    @IBOutlet var highlightBalloon: UIImageView!
+    
+    @IBOutlet var bottomConst: NSLayoutConstraint!
+    
+    var normalGageColor: UIColor!
+    var highlightGagecolor: UIColor!
+    
+    var highlight: Bool = false {
+        didSet {
+            setHighlight(Bool: highlight)
+        }
     }
-  }
-  
-  var currentValue:Float = 0 {
-    didSet{
-      valueLabel.text = "\(Int(currentValue))%"
+    
+    var currentValue: Float = 0 {
+        didSet {
+            valueLabel.text = "\(Int(currentValue))%"
+        }
     }
-  }
-  var title: String  = ""{
-    didSet{
-      titleLabel.text = title
+    var title: String  = "" {
+        didSet{
+            titleLabel.text = title
+        }
     }
-  }
-  
-  override init(frame: CGRect) {
     
-    super.init(frame: frame)
-    setup()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
     
-  }
-  
-  
-  required init(coder aDecoder: NSCoder) {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        setup()
+    }
     
-    super.init(coder: aDecoder)!
-    setup()
-  }
-  
-  
-  convenience init(title text: String, value val: Float) {
-    self.init()
-
-    title = text
-    titleLabel.text = text
-    currentValue = val
-    valueLabel.text = "\(Int(val))%"
-
-  }
-  
-  
-  
-  func setup() {
-    view = loadViewFromNib()
-    view.frame = bounds
-    view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
-    addSubview(view)
+    convenience init(title text: String, value val: Float) {
+        self.init()
+        
+        title = text
+        titleLabel.text = text
+        currentValue = val
+        valueLabel.text = "\(Int(val))%"
+    }
     
+    func setup() {
+        view = loadViewFromNib()
+        view.frame = bounds
+        view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
+        addSubview(view)
+    }
     
+    func loadViewFromNib() -> UIView {
+        let bundle = Bundle(for:type(of: self))
+        let nib = UINib(nibName:NibName, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
+    }
     
-  }
-  func loadViewFromNib() -> UIView {
-    let bundle = Bundle(for:type(of: self))
-    let nib = UINib(nibName:NibName, bundle: bundle)
-    let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+    func setHighlight(Bool val: Bool) {
+        gageView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
+        separatorView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
+        
+        bottomConst.constant = (val) ? 8 : 0
+        valueLabel.textColor = (val) ? UIColor.white : UIColor.textBlack0
+        highlightBalloon.isHidden = (val) ? false : true
+        valueLabel.font = (val) ? UIFont(name: "NanumBarunGothicBold", size: 10) : UIFont(name: "NanumBarunGothic", size: 11)
+    }
     
-    return view
-  }
-  
-  func setHighlight(Bool val:Bool) {
+    func setGageBackgroundColor(with color: UIColor) {
+        gageView.backgroundColor = color
+        separatorView.backgroundColor = color
+    }
     
-    gageView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
-    separatorView.backgroundColor = (val) ? highlightGagecolor : normalGageColor
-    
-    bottomConst.constant = (val) ? 8 : 0
-    valueLabel.textColor = (val) ? UIColor.white : UIColor.black
-    highlightBalloon.isHidden = (val) ? false : true
-    valueLabel.font = (val) ? UIFont(name: "NanumBarunGothicBold", size: 10) : UIFont(name: "NanumBarunGothic", size: 11)
-    
-  }
-  
-  func setGageBackgroundColor(with color:UIColor) {
-    
-    gageView.backgroundColor = color
-    separatorView.backgroundColor = color
-    
-  }
-  
-  
-  func setGageHeight(_ const:CGFloat, animate isAnimate:Bool) {
-    gageHeightConst.constant = 4
-      self.layoutIfNeeded()
-    if isAnimate{
-      self.gageHeightConst.constant = const
-      UIView.animate(withDuration: duration, animations: {
-      
+    func setGageHeight(_ const: CGFloat, animate isAnimate: Bool) {
+        gageHeightConst.constant = 4
         self.layoutIfNeeded()
-      })
-    } else {
-      gageHeightConst.constant = const
+        if isAnimate{
+            self.gageHeightConst.constant = const
+            UIView.animate(withDuration: duration, animations: {
+                self.layoutIfNeeded()
+            })
+        } else {
+            gageHeightConst.constant = const
+        }
     }
-  }
 }

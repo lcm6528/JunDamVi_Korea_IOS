@@ -115,7 +115,7 @@ class ProbResultViewController: UIViewController, ProbResultSubViewDelegate, UIT
         
         topView?.snp.updateConstraints({ (make) in
             make.width.equalTo(size.width)
-            make.height.equalTo(heightOfSubView * 0.8)
+            make.height.equalTo(heightOfSubView)
         })
         botView?.snp.updateConstraints({ (make) in
             make.width.equalTo(size.width)

@@ -29,8 +29,9 @@ class HomeViewController: JDVViewController {
     @IBOutlet weak var cancelLabel: UILabel!
     @IBOutlet weak var cancel50Label: UILabel!
     
-    
-    var Tests:[String] = []
+    var isLandscape: Bool = UIDevice.current.isIPadOrLandscape
+    var Tests: [String] = []
+    var data: [String: String]? = nil
     var completeCount = 0
     
     override func viewDidLoad() {
@@ -50,6 +51,16 @@ class HomeViewController: JDVViewController {
         roundView1.setValue(value: CGFloat(completeCount)/CGFloat(Tests.count)*100, animate: false)
     }
   
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if size.width > size.height || UIDevice.current.isIPad {
+            isLandscape = true
+        } else {
+            isLandscape = false
+        }
+        setInfo()
+    }
+    
     func fetchList() {
         var dict:NSDictionary!
         let path = Bundle.main.path(forResource: "ProbList", ofType: "json")
@@ -82,13 +93,15 @@ class HomeViewController: JDVViewController {
             let now = Date()
             if date < now { continue }
             else if date > now {
-                setInfo(data: item)
+                self.data = item
+                setInfo()
                 break
             }
         }
     }
     
-    func setInfo(data: [String : String]) {
+    func setInfo() {
+        guard let data = data else { return }
         guard let test = data["num"] else { return }
         guard let day = data["day"] else { return }
         guard let apply = data["apply"]  else { return }
@@ -101,6 +114,8 @@ class HomeViewController: JDVViewController {
         guard let cancel100 = data["cancel100"] else { return }
         guard let cancel50 = data["cancel50"] else { return }
         
+        
+        
         let dateObject = Date(dateString: day)
         
         let formatter = DateFormatter()
@@ -109,17 +124,17 @@ class HomeViewController: JDVViewController {
         let dday = dateObject.daysFromNow()
         ddayTitleLabel.text = "\(test)회 한국사능력검정시험"
         ddayCotentLabel.text = "D\(dday)"
-        dateLabel.text = formatter.string(from: dateObject)
+        dateLabel.text = formatter.string(from: dateObject).shouldRemoveNewline(remove: isLandscape)
         numLabel.text = test
-        startLabel.text = apply
-        endLabel.text = bonus
-        dateStringLabel.text = date
-        resultLabel.text = result
-        changeLabel.text = change
-        photoLabel.text = photo
-        printLabel.text = print
-        cancelLabel.text = cancel100
-        cancel50Label.text = cancel50
+        startLabel.text = apply.shouldRemoveNewline(remove: isLandscape)
+        endLabel.text = bonus.shouldRemoveNewline(remove: isLandscape)
+        dateStringLabel.text = date.shouldRemoveNewline(remove: isLandscape)
+        resultLabel.text = result.shouldRemoveNewline(remove: isLandscape)
+        changeLabel.text = change.shouldRemoveNewline(remove: isLandscape)
+        photoLabel.text = photo.shouldRemoveNewline(remove: isLandscape)
+        printLabel.text = print.shouldRemoveNewline(remove: isLandscape)
+        cancelLabel.text = cancel100.shouldRemoveNewline(remove: isLandscape)
+        cancel50Label.text = cancel50.shouldRemoveNewline(remove: isLandscape)
     }
     
     func getAttrStr(totalValue total: Int, withValue value: Int)->NSMutableAttributedString {
@@ -168,4 +183,10 @@ class HomeViewController: JDVViewController {
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}
+
+fileprivate extension String {
+    func shouldRemoveNewline(remove: Bool) -> String{
+        return remove ? self.components(separatedBy: ["\n"]).joined() : self
+    }
 }

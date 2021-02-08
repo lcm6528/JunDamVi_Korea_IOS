@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1i-8k-ox6">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -41,14 +41,14 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="xTc-8c-Vlx" customClass="ProbMenuViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ATu-OS-SdU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-u2-t56" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-L7-2KQ">
-                                        <rect key="frame" x="94" y="0.0" width="93" height="40"/>
+                                        <rect key="frame" x="104" y="0.0" width="102.5" height="40"/>
                                         <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="시대별">
@@ -62,7 +62,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Qh-DsV">
-                                        <rect key="frame" x="188" y="0.0" width="93" height="40"/>
+                                        <rect key="frame" x="207.5" y="0.0" width="103" height="40"/>
                                         <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="유형별">
@@ -76,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-8w-w1X">
-                                        <rect key="frame" x="282" y="0.0" width="93" height="40"/>
+                                        <rect key="frame" x="311.5" y="0.0" width="102.5" height="40"/>
                                         <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="테마별">
@@ -90,7 +90,7 @@
                                         </connections>
                                     </button>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Af-0W-erO">
-                                        <rect key="frame" x="93" y="8.6666666666666714" width="1" height="23"/>
+                                        <rect key="frame" x="103" y="8.5" width="1" height="23"/>
                                         <color key="backgroundColor" name="textBlack50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="8dl-8Z-H2X"/>
@@ -98,7 +98,7 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4W-KJ-hlz">
-                                        <rect key="frame" x="187" y="8.6666666666666714" width="1" height="23"/>
+                                        <rect key="frame" x="206.5" y="8.5" width="1" height="23"/>
                                         <color key="backgroundColor" name="textBlack50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="psS-RA-EUh"/>
@@ -106,7 +106,7 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spC-iE-wJD">
-                                        <rect key="frame" x="281" y="8.6666666666666714" width="1" height="23"/>
+                                        <rect key="frame" x="310.5" y="8.5" width="1" height="23"/>
                                         <color key="backgroundColor" name="textBlack50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="5ds-DI-zlf"/>
@@ -114,7 +114,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ2-sn-Bnn">
-                                        <rect key="frame" x="0.0" y="0.0" width="93" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
                                         <color key="backgroundColor" name="bgWhite"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicLight" family="NanumBarunGothic" pointSize="16"/>
                                         <state key="normal" title="회차별">
@@ -188,11 +188,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProbCollectionViewController" automaticallyAdjustsScrollViewInsets="NO" id="i0f-JR-vep" customClass="ProbCollectionViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fjf-mX-jdW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ljR-cr-tdM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" name="bgIvory"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="2Zt-Qc-8Qq">
                                     <size key="itemSize" width="120" height="120"/>
@@ -344,7 +344,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Zo9-aO-YRp">
-                                                    <rect key="frame" x="22.666666666666671" y="60" width="30" height="24"/>
+                                                    <rect key="frame" x="22.5" y="60" width="30" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Zo9-aO-YRp" secondAttribute="height" multiplier="5:4" id="RDB-7y-Um6"/>
                                                     </constraints>
@@ -416,7 +416,7 @@
                     <tabBarItem key="tabBarItem" title="문제풀기" image="prob" id="dsb-hP-emW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Apx-kp-2qS">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -435,21 +435,28 @@
             <objects>
                 <viewController storyboardIdentifier="ProbTestFrameViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eJ4-GU-UW1" customClass="ProbTestFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pS0-rT-F5h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pu-Lp-qv1" customClass="JDVViewWithBotLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-FV-21v">
-                                        <rect key="frame" x="142.66666666666666" y="40" width="90" height="4"/>
+                                        <rect key="frame" x="157.5" y="40" width="99" height="4"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="TO3-Ce-lbB"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-hP-1KC">
+                                        <rect key="frame" x="0.0" y="43.5" width="414" height="0.5"/>
+                                        <color key="backgroundColor" name="bgBlack5050"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.29999999999999999" id="s4Z-cx-PJp"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-rq-kXJ">
-                                        <rect key="frame" x="173.66666666666666" y="11.666666666666671" width="28" height="21"/>
+                                        <rect key="frame" x="193" y="11.5" width="28" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="dAz-xM-aCz"/>
                                         </constraints>
@@ -458,7 +465,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xim-Qq-pxT">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="44"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                         <state key="normal" title="1번">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -468,7 +475,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6e-AK-EyP">
-                                        <rect key="frame" x="285" y="0.0" width="90" height="44"/>
+                                        <rect key="frame" x="314.5" y="0.0" width="99.5" height="44"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                         <state key="normal" title="3번">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -480,10 +487,13 @@
                                 </subviews>
                                 <color key="backgroundColor" name="bgWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="i6U-hP-1KC" secondAttribute="bottom" id="84b-ki-5lK"/>
+                                    <constraint firstAttribute="trailing" secondItem="i6U-hP-1KC" secondAttribute="trailing" id="8Hl-w2-mXa"/>
                                     <constraint firstItem="XzH-FV-21v" firstAttribute="centerX" secondItem="4Pu-Lp-qv1" secondAttribute="centerX" id="G3k-eW-g0F"/>
                                     <constraint firstItem="xim-Qq-pxT" firstAttribute="top" secondItem="4Pu-Lp-qv1" secondAttribute="top" id="Ite-fZ-Zki"/>
                                     <constraint firstItem="L6e-AK-EyP" firstAttribute="top" secondItem="4Pu-Lp-qv1" secondAttribute="top" id="QIj-7w-Bjf"/>
                                     <constraint firstAttribute="height" constant="44" id="QOC-Ny-DPi"/>
+                                    <constraint firstItem="i6U-hP-1KC" firstAttribute="leading" secondItem="4Pu-Lp-qv1" secondAttribute="leading" id="SRB-Fz-xiv"/>
                                     <constraint firstAttribute="trailing" secondItem="L6e-AK-EyP" secondAttribute="trailing" id="UI0-SW-DMd"/>
                                     <constraint firstItem="Qrd-rq-kXJ" firstAttribute="centerY" secondItem="4Pu-Lp-qv1" secondAttribute="centerY" id="ZJD-uV-cak"/>
                                     <constraint firstAttribute="bottom" secondItem="L6e-AK-EyP" secondAttribute="bottom" id="bNN-qx-ed3"/>
@@ -557,14 +567,14 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="zm0-gX-xPW" customClass="ProbResultViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SWs-me-BEm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RK-hP-dQ3">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OV-WB-RJU">
-                                        <rect key="frame" x="321" y="6" width="46" height="30"/>
+                                        <rect key="frame" x="360" y="6" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FDB-3A-J9h"/>
                                             <constraint firstAttribute="width" constant="46" id="UYE-mP-OxV"/>
@@ -575,7 +585,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BA-dX-N2h">
-                                        <rect key="frame" x="58" y="8" width="259" height="28"/>
+                                        <rect key="frame" x="58" y="8" width="298" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="blz-53-YsT"/>
                                         </constraints>
@@ -595,10 +605,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSP-rg-9St">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="623"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uqK-xG-WJl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                         <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                                     </stackView>
                                 </subviews>
@@ -670,7 +680,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-Zy-lAP" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="272.66666666666669" y="3" width="47.333333333333314" height="54"/>
+                                                    <rect key="frame" x="273" y="3" width="47" height="54"/>
                                                     <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="4번">
@@ -682,7 +692,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-aU-oGS" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="221.66666666666666" y="3" width="46.999999999999972" height="54"/>
+                                                    <rect key="frame" x="221.5" y="3" width="47.5" height="54"/>
                                                     <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="3번">
@@ -694,7 +704,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-Bz-ClN" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="170.66666666666666" y="3" width="47" height="54"/>
+                                                    <rect key="frame" x="170.5" y="3" width="47" height="54"/>
                                                     <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="2번">
@@ -706,7 +716,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-hg-IYg" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="119.66666666666669" y="3" width="47" height="54"/>
+                                                    <rect key="frame" x="119.5" y="3" width="47" height="54"/>
                                                     <color key="backgroundColor" name="bgWhite0"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <state key="normal" title="1번">
@@ -718,7 +728,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3S5-2x-mDe">
-                                                    <rect key="frame" x="2" y="2" width="112.66666666666667" height="56"/>
+                                                    <rect key="frame" x="2" y="2" width="112.5" height="56"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -774,7 +784,7 @@
                                 <rect key="frame" x="0.0" y="509" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-K8-ooj" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="97.666666666666686" y="15" width="180" height="40"/>
+                                        <rect key="frame" x="97.5" y="15" width="180" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Na2-es-ddv"/>
@@ -793,7 +803,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-ie-3Dn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.66666666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
                                         <color key="backgroundColor" name="lineBlack"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="kCF-lM-J46"/>
@@ -812,7 +822,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wyy-Fn-cXv"/>
-                        <color key="backgroundColor" red="0.8980392157" green="0.88235294119999996" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="Wyy-Fn-cXv" firstAttribute="trailing" secondItem="ZWI-M3-BcF" secondAttribute="trailing" id="6P5-Gz-uiu"/>
                             <constraint firstItem="8wC-5e-fdd" firstAttribute="leading" secondItem="Wyy-Fn-cXv" secondAttribute="leading" id="6Y3-B0-eyf"/>
@@ -852,11 +862,11 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Lq9-21-mw2" customClass="JDVProbAnalFrameViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HmU-cf-qpc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="579"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마별 출제 비중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTW-s6-fVP" customClass="JDVLabelWithTBLine" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <rect key="frame" x="108" y="74" width="104" height="21"/>
+                                <rect key="frame" x="155" y="52" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IX6-sP-0cC"/>
                                     <constraint firstAttribute="width" constant="104" id="iEu-vX-IpS"/>
@@ -865,10 +875,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh4-eg-mwG" customClass="JDVGraph" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <rect key="frame" x="4" y="111" width="312" height="180"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh4-eg-mwG" customClass="JDVGraph" customModule="KoreaJunDamVi" customModuleProvider="target">
+                                <rect key="frame" x="4" y="77" width="406" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="Kur-lh-aLE"/>
+                                    <constraint firstAttribute="height" constant="180" id="Kur-lh-aLE">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="normalGageColor">
@@ -880,7 +892,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MM4-WC-xQB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BDL-SD-WPt"/>
@@ -938,12 +950,12 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKo-Jf-kEK">
-                                <rect key="frame" x="4" y="299" width="312" height="276"/>
+                                <rect key="frame" x="4" y="261" width="406" height="543"/>
                                 <color key="backgroundColor" name="bgWhite1"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="test" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUm-QA-HBX">
-                                <rect key="frame" x="4" y="299" width="312" height="276"/>
+                                <rect key="frame" x="4" y="261" width="406" height="543"/>
                                 <color key="backgroundColor" name="bgWhite1"/>
                                 <color key="textColor" name="textBlack0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -953,11 +965,11 @@
                         <viewLayoutGuide key="safeArea" id="8Ea-Hn-dsU"/>
                         <color key="backgroundColor" name="bgWhite0"/>
                         <constraints>
-                            <constraint firstItem="xUm-QA-HBX" firstAttribute="top" secondItem="Yh4-eg-mwG" secondAttribute="bottom" constant="8" id="2jr-Ut-eVa"/>
+                            <constraint firstItem="xUm-QA-HBX" firstAttribute="top" secondItem="Yh4-eg-mwG" secondAttribute="bottom" constant="4" id="2jr-Ut-eVa"/>
                             <constraint firstItem="BKo-Jf-kEK" firstAttribute="leading" secondItem="xUm-QA-HBX" secondAttribute="leading" id="ADI-aa-UeS"/>
                             <constraint firstItem="xUm-QA-HBX" firstAttribute="leading" secondItem="8Ea-Hn-dsU" secondAttribute="leading" constant="4" id="AFl-rb-WPn"/>
                             <constraint firstItem="BKo-Jf-kEK" firstAttribute="trailing" secondItem="xUm-QA-HBX" secondAttribute="trailing" id="Ag9-QC-Zyv"/>
-                            <constraint firstItem="dTW-s6-fVP" firstAttribute="top" secondItem="MM4-WC-xQB" secondAttribute="bottom" constant="30" id="Hcg-Qa-Wdd"/>
+                            <constraint firstItem="dTW-s6-fVP" firstAttribute="top" secondItem="MM4-WC-xQB" secondAttribute="bottom" constant="8" id="Hcg-Qa-Wdd"/>
                             <constraint firstItem="BKo-Jf-kEK" firstAttribute="top" secondItem="xUm-QA-HBX" secondAttribute="top" id="NIP-M2-YGb"/>
                             <constraint firstItem="BKo-Jf-kEK" firstAttribute="bottom" secondItem="xUm-QA-HBX" secondAttribute="bottom" id="NaX-ZP-J21"/>
                             <constraint firstItem="8Ea-Hn-dsU" firstAttribute="trailing" secondItem="xUm-QA-HBX" secondAttribute="trailing" constant="4" id="Oqd-ou-CfW"/>
@@ -965,15 +977,13 @@
                             <constraint firstItem="MM4-WC-xQB" firstAttribute="top" secondItem="8Ea-Hn-dsU" secondAttribute="top" id="XeA-aR-AAG"/>
                             <constraint firstAttribute="bottom" secondItem="xUm-QA-HBX" secondAttribute="bottom" constant="4" id="co6-Vo-la0"/>
                             <constraint firstItem="8Ea-Hn-dsU" firstAttribute="trailing" secondItem="MM4-WC-xQB" secondAttribute="trailing" id="dis-BJ-Hpc"/>
-                            <constraint firstItem="Yh4-eg-mwG" firstAttribute="top" secondItem="dTW-s6-fVP" secondAttribute="bottom" constant="16" id="f8D-JQ-deZ"/>
+                            <constraint firstItem="Yh4-eg-mwG" firstAttribute="top" secondItem="dTW-s6-fVP" secondAttribute="bottom" constant="4" id="f8D-JQ-deZ"/>
                             <constraint firstItem="MM4-WC-xQB" firstAttribute="leading" secondItem="8Ea-Hn-dsU" secondAttribute="leading" id="fm8-Be-Mbk"/>
                             <constraint firstItem="8Ea-Hn-dsU" firstAttribute="trailing" secondItem="Yh4-eg-mwG" secondAttribute="trailing" constant="4" id="im2-ZI-yms"/>
                             <constraint firstItem="dTW-s6-fVP" firstAttribute="centerX" secondItem="8Ea-Hn-dsU" secondAttribute="centerX" id="kFC-Gv-8aQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9On-ae-TJm"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="MM4-WC-xQB" id="dOC-kb-gqt"/>
                         <outlet property="graph" destination="Yh4-eg-mwG" id="0l7-aW-jWL"/>
@@ -994,7 +1004,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g1j-Ts-sSb">
-                                <rect key="frame" x="0.0" y="169.66666666666666" width="320" height="497.33333333333337"/>
+                                <rect key="frame" x="0.0" y="169.5" width="320" height="497.5"/>
                                 <color key="backgroundColor" name="bgIvory"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="Phq-gV-Psn">
                                     <size key="itemSize" width="120" height="120"/>
@@ -1112,14 +1122,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-WD-Ib6">
-                                <rect key="frame" x="8" y="121" width="304" height="0.6666666666666714"/>
+                                <rect key="frame" x="8" y="121" width="304" height="0.5"/>
                                 <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="oEF-Wf-3aw"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMq-8d-tDC" customClass="JDVButton" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                <rect key="frame" x="8" y="129.66666666666666" width="304" height="40"/>
+                                <rect key="frame" x="8" y="129.5" width="304" height="40"/>
                                 <color key="backgroundColor" red="0.50445526839999999" green="0.1228601336" blue="0.078523069619999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="r2x-Ed-ZWZ"/>
@@ -1185,14 +1195,14 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Rc9-bw-TGX" customClass="SimpleResultViewController" customModule="KoreaJunDamVi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Snu-fE-ZPb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYX-FU-anM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrX-Ib-JyL">
-                                        <rect key="frame" x="321" y="6" width="46" height="30"/>
+                                        <rect key="frame" x="360" y="6" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="6Sl-a9-svf"/>
                                             <constraint firstAttribute="height" constant="30" id="Iwo-aj-cUi"/>
@@ -1203,7 +1213,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-17-sWE">
-                                        <rect key="frame" x="62" y="8" width="251" height="28"/>
+                                        <rect key="frame" x="62" y="8" width="290" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="y1s-FC-PZ6"/>
                                         </constraints>
@@ -1223,37 +1233,37 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="CYu-rA-0bd">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="S3d-qh-DSA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="292"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-zN-n3a">
-                                            <rect key="frame" x="8" y="8" width="359" height="276"/>
+                                            <rect key="frame" x="8" y="8" width="398" height="276"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resultLabel" translatesAutoresizingMaskIntoConstraints="NO" id="fbl-i1-wEh">
-                                                    <rect key="frame" x="66.333333333333329" y="-4" width="226.33333333333337" height="31"/>
+                                                    <rect key="frame" x="86" y="-4" width="226" height="31"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fbl-i1-wEh" secondAttribute="height" multiplier="7.3:1" id="gSp-sr-32r"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제 풀이 완료!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68G-mh-gYU">
-                                                    <rect key="frame" x="117.33333333333334" y="0.66666666666666607" width="124.33333333333334" height="21.666666666666671"/>
+                                                    <rect key="frame" x="137" y="0.5" width="124" height="22"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RS9-AH-wRt">
-                                                    <rect key="frame" x="152.66666666666666" y="35" width="53.666666666666657" height="0.6666666666666643"/>
+                                                    <rect key="frame" x="169" y="35" width="60" height="0.5"/>
                                                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="fFY-nU-2yM"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정답률" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-gb-LKf">
-                                                    <rect key="frame" x="162" y="39.666666666666664" width="35" height="14"/>
+                                                    <rect key="frame" x="181.5" y="39.5" width="35" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="DcB-V4-Eb8"/>
                                                     </constraints>
@@ -1262,14 +1272,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4B-ZC-f3m">
-                                                    <rect key="frame" x="152.66666666666666" y="194.33333333333334" width="53.666666666666657" height="0.66666666666665719"/>
+                                                    <rect key="frame" x="169" y="194.5" width="60" height="0.5"/>
                                                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="QQJ-8d-oSC"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정답 개수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-xE-aDf">
-                                                    <rect key="frame" x="155" y="199" width="49" height="14"/>
+                                                    <rect key="frame" x="174.5" y="199" width="49" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="6VG-rd-Q75"/>
                                                     </constraints>
@@ -1278,7 +1288,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xy-E6-IYM" customClass="RoundView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="124.66666666666666" y="61.666666666666671" width="110" height="110.00000000000001"/>
+                                                    <rect key="frame" x="144" y="61.5" width="110" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="QDb-R6-6pO"/>
                                                         <constraint firstAttribute="width" secondItem="5xy-E6-IYM" secondAttribute="height" multiplier="1:1" id="kI1-6C-Gyg"/>
@@ -1294,7 +1304,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1b-HT-07P" customClass="GageView" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                                    <rect key="frame" x="30" y="235" width="299" height="11"/>
+                                                    <rect key="frame" x="30" y="235" width="338" height="11"/>
                                                     <color key="backgroundColor" red="0.90980392160000001" green="0.8980392157" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
@@ -1314,7 +1324,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balloon_black" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-EC-AkG">
-                                                    <rect key="frame" x="314" y="202" width="30" height="32"/>
+                                                    <rect key="frame" x="353" y="202" width="30" height="32"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Wxr-cX-vXA"/>
@@ -1329,7 +1339,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SW1-0M-Qtp">
-                                                    <rect key="frame" x="314" y="202" width="30" height="30"/>
+                                                    <rect key="frame" x="353" y="202" width="30" height="30"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1344,7 +1354,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오답" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSg-zg-Jdc">
-                                                    <rect key="frame" x="314" y="248.66666666666669" width="30" height="15"/>
+                                                    <rect key="frame" x="353" y="248.5" width="30" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="2iy-Gn-CjD"/>
                                                     </constraints>
@@ -1411,10 +1421,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="70j-fW-Avg" customClass="ProbResultBotCell" customModule="KoreaJunDamVi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="320" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="70j-fW-Avg" id="617-2O-Jvm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1472,6 +1482,9 @@
         <image name="star" width="21.666666030883789" height="21.666666030883789"/>
         <namedColor name="bgBlack50">
             <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgBlack5050">
+            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="bgIvory">
             <color red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

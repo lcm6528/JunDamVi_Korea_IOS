@@ -305,7 +305,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ADz-zd-R6E"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.91764705879999997" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="bgIvory"/>
                         <constraints>
                             <constraint firstItem="qcd-MV-Pzc" firstAttribute="top" secondItem="81C-0d-a1v" secondAttribute="top" id="K4Z-JW-7gb"/>
                             <constraint firstItem="ADz-zd-R6E" firstAttribute="trailing" secondItem="qcd-MV-Pzc" secondAttribute="trailing" id="gqt-xd-Dot"/>
