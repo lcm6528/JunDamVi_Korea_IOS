@@ -38,13 +38,10 @@ enum SortedOption: String {
 }
 
 class JDVProbManager: NSObject {
-    
     struct ProbOption {
         var sortedOption: SortedOption = .test
         var cacheKey: String = ""
     }
-    
-    
     
     static func fetchProbs(withSortedOption option: SortedOption, by value: String, completion:@escaping ([ProbData]) -> ()) {
         
@@ -145,10 +142,6 @@ class JDVProbManager: NSObject {
     
     static func getCachedData(with key: String) -> [Int]? {
         return getUserDefault(key) as? [Int]
-    }
-    
-    static func deleteCachedData(with key: String) {
-        deleteUserDefalut(key)
     }
     
     //QuickProbs

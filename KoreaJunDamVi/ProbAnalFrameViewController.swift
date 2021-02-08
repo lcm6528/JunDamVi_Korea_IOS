@@ -126,7 +126,7 @@ class AnalHeaderCell: UICollectionViewCell {
     }
     
     func isSelected(selected: Bool) {
-        textLabel.textColor = selected ? .black : .gray
-        bottomLine.backgroundColor = selected ? .black : .clear
+        textLabel.textColor = selected ? .textBlack0 : .gray
+        bottomLine.backgroundColor = selected ? .textBlack0 : .clear
     }
 }

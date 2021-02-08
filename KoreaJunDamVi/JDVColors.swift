@@ -20,8 +20,9 @@ extension UIColor {
     class var textRed: UIColor { return UIColor(named: #function)! }
     class var bgSelectRed: UIColor { return UIColor(named: #function)! }
     class var bgSelectBlue: UIColor { return UIColor(named: #function)! }
-    
-    
+    class var btnRadioSelect: UIColor { return UIColor(named: #function)! }
+    class var bgShadow: UIColor { return UIColor(named: #function)! }
+    class var textBlack75: UIColor { return UIColor(named: #function)! }
     
     class var untPaleRed: UIColor {
         return UIColor(red: 225.0 / 255.0, green: 64.0 / 255.0, blue: 64.0 / 255.0, alpha: 1.0)
@@ -33,10 +34,6 @@ extension UIColor {
         return UIColor(red: 234.0 / 255.0, green: 233.0 / 255.0, blue: 228.0 / 255.0, alpha: 1.0)
     }
     
-    class var textBlack75: UIColor { return UIColor(named: #function)! }
-    
-//    static func untBlack75
-    
     class var selectedRed: UIColor {
         return UIColor(red: 237.0 / 255.0, green: 201.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
     }
@@ -44,7 +41,6 @@ extension UIColor {
     class var ProbCompleteRed: UIColor {
         return UIColor(red: 227.0 / 255.0, green: 71.0 / 255.0, blue: 70.0 / 255.0, alpha: 1.0)
     }
-    
     
     class var themeColor: UIColor {
         return UIColor(red: 146.0 / 255.0, green: 26.0 / 255.0, blue: 26.0 / 255.0, alpha: 1.0)
@@ -72,6 +68,3 @@ extension UIColor {
         return UIColor(red: 248.0 / 255.0, green: 156.0 / 255.0, blue: 138.0 / 255.0, alpha: 0.65)
     }
 }
-
-
-

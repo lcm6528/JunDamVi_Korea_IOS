@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable class AnalBarChartView: UIView {
-    var view:UIView!
+    var view: UIView!
     let NibName: String = "AnalBarChartView"
     
     @IBOutlet var heightOfBar1: NSLayoutConstraint!
@@ -23,9 +23,8 @@ import UIKit
     @IBOutlet var bottomLabel: UILabel!
     
     //30 , 35
-    
-    var maxRange:CGFloat!
-    override var backgroundColor: UIColor?{
+    var maxRange: CGFloat!
+    override var backgroundColor: UIColor? {
         didSet(value) {
             guard value != nil else {
                 return

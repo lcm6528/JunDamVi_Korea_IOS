@@ -144,7 +144,7 @@ extension TempleteVC: UITableViewDelegate, UITableViewDataSource {
                     selectCell.setState(state: .NONE)
                 }
                 
-            } else if templeteOption == .TEST {
+            } else if templeteOption == .TEST || templeteOption == .CURATED {
                 if selection != 0 && selection - 1 == idx {
                     selectCell.setState(state: .SELECTED)
                 } else {

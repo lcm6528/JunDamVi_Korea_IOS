@@ -82,7 +82,6 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
                 setUserDefaultWithBool(isPurchased, forKey: ProductID)
                 
                 Toast(text: "학습내역 초기화 완료").show()
-                
         }))
         
         alert.addAction(UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler:
@@ -163,7 +162,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.accessoryView = nil
         }
-        
         
         return cell
     }

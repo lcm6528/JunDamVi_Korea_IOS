@@ -757,7 +757,7 @@
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tSt-Ai-5Xf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="bgWhite1"/>
                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -807,6 +807,7 @@
                                                 <constraint firstItem="6aQ-WS-35l" firstAttribute="leading" secondItem="6Gq-h2-aQB" secondAttribute="leading" constant="4" id="wCS-JE-4QC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="bgWhite1"/>
                                         <connections>
                                             <outlet property="contentSubtitleLabel" destination="II7-Aj-ahB" id="by9-HW-Gas"/>
                                             <outlet property="contentTitleLabel" destination="Qgd-JT-K4F" id="NWg-Qb-ZWJ"/>
@@ -830,7 +831,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CDJ-Xa-EE2"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="bgWhite1"/>
                         <constraints>
                             <constraint firstItem="CDJ-Xa-EE2" firstAttribute="bottom" secondItem="cYs-nV-3Ng" secondAttribute="bottom" constant="8" id="6YV-as-yOS"/>
                             <constraint firstItem="CDJ-Xa-EE2" firstAttribute="bottom" secondItem="tSt-Ai-5Xf" secondAttribute="bottom" id="NZB-wT-0OF"/>
@@ -878,22 +879,25 @@
         <image name="home" width="33" height="29.666666030883789"/>
         <image name="settings" width="20" height="20"/>
         <namedColor name="bgIvory">
-            <color red="0.9179999828338623" green="0.90200001001358032" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="bgWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="bgWhite1">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="bgWhite2">
-            <color red="0.97600001096725464" green="0.96899998188018799" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.97647058823529409" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lineBlack">
-            <color red="0.68999999761581421" green="0.68999999761581421" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.69019607843137254" green="0.69019607843137254" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textBlack50">
-            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="textBrown">
-            <color red="0.32156862749999998" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.32156862745098042" green="0.29803921568627451" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="textRed">
             <color red="0.57300001382827759" green="0.10199999809265137" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

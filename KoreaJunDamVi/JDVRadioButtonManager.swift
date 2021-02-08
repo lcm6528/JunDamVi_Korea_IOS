@@ -7,82 +7,67 @@
 //
 
 import UIKit
-protocol JDVRadioButtonManagerDelegate{
-  func JDVRadioButtonManagerDelegate(_ manager:JDVRadioButtonManager ,didSelectedButtonAtIndex index: Int)
+protocol JDVRadioButtonManagerDelegate {
+    func JDVRadioButtonManagerDelegate(_ manager: JDVRadioButtonManager ,didSelectedButtonAtIndex index: Int)
 }
 
 class JDVRadioButtonManager: NSObject {
-  
-  var arrayOfButtons:[UIButton]!
-  
-  var tag: Int!
-  
-  var delegate:JDVRadioButtonManagerDelegate?
-  
-  init(WithButtons btn:UIButton ...) {
-    super.init()
-    arrayOfButtons = btn
-    for button in arrayOfButtons!{
-      button.addTarget(self, action: #selector(JDVRadioButtonManager.buttonPressed(_:)), for: .touchUpInside)
-      
+    
+    var arrayOfButtons: [UIButton] = []
+    var tag: Int!
+    var delegate: JDVRadioButtonManagerDelegate?
+    
+    init(WithButtons btn:UIButton ...) {
+        super.init()
+        arrayOfButtons = btn
+        for button in arrayOfButtons {
+            button.addTarget(self, action: #selector(JDVRadioButtonManager.buttonPressed(_:)), for: .touchUpInside)
+        }
+        deselectAll()
     }
     
-    deselectAll()
-    
-  }
-  
-  
-    @objc func buttonPressed(_ sender:UIButton) {
-    
-    if sender.isSelected == true{
-      deselectAll()
-      self.delegate?.JDVRadioButtonManagerDelegate(self, didSelectedButtonAtIndex: -1)
-      return
-    }
-    let index: Int = arrayOfButtons.firstIndex(of: sender)!
-    sender.isSelected = true
-    sender.backgroundColor = UIColor.selectedRed
-    for button in arrayOfButtons!{
-      
-      if button === sender {
+    @objc func buttonPressed(_ sender: UIButton) {
+        if sender.isSelected == true {
+            deselectAll()
+            self.delegate?.JDVRadioButtonManagerDelegate(self, didSelectedButtonAtIndex: -1)
+            return
+        }
         
-        continue
-      }
-      button.isSelected = false
-      button.backgroundColor = UIColor.white
+        let index: Int = arrayOfButtons.firstIndex(of: sender)!
+        sender.isSelected = true
+        sender.backgroundColor = UIColor.btnRadioSelect
+        
+        for button in arrayOfButtons {
+            if button === sender {
+                continue
+            }
+            button.isSelected = false
+            button.backgroundColor = UIColor.bgWhite0
+        }
+        
+        self.delegate?.JDVRadioButtonManagerDelegate(self, didSelectedButtonAtIndex: index)
     }
     
-    
-    self.delegate?.JDVRadioButtonManagerDelegate(self, didSelectedButtonAtIndex: index)
-  }
-  
-  
-  func deselectAll() {
-    for button in arrayOfButtons{
-      
-      button.isSelected = false
-      button.backgroundColor = UIColor.white
-    }
-  }
-  
-  func selectButtonAtIndex(_ index: Int) {
-    
-    if index == -1{
-      deselectAll()
-      return
+    func deselectAll() {
+        for button in arrayOfButtons {
+            button.isSelected = false
+            button.backgroundColor = UIColor.bgWhite0
+        }
     }
     
-    for button in arrayOfButtons{
-      
-      button.isSelected = false
-      button.backgroundColor = UIColor.white
-      if button === arrayOfButtons[index]{
-        button.isSelected = true
-        button.backgroundColor = UIColor.selectedRed
-      }
-      
+    func selectButtonAtIndex(_ index: Int) {
+        if index == -1 {
+            deselectAll()
+            return
+        }
+        
+        for button in arrayOfButtons {
+            button.isSelected = false
+            button.backgroundColor = UIColor.white
+            if button === arrayOfButtons[index] {
+                button.isSelected = true
+                button.backgroundColor = UIColor.btnRadioSelect
+            }
+        }
     }
-    
-  }
-  
 }

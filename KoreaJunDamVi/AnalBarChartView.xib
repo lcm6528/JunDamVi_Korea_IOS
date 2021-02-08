@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -126,7 +125,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" name="bgWhite0"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="3M8-iv-S86" secondAttribute="trailing" id="3sc-A0-Neb"/>
                         <constraint firstItem="FYB-gp-Hqg" firstAttribute="top" secondItem="QWS-RV-wUs" secondAttribute="bottom" constant="8" id="AL1-VQ-LhV"/>
@@ -150,7 +149,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="bgWhite0"/>
             <constraints>
                 <constraint firstItem="qWU-8H-89u" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="dYI-fO-gm2"/>
                 <constraint firstItem="qWU-8H-89u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="glJ-Nk-e1J"/>
@@ -162,4 +161,9 @@
             <point key="canvasLocation" x="35" y="75"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="bgWhite0">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

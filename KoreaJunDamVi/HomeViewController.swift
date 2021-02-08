@@ -63,7 +63,7 @@ class HomeViewController: JDVViewController {
         completeCount = 0
         
         for test in Tests {
-            if let arr = JDVProbManager.getCachedData(with: test) {
+            if let arr = JDVDataManager.getSelection(key: test) {
                 if arr.isEmpty == true {
                     completeCount += 1
                 }

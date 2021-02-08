@@ -25,7 +25,7 @@ import UIKit
             guard value != nil else {
                 return
             }
-            self.layerView.backgroundColor = value ?? UIColor.white
+            self.layerView.backgroundColor = value ?? UIColor.bgWhite1
         }
     }
     
@@ -81,7 +81,7 @@ import UIKit
         
         layerView.layer.shadowRadius = 0.5
         layerView.layer.shadowOffset = CGSize(width: 0, height: 0.5)
-        layerView.layer.shadowColor = UIColor.lightGray.cgColor
+        layerView.layer.shadowColor = UIColor.bgShadow.cgColor
         layerView.layer.shadowPath = path.cgPath
         layerView.layer.shadowOpacity = 0.5
     }

@@ -312,6 +312,7 @@
 		C2C1F481252F698C009ED9FD /* 4912.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2C1F44A252F698B009ED9FD /* 4912.jpg */; };
 		C2C1F482252F698C009ED9FD /* 4914.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2C1F44B252F698C009ED9FD /* 4914.jpg */; };
 		C2C1F483252F698C009ED9FD /* 4913.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2C1F44C252F698C009ED9FD /* 4913.jpg */; };
+		EA74B56225D19B2F007D0485 /* JDVDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B56125D19B2F007D0485 /* JDVDataManager.swift */; };
 		EACAB20325CDD31700A723DF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACAB20225CDD31700A723DF /* Colors.xcassets */; };
 		ED03EFE920DF7530004976DB /* 3931_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED03EFA820DF7530004976DB /* 3931_04.jpg */; };
 		ED03EFEA20DF7530004976DB /* 3949.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED03EFA920DF7530004976DB /* 3949.jpg */; };
@@ -1976,6 +1977,7 @@
 		C2C1F44A252F698B009ED9FD /* 4912.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4912.jpg; path = images/49/4912.jpg; sourceTree = "<group>"; };
 		C2C1F44B252F698C009ED9FD /* 4914.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4914.jpg; path = images/49/4914.jpg; sourceTree = "<group>"; };
 		C2C1F44C252F698C009ED9FD /* 4913.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4913.jpg; path = images/49/4913.jpg; sourceTree = "<group>"; };
+		EA74B56125D19B2F007D0485 /* JDVDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDVDataManager.swift; sourceTree = "<group>"; };
 		EACAB20225CDD31700A723DF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		ED03EFA820DF7530004976DB /* 3931_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3931_04.jpg; sourceTree = "<group>"; };
 		ED03EFA920DF7530004976DB /* 3949.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3949.jpg; sourceTree = "<group>"; };
@@ -3523,6 +3525,7 @@
 				37F7CD201DE6B0FD0085A2E4 /* JDVScoreManager.swift */,
 				37F7CD211DE6B0FD0085A2E4 /* JDVProbManager.swift */,
 				ED9820711E8E2BF90006F711 /* JDVProductManager.swift */,
+				EA74B56125D19B2F007D0485 /* JDVDataManager.swift */,
 				ED7DB8D3231EC3D200BA7D9A /* JDVUserManager.swift */,
 				ED38E7CA235AF2280026930E /* JDVLogManager.swift */,
 				EDF39D1E24C8814A00BC3A72 /* JDVStatisticManager.swift */,
@@ -7235,6 +7238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA74B56225D19B2F007D0485 /* JDVDataManager.swift in Sources */,
 				37F7CD2A1DE6B0FE0085A2E4 /* JDVTestResultLabelView.swift in Sources */,
 				3742923B1E24C65200DBE230 /* ProbAnalFrameViewController.swift in Sources */,
 				37F7CD111DE6AFD60085A2E4 /* ProbMenuViewController.swift in Sources */,

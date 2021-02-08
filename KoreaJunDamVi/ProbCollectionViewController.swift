@@ -48,14 +48,11 @@ extension ProbCollectionViewController: UICollectionViewDataSource, UICollection
             title.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothic", size: 30)! ], range: NSRange(location: 0,length: 2))
             title.addAttributes([NSAttributedString.Key.font : UIFont(name: "NanumBarunGothic", size: 18)! ], range: NSRange(location: 2,length: 1))
             
-            let cachedData = JDVProbManager.getCachedData(with: dataArray[indexPath.row])
-            
+            let cachedData = JDVDataManager.getSelection(key: dataArray[indexPath.row])
             cell.contentLabel.attributedText = title
             cell.configure(by: cachedData)
-            
-            
         } else {
-            let cachedData = JDVProbManager.getCachedData(with: dataArray[indexPath.row])
+            let cachedData = JDVDataManager.getSelection(key: dataArray[indexPath.row])
             cell.contentLabel.text = dataArray[indexPath.row]
             cell.configure(by: cachedData)
         }

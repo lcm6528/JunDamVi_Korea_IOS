@@ -80,7 +80,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
         }))
         
         /// if cache data exist
-        if let cachedArr = JDVProbManager.getCachedData(with: currentOption.cacheKey) {
+        if let cachedArr = JDVDataManager.getSelection(key: currentOption.cacheKey) {
             if cachedArr.isEmpty != true{
                 alert.addAction(UIAlertAction(title: "이어풀기", style: UIAlertAction.Style.default, handler:
                     { action in
@@ -155,8 +155,7 @@ class ProbMenuViewController: JDVViewController ,ProbCollectionViewDelegate{
             vc.probData = self.probData
             vc.option = currentOption
             
-                
-            let savedSelection = JDVProbManager.getCachedData(with: currentOption.cacheKey) ?? []
+            let savedSelection = JDVDataManager.getSelection(key: currentOption.cacheKey) ?? []
             var newSelections = [Int](repeatElement(0, count: probData.count))
             if vc.probData.count > savedSelection.count {
                 for (i, select) in savedSelection.enumerated() {

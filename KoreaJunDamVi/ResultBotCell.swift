@@ -22,9 +22,9 @@ class ProbResultBotCell: UITableViewCell {
         ProbNumLabel.text = "\(item.ProbNum)번"
         ScoreLabel.text = "\(item.Score)점"
         AnswerLabel.text = "\(item.Answer)"
-        SelectionLabel.text = "\(item.Selection)"
+        SelectionLabel.text = "\(item.selectString)"
         StateLabel.text = item.State.rawValue
-        StateLabel.textColor = (item.State == .Wrong) ? UIColor.red : UIColor.black
+        StateLabel.textColor = (item.State == .Wrong) ? UIColor.red : UIColor.textBlack0
         noteButton.isSelected = JDVNoteManager.isAdded(by: item.ProbID)
     }
     
@@ -32,9 +32,9 @@ class ProbResultBotCell: UITableViewCell {
         ProbNumLabel.text = "  \(item.TestNum)회 \(item.ProbNum)번  "
         ScoreLabel.text = "\(item.Score)점"
         AnswerLabel.text = "\(item.Answer)"
-        SelectionLabel.text = "\(item.Selection)"
+        SelectionLabel.text = "\(item.selectString)"
         StateLabel.text = item.State.rawValue
-        StateLabel.textColor = (item.State == .Wrong) ? UIColor.red : UIColor.black
+        StateLabel.textColor = (item.State == .Wrong) ? UIColor.red : UIColor.textBlack0
         noteButton.isSelected = JDVNoteManager.isAdded(by: item.ProbID)
     }
 }

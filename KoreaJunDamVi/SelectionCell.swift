@@ -26,7 +26,6 @@ class SelectionCell: UITableViewCell, TempleteCell {
     }
     
     func setState(state: SELECT_STATE) {
-        
         switch state {
         case .SELECTED:
             contentContainerView.backgroundColor = UIColor.bgSelectRed

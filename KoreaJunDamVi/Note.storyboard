@@ -372,9 +372,8 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35회 33번" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-He-TmH">
-                                        <rect key="frame" x="147.5" y="11.5" width="80" height="21"/>
+                                        <rect key="frame" x="151.5" y="11.5" width="72" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="BWP-M1-lgt"/>
                                             <constraint firstAttribute="height" constant="21" id="joW-1B-sSs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
@@ -481,13 +480,13 @@
         <image name="note" width="29.666666030883789" height="29.666666030883789"/>
         <image name="star" width="21.666666030883789" height="21.666666030883789"/>
         <namedColor name="bgBlack50">
-            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="bgBlack5050">
             <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="bgIvory">
-            <color red="0.9179999828338623" green="0.90200001001358032" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="bgWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

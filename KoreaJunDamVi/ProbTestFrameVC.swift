@@ -27,6 +27,13 @@ class ProbTestFrameViewController: JDVViewController {
     var pageViewController: UIPageViewController!
     
     var option: JDVProbManager.ProbOption!
+    var cacheKey: String {
+        if self.option.sortedOption == .test {
+            return "\(probData[0].prob.TestNum)"
+        } else {
+            return option.cacheKey
+        }
+    }
     
     override func setTitleWithStyle(_ text: String) {
         self.barButton_title.title = text
@@ -68,7 +75,6 @@ class ProbTestFrameViewController: JDVViewController {
         
         let viewControllers = NSArray(object: initialContenViewController)
         
-        
         self.pageViewController.setViewControllers(viewControllers as! [TempleteVC], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         
         if #available(iOS 11.0, *) {
@@ -99,14 +105,6 @@ class ProbTestFrameViewController: JDVViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-        
-        guard option.sortedOption != .note else { return }
-        
-        if option.sortedOption == .test {
-            JDVProbManager.saveCachedData(with: "\(probData[0].prob.TestNum)", tries: selections!)
-        } else {
-            JDVProbManager.saveCachedData(with: option.cacheKey, tries: selections!)
-        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -115,12 +113,7 @@ class ProbTestFrameViewController: JDVViewController {
     
     @objc func onStop() {
         guard option.sortedOption != .note else { return }
-        
-        if option.sortedOption == .test {
-            JDVProbManager.saveCachedData(with: "\(probData[0].prob.TestNum)", tries: selections!)
-        } else {
-            JDVProbManager.saveCachedData(with: option.sortedOption.rawValue, tries: selections!)
-        }
+        JDVDataManager.saveCurrentSelection(key: cacheKey, selections: selections ?? [])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -368,17 +361,13 @@ extension ProbTestFrameViewController: UINavigationControllerDelegate {
 
 extension ProbTestFrameViewController: TempleteDelegate {
     func select(probId: Int, probNum: Int, choice: Int) {
-        
-        let params: [String: Any] = ["id" : probId,
-        "content" : "\(choice)"]
+        let params: [String: Any] = ["id" : probId, "content" : "\(choice)"]
         self.selections![probNum] = choice
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
         ClientLogger.log(log: params.description)
-        if self.option.sortedOption == .test {
-            JDVProbManager.saveCachedData(with: "\(self.probData[0].prob.TestNum)", tries: self.selections!)
-        } else {
-            JDVProbManager.saveCachedData(with: self.option.cacheKey, tries: self.selections!)
-        }
+        
+        JDVDataManager.saveCurrentSelection(key: cacheKey, selections: selections ?? [])
+        
         if getUserDefaultBoolValue(kAutoNextKey) {
             self.gotoNextPage()
         }

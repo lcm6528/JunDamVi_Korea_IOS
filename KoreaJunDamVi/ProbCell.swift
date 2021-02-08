@@ -21,7 +21,7 @@ class ProbCell: UITableViewCell, TempleteCell {
     
     func configure(data: ProbData, idx: Int, option: TEMPLETE_OPTION) {
         let prob = data.prob
-        if option == .CURATED{
+        if option == .CURATED {
             titleTextView.attributedText = prob.title_attString_probId
         } else if option == .NOTE {
             titleTextView.attributedText = prob.title_attString_noNum

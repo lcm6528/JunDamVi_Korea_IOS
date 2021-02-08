@@ -50,6 +50,10 @@ struct Try {
     var ProbNum: Int
     var State:state = .Pass
     
+    var selectString: String {
+        return Selection == 0 ? "PASS" : "\(Selection)"
+    }
+    
     init(withProb prob:Prob,selection select: Int) {
         self.ProbNum = prob.ProbNum
         self.TestNum = prob.TestNum

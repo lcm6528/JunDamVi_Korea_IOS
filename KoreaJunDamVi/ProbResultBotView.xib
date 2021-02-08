@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -35,7 +36,7 @@
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="2xr-pp-z4f">
                             <rect key="frame" x="0.0" y="40" width="375" height="528"/>
-                            <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="bgIvory"/>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-gA-xwB">
                             <rect key="frame" x="0.0" y="603" width="375" height="60"/>
@@ -57,13 +58,14 @@
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-Tc-NC6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
-                                    <color key="backgroundColor" red="0.49019607840000001" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="bgBlack50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.5" id="s0X-OF-LQg"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.8980392157" green="0.88235294119999996" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="bgIvory"/>
+                            <color key="tintColor" name="bgIvory"/>
                             <constraints>
                                 <constraint firstItem="uwr-Tc-NC6" firstAttribute="leading" secondItem="bFH-gA-xwB" secondAttribute="leading" id="0ua-Qr-yGa"/>
                                 <constraint firstItem="lgJ-3S-Q29" firstAttribute="centerX" secondItem="bFH-gA-xwB" secondAttribute="centerX" id="GD5-lM-Zam"/>
@@ -77,7 +79,7 @@
                             <rect key="frame" x="0.0" y="568" width="375" height="35"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오답 문제 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqH-55-VZt">
-                                    <rect key="frame" x="15" y="7.5" width="68.5" height="20"/>
+                                    <rect key="frame" x="15" y="7.5" width="69" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="v0b-Hs-87H"/>
                                     </constraints>
@@ -86,7 +88,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-rc-upw">
-                                    <rect key="frame" x="83.5" y="7.5" width="25.5" height="20"/>
+                                    <rect key="frame" x="84" y="7.5" width="25.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="tLS-kN-TaO"/>
                                     </constraints>
@@ -110,7 +112,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.32156862749999998" green="0.29803921570000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="bgBlack5050"/>
                             <constraints>
                                 <constraint firstItem="F3G-rc-upw" firstAttribute="leading" secondItem="ZqH-55-VZt" secondAttribute="trailing" id="5kq-2H-7Om"/>
                                 <constraint firstItem="8QZ-lD-LJa" firstAttribute="centerY" secondItem="wD9-Mg-NIQ" secondAttribute="centerY" id="FKo-t9-RQY"/>
@@ -122,7 +124,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="bgIvory"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="wD9-Mg-NIQ" firstAttribute="leading" secondItem="zkE-OA-9k8" secondAttribute="leading" id="0xv-6D-cV1"/>
@@ -151,5 +153,14 @@
     </objects>
     <resources>
         <image name="button_goResult" width="40" height="27.5"/>
+        <namedColor name="bgBlack50">
+            <color red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgBlack5050">
+            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="bgIvory">
+            <color red="0.91764705882352937" green="0.90196078431372551" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>
