@@ -21,19 +21,39 @@ extension UIFont {
         return UIFont(name: "NanumBarunGothicLight", size: 13)!
     }
     class var titleFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 15)!
+        if UIDevice.current.isPad {
+            return UIFont(name: "NanumMyeongjo", size: 18)!
+        } else {
+            return UIFont(name: "NanumMyeongjo", size: 15)!
+        }
     }
     class var articleFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 15)!
+        if UIDevice.current.isPad {
+            return UIFont(name: "NanumMyeongjo", size: 18)!
+        } else {
+            return UIFont(name: "NanumMyeongjo", size: 15)!
+        }
     }
     class var choiceFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 15)!
+        if UIDevice.current.isPad {
+            return UIFont(name: "NanumMyeongjo", size: 18)!
+        } else {
+            return UIFont(name: "NanumMyeongjo", size: 15)!
+        }
     }
     class var solutionFont: UIFont {
-        return UIFont(name: "NanumMyeongjo", size: 15)!
+        if UIDevice.current.isPad {
+            return UIFont(name: "NanumMyeongjo", size: 18)!
+        } else {
+            return UIFont(name: "NanumMyeongjo", size: 15)!
+        }
     }
     class var scoreFont: UIFont {
-        return UIFont(name: "NanumMyeongjoExtraBold", size: 15)!
+        if UIDevice.current.isPad {
+            return UIFont(name: "NanumMyeongjoExtraBold", size: 18)!
+        } else {
+            return UIFont(name: "NanumMyeongjoExtraBold", size: 15)!
+        }
     }
     
     static func lightFont(size: CGFloat) -> UIFont {

@@ -101,7 +101,7 @@ struct Prob {
         
         for (index,choice) in choices_String.enumerated() {
             let name = String(format: "%d_%02d", ProbID,index + 1)
-            let imageWidthRatio: CGFloat = UIDevice.current.isIPadOrLandscape ? 0.4 : 0.5
+            let imageWidthRatio: CGFloat = UIDevice.current.isIPadOrLandscape ? 0.15 : 0.5
             let result = replaceTagToImage(withString: choice, imgName: name, withWidth: SCREEN_WIDTH * imageWidthRatio)
             
             result.addAttribute(NSAttributedString.Key.font, value: UIFont.choiceFont, range: NSRange(location: 0, length: result.length))

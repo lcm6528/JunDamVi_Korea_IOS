@@ -110,6 +110,9 @@ public extension UIDevice {
         }
     }
     
+    var isPad: Bool {
+        return UIDevice.current.userInterfaceIdiom == .pad
+    }
 }
 
 extension UIView{

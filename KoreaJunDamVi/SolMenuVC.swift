@@ -86,11 +86,15 @@ class JDVSolutionMenuViewController: JDVViewController {
     func retrive() {
         SwiftyStoreKit.retrieveProductsInfo([ProductID]) { result in
             if let product = result.retrievedProducts.first {
-                let priceString = product.localizedPrice!
-                print("Product: \(product.localizedDescription), price: \(priceString)")
-            }else {
-                print("Error: \(result.error.debugDescription)")
-            }
+                    let priceString = product.localizedPrice!
+                    print("Product: \(product.localizedDescription), price: \(priceString)")
+                }
+                else if let invalidProductId = result.invalidProductIDs.first {
+                    print("Invalid product identifier: \(invalidProductId)")
+                }
+                else {
+                    print("Error: \(result.error)")
+                }
         }
     }
     
